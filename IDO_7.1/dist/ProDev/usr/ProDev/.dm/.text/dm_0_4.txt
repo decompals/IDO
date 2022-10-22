@@ -1,0 +1,12 @@
+#0.4
+How to take this course
+Overview
+Static Analysis
+Debugging
+Performance Tuning
+This is  a  quick  tutorial  on  how  to  take  this  course.
+This lesson gives you an overview of ProDev WorkShop.
+This lesson introduces you to fundamental Static Analyzer tasks such as graphically displaying file dependencies, and displaying hierarchical class structures.
+This lesson covers essential Debugger tasks such as stepping through code, setting breakpoints, and watching and modifying variables. 
+This lesson introduces you to performance tuning using the Workshop tools.  
+Do you want to begin 

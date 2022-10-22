@@ -1,0 +1,7 @@
+name       <VkWeb_Viewer>;
+pixmap     <VkWebViewer>;
+collection <VkWebViewer>;
+group      <ViewKit>;
+ident      <VkWeb_Viewer_1>;
+x_location      <0>;
+y_location      <0>;

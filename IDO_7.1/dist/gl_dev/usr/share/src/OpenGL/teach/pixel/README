@@ -1,0 +1,6 @@
+This directory contains very simple programs which illustrate
+how to use various aspects of the OpenGL pixel processing functionality
+
+convolve.c	- convolution demo program.  allows the user to convolve
+		  an input image with full control over all of the convolution
+		  parameters.

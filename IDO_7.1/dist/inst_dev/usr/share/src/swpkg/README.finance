@@ -1,0 +1,23 @@
+
+This is version 1.2 of finance, a Motif based loan calculator.  Given
+a term in YEARS, the PRINCIPAL loan amount, and interest RATE, it computes
+the monthly PAYMENT.  Setting the PAYMENT text field recomputes PRINCIPAL.
+
+Finance.ad	Application defaults file.
+Imakefile	System independent imake description file.
+Finance.ftr	File typing rules file.
+README.finance		This file.
+finance.man	Manual page (nroff source).
+main.c		Calculator source program.
+
+
+To build and run: 
+
+	xmkmf
+	make
+	finance
+
+to install:
+
+	su
+	make install install.man

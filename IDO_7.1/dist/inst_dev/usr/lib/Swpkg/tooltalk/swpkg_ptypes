@@ -1,0 +1,21 @@
+
+/* Tooltalk definitions */
+
+/*
+   MSG_EDIT_INSTALLATION is used by sgdx (Doug Young's Builder)
+   and takes four string arguments:
+  
+      'cwd'	Directory to take the user too
+      'spec'	Pathname of spec file to open	(application.spec)
+      'idb'	Pathname of idb file to open	(application.idb)
+      'distdir'	Distribution Directory pathname	(images)
+  
+   Specifying NULL for any of the argument values causes it to be ignored.
+*/
+#define MSG_EDIT_INSTALLATION  "SGI_Packager_Edit_Installation"
+
+ptype SGI_SWPKG
+{
+    start "/usr/bin/X11/swpkg";
+    handle: session SGI_Packager_Edit_Installation() => start;
+}

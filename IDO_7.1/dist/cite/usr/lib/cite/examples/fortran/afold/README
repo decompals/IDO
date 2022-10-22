@@ -1,0 +1,5 @@
+
+Geophysics kernels that computed convolution of two time series.
+
+These show optimization of trapezoidal loop nests, and outer loop unrolling.
+

@@ -1,0 +1,23 @@
+#!/bin/csh
+
+set libsubdir = "/usr/local/lib/gcc-lib/`/usr/local/bin/gcc -dumpmachine`/`/usr/local/bin/gcc -dumpversion`"
+
+echo "/usr/local/bin/gcc -w -g -c -gnatctq $* -o /dev/null"
+	/usr/local/bin/gcc -w -g -c -gnatctq $* -o /dev/null
+	# strip out flags after running gcc
+	# filename is always final argument
+	set G = $argv[$#argv]
+	set B = `basename $G .adb`
+	set S = `basename $G .ads`
+
+if (-e $B.atb) then
+	echo "$libsubdir/cvsadawalk $B.atb"
+	$libsubdir/cvsadawalk $B.atb
+	rm -f $B.atb
+else if (-e $S.ats) then
+	echo "$libsubdir/cvsadawalk $S.ats"
+	$libsubdir/cvsadawalk $S.ats
+	rm -f $S.ats
+else
+    echo Abandoned compilation of file $G.
+endif

@@ -1,0 +1,3 @@
+
+For More Information on the Performance Analyzer
+We looked at performance bottlenecks.  You can also analyze ideal vs. actual time, I/O activity, system calls, page usage, memory problems, and so on.  To learn more about the Performance Analyzer, refer to the Developer Magic: ProDev Workshop Overview and the Developer Magic: Performance Analyzer and Tester User's Guide, which are on Insight, the Desktop Magic online documentation facility, and in hardcopy. 

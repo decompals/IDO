@@ -1,0 +1,136 @@
+README for audio programming examples
+
+This directory has example audio programs programs for the IRIS
+Audio Library.
+These programs run on the 4D/30, 4D/35, Indigo, Indy, and Indigo 2
+workstations.
+
+The example programs are playaifc, recordaifc, recordexample, clipit, passthru, 
+aselect, concert_a, record, volume, and audio_button.
+
+See ~4Dgifts/examples/soundfile for additional audio programming examples.
+
+playaifc:    
+--------
+
+Playaifc parses AIFF-C (and AIFF) file(s) containing 8-bit or
+16-bit audio sample data (single channel or stereo)
+and plays the samples through the audio hardware.
+
+Playaifc supports decompression of CCITT G.722, CCITT G.711 u-law,
+Aware MPEG, and Aware MultiRate AIFF-C file formats.
+
+Please see the man page for more details.
+
+recordaifc:
+----------
+
+Recordaifc creates an AIFF-C (or AIFF) output file 
+containing 16-bit stereo sample data recorded 
+through the audio hardware.  Recordaiff records 
+audio input until the user sends it an interrupt. 
+It writes the current hardware input sample rate 
+into the appropriate location in the AIFF Common 
+chunk.  When recordaiff receives a user interrupt, 
+it writes all sample data
+currently in the audio buffer out to disk before it
+exits. 
+
+Recordaifc supports compressing to CCITT G.722 4:1, CCITT G.711 
+u-law 2:1, Aware MPEG, and Aware MultiRate compression for the 
+AIFF-C file format.
+
+Please see the man page for more details.
+
+motifexample:
+------------
+
+This example program shows how to draw a GUI control panel using Motif,
+and connect it up to a real-time audio playback thread. The control
+panel has 3 buttons: "start", "pause", and "stop". 
+
+The program opens the audio file "soundfile.aifc" and plays it back 
+when you hit "start". The program plays the file continuously in a loop
+until you hit "stop". 
+
+"soundfile.aifc" contains 4-channel interleaved audio data. "motifexample"
+shows how the Audio Library allows an application to play sound data
+using a 4-channel "virtual" ALport which can connect to either 2-channel
+or 4-channel output hardware.  If you play back "soundfile.aifc" on a
+4D/3X or Indigo system, or on an Indy or Indigo2 operating in the default
+2-channel mode (see the "Options" menu on the "Audio Control Panel") 
+you will hear channels 1 and 3 from the file mixed into the left 
+hardware output channel, and channels 2 and 4 from the file mixed into
+the right hardware output channel. Open "soundfile.aifc" using the
+tool "soundeditor" to observe the waveforms for the 4 channels.
+ 
+
+clipit:
+------
+
+Clipit puts up a graphics window that allows you to
+record and playback short segments of sound. All
+controls are available through a menu that pops up if
+you press the right mouse button while over the
+clipit window.  Please see the man page for more
+details.
+
+passthru:
+--------
+
+Passthru copies audio data from an input port to an
+output port.  Command line options allow the user to
+experiment with the various audio port parameters.
+Please see the man page for more details.
+
+concert_a:
+---------
+Concert_a generates a 441 Hz tone (concert A) for 5 seconds
+and demonstrates how tones may be synthesized in software and
+sent to an output port.
+
+aselect:
+-------
+Aselect demostrates the use of the select(2) call in
+conjunction with the ALgetfd(3A) function to record
+sound to disk. The program runs until an interrupt
+signal (Ctrl-C) is encountered.
+
+record:
+-------
+Record does just what it says. It records audio input
+data from an input port and stores it to disk. The 
+program records until an interrupt is encountered. 
+The data is stored in a raw format (without format
+or rate information). For a more complete example of
+recording to disk with format information, see recordaiff.
+
+volume:
+------
+Volume is a simple program which changes the hardware output
+gain levels based on the command line arguments. Volume uses
+ALsetparams to accomplish its task.
+
+audio_button:
+------------
+Audio_button is a short example of how to create and audio
+application with a Motif user interface widget. See the 
+Motif examples in the 4Dgifts directory for more explicit
+explanations of Motif widgets. This program utilizes the 
+sproc(2) system call to create a separate thread (process)
+to manage the audio.
+
+audiostate:
+-----------
+A command line utility to print state of Audio Hardware in
+Audio Library parameters.   Parameters not supported on machine
+are marked as such.
+
+
+recordexample:
+-------------
+This is a small example program which shows how to open an
+audio input port and an audio output file, and record digital
+sample data from the port to the file. It is basically a
+miniature version of recordaifc.  It uses the Audio Library
+as well as the Audio File Library.

@@ -1,0 +1,41 @@
+XCOMM site:  $XConsortium: site.sample,v 1.9 94/04/08 17:02:06 rws Exp $
+
+/*****************************************************************************
+ *                                                                           *
+ *			   SITE-SPECIFIC DEFINITIONS                         *
+ *                                                                           *
+ * This file contains two halves, one included before the vendor-specific    *
+ * configuration file (.cf file), and one included after the .cf file.       *
+ * The before-half should be protected by #ifdef BeforeVendorCF, and the     *
+ * after-half should be protected by #ifdef AfterVendorCF.                   *
+ *                                                                           *
+ * The before-half should only set things that the .cf file depends on.      *
+ * For the .cf files shipped in this release, the main variables in this     *
+ * category are HasGcc and HasGcc2.                                          *
+ *                                                                           *
+ * The after-half should contain all other definitions.  For example,        *
+ * place your ProjectRoot definition here.                                   *
+ *                                                                           *
+ * OS Major and Minor version numbers should be changed directly in the .cf  *
+ * file, not overridden in site.def.                                         *
+ *                                                                           *
+ *****************************************************************************/
+
+#ifndef SiteIConfigFiles
+#define SiteIConfigFiles $(IRULESRC)/host.def
+#define LocalConfigFiles host.def
+#endif
+
+#include <host.def>
+
+#ifdef BeforeVendorCF
+
+#endif /* BeforeVendorCF */
+
+#ifdef AfterVendorCF
+
+#endif /* AfterVendorCF */
+
+#if defined(BuildMotif) && BuildMotif
+#include <Motif.site.def>
+#endif

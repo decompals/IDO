@@ -1,0 +1,19 @@
+#3.5
+Looking at Results in Text View
+Text View shows the results of queries in a table format.
+Select Call tree View from the Views menu.
+The Text View  report shows the functions called by the "main" and where the call occurs in the source code.
+
+
+
+
+Text View
+Call Tree View
+Class Tree View
+File Dependency View
+The Results Filter
+
+
+
+
+

@@ -1,0 +1,360 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! VIEW Common Resources                                                       !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*keyboardFocusPolicy:	pointer
+
+*sgiMode:		true
+*schemeFileList:	CaseVision
+*paletteFileList:	CaseVisionPalette
+*useSchemes:		all
+*useEnhancedFSB:        true
+
+*XmMenuShell*tearOffModel:		tear_off_enabled
+
+*useTtutil:		True
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*popupMenu*XmMenuShell*tearOffModel:        tear_off_disabled
+
+!
+! Launch menu labels
+!
+*launchMenu.labelString:	Launch Tool
+*launchMenu.mnemonic:		L
+
+!
+! Project menu labels
+!
+*projectMenu.labelString:		Project
+*projectMenu.mnemonic:			P
+*projectIconify.labelString:		Iconify
+*projectIconify.mnemonic:		I
+*projectRaise.labelString:		Raise
+*projectRaise.mnemonic:			R
+*projectRemapPaths.labelString:		Remap Paths...
+*projectRemapPaths.mnemonic:		m
+*projectProjectView.labelString:	Project View...
+*projectProjectView.mnemonic:		P
+*projectExit.labelString:		Exit
+*projectExit.mnemonic:			E
+
+!
+! Static Analyzer Query Menu Labels
+!
+*queryMenu.labelString: Query
+*queryMenu.mnemonic: Q
+
+*qmGeneral.labelString: General
+*qmGeneral.mnemonic: G
+*qmMacros.labelString: Macros
+*qmMacros.mnemonic: M
+*qmFunctions.labelString: Functions
+*qmFunctions.mnemonic: F
+*qmVariables.labelString: Variables
+*qmVariables.mnemonic: V
+
+*qmWhereSymbolDefined.labelString:	Where Defined ?
+*qmWhereMacroDefined.labelString:		Where Defined ?
+*qmWhereVariableDefined.labelString:	Where Defined ?
+*qmWhereFunctionDefined.labelString:	Where Defined ?
+
+!
+! Option menu labels
+!
+*optionMenu.labelString:
+
+
+
+!
+! Resource for determining what languages file suffixes indicate.
+! Used by cvsource and cvstatic
+!
+*suffixSource:		C++.c++ C++.C C++.cxx C++.h C++.cpp C++.cc C.c  Fortran.f Fortran.F Fortran90.f90 Ada.adb
+
+!!!!
+!!! NLS Messages
+!!!!
+*useNetLSLicense:					False
+*disableLicenseWarnings:              FALSE
+*disableThirtyDayLicenseWarnings:     FALSE
+
+*thirtyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of WorkShop.        
+*sixtyDayMessage:            Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*ninetyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*noLicenseServerMessage:     Unable to locate a license server.  Consult \nthe WorkShop Release Notes for information on\nsetting up your network license server.
+*notEnoughLicensesMessage:   No WorkShop licenses are available at this time. Contact\nyour sales representative or dealer to purchase additional\nlicenses or try again later.
+!
+*Evaluation*sixtyDayMessage:
+*Evaluation*ninetyDayMessage:
+*Evaluation*thirtyDayMessage: Your evaluation license for WorkShop\nwill expire in %d days.\n\nTo purchase a permanent license or extend\nyour evaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html\n\nor email: demolicense@sgi.com
+!
+*Evaluation*licenseExpiredMessage: Your evaluation period for WorkShop\nhas expired. \n\nTo purchase a permanent license or extend your\nevaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html or\n\nemail: demolicense@sgi.com
+!
+*noFlexlmLicenseMessage: WorkShop could not find a valid FlexLM license.\n\nIf you have an existing NetLS license for an earlier version of\nWorkShop, click on OK to use your old license.  Please contact Silicon\nGraphics to obtain a FlexLM replacement for your old license.  To avoid\nseeing this dialog again, set the "useNetLSLicense" resource in the\napplication defaults file to "True".\n\nTo obtain an Evaluation or Permanent license, please visit our license\nrequest web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*noLicenseMessage: Unable to find a WorkShop license.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*licenseExpiredMessage:      Your WorkShop License has expired.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*warnLoseLicenseMessage:     Unable to renew your software license.  Consult\nthe NetLS LSSERVER Release Notes for information on\ntroubleshooting your license server and network services.
+*regainLicenseMessage:       WorkShop license regained.
+*enterLicenseMessage: WorkShop requires a license. Please enter your license\nkey and click OK. Temporary license keys are available at the\nfollowing web site\n\nhttp://www.sgi.com/Products/license.html\n\nor call our technical support hotline at 1-800-800-4SGI.\n\nIf you have an existing NetLS license for a previous version of\nWorkShop, you can click Cancel to try to find a NetLS\nlicense.
+
+!!!!!
+!!!   Turn off all Xt and Motif warning messages
+!!!!!
+
+! This should be off when we ship, but ON for internal testing
+
+*silenceWarnings:  TRUE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of VIEW Common Resources                                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+!
+!  Application Resource for GLdebug
+!
+!
+
+*gldcontroller.title: GLdebug controller
+*breakpointMessage.value:		Press Continue button to begin.
+
+!  Output and breakpoint windows
+*funcList.visibleItemCount:		25
+*onMenu.labelString:			Set
+*offMenu.labelString:			Unset
+*allGroupItem.labelString:		  All
+*swapbuffersGroupItem.labelString:	  Swapbuffers
+*geometryGroupItem.labelString:		  Geometry
+*transformsGroupItem.labelString:	  Transforms
+*dlObjectsGroupItem.labelString:	  Objects
+*lightingGroupItem.labelString:		  Lighting
+*textureGroupItem.labelString:		  Texturing
+*inputGroupItem.labelString:		  GL Input
+*textGroupItem.labelString:		  Text
+
+!  Stateview menus
+*optionsMenu.labelString:		Options
+*lightingItem.labelString:		  Lighting
+*devicesItem.labelString:		  Devices
+*attributesItem.labelString:		  Attributes
+*matrixItem.labelString:		  Matrix
+
+!  Controller menus
+*fileMenu.labelString:			File
+*quitItem.labelString:			  Exit
+*controlMenu.labelString:		Controls
+*breakpointItem.labelString:		  Breakpoints...
+*outputItem.labelString:		  Output...
+
+!  Pushbuttons
+*continueButton.labelString:		Continue
+*stepButton.labelString:		Step
+*skipButton.labelString:		Skip
+*stopButton.labelString:		Halt
+
+!  Output toggle buttons
+*outputGLButton.labelString:		Output GL Calls
+*outputWarningButton.labelString:	Output Warnings
+*outputErrorButton.labelString:		Output Errors
+*outputFatalButton.labelString:		Output Fatals
+
+!  Breakpoint toggle buttons
+*breakpointGLButton.labelString:	Break on GL Calls
+*breakpointWarningButton.labelString:	Break on Warnings
+*breakpointErrorButton.labelString:	Break on Errors
+*breakpointFatalButton.labelString:	Break on Fatals
+
+
+!!
+!! Mnemonics
+!!
+*onMenu.mnemonic:		S
+*offMenu.mnemonic:		U
+*allGroupItem.mnemonic:		A
+*swapbuffersGroupItem.mnemonic: S
+*geometryGroupItem.mnemonic:	G
+*transformsGroupItem.mnemonic:  r
+*dlObjectsGroupItem.mnemonic: 	O
+*lightingGroupItem.mnemonic:	L
+*textureGroupItem.mnemonic:	x
+*inputGroupItem.mnemonic:	I
+*textGroupItem.mnemonic:	T
+
+!  Stateview menus
+*optionsMenu.mnemonic:		O
+*lightingItem.mnemonic:		L
+*devicesItem.mnemonic:		D
+*attributesItem.mnemonic:	A
+*matrixItem.mnemonic:		M
+
+!  Controller menus
+*fileMenu.mnemonic:		F
+*quitItem.mnemonic:		E
+*controlMenu.mnemonic:		C
+*breakpointItem.mnemonic:	B
+*outputItem.mnemonic:		O
+
+
+
+!!
+!! Fonts
+!!
+
+!! all labels should be bold
+*XmLabel*fontList:	-*-helvetica-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+*XmLabelGadget*fontList:  -*-helvetica-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+*XmScale*fontList: 	-*-helvetica-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+*XmBulletinBoard*labelFontList: -*-helvetica-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+*optionMenu.XmLabelGadget*fontList: -*-helvetica-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+*ticMarks*fontList:	-*-helvetica-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+
+
+!! all buttons, toggles, and radio buttons should be plain
+*XmPushButton*fontList: -*-helvetica-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+*XmPushButtonGadget*fontList: -*-helvetica-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+*XmToggleButton*fontList: -*-helvetica-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+*XmToggleButtonGadget*fontList: -*-helvetica-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+*optionMenu*fontList: -*-helvetica-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+*XmIconGadget*fontList: -*-helvetica-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+*XmBulletinBoard*buttonFontList: -*-helvetica-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+
+
+!! menuBar entries, panes, popups, and option menus should be oblique
+*menuBar*fontList:  	-*-helvetica-bold-o-normal-*-14-*-*-*-*-*-iso8859-1
+!! for entries in popup menus
+*XmMenuShell*XmPushButton*fontList:  -*-helvetica-bold-o-normal-*-14-*-*-*-*-*-iso8859-1
+*XmMenuShell*XmLabelGadget*fontList:	-*-helvetica-bold-o-normal-*-14-*-*-*-*-*-iso8859-1
+*XmMenuShell*XmPushButtonGadget*fontList:  -*-helvetica-bold-o-normal-*-14-*-*-*-*-*-iso8859-1
+*XmMenuShell*XmCascadeButton*fontList: -*-helvetica-bold-o-normal-*-14-*-*-*-*-*-iso8859-1
+*XmMenuShell*XmCascadeButtonGadget*fontList: -*-helvetica-bold-o-normal-*-14-*-*-*-*-*-iso8859-1
+*XmMenuShell*XmToggleButton*fontList: -*-helvetica-bold-o-normal-*-14-*-*-*-*-*-iso8859-1
+*XmMenuShell*XmToggleButtonGadget*fontList: -*-helvetica-bold-o-normal-*-14-*-*-*-*-*-iso8859-1
+*optionPane*fontList: -*-helvetica-bold-o-normal-*-14-*-*-*-*-*-iso8859-1
+
+
+*XmList*fontList:  -*-helvetica-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+
+
+!!
+!! Text fonts  (important that at least the SourceView be constant width)
+!!
+*XmText.fontList: -*-lucidatypewriter-medium-r-*-*-14-*-*-*-*-*-iso8859-1
+*XmTextField.fontList: -*-lucidatypewriter-medium-r-*-*-14-*-*-*-*-*-iso8859-1
+
+
+!!
+!! Spacing stuff, probably belongs in master scheme file
+!!
+
+!! buttons shouldn't look "cramped"
+!! (24 pixels across face from top to bottom and 8 in margin on face)
+*XmPushButton*marginHeight: 	4
+*XmPushButton*marginWidth: 	7
+!! option menu buttons shouldn't look "cramped" either 
+!! but need to be a bit smaller than regular buttons and the
+!! same as the menu bar
+*optionMenu*marginHeight: 	0
+*optionMenu*marginTop: 	5
+*optionMenu*marginBottom: 	5
+*optionMenu*marginWidth: 	0
+!! option menu panes are more like pulldown menus than buttons
+*optionPane*XmPushButton*marginHeight:	1
+*optionPane*XmPushButton*marginWidth:	1
+*optionPane*XmPushButton*marginLeft:		3
+*optionPane*XmPushButton*marginRight:	3
+!! we don't really want fat buttons on control panel
+*ControlPanel*XmPushButton.marginHeight:	2
+*ControlPanel*XmPushButton.marginWidth: 	2
+
+!! move the text in lists slightly right to improve legibility
+*XmList*listMarginWidth:        3
+
+!! height of menuBar should be 22 pixels 
+*menuBar*marginHeight: 	1
+*menuBar.marginHeight: 	0
+*menuBar*marginLeft:  	1
+*menuBar.spacing:  		7
+*XmMenuShell*marginLeft:  	3
+*XmMenuShell*marginRight:  	4
+!! spacing between indicator and label should be only 6 in menus
+*XmMenuShell*XmToggleButtonGadget*spacing: 	 	2
+*XmMenuShell*XmToggleButtonGadget*marginHeight:  	0
+*XmMenuShell*XmToggleButtonGadget*indicatorSize: 	10
+
+*XmMenuShell*XmLabelGadget*marginHeight: 4
+
+!! spacing between indicator and label should be 8 outside of menus
+*XmToggleButtonGadget*spacing: 	4
+*XmToggleButton*spacing: 		4
+
+!! spacing between scrollbars and clients should be 2 pixels
+*XmScrolledWindow*spacing: 		0
+*CallStack*XmScrolledWindow*spacing: 		2
+*ExpressionView*XmScrolledWindow*spacing: 	-4
+
+!! for some bizarre reason, setting the SourceView scrollBar to 20
+!! yields 10 pixels across the top of the thumb where the
+!! ExpressionView and the CallStack need 18 to get the same thing
+*ExpressionView*XmScrollBar*width: 18
+*XmScrollBar*width:     18
+*SourceView*XmScrollBar*width: 	   20
+!! for the CallStack's horizontal scrollBar
+*XmScrollBar*height:    18
+
+!! sliders should be slightly narrower than scrollbars ->
+!! 12 pixels across the trough as opposed to 14
+*XmScale*scaleHeight:   20
+
+!! in a perfect world, text fields would be the same size as buttons
+!! (28 pixels including shadow) but since lucidatypwriter14 is really
+!! only 13 pixels, our text fields will be 27 pixels high
+*XmText*marginHeight:    4
+
+!!
+!! Color Mappings
+!!
+
+*foreground:			 	Black
+*background:			 	#c1c1c1
+*XmList*background:     	#999999
+*XmPushButton*background:	 	#adadad
+*XmText.background:		 	#c19797
+*XmTextField.background:	 	#c19797
+*troughColor: 		 	#848484
+
+!! color all dialogs, warnings, and errors the same
+*XmSelectionBox*background:	 	#c1c1c1
+*XmSelectionBox*XmText*background:	 	#c19797
+*XmMessageBox*background:	 	#c1c1c1
+
+!! color all radio and toggle buttons when they are selected
+*fillOnSelect:		True
+*visibleWhenOff:		True
+*selectColor:		#ffff00
+
+!! highlights for keyboard traversal
+*highlightColor:		 	Black
+*XmText*highlightThickness:		1
+*XmTextField*highlightThickness:	1
+*XmPushButton*highlightThickness:	1
+!! no need for anything else to highlight itself
+*highlightThickness:	0
+
+
+
+
+
+

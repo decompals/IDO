@@ -1,0 +1,40 @@
+#ifndef GAMMA_1_0
+#define  HighlightForeground    #ffffff
+#define  TrapColor        	#e60909
+#define	 ScrollBarTrapColor	#ff1414
+#define	 InactiveTrapColor	#9c0008
+#define	 ScrollBarInactiveTrapColor	#ff0000
+#define  ProgramCounterColor    #003d10
+#define	 ScrollBarProgramCounterColor	#005800
+#define  CallstackContext       #c27600
+#define	 ScrollBarCallstackContext	#756d14
+#define  SearchColor		#140043
+#define  ScrollBarSearchColor	#43217f
+#define  TimeLineBackground	#212538
+#define  ChartFillStyle		FillSolid
+#define  ChartLineStyle0	LineSolid
+#define  ChartLineStyle1	LineSolid
+#define  ChartLineStyle2	LineSolid
+#define  ChartLineStyle3	LineSolid
+#else
+#define  HighlightForeground    #ffffff
+#define  TrapColor        	#ed1818
+#define	 ScrollBarTrapColor	#ff2a2a
+#define	 InactiveTrapColor	#b40016
+#define	 ScrollBarInactiveTrapColor	#ff0000
+#define  ProgramCounterColor    #035c23
+#define	 ScrollBarProgramCounterColor	#007700
+#define  CallstackContext       #d29300
+#define	 ScrollBarCallstackContext	#928b2a
+#define  SearchColor		#290362
+#define  ScrollBarSearchColor	#623c9b
+#define  TimeLineBackground	#3c4056
+#define  ChartFillStyle		FillSolid
+#define  ChartLineStyle0	LineSolid
+#define  ChartLineStyle1	LineSolid
+#define  ChartLineStyle2	LineSolid
+#define  ChartLineStyle3	LineSolid
+#endif
+
+
+

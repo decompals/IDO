@@ -1,0 +1,41 @@
+<HEAD>
+<body bgcolor="#fffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+<TITLE>Customizing CITE</TITLE>
+<!-- Changed by: Suresh Srinivas,  9-Apr-1996 -->
+</HEAD>
+
+<BODY>
+<P>
+<BR> <HR> <P>
+ <H1>Customizing CITE</H1>
+<HR>
+
+<P>
+There are a few things you could customize using CITE. For a list of
+variables you could change try the "Options" toolbar button.
+</P>
+
+<P>
+For example in my <tt> .emacs </tt> file I have the following code
+right after the <tt> (load-file  "/usr/lib/cite/xemacs-elisp/cite.elc") </tt>
+line. This customizes my environment to not have the Vi Menu on my menubar
+as well as not bringing up a shell window on startup.
+</P>
+
+<PRE>
+      (add-hook 'cite-hook (function (lambda ()
+                                        (setq cite-shell-on-startup "FALSE")
+                                        (setq cite-vi-menu-showing "FALSE"))))
+</PRE>
+
+</BODY>
+</HTML>
+<BR> <HR>
+<P><ADDRESS>
+<I>Suresh Srinivas (ssuresh@mti) <BR>
+<FONT SIZE="-3"> </FONT><FONT SIZE="-1"> Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT><BR>
+May 30th 1996</I> <BR>
+<BR>
+<BR>
+</ADDRESS>
+</BODY>

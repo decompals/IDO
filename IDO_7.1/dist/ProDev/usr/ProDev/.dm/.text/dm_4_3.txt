@@ -1,0 +1,4 @@
+
+About the Debugger
+Pro Dev WorkShop Debugger provides a powerful environment for visually debugging code.  You have special views for displaying program data graphically.  Data updates dynamically during execution.
+You get fast data watchpoints and other traps, debugging at machine level, and graphical views of variables, source-level expressions, arrays, and data structures. 

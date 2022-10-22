@@ -1,0 +1,300 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	General
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! need application class name for font stuff to override Scheme
+! default grid spacing.  Value of zero makes lines invisible for *showGrid 
+! default spacing 0 reduces height of window
+*defaultSpacing:    0
+!*showGrid:	    True
+
+! need this to allow window to shrink back to 2-channel size
+*SgGrid.resizePolicy: resize_any
+
+*keyboardFocusPolicy: pointer
+
+!This allows the help server to display a useful message if a user tries to
+!access help and doesn't have the book installed.
+*helpSubSys:    dmedia_eoe.books.MediaCtls_UG
+*helpTitle:     Audio Panel
+
+! Help: Product Information 
+*dialogTitle:  Audio Panel
+*productInfo:  Audio Panel - Audio Hardware State Monitor\nVersion 3.0\n\n\
+Copyright 1995 Silicon Graphics, Inc. All Rights Reserved\n
+
+apanel*highlightThickness: 0
+
+*useSchemes:	    Colors, Fonts, Spacing
+*scheme:	    Base
+*useSmallFonts:	    True
+
+! Buffed Motif
+*schemeFileList:   SgiSpec
+*sgiMode:	    True
+*useEnhancedFSB:    True
+!*samplingRateOptionMenus:    True
+
+! must be multiple of 11 to accomodate 11 meter segments (149) NOT [126-142,150-154]
+*slider.scaleHeight:	149
+*slider.scaleWidth:	22
+	
+! Default minimum width for 2 channel mode.  Since menu width
+! often exceeds size of GUI features, minimum window width specification 
+! prevents menu from wrapping to two lines.  Most unsightly !!
+*minimumWindowWidth2Channel: 255       
+*minimumWindowWidth4Channel: 329      
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	Meters, Slider Tick Marks
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! meter segment dimensions (change *spacing to 0 to get "continuous" metering)
+*meter.width:		8
+*meter.spacing:		1
+*meter.size:		18
+! need this to space segment side bars 1 pixel away from side of widget
+*meter.borderWidth:	1
+
+! these help line up meter segment labels with segments
+apanel*meterSegmentLabelBox*fontList: -*-helvetica-medium-r-normal-*-11-*-*-*-*-*-iso8859-1
+apanel*meterSegmentLabelBox.minSpacing: 1
+apanel*meterSegmentLabelBox.height: 149
+
+
+! meter labels
+*label_0.labelString: C
+*label_1.labelString: 0
+*label_2.labelString: 2
+*label_3.labelString: 4
+*label_4.labelString: 7
+*label_5.labelString: 10
+*label_6.labelString: 20
+*label_7.labelString: 30
+*label_8.labelString: 40
+*label_9.labelString: 50
+*label_10.labelString: 60
+
+*meterFrame.spacing:		1
+*meterFrame.shadowThickness:	2
+*meterFrame.shadowType:		XmSHADOW_IN
+
+!tickLabel1:  0..10,  tickLabel2: 0..11, tickLabel3: -30 .. +18
+! to get -18 .. +30 for decibel scale tick marks
+*tickLabel3.signedLabels: True
+
+*tickLabel1.majorSize:   8
+*tickLabel2.majorSize:   8
+*tickLabel3.majorSize:   8
+*tickLabel1.minorSize:   5
+*tickLabel2.minorSize:   5
+*tickLabel3.minorSize:   5
+*tickLabel1.labelSpacing:   1
+*tickLabel2.labelSpacing:   1
+*tickLabel3.labelSpacing:   1
+
+apanel*tickLabel1*fontList: -*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+apanel*tickLabel2*fontList: -*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+apanel*tickLabel3*fontList: -*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+
+*leftLabel: L
+*rightLabel: R
+*leftLabel.labelString: L
+*rightLabel.labelString: R
+apanel*leftLabel*fontList: -*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+apanel*rightLabel*fontList: -*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	Input Controls
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! for Drawing Area Class
+*listeningLED.width:	    4
+*listeningLED.height:	    10
+*listeningLEDFrame.shadowThickness: 2
+*listeningLEDFrame.shadowType:	    XmSHADOW_IN
+
+*inputSourceTitle.labelString: Input:
+apanel*inputSourceTitle*fontList: -*-helvetica-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+*inputSourceLabel: Microphone
+*inputSourceLabel.labelString: Microphone
+apanel*inputSourceLabel*fontList: -*-helvetica-medium-o-normal-*-14-*-*-*-*-*-iso8859-1
+
+apanel*inputSlider1Label*fontList:-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1=regular,-*-helvetica-medium-r-normal-*-8-*-*-*-*-*-iso8859-1=subscript
+apanel*inputSlider2Label*fontList:-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1=regular,-*-helvetica-medium-r-normal-*-8-*-*-*-*-*-iso8859-1=subscript
+apanel*inputSlider3Label*fontList:-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1=regular,-*-helvetica-medium-r-normal-*-8-*-*-*-*-*-iso8859-1=subscript
+apanel*inputSlider4Label*fontList:-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1=regular,-*-helvetica-medium-r-normal-*-8-*-*-*-*-*-iso8859-1=subscript
+
+*meterToggle.labelString:	Meter
+*monitorToggle.labelString:	Monitor
+*muteToggle.labelString:	Mute
+
+apanel*meterToggle*fontList:	-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+apanel*monitorToggle*fontList:	-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+apanel*muteToggle*fontList:	-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	Output Controls
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! for proper right alignment, NO spaces after label
+*speakerLabel.labelString: Speaker
+apanel*speakerLabel*fontList: -*-helvetica-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	Menu
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+apanel*menuBar.spacing:    1
+
+! File menu title
+*menuTitleFile.labelString:	    File
+*menuTitleFile.mnemonic:	    F
+*fileMenuItemNew.labelString:	    New
+*fileMenuItemOpen.labelString:	    Open ...
+*fileMenuItemSave.labelString:	    Save
+*fileMenuItemSaveAs.labelString:    Save As ...
+*fileMenuItemQuit.labelString:	    Exit
+
+*fileMenuItemNew.mnemonic:	    N
+*fileMenuItemOpen.mnemonic:	    O
+*fileMenuItemSave.mnemonic:	    S
+*fileMenuItemSaveAs.mnemonic:	    A
+*fileMenuItemQuit.mnemonic:	    x
+
+*fileMenuItemNew.acceleratorText:     Ctrl+N
+*fileMenuItemNew.accelerator:         Ctrl<Key>n
+
+*fileMenuItemOpen.acceleratorText:    Ctrl+O
+*fileMenuItemOpen.accelerator:        Ctrl<Key>o
+
+*fileMenuItemSave.acceleratorText:    Ctrl+S
+*fileMenuItemSave.accelerator:        Ctrl<Key>s
+
+*fileMenuItemQuit.acceleratorText:    Ctrl+Q
+*fileMenuItemQuit.accelerator:        Ctrl<Key>q
+
+! Source menu title
+*menuTitleInput.labelString:		Input
+*menuTitleInput.mnemonic:		I
+
+*inputSourceMicrophone:			Microphone
+*inputSourceLine:			Line
+*inputSourceDigital:			Digital
+*inputSourceMicrophone.labelString:	Microphone
+*inputSourceLine.labelString:		Line
+*inputSourceDigital.labelString:	Digital
+
+*inputSourceMicrophone.mnemonic:	M
+*inputSourceLine.mnemonic:		L
+*inputSourceDigital.mnemonic:		D
+
+*inputSourceLine.value:			0
+*inputSourceMicrophone.value:		1
+*inputSourceDigital.value:		2
+
+! Rate menu title
+*menuTitleRate.labelString:				Rate
+*menuTitleRate.mnemonic:				R
+*menuTitleRate*inputSamplingRateSubMenu.labelString:    Input Rate 
+*menuTitleRate*outputSamplingRateSubMenu.labelString:   Output Rate
+
+*menuTitleRate*inputSamplingRateSubMenu.mnemonic:	I
+*menuTitleRate*outputSamplingRateSubMenu.mnemonic:	O
+
+! Options menu title
+
+*menuTitleOptions.labelString:				Options
+*menuTitleOptions.mnemonic:				O
+
+*launchRBView.labelString:	Audio Queue Monitor
+
+*independentInputSliders.labelString:	Input Sliders Independent
+*independentOutputSliders.labelString:	Output Sliders Independent 
+*listeningLED.labelString:		Listening LED 
+*decibelScale.labelString:		Decibel Scale 
+
+*fourChannelMode.labelString:		Four Channel Mode 
+*stereoMicrophone.labelString:		Stereo Microphone 
+*flatPanelDisplay.labelString:		Presenter Audio 
+
+*independentInputSliders.mnemonic:	I
+*independentOutputSliders.mnemonic:	O
+*listeningLED.mnemonic:			L
+*decibelScale.mnemonic:			D
+
+*fourChannelMode.mnemonic:		F
+*stereoMicrophone.mnemonic:		S
+*flatPanelDisplay.mnemonic:		P
+
+
+!  Presenter LCD graphics option support
+
+! for proper right alignment, NO spaces after label
+*presenterOutputLabel.labelString: Speakers
+apanel*presenterOutputLabel*fontList: -*-helvetica-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+
+*toneSliderLabel.labelString: Tone
+apanel*toneSliderLabel*fontList: -*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+
+
+!!!! General Strings
+*AudioPanel:    Audio Panel
+*Presenter:	    Presenter
+*PresenterAudio:    Presenter Audio
+*kHz:		    kHz
+*Dunno:		    ???
+
+! NOTE to language localizer.  If you don't want the sampling rate strings to be 
+! clipped, you must specify your longest string here.
+*LongestSamplingRateStringDigital:  Digital 44.1 kHz
+*LongestSamplingRateString:	    11.025 kHz
+
+apanel*samplingRateLabel1*fontList: -*-helvetica-medium-o-normal-*-14-*-*-*-*-*-iso8859-1
+apanel*samplingRateLabel13*fontList: -*-helvetica-medium-o-normal-*-14-*-*-*-*-*-iso8859-1
+
+*samplingRateLabel1.labelString: 8 kHz
+*samplingRateLabel2.labelString: 11.025 kHz
+*samplingRateLabel3.labelString: 16 kHz
+*samplingRateLabel4.labelString: 22.05 kHz
+*samplingRateLabel5.labelString: 32 kHz
+*menuSamplingRateLabel6.labelString: 44.1 kHz (CD)
+*samplingRateLabel6.labelString: 44.1 kHz
+*samplingRateLabel7.labelString: 48 kHz
+*samplingRateLabel8.labelString: Digital
+*samplingRateLabel9.labelString: Input Rate
+*samplingRateLabel13.labelString: Digital 44.1 kHz
+
+*InputRate:	Input Rate
+*Digital:	Digital
+*12Digital:	1/2Digital
+*13Digital:	1/3Digital
+*14Digital:	1/4Digital
+*16Digital:	1/6Digital
+*23Digital:	2/3Digital
+
+*samplingRateLabel1.value:	    8000
+*samplingRateLabel2.value:	    11025
+*samplingRateLabel3.value:	    16000
+*samplingRateLabel4.value:	    22050
+*samplingRateLabel5.value:	    32000
+*menuSamplingRateLabel6.value:	    44100
+*samplingRateLabel6.value:	    44100
+*samplingRateLabel7.value:	    48000
+*samplingRateLabel8.value:	    -2
+*samplingRateLabel9.value:	    -1
+
+
+!!!! Warning/Error messages
+*NoAudioDriver:			This machine has no audio driver.
+*CannotOperate:			Audio Panel cannot operate.
+
+*SaveAs:			Save As
+*OpenFile:			Open File
+
+*NoFileName:			No file name!
+*NotAFile:			Not a file!
+*BadParameterInFile:		Bad parameter in file
+*UnableToOpenFileForReading: Unable to open file for reading
+*UnableToOpenFileForWriting: Unable to open file for writing
+*FailedToWriteToFile:	    Failed to write to file
+*UnableToSecureAudioPortForMetering:	Unable to secure Audio Port for metering
+
+

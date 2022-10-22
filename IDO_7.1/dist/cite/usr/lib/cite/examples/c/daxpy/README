@@ -1,0 +1,18 @@
+
+When you try to annotate the innerloops in the two subroutines, you
+will see that the first loop gets software pipelined and scheduled
+in much fewer cycles than the second one. 
+
+The reason for this is potential aliasing that could occur between the
+parameters in the second subroutine. Therefore the scheduler has no way of
+moving the loads and stores. In the second loop you will see code
+sequences of the form 
+  ld
+  ld
+  madd
+  st
+  ld
+  ld
+  madd
+  st
+etc.

@@ -1,0 +1,96 @@
+#!/sbin/sh
+#
+#	Install a flexlm license 
+#
+#	This file should be installed nohist and executed in an postop
+#	to install a flexlm license entry
+#
+#	Replace all instances of <_VAR_NAME_> with the actual values
+#
+
+##########################################################################
+# Customomize the following area for the license
+##########################################################################
+
+
+
+FEATURE="WorkShop"
+DAEMON="sgifd"
+VERSION="2.000"
+EXPIRATION="01-jan-0"
+NUMLICENSES="0"
+PASSWORD="0"
+VENDORINFO="Developer Magic/ProDev WorkShop"
+ISSUER="Silicon Graphics, Inc."
+INFO="Evaluation"
+
+HOSTID="ANY"
+
+# Uncomment the following two lines if you are installing a license template
+# or a license for a specific host
+#SYSINFO=`/etc/sysinfo -s`
+#HOSTID=`echo $SYSINFO 16o p | dc`
+
+LICENSEDIR="/var/flexlm"
+LICENSEFILE="license.dat"
+
+
+##########################################################################
+# The following remains the same for all licenses
+##########################################################################
+
+
+# Use the following pattern to confirm that the license lines already exists
+
+SEARCHLINE="FEATURE $FEATURE $DAEMON $VERSION"
+
+if test -r "$LICENSEDIR/$LICENSEFILE"
+then
+    if grep "$SEARCHLINE" "$LICENSEDIR/$LICENSEFILE" > /dev/null
+    then 
+        # license line exists, nothing further to do
+	exit 0
+    else
+	# Need to add license to existing file
+	if test -w "$LICENSEDIR/$LICENSEFILE"
+	then
+            true
+	else 
+	    echo "No permission to write to $LICENSEDIR/$LICENSEFILE" 1>&2
+	    exit 1
+	fi
+    fi
+else
+    # create the directory if needed
+
+    if test -d "$LICENSEDIR"
+    then
+	true
+    else 
+        if mkdir -p "$LICENSEDIR"
+	then
+	    true
+	else 
+	    exit 1
+	fi
+    fi
+
+    # try to create the file
+
+    if touch "$LICENSEDIR/$LICENSEFILE"
+    then
+        true
+    else 
+	exit 1
+    fi
+fi
+
+# Add the license lines
+
+echo "FEATURE $FEATURE $DAEMON $VERSION $EXPIRATION $NUMLICENSES $PASSWORD HOSTID=$HOSTID \\" >> "$LICENSEDIR/$LICENSEFILE"
+echo "\tvendor_info=\"$VENDORINFO\" \\" >> "$LICENSEDIR/$LICENSEFILE"
+echo "\tISSUER=\"$ISSUER\" \\" >> "$LICENSEDIR/$LICENSEFILE"
+echo "\tuser_info=\"$INFO\"" >> "$LICENSEDIR/$LICENSEFILE"
+echo  >> "$LICENSEDIR/$LICENSEFILE"
+
+exit 0

@@ -1,0 +1,56 @@
+<HEAD>
+<TITLE>Loop Level Information through CITE </TITLE>
+<!-- Changed by: Suresh Srinivas, 15-Feb-1996 -->
+</HEAD>
+<BODY bgcolor="#fffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+
+
+<HR>
+<H1>Loop Level Information through CITE</H1>
+<HR>
+
+<BR>
+
+<P>
+In this section we will use a simple program to show the kinds of things
+that are possible from within CITE. Think of it as a short tutorial on
+using CITE.
+</P>
+
+<P>
+Consider the following program (it has been loaded into
+XEmacs/CITE).  It has two loop nests. As written the <I>first loop nest</I> 
+suffers from performance problems. Any guesses why?
+</P>
+
+<P>
+<IMG SRC="interchange1.gif" ALIGN="MIDDLE" WIDTH="601" HEIGHT="730" SGI_SETWIDTH SGI_SETHEIGHT></P>
+
+<P>
+Remember that fortran arrays are stored in memory in column major
+order.  So what does that mean? Each iteration of the inner loop (<tt>
+'j' </tt> loop) might result in a cache miss for the array reference
+<tt> a(i,j) </tt>.  So this loop nest has <B> poor cache
+performance</B>.  The <I>second loop nest</I> is in the <B>correct
+order</B> and achieves <B>better cache performance</B>. 
+</P>
+
+<P>
+Since MIPS Pro Compiler is a cache aware compiler it will automatically interchange
+the loops in the first loop nest we will see from CITE
+</P>
+
+<A HREF="cite-interchange-annotate.html" TARGET="display"> Annotating Loop Nests in CITE</A><BR>
+
+<A HREF="cite-interchange-detail.html" TARGET="display">Obtaining Detailed Loop Information through CITE</A><BR>
+
+<BR>
+<BR>
+<HR>
+<P><ADDRESS>
+<I>Suresh Srinivas (ssuresh@mti) <BR>
+<FONT SIZE="-3"> </FONT><FONT SIZE="-1"> Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT><BR>
+May 30th 1996</I> <BR>
+<BR>
+<BR>
+</ADDRESS>

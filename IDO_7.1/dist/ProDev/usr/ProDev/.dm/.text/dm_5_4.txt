@@ -1,0 +1,17 @@
+#5.4
+The Performance Analyzer
+The Performance Analyzer is ideal for locating memory leaks, bad frees, CPU bottlenecks, memory/swap bottlenecks, and I/O bottlenecks.
+
+Lets review the various ways that you can optimize your code using the Performance Analyzer.
+Exercise:
+Select a performance task by clicking on the menu to the right of "Performance Task:"
+This performance task measures machine resource activity when your program is being slowed down by I/O calls and you want to find the responsible code.
+"Get Total Time per function"
+CPU Time
+Ideal Time (pixie)
+Use "Trace I/O activity" when your program is being slowed down by I/O calls and you want to find the responsible code.
+Use "Trace system calls" when you suspect that system calls are slowing down performance and you wish to determine the responsible code.
+This performance task indicates high page faulting activity and identifies the responsible code.
+Use "Find memory Leaks" to identify where memory leaks and bad frees may occur.
+Use "Find Floating Point Exceptions" when you suspect that large, unaccountable periods of time are being spent in floating point exception handlers.
+"Custom Task" lets you analyze your code's performance based on parameters that you define.

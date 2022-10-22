@@ -1,0 +1,6 @@
+###5.8
+Performance Data in Source View
+Double-clicking any function brings up Source View (or Main View) containing the function's code, with the performance statistics in the left column.
+Double-click the node representing the sum1 function.
+Main View appears, showing performance data by source line.  Lines consuming excessive time appear with yellow indicators.
+Click on the bottom right arrow to continue.

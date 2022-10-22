@@ -1,0 +1,73 @@
+#!/bin/csh
+
+#
+#	Check the user id.
+#
+if (-x /usr/bin/id) then
+	set ID = `id  |  sed 's/[^a-z0-9=].*//'`
+	if ($ID != "uid=0") then
+	       	echo "Only root can run cvconfig."
+		goto usage
+		exit 1
+	endif
+endif
+
+#
+# Check arguments
+#
+if ($#argv != 1) then
+	goto usage
+endif
+
+#
+# Get argument, and set ptype file based on it.
+#
+# For clearcase, clear .cvconfig file, otherwise set appropriate value in it.
+
+set configFile =  /usr/lib/WorkShop/.cvconfig
+set newPTypeFile = ""
+switch ($1)
+	case	"rcs":
+	case	"sccs":
+	case	"ptools":
+		set newPTypeFile = /usr/lib/WorkShop/config/tooltalk/cvsur.ptype
+		echo $1 > $configFile
+		breaksw
+	case	"clearcase":
+		set newPTypeFile = /usr/atria/config/tooltalk/tt_cm.types
+		/bin/rm -f $configFile
+		breaksw
+	default
+		goto usage
+		exit
+endsw
+
+# Kill off old request service processes
+/etc/killall clearencap_tt
+/etc/killall cvsur
+
+#
+# Clobber old ptypes, then install the new ptype.
+#
+
+/usr/sbin/tt_type_comp -dsystem -r CM
+/usr/sbin/tt_type_comp -dsystem -r SGI_CV_CVSUR
+echo "Installing ptype $newPTypeFile"
+/usr/sbin/tt_type_comp -dsystem $newPTypeFile
+
+#
+# Update existing ttsession processes
+#
+/etc/killall -USR2 ttsession
+
+exit 0
+
+#
+# usage function.
+#
+
+usage:
+echo "Usage: $0 rcs|sccs|ptools|clearcase"
+echo "\tUse $0 to configure your WorkShop environment\
+\tto use one of the above configuration managment systems."
+exit 1

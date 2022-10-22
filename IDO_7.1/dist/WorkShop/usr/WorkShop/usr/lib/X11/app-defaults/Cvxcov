@@ -1,0 +1,544 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! VIEW Common Resources                                                       !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*keyboardFocusPolicy:	pointer
+
+*sgiMode:		true
+*schemeFileList:	CaseVision
+*paletteFileList:	CaseVisionPalette
+*useSchemes:		all
+*useEnhancedFSB:        true
+
+*XmMenuShell*tearOffModel:		tear_off_enabled
+
+*useTtutil:		True
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*popupMenu*XmMenuShell*tearOffModel:        tear_off_disabled
+
+!
+! Launch menu labels
+!
+*launchMenu.labelString:	Launch Tool
+*launchMenu.mnemonic:		L
+
+!
+! Project menu labels
+!
+*projectMenu.labelString:		Project
+*projectMenu.mnemonic:			P
+*projectIconify.labelString:		Iconify
+*projectIconify.mnemonic:		I
+*projectRaise.labelString:		Raise
+*projectRaise.mnemonic:			R
+*projectRemapPaths.labelString:		Remap Paths...
+*projectRemapPaths.mnemonic:		m
+*projectProjectView.labelString:	Project View...
+*projectProjectView.mnemonic:		P
+*projectExit.labelString:		Exit
+*projectExit.mnemonic:			E
+
+!
+! Static Analyzer Query Menu Labels
+!
+*queryMenu.labelString: Query
+*queryMenu.mnemonic: Q
+
+*qmGeneral.labelString: General
+*qmGeneral.mnemonic: G
+*qmMacros.labelString: Macros
+*qmMacros.mnemonic: M
+*qmFunctions.labelString: Functions
+*qmFunctions.mnemonic: F
+*qmVariables.labelString: Variables
+*qmVariables.mnemonic: V
+
+*qmWhereSymbolDefined.labelString:	Where Defined ?
+*qmWhereMacroDefined.labelString:		Where Defined ?
+*qmWhereVariableDefined.labelString:	Where Defined ?
+*qmWhereFunctionDefined.labelString:	Where Defined ?
+
+!
+! Option menu labels
+!
+*optionMenu.labelString:
+
+
+
+!
+! Resource for determining what languages file suffixes indicate.
+! Used by cvsource and cvstatic
+!
+*suffixSource:		C++.c++ C++.C C++.cxx C++.h C++.cpp C++.cc C.c  Fortran.f Fortran.F Fortran90.f90 Ada.adb
+
+!!!!
+!!! NLS Messages
+!!!!
+*useNetLSLicense:					False
+*disableLicenseWarnings:              FALSE
+*disableThirtyDayLicenseWarnings:     FALSE
+
+*thirtyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of WorkShop.        
+*sixtyDayMessage:            Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*ninetyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*noLicenseServerMessage:     Unable to locate a license server.  Consult \nthe WorkShop Release Notes for information on\nsetting up your network license server.
+*notEnoughLicensesMessage:   No WorkShop licenses are available at this time. Contact\nyour sales representative or dealer to purchase additional\nlicenses or try again later.
+!
+*Evaluation*sixtyDayMessage:
+*Evaluation*ninetyDayMessage:
+*Evaluation*thirtyDayMessage: Your evaluation license for WorkShop\nwill expire in %d days.\n\nTo purchase a permanent license or extend\nyour evaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html\n\nor email: demolicense@sgi.com
+!
+*Evaluation*licenseExpiredMessage: Your evaluation period for WorkShop\nhas expired. \n\nTo purchase a permanent license or extend your\nevaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html or\n\nemail: demolicense@sgi.com
+!
+*noFlexlmLicenseMessage: WorkShop could not find a valid FlexLM license.\n\nIf you have an existing NetLS license for an earlier version of\nWorkShop, click on OK to use your old license.  Please contact Silicon\nGraphics to obtain a FlexLM replacement for your old license.  To avoid\nseeing this dialog again, set the "useNetLSLicense" resource in the\napplication defaults file to "True".\n\nTo obtain an Evaluation or Permanent license, please visit our license\nrequest web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*noLicenseMessage: Unable to find a WorkShop license.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*licenseExpiredMessage:      Your WorkShop License has expired.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*warnLoseLicenseMessage:     Unable to renew your software license.  Consult\nthe NetLS LSSERVER Release Notes for information on\ntroubleshooting your license server and network services.
+*regainLicenseMessage:       WorkShop license regained.
+*enterLicenseMessage: WorkShop requires a license. Please enter your license\nkey and click OK. Temporary license keys are available at the\nfollowing web site\n\nhttp://www.sgi.com/Products/license.html\n\nor call our technical support hotline at 1-800-800-4SGI.\n\nIf you have an existing NetLS license for a previous version of\nWorkShop, you can click Cancel to try to find a NetLS\nlicense.
+
+!!!!!
+!!!   Turn off all Xt and Motif warning messages
+!!!!!
+
+! This should be off when we ship, but ON for internal testing
+
+*silenceWarnings:  TRUE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of VIEW Common Resources                                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! VIEW Common Resources                                                       !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*keyboardFocusPolicy:	pointer
+
+*schemeFileList:	CaseVision
+*paletteFileList:	CaseVisionPalette
+*useSchemes:		all
+*baseScheme:		Base
+*defaultScheme:		Lascaux
+*tearOffModel:		tear_off_enabled
+
+*useTtutil:		True
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*popupMenu*tearOffModel:	tear_off_disabled
+
+!!
+!! For WorkShop 2.1, use the old Help menu arrangement
+!!
+*useOldMenuArrangement:		True
+
+!
+! Launch menu labels
+!
+*launchMenu.labelString:	Launch Tool
+*launchMenu.mnemonic:		L
+
+!
+! Project menu labels
+!
+*projectMenu.labelString:		Project
+*projectMenu.mnemonic:			P
+*projectIconify.labelString:		Iconify
+*projectIconify.mnemonic:		I
+*projectRaise.labelString:		Raise
+*projectRaise.mnemonic:			R
+*projectRemapPaths.labelString:		Remap Paths...
+*projectRemapPaths.mnemonic:		m
+*projectProjectView.labelString:	Project View...
+*projectProjectView.mnemonic:		P
+*projectExit.labelString:		Exit
+*projectExit.mnemonic:			E
+
+!
+! Static Analyzer Query Menu Labels
+!
+*queryMenu.labelString: Query
+*queryMenu.mnemonic: Q
+
+*qmGeneral.labelString: General
+*qmGeneral.mnemonic: G
+*qmMacros.labelString: Macros
+*qmMacros.mnemonic: M
+*qmFunctions.labelString: Functions
+*qmFunctions.mnemonic: F
+*qmVariables.labelString: Variables
+*qmVariables.mnemonic: V
+
+*qmWhereSymbolDefined.labelString:	Where Defined ?
+*qmWhereMacroDefined.labelString:		Where Defined ?
+*qmWhereVariableDefined.labelString:	Where Defined ?
+*qmWhereFunctionDefined.labelString:	Where Defined ?
+
+!
+! Option menu labels
+!
+*optionMenu.labelString:
+
+!!!!
+!!! NLS Messages
+!!!!
+
+*disableLicenseWarnings:              FALSE
+*disableThirtyDayLicenseWarnings:     FALSE
+
+*thirtyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of WorkShop.   
+*sixtyDayMessage:            Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*ninetyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*noLicenseServerMessage:     Unable to locate a license server.  Consult Chapter 5\nof the WorkShop Release Notes for information on\nsetting up your network license server.
+
+*notEnoughLicensesMessage:   No WorkShop licenses are available at this time. Contact\nyour sales representative or dealer to purchase additional\nlicenses or try again later.
+*noLicenseMessage:           Unable to find a WorkShop license. Consult Chapter 5\nof the WorkShop Release Notes for information on\ninstalling network licenses or contact your sales\nrepresentative or dealer to purchase WorkShop licenses.
+*licenseExpiredMessage:      Your WorkShop license has expired. Consult Chapter 5\nof the WorkShop Release Notes for information on\ninstalling network licenses or contact your sales or\nservice representative to register your software or\nto purchase WorkShop licenses.
+
+*warnLoseLicenseMessage:     Unable to renew your software license.  Consult Chapter 5\nof the 2.0 NetLS LSSERVER Release Notes for information on\ntroubleshooting your license server and network services.
+*regainLicenseMessage:       WorkShop license regained.
+
+!!!!!
+!!!   Turn off all Xt and Motif warning messages
+!!!!!
+
+*silenceWarnings:  TRUE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of VIEW Common Resources                                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! Cvxcov Resources                                                      !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!*keyboardFocusPolicy:                  Explicit
+
+! default color scheme included here so that users do not have
+! to modify their .Xdefaults files when system is first installed
+
+*schemeFileList:        CaseVision
+*paletteFileList:       CaseVisionPalette
+
+! Sourec for not sharing source view with other tools
+*Cvxcov*cvsourceNoShare:        False
+
+*arcDrawMode:           		position_fixed
+Cvxcov*SgGraph*arcDirection:            directed
+*SgGraph*highlightThickness:    	1
+
+!
+! VkGraph specific resources
+!
+Cvxcov*zoomList:  zoom1 zoom2 zoom3 zoom4  zoom5 zoom6  zoom7 zoom8
+
+Cvxcov*zoom1*childSpacing:     5
+Cvxcov*zoom1*siblingSpacing:   1
+Cvxcov*zoom1*fontList:         nil2
+Cvxcov*zoom1.labelString:      15%
+
+Cvxcov*zoom2*childSpacing:    8
+Cvxcov*zoom2*siblingSpacing:  2
+Cvxcov*zoom2*fontList:        5x8
+Cvxcov*zoom2.labelString:     40%
+
+Cvxcov*zoom3*childSpacing:    13
+Cvxcov*zoom3*siblingSpacing:  3
+Cvxcov*zoom3*fontList:         -*-helvetica-medium-r-normal--8-*-*-*-*-*-iso8859-1
+Cvxcov*zoom3.labelString:     60%
+
+Cvxcov*zoom4*childSpacing:    16
+Cvxcov*zoom4*siblingSpacing:  4
+Cvxcov*zoom4*fontList:         -*-helvetica-medium-r-normal--10-*-*-*-*-*-iso8859-1
+Cvxcov*zoom4*labelString:     80%
+Cvxcov*zoom5*childSpacing:    20
+Cvxcov*zoom5*siblingSpacing:  5
+Cvxcov*zoom5*fontList:         -*-helvetica-medium-r-normal--12-*-*-*-*-*-iso8859-1
+Cvxcov*zoom5*labelString:     100%
+
+Cvxcov*zoom6*childSpacing:    30
+Cvxcov*zoom6*siblingSpacing:  8
+Cvxcov*zoom6*fontList:         -*-helvetica-medium-r-normal--17-*-*-*-*-*-iso8859-1
+Cvxcov*zoom6*labelString:     150%
+
+Cvxcov*zoom7*childSpacing:    40
+Cvxcov*zoom7*siblingSpacing:  10
+Cvxcov*zoom7*fontList:        -*-helvetica-medium-r-normal--24-*-*-*-*-*-iso8859-1
+Cvxcov*zoom7*labelString:     200%
+
+Cvxcov*zoom8*childSpacing:    60
+Cvxcov*zoom8*siblingSpacing:  15
+Cvxcov*zoom8*fontList:        -*-helvetica-medium-r-normal--34-*-*-*-*-*-iso8859-1
+Cvxcov*zoom8*labelString:     300%
+
+Cvxcov*defaultZoom:  4
+
+Cvxcov*graph*popupMenu*hideNode*labelString:                  Hide Node
+Cvxcov*graph*popupMenu*collapseSubgraph*labelString:          Collapse Subgraph
+Cvxcov*graph*popupMenu*expandOneLevel*labelString:            Show Immediate
+Children
+Cvxcov*graph*popupMenu*expandSubgraph*labelString:            Expand Subgraph
+Cvxcov*graph*popupMenu*hideParents.labelString:               Hide Parents
+Cvxcov*graph*popupMenu*expandParents.labelString:             Show Parents
+Cvxcov*graph*popupMenu*hideSelectedNodes.labelString:         Hide Selected Nodes
+Cvxcov*graph*popupMenu*selectedNodes.labelString:             Selected Nodes
+Cvxcov*graph*popupMenu*collapseSelectedNodes.labelString:     Collapse Selected Nodes
+Cvxcov*GraphCommands*showOverview*labelString:                Overview
+Cvxcov*GraphCommands*twinsVisible*labelString:                Show Twins
+Cvxcov*GraphCommands*relayGraph*labelString:                  Relay
+Cvxcov*GraphCommands*toggleLayout*labelString:                V/H
+
+Cvxcov*overview_main_menu*showOverviewArcs*labelString:       Show Arcs
+Cvxcov*overview_main_menu*skewOverviewScale*labelString:      Scale to Fit
+Cvxcov*overview_main_menu.labelString:                        Admin
+Cvxcov*overview_main_menu*quit*labelString:                   Close
+
+Cvxcov*popup_overview_main_menu*showOverviewArcs*labelString:         Show Arcs
+Cvxcov*popup_overview_main_menu*skewOverviewScale*labelString:        Scale to Fit
+Cvxcov*popup_overview_main_menu.labelString:                          Admin
+Cvxcov*popup_overview_main_menu*quit*labelString:                     Close
+
+Cvxcov*tree_view_overview*title:                  WorkShop Tester: Call Tree Overview
+
+Cvxcov*tree_view_overview*geometry:              =370x350
+Cvxcov*testContrib*geometry:                     =570x550
+Cvxcov*testContrib*title:                        Test Contribution
+
+!|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+!
+! Cvxcov specific resources
+!
+!|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+Cvxcov.geometry:                        600x640
+Cvxcov.cvxcov.title:                    WorkShop Tester
+*adminMenu.labelString:			Admin
+*testMenu.labelString:			Test
+*viewsMenu.labelString:			Views
+*queryMenu.labelString:			Queries
+*optionMenu.labelString:		Options
+
+*adminMenu.saveResult.labelString:	Save Results
+*adminMenu.print.labelString:		Print
+*adminMenu.cloneOutputView.labelString:	Clone Execution View
+*adminMenu.setDefaults.labelString:	Set Defaults
+*adminMenu.quit.labelString:		Exit
+
+*testMenu.runInstrument.labelString:	Run Instrumentation	
+*testMenu.runTest.labelString:		Run Test	
+*testMenu.makeTest.labelString:		Make Test	
+*testMenu.deleteTest.labelString:	Delete Test
+*testMenu.listTest.labelString:		List Tests
+*testMenu.modifyTestSet.labelString:	Modify Test
+*testMenu.copyTest.labelString:		Copy Test
+
+
+*viewsMenu.textCallTree.labelString:	Text View 
+*viewsMenu.graphCallTree.labelString:	Call Tree View
+*viewsMenu.barGraphView.labelString:	Bar Graph View
+
+
+*queryMenu.listSummary.labelString:	List Summary
+*queryMenu.listFunctions.labelString:	List Functions
+*queryMenu.listBlocks.labelString:	List Blocks
+*queryMenu.listBranches.labelString:	List Branches
+*queryMenu.listArcs.labelString:	List Arcs
+*queryMenu.listArgumentTraces.labelString:	List Argument Traces
+*queryMenu.listInstrument.labelString:	List Instrumentation 
+*queryMenu.listLine.labelString:	List Line Coverage 
+*queryMenu.describeTest.labelString:	Describe Test
+*queryMenu.testComparision.labelString:	Compare Test	
+
+*adminMenu.mnemonic:                    A
+*testMenu.mnemonic:                     T
+*viewsMenu.mnemonic:                    V
+*queryMenu.mnemonic:                    Q
+*optionMenu.mnemonic:                   O
+*adminMenu.saveResult.mnemonic:         S
+*adminMenu.print.mnemonic:              P
+*adminMenu.cloneOutputView.mnemonic:    C
+*adminMenu.setDefaults.mnemonic:        D
+*adminMenu.quit.mnemonic:               E
+*testMenu.runInstrument.mnemonic:       I
+*testMenu.runTest.mnemonic:             R
+*testMenu.makeTest.mnemonic:            M
+*testMenu.deleteTest.mnemonic:          D
+*testMenu.listTest.mnemonic:            L
+*testMenu.modifyTestSet.mnemonic:       T
+*testMenu.copyTest.mnemonic:       	C
+*viewsMenu.textCallTree.mnemonic:       T
+*viewsMenu.graphCallTree.mnemonic:      C
+*viewsMenu.barGraphView.mnemonic:       B
+*queryMenu.listSummary.mnemonic:        S
+*queryMenu.listFunctions.mnemonic:      F
+*queryMenu.listBlocks.mnemonic:         B
+*queryMenu.listBranches.mnemonic:       h
+*queryMenu.listArcs.mnemonic:           A
+*queryMenu.listArgumentTraces.mnemonic: T
+*queryMenu.listInstrument.mnemonic:	I
+*queryMenu.listLine.mnemonic:		L
+*queryMenu.describeTest.mnemonic:       D
+*queryMenu.testComparision.mnemonic:    C
+
+*saveQueryFileBrowser_popup*title:      Save Query File Browser
+
+*TestManager_popup.title: 		Make Test
+*copyTest_popup.title: 			Copy Test
+*instr_file_popup.title: 		Run Instrumentation
+*removeTest_popup.title: 		Delete Test 
+*workDir_popup.title: 			Set Defaults
+*listTest_popup.title: 			List Tests 
+*resultList_popup.title: 		Target List 
+*filter_popup.title: 			Filters 
+*runtest_popup.title: 			Run Test 
+*modifyTset_popup.title: 		Modify Test
+
+*silenceWarnings:  TRUE
+
+
+*testLabel.labelString:                 Test Name:
+*showArgFlag.labelString:               Show Function Arguments 
+*queryTestLabel.labelString:            Query Test :
+*testSetTest.labelString:               Test Set
+*singleTest.labelString:                Single Set
+*okButton.labelString:                  Apply
+*sViewButton.labelString:               Source
+*disVButton.labelString:                Disassembly
+*sortButton.labelString:                Sort
+*sortButton.topOffset:                  7
+
+*fromNameLabel.labelString:		Source:
+*toNameLabel.labelString:		Destination:
+*recursiveFlagButton.labelString:	Recursive
+*funcNameLabel.labelString:             Func Name:
+*funcCoverage.labelString:              Func Coverage
+*funcInstrButton.labelString:           Function List
+*testListButton.labelString:            Experiment List
+*weightFactor.labelString:              Weight:
+*func.labelString:                      Func:
+*block.labelString:                     Block:
+*branch.labelString:                    Branch:
+*blocks.labelString:                    Blocks
+*branches.labelString:                  Branches
+*arc.labelString:                       Arc:
+*line.labelString:                      Line:
+*filters.labelString:                   Filters
+*caller.labelString:                    Caller
+*callee.labelString:                    Callee
+*contribButton.labelString:		Contribution
+*instrFileLabel.labelString:		Instrument File:
+*instrDirLabel.labelString:		Instrument Dir:
+*ok.labelString:			OK
+*Done.labelString:			Apply
+*Cancel.labelString:			Close
+*commandLine.labelString:		Command Line:
+*instrumentFileName.labelString:	Instrument File:
+*instrumentDir.labelString:		Instrument Dir:
+*programVersion.labelString:		Program Version:
+*testNameLabel.labelString:		Test Name:
+*testTypeLabel.labelString:		Test Type:
+*description.labelString:		Description:
+*selectLabel.labelString:		Select:
+*testSelectLabel.labelString:		Test List:
+*testIncludeLabel.labelString:		Test Include List:
+*instrDirLabel.labelString:		Instrument Dir:
+*instrFileLabel.labelString:		Instrument File:
+*recursiveButton.labelString:		Recursive List
+*versionNameLabel.labelString:		Version Number:
+*forceFlagButton.labelString:		Force Run
+*keepFlagButton.labelString:		Keep Performance Data
+*noarcFlagButton.labelString:		No Arc Data
+*removeSubFlagButton.labelString:	Remove Subtest Expt
+*accumulateFlagButton.labelString:	Accumulate Results
+*nodeName.labelString:                  Search Node:
+*fullButton.labelString:                Full 
+*partialButton.labelString:             Butterfly
+*searchLabel.labelString:		Search: 
+*funcOptionMenu.labelString:            Function Count:
+*blockOptionMenu.labelString:           Block Count[%]:
+*branchOptionMenu.labelString:          Branch Count[%]:
+*funcDiff.labelString:  	        Diff Functions
+*testCompLabel1.labelString:		Experiment 1:
+*testCompLabel2.labelString:		Experiment 2:
+*workDirLabel.labelString:              Working Dir:
+*testGroup.labelString:                 Test Group
+*targetLabel.labelString:               Targets:
+*incLabel.labelString:                  Included
+*exLabel.labelString:                   Excluded
+*ncLabel.labelString:                   Not Covered
+*nextPage.labelString:                  Next Page
+*prevPage.labelString:                  Previous Page
+*expt1Label.labelString:                Expt1:
+*expt2Label.labelString:                Expt2:
+*execNameLabel.labelString:             Executable:
+*execList.labelString:                  Executable List:
+
+*XmPushButton.height: 			30
+*XmPushButton.width:  			80
+*testListButton.width: 			120
+*disVButton.width: 			100
+*execListVButton.width: 		100
+*contribButton.width: 			100
+*execListButton.width: 			120
+*nextPage.width:                	120
+*prevPage.width:                	120
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! cvxcovExec application specific resources                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*cvxcovExec.title: Execution View
+
+*cvxcovExec*text.editable:			False
+*cvxcovExec*text.cursorPositionVisible:	False
+*cvxcovExec*TerminalCommand: xwsh -geometry 60x10+#OverrideOffsetX+#OverrideOffsetY -name #ResName -title #Name -fg #FgPixel -bg #BgPixel -nomenu -xrm "*autoFork: False" -xrm "*allowSendEvents: True" -xrm "*overrideRedirect: True" -display #Display -e #Shell
+*cvxcovExec*UseTerminalGeometry:	True
+
+*cvxcovExec*text.bottomOffset:			10
+*cvxcovExec*bottomButtons.bottomOffset:		10
+*cvxcovExec*bottomButtons.rightOffset:		10
+*cvxcovExec*bottomButtons.marginHeight:		0
+*cvxcovExec*bottomButtons.marginWidth:		0
+*cvxcovExec*bottomButtons.orientation:		XmHORIZONTAL
+*cvxcovExec*bottomButtons.packing:			XmPACK_COLUMN
+*cvxcovExec*dismissButton.labelString:		Close
+*cvxcovExec*helpButton.labelString:			Help
+*xhangWaitTimeout:					10000
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of ExecutionView application specific resources                         !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!
+! Source View resources
+!
+Cvxcov*test*testData*labelString:    Counts
+Cvxcov*test*testData*canvasWidth:    60
+Cvxcov*textEdit.columns:             60

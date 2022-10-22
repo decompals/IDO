@@ -1,0 +1,24 @@
+#3.8
+Using the Static Analyzer
+Making a "query" of the Static Analyzer pulls the information you requested from the database.
+
+To display this information use the "View" menu.  
+Click on the "View" menu to see how you can view information from your code.
+
+
+
+Text View
+Call Tree View
+Class Tree View
+File Dependency View
+The Results Filter
+
+
+
+
+
+"Text View" quickly displays query results in a text format.  You can sort this text output  using the "Sort" option int the "Admin" menu.
+"Call Tree View" is used when a "Function" query has been made.  It displays a tree diagram of functions and the static calls between functions.
+"Class Tree View" is used when a "Class" query has been made.  It displays a class inheritance tree.
+"File Dependency View" is used when a "File" query has been made.  It displays a tree diagram of the relationship between files.
+"The Results Filter" is used to filter the results of a query.  You can then use the other views to display the filtered information. 

@@ -1,0 +1,115 @@
+Resource
+  VkNVkWebViewer_showControls : Argument { 
+    Forced = True;
+    NeverVerify = True;
+    SimpleView = True;
+    SetRoutine = "SetComponentResource";
+    Type = boolean;
+    XtRname = "Boolean";
+    XtRsize = sizeofChar;
+
+  };
+
+  VkNVkWebViewer_url : Argument { 
+    Forced = True;
+    NeverVerify = True;
+    SimpleView = True;
+    SetRoutine = "SetComponentResource";
+    Type = string;
+    XtRname = "String";
+    XtRsize = sizeofPointer;
+
+  };
+
+  VkNVkWebViewer_file : Argument { 
+    Forced = True;
+    NeverVerify = True;
+    SimpleView = True;
+    SetRoutine = "SetComponentResource";
+    Type = filename;
+    XtRname = "String";
+    XtRsize = sizeofPointer;
+
+  };
+
+  VkNVkWebViewer_cacheSize : Argument { 
+    Forced = True;
+    NeverVerify = True;
+    SimpleView = True;
+    SetRoutine = "SetComponentResource";
+    Type = integer;
+    XtRname = "Int";
+    XtRsize = sizeofLong;
+
+  };
+
+  VkNVkWebViewer_cacheDir : Argument { 
+    Forced = True;
+    NeverVerify = True;
+    SimpleView = True;
+    SetRoutine = "SetComponentResource";
+    Type = filename;
+    XtRname = "String";
+    XtRsize = sizeofPointer;
+
+  };
+
+  VkNVkWebViewer_simulCount : Argument { 
+    Forced = True;
+    NeverVerify = True;
+    SimpleView = True;
+    SetRoutine = "SetComponentResource";
+    Type = integer;
+    XtRname = "Int";
+    XtRsize = sizeofLong;
+
+  };
+
+  VkNVkWebViewer_cacheLimit : Argument { 
+    Forced = True;
+    NeverVerify = True;
+    SimpleView = True;
+    SetRoutine = "SetComponentResource";
+    Type = integer;
+    XtRname = "Int";
+    XtRsize = sizeofLong;
+
+  };
+
+Class
+  VkWebViewer : Widget {
+     SuperClass = "VkComponentImporter";
+     XtLiteral = "vkStubWidgetClass";
+     IncludeFile = "<Vk/VkWebViewer.h>";
+     Movement = SetValues;
+     ChildPosition = Ignored;
+  Resources
+  {
+      VkNVkWebViewer_showControls {};
+      VkNVkWebViewer_url {};
+      VkNVkWebViewer_file {};
+      VkNVkWebViewer_cacheDir {};
+      VkNVkWebViewer_simulCount {};
+  };
+};
+
+
+ControlList
+  AllWidgets {
+         AllWidgets;
+         VkWebViewer;
+  };
+
+
+ControlList
+  AllWidgetsAndGadgets {
+         AllWidgetsAndGadgets;
+         VkWebViewer;
+  };
+
+
+ControlList
+  BasicManagers {
+         BasicManagers;
+         VkWebViewer;
+  };

@@ -1,0 +1,21 @@
+#2.5
+The ProDev WorkShop Advantage
+Drag the ProDev WorkShop advantage on the left onto the appropriate match on the right.
+ multiprocess debugging
+ supports multiple languages
+ fast watchpoints
+ memory corruption detection
+ a debugger that can attach to...
+ performance tuning
+ C, C++, FORTRAN, MIPS Assembly, Ada
+ locates CPU, memory/swap, and I/O bottlenecks
+ detects memory leaks and bad frees
+ a running process and can analyze a core dump file
+ run, stop, and kill child processes
+ monitor variables without slowing your program
+multiprocess debugging that can run, stop, and kill child processes
+support for multiple languages such as C, C++, FORTRAN, MIPPS Assembly (Ada soon!)
+fast watchpoints that monitor variables without slowing your program
+memory corruption detection to pinpoint memory leaks and bad frees
+a debugger that can attach to a running process and can analyze a core dump file
+performance tuning that locates CPU, memory/swap, and I/O bottlenecks

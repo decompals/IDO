@@ -1,0 +1,12 @@
+<MKLOG name='./books/OpenGL_PG/index' version='-1' date='Sat Mar  9 21:08:50 1996' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    10681, offset 28734, on   Sat Mar  9 21:08:54 1996.
+
+FLUSH    3: Element    25466, offset 22042, on   Sat Mar  9 21:08:59 1996.
+
+MERGE vocab.dat :   3 files, Vocab size  8837 on                           .
+
+MERGE index.dat :   3 files, Vocab size  8837 on                           .
+
+DONE MAKING BOOK
+

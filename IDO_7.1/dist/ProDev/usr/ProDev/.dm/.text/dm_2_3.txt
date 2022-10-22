@@ -1,0 +1,15 @@
+#2.3
+The Developer Magic Environment
+Click on each phase of the code development process to learn more about Developer Magic's comprehensive development environment.
+RapidApp lets you easily create Motif style GUIs.  It also contains development libraries and toolkits for creating advanced Motif applications.
+Developer Magic libraries and toolkits give you the programming advantage in real-time graphics, interactive 3D programs, and integrated digital media.
+Developer Magic provides you with a superior set of libraries, tools, and compilers that makes your job faster and easier.
+RapidApp and ProDev WorkShop are fast and reliable development tools for creating advanced and complex code.
+WorkShop provides visual tools for code analysis, debugging, performance tuning, and testing.  
+
+WorkShop can be used on C, C++, FORTRAN, Ada, and assembly code. 
+CADRE lets you create data flow diagrams, flowcharts, and pseudo-code.
+ClearCase is a configuration management system specifically designed for large-scale, long-lived software projects. 
+
+Tracker lets you build a database that is integrated with e-mail and ClearCase.  Tracker is often used to track bugs.
+The IRIS compilers are highly optimized, robust compilers for Fortran 77, ANSI C, C++, Pascal, and Ada.

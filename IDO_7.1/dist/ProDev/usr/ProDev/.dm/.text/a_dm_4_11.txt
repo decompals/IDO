@@ -1,0 +1,6 @@
+###4.11
+Pop up Expression Evaluator
+The Debugger has several methods for evaluating variables. One method is using the mouse button.
+Right-click in the source display to bring up the Expression Evaluation menu. Next, select "Click to Evaluate" 
+Now click the variables dx, conec, and dr one at a time to view each of their values.  When you are done, click on the bottom right arrow to continue.
+

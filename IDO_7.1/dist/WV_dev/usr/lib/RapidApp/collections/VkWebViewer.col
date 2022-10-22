@@ -1,0 +1,20 @@
+module main_uil
+version = 'V1.0'
+names = case_sensitive
+
+object vkwebviewer  : VkWebViewer widget { 
+
+  arguments {
+    XmNlibraryName = "libwebviewer.so";
+    XmNlinkLib = "-lwebviewer, -lwio";
+    XmNisLiveComponent = true;
+    XmNincludePath = "<Vk/VkWebViewer.h>";
+    XmNclassName = "VkWebViewer";
+    XmNdropMap = "HTMLDocument:file,AsciiTextFile:file";
+    XmNx = 0;
+    XmNy = 0;
+    XmNwidth =  540;
+    XmNheight = 510;
+    };
+};
+end module;

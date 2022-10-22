@@ -1,0 +1,141 @@
+#!/bin/ksh -p
+#Tag 0x00010990001
+#----------------------------------------------------------------------
+# 4Dbug startup script.
+#
+# Searches for a 4Dbug settings file in the current directory or in
+# the user's home directory or in the global defaults directory, and
+# uses the default arguments there.
+#----------------------------------------------------------------------
+
+: set -xv
+
+SettingsFile='.cvDebugger'
+SystemDir=/usr/lib/WorkShop
+BinDir=/usr/lib/WorkShop
+
+if [[ -f ./${SettingsFile} ]] then
+  File=./${SettingsFile}
+elif [[ -f ${HOME}/${SettingsFile} ]] then
+  File=${HOME}/${SettingsFile}
+elif [[ -f ${SystemDir}/system${SettingsFile} ]] then
+  File=${SystemDir}/system${SettingsFile}
+else
+  File=${SettingsFile}
+fi
+
+if [[ -t 0 ]] && [[ ! -r ~/.wshttymode ]] && [[ -w ~ ]] ; then
+        /bin/stty -g > ~/.wshttymode
+fi
+
+ViewArgs=''
+
+if [[ -f ${File} ]] then
+  ViewArgs=`grep '^Cvmain.args:' ${File} | sed -e '2,$d' -e 's/Cvmain.args: //'`
+fi
+
+hasPID () {
+        for arg; do
+                if [[ $arg = -P ]] ; then
+                        return 0
+                fi
+        done
+        return 1
+}
+
+procforIDnamed () {
+        typeset id=$1 pname=$2
+
+        if ((id == 0)) ; then
+                /bin/ps -fe
+        else
+                /bin/ps -fu$id
+        fi |
+        while read uname pid ppid flag rest; do
+                if [[ $pname = $(echo ${rest#.........} |
+	                /bin/sed -e 's/^[^ ]* *[^ ]* *[^ ]*[- ]*//' \
+			-e 's/ .*//' \
+                        -e 's:.*/::') ]] ; then
+	
+	                echo "$uname $pid $ppid $flag $rest"
+                fi
+        done
+
+}
+
+if hasPID "$@" ; then
+        typeset newargs
+
+        set -A newargs -- "$@"
+
+        typeset -i parg=0
+
+        while ((parg < ${#newargs[@]})) && [[ ${newargs[parg]} != -P ]] ; do
+                ((parg+=1))
+        done
+
+        unset newargs[parg]
+
+        typeset pname=${newargs[parg+1]}
+
+        typeset id=$(/usr/bin/id)
+        id=${id#uid=}
+        id=${id%%\(*}
+
+
+        typeset matches match=0
+        
+
+        procforIDnamed $id $pname |
+        while read line; do
+                matches[match]="$line"
+                ((match+=1))
+        done
+
+        unset newargs[parg] newargs[parg+1]
+
+        if (( ${#matches[@]} == 0 )) ; then
+
+                if ((id != 0)) && [[ -n $(procforIDnamed 0 $pname) ]] ; then
+                        echo ${0##*/}: A process named $pname exists, but you do not have permission to debug it:
+                        procforIDnamed 0 $pname
+                else
+                        echo ${0##*/}: Sorry, no debuggable program named $pname.
+                fi >&2
+                exit 1
+
+        elif (( ${#matches[@]} == 1 )) ; then
+
+                newargs[parg]=-pid
+
+                newargs[parg+1]=${matches## }
+                newargs[parg+1]=${newargs[parg+1]#* }
+                newargs[parg+1]=${newargs[parg+1]%% *}
+
+        else
+                echo >&2 "Choose one of these processes by index, or "
+                echo >&2 "enter 0 to start a debugger with no target process."
+
+                : ${#matches[@]}
+
+                select choice in "${matches[@]}" ; do
+
+                        if [[ -n "$choice" ]] ; then
+                                newargs[parg]=-pid
+
+                                newargs[parg+1]=${choice## }
+                                newargs[parg+1]=${newargs[parg+1]#* }
+                                newargs[parg+1]=${newargs[parg+1]%% *}
+                        fi
+
+                        break
+                done
+        fi
+                
+
+        set -- "${newargs[@]}"
+        
+fi
+
+
+exec ${BinDir}/cvmain "$@" ${ViewArgs} -MainView -ExecutionView

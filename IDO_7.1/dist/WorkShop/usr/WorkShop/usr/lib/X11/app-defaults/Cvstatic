@@ -1,0 +1,1435 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! VIEW Common Resources                                                       !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*keyboardFocusPolicy:	pointer
+
+*sgiMode:		true
+*schemeFileList:	CaseVision
+*paletteFileList:	CaseVisionPalette
+*useSchemes:		all
+*useEnhancedFSB:        true
+
+*XmMenuShell*tearOffModel:		tear_off_enabled
+
+*useTtutil:		True
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*popupMenu*XmMenuShell*tearOffModel:        tear_off_disabled
+
+!
+! Launch menu labels
+!
+*launchMenu.labelString:	Launch Tool
+*launchMenu.mnemonic:		L
+
+!
+! Project menu labels
+!
+*projectMenu.labelString:		Project
+*projectMenu.mnemonic:			P
+*projectIconify.labelString:		Iconify
+*projectIconify.mnemonic:		I
+*projectRaise.labelString:		Raise
+*projectRaise.mnemonic:			R
+*projectRemapPaths.labelString:		Remap Paths...
+*projectRemapPaths.mnemonic:		m
+*projectProjectView.labelString:	Project View...
+*projectProjectView.mnemonic:		P
+*projectExit.labelString:		Exit
+*projectExit.mnemonic:			E
+
+!
+! Static Analyzer Query Menu Labels
+!
+*queryMenu.labelString: Query
+*queryMenu.mnemonic: Q
+
+*qmGeneral.labelString: General
+*qmGeneral.mnemonic: G
+*qmMacros.labelString: Macros
+*qmMacros.mnemonic: M
+*qmFunctions.labelString: Functions
+*qmFunctions.mnemonic: F
+*qmVariables.labelString: Variables
+*qmVariables.mnemonic: V
+
+*qmWhereSymbolDefined.labelString:	Where Defined ?
+*qmWhereMacroDefined.labelString:		Where Defined ?
+*qmWhereVariableDefined.labelString:	Where Defined ?
+*qmWhereFunctionDefined.labelString:	Where Defined ?
+
+!
+! Option menu labels
+!
+*optionMenu.labelString:
+
+
+
+!
+! Resource for determining what languages file suffixes indicate.
+! Used by cvsource and cvstatic
+!
+*suffixSource:		C++.c++ C++.C C++.cxx C++.h C++.cpp C++.cc C.c  Fortran.f Fortran.F Fortran90.f90 Ada.adb
+
+!!!!
+!!! NLS Messages
+!!!!
+*useNetLSLicense:					False
+*disableLicenseWarnings:              FALSE
+*disableThirtyDayLicenseWarnings:     FALSE
+
+*thirtyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of WorkShop.        
+*sixtyDayMessage:            Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*ninetyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*noLicenseServerMessage:     Unable to locate a license server.  Consult \nthe WorkShop Release Notes for information on\nsetting up your network license server.
+*notEnoughLicensesMessage:   No WorkShop licenses are available at this time. Contact\nyour sales representative or dealer to purchase additional\nlicenses or try again later.
+!
+*Evaluation*sixtyDayMessage:
+*Evaluation*ninetyDayMessage:
+*Evaluation*thirtyDayMessage: Your evaluation license for WorkShop\nwill expire in %d days.\n\nTo purchase a permanent license or extend\nyour evaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html\n\nor email: demolicense@sgi.com
+!
+*Evaluation*licenseExpiredMessage: Your evaluation period for WorkShop\nhas expired. \n\nTo purchase a permanent license or extend your\nevaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html or\n\nemail: demolicense@sgi.com
+!
+*noFlexlmLicenseMessage: WorkShop could not find a valid FlexLM license.\n\nIf you have an existing NetLS license for an earlier version of\nWorkShop, click on OK to use your old license.  Please contact Silicon\nGraphics to obtain a FlexLM replacement for your old license.  To avoid\nseeing this dialog again, set the "useNetLSLicense" resource in the\napplication defaults file to "True".\n\nTo obtain an Evaluation or Permanent license, please visit our license\nrequest web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*noLicenseMessage: Unable to find a WorkShop license.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*licenseExpiredMessage:      Your WorkShop License has expired.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*warnLoseLicenseMessage:     Unable to renew your software license.  Consult\nthe NetLS LSSERVER Release Notes for information on\ntroubleshooting your license server and network services.
+*regainLicenseMessage:       WorkShop license regained.
+*enterLicenseMessage: WorkShop requires a license. Please enter your license\nkey and click OK. Temporary license keys are available at the\nfollowing web site\n\nhttp://www.sgi.com/Products/license.html\n\nor call our technical support hotline at 1-800-800-4SGI.\n\nIf you have an existing NetLS license for a previous version of\nWorkShop, you can click Cancel to try to find a NetLS\nlicense.
+
+!!!!!
+!!!   Turn off all Xt and Motif warning messages
+!!!!!
+
+! This should be off when we ship, but ON for internal testing
+
+*silenceWarnings:  TRUE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of VIEW Common Resources                                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Beginning of cvstatic appdefaults
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*keyboardFocusPolicy:	pointer
+
+! default color scheme included here so that users do not have
+! to modify their .Xdefaults files when system is first installed
+
+*schemeFileList: 	CaseVision
+*paletteFileList: 	CaseVisionPalette
+
+Cvstatic*text_view*visibleItemCount:                     20
+Cvstatic*input_field_text*columns:                       30
+!Cvstatic.geometry:                                      =700x480
+Cvstatic*buildShell.geometry:                           =570x400
+Cvstatic*buildShell*title:         			Build Shell	
+Cvstatic*call_tree_view_overview*geometry:              =300x350
+Cvstatic*class_tree_view_overview*geometry:             =300x350
+Cvstatic*file_dependency_view_overview*geometry:        =300x350
+Cvstatic*quit.labelString:  				Exit
+Cvstatic*close.labelString:  				Close
+
+!! Query Labels
+
+Cvstatic*general.labelString: 				General
+Cvstatic*macros.labelString:   				Macros
+Cvstatic*variables.labelString:   			Variables
+Cvstatic*functions.labelString:   			Functions
+Cvstatic*files.labelString:       			Files
+
+!! DBVXref Enhancement Query Labels
+Cvstatic*commonBlocks.labelString:       		Common Blocks
+Cvstatic*types.labelString:       			Types
+Cvstatic*directories.labelString:      			Directories
+Cvstatic*packages.labelString:				Packages
+Cvstatic*taggedtypes.labelString:			Tagged Types
+Cvstatic*tasktypes.labelString:				Task Types
+
+!! General Queries
+
+Cvstatic*find_string.labelString:			Find String
+Cvstatic*find_string: 					Find String
+Cvstatic*find_regex.labelString: 			Find Regular Expression
+Cvstatic*find_regex: 					Find Regular Expression
+Cvstatic*find_symbol.labelString:			Find Symbol
+Cvstatic*find_symbol: 					Find Symbol
+Cvstatic*find_symbol_def.labelString: 			Where Defined?
+Cvstatic*find_symbol_def: 				Where Defined?
+Cvstatic*find_global_defs.labelString: 			List Global Symbols
+Cvstatic*find_global_defs: 				List Global Symbols
+
+!! DBVXref Enhancement Query Labels
+Cvstatic*where_symbol_used.labelString: 		Where Symbol Used 
+Cvstatic*where_symbol_used: 				Where Symbol Used 
+Cvstatic*list_all_constants.labelString: 		List All Constants 
+Cvstatic*list_all_constants: 				List All Constants 
+
+!! Macros
+
+Cvstatic*find_all_macros.labelString: 			List All Macros
+Cvstatic*find_all_macros: 				List All Macros
+Cvstatic*find_macro_def.labelString: 			Where Defined?
+Cvstatic*find_macro_def:	 			Where Defined?
+Cvstatic*find_macro_ref.labelString: 			Who Uses?
+Cvstatic*find_macro_ref: 				Who Uses?
+Cvstatic*find_macro_undef.labelString: 			Where Undefined?
+Cvstatic*find_macro_undef: 				Where Undefined?
+
+!! DBVXref Enhancement Query Labels
+Cvstatic*list_unused_macros.labelString: 		List Unused Macros 
+Cvstatic*list_unused_macros: 				List Unused Macros 
+
+!! Variables
+
+Cvstatic*list_all_variables*labelString:                List All Global Variables
+Cvstatic*list_all_variables:                  		List All Global Variables
+Cvstatic*list_local_variables*labelString:              List Local Variables
+Cvstatic*list_local_variables:              		List Local Variables
+Cvstatic*who_references.labelString: 			Who References?
+Cvstatic*who_references: 				Who References?
+Cvstatic*who_sets.labelString: 				Who Sets?
+Cvstatic*who_sets: 					Who Sets?
+Cvstatic*where_defined_variable.labelString:  		Where Defined?
+Cvstatic*where_defined_variable:  			Where Defined?
+Cvstatic*who_calls.labelString:  			Who Calls?
+Cvstatic*who_calls:  				        Who Calls?
+Cvstatic*who_is_called_by.labelString:  		Who Is Called By?
+Cvstatic*who_is_called_by:  				Who Is Called By?
+Cvstatic*where_defined_function.labelString:  		Where Defined?
+Cvstatic*where_defined_function:  			Where Defined?
+Cvstatic*list_undefined.labelString:  			List Undefined
+
+!! DBVXref Enhancement Query Labels
+Cvstatic*where_declared.labelString: 			Where Declared  
+Cvstatic*where_declared: 				Where Declared  
+Cvstatic*where_address_taken.labelString: 		Where Address Taken  
+Cvstatic*where_address_taken: 				Where Address Taken  
+Cvstatic*list_unused_variables.labelString:		List Unused Variables  
+Cvstatic*list_unused_variables:				List Unused Variables  
+Cvstatic*where_allocated.labelString: 			Where Allocated  
+Cvstatic*where_allocated: 				Where Allocated  
+Cvstatic*where_deallocated.labelString: 		Where Deallocated  
+Cvstatic*where_deallocated: 				Where Deallocated  
+
+!! Functions
+!! DBVXref Enhancement Query Labels
+Cvstatic*where_function_declared.labelString: 		Where Function Declared 
+Cvstatic*where_function_declared: 			Where Function Declared 
+Cvstatic*list_unused_function.labelString: 		List Unused Function 
+Cvstatic*list_unused_function: 				List Unused Function 
+Cvstatic*list_local_declaration.labelString:		List Local Declarations 
+Cvstatic*list_local_declaration:			List Local Declarations 
+
+Cvstatic*where_function_called.labelString:		Where Function Called 
+Cvstatic*where_function_called:				Where Function Called 
+Cvstatic*where_function_used.labelString:		Where Function Used 
+Cvstatic*where_function_used:				Where Function Used 
+Cvstatic*where_function_called_impicitly.labelString:	Where Function Called Implicitly 
+Cvstatic*where_function_called_impicitly:		Where Function Called Implicitly 
+
+!! Files
+
+Cvstatic*who_includes.labelString:  			Who Includes?
+Cvstatic*who_includes:  				Who Includes?
+Cvstatic*who_is_included_by.labelString:  		Who Is Included By?
+Cvstatic*who_is_included_by:  				Who Is Included By?
+
+Cvstatic*list_all_files*labelString:                    List All Files
+Cvstatic*list_all_files:                      		List All Files
+Cvstatic*list_all_header_files*labelString:             List All Header Files
+Cvstatic*list_all_header_files:                		List All Header Files
+
+Cvstatic*list_matching_files*labelString:               List Matching Files
+Cvstatic*list_matching_files:                      	List Matching Files
+
+Cvstatic*list_all_functions*labelString:                List All Functions
+Cvstatic*list_all_functions:                  		List All Functions
+
+!!
+!! Classes
+!!
+
+Cvstatic*classes.labelString:         			Classes
+Cvstatic*classes:         				Classes
+Cvstatic*list_all_classes.labelString:         		List All Classes
+Cvstatic*list_all_classes:         			List All Classes
+Cvstatic*where_defined_class.labelString:         	Where Defined?
+Cvstatic*where_defined_class:         			Where Defined?
+Cvstatic*who_subclasses_from.labelString:         	List Subclasses
+Cvstatic*who_subclasses_from:         			List Subclasses
+Cvstatic*who_is_superclass_of.labelString:         	List Superclasses
+Cvstatic*who_is_superclass_of:         			List Superclasses
+
+!!
+!! Methods
+!!
+
+Cvstatic*methods.labelString:         			Methods
+Cvstatic*methods:         				Methods
+Cvstatic*list_all_methods.labelString:         		List All Methods
+Cvstatic*list_all_methods:         			List All Methods
+Cvstatic*where_defined_method.labelString:         	Where Defined?
+Cvstatic*where_defined_method:         			Where Defined?
+Cvstatic*where_declared_method.labelString:         	Where Declared?
+Cvstatic*where_declared_method:         	        Where Declared?
+Cvstatic*methods_supported_by.labelString:         	List Methods In Class
+Cvstatic*methods_supported_by:         			List Methods In Class
+Cvstatic*who_supports_method.labelString:         	Who Supports Method?
+Cvstatic*who_supports_method:         			Who Supports Method?
+
+!!
+!! DBVXref Enhancement Query Labels
+!!
+!! Common Blocks
+Cvstatic*list_all_common_blocks.labelString:       	List All Common Blocks	
+Cvstatic*list_all_common_blocks:       			List All Common Blocks	
+Cvstatic*list_all_symbols_in_common_block.labelString: 	List All Symbols in Common Block	
+Cvstatic*list_all_symbols_in_common_block: 		List All Symbols in Common Block	
+Cvstatic*where_common_block_defined.labelString: 	Where Common Block Defined	
+Cvstatic*where_common_block_defined: 			Where Common Block Defined	
+Cvstatic*where_common_block_referenced.labelString: 	Where Common Block Referenced	
+Cvstatic*where_common_block_referenced: 		Where Common Block Referenced	
+
+!! Packages
+Cvstatic*list_all_packages.labelString:       	List All Packages	
+Cvstatic*list_all_packages:       		List All Packages 
+Cvstatic*where_package_defined.labelString:	Where Package Defined	
+Cvstatic*where_package_defined: 		Where Package Defined 
+Cvstatic*list_functions_in_package.labelString: List Functions In Package
+Cvstatic*list_functions_in_package:		List Functions In Package
+Cvstatic*list_data_in_package.labelString:	List Data In Package
+Cvstatic*list_data_in_package:			List Data In Package
+Cvstatic*list_types_in_package.labelString:	List Types In Package
+Cvstatic*list_types_in_package:			List Types In Package
+Cvstatic*where_package_withed.labelString:	Where Package Withed
+Cvstatic*where_package_withed:			Where Package Withed
+
+!! Taggedtypes
+Cvstatic*list_all_taggedtypes.labelString:	List All Tagged Types 
+Cvstatic*list_all_taggedtypes:       		List All Tagged Types
+Cvstatic*where_taggedtype_defined.labelString:	Where Tagged Type Defined 
+Cvstatic*where_taggedtype_defined: 		Where Tagged Type Defined 
+Cvstatic*list_parent_taggedtypes.labelString:	List Parent Tagged Types
+Cvstatic*list_parent_taggedtypes:		List Parent Tagged Types
+Cvstatic*list_derived_taggedtypes.labelString:	List Derived Tagged Types
+Cvstatic*list_derived_taggedtypes:		List Derived Tagged Types
+Cvstatic*list_primitive_operations.labelString:	List Primitive Operations
+Cvstatic*list_primitive_operations:		List Primitive Operations
+Cvstatic*list_components.labelString:		List Components
+Cvstatic*list_components:			List Components
+Cvstatic*where_taggedtype_used.labelString:	Where Tagged Type Used
+Cvstatic*where taggedtype_used:			Where Tagged Type Used
+
+!! Tasktypes
+Cvstatic*list_all_tasktypes.labelString:	List All Task Types 
+Cvstatic*list_all_tasktypes:       		List All Task Types
+Cvstatic*where_tasktype_defined.labelString:	Where Task Type Defined 
+Cvstatic*where_tasktype_defined: 		Where Task Type Defined 
+Cvstatic*list_entries.labelString:		List Entries
+Cvstatic*list_entries:				List Entries
+Cvstatic*list_body_data.labelString:		List Body Data
+Cvstatic*list_body_data:			List Body Data
+Cvstatic*list_body_functions.labelString:	List Body Functions
+Cvstatic*list_body_functions:			List Body Functions
+Cvstatic*list_body_types.labelString:		List Body Types
+Cvstatic*list_body_types:			List Body Types
+Cvstatic*where_tasktype_used.labelString:	Where Task Type Used
+Cvstatic*where_tasktype_used:			Where Task Type Used
+
+!! Types
+Cvstatic*list_all_types.labelString: 			List All Types	
+Cvstatic*list_all_types: 				List All Types	
+Cvstatic*where_type_defined.labelString: 		Where Type Defined	
+Cvstatic*where_type_defined: 				Where Type Defined	
+Cvstatic*list_function_of_type.labelString:		List Functions Of Type	
+Cvstatic*list_function_of_type:				List Functions Of Type	
+Cvstatic*list_data_of_type.labelString:			List Data Of Type	
+Cvstatic*list_data_of_type:				List Data Of Type	
+Cvstatic*where_type_used.labelString:			Where Type Used	
+Cvstatic*where_type_used:				Where Type Used	
+
+!! Directories
+Cvstatic*list_directories_of_source_files.labelString:	List Directories
+Cvstatic*list_directories_of_source_files:		List Directories
+Cvstatic*list_all_files_in_directory.labelString:	List Files
+Cvstatic*list_all_files_in_directory:			List Files
+
+
+Cvstatic*query_history.labelString:  			History
+Cvstatic*file_menu.labelString:    			Admin
+Cvstatic*edit_menu.labelString:    			Edit
+Cvstatic*edit_selected.labelString:    			Edit Selected Item
+Cvstatic*query_menu.labelString:  			Queries
+Cvstatic*longFileNames*labelString:   		        Full Pathnames
+Cvstatic*useSourceView*labelString:   		        Use Source View
+Cvstatic*readOnlyToggle*labelString:   		        Read Only
+Cvstatic*filesetLabel*labelString:   		        Fileset Contents
+Cvstatic*views_menu.labelString:  			Views
+Cvstatic*default_target.labelString:  			Target
+Cvstatic*special_menu.labelString:  			View Options
+Cvstatic*text_view.labelString:  			Text View
+Cvstatic*call_tree_view.labelString:  			Call Tree View
+Cvstatic*class_tree_view.labelString:  			Class Tree View
+Cvstatic*file_dependency_view.labelString:  		File Dependency View
+
+Cvstatic*functionLabel:     Function
+Cvstatic*superclassLabel:   Superclass
+Cvstatic*subclassLabel:     SubClass
+Cvstatic*nameLabel:         Name
+Cvstatic*typeLabel:         Type
+Cvstatic*filenameLabel:     File
+Cvstatic*linenoLabel:       Line
+Cvstatic*sourceLabel:       Source
+
+Cvstatic*showNormalTrees.labelString: 		        Query Only
+Cvstatic*showAlmostFullTrees.labelString: 		All Defined 
+Cvstatic*showIncrementalTrees.labelString: 		Incremental Mode
+Cvstatic*showFullTrees.labelString:  			Complete Tree
+
+Cvstatic*helpMenu.labelString:  		   	Help
+Cvstatic*helpOnContextMenuItem.labelString:  		On Context
+Cvstatic*helpOnWindowMenuItem.labelString:   		On Window...
+Cvstatic*helpIndexMenuItem.labelString:      		Index...
+
+Cvstatic*what_is.labelString: 				What Is?
+Cvstatic*input_field_label.labelString:   		Query Target: 
+Cvstatic*scan.labelString:                		Rescan
+Cvstatic*forceScan.labelString:           		Force Scan
+
+Cvstatic*sort_menu.labelString:                		Sort
+Cvstatic*editFileSet.labelString:         		Edit Fileset...
+Cvstatic*changeFileSet.labelString:       		Change Fileset...
+Cvstatic*showOptionsPanel.labelString:    		General Options...
+Cvstatic*scanningOptions.labelString:     		Set Include Path And Flags...
+Cvstatic*save.labelString:     				Save Query...
+
+!
+! File Manager
+!
+
+Cvstatic*currentFileSet*labelString:       			Current Fileset Name: 
+Cvstatic*fileManager*listLabelString:      			Fileset:
+Cvstatic*fileManager*selectionLabelString: 			File:
+Cvstatic*fileManager*okLabelString:        			Add File
+Cvstatic*fileManager*applyLabelString:     			Remove File(s)
+Cvstatic*fileManager*cancelLabelString:    			File Browser...
+Cvstatic*fileManager*helpLabelString:      			Help
+Cvstatic*fileManager*adjustLast:            			FALSE
+Cvstatic*database_manager*closeButtonfileSet*labelString:      	Close
+Cvstatic*database_manager_popup*title:         			Current Fileset
+Cvstatic*filesetManager_popup*title:         			Fileset Editor
+
+Cvstatic*closeNotFoundList*labelString:       			Close
+Cvstatic*notFoundListDialog_popup*title:       		        Not Found Dialog
+Cvstatic*notFoundListDialog*label*marginWidth:         		20
+Cvstatic*notFoundListDialog*label*marginHeight:   		20
+
+!
+! Scanning Options Dialog
+!
+
+Cvstatic*scanning_manager_popup*title:           	Set Include Path And Flags	
+Cvstatic*scanning_manager*listLabelString: 		Include Directories And Flags:
+Cvstatic*scanning_manager*selectionLabelString: 	Directory/Flag :
+Cvstatic*scanning_manager*okLabelString:      		Add Directory
+Cvstatic*scanning_manager*applyLabelString:      	Add Flags
+Cvstatic*scanning_manager*cancelLabelString:    	Remove
+
+!
+!  File Browser Dialog
+!
+
+Cvstatic*fileBrowser*listLabelString:   			Files
+Cvstatic*fileBrowser*okLabelString:     			Add Selected File(s)
+Cvstatic*fileBrowser*applyLabelString:  			Browse Directory
+Cvstatic*fileBrowser*cancelLabelString: 			Add All Files
+Cvstatic*fileBrowser*helpLabelString:   			Help
+Cvstatic*database_manager_popup*fileBrowserDialog_popup*title:  File Browser
+
+Cvstatic*filesetBrowser_popup*title:     			Fileset Selection Browser
+Cvstatic*filesetBrowser*okLabelString:          		OK
+Cvstatic*filesetBrowser*filterLabelString:     		        File Filter
+Cvstatic*filesetBrowser*selectionLabelString:     		File Selection
+Cvstatic*filesetBrowser*helpLabelString:        		Help
+Cvstatic*filesetBrowser*cancelLabelString:      		Cancel
+
+Cvstatic*optionManager_popup*title:         			General Options
+Cvstatic*call_tree_view*overview_popup*title:              	Call Tree Context View
+Cvstatic*class_tree_view*overview_popup*title:             	Class Tree Context View
+Cvstatic*overview_popup.width:               			325
+Cvstatic*overview_popup.height:              			500
+
+Cvstatic*optionManager.width:               			350
+Cvstatic*optionManager.height:              			200
+
+Cvstatic*showOverviewWindow*labelString:  		Show Context View
+Cvstatic*relayGraph*labelString:          		Relay Graph
+Cvstatic*reorientGraph*labelString:       		Re-Orient Graph
+Cvstatic*wideSpacing*labelString:         		Wide Spacing
+Cvstatic*showTwins*labelString:           		Show Co-incident Connections
+Cvstatic*showCrossingArcs*labelString:    		Show Crossing Arcs
+
+Cvstatic*scope_manager*labelString:      			Results Filter...
+Cvstatic*XmList*visibleItemCount:        			25
+
+Cvstatic*caseSensitiveSearch*labelString:   		Ignore Case In Searches
+
+Cvstatic*aboutApplication*labelString:   			On Version...
+
+Cvstatic*annotations:       	primary  secondary
+*iconCanvasVisible:					False
+
+Cvstatic*noStdIncs.labelString:                                 No Standard Includes
+
+Cvstatic*SgGraph*arcDirection: 					directed
+Cvstatic*SgGraph*highlightThickness: 				1
+Cvstatic*highlightOnEnter: 					False
+
+Cvstatic*default_target_field1.labelString:       Name
+Cvstatic*default_target_field2.labelString:       Function/Method
+Cvstatic*default_target_field3.labelString:       File
+Cvstatic*default_target_field4.labelString:       Class
+Cvstatic*default_target_field5.labelString:       Subclass
+Cvstatic*default_target_field6.labelString:       Superclass
+Cvstatic*default_target_field7.labelString:       None
+Cvstatic*default_target_field1.set:       	  TRUE
+
+Cvstatic*saveQueryFileBrowser_popup*title:             	Save Query File Browser
+Cvstatic*saveQueryFileBrowser*okLabelString:          		OK
+Cvstatic*saveQueryFileBrowser*filterLabelString:     		File Filter
+Cvstatic*saveQueryFileBrowser*selectionLabelString:     	File Selection
+Cvstatic*saveQueryFileBrowser*helpLabelString:        		Help
+Cvstatic*saveQueryFileBrowser*cancelLabelString:      		Cancel
+
+Cvstatic*arcDrawMode:           position_fixed
+
+Cvstatic*zoomList:  zoom1 zoom2 zoom3 zoom4  zoom5 zoom6  zoom7 zoom8
+
+Cvstatic*zoom1*childSpacing:     5
+Cvstatic*zoom1*siblingSpacing:   1
+Cvstatic*zoom1*fontList:         nil2
+Cvstatic*zoom1.labelString:      15%
+
+Cvstatic*zoom2*childSpacing:    8
+Cvstatic*zoom2*siblingSpacing:  2
+Cvstatic*zoom2*fontList:	5x8
+Cvstatic*zoom2.labelString:     40%
+
+Cvstatic*zoom3*childSpacing:    13
+Cvstatic*zoom3*siblingSpacing:  3
+Cvstatic*zoom3*fontList:         -*-helvetica-medium-r-normal--8-*-*-*-*-*-iso8859-1
+Cvstatic*zoom3.labelString:     60%
+
+Cvstatic*zoom4*childSpacing:    16
+Cvstatic*zoom4*siblingSpacing:  4
+Cvstatic*zoom4*fontList:         -*-helvetica-medium-r-normal--10-*-*-*-*-*-iso8859-1
+Cvstatic*zoom4*labelString:     80%
+
+Cvstatic*zoom5*childSpacing:    20
+Cvstatic*zoom5*siblingSpacing:  5
+Cvstatic*zoom5*fontList:         -*-helvetica-medium-r-normal--12-*-*-*-*-*-iso8859-1
+Cvstatic*zoom5*labelString:     100%
+
+Cvstatic*zoom6*childSpacing:    30
+Cvstatic*zoom6*siblingSpacing:  8
+Cvstatic*zoom6*fontList:         -*-helvetica-medium-r-normal--17-*-*-*-*-*-iso8859-1
+Cvstatic*zoom6*labelString:     150%
+
+Cvstatic*zoom7*childSpacing:    40
+Cvstatic*zoom7*siblingSpacing:  10
+Cvstatic*zoom7*fontList:        -*-helvetica-medium-r-normal--24-*-*-*-*-*-iso8859-1
+Cvstatic*zoom7*labelString:     200%
+
+Cvstatic*zoom8*childSpacing:    60
+Cvstatic*zoom8*siblingSpacing:  15
+Cvstatic*zoom8*fontList:        -*-helvetica-medium-r-normal--34-*-*-*-*-*-iso8859-1
+Cvstatic*zoom8*labelString:     300%
+
+Cvstatic*defaultZoom:  4
+
+Cvstatic*graph*popupMenu*hideNode*labelString:       		Hide Node
+Cvstatic*graph*popupMenu*collapseSubgraph*labelString:      	Collapse Subgraph
+Cvstatic*graph*popupMenu*expandOneLevel*labelString:      	Show Immediate Children
+Cvstatic*graph*popupMenu*expandSubgraph*labelString:      	Expand Subgraph
+Cvstatic*graph*popupMenu*hideParents.labelString:      	        Hide Parents
+Cvstatic*graph*popupMenu*expandParents.labelString:      	Show Parents
+Cvstatic*graph*popupMenu*hideSelectedNodes.labelString:      	Hide Selected Nodes
+Cvstatic*graph*popupMenu*selectedNodes.labelString:      	Selected Nodes
+Cvstatic*graph*popupMenu*collapseSelectedNodes.labelString:     Collapse Selected Nodes
+Cvstatic*graph*popupMenu*expandSelectedNodes.labelString:      	Expand Selected Nodes
+Cvstatic*GraphCommands*showOverview*labelString:  		Overview
+Cvstatic*GraphCommands*twinsVisible*labelString:  		Show Twins
+Cvstatic*GraphCommands*relayGraph*labelString:    		Relay
+Cvstatic*GraphCommands*toggleLayout*labelString:  		V/H
+
+Cvstatic*overview_main_menu*showOverviewArcs*labelString:    	Show Arcs 
+Cvstatic*overview_main_menu*skewOverviewScale*labelString:   	Scale to Fit
+Cvstatic*overview_main_menu.labelString:                	Admin
+Cvstatic*overview_main_menu*quit*labelString:                	Close
+
+Cvstatic*popup_overview_main_menu*showOverviewArcs*labelString:    	Show Arcs 
+Cvstatic*popup_overview_main_menu*skewOverviewScale*labelString:   	Scale to Fit
+Cvstatic*popup_overview_main_menu.labelString:                		Admin
+Cvstatic*popup_overview_main_menu*quit*labelString:                	Close
+
+
+Cvstatic*call_tree_view_overview*title:  	Call Tree Overview
+Cvstatic*class_tree_view_overview*title:  	Class Tree Overview
+Cvstatic*file_dependency_view_overview*title:  	File Dependency Overview
+
+Cvstatic*exclude.labelString:         		Exclude
+Cvstatic*include.labelString:         		Constrain
+Cvstatic*includeAlso.labelString:     		Include
+! Cvstatic*scopeDialog*text.columns:     		25
+! Cvstatic*scopeDialog*headertext.columns:     	14
+
+
+! Newly introduced Grid Widget
+Cvstatic*namelabel*labelString:       	Name:
+Cvstatic*functionlabel*labelString:    Function:
+Cvstatic*filelabel*labelString:       	File:
+Cvstatic*dirlabel*labelString:       	Directory:
+Cvstatic*sourcelabel*labelString:   	Source:
+Cvstatic*headerlabel*labelString:   	Headers
+Cvstatic*definedlabel*labelString:   	External Functions
+
+
+Cvstatic*nameRCWidget*orientation:     		horizontal
+Cvstatic*nameRCWidget*label*labelString:       	Name
+
+#Cvstatic*nameRCWidget.entryAlignment:          alignment_end
+#Cvstatic*nameRCWidget*alignment:               alignment_end
+Cvstatic*nameRCWidget.label.alignment:		alignment_end
+Cvstatic*nameRCWidget.y:       			10
+
+Cvstatic*functionRCWidget*orientation:          horizontal
+Cvstatic*functionRCWidget*label*labelString:    Function
+Cvstatic*functionRCWidget.y:      		50
+Cvstatic*functionRCWidget.label.alignment:	alignment_end
+
+Cvstatic*fileRCWidget*orientation:     		horizontal
+Cvstatic*fileRCWidget*label*labelString:       	File
+Cvstatic*fileRCWidget.label.alignment:	alignment_end
+Cvstatic*fileRCWidget.y:       			90
+
+Cvstatic*sourceRCWidget*orientation: 		horizontal
+Cvstatic*sourceRCWidget*label*labelString:   	Source
+Cvstatic*sourceRCWidget.label.alignment:	alignment_end
+Cvstatic*sourceRCWidget.y:       		130
+
+Cvstatic*headerRCWidget*orientation: 		horizontal
+Cvstatic*headerRCWidget*label*labelString:   	Headers
+Cvstatic*headerRCWidget.label.alignment:	alignment_end
+Cvstatic*headerRCWidget.y:       		170
+
+Cvstatic*definedRCWidget*orientation: 		horizontal
+Cvstatic*definedRCWidget.y:       		210
+Cvstatic*definedRCWidget.label.alignment:	alignment_end
+! Cvstatic*scopeDialog*definedtext.columns:     	10
+
+
+! Cvstatic*scopeDialog*separator.y: 		250
+! Cvstatic*scopeDialog*separator.width: 		490
+
+Cvstatic*help*labelString: 			Help
+Cvstatic*scopeDialog*closeButton*labelString: 	Close
+Cvstatic*scopeDialog*clearButton*labelString: 	Clear
+Cvstatic*scopeDialog*applyButton*labelString: 	Apply
+
+! Cvstatic*scopeDialog*help.x: 			430
+! Cvstatic*scopeDialog*help.y: 			275
+! Cvstatic*scopeDialog*closeButton.x: 		285
+! Cvstatic*scopeDialog*closeButton.y: 		275
+! Cvstatic*scopeDialog*clearButton.x: 		160
+! Cvstatic*scopeDialog*clearButton.y: 		275
+! Cvstatic*scopeDialog*applyButton.x: 		20
+! Cvstatic*scopeDialog*applyButton.y: 		275
+
+Cvstatic*currentDirectoryLabel*labelString:  	Browsing Directory:
+Cvstatic*recursiveButton*labelString:        	Include Subdirectories
+Cvstatic*showButton*labelString:             	Show
+Cvstatic*literalButton*labelString: 		Literal Input
+Cvstatic*okButton*labelString: 			OK
+Cvstatic*helpButton*labelString: 		Help
+Cvstatic*cancelButton*labelString: 		Cancel
+Cvstatic*removeButton*labelString: 		Remove
+Cvstatic*fileSetLabel*labelString: 		Current Fileset:
+Cvstatic*fileSetLabel*x:            		475
+Cvstatic*fileSetLabel*y:            		10
+Cvstatic*label1*labelString: 
+Cvstatic*dirCountLabel*labelString: 
+
+Cvstatic*databasemanager*width: 		800
+Cvstatic*databasemanager*height: 		615
+
+
+Cvstatic*fileRadioBox*packing: 			pack_column
+Cvstatic*showAdaButton*labelString: 		Ada
+Cvstatic*showCButton*labelString: 		C
+Cvstatic*showCPlusButton*labelString: 		C++
+Cvstatic*showFortranButton*labelString: 	Fortran
+Cvstatic*scopeManager*labelString:      	Results Filter...
+
+Cvstatic*removeButton*x: 			475
+Cvstatic*removeButton*y: 			518
+Cvstatic*fileSetName*x: 			475
+Cvstatic*fileSetName*y: 			 40
+Cvstatic*fileSetName.columns: 			 35
+
+Cvstatic*literalButton*x: 			600
+Cvstatic*literalButton*y: 			518
+
+Cvstatic*fileRadioBox.x: 			 10
+
+Cvstatic*fileRadioBox.numColumns: 		  1
+
+Cvstatic*fileTextWidget.x: 			475
+Cvstatic*fileTextWidget.y: 			480
+Cvstatic*fileTextWidget.columns: 		 35
+
+
+Cvstatic*directoryListSW.x: 			 10
+Cvstatic*directoryListSW.y: 			120
+Cvstatic*directoryList.width: 			300
+Cvstatic*directoryList.height: 			160
+Cvstatic*directoryList.visibleItemCount: 	  9
+
+
+Cvstatic*fileSetListSW.x: 			475
+Cvstatic*fileSetListSW.y: 			120
+Cvstatic*fileSetList.width: 			300
+Cvstatic*fileSetList.height: 			400
+Cvstatic*fileSetList*visibleItemCount: 		 20
+
+Cvstatic*compilerFileSetList.height: 	  	160
+Cvstatic*compilerFileSetList.visibleItemCount: 	  9
+Cvstatic*scannerFileSetList.height: 	  	160
+Cvstatic*scannerFileSetList.visibleItemCount: 	  9
+
+Cvstatic*filesListSW.x: 			 10
+Cvstatic*filesListSW.y: 			340
+Cvstatic*filesList.width: 			300
+Cvstatic*filesList.height: 			160
+Cvstatic*filesList*visibleItemCount: 		  9
+
+Cvstatic*subdirectoryLabel*x:    		 10
+Cvstatic*subdirectoryLabel*y:    		100
+Cvstatic*subdirectoryLabel*labelString: 	Directories
+Cvstatic*filesLabel*x:            		 10
+Cvstatic*filesLabel*y:            		320
+Cvstatic*filesLabel*labelString:    		Files
+Cvstatic*filesetLabel*x:            		475
+Cvstatic*filesetLabel*y:            		100
+
+Cvstatic*adddirslabel*labelString:   		Add Directories
+Cvstatic*adddirslabel.x: 			335
+Cvstatic*adddirslabel.y: 			150
+
+Cvstatic*addfiles*labelString:         		Add Files
+Cvstatic*addfiles.x: 				335
+Cvstatic*addfiles.y: 				450
+
+! Move Dirs  Label
+Cvstatic*movedirslabel.labelString: 	        Move Directory
+! Move Files  Label
+Cvstatic*movefileslabel.labelString: 	        Move Files
+
+! Compiler Dirs
+Cvstatic*movecompilerdirsboxlabel.labelString: 	        Parser
+
+!Cvstatic*movecompilerdirsboxlabel.x: 			335
+!Cvstatic*movecompilerdirsboxlabel.y: 			500
+
+!Cvstatic*movecompilerdirsbutton.x: 			400
+!Cvstatic*movecompilerdirsbutton.y: 			550
+
+! Scanner Dirs 
+Cvstatic*movescannerdirsboxlabel.labelString: 	        Scanner
+
+!Cvstatic*movescannerdirsboxlabel.x: 			335
+!Cvstatic*movescannerdirsboxlabel.y: 			600
+
+!Cvstatic*movescannerdirsbutton.x: 			400
+!Cvstatic*movescannerdirsbutton.y: 			650
+
+! Compiler Files
+Cvstatic*movecompilerfilesboxlabel.labelString: 	Parser
+
+!Cvstatic*movecompilerfilesboxlabel.x: 			335
+!Cvstatic*movecompilerfilesboxlabel.y: 			700
+
+!Cvstatic*movecompilerfilesbutton.x: 			335
+!Cvstatic*movecompilerfilesbutton.y: 			750
+
+! Scanner Files
+Cvstatic*movescannerfilesboxlabel.labelString:		Scanner
+
+!Cvstatic*movescannerfilesboxlabel.x: 			335
+!Cvstatic*movescannerfilesboxlabel.y: 			800
+
+!Cvstatic*movescannerfilesbutton.x: 			335
+!Cvstatic*movescannerfilesbutton.y: 			850
+
+! Compiler Fileset Header
+Cvstatic*compiler.labelString:		Parser Fileset
+
+! Scanner Fileset Header
+Cvstatic*scanner.labelString:		Scanner Fileset
+
+! Text File Widget
+Cvstatic*compilerfiletextwidget*width: 		300
+Cvstatic*scannerfiletextwidget*width: 		300
+
+! File Transfer  
+Cvstatic*movefiles.labelString:		Transfer Files
+
+Cvstatic*separator1.x: 				 20
+Cvstatic*separator1.y: 				560
+
+Cvstatic*okButton.x: 				500
+Cvstatic*okButton.y: 				580
+
+Cvstatic*cancelButton.x: 			580
+Cvstatic*cancelButton.y: 			580
+
+Cvstatic*helpButton.x: 				680
+Cvstatic*helpButton.y: 				580
+
+
+Cvstatic*currentDirectoryLabel.x: 		10
+Cvstatic*currentDirectoryLabel.y: 		15
+
+Cvstatic*currentDirectoryWidget.x:		 10
+Cvstatic*currentDirectoryWidget.y: 		 40
+
+Cvstatic*recursiveButton.x: 			 10
+Cvstatic*recursiveButton.y: 			290
+Cvstatic*fileRadioBox.y: 			520
+
+Cvstatic*scopeDialog_popup*title:   		Results Filter
+
+
+*overview_main_menu*quit.mnemonic:  		E
+
+
+!Top Level Queries
+*general.mnemonic: 				G
+*macros.mnemonic:  				M
+*variables.mnemonic:   				V
+*functions.mnemonic:   				F
+*files.mnemonic:       				i
+*classes.mnemonic:         			C
+*commonBlocks.mnemonic:       			B
+*types.mnemonic:         			T
+*directories.mnemonic:         			D
+
+! General Queries
+*find_global_defs.mnemonic: 			G
+*list_all_constants.mnemonic:			C
+*where_symbol_used.mnemonic:			U
+*find_symbol_def.mnemonic: 			D
+*find_string.mnemonic:				S
+*find_regex.mnemonic: 				R
+
+
+*find_symbol.mnemonic:				F
+
+! Macro Queries
+*find_all_macros.mnemonic: 			A
+*find_macro_def.mnemonic: 			D
+*find_macro_undef.mnemonic:			n
+*find_macro_ref.mnemonic: 			U
+*list_unused_macros.mnemonic:			s
+
+
+! Variable Queries
+*list_all_variables*mnemonic:                  	L
+*where_declared.mnemonic:			c
+*where_defined_variable.mnemonic:  		D
+*who_references.mnemonic: 			R
+*who_sets.mnemonic: 				S
+*where_address_taken.mnemonic:			a
+*list_unused_variables.mnemonic			U
+
+
+! Functions
+*list_all_functions*mnemonic:                   A
+*where_function_declared.mnemonic:		F
+*where_defined_function.mnemonic:  		D
+*where_function_used.mnemonic:			s
+*who_calls.mnemonic:  				C
+*who_is_called_by.mnemonic:  			B
+*where_function_called_impicitly.mnemonic:	I
+*list_undefined.mnemonic:  		        U
+*list_unused_function.mnemonic:			n
+*list_local_declaration.mnemonic:		o
+
+
+! Files
+*list_all_files*mnemonic:                       A
+*list_all_header_files.mnemonic:		H
+*list_matching_files*mnemonic:                  M
+*who_includes.mnemonic:  			I
+*who_is_included_by.mnemonic:  			B
+
+
+! Classes
+*list_all_classes.mnemonic:         		A
+*where_defined_class.mnemonic:         		D
+*who_subclasses_from.mnemonic:         	        S
+*who_is_superclass_of.mnemonic:         	p
+*methods.mnemonic:         			M
+
+
+! Methods
+*list_all_methods.mnemonic:         		A
+*where_defined_method.mnemonic:         	W
+*where_declared_method.mnemonic:         	D
+
+! Common Blocks
+*list_all_common_blocks.mnemonic:		A
+*list_all_symbols_in_common_block.mnemonic:	S
+*where_common_block_defined.mnemonic:		D
+*where_common_block_referenced.mnemonic:	R
+
+! Types
+*list_all_types.mnemonic:			A
+*where_type_defined.mnemonic:			D
+*list_function_of_type.mnemonic:		F
+*list_data_of_type.mnemonic:			T
+*where_type_used.mnemonic:			U
+
+! Directories
+*list_directories_of_source_files.mnemonic:	D
+*list_all_files_in_directory.mnemonic:		F
+
+
+*methods_supported_by.mnemonic:         	M
+*where_allocated.mnemonic:			o
+*where_deallocated.mnemonic:			e
+*who_passes.mnemonic:  				W
+
+
+*file_menu*quit.mnemonic:  		        E
+*list_local_variables*mnemonic:                 i
+*who_takes_address.mnemonic:  			A
+*files_that_reference.mnemonic:        	        R
+*undefined.mnemonic:         	     		U
+*functions_that_reference.mnemonic:         	R
+*who_collaborates_with.mnemonic:         	C
+*who_supports_method.mnemonic:         	        M
+*query_history.mnemonic:  			i
+*file_menu.mnemonic:    			A
+*edit_menu.mnemonic:    			E
+*edit_selected.mnemonic:    			d
+*query_menu.mnemonic:  				Q
+*showLongFileNames*mnemonic:   			P
+*views_menu.mnemonic:  				V
+*special_menu.mnemonic:  			O
+*text_view.mnemonic:  				T
+*call_tree_view.mnemonic:  			l
+*class_tree_view.mnemonic:  			C
+*file_dependency_view.mnemonic:  		D
+*helpMenu.mnemonic:  		   		H
+*aboutApplication.mnemonic: 			O
+*helpOnContextMenuItem.mnemonic:  		C
+*helpOnWindowMenuItem.mnemonic:   		W
+*helpIndexMenuItem.mnemonic:      		I
+*scan.mnemonic:                			R
+*forceScan.mnemonic:           			F
+*scopeManager.mnemonic:           		M
+*sort_menu.mnemonic:           			S
+*editFileSet.mnemonic:         			t
+*changeFileSet.mnemonic:       			C
+*showOptionsPanel.mnemonic:    			O
+*scanningOptions.mnemonic:     			I
+*save.mnemonic:     				a
+
+! Mnemonics for the new items in the queries menu
+
+
+
+
+
+*file_menu*scan.accelerator.mnemonic:              Ctrl<Key>R
+
+
+! Mnemonics for Menu Bar Items
+*file_menu.mnemonic:					A
+*views_menu.mnemonic:					V
+*query_history.mnemonic:				i
+*query_menu.mnemonic:					Q
+
+Cvstatic.cvstatic.title:         			Static Analyzer
+Cvstatic*vk_information_dialog_popup.title:             Information
+
+Cvstatic*startSessionManager: 				FALSE
+Cvstatic*defaultLanguage: 		C
+Cvstatic*adaProductStatFile:	/usr/WorkShop/usr/lib/WorkShop/cvtaskview
+Cvstatic*adaProductErrorMsg:	echo ProDev Ada not installed, can't analyze file 
+
+Cvstatic*file_menu*scan.accelerator:                 Ctrl<Key>R
+Cvstatic*file_menu*scan.acceleratorText:	     Ctrl+R
+Cvstatic*views_menu*text_view.accelerator:           Ctrl<Key>T
+Cvstatic*views_menu*text_view*scan.acceleratorText:  Ctrl+T
+Cvstatic*views_menu*call_tree_view.accelerator:      Ctrl<Key>G
+Cvstatic*views_menu*call_tree_view*scan.acceleratorText:	  Ctrl+G
+
+Cvstatic*list_all_functions.accelerator:              Ctrl<Key>F
+Cvstatic*list_all_functions.acceleratorText:          Ctrl+F
+Cvstatic*who_calls.accelerator:                       Ctrl<Key>C
+Cvstatic*who_calls.acceleratorText:                   Ctrl+C
+Cvstatic*who_is_called_by.accelerator:                Ctrl<Key>B
+Cvstatic*who_is_called_by.acceleratorText:            Ctrl+B
+Cvstatic*file_menu*scan.accelerator:                          Ctrl<Key>R
+Cvstatic*file_menu*scan.acceleratorText:	     Ctrl+R
+Cvstatic*views_menu*text_view.accelerator:           Ctrl<Key>T
+Cvstatic*views_menu*text_view*scan.acceleratorText:  Ctrl+T
+Cvstatic*views_menu*call_tree_view.accelerator:      Ctrl<Key>G
+Cvstatic*views_menu*call_tree_view*scan.acceleratorText:	  Ctrl+G
+
+Cvstatic*list_all_functions.accelerator:              Ctrl<Key>F
+Cvstatic*list_all_functions.acceleratorText:          Ctrl+F
+Cvstatic*who_calls.accelerator:                       Ctrl<Key>C
+Cvstatic*who_calls.acceleratorText:                   Ctrl+C
+Cvstatic*who_is_called_by.accelerator:                Ctrl<Key>B
+Cvstatic*who_is_called_by.acceleratorText:            Ctrl+B
+Cvstatic*where_defined_function.accelerator:          Ctrl<Key>D
+Cvstatic*where_defined_function.acceleratorText:      Ctrl+D
+
+!! Removed - Kim's Recommendation
+! Cvstatic*edit_selected.accelerator:                   Ctrl<Key>E
+! Cvstatic*edit_selected.acceleratorText:               Ctrl+E
+! Cvstatic*sort_menu.accelerator:                   Ctrl<Key>S
+! Cvstatic*sort_menu.acceleratorText:               Ctrl+S
+
+*disableLicenseWarnings:              FALSE
+*disableThirtyDayLicenseWarnings:     FALSE
+
+*thirtyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of WorkShop. \n\nTo prevent this dialog from being displayed, put the \nfollowing line in your $HOME/.Xdefaults file:\n\n*disableLicenseWarnings:  TRUE\n
+*sixtyDayMessage:            Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.\n\nTo prevent this dialog from being displayed, put the \nfollowing line in your $HOME/.Xdefaults file:\n\n*disableLicenseWarnings:  TRUE\n
+*ninetyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation. \n\nTo prevent this dialog from being displayed, put the \nfollowing line in your $HOME/.Xdefaults file:\n\n*disableLicenseWarnings:  TRUE\n
+*noLicenseServerMessage:     Unable to locate a license server.  Consult Chapter 7\nof the 2.2 WorkShop Release Notes for information on\nsetting up your network license server.
+*notEnoughLicensesMessage:   No WorkShop licenses are available at this time. Contact\nyour sales representative or dealer to purchase additional\nlicenses or try again later.
+*noLicenseMessage:           Unable to find a WorkShop License. Consult Chapter 7\nof the 2.2 WorkShop Release Notes for information on\ninstalling network licenses or contact your sales\nrepresentative or dealer to purchase WorkShop licenses.
+*licenseExpiredMessage:      Your WorkShop License has expired. Consult Chapter 7\nof the 1.0 WorkShop Release Notes for information on\ninstalling network licenses or contact your sales or\nservice representative to register your software or\nto purchase WorkShop licenses.
+*warnLoseLicenseMessage:     Unable to renew your software license.  Consult Chapter 7\nof the 2.2 NetLS LSSERVER Release Notes for information on\ntroubleshooting your license server and network services.
+*regainLicenseMessage:       WorkShop license regained.
+
+!!!!!
+!!!   Turn off all Xt and Motif warning messages
+!!!!!
+
+*silenceWarnings:  TRUE
+
+!! core resources from SgiScheme.ad
+
+*useSchemes:    all
+*baseScheme:    Base
+*defaultScheme: Lascaux
+!*scheme:
+*debugScheme: False
+!*useSmallFonts: Boolean
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!
+!! Following are the resources for the C++ Browser
+!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Cvstatic*ccBrowser.labelString:		Browser
+Cvstatic*ccBrowser.mnemonic:		B
+Cvstatic*ccBrowser.accelerator:		Ctrl<Key>W
+Cvstatic*ccBrowser.acceleratorText:	Ctrl+W
+Cvstatic*optionMenu.labelString:
+
+Cvstatic*sort:				true
+Cvstatic*nameSort:			true
+Cvstatic*completeClassName:		true
+
+Cvstatic*class_label*marginWidth:	6
+Cvstatic*showMessageArea:		true
+Cvstatic*scream:			true
+
+! valid range {1-128}
+Cvstatic*indentationWidth:		15
+
+Cvstatic*nameAlign:			true
+Cvstatic*arglistAlign:			true
+
+Cvstatic*memberOrder for C++ Class:     Protection: PUBLIC [public], PROTECTED* [protected], PRIVATE* [private]; Scope: INSTANCE [instance], STATIC [static]; Member: TYPES* [type], DATA [data], METHODS [method], VIRTUAL METHODS [virtualmethod];
+
+Cvstatic*relationOrder for C++ Class:   BASE CLASSES [base], DERIVED CLASSES [derived], USES [uses], USED BY [usedby], FRIEND FUNCTIONS [friendfunction], FRIENDS [friend], FRIEND OF [friendof]
+
+Cvstatic*memberOrder for C++ Template Definition:     Protection: PUBLIC [public], PROTECTED* [protected], PRIVATE* [private]; Scope: INSTANCE [instance], STATIC [static]; Member: TYPES* [type], DATA [data], METHODS [method], VIRTUAL METHODS [virtualmethod];
+
+Cvstatic*relationOrder for C++ Template Definition:   BASE CLASSES [base], DERIVED CLASSES [derived], USES [uses], USED BY [usedby], FRIEND FUNCTIONS [friendfunction], FRIENDS [friend], FRIEND OF [friendof]
+
+Cvstatic*memberOrder for C++ Template Instance:     Protection: PUBLIC [public], PROTECTED* [protected], PRIVATE* [private]; Scope: INSTANCE [instance], STATIC [static]; Member: TYPES* [type], DATA [data], METHODS [method], VIRTUAL METHODS [virtualmethod];
+
+Cvstatic*relationOrder for C++ Template Instance:   BASE CLASSES [base], DERIVED CLASSES [derived], USES [uses], USED BY [usedby], FRIEND FUNCTIONS [friendfunction], FRIENDS [friend], FRIEND OF [friendof]
+
+Cvstatic*memberOrder for Ada Package:     Protection: SPEC PUBLIC [public], SPEC PRIVATE* [protected], BODY* [private]; Scope: CONTAINS [instance], DECLARES [static]; Member: TYPES* [type], DATA [data], FUNCTIONS [method], PRIMITIVE OPERATIONS [virtualmethod];
+
+Cvstatic*relationOrder for Ada Package:   PARENTS [base], DERIVED [derived], USES [uses], USED BY [usedby], FRIEND FUNCTIONS [friendfunction], FRIENDS [friend], FRIEND OF [friendof]
+
+Cvstatic*memberOrder for Ada Task:     Protection: SPEC PUBLIC [public], SPEC PRIVATE* [protected], BODY* [private]; Scope: CONTAINS [instance], DECLARES [static]; Member: TYPES* [type], DATA [data], FUNCTIONS [method], PRIMITIVE OPERATIONS [virtualmethod];
+
+Cvstatic*relationOrder for Ada Task:   PARENTS [base], DERIVED [derived], USES [uses], USED BY [usedby], FRIEND FUNCTIONS [friendfunction], FRIENDS [friend], FRIEND OF [friendof]
+
+Cvstatic*memberOrder for Ada Tagged Type:     Protection: SPEC PUBLIC [public], SPEC PRIVATE* [protected], BODY* [private]; Scope: CONTAINS [instance], DECLARES [static]; Member: TYPES* [type], DATA [data], FUNCTIONS [method], PRIMITIVE OPERATIONS [virtualmethod];
+
+Cvstatic*relationOrder for Ada Tagged Type:   PARENTS [base], DERIVED [derived], USES [uses], USED BY [usedby], FRIEND FUNCTIONS [friendfunction], FRIENDS [friend], FRIEND OF [friendof]
+
+Cvstatic*class_view.title:			Browser View
+Cvstatic*class_view.iconName:			Browser View
+Cvstatic*class_list_popup.title:		Browsing Choices
+Cvstatic*class_list.geometry:			364x373
+Cvstatic*history_list_popup.title:		List Of Subjects Shown
+Cvstatic*history_list.geometry:			364x373
+
+Cvstatic*ClassViewHeight:			300
+Cvstatic*ClassViewWidth:			700
+
+
+
+!
+! Class View Menu Bar
+!
+Cvstatic*class_view_admin_menu.labelString:	Admin
+Cvstatic*class_view_admin_menu.mnemonic:	A
+Cvstatic*class_view_views_menu.labelString:	Views
+Cvstatic*class_view_views_menu.mnemonic:	V
+Cvstatic*class_view_history_menu.labelString:	History
+Cvstatic*class_view_history_menu.mnemonic:	i
+Cvstatic*class_view_query_menu.labelString:	Queries
+Cvstatic*class_view_query_menu.mnemonic:	Q
+Cvstatic*class_view_pref_menu.labelString:	Preference
+Cvstatic*class_view_pref_menu.mnemonic:	P
+
+!
+! Class View Admin Menu
+!
+Cvstatic*open_menu_item.labelString:		Change Current Subject
+Cvstatic*open_menu_item.mnemonic:		u
+Cvstatic*open_menu_item.accelerator:		Ctrl<Key>U
+Cvstatic*open_menu_item.acceleratorText:	Ctrl+U
+Cvstatic*clone_menu_item.labelString:		Another Browser View
+Cvstatic*clone_menu_item.mnemonic:		A
+Cvstatic*clone_menu_item.accelerator:		Ctrl<Key>V
+Cvstatic*clone_menu_item.acceleratorText:	Ctrl+V
+Cvstatic*close_menu_item.labelString:		Close Browser View
+Cvstatic*close_menu_item.mnemonic:		l
+Cvstatic*genmp_menu_item.labelString:		Generate Man Pages...
+Cvstatic*genmp_menu_item.mnemonic:		G
+Cvstatic*genwp_menu_item.labelString:		Generate Web Pages...
+Cvstatic*genwp_menu_item.mnemonic:		W
+Cvstatic*quit_menu_item.labelString:		Exit Browser
+Cvstatic*quit_menu_item.mnemonic:		E
+Cvstatic*quit_menu_item.accelerator:		Ctrl<Key>X
+Cvstatic*quit_menu_item.acceleratorText:	Ctrl+X
+
+!
+! Class View View Menu
+!
+Cvstatic*inher_graph_menu_item.labelString:	Show Inheritance Graph
+Cvstatic*inher_graph_menu_item.mnemonic:	I
+Cvstatic*inher_graph_menu_item.accelerator:	Ctrl<Key>I
+Cvstatic*inher_graph_menu_item.acceleratorText: Ctrl+I
+Cvstatic*comp_graph_menu_item.labelString:	Show Containment Graph
+Cvstatic*comp_graph_menu_item.mnemonic:		C
+Cvstatic*comp_graph_menu_item.accelerator:	Ctrl<Key>O
+Cvstatic*comp_graph_menu_item.acceleratorText:  Ctrl+O
+Cvstatic*inter_graph_menu_item.labelString:	Show Interaction Graph
+Cvstatic*inter_graph_menu_item.mnemonic:	t
+Cvstatic*inter_graph_menu_item.accelerator:	Ctrl<Key>T
+Cvstatic*inter_graph_menu_item.acceleratorText: Ctrl+T
+Cvstatic*frend_graph_menu_item.labelString:	Show Friend Graph
+Cvstatic*frend_graph_menu_item.mnemonic:	F
+Cvstatic*frend_graph_menu_item.accelerator:	Ctrl<Key>F
+Cvstatic*frend_graph_menu_item.acceleratorText: Ctrl+F
+Cvstatic*call_graph_menu_item.labelString:	Show Call Graph
+Cvstatic*call_graph_menu_item.mnemonic:		a
+Cvstatic*call_graph_menu_item.accelerator:	Ctrl<Key>A
+Cvstatic*call_graph_menu_item.acceleratorText:	Ctrl+A
+Cvstatic*pref_menu_item.labelString:		Preference
+Cvstatic*pref_menu_item.mnemonic:		f
+
+!
+! Class View History Menu
+!
+Cvstatic*prev_menu_item.labelString:		Show Previous Subject
+Cvstatic*prev_menu_item.mnemonic:		P
+Cvstatic*prev_menu_item.accelerator:		Ctrl<Key>P
+Cvstatic*prev_menu_item.acceleratorText:	Ctrl+P
+Cvstatic*hist_menu_item.labelString:		Show History
+Cvstatic*hist_menu_item.mnemonic:		i
+Cvstatic*hist_menu_item.accelerator:		Ctrl<Key>H
+Cvstatic*hist_menu_item.acceleratorText:	Ctrl+H
+
+!
+! Class View Query Menu
+!
+Cvstatic*decl_menu_item.labelString:		What Is Declared 
+Cvstatic*decl_menu_item.mnemonic:		l
+Cvstatic*decl_menu_item.accelerator:		Ctrl<Key>L
+Cvstatic*decl_menu_item.acceleratorText:	Ctrl+L
+Cvstatic*defn_menu_item.labelString:		What Is Defined
+Cvstatic*defn_menu_item.mnemonic:		f
+Cvstatic*defn_menu_item.accelerator:		Ctrl<Key>E
+Cvstatic*defn_menu_item.acceleratorText:	Ctrl+E
+Cvstatic*over_menu_item.labelString:		What Is Overridden By
+Cvstatic*over_menu_item.mnemonic:		r
+Cvstatic*over_menu_item.accelerator:		Ctrl<Key>R
+Cvstatic*over_menu_item.acceleratorText:	Ctrl+R
+Cvstatic*pvf_menu_item.labelString:		What Is Pure Virtual
+Cvstatic*pvf_menu_item.mnemonic:		V
+
+Cvstatic*inst_menu_item.labelString:		What Instantiates
+Cvstatic*inst_menu_item.mnemonic:		I
+Cvstatic*dest_menu_item.labelString:		What Destroys
+Cvstatic*dest_menu_item.mnemonic:		D
+Cvstatic*uses_menu.labelString:			What Uses
+Cvstatic*uses_menu.mnemonic:			U
+
+Cvstatic*inst_by_menu_item.labelString:		What Is Instantiated
+Cvstatic*inst_by_menu_item.mnemonic:		n
+Cvstatic*dest_by_menu_item.labelString:		What Is Destroyed
+Cvstatic*dest_by_menu_item.mnemonic:		y
+Cvstatic*used_by_menu.labelString:		What Is Used
+Cvstatic*used_by_menu.mnemonic:			e
+
+Cvstatic*uses_comp_menu_item.labelString:	To Contain
+Cvstatic*uses_comp_menu_item.mnemonic:		C
+Cvstatic*uses_frend_menu_item.labelString:	As Friend
+Cvstatic*uses_frend_menu_item.mnemonic:		F
+Cvstatic*uses_meth_menu_item.labelString:	Methods
+Cvstatic*uses_meth_menu_item.mnemonic:		M
+Cvstatic*uses_data_menu_item.labelString:	Data Members
+Cvstatic*uses_data_menu_item.mnemonic:		D
+
+Cvstatic*used_by_comp_menu_item.labelString:	To Contain
+Cvstatic*used_by_comp_menu_item.mnemonic:	C
+Cvstatic*used_by_frend_menu_item.labelString:	As Friend
+Cvstatic*used_by_frend_menu_item.mnemonic:	F
+Cvstatic*used_by_meth_menu_item.labelString:	By Methods
+Cvstatic*used_by_meth_menu_item.mnemonic:	M
+Cvstatic*used_by_data_menu_item.labelString:	By Data Access
+Cvstatic*used_by_data_menu_item.mnemonic:	D
+
+!
+! Class View Preference Menu
+!
+Cvstatic*reln_disp_order_menu.labelString:	Relation Display
+Cvstatic*reln_disp_order_menu.mnemonic:		R
+Cvstatic*reln_declaration_order.labelString:	Declaration Order
+Cvstatic*reln_declaration_order.mnemonic:	D
+Cvstatic*reln_end_to_end_sorted.labelString:	End To End Sort
+Cvstatic*reln_end_to_end_sorted.mnemonic:	E
+
+Cvstatic*mem_disp_order_menu.labelString:	Member Display
+Cvstatic*mem_disp_order_menu.mnemonic:		M
+Cvstatic*mem_declaration_order.labelString:	Declaration Order
+Cvstatic*mem_declaration_order.mnemonic:	D
+Cvstatic*mem_end_to_end_sorted.labelString:	End To End Sort
+Cvstatic*mem_end_to_end_sorted.mnemonic:	E
+Cvstatic*mem_name_sorted.labelString:		Name Sort
+Cvstatic*mem_name_sorted.mnemonic:		N
+
+Cvstatic*mem_align_menu.labelString:		Member Alignment
+Cvstatic*mem_align_menu.mnemonic:		A
+Cvstatic*mem_align_names.labelString:		Align Names
+Cvstatic*mem_align_names.mnemonic:		N
+Cvstatic*mem_align_arglists.labelString:	Align Arglists
+Cvstatic*mem_align_arglists.mnemonic:		A
+
+Cvstatic*mem_double_click_menu.labelString:	Member Double Click
+Cvstatic*mem_double_click_menu.mnemonic:	D
+Cvstatic*mem_show_defn.labelString:		Show Definition
+Cvstatic*mem_show_defn.mnemonic:		f
+Cvstatic*mem_show_decl.labelString:		Show Declaration
+Cvstatic*mem_show_decl.mnemonic:		c
+Cvstatic*mem_show_decl_if_no_defn.labelString:	Show Decl If No Defn
+Cvstatic*mem_show_decl_if_no_defn.mnemonic:	N
+
+!
+! Class Graph Window resources
+!
+
+Cvstatic*class_graph_window.title:		Graph Views
+Cvstatic*class_graph_window.iconName:		Graph Views
+Cvstatic*class_graph_window*geometry:		=640x475
+Cvstatic*class_graph_view_overview.title:	Graph Views Overview
+Cvstatic*class_graph_view_overview.iconName:	Ovrvu-GraphViews
+Cvstatic*class_graph_view_overview*geometry:	=300x350
+
+Cvstatic*class_graph_admin_menu.labelString:	Admin
+Cvstatic*class_graph_admin_menu.mnemonic:	A
+Cvstatic*class_graph_views_menu.labelString:	Views
+Cvstatic*class_graph_views_menu.mnemonic:	V
+
+! Class Graph Window Admin Menu
+Cvstatic*class_graph_admin_menu.save_menu_item.labelString:	Save Graph
+Cvstatic*class_graph_admin_menu.save_menu_item.mnemonic:        S
+Cvstatic*class_graph_admin_menu.close_menu_item.labelString:	Close
+Cvstatic*class_graph_admin_menu.close_menu_item.mnemonic:	C
+
+! Class Graph Window Views Menu
+Cvstatic*class_graph_views_menu.all_menu_item.labelString:	Show All
+Cvstatic*class_graph_views_menu.all_menu_item.mnemonic:		A
+Cvstatic*class_graph_views_menu.all_menu_item.accelerator:	Ctrl<Key>A
+Cvstatic*class_graph_views_menu.all_menu_item.acceleratorText:	Ctrl+A
+
+Cvstatic*class_graph_views_menu.all_related_menu_item.labelString:	Show All Related
+Cvstatic*class_graph_views_menu.all_related_menu_item.mnemonic:		R
+Cvstatic*class_graph_views_menu.all_related_menu_item.accelerator:	Ctrl<Key>R
+Cvstatic*class_graph_views_menu.all_related_menu_item.acceleratorText:	Ctrl+R
+
+Cvstatic*class_graph_views_menu.butterfly_menu_item.labelString:	Show Butterfly
+Cvstatic*class_graph_views_menu.butterfly_menu_item.mnemonic:		B
+Cvstatic*class_graph_views_menu.butterfly_menu_item.accelerator:	Ctrl<Key>B
+Cvstatic*class_graph_views_menu.butterfly_menu_item.acceleratorText:	Ctrl+B
+
+
+!
+! Call Graph Window resources
+!
+Cvstatic*call_graph_window.title:		Call Graph
+Cvstatic*call_graph_window.iconName:		Call Graph
+Cvstatic*call_graph_window*geometry:		=640x475
+Cvstatic*call_graph_view_overview.title:	Call Graph Overview
+Cvstatic*call_graph_view_overview.iconName:	Ovrvu-CallGraph
+Cvstatic*call_graph_view_overview*geometry:	=300x350
+
+! Call Graph Window Menu Bar
+Cvstatic*call_graph_admin_menu.labelString:	Admin
+Cvstatic*call_graph_admin_menu.mnemonic:	A
+
+! Call Graph Window Admin Menu
+Cvstatic*call_graph_admin_menu.arglist_menu_item.labelString:	Show Arglist
+Cvstatic*call_graph_admin_menu.arglist_menu_item.mnemonic:	A
+Cvstatic*call_graph_admin_menu.clear_menu_item.labelString:	Clear
+Cvstatic*call_graph_admin_menu.clear_menu_item.mnemonic:	e
+Cvstatic*call_graph_admin_menu.save_menu_item.labelString:	Save Graph
+Cvstatic*call_graph_admin_menu.save_menu_item.mnemonic:         S
+Cvstatic*call_graph_admin_menu.close_menu_item.labelString:	Close
+Cvstatic*call_graph_admin_menu.close_menu_item.mnemonic:	o
+
+! Class List Window resources
+Cvstatic*class_list_window.title:		Browsing Choices
+Cvstatic*class_list_window.geometry:			500x350
+
+Cvstatic*class_list_window*class_list_admin_menu.labelString: Admin
+Cvstatic*class_list_window*class_list_admin_menu.mnemonic: A
+Cvstatic*class_list_admin_menu.sort_list.labelString: Sort
+Cvstatic*class_list_admin_menu.sort_list.mnemonic: S
+Cvstatic*class_list_admin_menu.close_item.labelString: Close
+Cvstatic*class_list_admin_menu.close_item.mnemonic: C
+
+Cvstatic*class_list_window*class_list_view_title.labelString: Double-click to view details in browser view
+
+Cvstatic*class_list_window*class_list_view_menu.labelString: View
+Cvstatic*class_list_window*class_list_view_menu.mnemonic: V
+
+Cvstatic*class_list_view_menu.C++ Class.labelString: C++ Class
+Cvstatic*class_list_view_menu.C++ Class.mnemonic: l
+Cvstatic*class_list_view_menu.C++ Class.set: True
+
+Cvstatic*class_list_view_menu.C++ Abstract Class.labelString: C++ Abstract Class
+Cvstatic*class_list_view_menu.C++ Abstract Class.mnemonic: A
+Cvstatic*class_list_view_menu.C++ Abstract Class.set: True
+
+Cvstatic*class_list_view_menu.C++ Template Definition.labelString: C++ Template Definition
+Cvstatic*class_list_view_menu.C++ Template Definition.mnemonic: D
+Cvstatic*class_list_view_menu.C++ Template Definition.set: True
+
+Cvstatic*class_list_view_menu.C++ Template Instance.labelString: C++ Template Instance
+Cvstatic*class_list_view_menu.C++ Template Instance.mnemonic: I
+Cvstatic*class_list_view_menu.C++ Template Instance.set: True
+
+Cvstatic*class_list_view_menu.Ada Package.labelString: Ada Package
+Cvstatic*class_list_view_menu.Ada Package.mnemonic: P
+Cvstatic*class_list_view_menu.Ada Package.set: True
+
+Cvstatic*class_list_view_menu.Ada Task.labelString: Ada Task
+Cvstatic*class_list_view_menu.Ada Task.mnemonic: T
+Cvstatic*class_list_view_menu.Ada Task.set: True
+
+Cvstatic*class_list_view_menu.Ada Tagged Type.labelString: Ada Tagged Type
+Cvstatic*class_list_view_menu.Ada Tagged Type.mnemonic: g
+Cvstatic*class_list_view_menu.Ada Tagged Type.set: True
+
+!
+! Man Page Generator Window resources
+!
+Cvstatic*man_page_window*title:			Man Page Generator
+Cvstatic*man_page_window.iconName:		Man Pages
+Cvstatic*man_page_window*geometry:		=530x350
+
+Cvstatic*manpage_dir_label.labelString:		Man Page Directory:
+Cvstatic*manpage_dir_btn.labelString:		Set Directory
+
+Cvstatic*manpage_sel_button.labelString:	Select All
+Cvstatic*manpage_unsel_button.labelString:	Unselect All
+Cvstatic*manpage_gen_button.labelString:	Generate 
+Cvstatic*manpage_view_button.labelString:	View 
+Cvstatic*manpage_xman_button.labelString:	Xman
+Cvstatic*manpage_warn_overwrite_label.labelString: Confirm file overwrites?:
+
+Cvstatic*manPageDirPath:	.
+Cvstatic*manPageSuffix:		.3
+Cvstatic*manPageViewCommand:	winterm -H -c man -d
+Cvstatic*manPageXmanCommand:	MANPATH=%s; export MANPATH; xman
+Cvstatic*manPageCopyRightMessage: Copyright 1993 by Silicon Graphics
+
+
+!
+! Web Page Generator Window resources
+!
+Cvstatic*webpage_window*title:			Web Page Generator
+Cvstatic*webpage_window.iconName:		Web Pages
+Cvstatic*webpage_window*geometry:		=530x350
+
+Cvstatic*webpage_dir_label.labelString:		Web Page Directory:
+Cvstatic*webpage_dir_btn.labelString:		Set Directory
+
+Cvstatic*webpage_sel_button.labelString:	Select All
+Cvstatic*webpage_unsel_button.labelString:	Unselect All
+Cvstatic*webpage_gen_button.labelString:	Generate 
+Cvstatic*webpage_view_button.labelString:	View 
+Cvstatic*webpage_warn_overwrite_label.labelString: Confirm file overwrites?:
+
+Cvstatic*webPageDirPath:	.
+Cvstatic*webPageSuffix:		.html
+Cvstatic*webPageViewCommand:	netscape -noraise -remote openURL\\(%s\\) || netscape %s &
+Cvstatic*webPageCopyRightMessage: <HR>Copyright 1995 by \
+   <A HREF=\"http://www.sgi.com\">Silicon Graphics Inc.</A>\n\
+   This page is generated by \
+   <A HREF=\"http://www.sgi.com/Products/software.html#developer\">\
+   Developer Magic Tool</A>: C++ Class Browser.\n
+
+!!
+!!Don't touch the following line. It is automatically generated
+!!
+
+
+

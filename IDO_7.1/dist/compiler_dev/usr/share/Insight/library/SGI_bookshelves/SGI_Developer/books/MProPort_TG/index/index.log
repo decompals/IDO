@@ -1,0 +1,8 @@
+<MKLOG name='./books/MProPort_TG/index' version='-1' date='Sat Nov  9 21:17:38 1996' serial='-1' count='-1' user=''>
+
+MERGE vocab.dat :   1 files, Vocab size  3310 on                           .
+
+MERGE index.dat :   1 files, Vocab size  3310 on                           .
+
+DONE MAKING BOOK
+

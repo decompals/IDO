@@ -1,0 +1,5 @@
+###4.7
+Setting Complex Traps and Watchpoints
+The Trap Manager lets you set more complex traps such as watchpoints and other conditional traps.
+ProDev Workshop's fast data watchpoints with kernel support are especially adept at tracking memory corruption problems.
+

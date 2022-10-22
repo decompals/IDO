@@ -1,0 +1,5 @@
+###4.10
+Getting Call Stack Information
+The CallStack window displays the function; arguments names,values and types; the function's source file and line number, and the PC at the current context.  Double-clicking a frame in the CallStack displays the corresponding source code.
+Double-click the "iterate" stack frame to shift the stack from the iterate function.  
+Notice the stack frame has been shifted from the iterate function.  The source code display in the Debugger also updates.

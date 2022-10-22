@@ -1,0 +1,9 @@
+#3.14
+Identify Source Files Using Include Files
+Great.  This is a graphical depiction of your code's class hierarchy.
+
+This graph also allows you to directly view any file's code, identify the exact reason for file dependencies, and hide/show children nodes.
+Click on any node and then hold down your right mouse button.
+
+Select a menu option from the menu that appears.
+

@@ -1,0 +1,5 @@
+ptype SGI_CV_CVTASKVIEW
+{
+    start "/usr/lib/WorkShop/cvtaskview";
+    handle: session SGI_Debug_TaskView() => start;
+}

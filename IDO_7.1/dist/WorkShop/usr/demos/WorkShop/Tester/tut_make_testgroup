@@ -1,0 +1,24 @@
+#!/bin/sh
+make -f Makefile.tutorial all
+
+cvcov runinstr -instr_dir print_instr_dir -instr_file tut_group_instr_file printtest
+cvcov runinstr -instr_dir copyn_instr_dir -instr_file tut_group_instr_file copyn
+
+cvcov mktest -cmd "printtest 10 2 3" -instr_dir print_instr_dir -testname print_test0000
+
+cvcov mktest -cmd "copyn tut4_instr_file targetfile" -instr_dir copyn_instr_dir -testname copyn_test0000
+
+cvcov mktgroup -des "Group sharing libc.so.1" -testname tut_testgroup libc.so.1
+
+cvcov addtest print_test0000 tut_testgroup
+cvcov addtest copyn_test0000 tut_testgroup
+
+cvcov cattest tut_testgroup
+
+cvcov runtest tut_testgroup
+
+cvcov lssum tut_testgroup
+# common used function
+cvcov lsfun -pretty -contrib -pat printf tut_testgroup
+# print only contribution
+cvcov lsfun -pretty -contrib -pat sscanf tut_testgroup

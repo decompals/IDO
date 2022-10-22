@@ -1,0 +1,15 @@
+#3.1
+Customize
+Select the skill(s) you want to learn.  This lesson will include ONLY the skills that you select.  
+
+You want to be able to:
+    recognize the primary features and benefits of the Static Analyzer
+    start the Static Analyzer
+    set up your files in the Static Analyzer
+    recognize the difference between parser and scanner mode
+    graphically display the dependencies between the files
+    identify which source files use an include file
+    identify where a function, method, or macro is defined
+    identify where a function, method, or macro is used 
+    display hierarchical class structure (inheritances)
+Are you finished selecting?

@@ -1,0 +1,23 @@
+#
+# tutorial Makefile
+#
+CFLAGS  =  -g
+CC = /usr/bin/cc
+CLIB = -lc
+
+FILES1 = copyn.c 
+FILES2 = printtest.c 
+
+TARGET1 = copyn
+TARGET2 = printtest
+
+$(TARGET1): $(FILES1)
+	$(CC) $(CFLAGS) -o $(TARGET1) $(FILES1) $(CLIB)
+
+$(TARGET2): $(FILES2)
+	$(CC) $(CFLAGS) -o $(TARGET2) $(FILES2) $(CLIB)
+
+all: $(TARGET1) $(TARGET2)
+
+clean:
+	rm $(TARGET1) $(TARGET2)

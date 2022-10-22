@@ -1,0 +1,8 @@
+###4.18
+The Array Browser
+You can see the values of the shadow matrix in the spreadsheet area.  The graphical displays are useful when looking for incorrect values or trying to spot trends in large arrays.
+Select "Bar Chart" from the Render menu.
+Select "Hue Ramp" from the Color menu.
+Notice that the values 50 and -605 are anomalies in the array, shown by large bars in the 3D graphic display.
+Click the bottom right arrow to continue.
+

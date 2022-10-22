@@ -1,0 +1,26 @@
+
+#	Path_2
+		color(-241);
+		bgnoutlinepolygon();
+			vertex(40.00, 70.00);
+			vertex(45.00, 72.50);
+			vertex(50.00, 70.00);
+			vertex(55.00, 72.50);
+			vertex(55.00, 77.50);
+			vertex(60.00, 80.00);
+			vertex(65.00, 82.50);
+			vertex(73.00, 82.00);
+			vertex(80.00, 80.00);
+			vertex(82.80, 73.00);
+			vertex(70.00, 75.00);
+			vertex(65.00, 72.50);
+			vertex(68.40, 63.60);
+			vertex(80.00, 40.00);
+			vertex(90.00, 25.00);
+			vertex(80.00, 20.00);
+			vertex(61.00, 62.20);
+			vertex(57.40, 64.60);
+			vertex(55.00, 62.50);
+			vertex(55.00, 57.50);
+			vertex(50.00, 55.00);
+		endoutlinepolygon(outlinecolor);

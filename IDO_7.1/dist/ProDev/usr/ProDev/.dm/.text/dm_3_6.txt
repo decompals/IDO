@@ -1,0 +1,33 @@
+#3.6
+Set Up Your Files
+Use the "Admin" menu to load a file into the Static Analyzer using Parser mode.
+Go to the Admin  menu and choose "Edit Fileset..."
+Under the "Scanner Fileset" column, select the file that you want parsed
+
+Click on up arrow to transfer file to Parser Fileset and click "ok".
+
+
+Sorry.  Please click on the "Edit Fileset..." from the "Admin" menu.
+
+
+
+
+
+
+
+
+
+Rescan
+Force Scan
+Change Fileset...
+Edit FileSet...
+General Options...
+Set Include Path
+Results Filter...
+Edit Selected Item
+Sort
+Save Query...
+C++ Browser
+Launch Tool
+Project
+Exit

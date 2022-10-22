@@ -1,0 +1,38 @@
+#1.2
+The Screen Buttons
+There are four buttons at the bottom of the screen: Topics, Options, Exit, and FAQ's.
+
+Click on each button for a brief description...
+#1.3.1
+OPTIONS:
+
+Holding down the Options button makes a menu appear.  
+Now hold down the Options button to see its menu.  Choose each item in the Options menu to see a brief description.
+#1.3.2
+MAIN MENU:
+
+The Main Menu option takes you back to the Main Menu screen.  The Main Menu screen lists the course lessons and lets you choose a lesson to take.
+#1.3.3
+COURSE MAP:
+
+The Course Map option shows all of the course topics and lets you jump randomly to any topic.
+#1.3.4
+GLOSSARY:
+
+The Glossary option defines terms used in this course.
+#1.3.5
+AUDIO:
+
+The Audio option lets you turn the course's audio ON or OFF.  
+
+It also lets you access the audio controls for VOLUME CONTROL.
+#1.3.6
+EXIT:
+
+The Exit button lets you exit the entire course at any time.  
+#1.3.7
+HELP:
+
+The FAQ's button lets you access Frequently Asked Questions (FAQs).  
+
+The Topics Button allows you to go to any topic within a module

@@ -1,0 +1,28 @@
+#!/bin/sh
+#tut_make_testset - script for creating tests and test set for tutorial 2
+
+#create individual tests for the test set
+cvcov mktest -cmd 'copyn alphabet target' -des 'not enough arguments'
+cvcov mktest -cmd 'copyn alphabet target 20 extra_arg' -des 'too many arguments'
+cvcov mktest -cmd 'copyn no_file target 20' -des 'cannot access file'
+cvcov mktest -cmd 'copyn alphabet target 0' -des 'pass bad size arg'
+echo a > not_enough
+cvcov mktest -cmd 'copyn not_enough target 20' -des 'not enough data (less bytes than requested) in original file'
+cvcov mktest -cmd 'copyn alphabet /usr/bin/target 20' -des 'cannot create target executable due to permission problems'
+ls -ld /usr/bin
+cvcov mktest -cmd 'copyn alphabet targetfile  200' -des 'size arg too big'
+cvcov mktest -cmd 'copyn /usr/adm/sulog targetfile 20' 
+
+#create a test set to hold these tests
+cvcov mktset -des 'full coverage testset' -testname tut_testset 
+
+#add the tests to the test set
+cvcov addtest test0000 tut_testset
+cvcov addtest test0001 tut_testset
+cvcov addtest test0002 tut_testset
+cvcov addtest test0003 tut_testset
+cvcov addtest test0004 tut_testset
+cvcov addtest test0005 tut_testset
+cvcov addtest test0006 tut_testset
+cvcov addtest test0007 tut_testset
+cvcov addtest test0008 tut_testset

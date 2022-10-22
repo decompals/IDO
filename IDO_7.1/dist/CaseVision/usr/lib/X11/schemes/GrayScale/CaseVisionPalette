@@ -1,0 +1,46 @@
+#ifndef GAMMA_2_4
+#define  HighlightForeground    #000000
+#define	 TrapColor		#808080
+#define	 ScrollBarTrapColor	#000000
+#define	 InactiveTrapColor	#a5a5a5
+#define	 ScrollBarInactiveTrapColor	#00000
+#define	 ProgramCounterColor	#d9d9d9
+#define	 ScrollBarProgramCounterColor	#d9d9d9
+#define	 CallstackContext	#bfbfbf
+#define	 ScrollBarCallstackContext	#bfbfbf
+#define  SearchColor		#737373
+#define  ScrollBarSearchColor		#737373
+#define  TimeLineBackground	#888888
+#define  ChartFillStyle		FillTiled
+#define  ChartLineStyle0	LineSolid
+#define  ChartLineStyle1	LineOnOffDash
+#define  ChartLineStyle2	LineDoubleDash
+#define  ChartLineStyle3	LineSolid
+*XmScrolledWindow*topShadowColor: white
+*XmText*topShadowColor: 	  white
+*bottomShadowColor: 		  #232323
+#else
+#define  HighlightForeground    #000000
+#define	 TrapColor		#f1aaaa
+#define	 ScrollBarTrapColor	#f1aaaa
+#define	 InactiveTrapColor	#c37f7f
+#define	 ScrollBarInactiveTrapColor	#ffaeae
+#define	 ProgramCounterColor	#e8e8e8
+#define	 ScrollBarProgramCounterColor	#e8e8e8
+#define	 CallstackContext	#a3d7d7
+#define	 ScrollBarCallstackContext	#a3d7d7
+#define  SearchColor		#ffffa1
+#define  ScrollBarSearchColor		#ffffa1
+#define  TimeLineBackground	#6f8a90
+#define  ChartFillStyle		FillTiled
+#define  ChartLineStyle0	LineSolid
+#define  ChartLineStyle1	LineOnOffDash
+#define  ChartLineStyle2	LineDoubleDash
+#define  ChartLineStyle3	LineSolid
+*XmScrolledWindow*topShadowColor: white
+*XmText*topShadowColor: 	  white
+*bottomShadowColor: 		  #4f4f4f
+#endif
+
+
+

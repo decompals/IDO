@@ -1,0 +1,7 @@
+ptype SGI_CV_CVSUR
+{
+	start "/usr/sbin/cvsur";
+	handle:	session CM-Checkout-File() => start;
+	handle:	session CM-Checkin-File() => start;
+	handle:	session CM-Revert-File() => start;
+}

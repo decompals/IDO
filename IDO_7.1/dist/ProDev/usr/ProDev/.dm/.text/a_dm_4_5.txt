@@ -1,0 +1,6 @@
+###4.5
+Setting Breakpoints
+You can set simple traps (breakpoints) by clicking in the annotation column next to the desired line. 
+Click to the left of line 572 to set a trap.
+Trap locations are indicated by icons and highlighting.
+Click on the bottom right arrow to continue.

@@ -1,0 +1,8 @@
+###4.14
+Variable Browser (continued)
+Let's step through the program and see if any variables change.
+Click on the Step Over button.
+The green PC highlight has advanced one line.
+Click again on the Step Over button.
+Notice that the result cell for dx now has a folded right corner.  Clicking the corner toggles between the current and previous values.
+Try toggling between the new and old values of dx. When you are done, click on the bottom right arrow to continue.

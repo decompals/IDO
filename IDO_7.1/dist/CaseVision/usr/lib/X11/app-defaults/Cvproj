@@ -1,0 +1,212 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! VIEW Common Resources                                                       !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*keyboardFocusPolicy:	pointer
+
+*sgiMode:		true
+*schemeFileList:	CaseVision
+*paletteFileList:	CaseVisionPalette
+*useSchemes:		all
+*useEnhancedFSB:        true
+
+*XmMenuShell*tearOffModel:		tear_off_enabled
+
+*useTtutil:		True
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*popupMenu*XmMenuShell*tearOffModel:        tear_off_disabled
+
+!
+! Launch menu labels
+!
+*launchMenu.labelString:	Launch Tool
+*launchMenu.mnemonic:		L
+
+!
+! Project menu labels
+!
+*projectMenu.labelString:		Project
+*projectMenu.mnemonic:			P
+*projectIconify.labelString:		Iconify
+*projectIconify.mnemonic:		I
+*projectRaise.labelString:		Raise
+*projectRaise.mnemonic:			R
+*projectRemapPaths.labelString:		Remap Paths...
+*projectRemapPaths.mnemonic:		m
+*projectProjectView.labelString:	Project View...
+*projectProjectView.mnemonic:		P
+*projectExit.labelString:		Exit
+*projectExit.mnemonic:			E
+
+!
+! Static Analyzer Query Menu Labels
+!
+*queryMenu.labelString: Query
+*queryMenu.mnemonic: Q
+
+*qmGeneral.labelString: General
+*qmGeneral.mnemonic: G
+*qmMacros.labelString: Macros
+*qmMacros.mnemonic: M
+*qmFunctions.labelString: Functions
+*qmFunctions.mnemonic: F
+*qmVariables.labelString: Variables
+*qmVariables.mnemonic: V
+
+*qmWhereSymbolDefined.labelString:	Where Defined ?
+*qmWhereMacroDefined.labelString:		Where Defined ?
+*qmWhereVariableDefined.labelString:	Where Defined ?
+*qmWhereFunctionDefined.labelString:	Where Defined ?
+
+!
+! Option menu labels
+!
+*optionMenu.labelString:
+
+
+
+!
+! Resource for determining what languages file suffixes indicate.
+! Used by cvsource and cvstatic
+!
+*suffixSource:		C++.c++ C++.C C++.cxx C++.h C++.cpp C++.cc C.c  Fortran.f Fortran.F Fortran90.f90 Ada.adb
+
+!!!!
+!!! NLS Messages
+!!!!
+*useNetLSLicense:					False
+*disableLicenseWarnings:              FALSE
+*disableThirtyDayLicenseWarnings:     FALSE
+
+*thirtyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of WorkShop.        
+*sixtyDayMessage:            Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*ninetyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*noLicenseServerMessage:     Unable to locate a license server.  Consult \nthe WorkShop Release Notes for information on\nsetting up your network license server.
+*notEnoughLicensesMessage:   No WorkShop licenses are available at this time. Contact\nyour sales representative or dealer to purchase additional\nlicenses or try again later.
+!
+*Evaluation*sixtyDayMessage:
+*Evaluation*ninetyDayMessage:
+*Evaluation*thirtyDayMessage: Your evaluation license for WorkShop\nwill expire in %d days.\n\nTo purchase a permanent license or extend\nyour evaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html\n\nor email: demolicense@sgi.com
+!
+*Evaluation*licenseExpiredMessage: Your evaluation period for WorkShop\nhas expired. \n\nTo purchase a permanent license or extend your\nevaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html or\n\nemail: demolicense@sgi.com
+!
+*noFlexlmLicenseMessage: WorkShop could not find a valid FlexLM license.\n\nIf you have an existing NetLS license for an earlier version of\nWorkShop, click on OK to use your old license.  Please contact Silicon\nGraphics to obtain a FlexLM replacement for your old license.  To avoid\nseeing this dialog again, set the "useNetLSLicense" resource in the\napplication defaults file to "True".\n\nTo obtain an Evaluation or Permanent license, please visit our license\nrequest web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*noLicenseMessage: Unable to find a WorkShop license.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*licenseExpiredMessage:      Your WorkShop License has expired.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*warnLoseLicenseMessage:     Unable to renew your software license.  Consult\nthe NetLS LSSERVER Release Notes for information on\ntroubleshooting your license server and network services.
+*regainLicenseMessage:       WorkShop license regained.
+*enterLicenseMessage: WorkShop requires a license. Please enter your license\nkey and click OK. Temporary license keys are available at the\nfollowing web site\n\nhttp://www.sgi.com/Products/license.html\n\nor call our technical support hotline at 1-800-800-4SGI.\n\nIf you have an existing NetLS license for a previous version of\nWorkShop, you can click Cancel to try to find a NetLS\nlicense.
+
+!!!!!
+!!!   Turn off all Xt and Motif warning messages
+!!!!!
+
+! This should be off when we ship, but ON for internal testing
+
+*silenceWarnings:  TRUE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of VIEW Common Resources                                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! Cvproj application specific resources                                       !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*cvproj.title:				Project View
+
+!
+! Admin menu
+!
+*adminMenu.labelString:			Admin
+*adminMenu*appMode.labelString:		Show Applications
+*adminMenu*appMode.indicatorType:	XmONE_OF_MANY
+*adminMenu*winMode.labelString:		Show Windows
+*adminMenu*winMode.indicatorType:	XmONE_OF_MANY
+*adminMenu*rescanItem.labelString:	Rescan
+*adminMenu*exitItem.labelString:	Exit
+
+!
+! Tools menu
+!
+*toolsMenu.labelString:			Launch
+
+!
+! Mnemonics
+!
+*adminMenu.mnemonic:			A
+*adminMenu*appMode.mnemonic:		A
+*adminMenu*winMode.mnemonic:		W
+*adminMenu*rescanItem.mnemonic:		R
+*adminMenu*exitItem.mnemonic:		E
+*toolsMenu.mnemonic:			L
+
+!
+! Header area
+!
+*projectLabel.labelString:		Project: 
+*projectLabel.recomputeSize:		False
+*projectLabel.alignment:		XmALIGNMENT_END
+*cmdLabel.labelString:			Command: 
+*cmdLabel.recomputeSize:		False
+*cmdLabel.alignment:			XmALIGNMENT_END
+
+!
+! Scrolled area
+!
+*scroll.scrollingPolicy:		XmAUTOMATIC
+*scroll.scrollBarDisplayPolicy:		XmSTATIC
+*scroll.width:				420
+*scroll.height:				200
+*rc.orientation:			XmVERTICAL
+*rc.packing:				XmPACK_TIGHT
+*rc.isAligned:				False
+*rc.resizeWidth:			False
+*rc.resizeHeight:			False
+*rc.marginWidth:			0
+*rc.marginHeight:			0
+
+!
+! Projects
+!
+*project.orientation:			XmVERTICAL
+*project.packing:			XmPACK_TIGHT
+*project.isAligned:			False
+*project.resizeWidth:			False
+*project.resizeHeight:			True
+*project.marginWidth:			0
+*project.marginHeight:			0
+*cvproj*buttonBox.spacing:		10
+*separator.separatorType:		XmSHADOW_ETCHED_IN_DASH
+*boxFrame.shadowThickness:		2
+*boxFrame.shadowType:			XmSHADOW_ETCHED_IN
+
+!
+! Project buttons
+!
+*button.width:				120
+*button.recomputeSize:			False
+*button.alignment:			XmALIGNMENT_CENTER
+
+!
+! Popup menu
+!
+*iconifyPopup.labelString:		Iconify
+*raisePopup.labelString:		Raise
+*quitPopup.labelString:			Exit

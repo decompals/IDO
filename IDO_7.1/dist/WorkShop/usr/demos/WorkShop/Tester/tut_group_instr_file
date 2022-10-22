@@ -1,0 +1,2 @@
+COUNTS  -bbcounts -fpcounts -branchcounts
+CONSTRAIN libc.so.1:* 

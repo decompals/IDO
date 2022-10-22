@@ -1,0 +1,12 @@
+#3.10
+Fileset Editor
+To specify a fileset, you need to select the files and move them to the appropriate fileset type--parser or scanner.
+Click the C language toggle.
+As you can see, jello.c is now selected.
+Click the Move Files Parser button.
+Notice jello.c has now been moved to the scanner Fileset.
+Click the jello.c file to select it
+jello.c is now highlighted in the Scanner Fileset window.
+Now click the upward pointing arrow to the right of the Transfer Files label.
+The jello.c file has now been added to the Parser fileset list and will be parsed when the database is built.
+Click on the bottom right arrow to continue.

@@ -1,0 +1,1 @@
+<BOOK name="XLib_WinSys" alias="X Toolkit Intrinsics Programming Manual (O'Reilly & Associates, Inc.)" type="generic" version="862-0017-001 08/93" srchtags="TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples">

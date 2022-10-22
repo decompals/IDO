@@ -1,0 +1,12 @@
+#2.6.1
+The Static Analyzer reads through your source code files (C, C++, or Fortran) and creates database functions, macros, variables, files, and (for C++) classes and methods and their relations.
+Drag your mouse over the Static Analyzer window for a brief description of each of its features.
+Provides options for specifying and building the database of files to be analyzed, accessing other tools, and other tasks
+Query target field, for entering the target in spcific queries
+Task identification label
+Display area, for showing the results of your queries in the format you select
+Graphic controls for manipulating the display of graphical views
+Lets you select the format of the data display: text,call tree, class tree, or file dependency
+Lets you review  or repeat prior tasks in this session
+Lets you define the type of information to display
+

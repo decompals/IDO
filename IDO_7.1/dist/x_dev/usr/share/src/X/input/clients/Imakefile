@@ -1,0 +1,32 @@
+XCOMM $XConsortium: Imakefile,v 1.14 91/07/12 17:06:55 rws Exp $
+
+   LOCLIBS = $(XILIB) $(XLIB)
+   DEPLIBS = $(DEPXILIB) $(DEPXLIB)
+
+   COMMONSRCS = IEUtils.c
+   COMMONOBJS = IEUtils.o
+   SETPTRSRCS = setptr.c $(COMMONSRCS)
+   SETPTROBJS = setptr.o $(COMMONOBJS)
+  DEVCTRLSRCS = devctrl.c $(COMMONSRCS)
+  DEVCTRLOBJS = devctrl.o $(COMMONOBJS)
+   SRCS = IEUtils.c setptr.c devctrl.c XList.c XSelInput.c
+   OBJS = IEUtils.o setptr.o devctrl.o XList.o XSelInput.o
+
+all: setptr setkbd devctrl devquery xlist xselinput
+
+NormalProgramTarget(setptr,$(SETPTROBJS),$(DEPLIBS),$(LOCLIBS),NullParameter)
+NormalProgramTarget(devctrl,$(DEVCTRLOBJS),$(DEPLIBS),$(LOCLIBS),NullParameter)
+
+NormalProgramTarget(xlist,XList.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+NormalProgramTarget(xselinput,XSelInput.o,$(DEPLIBS),$(LOCLIBS),NullParameter)
+
+setkbd:	setptr
+	$(LN) setptr setkbd
+
+devquery: devctrl
+	$(LN) devctrl devquery
+
+clean::
+	$(RM) devquery setkbd
+
+DependTarget()

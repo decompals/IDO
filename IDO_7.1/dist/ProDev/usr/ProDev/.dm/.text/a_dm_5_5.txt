@@ -1,0 +1,10 @@
+###5.5
+
+At the end of a performance experiment, the main Performance Analyzer window appears.
+Drag your mouse over the Performance Analyzer window to learn more about its features. Click the bottom right arrow when you are done.
+The Function List displays functions with performance data, in this case, time spent in the function and in the functions it called.  Double-clicking a function displays the source code in Source View (or Main View) annotated with the performance data.
+The Usage Chart indicates general resource usage during the experiment.
+The Time Line indicates events occuring in the experiment as tick marks.  Clicking an event identifies it.  Double-clicking an event displays the associated call stack.  The calipers let you limit the scope of the analysis.  The controls let you move the calipers and selected event.
+Caliper and sample point selector controls.
+
+

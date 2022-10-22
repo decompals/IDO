@@ -1,0 +1,13 @@
+#!/bin/sh
+
+url=$1
+
+netscapeOn=`ps -ef|grep netscape|grep -v jumper| grep -v grep`
+
+echo $netscapeOn
+
+if [ "$netscapeOn" != "" ]; then
+  /usr/bin/X11/netscape -raise -remote "openURL(`echo ${url}`)"
+else
+  /usr/bin/X11/netscape $url
+fi

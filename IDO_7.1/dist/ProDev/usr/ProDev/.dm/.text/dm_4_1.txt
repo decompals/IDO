@@ -1,0 +1,15 @@
+#4.1
+Fast Track
+Select the skill(s) you want to learn.  This lesson will include ONLY the skills that you select.  
+
+You want to be able to:
+     recognize Debugger features
+     start the Debugger
+     set breakpoints 
+     step through code
+     watch and modify variables
+     list where all global variable are defined and used
+     determine which function sets a variable
+     list where all classes are defined and used
+     locate the view for Multiprocess debugging
+Are you finished selecting?

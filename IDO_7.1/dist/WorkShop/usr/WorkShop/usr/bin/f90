@@ -1,0 +1,9 @@
+#!/bin/csh
+
+if (-e /bin/f90) then
+	echo "/bin/f90 $* "
+	/bin/f90 $*
+else
+	echo "Can't analyze Fortran 90 code; Fortran compiler not installed"
+endif
+

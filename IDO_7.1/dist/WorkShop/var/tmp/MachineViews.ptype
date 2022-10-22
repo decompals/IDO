@@ -1,0 +1,7 @@
+ptype SGI_CV_CVMACHINE
+{
+    start "/usr/lib/WorkShop/cvmachine";
+    handle: session SGI_Debug_MemoryView() => start;
+    handle: session SGI_Debug_RegisterView() => start;
+    handle: session SGI_Debug_DisView() => start;
+}

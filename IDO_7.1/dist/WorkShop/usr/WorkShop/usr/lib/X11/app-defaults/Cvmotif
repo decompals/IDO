@@ -1,0 +1,606 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! VIEW Common Resources                                                       !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*keyboardFocusPolicy:	pointer
+
+*sgiMode:		true
+*schemeFileList:	CaseVision
+*paletteFileList:	CaseVisionPalette
+*useSchemes:		all
+*useEnhancedFSB:        true
+
+*XmMenuShell*tearOffModel:		tear_off_enabled
+
+*useTtutil:		True
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*popupMenu*XmMenuShell*tearOffModel:        tear_off_disabled
+
+!
+! Launch menu labels
+!
+*launchMenu.labelString:	Launch Tool
+*launchMenu.mnemonic:		L
+
+!
+! Project menu labels
+!
+*projectMenu.labelString:		Project
+*projectMenu.mnemonic:			P
+*projectIconify.labelString:		Iconify
+*projectIconify.mnemonic:		I
+*projectRaise.labelString:		Raise
+*projectRaise.mnemonic:			R
+*projectRemapPaths.labelString:		Remap Paths...
+*projectRemapPaths.mnemonic:		m
+*projectProjectView.labelString:	Project View...
+*projectProjectView.mnemonic:		P
+*projectExit.labelString:		Exit
+*projectExit.mnemonic:			E
+
+!
+! Static Analyzer Query Menu Labels
+!
+*queryMenu.labelString: Query
+*queryMenu.mnemonic: Q
+
+*qmGeneral.labelString: General
+*qmGeneral.mnemonic: G
+*qmMacros.labelString: Macros
+*qmMacros.mnemonic: M
+*qmFunctions.labelString: Functions
+*qmFunctions.mnemonic: F
+*qmVariables.labelString: Variables
+*qmVariables.mnemonic: V
+
+*qmWhereSymbolDefined.labelString:	Where Defined ?
+*qmWhereMacroDefined.labelString:		Where Defined ?
+*qmWhereVariableDefined.labelString:	Where Defined ?
+*qmWhereFunctionDefined.labelString:	Where Defined ?
+
+!
+! Option menu labels
+!
+*optionMenu.labelString:
+
+
+
+!
+! Resource for determining what languages file suffixes indicate.
+! Used by cvsource and cvstatic
+!
+*suffixSource:		C++.c++ C++.C C++.cxx C++.h C++.cpp C++.cc C.c  Fortran.f Fortran.F Fortran90.f90 Ada.adb
+
+!!!!
+!!! NLS Messages
+!!!!
+*useNetLSLicense:					False
+*disableLicenseWarnings:              FALSE
+*disableThirtyDayLicenseWarnings:     FALSE
+
+*thirtyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of WorkShop.        
+*sixtyDayMessage:            Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*ninetyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*noLicenseServerMessage:     Unable to locate a license server.  Consult \nthe WorkShop Release Notes for information on\nsetting up your network license server.
+*notEnoughLicensesMessage:   No WorkShop licenses are available at this time. Contact\nyour sales representative or dealer to purchase additional\nlicenses or try again later.
+!
+*Evaluation*sixtyDayMessage:
+*Evaluation*ninetyDayMessage:
+*Evaluation*thirtyDayMessage: Your evaluation license for WorkShop\nwill expire in %d days.\n\nTo purchase a permanent license or extend\nyour evaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html\n\nor email: demolicense@sgi.com
+!
+*Evaluation*licenseExpiredMessage: Your evaluation period for WorkShop\nhas expired. \n\nTo purchase a permanent license or extend your\nevaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html or\n\nemail: demolicense@sgi.com
+!
+*noFlexlmLicenseMessage: WorkShop could not find a valid FlexLM license.\n\nIf you have an existing NetLS license for an earlier version of\nWorkShop, click on OK to use your old license.  Please contact Silicon\nGraphics to obtain a FlexLM replacement for your old license.  To avoid\nseeing this dialog again, set the "useNetLSLicense" resource in the\napplication defaults file to "True".\n\nTo obtain an Evaluation or Permanent license, please visit our license\nrequest web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*noLicenseMessage: Unable to find a WorkShop license.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*licenseExpiredMessage:      Your WorkShop License has expired.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*warnLoseLicenseMessage:     Unable to renew your software license.  Consult\nthe NetLS LSSERVER Release Notes for information on\ntroubleshooting your license server and network services.
+*regainLicenseMessage:       WorkShop license regained.
+*enterLicenseMessage: WorkShop requires a license. Please enter your license\nkey and click OK. Temporary license keys are available at the\nfollowing web site\n\nhttp://www.sgi.com/Products/license.html\n\nor call our technical support hotline at 1-800-800-4SGI.\n\nIf you have an existing NetLS license for a previous version of\nWorkShop, you can click Cancel to try to find a NetLS\nlicense.
+
+!!!!!
+!!!   Turn off all Xt and Motif warning messages
+!!!!!
+
+! This should be off when we ship, but ON for internal testing
+
+*silenceWarnings:  TRUE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of VIEW Common Resources                                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! PCSkit Common Resources                                                     !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*resultFormatPopupMenu*tearOffModel: 	XmTEAR_OFF_DISABLED
+*exprLanguagePopupMenu*tearOffModel: 	XmTEAR_OFF_DISABLED
+
+! Don't send standard messages by default, for improved stepping performance
+*sendStandardMessages:				False
+
+!
+! View Administration Menu
+!
+*administrationMenu.labelString:		Admin
+*setCurrentViewToggleMenuItem.labelString:	Active
+*cloneViewMenuItem.labelString:			Clone
+*quitViewMenuItem.labelString:			Close
+*saveTextMenuItem.labelString:			Save As Text...
+
+!
+! View Config Menu (optional)
+!
+*configMenu.labelString:			Config
+*preferencesMenuItem.labelString:		Preferences...
+
+!
+! Process Control Menu
+!
+*processControlMenu.labelString:		Process
+*continueProcessMenuItem.labelString:		Continue
+*stepOverSourceLineMenu.labelString:		Step Over
+*stepIntoSourceLineMenu.labelString:		Step Into
+*returnFromTopFrameMenuItem.labelString:	Return
+*stopProcessMenuItem.labelString:		Stop
+*killProcessMenuItem.labelString:		Kill
+*runProcessMenuItem.labelString:		Run
+*hangProcessMenuItem.labelString:		Hang
+
+!
+! Session Management Menu 
+!
+*sessionMenu.labelString:			Session
+*sessionMenu.execSessionMenuItem.labelString:	Execution...
+*sessionMenu.execSessionMenuItem.command:	SGI_Debug_ExecutionView
+*sessionMenu.iconifySessionMenuItem.labelString:Iconify
+*sessionMenu.raiseSessionMenuItem.labelString:	Raise
+*sessionMenu.switchSessionMenuItem.labelString:	Switch
+*sessionMenu.pathRemappingMenuItem.labelString:	Remap Paths...
+*sessionMenu.pathRemappingMenuItem.command:	SGI_Debug_PathRemap
+*sessionMenu.quitSessionMenuItem.labelString:	Exit
+
+!
+! View List Menu
+!
+*viewsMenu.labelString:				Views
+*ViewCommands:	Array Browser, Call Stack, Disassembly View, Exception View, Execution View, Expression View, File Browser, Memory View, Process Meter, Register View, Signal Panel, Source View, Structure Browser, Syscall Panel, Task View, Trap Manager, Variable Browser, X/Motif Analyzer
+*ViewCommands*Array Browser:	    SGI_Debug_ArrayBrowser
+*ViewCommands*Call Stack:	    SGI_Debug_CallStack
+*ViewCommands*Variable Browser:	    SGI_Debug_VarBrowser
+*ViewCommands*Exception View:	             SGI_Debug_ExceptionView
+*ViewCommands*Exception View-fileStat:   /usr/lib/WorkShop/cvexceptionview
+*ViewCommands*Execution View:	    SGI_Debug_ExecutionView
+*ViewCommands*Expression View:	    SGI_Debug_ExpressionView
+*ViewCommands*File Browser:	    SGI_Debug_FileBrowser
+*ViewCommands*Task View:	    SGI_Debug_TaskView
+*ViewCommands*Task View-fileStat:   /usr/lib/WorkShop/cvtaskview
+*ViewCommands*Trap Manager:	    SGI_Debug_TrapMgr
+*ViewCommands*Signal Panel:	    SGI_Debug_SignalPanel
+*ViewCommands*Syscall Panel:	    SGI_Debug_SyscallPanel
+*ViewCommands*Process Meter:	    SGI_Debug_ProcessMeter
+*ViewCommands*Structure Browser:    SGI_Debug_StructureBrowser
+*ViewCommands*Memory View:	    SGI_Debug_MemoryView
+*ViewCommands*Register View:	    SGI_Debug_RegisterView
+*ViewCommands*Disassembly View:	    SGI_Debug_DisView
+*ViewCommands*Source View:	    SGI_Debug_SourceView
+
+*ViewCommands*X/Motif Analyzer:     		SGI_Debug_Motif
+*ViewCommands*X/Motif Analyzer-fileStat:	/usr/lib/WorkShop/cvmotif
+*viewsMenu*X/Motif Analyzer.mnemonic:           X
+*viewsMenu*X/Motif Analyzer.labelString:        X/Motif\256 Analyzer
+
+! dialog boxes
+*switchProcessDialog*selectionLabelString: Process ID:
+*switchProcessDialog.dialogTitle: Switch Process
+*switchExecutableDialog*selectionLabelString: Core file:
+*switchExecutableDialog*executableLabel.labelString: Executable:
+*switchExecutableDialog.dialogTitle: Switch Executable
+
+!
+! Timeouts, in milliseconds
+!
+*xhangTimeout:			300000
+!*execTimeout:			500000
+*execTimeout:			0
+
+
+!
+! Mnemonics
+!
+*administrationMenu.mnemonic:		A
+*setCurrentViewToggleMenuItem.mnemonic:	A
+*cloneViewMenuItem.mnemonic:		l
+*quitViewMenuItem.mnemonic:		C
+*saveTextMenuItem.mnemonic:		S
+
+*configMenu.mnemonic:			C
+*preferencesMenuItem.mnemonic:		P
+
+
+*processControlMenu.mnemonic:		P
+*continueProcessMenuItem.mnemonic:	C
+*stepOverSourceLineMenu.mnemonic:	O
+*stepIntoSourceLineMenu.mnemonic:	I
+*returnFromTopFrameMenuItem.mnemonic:	R
+*stopProcessMenuItem.mnemonic:		S
+*killProcessMenuItem.mnemonic:		K
+*runProcessMenuItem.mnemonic:		u
+*hangProcessMenuItem.mnemonic:		H
+
+*sessionMenu.mnemonic:				S
+*sessionMenu.iconifySessionMenuItem.mnemonic:	I
+*sessionMenu.raiseSessionMenuItem.mnemonic:	R
+*sessionMenu.switchSessionMenuItem.mnemonic:	S
+*sessionMenu.pathRemappingMenuItem.mnemonic:	P
+*sessionMenu.quitSessionMenuItem.mnemonic:	E
+
+*viewsMenu.mnemonic:				V
+*viewsMenu*Array Browser.mnemonic:		A
+*viewsMenu*Call Stack.mnemonic:			C
+*viewsMenu*Variable Browser.mnemonic:		V
+*viewsMenu*Exception View.mnemonic:		n
+*viewsMenu*Expression View.mnemonic:		E
+*viewsMenu*File Browser.mnemonic:		l
+*viewsMenu*Task View.mnemonic:			k
+*viewsMenu*Trap Manager.mnemonic:		T
+*viewsMenu*Signal Panel.mnemonic:		i
+*viewsMenu*Syscall Panel.mnemonic:		y
+*viewsMenu*Process Meter.mnemonic:		c
+*viewsMenu*Source View.mnemonic:		o
+*viewsMenu*Structure Browser.mnemonic:		B
+*viewsMenu*Memory View.mnemonic:		M
+*viewsMenu*Register View.mnemonic:		R
+*viewsMenu*Disassembly View.mnemonic:		D
+*viewsMenu*Performance Analyzer.mnemonic:	P
+*viewsMenu*Static Analyzer.mnemonic:		S
+*viewsMenu*Build Analyzer.mnemonic:		u
+
+*viewsMenu*Call Stack.accelerator:		Alt<Key>C
+*viewsMenu*Structure Browser.accelerator:	Alt<Key>B
+*viewsMenu*Expression View.accelerator:		Alt<Key>E
+*viewsMenu*Call Stack.acceleratorText:		Alt+C
+*viewsMenu*Structure Browser.acceleratorText:	Alt+B
+*viewsMenu*Expression View.acceleratorText:	Alt+E
+
+*quitViewMenuItem.accelerator:		Ctrl<Key>C
+*quitViewMenuItem.acceleratorText:	Ctrl+C
+
+
+*libpathDialog.width:					440
+*libpathDialog.dialogTitle: 				Library Search Path
+*libpathDialog*resizable: 				False
+*libpathDialog*ldLibraryPathLabel.labelString:		$LD_LIBRARY_PATH: 
+*libpathDialog*rldRootLabel.labelString:		$_RLD_ROOT: 
+*libpathDialog*rldListLabel.labelString:		$_RLD_LIST: 
+*libpathDialog*ldLibraryPathLabel.recomputeSize:	False
+*libpathDialog*rldRootLabel.recomputeSize:		False
+*libpathDialog*rldListLabel.recomputeSize:		False
+*libpathDialog*ldLibraryPathLabel.alignment:		XmALIGNMENT_END
+*libpathDialog*rldRootLabel.alignment:			XmALIGNMENT_END
+*libpathDialog*rldListLabel.alignment:			XmALIGNMENT_END
+*libpathDialog*libList*scrollBarDisplayPolicy:		STATIC
+*libpathDialog*libList*scrollingPolicy:			AUTOMATIC 
+*libpathDialog*libList.visibleItemCount:		10
+*libpathDialog*dummy.leftOffset:			10 
+*libpathDialog*dummy.rightOffset:			10 
+*libpathDialog*dummy.topOffset:				10 
+*libpathDialog*dummy.bottomOffset:			10 
+*libpathDialog*rldListLabel.bottomOffset:		10 
+*libpathDialog*rldListText.bottomOffset:		10 
+*libpathDialog*buttonBox.entryAlignment:		XmALIGNMENT_BEGINNING
+*libpathDialog*buttonBox.packing:			XmPACK_COLUMN
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of PCSkit Common Resources                                              !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! X/Motif application specific resources                                      !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*motif.title:					X/Motif\256 Analyzer
+
+*thirtyDayMessage:           Your temporary MegaDev license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of MegaDev.        
+*sixtyDayMessage:            Your temporary MegaDev license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*ninetyDayMessage:           Your temporary MegaDev license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+!! clone doesn't work riht now 11/18
+*cloneViewMenuItem.sensitive:			False
+
+!! temporary resources for on-line help
+*helpDialog.Title:				X/Motif\256 Analyzer Help
+*helpDialog.iconName:				X/Motif\256 Help
+*helpDialog*label.labelString:			Topics: 
+*helpDialog*label.alignment:			XmALIGNMENT_BEGINNING
+*helpDialog*label.recomputeSize:		False
+*helpDialog*label.width:			200
+*helpDialog*list.scrollBarDisplayPolicy:	XmAS_NEEDED
+*helpDialog*list.listSizePolicy:		XmCONSTANT
+*helpDialog*helpText.rows:			20
+*helpDialog*helpText.columns:			120
+*helpDialog*helpText.editMode:			XmMULTI_LINE_EDIT
+*helpDialog*helpText.scrollBarDisplayPolicy:	XmSTATIC
+*helpDialog*helpText.editable:			False
+*helpDialog*topOffset:				10
+*helpDialog*bottomOffset:			10
+*helpDialog*leftOffset:				10
+*helpDialog*rightOffset:			10
+*helpDialog*listSW.topOffset:			0
+*helpDialog*listSW.leftOffset:			0
+
+*LdLibraryPathString:	/usr/lib/WorkShop/Motif:/usr/lib/WorkShop/Motif32:/usr/lib/WorkShop/Motif64
+!*LdLibraryPathString:	/usr/lib/WorkShop/Motif
+*LdLibraryPathDesc:	/usr/lib/WorkShop/Motif
+
+*selectedTabBackground:			SGI_DYNAMIC BasicBackground
+Cvmotif*panel*background:		SGI_DYNAMIC AlternateBackground1
+
+*motif*adisplay*indexList.scrollBarDisplayPolicy: XmSTATIC
+*motif*adisplay*indexList.selectionPolicy:	XmSINGLE_SELECT
+! We don't use the index list anymore
+*motif*adisplay*indexList.mappedWhenManaged:	False
+*motif*adisplay*header.alignment:		XmALIGNMENT_CENTER
+*motif*adisplay*deck.bottomOffset:		5
+*motif*tabPopupMenu.labelString:		Examiner Menu
+*motif*tabRemoveItem.labelString:		Remove Examiner
+*motif*panel*XmMenuShell*tearOffModel:		tear_off_disabled
+*motif*adisplay*XmMenuShell*tearOffModel:	tear_off_disabled
+
+! this is the longest string of the possible values
+*motif*textDisplay*label.labelString:		W Class: 
+*motif*textDisplay*label.marginLeft:		10
+*motif*textDisplay*label.recomputeSize:		False
+*motif*textDisplay*label.alignment:		XmALIGNMENT_END
+*motif*textDisplay*text.editMode:		XmMULTI_LINE_EDIT
+*motif*textDisplay*text.editable:		False
+*motif*textDisplay*text.blinkRate:		0
+*motif*textDisplay*text.scrollHorizontal:	True
+*motif*textDisplay*text.rows:			20
+*motif*textDisplay*text.columns:		65
+
+*motif*Widget*text.editMode:			XmMULTI_LINE_EDIT
+*motif*Widget*text.editable:			False
+*motif*Widget*text.blinkRate:			0
+*motif*Widget*text.scrollHorizontal:		True
+*motif*Widget*text.rows:			20
+*motif*Widget*text.columns:			65
+
+*motif*examineMenu.labelString:			Examine
+*motif*examineMenu.mnemonic:			E
+*motif*examineSelectionItem.labelString:	Selection
+*motif*examineSelectionItem.mnemonic:		S
+*motif*examineSelectionItem.accelerator:	Alt<Key>S
+*motif*examineSelectionItem.acceleratorText:	Alt+S
+*motif*examineWidget.labelString:		Widget
+*motif*examineWidget.mnemonic:			W
+*motif*examineWidget.accelerator:		Alt<Key>W
+*motif*examineWidget.acceleratorText:		Alt+W
+*motif*examineWClass.labelString:		Widget Class
+*motif*examineWClass.mnemonic:			C
+*motif*examineWTree.labelString:		Widget Tree
+*motif*examineWTree.mnemonic:			T
+*motif*examineWindow.labelString:		Window
+*motif*examineWindow.mnemonic:			i
+*motif*examineXEvent.labelString:		X Event
+*motif*examineXEvent.mnemonic:			X
+*motif*examineGC.labelString:			X Graphics Context
+*motif*examineGC.mnemonic:			G
+*motif*examinePixmap.labelString:		X Pixmap
+*motif*examinePixmap.mnemonic:			P
+
+! not yet implemented
+*motif*examineResourceDB.labelString:		Resource Database
+*motif*examineResourceDB.mnemonic:		R
+
+*motif*Widget*nav.leftOffset:			10
+*motif*Widget*nav.rightOffset:			10
+*motif*nav*XmLabelGadget.alignment:		XmALIGNMENT_END
+*motif*nav*XmLabelGadget.recomputeSize:		False
+*motif*nav*widgetLabel.labelString:		Widget: 
+*motif*nav*classLabel.labelString:		Class: 
+*motif*nav*exprLabel.labelString:		Expr: 
+*motif*nav*wclass.labelString:			
+*motif*nav*wclass.width:			1
+*motif*nav*wclass.alignment:			XmALIGNMENT_BEGINNING
+*motif*nav*nameLabel.labelString:		Name: 
+*motif*nav*parentLabel.labelString:		Parent: 
+*motif*nav*wparent.alignment:			XmALIGNMENT_BEGINNING
+*motif*nav*wparent.recomputeSize:		False
+*motif*nav*previous.labelString:		Previous
+*motif*nav*previous.sensitive:			False
+*motif*nav*children.labelString:		Children...
+*motif*nav*XmMenuShell*tearOffModel:		tear_off_disabled
+*motif*nav*children.labelString:		Children...
+*motif*nav*select.labelString:			Select...
+*motif*nav*buttonbox.orientation:		XmHORIZONTAL
+*motif*nav*buttonbox.packing:			XmPACK_COLUMN
+*motif*nav*buttonbox.marginWidth:		0
+*motif*nav*buttonbox.marginHeight:		0
+*motif*nav*buttonbox.entryAlignment:		XmALIGNMENT_BEGINNING
+*motif*nav*wtext.columns:			13
+*motif*nav*wname.columns:			13
+cvmotif*motif*nav*wtextreturn.marginWidth:	2
+cvmotif*motif*nav*wtextreturn.marginHeight:	2
+*motif*nav*wtextreturn.rightOffset:		10
+cvmotif*motif*nav*wnamereturn.marginWidth:	2
+cvmotif*motif*nav*wnamereturn.marginHeight:	2
+*motif*nav*wnamereturn.rightOffset:		10
+*motif*nav*parentLabel.bottomOffset:		10
+*motif*nav*wexpr.alignment:			XmALIGNMENT_BEGINNING
+*motif*nav*wexpr.recomputeSize:			False
+*motif*nav*wexpr.rightOffset:			10
+! Kind of left-align the label text with the text widget text
+*motif*nav*wexpr.marginLeft:			7
+
+*motif*disp*separator.topOffset:		10
+*motif*disp*text.editMode:                      XmMULTI_LINE_EDIT
+*motif*disp*text.editable:                      False
+*motif*disp*text.blinkRate:			0
+*motif*disp*text.scrollHorizontal:		True
+*motif*disp*text.rows:				25
+*motif*disp*text.columns:			60
+
+*motif*graph.orientation:		XmHORIZONTAL
+*motif*graph*skewOverviewScale:		True
+*motif*graph*allowMultipleSelections:	False
+*motif*graph*movableNodes:		False
+*motif*graph*editableArcs:		False
+*motif*graph*editable:			True
+*motif*Tree*nameOption.labelString:	Name
+*motif*Tree*classOption.labelString:	Class
+*motif*Tree*addressOption.labelString:	ID
+*motif*Tree*windowOption.labelString:	Window
+! hack to vertially position the button in VkGraph
+*motif*Tree*searchButton.highlightThickness:	0
+*motif*Tree*optionMenu.bottomOffset: 	10
+*motif*Tree*optionMenu.rightOffset: 	5
+*motif*Tree*searchDialog.dialogTitle:	Widget Hierarchy Search
+*motif*Tree*searchDialog.autoUnmanage:	False
+*motif*Tree*searchDialog.selectionLabelString:	Search Text:
+*graph_overview.width:			300
+*graph_overview.height:			200
+*graph_overview.title:			X/Motif\256 Widget Tree
+*graph_overview.iconName:		X/Motif\256 Tree
+
+Cvmotif*childrenMenuBar*marginHeight:	0
+Cvmotif*childrenMenuBar*marginWidth:	0
+
+*motif*Breakpoints*nav.leftOffset:			10
+*motif*Breakpoints*nav.rightOffset:			10
+*motif*Breakpoints*XmMenuShell*tearOffModel:		tear_off_disabled
+*motif*Breakpoints*label.labelString:			Breakpoints: 
+*motif*Breakpoints*label.recomputeSize:			False
+*motif*Breakpoints*label.alignment:			XmALIGNMENT_END
+*motif*Breakpoints*list.selectionPolicy:		XmSINGLE_SELECT
+*motif*Breakpoints*list.listSizePolicy:			XmCONSTANT
+*motif*Breakpoints*list.scrollBarDisplayPolicy:		XmSTATIC
+*motif*Breakpoints*sep.orientation:			XmHORIZONTAL
+*motif*Breakpoints*sep.height:				20
+*motif*Breakpoints*sep2.orientation:			XmHORIZONTAL
+*motif*Breakpoints*sep2.topOffset:			10
+*motif*Breakpoints*buttons*XmPushButton.recomputeSize: 	False
+*motif*Breakpoints*buttons*XmPushButton.alignment: 	XmALIGNMENT_CENTER
+*motif*Breakpoints*buttons.rightOffset:			5
+*motif*Breakpoints*modifyButton.labelString:		Modify
+*motif*Breakpoints*addButton.labelString:		Add
+*motif*Breakpoints*clearButton.labelString:		Clear
+*motif*Breakpoints*deleteButton.labelString:		Delete
+*motif*Breakpoints*specItemLabel.labelString:		Specifier: 
+*motif*Breakpoints*classItemLabel.labelString:		Widget Class: 
+*motif*Breakpoints*stepButton.labelString:		Step To
+*motif*Breakpoints*modifyButton.leftOffset:		10
+*motif*Breakpoints*stepButton.leftOffset:		10
+*motif*Breakpoints*clearButton.rightOffset:		10
+*motif*Breakpoints*clearButton.recomputeSize: 		False
+*motif*Breakpoints*clearButton.alignment: 		XmALIGNMENT_CENTER
+*motif*Breakpoints*listform.bottomOffset:		5
+*motif*Breakpoints*groupItemBase.rightOffset:		10
+*motif*Breakpoints*deck.rightOffset:			10
+
+*motif*typeItemLabel.labelString:			Breakpoint Type: 
+*motif*bCallbackBase*callbackNameLabel.labelString:	Callback Name: 
+*motif*bCallbackBase*clientDataLabel.labelString:	Client_Data: 
+*motif*bEventBase*typeNameLabel.labelString:		Event Type: 
+*motif*bEventBase*windowIDLabel.labelString:		Window ID: 
+*motif*bEvHandlerBase*typeNameLabel.labelString:	Event Type: 
+*motif*bEvHandlerBase*clientDataLabel.labelString:	Client_Data: 
+*motif*bResourceBase*resourceNameLabel.labelString:	Resource Name: 
+*motif*bResourceBase*resourceValueLabel.labelString:	Resource Value: 
+*motif*bTimeoutBase*clientDataLabel.labelString:	Client_Data: 
+*motif*bInputBase*fileDescLabel.labelString:		File Descriptor: 
+*motif*bInputBase*clientDataLabel.labelString:		Client_Data: 
+*motif*bStateBase*stateLabel.labelString:		State Type: 
+*motif*bRequestBase*typeNameLabel.labelString:		Request Type: 
+*motif*bRequestBase*requestTypeButton.labelString:	RequestType
+
+*motif*requestTypeDialog.autoUnmanage:			False
+*motif*requestTypeDialog.dialogTitle:			Request Type Selection
+*motif*requestTypeDialog.dialogStyle:			XmDIALOG_PRIMARY_APPLICATION_MODAL
+*motif*requestTypeDialog.listLabelString:		X Requests:
+*motif*requestTypeDialog*searchLabel.labelString:	Search: 
+
+*motif*Break_List*toggleColumn1Title.labelString:         Active: 
+*motif*Break_List*descriptionListTitle.labelString:       Breakpoints:
+*motif*Break_List*toggleColumn1Title.alignment:           XmALIGNMENT_BEGINNING
+*motif*Break_List*descriptionListTitle.alignment:         XmALIGNMENT_BEGINNING
+*motif*Break_List*searchTextLabel.labelString:            Search:
+*motif*Break_List.topOffset:              5
+*motif*Break_List.bottomOffset:           5
+*motif*Break_List.leftOffset:             5
+*motif*Break_List.rightOffset:            5
+
+*motif*Trace*collectItemLabel.labelString:		Collect Trace: 
+*motif*Trace*textItemLabel.labelString:			File: 
+*motif*Trace*sep.orientation:				XmHORIZONTAL
+*motif*Trace*listLabel.labelString:			Trace Summary:
+*motif*Trace*buttonbox.orientation:			XmHORIZONTAL
+*motif*Trace*buttonbox.packing:				XmPACK_COLUMN
+*motif*Trace*buttonbox.marginWidth:			0
+*motif*Trace*buttonbox.marginHeight:			0
+*motif*Trace*buttonbox.entryAlignment:			XmALIGNMENT_BEGINNING
+*motif*Trace*filter.labelString:			Filter...
+*motif*Trace*truncate.labelString:			Clear File
+*motif*Trace*detailText.rows:				4
+*motif*Trace*detailText.editMode:			XmMULTI_LINE_EDIT
+*motif*Trace*detailText.editable:			False
+*motif*Trace*detailText.blinkRate:			0
+*motif*Trace*detailText.scrollHorizontal:		False
+*motif*Trace*detailText.wordWrap:			True
+*motif*Trace*detailLabel.labelString:			Selection Detail:
+*motif*Trace*traceList.selectionPolicy:			XmSINGLE_SELECT
+*motif*Trace*traceList.listSizePolicy:			XmCONSTANT
+*motif*Trace*traceList.scrollBarDisplayPolicy:		XmSTATIC
+*motif*Trace*buttonbox.bottomOffset:			15
+*motif*Trace*searchLabel.labelString:			Search: 
+*motif*Trace*searchLabel.bottomOffset:			15
+*motif*Trace*searchText.bottomOffset:			15
+*motif*Trace*searchText.rightOffset:			20
+
+*motif*traceFilter.dialogTitle:				Filter Trace
+*motif*traceFilter.noResize:				True
+*motif*traceFilter*callbackLabel.labelString:		Xt Callbacks: 
+*motif*traceFilter*stateLabel.labelString:		Widget State Changes: 
+*motif*traceFilter*resourceLabel.labelString:		Widget Resource Changes: 
+*motif*traceFilter*dispatchLabel.labelString:		Widget Event Dispatch: 
+*motif*traceFilter*eventLabel.labelString:		X Server Events: 
+*motif*traceFilter*requestLabel.labelString:		X Server Requests: 
+
+*motif*Pixmap*exprLabel.labelString:			Pixmap: 
+*motif*Pixmap*exprLabel.recomputeSize:			False
+*motif*Pixmap*exprLabel.alignment:			XmALIGNMENT_END
+*motif*Pixmap*cmapLabel.labelString:			Colormap: 
+*motif*Pixmap*cmapLabel.recomputeSize:			False
+*motif*Pixmap*cmapLabel.alignment:			XmALIGNMENT_END
+*motif*Pixmap*descLabel.recomputeSize:			False
+*motif*Pixmap*descLabel.alignment:			XmALIGNMENT_BEGINNING
+*motif*Pixmap*scrolledw.scrollingPolicy:		XmAUTOMATIC
+*motif*Pixmap*scrolledw.scrollBarDisplayPolicy:		XmAS_NEEDED
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of X/Motif application specific resources                               !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

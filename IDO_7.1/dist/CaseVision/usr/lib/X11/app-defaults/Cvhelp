@@ -1,0 +1,155 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! HelpServer Resources                                                        !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*keyboardFocusPolicy:	pointer
+
+*schemeFileList:	CaseVision
+*paletteFileList:       CaseVisionPalette
+*useSchemes:            all
+*baseScheme:            Base
+*defaultScheme:         Lascaux
+
+*silenceWarnings:       True
+
+! These are the defaults, but what the heck
+
+*debug:			false
+*helpRoot:		/usr/lib/onlineHelp
+*viewerCmd:		ShowcaseViewer
+*printShowcaseCmd:	ShowcaseViewer -p
+*printShowcaseSuffix:	| lp
+*printTextCmd:		/usr/lib/onlineHelp/TextFormat %s | lp
+*uidFile:		HelpServer.uid
+*autoQuitTimeout:	1440
+*displayErrors:		False
+
+*useShowcase:			True
+
+! Schemes handle this
+*currentColor:			Red
+*viewerColor:			Gray35
+*constraintColor:		Purple2
+
+*graph.orientation:		XmHORIZONTAL
+*graph*skewOverviewScale:	True
+*graph*allowMultipleSelections:	False
+*graph*movableNodes:		False
+*graph*editableArcs:		False
+*overview.width:		220
+*overview.height:		400
+*graph_overview.dialogTitle:	Help Overview
+*graph_overview.iconName:	Help Overview
+*warningTitle:			Help Server Error Message
+
+*helpViewer*containerViewer.borderWidth:		2
+*helpViewer*viewerControls.horizontalSpacing:		5
+*helpViewer*viewerControls.verticalSpacing:		5
+*helpViewer*buttonbox.marginWidth:			2
+*helpViewer*buttonbox.marginHeight:			2
+*helpViewer*listMode.spacing:				0
+*helpViewer*listMode.marginWidth:			0
+*helpViewer*listMode.marginHeight:			0
+*helpViewer*modeChildren.labelString:			List Subtopics
+*helpViewer*modeChildren.set:				True
+*helpViewer*modeHistory.labelString:			List History
+*helpViewer*buttons.leftOffset:				5
+*helpViewer*buttons.marginWidth:			2
+*helpViewer*buttons.marginHeight:			2
+*helpViewer*buttons.orientation:			XmHORIZONTAL
+*helpViewer*buttons.entryAlignment:			XmALIGNMENT_CENTER
+*helpViewer*buttons.packing:				XmPACK_COLUMN
+*helpViewer*buttons.numColumns:				2
+*helpViewer*buttons.spacing:				1
+*helpViewer*buttons*up.labelString:			More General
+*helpViewer*buttons*tree.labelString:			Browser
+*helpViewer*buttons*help.labelString:			Help
+*helpViewer*buttons*back.labelString:			Recent
+*helpViewer*buttons*print.labelString:			Print
+*helpViewer*buttons*clone.labelString:			Copy
+*helpViewer*quit.labelString:				Close
+*helpViewer*current.labelString:			Active Viewer
+*helpViewer*current.marginWidth:			0
+*helpViewer*current.marginHeight:			0
+*helpViewer*current.set:				False
+*helpViewer*current.alignment:				XmALIGNMENT_BEGINNING
+*helpViewer*displayArea.width:				711
+*helpViewer*displayArea.height:				316
+*helpViewer*text.cursorPositionVisible:			False
+*helpViewer*text.editMode:				XmMULTI_LINE_EDIT
+*helpViewer*text.rows:					10
+*helpViewer*text.columns:				10
+*helpViewer*text.editable:				False
+*helpViewer*textFixed.cursorPositionVisible:		False
+*helpViewer*textFixed.editMode:				XmMULTI_LINE_EDIT
+*helpViewer*textFixed.rows:				10
+*helpViewer*textFixed.columns:				10
+*helpViewer*textFixed.editable:				False
+*helpViewer*showcaseScrolledArea.scrollBarDisplayPolicy:	XmSTATIC
+
+*helpViewer*rtfBackground:				white
+*helpViewer*rtf.fontList: \
+fixed=nil,\
+-*-times-medium-r-*-*-*-120-*-*-*-*-iso8859-1=roman,\
+-*-times-bold-r-*-*-*-140-*-*-*-*-iso8859-1=roman-bold,\
+-*-times-medium-r-*-*-*-180-*-*-*-*-iso8859-1=decor,\
+-*-times-bold-r-*-*-*-180-*-*-*-*-iso8859-1=decor-bold,\
+-*-times-medium-i-*-*-*-120-*-*-*-*-iso8859-1=roman-italic,\
+-*-times-bold-i-*-*-*-120-*-*-*-*-iso8859-1=roman-bold-italic,\
+-*-helvetica-medium-r-*-*-*-120-*-*-*-*-iso8859-1=swiss,\
+-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-1=swiss-bold,\
+-*-helvetica-medium-o-*-*-*-120-*-*-*-*-iso8859-1=swiss-italic,\
+-*-helvetica-bold-o-*-*-*-120-*-*-*-*-iso8859-1=swiss-bold-italic,\
+-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-1=modern,\
+-*-courier-bold-r-*-*-*-120-*-*-*-*-iso8859-1=modern-bold,\
+-*-courier-medium-o-*-*-*-120-*-*-*-*-iso8859-1=modern-italic,\
+-*-courier-bold-o-*-*-*-120-*-*-*-*-iso8859-1=modern-bold-italic,\
+-*-symbol-medium-r-*-*-*-120-*-*-*-*-adobe-fontspecific=tech
+
+*helpTree*treeButtons.marginHeight:			2
+*helpTree*treeButtons.marginWidget:			2
+*helpTree*treeButtons.orientation:			XmVERTICAL
+*helpTree*treeButtons.entryAlignment:			XmALIGNMENT_CENTER
+*helpTree*treeButtons.packing:				XmPACK_COLUMN
+*helpTree*treeButtons.spacing:				1
+*helpTree*treeHelp.labelString:				Help
+*helpTree*treeBack.labelString:				Recent
+*helpTree*treeQuit.labelString:				Close
+*helpTree*modeGraphical.labelString:			Graphical
+*helpTree*modeGraphical.recomputeSize:			False
+*helpTree*modeTableOfC.labelString:			Topic Hierarchy
+*helpTree*modeTableOfC.recomputeSize:			False
+*helpTree*modeCatalog.labelString:			Topic Index
+*helpTree*modeCatalog.recomputeSize:			False
+*helpTree*paneArea.sashHeight:				10
+*helpTree*paneArea.spacing:				8
+*helpTree*paneArea.marginHeight:			3
+*helpTree*treeArea.width:				420
+*helpTree*treeArea.height:				450
+
+*treeCatalog*catalogView.labelString:			View
+*treeCatalog*catalogExpand.labelString:			Expand
+*treeCatalog*searchLabel.labelString:			Search: 
+*treeCatalog*searchLabel.leftOffset:			10
+*treeCatalog*searchLabel.alignment:			XmALIGNMENT_BEGINNING
+
+*treeTableOfC*tableButtons.marginHeight:		2
+*treeTableOfC*tableButtons.marginWidth:			2
+*treeTableOfC*tableButtons.orientation:			XmHORIZONTAL
+*treeTableOfC*tableButtons.entryAlignment:		XmALIGNMENT_BEGINNING
+*treeTableOfC*tableButtons.packing:			XmPACK_TIGHT
+*treeTableOfC*tableButtons.spacing:			1
+*treeTableOfC*tableView.labelString:			View
+*treeTableOfC*tableExpand.labelString:			Expand
+*treeTableOfC*tableConstrain.labelString:		Set Scope
+*treeTableOfC*tableConstrainCatalog.labelString:	Limit Index
+*treeTableOfC*tableSearchLabel.labelString:		Search: 
+*treeTableOfC*tableSearchLabel.alignment:		XmALIGNMENT_BEGINNING
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of HelpServer Resources                                                 !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

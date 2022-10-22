@@ -1,0 +1,1 @@
+<BOOK name="T_IRIX_Prog" edition="19961113" alias = "Topics in IRIX Programming" type = "sgi_developer" hide = "FALSE" version = "007-2478-004, 8/96" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

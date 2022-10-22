@@ -1,0 +1,5 @@
+ptype SGI_CV_CVEXCEPTIONVIEW
+{
+    start "/usr/lib/WorkShop/cvexceptionview";
+    handle: session SGI_Debug_ExceptionView() => start;
+}

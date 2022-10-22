@@ -1,0 +1,133 @@
+#!/bin/sh
+
+#If a file called /tmp/debug_cvmakedso exists, then this script will print
+#some debug output
+if [ -f /tmp/debug_cvmakedso ]
+then
+debug=TRUE
+set -x
+else
+debug=FALSE
+fi
+
+# create dso for interpreter
+# usage: cvmakedso <intp_temp_Dir> <working_dir> <generic_name> <dso_number>
+#
+#        intput:
+#
+#		<intp_temp_Dir> : directory where dso's are built
+#				  and kept. This is used to keep so_locations
+#				  file by cvmakedso.
+#
+#		<generic_name> : a name used for arriving at
+#		    <generic_name>.c     -- program file
+#		    <generic_name>.flags -- a file which contains user given
+#					    compiler flags, include paths etc...
+#		    <generic_name>.o     -- object file
+#	<generic_name><dso_number>.so    -- dso file
+#		    <generic_name>.out   -- file containing errors and warnings
+#
+#		<dso_number>   : a number used to arrive at dso name
+#				 also is the version of redefinition
+#                                if compiled version is 1.
+#
+#
+#	output:
+#
+#		<generic_name>.out contains the output and errors from the
+#		compiler and loader
+#
+#               <generic_name>.diff contains the diff output comparing
+#               previous (or compiled) code to the new code (wait-for-file)
+#
+#       return status:
+#
+#               Every thing is fine:        SUCCESS (1)
+#               Parsing errors:             NOT_COMPILED (2)
+#               DSO building errors:        NOT_LOADED (3) 
+#
+
+# return values
+
+NOT_COMPILED=2
+NOT_LOADED=3
+SUCCESS=1
+
+LOADER=ld
+
+# ignore white spaces while taking the differences between old and new files
+DIFF_TOOL="diff -w"
+
+INTP_TEMP_DIR=$1
+WORKING_DIRECTORY=$2
+GENERIC_NAME=$3
+DSO_NUMBER=$4
+
+PROGRAM_FILE="$GENERIC_NAME.prefix.$DSO_NUMBER.c"
+OBJECT_FILE="$GENERIC_NAME.o"
+DSO_FILE="$GENERIC_NAME.$DSO_NUMBER.so"
+OUTPUT_FILE="$GENERIC_NAME.out"
+FLAGS_FILE="$GENERIC_NAME.flags"
+
+WAIT_FOR_FILE=$GENERIC_NAME.$DSO_NUMBER.c
+PREV_DEFN=$GENERIC_NAME.`expr $DSO_NUMBER - 1`.c
+export WAIT_FOR_FILE
+
+#echo "%%%%% $INTP_TEMP_DIR $WORKING_DIRECTORY $GENERIC_NAME $DSO_NUMBER $WAIT_FOR_FILE  %%%%%"
+
+if test -r $FLAGS_FILE; then
+    COMPILER_FLAGS="`cat $FLAGS_FILE` -Wf,-Yiw$WAIT_FOR_FILE -Wf,-Yit -Wf,-Yil"
+else
+    COMPILER_FLAGS="NCC -Wf,-Yiw$WAIT_FOR_FILE -c -g -Wf,-Yit -Wf,-Yil"
+fi
+
+#LOADER_FLAGS="-shared -check_registry /dev/null"
+LOADER_FLAGS=" -o32 -shared -update_registry $INTP_TEMP_DIR/so_locations"
+
+# remove the old wait for file if any
+#if test -r $WAIT_FOR_FILE; then
+#    rm $WAIT_FOR_FILE
+#fi
+
+# change directory to the one which was used to compile the original
+# source file; test before cd so that we dont get an error message
+>$OUTPUT_FILE
+if test -d $WORKING_DIRECTORY; then
+    cd $WORKING_DIRECTORY
+else
+    echo "warning: directory $WORKING_DIRECTORY doesn't exist, using $PWD" >> $OUTPUT_FILE
+fi
+
+# launch the compiler
+$COMPILER_FLAGS $PROGRAM_FILE -o $OBJECT_FILE >>$OUTPUT_FILE 2>&1 &
+# Following lines take care of killing NCC and edgcpfe.
+# If this program gets notified about cvmain's death.
+# cvmakedso is the group leader, so we arrange to kill all its children
+# if cvmain dies.
+trap "kill -15 -\$$; exit" 1 2
+wait
+
+# load if there is an object file
+if [ \( $? -eq 0 \) -a \( -r $OBJECT_FILE \) ] ; then
+    $LOADER $LOADER_FLAGS $OBJECT_FILE -o $DSO_FILE >>$OUTPUT_FILE 2>&1;
+    if test -r $DSO_FILE; then
+	RETURN_VAL=$SUCCESS
+	rm -f $OBJECT_FILE
+	$DIFF_TOOL $PREV_DEFN $WAIT_FOR_FILE >$GENERIC_NAME.diff
+    else
+	RETURN_VAL=$NOT_LOADED
+    fi
+else
+	RETURN_VAL=$NOT_COMPILED
+fi
+
+if [ $debug = TRUE ]
+then
+   set +x
+   echo "---- Output from compiling and linking ----"
+   cat $OUTPUT_FILE
+   echo "-------------------------------------------"
+   set -x
+fi
+exit $RETURN_VAL
+

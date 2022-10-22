@@ -1,0 +1,12 @@
+#3.9
+Specifying a Fileset
+To build a static analysis database, you specify a set of source files (a fileset) and whether the database is to be built in parser mode (using the compiler) or in scanner mode (fast but language-insensitive).
+Run the mouse over the Fileset Editor for descriptions.  Click the right arrow button when you are done.
+
+The directory selection features let you specify a directory containing source files you want to analyze.
+The directory move controls let you specify whole directories (and their subdirectories) to be included in the fileset in parser or scanner mode.
+The Files selection features allow you to specify individual files.  
+The file move controls allow you to include selected files in the fileset in either parser or scanner mode.
+The fileset scrolling lists let you see which files are specified for parser mode and which are specified for scanner mode.
+The Current Fileset field allows you to name the current fileset.
+The language filter toggles let you select all source files written in that language.

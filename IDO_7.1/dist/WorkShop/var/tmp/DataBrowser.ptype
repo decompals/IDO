@@ -1,0 +1,5 @@
+ptype SGI_CV_CVSTRUCT
+{
+    start "/usr/lib/WorkShop/cvstruct";
+    handle: session SGI_Debug_StructureBrowser() => start;
+}

@@ -1,0 +1,19 @@
+###5.10
+
+In our experiment, data was taken at 1-second intervals. Let's look at some typical data--the Call Stack--at the sample points.
+Select "Call Stack" from the Views menu.
+Click any sample point to see the corresponding Call Stack.  When you are done, click on the bottom right arrow to continue.
+
+
+
+
+Usage View (Graphs)
+Usage View (Numerical)
+I/O View
+Call Graph View
+Leak View
+Malloc View
+Malloc Error View
+Heap View
+Call Stack
+Working Set View

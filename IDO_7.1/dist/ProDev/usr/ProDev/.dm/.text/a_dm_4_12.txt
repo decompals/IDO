@@ -1,0 +1,29 @@
+###4.12
+Variable Browser
+The Variable Browser lets you change variable values by entering new values in the right column. 
+Select "Variable Browser" from the Views menu.
+As you can see the Variable Browser now appears in the center of the window.  You can change the format of the variable values using the format menu.
+Right-click anywhere in the Result (right) column of the Variable Browser to display the Format menu.  When you are finished click on the bottom right arrow to continue.
+
+
+
+
+
+Array Browser
+Call Stack
+Disassembly View
+Exception View
+Execution View
+Expression View
+File Browser
+Memory View
+Process Meter
+Register View
+Signal Panel
+Source View
+Structure Browser  Alt+B
+Syscall Panel
+Task View
+Trap Manager
+Variable Browser
+X/Motif Analyzer

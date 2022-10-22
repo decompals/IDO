@@ -1,0 +1,99 @@
+#3.9
+Display File Dependencies
+To graphically display the files dependencies of your program, "query" the database for a complete file listing. 
+
+Then go to the "View" menu and choose the graphic file dependency view.  
+Use the "Queries" and "View" menus to display your code's file dependencies.
+Sorry.  You must first go to the "Query" menu and choose "List all files..."
+Sorry.  You have already queried the database.
+
+Now, go to the "View" menu and choose "File Dependencies"
+
+
+
+
+
+
+
+
+
+General
+Macros
+Variables
+Functions
+Files
+Classes
+Methods
+Common Blocks
+Types
+Directories
+List Global Symbols
+List All Constants
+Where Symbol Used
+Where Defined?
+Find String
+Find Regular Expression
+
+
+
+
+List All Macros
+Where Defined?
+Where Undefined?
+Who Uses?
+List Unused Macros
+
+List All Global Variables
+Where Defined?
+Who References?
+Who Sets?
+Where Address Taken
+
+
+
+
+List All Functions
+Where Defined?
+Where Function Used
+Who Calls?
+Who is Called By?
+List Undefined
+List Unused Function
+List Local Declarations
+
+
+List All Files
+List All Header Files
+List Matching Files
+Who Includes?
+Who is included By?
+List All Classes
+Where Defined?
+List Subclasses
+List Superclasses
+List Methods in Class
+List All Methods
+Where Defined?
+Where Declared?
+
+
+List All Common Blocks
+List All Symbols in Common Block
+Where Common Block Defined?
+Where Common Block Referenced
+
+List All Types
+Where Type Defined
+List Functions of Type
+List Data of Type
+Where Type Used
+List Directories
+List Files
+
+
+
+Text View
+Call Tree View
+Class Tree View
+File Dependency View
+The Results Filter

@@ -1,0 +1,5 @@
+#4.7
+Watching and Modifying Expressions
+The Expression view lets you specify expressions to be evaluated when the process stops.  You can save sets of expressions for use later as well as specify the expression language and the result format.
+Go to the Views menu and Select the Expressions View.
+

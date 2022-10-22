@@ -1,0 +1,8278 @@
+%!PS-Adobe-1.0
+%%Creator: quasar:davea (David B.Anderson,,)
+%%Title: stdin (ditroff)
+%%CreationDate: Tue Jul  9 15:45:25 1996
+%%EndComments
+% Start of psdit.pro -- prolog for ditroff translator
+% Copyright (c) 1985,1987 Adobe Systems Incorporated. All Rights Reserved. 
+% GOVERNMENT END USERS: See Notice file in TranScript library directory
+% -- probably /usr/lib/ps/Notice
+% $Revision: 1.5 $
+/$DITroff 140 dict def $DITroff begin
+/fontnum 1 def /fontsize 10 def /fontheight 10 def /fontslant 0 def
+/xi {0 72 11 mul translate 72 resolution div dup neg scale 0 0 moveto
+  /fontnum 1 def /fontsize 10 def /fontheight 10 def /fontslant 0 def F
+  /pagesave save def}def
+/PB{save /psv exch def currentpoint translate
+  resolution 72 div dup neg scale 0 0 moveto}def
+/PE{psv restore}def
+/m1 matrix def /m2 matrix def /m3 matrix def /oldmat matrix def
+/tan{dup sin exch cos div}bind def
+/point{resolution 72 div mul}bind def
+/dround	{transform round exch round exch itransform}bind def
+/xT{/devname exch def}def
+/xr{/mh exch def /my exch def /resolution exch def}def
+/xp{}def
+/xs{docsave restore end}def
+/xt{}def
+/xf{/fontname exch def /slotno exch def fontnames slotno get fontname eq not
+ {fonts slotno fontname findfont put fontnames slotno fontname put}if}def
+/xH{/fontheight exch def F}bind def
+/xS{/fontslant exch def F}bind def
+/s{/fontsize exch def /fontheight fontsize def F}bind def
+/f{/fontnum exch def F}bind def
+/F{fontheight 0 le {/fontheight fontsize def}if
+   fonts fontnum get fontsize point 0 0 fontheight point neg 0 0 m1 astore
+   fontslant 0 ne{1 0 fontslant tan 1 0 0 m2 astore m3 concatmatrix}if
+   makefont setfont .04 fontsize point mul 0 dround pop setlinewidth}bind def
+/X{exch currentpoint exch pop moveto show}bind def
+/N{3 1 roll moveto show}bind def
+/Y{exch currentpoint pop exch moveto show}bind def
+/S /show load def
+/ditpush{}def/ditpop{}def
+/AX{3 -1 roll currentpoint exch pop moveto 0 exch ashow}bind def
+/AN{4 2 roll moveto 0 exch ashow}bind def
+/AY{3 -1 roll currentpoint pop exch moveto 0 exch ashow}bind def
+/AS{0 exch ashow}bind def
+/MX{currentpoint exch pop moveto}bind def
+/MY{currentpoint pop exch moveto}bind def
+/MXY /moveto load def
+/cb{pop}def	% action on unknown char -- nothing for now
+/n{}def/w{}def
+/p{pop showpage pagesave restore /pagesave save def}def
+/abspoint{currentpoint exch pop add exch currentpoint pop add exch}def
+/dstroke{currentpoint stroke moveto}bind def
+/Dl{2 copy gsave rlineto stroke grestore rmoveto}bind def
+/arcellipse{oldmat currentmatrix pop
+ currentpoint translate 1 diamv diamh div scale /rad diamh 2 div def
+ rad 0 rad -180 180 arc oldmat setmatrix}def
+/Dc{gsave dup /diamv exch def /diamh exch def arcellipse dstroke 
+    grestore diamh 0 rmoveto}def
+/De{gsave /diamv exch def /diamh exch def arcellipse dstroke
+    grestore diamh 0 rmoveto}def
+/Da{currentpoint /by exch def /bx exch def /fy exch def /fx exch def
+   /cy exch def /cx exch def /rad cx cx mul cy cy mul add sqrt def
+   /ang1 cy neg cx neg atan def /ang2 fy fx atan def cx bx add cy by add
+   2 copy rad ang1 ang2 arcn stroke exch fx add exch fy add moveto}def
+/Barray 200 array def % 200 values in a wiggle
+/D~{mark}def
+/D~~{counttomark Barray exch 0 exch getinterval astore /Bcontrol exch def pop
+ /Blen Bcontrol length def Blen 4 ge Blen 2 mod 0 eq and
+ {Bcontrol 0 get Bcontrol 1 get abspoint /Ycont exch def /Xcont exch def
+  Bcontrol 0 2 copy get 2 mul put Bcontrol 1 2 copy get 2 mul put
+  Bcontrol Blen 2 sub 2 copy get 2 mul put
+  Bcontrol Blen 1 sub 2 copy get 2 mul put
+  /Ybi /Xbi currentpoint 3 1 roll def def 0 2 Blen 4 sub
+  {/i exch def
+   Bcontrol i get 3 div Bcontrol i 1 add get 3 div
+   Bcontrol i get 3 mul Bcontrol i 2 add get add 6 div
+   Bcontrol i 1 add get 3 mul Bcontrol i 3 add get add 6 div
+   /Xbi Xcont Bcontrol i 2 add get 2 div add def
+   /Ybi Ycont Bcontrol i 3 add get 2 div add def
+   /Xcont Xcont Bcontrol i 2 add get add def
+   /Ycont Ycont Bcontrol i 3 add get add def
+   Xbi currentpoint pop sub Ybi currentpoint exch pop sub rcurveto
+  }for dstroke}if}def
+end
+/ditstart{$DITroff begin
+ /nfonts 60 def			% NFONTS makedev/ditroff dependent!
+ /fonts[nfonts{0}repeat]def
+ /fontnames[nfonts{()}repeat]def
+/docsave save def
+}def
+
+% character outcalls
+/oc {/pswid exch def /cc exch def /name exch def
+   /ditwid pswid fontsize mul resolution mul 72000 div def
+   /ditsiz fontsize resolution mul 72 div def
+   ocprocs name known{ocprocs name get exec}{name cb}
+   ifelse}def
+/fractm [.65 0 0 .6 0 0] def
+/fraction
+ {/fden exch def /fnum exch def gsave /cf currentfont def
+  cf fractm makefont setfont 0 .3 dm 2 copy neg rmoveto
+  fnum show rmoveto currentfont cf setfont(\244)show setfont fden show 
+  grestore ditwid 0 rmoveto} def
+/oce {grestore ditwid 0 rmoveto}def
+/dm {ditsiz mul}def
+/ocprocs 50 dict def ocprocs begin
+(14){(1)(4)fraction}def
+(12){(1)(2)fraction}def
+(34){(3)(4)fraction}def
+(13){(1)(3)fraction}def
+(23){(2)(3)fraction}def
+(18){(1)(8)fraction}def
+(38){(3)(8)fraction}def
+(58){(5)(8)fraction}def
+(78){(7)(8)fraction}def
+(sr){gsave .05 dm .16 dm rmoveto(\326)show oce}def
+(is){gsave 0 .15 dm rmoveto(\362)show oce}def
+(->){gsave 0 .02 dm rmoveto(\256)show oce}def
+(<-){gsave 0 .02 dm rmoveto(\254)show oce}def
+(==){gsave 0 .05 dm rmoveto(\272)show oce}def
+end
+% DIThacks fonts for some special chars
+50 dict dup begin
+/FontType 3 def
+/FontName /DIThacks def
+/FontMatrix [.001 0.0 0.0 .001 0.0 0.0] def
+/FontBBox [-220 -280 900 900] def% a lie but ...
+/Encoding 256 array def
+0 1 255{Encoding exch /.notdef put}for
+Encoding
+ dup 8#040/space put %space
+ dup 8#110/rc put %right ceil
+ dup 8#111/lt put %left  top curl
+ dup 8#112/bv put %bold vert
+ dup 8#113/lk put %left  mid curl
+ dup 8#114/lb put %left  bot curl
+ dup 8#115/rt put %right top curl
+ dup 8#116/rk put %right mid curl
+ dup 8#117/rb put %right bot curl
+ dup 8#120/rf put %right floor
+ dup 8#121/lf put %left  floor
+ dup 8#122/lc put %left  ceil
+ dup 8#140/sq put %square
+ dup 8#141/bx put %box
+ dup 8#142/ci put %circle
+ dup 8#143/br put %box rule
+ dup 8#144/rn put %root extender
+ dup 8#145/vr put %vertical rule
+ dup 8#146/ob put %outline bullet
+ dup 8#147/bu put %bullet
+ dup 8#150/ru put %rule
+ dup 8#151/ul put %underline
+ pop
+/DITfd 100 dict def
+/BuildChar{0 begin
+ /cc exch def /fd exch def
+ /charname fd /Encoding get cc get def
+ /charwid fd /Metrics get charname get def
+ /charproc fd /CharProcs get charname get def
+ charwid 0 fd /FontBBox get aload pop setcachedevice
+ 40 setlinewidth
+ newpath 0 0 moveto gsave charproc grestore
+ end}def
+/BuildChar load 0 DITfd put
+%/UniqueID 5 def
+/CharProcs 50 dict def
+CharProcs begin
+/space{}def
+/.notdef{}def
+/ru{500 0 rls}def
+/rn{0 750 moveto 500 0 rls}def
+/vr{20 800 moveto 0 -770 rls}def
+/bv{20 800 moveto 0 -1000 rls}def
+/br{20 770 moveto 0 -1040 rls}def
+/ul{0 -250 moveto 500 0 rls}def
+/ob{200 250 rmoveto currentpoint newpath 200 0 360 arc closepath stroke}def
+/bu{200 250 rmoveto currentpoint newpath 200 0 360 arc closepath fill}def
+/sq{80 0 rmoveto currentpoint dround newpath moveto
+    640 0 rlineto 0 640 rlineto -640 0 rlineto closepath stroke}def
+/bx{80 0 rmoveto currentpoint dround newpath moveto
+    640 0 rlineto 0 640 rlineto -640 0 rlineto closepath fill}def
+/ci{355 333 rmoveto currentpoint newpath 333 0 360 arc
+    50 setlinewidth stroke}def
+
+/lt{20 -200 moveto 0 550 rlineto currx 800 2cx s4 add exch s4 a4p stroke}def
+/lb{20 800 moveto 0 -550 rlineto currx -200 2cx s4 add exch s4 a4p stroke}def
+/rt{20 -200 moveto 0 550 rlineto currx 800 2cx s4 sub exch s4 a4p stroke}def
+/rb{20 800 moveto 0 -500 rlineto currx -200 2cx s4 sub exch s4 a4p stroke}def
+/lk{20 800 moveto 20 300 -280 300 s4 arcto pop pop 1000 sub
+    currentpoint stroke moveto
+    20 300 4 2 roll s4 a4p 20 -200 lineto stroke}def
+/rk{20 800 moveto 20 300 320 300 s4 arcto pop pop 1000 sub
+    currentpoint stroke moveto
+    20 300 4 2 roll s4 a4p 20 -200 lineto stroke}def
+/lf{20 800 moveto 0 -1000 rlineto s4 0 rls}def
+/rf{20 800 moveto 0 -1000 rlineto s4 neg 0 rls}def
+/lc{20 -200 moveto 0 1000 rlineto s4 0 rls}def
+/rc{20 -200 moveto 0 1000 rlineto s4 neg 0 rls}def
+end
+
+/Metrics 50 dict def Metrics begin
+/.notdef 0 def
+/space 500 def
+/ru 500 def
+/br 0 def
+/lt 250 def
+/lb 250 def
+/rt 250 def
+/rb 250 def
+/lk 250 def
+/rk 250 def
+/rc 250 def
+/lc 250 def
+/rf 250 def
+/lf 250 def
+/bv 250 def
+/ob 350 def
+/bu 350 def
+/ci 750 def
+/bx 750 def
+/sq 750 def
+/rn 500 def
+/ul 500 def
+/vr 0 def
+end
+
+DITfd begin
+/s2 500 def /s4 250 def /s3 333 def
+/a4p{arcto pop pop pop pop}def
+/2cx{2 copy exch}def
+/rls{rlineto stroke}def
+/currx{currentpoint pop}def
+/dround{transform round exch round exch itransform} def
+end
+end
+/DIThacks exch definefont pop
+
+ditstart
+(psc)xT
+576 1 1 xr
+1(Times-Roman)xf 1 f
+2(Times-Italic)xf 2 f
+3(Times-Bold)xf 3 f
+4(Times-BoldItalic)xf 4 f
+5(Helvetica)xf 5 f
+6(Helvetica-Bold)xf 6 f
+7(Courier)xf 7 f
+8(Courier-Bold)xf 8 f
+9(Symbol)xf 9 f
+10(DIThacks)xf 10 f
+10 s
+1 f
+xi
+%%EndProlog
+
+%%Page: 1 1
+10 s 0 xH 0 xS 1 f
+3 f
+12 s
+1446 672(A)N
+1539(Producer)X
+1948(Library)X
+2298(Interface)X
+2696(to)X
+2800(DWARF)X
+2 f
+11 s
+1049 816(UNIX)N
+9 f
+1254(\322)X
+2 f
+1346(International)X
+1834(Programming)X
+2349(Languages)X
+2757(Special)X
+3039(Interest)X
+3330(Group)X
+3 f
+576 1248(1.)N
+686(INTRODUCTION)X
+1 f
+10 s
+576 1392(This)N
+746(document)X
+1090(describes)X
+1417(the)X
+1543(proposed)X
+1865(interface)X
+2175(to)X
+2 f
+2265(libdwarf)X
+1 f
+2535(,)X
+2583(a)X
+2647(library)X
+2889(of)X
+2985(functions)X
+3312(to)X
+3403(provide)X
+3677(creation)X
+3965(of)X
+576 1488(DWARF)N
+894(debugging)X
+1261(information)X
+1668(records,)X
+1954(DWARF)X
+2272(line)X
+2421(number)X
+2695(information,)X
+3122(DWARF)X
+3440(address)X
+3709(range)X
+3916(and)X
+576 1584(pubnames)N
+921(information,)X
+1339(weak)X
+1529(names)X
+1754(informatio,)X
+2132(and)X
+2268(DWARF)X
+2577(frame)X
+2785(description)X
+3161(information.)X
+3 f
+11 s
+576 1824(1.1)N
+730(Purpose)X
+1060(and)X
+1224(Scope)X
+1 f
+10 s
+576 1968(The)N
+748(purpose)X
+1049(of)X
+1163(this)X
+1325(document)X
+1688(is)X
+1788(to)X
+1897(propose)X
+2199(a)X
+2283(library)X
+2545(of)X
+2660(functions)X
+3006(to)X
+3116(create)X
+3357(DWARF)X
+3694(debugging)X
+576 2064(information.)N
+1014(Reading)X
+1301(\(consuming\))X
+1726(of)X
+1813(such)X
+1980(records)X
+2237(is)X
+2310(discussed)X
+2637(in)X
+2719(a)X
+2775(separate)X
+3059(document.)X
+576 2256(The)N
+723(functions)X
+1043(in)X
+1127(this)X
+1264(document)X
+1602(have)X
+1776(been)X
+1950(implemented)X
+2390(at)X
+2470(Silicon)X
+2718(Graphics)X
+3030(and)X
+3168(are)X
+3289(being)X
+3489(used)X
+3658(by)X
+3760(the)X
+3880(code)X
+576 2352(generator)N
+900(to)X
+982(provide)X
+1247(debugging)X
+1605(information.)X
+576 2592(Additionally,)N
+1022(the)X
+1142(focus)X
+1338(of)X
+1427(this)X
+1564(document)X
+1902(is)X
+1977(the)X
+2097(functional)X
+2445(interface,)X
+2770(and)X
+2909(as)X
+2999(such,)X
+3189(implementation)X
+3714(as)X
+3804(well)X
+3965(as)X
+576 2688(optimization)N
+1000(issues)X
+1211(are)X
+1330(intentionally)X
+1754(ignored.)X
+576 2928(Error)N
+785(handling,)X
+1124(error)X
+1321(codes,)X
+1564(and)X
+1720(certain)X
+2 f
+1979(Libdwarf)X
+1 f
+2311(codes)X
+2534(are)X
+2673(discussed)X
+3020(in)X
+3122(the)X
+3260(")X
+2 f
+3293(Proposed)X
+3640(Interface)X
+3970(to)X
+576 3024(DWARF)N
+868(Consumer)X
+1217(Library)X
+1 f
+1461(",)X
+1534(which)X
+1750(should)X
+1983(be)X
+2079(read)X
+2238(\(or)X
+2352(at)X
+2430(least)X
+2597(skimmed\))X
+2937(before)X
+3163(reading)X
+3424(this)X
+3559(document.)X
+3 f
+11 s
+576 3264(1.2)N
+730(Definitions)X
+0(Courier)xf 0 f
+1 f
+10 s
+576 3408(DWARF)N
+890(debugging)X
+1253(information)X
+1656(entries)X
+1895(\(DIE\))X
+2108(are)X
+2232(the)X
+2355(segments)X
+2678(of)X
+2770(information)X
+3173(placed)X
+3408(in)X
+3496(the)X
+0(Courier)xf 0 f
+1 f
+0 f
+3648(.debug_*)X
+1 f
+576 3504(sections)N
+864(by)X
+974(compilers,)X
+1340(assemblers,)X
+1742(and)X
+1888(linkage)X
+2154(editors)X
+2402(that,)X
+2572(in)X
+2664(conjunction)X
+3072(with)X
+3244(line)X
+3394(number)X
+3669(entries,)X
+3933(are)X
+576 3600(necessary)N
+915(for)X
+1035(symbolic)X
+1354(source-level)X
+1773(debugging.)X
+2177(Refer)X
+2382(to)X
+2470(the)X
+2594(document)X
+2936(")X
+2 f
+2969(DWARF)X
+3267(Debugging)X
+3650(Information)X
+576 3696(Format)N
+1 f
+(")S
+869(from)X
+1045(UI)X
+1150(PLSIG)X
+1392(for)X
+1506(a)X
+1562(more)X
+1747(complete)X
+2061(description)X
+2437(of)X
+2524(these)X
+2709(entries.)X
+576 3936(This)N
+739(document)X
+1076(adopts)X
+1306(all)X
+1407(the)X
+1526(terms)X
+1725(and)X
+1862(definitions)X
+2226(in)X
+2310(")X
+2 f
+2343(DWARF)X
+2637(Debugging)X
+3015(Information)X
+3419(Format)X
+1 f
+(")S
+3714(version)X
+3972(2.)X
+576 4032(and)N
+712(the)X
+830(")X
+2 f
+863(Proposed)X
+1190(Interface)X
+1500(to)X
+1582(DWARF)X
+1874(Consumer)X
+2223(Library)X
+1 f
+2467(".)X
+576 4272(In)N
+664(addition,)X
+967(this)X
+1103(document)X
+1440(refers)X
+1645(to)X
+1728(ELF,)X
+1911(the)X
+2030(ATT/USL)X
+2380(System)X
+2636(V)X
+2715(Release)X
+2986(4)X
+3047(object)X
+3264(format.)X
+3539(This)X
+3702(is)X
+3777(because)X
+576 4368(the)N
+701(library)X
+942(was)X
+1094(first)X
+1250(developed)X
+1606(for)X
+1726(that)X
+1872(object)X
+2094(format.)X
+2374(Hopefully)X
+2725(the)X
+2849(functions)X
+3173(defined)X
+3440(here)X
+3605(can)X
+3743(easily)X
+3956(be)X
+576 4464(applied)N
+832(to)X
+914(other)X
+1099(object)X
+1315(formats.)X
+3 f
+11 s
+576 4704(1.3)N
+730(Overview)X
+1 f
+10 s
+576 4848(The)N
+722(remaining)X
+1068(sections)X
+1347(of)X
+1435(this)X
+1571(document)X
+1908(describe)X
+2197(a)X
+2254(proposed)X
+2569(producer)X
+2876(\(compiler)X
+3209(or)X
+3297(assembler\))X
+3666(interface)X
+3970(to)X
+2 f
+576 4944(Libdwarf)N
+1 f
+868(,)X
+932(first)X
+1105(by)X
+1229(describing)X
+1607(the)X
+1749(purpose)X
+2046(of)X
+2156(additional)X
+2519(types)X
+2731(defined)X
+3015(by)X
+3138(the)X
+3279(interface,)X
+3624(followed)X
+3952(by)X
+576 5040(descriptions)N
+997(of)X
+1098(the)X
+1230(available)X
+1554(operations.)X
+1963(This)X
+2140(document)X
+2491(assumes)X
+2793(you)X
+2948(are)X
+3082(thoroughly)X
+3468(familiar)X
+3757(with)X
+3934(the)X
+576 5136(information)N
+979(contained)X
+1316(in)X
+1403(the)X
+2 f
+1526(DWARF)X
+1823(Debugging)X
+2204(Information)X
+2611(Format)X
+1 f
+2876(document,)X
+3237(and)X
+3378(")X
+2 f
+3411(Proposed)X
+3742(Interface)X
+576 5232(to)N
+658(DWARF)X
+950(Consumer)X
+1299(Library)X
+1 f
+1543(".)X
+576 5472(The)N
+731(interface)X
+1043(necessarily)X
+1430(knows)X
+1669(a)X
+1735(little)X
+1911(bit)X
+2025(about)X
+2234(the)X
+2363(object)X
+2590(format)X
+2835(\(which)X
+3089(is)X
+3173(assumed)X
+3480(to)X
+3573(be)X
+3680(ELF\).)X
+3920(We)X
+576 5568(make)N
+779(an)X
+884(attempt)X
+1153(to)X
+1243(make)X
+1445(this)X
+1588(knowledge)X
+1968(as)X
+2063(limited)X
+2317(as)X
+2412(possible.)X
+2742(For)X
+2881(example,)X
+2 f
+3201(Libdwarf)X
+1 f
+3521(does)X
+3696(not)X
+3826(do)X
+3934(the)X
+576 5664(writing)N
+827(of)X
+914(object)X
+1130(data)X
+1284(to)X
+1366(the)X
+1484(disk.)X
+1677(The)X
+1822(producer)X
+2128(program)X
+2420(does)X
+2587(that.)X
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2237(-)X
+2284(1)X
+2344(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+2 p
+%%Page: 2 2
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2237 384(-)N
+2284(2)X
+2344(-)X
+3 f
+11 s
+576 768(1.4)N
+730(Revision)X
+1075(History)X
+1 f
+10 s
+576 912(March)N
+806(93)X
+1176(Work)X
+1379(on)X
+1479(dwarf2)X
+1727(sgi)X
+1840(producer)X
+2146(draft)X
+2318(begins)X
+3 f
+11 s
+576 1200(2.)N
+686(Type)X
+899(Definitions)X
+576 1488(2.1)N
+730(General)X
+1056(Description)X
+1 f
+10 s
+576 1632(The)N
+2 f
+733(libdwarf.h)X
+1 f
+1095(header)X
+1342(file)X
+1481(contains)X
+1780(typedefs)X
+2084(and)X
+2232(preprocessor)X
+2675(definitions)X
+3050(of)X
+3150(types)X
+3352(and)X
+3501(symbolic)X
+3827(names)X
+576 1728(used)N
+751(to)X
+841 0.4531(reference)AX
+1170(objects)X
+1425(of)X
+2 f
+1520(Libdwarf)X
+1 f
+1812(.)X
+1880(The)X
+2033(types)X
+2230(defined)X
+2499(by)X
+2607(typedefs)X
+2907(contained)X
+3247(in)X
+2 f
+3336(libdwarf.h)X
+1 f
+3693(all)X
+3800(use)X
+3934(the)X
+576 1824(convention)N
+961(of)X
+1057(adding)X
+0 f
+1332(Dwarf_)X
+1 f
+1649(as)X
+1745(a)X
+1810(prefix)X
+2031(to)X
+2122(indicate)X
+2405(that)X
+2554(they)X
+2721(refer)X
+2903(to)X
+2994(objects)X
+3251(used)X
+3428(by)X
+3538(Libdwarf.)X
+3907(The)X
+576 1920(prefix)N
+0 f
+822(Dwarf_P_)X
+1 f
+1232(is)X
+1311(used)X
+1484(for)X
+1604(object)X
+1826 0.4028(referenced)AX
+2193(by)X
+2299(the)X
+0 f
+2450(Libdwarf)X
+1 f
+2859(Producer)X
+3174(when)X
+3373(there)X
+3559(are)X
+3683(similar)X
+3930(but)X
+576 2016(distinct)N
+831(objects)X
+1078(used)X
+1245(by)X
+1345(the)X
+1463(Consumer.)X
+3 f
+11 s
+576 2256(2.2)N
+730(Aggregate)X
+1137(Types)X
+576 2592(3.)N
+686(Memory)X
+1030(Management)X
+1 f
+10 s
+576 2832(Several)N
+849(of)X
+948(the)X
+1078(functions)X
+1408(that)X
+1560(comprise)X
+1886(the)X
+2 f
+2016(Libdwarf)X
+1 f
+2340(interface)X
+2654(return)X
+2878(values)X
+3115(that)X
+3267(have)X
+3451(been)X
+3636(dynamically)X
+576 2928(allocated)N
+900(by)X
+1014(the)X
+1146(library.)X
+1434(Space)X
+1660(is)X
+1747(always)X
+2004(allocated)X
+2328(for)X
+2456(an)X
+2565(object)X
+2794(represented)X
+3198(by)X
+3311(a)X
+0 f
+3408(Dwarf_P_Debug)X
+1 f
+576 3024(descriptor.)N
+962(The)X
+0 f
+1140(Libdwarf)X
+1 f
+1550(typically)X
+1856(deals)X
+2047(with)X
+2215(one)X
+2357(object)X
+2579(at)X
+2663(a)X
+2725(time.)X
+2933(The)X
+3084(dynamically)X
+3506(allocated)X
+3822(spaces)X
+576 3120(can)N
+716(not)X
+846(be)X
+950(reclaimed)X
+1295(except)X
+1533(by)X
+0 f
+1668(dwarf_producer_finish\(\))X
+1 f
+(.)S
+2839(This)X
+3008(function)X
+3302(reclaims)X
+3601(all)X
+3708(the)X
+3833(space,)X
+576 3216(and)N
+728(invalidates)X
+1111(all)X
+1228(descriptors)X
+1617(returned)X
+1922(from)X
+0 f
+2143(Libdwarf)X
+1 f
+2564(functions)X
+2899(that)X
+3056(add)X
+3209(information)X
+3624(to)X
+3723(be)X
+3836(object)X
+576 3312(specified.)N
+931(After)X
+0 f
+1154(dwarf_producer_finish\(\))X
+1 f
+2283(is)X
+2361(called,)X
+2598(the)X
+0 f
+2749(Dwarf_P_Debug)X
+1 f
+3397(descriptor)X
+3742(specified)X
+576 3408(is)N
+649(also)X
+798(invalid.)X
+3 f
+11 s
+576 3648(3.1)N
+730(Read-only)X
+1138(Properties)X
+1 f
+10 s
+576 3792(All)N
+701(pointers)X
+982(returned)X
+1273(by)X
+1376(or)X
+1466(as)X
+1556(a)X
+1615(result)X
+1816(of)X
+1906(a)X
+2 f
+1965(Libdwarf)X
+1 f
+2280(call)X
+2419(should)X
+2655(be)X
+2754(assumed)X
+3053(to)X
+3139(point)X
+3327(to)X
+3413(read-only)X
+3745(memory.)X
+576 3888(Except)N
+821(as)X
+910(defined)X
+1173(by)X
+1275(this)X
+1412(document,)X
+1770(the)X
+1890(results)X
+2121(are)X
+2242(undefined)X
+2584(for)X
+2 f
+2699(Libdwarf)X
+1 f
+3012(clients)X
+3242(that)X
+3383(attempt)X
+3644(to)X
+3727(write)X
+3913(to)X
+3996(a)X
+576 3984(region)N
+801(pointed)X
+1061(to)X
+1143(by)X
+1243(a)X
+1299(return)X
+1511(value)X
+1705(from)X
+1881(a)X
+2 f
+1937(Libdwarf)X
+1 f
+2249(call.)X
+3 f
+11 s
+576 4224(3.2)N
+730(Storage)X
+1040(Deallocation)X
+1 f
+10 s
+576 4368(Calling)N
+0 f
+873(dwarf_producer_finish\(dbg\))X
+1 f
+2155(frees)X
+2346(all)X
+2460(the)X
+2592(space,)X
+2825(and)X
+2975(invalidates)X
+3356(all)X
+3471(pointers)X
+3764(returned)X
+576 4464(from)N
+0 f
+780(Libdwarf)X
+1 f
+1184(functions)X
+1502(on)X
+1602(or)X
+1689(descended)X
+2044(from)X
+0 f
+2248(dbg)X
+1 f
+(\).)S
+3 f
+11 s
+576 4752(4.)N
+686(Functional)X
+1115(Interface)X
+1 f
+10 s
+576 4896(This)N
+744(section)X
+997(describes)X
+1322(the)X
+1446(functions)X
+1770(available)X
+2086(in)X
+2175(the)X
+2 f
+2300(Libdwarf)X
+1 f
+2619(library.)X
+2900(Each)X
+3088(function)X
+3382(description)X
+3765(includes)X
+576 4992(its)N
+671(definition,)X
+1022(followed)X
+1327(by)X
+1427(a)X
+1483(paragraph)X
+1825(describing)X
+2179(the)X
+2297(function's)X
+2642(operation.)X
+576 5232(The)N
+743(functions)X
+1083(may)X
+1263(be)X
+1381(categorized)X
+1794(into)X
+1960(groups:)X
+2 f
+2262(initialization)X
+2711(and)X
+2873(termination)X
+3289(operations)X
+1 f
+3631(,)X
+2 f
+3694(debugging)X
+576 5328(information)N
+994(entry)X
+1199(creation)X
+1 f
+1466(,)X
+2 f
+1526(Elf)X
+1659(section)X
+1926(callback)X
+2238(function)X
+1 f
+2500(,)X
+2 f
+2560(attribute)X
+2875(creation)X
+1 f
+3142(,)X
+2 f
+3202(expression)X
+3585(creation)X
+1 f
+3852(,)X
+2 f
+3912(line)X
+576 5424(number)N
+866(creation)X
+1 f
+1133(,)X
+2 f
+1198(fast-access)X
+1595(\(aranges\))X
+1953(creation)X
+1 f
+2220(,)X
+2 f
+2286(fast-access)X
+2684(\(pubnames\))X
+3109(creation)X
+1 f
+3376(,)X
+2 f
+3442(fast-access)X
+3840(\(weak)X
+576 5520(names\))N
+858(creation)X
+1 f
+1125(,)X
+2 f
+1195(macro)X
+1450(information)X
+1876(creation)X
+1 f
+2143(,)X
+2 f
+2212(low)X
+2376(level)X
+2577(\(.debug_frame\))X
+3123(creation)X
+1 f
+3390(,)X
+3459(and)X
+2 f
+3624(location)X
+3935(list)X
+576 5616(\(.debug_loc\))N
+1004(creation)X
+1 f
+1271(.)X
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2237(-)X
+2284(2)X
+2344(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+3 p
+%%Page: 3 3
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2237 384(-)N
+2284(3)X
+2344(-)X
+576 768(The)N
+721(following)X
+1052(sections)X
+1330(describe)X
+1618(these)X
+1803(functions.)X
+3 f
+11 s
+576 1008(4.1)N
+730(Initialization)X
+1238(and)X
+1402(Termination)X
+1899(Operations)X
+1 f
+10 s
+576 1152(These)N
+817(functions)X
+1164(setup)X
+0 f
+1410(Libdwarf)X
+1 f
+1843(to)X
+1954(accumulate)X
+2369(debugging)X
+2756(information)X
+3183(for)X
+3326(an)X
+3451(object,)X
+3716(usually)X
+3996(a)X
+576 1248(compilation-unit,)N
+1152(provided)X
+1460(by)X
+1563(the)X
+1684(producer.)X
+2033(The)X
+2181(actual)X
+2396(addition)X
+2681(of)X
+2771(information)X
+3172(is)X
+3248(done)X
+3427(by)X
+3530(functions)X
+3850(in)X
+3934(the)X
+576 1344(other)N
+766(sections)X
+1049(of)X
+1141(this)X
+1281(document.)X
+1662(Once)X
+1857(all)X
+1962(the)X
+2085(information)X
+2488(has)X
+2620(been)X
+2797(added,)X
+3034(functions)X
+3357(from)X
+3539(this)X
+3680(section)X
+3933(are)X
+576 1440(used)N
+753(to)X
+845(transform)X
+1187(the)X
+1315(information)X
+1723(to)X
+1815(appropriate)X
+2211(byte)X
+2379(streams,)X
+2674(and)X
+2819(help)X
+2986(to)X
+3077(write)X
+3271(out)X
+3402(the)X
+3529(byte)X
+3696(streams)X
+3970(to)X
+576 1536(disk.)N
+576 1728(Typically)N
+907(then,)X
+1089(a)X
+1149(producer)X
+1459(would)X
+1683(create)X
+1900(a)X
+0 f
+1988(Dwarf_P_Debug)X
+1 f
+2636(descriptor)X
+2981(to)X
+3067(gather)X
+3292(debugging)X
+3654(information)X
+576 1824(for)N
+743(a)X
+851(particular)X
+1231(compilation-unit)X
+1836(using)X
+0 f
+2109(dwarf_producer_init\(\))X
+1 f
+(.)S
+3229(They)X
+3466(would)X
+3738(use)X
+3917(this)X
+0 f
+576 1920(Dwarf_P_Debug)N
+1 f
+1230(descriptor)X
+1581(to)X
+1673(accumulate)X
+2069(debugging)X
+2437(information)X
+2845(for)X
+2970(this)X
+3116(object)X
+3343(using)X
+3547(functions)X
+3876(from)X
+576 2016(other)N
+801(sections)X
+1119(of)X
+1246(this)X
+1421(document.)X
+1837(Once)X
+2067(all)X
+2207(the)X
+2365(information)X
+2803(had)X
+2978(been)X
+3189(added,)X
+3460(they)X
+3657(would)X
+3916(call)X
+0 f
+576 2112(dwarf_transform_to_disk_form\(\))N
+1 f
+2045(to)X
+2136(convert)X
+2406(the)X
+2533(accumulated)X
+2968(information)X
+3375(into)X
+3528(byte)X
+3695(streams)X
+3970(in)X
+576 2208 0.3750(accordance)AN
+1086(with)X
+1375(the)X
+0 f
+1648(DWARF)X
+1 f
+2035(standard.)X
+2494(They)X
+2805(would)X
+3151(then)X
+3435(repeatedly)X
+3916(call)X
+0 f
+576 2304(dwarf_get_section_bytes\(\))N
+1 f
+1803(for)X
+1924(each)X
+2099(of)X
+2193(the)X
+0 f
+2346(.debug_*)X
+1 f
+2757(created.)X
+3057(This)X
+3226(would)X
+3454(give)X
+3620(the)X
+3746(producer)X
+576 2400(information)N
+992(about)X
+1208(the)X
+1344(data)X
+1515(bytes)X
+1721(to)X
+1820(be)X
+1933(written)X
+2197(to)X
+2296(disk.)X
+2506(At)X
+2623(this)X
+2775(point,)X
+2996(the)X
+3131(producer)X
+3454(would)X
+3691(release)X
+3952(all)X
+576 2496(resource)N
+869(used)X
+1036(by)X
+0 f
+1164(Libdwarf)X
+1 f
+1568(for)X
+1682(this)X
+1817(object)X
+2033(by)X
+2133(calling)X
+0 f
+2399(dwarf_producer_finish\(\))X
+1 f
+(.)S
+0 f
+576 2736(Dwarf_P_Debug)N
+1248(dwarf_producer_init\()X
+960 2832(Dwarf_Unsigned)N
+1680(flags,)X
+960 2928(Dwarf_Callback_Func)N
+1920(func,)X
+960 3024(Dwarf_Handler)N
+1632(errhand,)X
+960 3120(Dwarf_Ptr)N
+1440(errarg,)X
+960 3216(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 3360(The)N
+736(function)X
+0 f
+1066(dwarf_producer_init\(\))X
+1 f
+2109(returns)X
+2367(a)X
+2438(new)X
+0 f
+2635(Dwarf_P_Debug)X
+1 f
+3295(descriptor)X
+3652(that)X
+3808(can)X
+3956(be)X
+576 3456(used)N
+764(to)X
+867(add)X
+0 f
+1052(Dwarf)X
+1 f
+1333(information)X
+1752(to)X
+1855(the)X
+1994(object.)X
+2271(On)X
+2410(error)X
+2608(it)X
+2693(returns)X
+0 f
+2984(DW_DLV_BADADDR)X
+1 f
+(.)S
+0 f
+3792(flags)X
+1 f
+576 3552(determine)N
+920(whether)X
+1202(the)X
+1323(target)X
+1529(object)X
+1748(is)X
+1824(64-bit)X
+2038(or)X
+2129(32-bit.)X
+0 f
+2440(func)X
+1 f
+2656(is)X
+2733(a)X
+2793(pointer)X
+3044(to)X
+3130(a)X
+3190(function)X
+3481(called-back)X
+3876(from)X
+2 f
+576 3648(Libdwarf)N
+1 f
+891(whenever)X
+2 f
+1227(Libdwarf)X
+1 f
+1542(needs)X
+1748(to)X
+1833(create)X
+2049(a)X
+2108(new)X
+2265(object)X
+2484(section)X
+2734(\(as)X
+2851(it)X
+2917(will)X
+3063(for)X
+3179(each)X
+3349(.debug_*)X
+3667(section)X
+3916(and)X
+576 3744(related)N
+829(relocation)X
+1184(section\).)X
+0 f
+1540(errhand)X
+1 f
+1910(is)X
+1997(a)X
+2067(pointer)X
+2328(to)X
+2424(a)X
+2494(function)X
+2795(that)X
+2949(will)X
+3107(be)X
+3218(used)X
+3400(for)X
+3529(handling)X
+3844(errors)X
+576 3840(detected)N
+880(by)X
+0 f
+1024(Libdwarf)X
+1 f
+(.)S
+0 f
+1512(errarg)X
+1 f
+1836(is)X
+1925(the)X
+2059(default)X
+2318(error)X
+2510(argument)X
+2848(used)X
+3030(by)X
+3145(the)X
+3278(function)X
+3580(pointed)X
+3855(to)X
+3952(by)X
+0 f
+576 3936(errhand)N
+1 f
+(.)S
+576 4080(The)N
+721(function)X
+0 f
+1036(func)X
+1 f
+1248(must)X
+1423(be)X
+1519(provided)X
+1824(by)X
+1924(the)X
+2042(user)X
+2196(of)X
+2283(this)X
+2418(library.)X
+2692(Its)X
+2792(prototype)X
+3119(is:)X
+0 f
+576 4224(typedef)N
+960(int)X
+1152(\(*Dwarf_Callback_Func\)\(char*)X
+2544(name,)X
+768 4320(int)N
+1728(size,)X
+768 4416(Dwarf_Unsigned)N
+1728(type,)X
+768 4512(Dwarf_Unsigned)N
+1728(flags,)X
+768 4608(Dwarf_Unsigned)N
+1728(link,)X
+768 4704(Dwarf_Unsigned)N
+1728(info,)X
+768 4800(int*)N
+1728(sect_name_index,)X
+768 4896(int*)N
+1728(error\);)X
+1 f
+576 5040(For)N
+713(each)X
+887(section)X
+1140(in)X
+1228(the)X
+1352(object)X
+1574(file)X
+1707(that)X
+0 f
+1881(libdwarf)X
+1 f
+2291(needs)X
+2500(to)X
+2588(create,)X
+2827(it)X
+2897(calls)X
+3070(this)X
+3211(function)X
+3504(once,)X
+3703(passing)X
+3970(in)X
+576 5136(the)N
+699(section)X
+0 f
+979(name)X
+1 f
+(,)S
+1216(the)X
+1339(section)X
+0 f
+1619(type)X
+1 f
+(,)S
+1856(the)X
+1979(section)X
+0 f
+2259(flags)X
+1 f
+(,)S
+2544(the)X
+0 f
+2695(link)X
+1 f
+2912(field,)X
+3104(and)X
+3244(the)X
+0 f
+3394(info)X
+1 f
+3610(field.)X
+3821(For)X
+3956(an)X
+576 5232(ELF)N
+757(object)X
+992(file)X
+1138(these)X
+1342(values)X
+1586(should)X
+1838(be)X
+1953(appropriate)X
+2358(ELF)X
+2539(section)X
+2805(header)X
+3059(values.)X
+3343(On)X
+3480(success)X
+3760(the)X
+3898(user)X
+576 5328(function)N
+863(should)X
+1096(return)X
+1308(the)X
+1426(ELF)X
+1588(section)X
+1835(number)X
+2100(of)X
+2187(the)X
+2305(newly)X
+2521(created)X
+2774(ELF)X
+2936(section)X
+3183(on)X
+3283(success.)X
+576 5472(On)N
+710(success,)X
+1007(the)X
+1141(function)X
+1444(should)X
+1693(also)X
+1858(set)X
+1983(the)X
+2118(integer)X
+2378(pointed)X
+2655(to)X
+2754(by)X
+0 f
+2899(sect_name_index)X
+1 f
+3656(to)X
+3755(the)X
+3890(ELF)X
+576 5568(symbol)N
+835(number)X
+1104(assigned)X
+1404(in)X
+1490(the)X
+1612(ELF)X
+1777(symbol)X
+2035(table)X
+2214(of)X
+2304(the)X
+2425(new)X
+2582(ELF)X
+2747(section.)X
+3037(This)X
+3202(symbol)X
+3460(number)X
+3728(is)X
+3804(needed)X
+576 5664(with)N
+738(relocations)X
+1110(dependent)X
+1460(on)X
+1560(the)X
+1678(relocation)X
+2019(of)X
+2106(this)X
+2241(new)X
+2395(section.)X
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2237(-)X
+2284(3)X
+2344(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+4 p
+%%Page: 4 4
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2237 384(-)N
+2284(4)X
+2344(-)X
+576 768(For)N
+707(example,)X
+1019(the)X
+0 f
+1165(.debug_line)X
+1 f
+1713(section's)X
+2018(third)X
+2189(data)X
+2343(element)X
+2618(\(in)X
+2728(a)X
+2785(compilation)X
+3188(unit\))X
+3360(is)X
+3434(the)X
+3553(offset)X
+3757(from)X
+3934(the)X
+576 864(beginning)N
+920(of)X
+1011(the)X
+0 f
+1161(.debug_info)X
+1 f
+1713(section)X
+1964(of)X
+2055(the)X
+2177(compilation)X
+2583(unit)X
+2731(entry)X
+2920(for)X
+3038(this)X
+0 f
+3204(.debug_line)X
+1 f
+3755(set.)X
+3907(The)X
+576 960(relocation)N
+930(entry)X
+1128(in)X
+0 f
+1251(.rel.debug_line)X
+1 f
+2004(for)X
+2131(this)X
+2279(offset)X
+2495(must)X
+2683(have)X
+2868(the)X
+2999(relocation)X
+3353(symbol)X
+3621(index)X
+3833(of)X
+3934(the)X
+576 1056(symbol)N
+0 f
+899(.debug_info)X
+1 f
+1507(returned)X
+1835(by)X
+1975(the)X
+2133(callback)X
+2461(of)X
+2588(that)X
+2768(section-creation)X
+3340(through)X
+3648(the)X
+3805(pointer)X
+0 f
+576 1152(sect_name_index)N
+1 f
+(.)S
+576 1296(On)N
+694(failure,)X
+944(the)X
+1062(function)X
+1349(should)X
+1582(return)X
+1794(-1)X
+1881(and)X
+2017(set)X
+2126(the)X
+0 f
+2272(error)X
+1 f
+2532(integer)X
+2775(to)X
+2857(an)X
+2953(error)X
+3130(code.)X
+0 f
+576 1440(Dwarf_Signed)N
+1200(dwarf_transform_to_disk_form\()X
+960 1536(Dwarf_P_Debug)N
+1632(dbg,)X
+960 1632(Dwarf_Error*)N
+1584(error\))X
+1 f
+576 1776(The)N
+742(function)X
+0 f
+1078(dwarf_transform_to_disk_form\(\))X
+1 f
+2559(does)X
+2747(the)X
+2887(actual)X
+3121(conversion)X
+3515(of)X
+3624(the)X
+0 f
+3792(Dwarf)X
+1 f
+576 1872(information)N
+975(provided)X
+1281(so)X
+1373(far,)X
+1504(to)X
+1587(the)X
+1706(form)X
+1883(that)X
+2024(is)X
+2097(normally)X
+2406(written)X
+2653(out)X
+2775(as)X
+0 f
+2890(Elf)X
+1 f
+3054(sections.)X
+3372(In)X
+3459(other)X
+3644(words,)X
+3880(once)X
+576 1968(all)N
+677(DWARF)X
+987(information)X
+1386(has)X
+1514(been)X
+1688(passed)X
+1924(to)X
+2 f
+2008(Libdwarf)X
+1 f
+2300(,)X
+2342(call)X
+0 f
+2508(dwarf_transform_to_disk_form\(\))X
+1 f
+3970(to)X
+576 2064(transform)N
+920(all)X
+1032(the)X
+1162(accumulated)X
+1600(data)X
+1766(into)X
+1922(byte)X
+2092(streams.)X
+2409(This)X
+2583(includes)X
+2882(turning)X
+3145(relocation)X
+3498(information)X
+3908(into)X
+576 2160(byte)N
+736(streams.)X
+1043(This)X
+1207(function)X
+1496(does)X
+1665(not)X
+1789(write)X
+1976(anything)X
+2278(to)X
+2362(disk.)X
+2557(If)X
+2633(successful,)X
+3005(it)X
+3071(returns)X
+3316(a)X
+3375(count)X
+3576(of)X
+3666(the)X
+3787(number)X
+576 2256(of)N
+0 f
+711(Elf)X
+1 f
+895(sections)X
+1193(ready)X
+1412(to)X
+1514(be)X
+1630(retrieved)X
+1956(\(and,)X
+2159(normally,)X
+2508(written)X
+2775(to)X
+2877(disk\).)X
+3117(In)X
+3224(case)X
+3403(of)X
+3510(error,)X
+3726(it)X
+3809(returns)X
+0 f
+576 2352(DW_DLV_NOCOUNT)N
+1 f
+(.)S
+0 f
+576 2592(Dwarf_Ptr)N
+1056(dwarf_get_section_bytes\()X
+960 2688(Dwarf_P_Debug)N
+1632(dbg,)X
+960 2784(Dwarf_Signed)N
+1584(dwarf_section,)X
+960 2880(Dwarf_Signed)N
+1584(*elf_section_index,)X
+960 2976(Dwarf_Unsigned)N
+1680(*length,)X
+960 3072(Dwarf_Error*)N
+1584(error\))X
+1 f
+576 3216(The)N
+768(function)X
+0 f
+1130(dwarf_get_section_bytes\(\))X
+1 f
+2398(must)X
+2621(be)X
+2765(called)X
+3025(repetitively,)X
+3478(with)X
+3688(the)X
+3854(index)X
+0 f
+576 3312(dwarf_section)N
+1 f
+1278(starting)X
+1596(at)X
+1731(0)X
+1848(and)X
+2041(continuing)X
+2460(for)X
+2631(the)X
+2806(number)X
+3128(of)X
+3272(sections)X
+3607(returned)X
+3952(by)X
+0 f
+576 3408(dwarf_transform_to_disk_form\(\))N
+1 f
+(.)S
+2081(It)X
+2156(returns)X
+0 f
+2433(NULL)X
+1 f
+2651(to)X
+2739(indicate)X
+3019(that)X
+3165(there)X
+3352(are)X
+3477(no)X
+3583(more)X
+3774(sections)X
+576 3504(of)N
+0 f
+699(Dwarf)X
+1 f
+967(information.)X
+1413(For)X
+1552(each)X
+1728(non-NULL)X
+2117(return,)X
+2357(the)X
+2483(return)X
+2703(value)X
+2905(points)X
+3128(to)X
+0 f
+3245(*length)X
+1 f
+3608(bytes)X
+3804(of)X
+3898(data)X
+576 3600(that)N
+743(are)X
+889(normally)X
+1225(added)X
+1464(to)X
+1573(the)X
+1719(output)X
+1971(object)X
+2215(in)X
+0 f
+2353(Elf)X
+1 f
+2545(section)X
+0 f
+2848(*elf_section)X
+1 f
+3472(by)X
+3600(the)X
+3746(producer)X
+576 3696(application.)N
+999(It)X
+1075(is)X
+1155(illegal)X
+1382(to)X
+1471(call)X
+1614(these)X
+1806(in)X
+1895(any)X
+2038(order)X
+2235(other)X
+2427(than)X
+2592(0)X
+2659(thru)X
+2815(N-1)X
+2967(where)X
+3191(N)X
+3276(is)X
+3356(the)X
+3480(number)X
+3751(of)X
+3844(dwarf)X
+576 3792(sections)N
+872(returned)X
+1178(by)X
+0 f
+1324(dwarf_transform_to_disk_form\(\))X
+1 f
+(.)S
+2842(The)X
+0 f
+3033(dwarf_section)X
+1 f
+3695(number)X
+3979(is)X
+576 3888(actually)N
+860(ignored:)X
+1157(the)X
+1285(data)X
+1449(is)X
+1532(returned)X
+1830(as)X
+1927(if)X
+2005(the)X
+2132(caller)X
+2340(passed)X
+2583(in)X
+2674(the)X
+2801(correct)X
+3054(dwarf_section)X
+3538(numbers)X
+3843(in)X
+3934(the)X
+576 3984(required)N
+864(sequence.)X
+1219(The)X
+0 f
+1392(error)X
+1 f
+1652(argument)X
+1975(is)X
+2048(not)X
+2170(used.)X
+0 f
+576 4128(Dwarf_Unsigned)N
+1296(dwarf_producer_finish\()X
+960 4224(Dwarf_P_Debug)N
+1632(dbg,)X
+960 4320(Dwarf_Error*)N
+1584(error\))X
+1 f
+576 4464(The)N
+726(function)X
+0 f
+1046(dwarf_producer_finish\(\))X
+1 f
+2175(should)X
+2413(be)X
+2514(called)X
+2731(after)X
+2904(all)X
+3009(the)X
+3132(bytes)X
+3326(of)X
+3418(data)X
+3578(have)X
+3756(been)X
+3934(wn)X
+576 4560(copied)N
+815(somewhere)X
+1206(\(normally)X
+1547(the)X
+1670(bytes)X
+1863(are)X
+1986(written)X
+2237(to)X
+2323(disk\).)X
+2547(It)X
+2620(frees)X
+2801(all)X
+2905(dynamic)X
+3205(space)X
+3408(allocated)X
+3722(for)X
+0 f
+3868(dbg)X
+1 f
+(,)S
+576 4656(include)N
+833(space)X
+1033(for)X
+1148(the)X
+1267(structure)X
+1569(pointed)X
+1830(to)X
+1913(by)X
+0 f
+2043(dbg)X
+1 f
+(.)S
+2249(This)X
+2413(should)X
+2648(not)X
+2772(be)X
+2870(called)X
+3084(till)X
+3194(the)X
+3314(data)X
+3470(have)X
+3644(been)X
+3818(copied)X
+576 4752(or)N
+664(written)X
+912(to)X
+995(disk)X
+1149(or)X
+1237(are)X
+1357(no)X
+1458(longer)X
+1684(of)X
+1772(interest.)X
+2069(It)X
+2139(returns)X
+2382(non-zero)X
+2688(if)X
+2757(successful,)X
+3127(and)X
+0 f
+3291(DW_DLV_NOCOUNT)X
+1 f
+3983(if)X
+576 4848(there)N
+757(is)X
+830(an)X
+926(error.)X
+3 f
+11 s
+576 5088(4.2)N
+730(Debugging)X
+1158(Information)X
+1639(Entry)X
+1881(Creation)X
+1 f
+10 s
+576 5232(The)N
+725(functions)X
+1047(in)X
+1133(this)X
+1272(section)X
+1523(add)X
+1663(new)X
+0 f
+1849(DIE)X
+1 f
+(s)S
+2048(to)X
+2134(the)X
+2256(object,)X
+2496(and)X
+2636(also)X
+2789(the)X
+2912(relatioships)X
+3306(among)X
+3549(the)X
+0 f
+3700(DIE)X
+1 f
+3869(to)X
+3956(be)X
+576 5328(specified)N
+889(by)X
+992(linking)X
+1241(them)X
+1424(up)X
+1527(as)X
+1617(parents,)X
+1892(children,)X
+2198(left)X
+2327(or)X
+2416(right)X
+2589(siblings)X
+2859(of)X
+2948(each)X
+3118(other.)X
+3345(In)X
+3434(addition,)X
+3738(there)X
+3921(is)X
+3996(a)X
+576 5424(function)N
+863(that)X
+1003(marks)X
+1219(the)X
+1337(root)X
+1486(of)X
+1573(the)X
+1691(graph)X
+1894(thus)X
+2047(created.)X
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2237(-)X
+2284(4)X
+2344(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+5 p
+%%Page: 5 5
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2237 384(-)N
+2284(5)X
+2344(-)X
+0 f
+576 768(Dwarf_Unsigned)N
+1296(dwarf_add_die_to_debug\()X
+960 864(Dwarf_P_Debug)N
+1632(dbg,)X
+960 960(Dwarf_P_Die)N
+1536(first_die,)X
+960 1056(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 1200(The)N
+736(function)X
+0 f
+1066(dwarf_add_die_to_debug\(\))X
+1 f
+2253(indicates)X
+2573(to)X
+0 f
+2698(Libdwarf)X
+1 f
+3117(the)X
+3250(root)X
+0 f
+3443(DIE)X
+1 f
+3623(of)X
+3726(the)X
+0 f
+3888(DIE)X
+1 f
+576 1296(graph)N
+781(that)X
+923(has)X
+1051(been)X
+1224(built)X
+1391(so)X
+1483(far.)X
+1634(It)X
+1704(is)X
+1778(intended)X
+2075(to)X
+2158(mark)X
+2344(the)X
+2463(compilation-unit)X
+0 f
+3045(DIE)X
+1 f
+3210(for)X
+3325(the)X
+3444(object)X
+3661(represented)X
+576 1392(by)N
+0 f
+704(dbg)X
+1 f
+(.)S
+908(The)X
+1053(root)X
+0 f
+1230(DIE)X
+1 f
+1394(is)X
+1467(specified)X
+1777(by)X
+0 f
+1905(first_die)X
+1 f
+(.)S
+576 1584(It)N
+645(returns)X
+0 f
+916(0)X
+1 f
+984(on)X
+1084(success,)X
+1365(and)X
+0 f
+1529(DW_DLV_NOCOUNT)X
+1 f
+2221(on)X
+2321(error.)X
+0 f
+576 1824(Dwarf_P_Die)N
+1152(dwarf_new_die\()X
+960 1920(Dwarf_P_Debug)N
+1632(dbg,)X
+960 2016(Dwarf_Tag)N
+1440(new_tag,)X
+960 2112(Dwarf_P_Die)N
+1536(parent,)X
+960 2208(Dwarf_P_Die)N
+1536(child,)X
+960 2304(Dwarf_P_Die)N
+1536(left_sibling,)X
+960 2400(Dwarf_P_Die)N
+1536(right_sibling,)X
+960 2496(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 2640(The)N
+721(function)X
+0 f
+1036(dwarf_new_die\(\))X
+1 f
+1776(creates)X
+2020(a)X
+2076(new)X
+0 f
+2258(DIE)X
+1 f
+2422(with)X
+2584(its)X
+2679(parent,)X
+2920(child,)X
+3120(left)X
+3248(sibling,)X
+3506(and)X
+3643(right)X
+3815(sibling)X
+0 f
+576 2736(DIE)N
+1 f
+(s)S
+772(specified)X
+1083(by)X
+0 f
+1212(parent)X
+1 f
+(,)S
+0 f
+1569(child)X
+1 f
+(,)S
+0 f
+1878(left_sibling)X
+1 f
+(,)S
+2495(and)X
+0 f
+2659(right_sibling)X
+1 f
+(,)S
+3323(respectively.)X
+3771(There)X
+3979(is)X
+576 2832(no)N
+678(requirement)X
+1088(that)X
+1230(all)X
+1332(of)X
+1421(these)X
+0 f
+1637(DIE)X
+1 f
+(s)S
+1835(be)X
+1934(specified,)X
+2267(i.e.)X
+2388(any)X
+2527(of)X
+2617(these)X
+2805(descriptors)X
+3180(may)X
+3341(be)X
+0 f
+3468(NULL)X
+1 f
+(.)S
+3723(If)X
+3800(none)X
+3979(is)X
+576 2928(specified,)N
+972(this)X
+1173(will)X
+1382(be)X
+1543(an)X
+1704(isolated)X
+0 f
+2066(DIE)X
+1 f
+(.)S
+2335(A)X
+0 f
+2506(DIE)X
+1 f
+2735(is)X
+2873(transformed)X
+3346(to)X
+3493(disk)X
+3711(form)X
+3952(by)X
+0 f
+576 3024(dwarf_transform_to_disk_form\(\))N
+1 f
+2074(only)X
+2274(if)X
+2381(there)X
+2600(is)X
+2711(a)X
+2805(path)X
+3001(from)X
+3215(the)X
+0 f
+3400(DIE)X
+1 f
+3603(specified)X
+3952(by)X
+0 f
+576 3120(dwarf_add_die_to_debug)N
+1 f
+1652(to)X
+1734(it.)X
+1838(This)X
+2000(function)X
+2287(returns)X
+0 f
+2558(DW_DLV_BADADDR)X
+1 f
+3250(on)X
+3350(error.)X
+0 f
+576 3312(new_tag)N
+1 f
+951(is)X
+1043(the)X
+1180(tag)X
+1317(which)X
+1552(is)X
+1644(given)X
+1861(to)X
+1962(the)X
+2099(new)X
+0 f
+2300(DIE)X
+1 f
+(.)S
+0 f
+2579(parent)X
+1 f
+(,)S
+0 f
+2954(child)X
+1 f
+(,)S
+0 f
+3281(left_sibling)X
+1 f
+(,)S
+3916(and)X
+0 f
+576 3408(right_sibling)N
+1 f
+1235(are)X
+1369(pointers)X
+1662(to)X
+1759(establish)X
+2074(links)X
+2264(to)X
+2361(existing)X
+0 f
+2677(DIE)X
+1 f
+(s.)S
+2927(Only)X
+3122(one)X
+3273(of)X
+0 f
+3402(parent)X
+1 f
+(,)S
+0 f
+3772(child)X
+1 f
+(,)S
+0 f
+576 3504(left_sibling)N
+1 f
+(,)S
+1196(and)X
+0 f
+1364(right_sibling)X
+1 f
+2012(may)X
+2174(be)X
+2274(non-NULL.)X
+2699(If)X
+0 f
+2805(parent)X
+1 f
+3117(\()X
+0 f
+3144(child)X
+1 f
+(\))S
+3436(is)X
+3514(given,)X
+3737(the)X
+0 f
+3888(DIE)X
+1 f
+576 3600(is)N
+663(linked)X
+897(into)X
+1055(the)X
+1187(list)X
+1318(after)X
+1500(\(before\))X
+1794(the)X
+0 f
+1954(DIE)X
+1 f
+2132(pointed)X
+2406(to.)X
+2542(If)X
+0 f
+2658(left_sibling)X
+1 f
+3268(\()X
+0 f
+3295(right_sibling)X
+1 f
+(\))S
+3979(is)X
+576 3696(given,)N
+794(the)X
+0 f
+940(DIE)X
+1 f
+1104(is)X
+1177(linked)X
+1397(into)X
+1541(the)X
+1659(list)X
+1776(after)X
+1944(\(before\))X
+2224(the)X
+0 f
+2370(DIE)X
+1 f
+2534(pointed)X
+2794(to.)X
+576 3888(To)N
+701(add)X
+853(attributes)X
+1188(to)X
+1287(the)X
+1422(new)X
+0 f
+1621(DIE)X
+1 f
+(,)S
+1822(use)X
+1966(the)X
+0 f
+2129(Attribute)X
+2626(Creation)X
+1 f
+3047(functions)X
+3382(defined)X
+3660(in)X
+3759(the)X
+3894(next)X
+576 3984(section.)N
+0 f
+576 4224(Dwarf_P_Die)N
+1152(dwarf_die_link\()X
+960 4320(Dwarf_P_Die)N
+1536(die,)X
+960 4416(Dwarf_P_Die)N
+1536(parent,)X
+960 4512(Dwarf_P_Die)N
+1536(child,)X
+960 4608(Dwarf_P_Die)N
+1536(left-sibling,)X
+960 4704(Dwarf_P_Die)N
+1536(right_sibling,)X
+960 4800(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 4944(The)N
+722(function)X
+0 f
+1038(dwarf_die_link\(\))X
+1 f
+1827(links)X
+2003(an)X
+2100(existing)X
+0 f
+2402(DIE)X
+1 f
+2567(described)X
+2896(by)X
+2997(the)X
+3116(given)X
+0 f
+3343(die)X
+1 f
+3508(to)X
+3592(other)X
+3779(existing)X
+0 f
+576 5040(DIE)N
+1 f
+(s.)S
+814(The)X
+962(given)X
+0 f
+1191(die)X
+1 f
+1358(can)X
+1493(be)X
+1592(linked)X
+1815(to)X
+1900(a)X
+1959(parent)X
+0 f
+2211(DIE)X
+1 f
+(,)S
+2398(a)X
+2457(child)X
+0 f
+2668(DIE)X
+1 f
+(,)S
+2855(a)X
+2913(left)X
+3042(sibling)X
+0 f
+3309(DIE)X
+1 f
+(,)S
+3495(or)X
+3584(a)X
+3642(right)X
+3815(sibling)X
+0 f
+576 5136(DIE)N
+1 f
+785(by)X
+930(specifying)X
+1329(non-NULL)X
+0 f
+1783(parent)X
+1 f
+(,)S
+0 f
+2184(child)X
+1 f
+(,)S
+0 f
+2537(left_sibling)X
+1 f
+(,)S
+3198(and)X
+0 f
+3408(right_sibling)X
+576 5232(Dwarf_P_Die)N
+1 f
+1145(descriptors.)X
+1578(It)X
+1667(returns)X
+1930(the)X
+2068(given)X
+0 f
+2314(Dwarf_P_Die)X
+1 f
+2882(descriptor,)X
+0 f
+3291(die)X
+1 f
+(,)S
+3495(on)X
+3615(success,)X
+3916(and)X
+0 f
+576 5328(DW_DLV_BADADDR)N
+1 f
+1268(on)X
+1368(error.)X
+576 5520(Only)N
+774(one)X
+929(of)X
+0 f
+1063(parent)X
+1 f
+(,)S
+0 f
+1438(child)X
+1 f
+(,)S
+0 f
+1765(left_sibling)X
+1 f
+(,)S
+2400(and)X
+0 f
+2583(right_sibling)X
+1 f
+3246(may)X
+3423(be)X
+3538(non-NULL.)X
+3978(If)X
+0 f
+576 5616(parent)N
+1 f
+906(\()X
+0 f
+933(child)X
+1 f
+(\))S
+1242(is)X
+1337(given,)X
+1577(the)X
+0 f
+1745(DIE)X
+1 f
+1931(is)X
+2026(linked)X
+2268(into)X
+2434(the)X
+2574(list)X
+2712(after)X
+2901(\(before\))X
+3202(the)X
+0 f
+3369(DIE)X
+1 f
+3554(pointed)X
+3835(to.)X
+3978(If)X
+0 f
+576 5712(left_sibling)N
+1 f
+1182(\()X
+0 f
+1209(right_sibling)X
+1 f
+(\))S
+1890(is)X
+1973(given,)X
+2202(the)X
+0 f
+2359(DIE)X
+1 f
+2534(is)X
+2618(linked)X
+2849(into)X
+3004(the)X
+3133(list)X
+3261(after)X
+3440(\(before\))X
+3731(the)X
+0 f
+3888(DIE)X
+1 f
+576 5808(pointed)N
+843(to.)X
+972(Non-NULL)X
+1378(links)X
+1560(overwrite)X
+1895(the)X
+2020(corresponding)X
+2506(links)X
+2688(the)X
+2813(given)X
+0 f
+3046(die)X
+1 f
+3217(may)X
+3382(have)X
+3560(had)X
+3702(before)X
+3934(the)X
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2237(-)X
+2284(5)X
+2344(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+6 p
+%%Page: 6 6
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2237 384(-)N
+2284(6)X
+2344(-)X
+576 768(call)N
+712(to)X
+0 f
+822(dwarf_die_link\(\))X
+1 f
+(.)S
+3 f
+11 s
+576 1008(4.3)N
+730(Attribute)X
+1103(Creation)X
+1 f
+10 s
+576 1152(The)N
+725(functions)X
+1047(in)X
+1133(this)X
+1272(section)X
+1523(add)X
+1663(attributes)X
+1985(to)X
+2072(a)X
+0 f
+2161(DIE)X
+1 f
+(.)S
+2370(These)X
+2587(functions)X
+2910(return)X
+3127(a)X
+0 f
+3216(Dwarf_P_Attribute)X
+1 f
+576 1248(descriptor)N
+929(that)X
+1081(represents)X
+1439(the)X
+1569(attribute)X
+1867(added)X
+2090(to)X
+2183(the)X
+2312(given)X
+0 f
+2549(DIE)X
+1 f
+(.)S
+2764(In)X
+2862(most)X
+3048(cases)X
+3249(the)X
+3378(return)X
+3601(value)X
+3806(is)X
+3890(only)X
+576 1344(useful)N
+792(to)X
+874(determine)X
+1215(if)X
+1284(an)X
+1380(error)X
+1557(occurred.)X
+576 1536(Some)N
+789(of)X
+887(the)X
+1016(attributes)X
+1345(have)X
+1528(values)X
+1764(that)X
+1915(are)X
+2045(relocatable.)X
+2469(They)X
+2665(need)X
+2848(a)X
+2915(symbol)X
+3181(with)X
+3354(respect)X
+3613(to)X
+3706(which)X
+3934(the)X
+576 1632(linker)N
+785(will)X
+931(perform)X
+1212(relocation.)X
+1595(This)X
+1759(symbol)X
+2016(is)X
+2091(specified)X
+2403(by)X
+2505(means)X
+2732(of)X
+2821(an)X
+2919(index)X
+3119(into)X
+3265(the)X
+3385(Elf)X
+3505(symbol)X
+3761(table)X
+3938(for)X
+576 1728(the)N
+694(object.)X
+0 f
+576 1968(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_location_expr\()X
+960 2064(Dwarf_P_Debug)N
+1632(dbg,)X
+960 2160(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 2256(Dwarf_Half)N
+1488(attr,)X
+960 2352(Dwarf_P_Expr)N
+1584(loc_expr,)X
+960 2448(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 2592(The)N
+724(function)X
+0 f
+1042(dwarf_add_AT_location_expr\(\))X
+1 f
+2409(adds)X
+2579(the)X
+2700(attribute)X
+2990(specified)X
+3304(by)X
+0 f
+3436(attr)X
+1 f
+3652(to)X
+3738(the)X
+0 f
+3888(DIE)X
+1 f
+576 2688(descriptor)N
+924(given)X
+1129(by)X
+0 f
+1264(ownerdie)X
+1 f
+(.)S
+1715(The)X
+1867(attribute)X
+2161(should)X
+2401(be)X
+2504(one)X
+2647(that)X
+2794(has)X
+2928(a)X
+2991(location)X
+3275(expression)X
+3644(as)X
+3737(its)X
+3838(value.)X
+576 2784(The)N
+726(location)X
+1009(expression)X
+1377(that)X
+1522(is)X
+1600(the)X
+1723(value)X
+1922(is)X
+2000(represented)X
+2396(by)X
+2501(the)X
+0 f
+2652(Dwarf_P_Expr)X
+1 f
+3253(descriptor)X
+0 f
+3628(loc_expr)X
+1 f
+(.)S
+576 2880(It)N
+653(returns)X
+904(the)X
+0 f
+1058(Dwarf_P_Attribute)X
+1 f
+1901(descriptor)X
+2249(for)X
+2370(the)X
+2495(attribute)X
+2789(given,)X
+3014(on)X
+3121(success.)X
+3429(On)X
+3554(error)X
+3738(it)X
+3809(returns)X
+0 f
+576 2976(DW_DLV_BADADDR)N
+1 f
+(.)S
+0 f
+576 3216(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_name\()X
+960 3312(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 3408(char)N
+1200(*name,)X
+960 3504(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 3648(The)N
+747(function)X
+0 f
+1088(dwarf_add_AT_name\(\))X
+1 f
+2046(adds)X
+2239(the)X
+2383(string)X
+2611(specified)X
+2947(by)X
+0 f
+3101(name)X
+1 f
+3340(as)X
+3454(the)X
+3599(value)X
+3820(of)X
+3934(the)X
+0 f
+576 3744(DW_AT_name)N
+1 f
+1105(attribute)X
+1420(for)X
+1562(the)X
+1708(given)X
+0 f
+1962(DIE)X
+1 f
+(,)S
+0 f
+2202(ownerdie)X
+1 f
+(.)S
+2674(It)X
+2771(returns)X
+3042(the)X
+0 f
+3216(Dwarf_P_attribute)X
+1 f
+576 3840(descriptor)N
+917(for)X
+1031(the)X
+0 f
+1177(DW_AT_name)X
+1 f
+1677(attribute)X
+1964(on)X
+2064(success.)X
+2365(On)X
+2483(error,)X
+2680(it)X
+2744(returns)X
+0 f
+3015(DW_DLV_BADADDR)X
+1 f
+(.)S
+0 f
+576 4080(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_comp_dir\()X
+960 4176(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 4272(char)N
+1200(*current_working_directory,)X
+960 4368(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 4512(The)N
+879(function)X
+0 f
+1352(dwarf_add_AT_comp_dir\(\))X
+1 f
+2634(adds)X
+2959(the)X
+3235(string)X
+3595(given)X
+3952(by)X
+0 f
+576 4608(current_working_directory)N
+1 f
+1819(as)X
+1928(the)X
+2068(value)X
+2284(of)X
+2393(the)X
+0 f
+2561(DW_AT_comp_dir)X
+1 f
+3275(attribute)X
+3584(for)X
+3720(the)X
+0 f
+3888(DIE)X
+1 f
+576 4704(described)N
+907(by)X
+1010(the)X
+1131(given)X
+0 f
+1361(ownerdie)X
+1 f
+(.)S
+1809(It)X
+1882(returns)X
+2129(the)X
+0 f
+2279(Dwarf_P_Attribute)X
+1 f
+3119(for)X
+3237(this)X
+3376(attribute)X
+3667(on)X
+3771(success.)X
+576 4800(On)N
+694(error,)X
+891(it)X
+955(returns)X
+0 f
+1226(DW_DLV_BADADDR)X
+1 f
+(.)S
+0 f
+576 5040(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_producer\()X
+960 5136(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 5232(char)N
+1200(*producer_string,)X
+960 5328(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 5472(The)N
+734(function)X
+0 f
+1062(dwarf_add_AT_producer\(\))X
+1 f
+2199(adds)X
+2379(the)X
+2510(string)X
+2725(given)X
+2937(by)X
+0 f
+3079(producer_string)X
+1 f
+3833(as)X
+3934(the)X
+576 5568(value)N
+805(of)X
+927(the)X
+0 f
+1108(DW_AT_producer)X
+1 f
+1835(attribute)X
+2156(for)X
+2304(the)X
+0 f
+2484(DIE)X
+1 f
+2682(given)X
+2914(by)X
+0 f
+3076(ownerdie)X
+1 f
+(.)S
+3554(It)X
+3657(returns)X
+3934(the)X
+0 f
+576 5664(Dwarf_P_Attribute)N
+1 f
+1455(descriptor)X
+1839(representing)X
+2299(this)X
+2478(attribute)X
+2809(on)X
+2953(success.)X
+3298(On)X
+3460(error,)X
+3701(it)X
+3809(returns)X
+0 f
+576 5760(DW_DLV_BADADDR)N
+1 f
+(.)S
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2237(-)X
+2284(6)X
+2344(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+7 p
+%%Page: 7 7
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2237 384(-)N
+2284(7)X
+2344(-)X
+0 f
+576 768(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_const_value_signedint\()X
+960 864(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 960(Dwarf_Signed)N
+1584(signed_value,)X
+960 1056(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 1200(The)N
+747(function)X
+0 f
+1089(dwarf_add_AT_const_value_signedint\(\))X
+1 f
+2864(adds)X
+3058(the)X
+3203(given)X
+0 f
+3456(Dwarf_Signed)X
+1 f
+576 1296(value)N
+0 f
+802(signed_value)X
+1 f
+1402(as)X
+1493(the)X
+1615(value)X
+1813(of)X
+1904(the)X
+0 f
+2054(DW_AT_const_value)X
+1 f
+2894(attribute)X
+3185(for)X
+3303(the)X
+0 f
+3453(DIE)X
+1 f
+3621(described)X
+3952(by)X
+576 1392(the)N
+705(given)X
+0 f
+942(ownerdie)X
+1 f
+(.)S
+1397(It)X
+1477(returns)X
+1731(the)X
+0 f
+1888(Dwarf_P_Attribute)X
+1 f
+2735(descriptor)X
+3087(for)X
+3213(this)X
+3360(attribute)X
+3659(on)X
+3771(success.)X
+576 1488(On)N
+694(error,)X
+891(it)X
+955(returns)X
+0 f
+1226(DW_DLV_BADADDR)X
+1 f
+(.)S
+0 f
+576 1728(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_const_value_unsignedint\()X
+960 1824(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 1920(Dwarf_Unsigned)N
+1680(unsigned_value,)X
+960 2016(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 2160(The)N
+858(function)X
+0 f
+1311(dwarf_add_AT_const_value_unsignedint\(\))X
+1 f
+3293(adds)X
+3598(the)X
+3854(given)X
+0 f
+576 2256(Dwarf_Unsigned)N
+1 f
+1269(value)X
+0 f
+1491(unsigned_value)X
+1 f
+2183(as)X
+2270(the)X
+2388(value)X
+2582(of)X
+2669(the)X
+0 f
+2815(DW_AT_const_value)X
+1 f
+3651(attribute)X
+3938(for)X
+576 2352(the)N
+0 f
+727(DIE)X
+1 f
+896(described)X
+1229(by)X
+1334(the)X
+1457(given)X
+0 f
+1688(ownerdie)X
+1 f
+(.)S
+2137(It)X
+2211(returns)X
+2459(the)X
+0 f
+2610(Dwarf_P_Attribute)X
+1 f
+3451(descriptor)X
+3797(for)X
+3917(this)X
+576 2448(attribute)N
+863(on)X
+963(success.)X
+1264(On)X
+1382(error,)X
+1579(it)X
+1643(returns)X
+0 f
+1914(DW_DLV_BADADDR)X
+1 f
+(.)S
+0 f
+576 2688(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_const_value_string\()X
+960 2784(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 2880(char)N
+1200(*string_value,)X
+960 2976(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 3120(The)N
+775(function)X
+0 f
+1144(dwarf_add_AT_const_value_string\(\))X
+1 f
+2802(adds)X
+3023(the)X
+3195(string)X
+3451(value)X
+3699(given)X
+3952(by)X
+0 f
+576 3216(string_value)N
+1 f
+1184(as)X
+1283(the)X
+1413(value)X
+1619(of)X
+1718(the)X
+0 f
+1876(DW_AT_const_value)X
+1 f
+2724(attribute)X
+3023(for)X
+3149(the)X
+0 f
+3307(DIE)X
+1 f
+3483(described)X
+3823(by)X
+3934(the)X
+576 3312(given)N
+0 f
+811(ownerdie)X
+1 f
+(.)S
+1264(It)X
+1342(returns)X
+1594(the)X
+0 f
+1750(Dwarf_P_Attribute)X
+1 f
+2596(descriptor)X
+2947(for)X
+3071(this)X
+3216(attribute)X
+3513(on)X
+3623(success.)X
+3934(On)X
+576 3408(error,)N
+773(it)X
+837(returns)X
+0 f
+1108(DW_DLV_BADADDR)X
+1 f
+(.)S
+0 f
+576 3648(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_targ_address\()X
+960 3744(Dwarf_P_Debug)N
+1632(dbg,)X
+960 3840(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 3936(Dwarf_Half)N
+1488(attr,)X
+960 4032(Dwarf_Unsigned)N
+1680(pc_value,)X
+960 4128(Dwarf_Signed)N
+1584(sym_index,)X
+960 4224(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 4368(The)N
+724(function)X
+0 f
+1042(dwarf_add_AT_targ_address\(\))X
+1 f
+2361(adds)X
+2531(an)X
+2630(attribute)X
+2920(that)X
+3064(belongs)X
+3337(to)X
+3423(the)X
+3545("address")X
+3876(class)X
+576 4464(to)N
+669(the)X
+798(die)X
+927(specified)X
+1248(by)X
+0 f
+1387(ownerdie)X
+1 f
+(.)S
+1842(The)X
+1998(attribute)X
+2296(is)X
+2380(specified)X
+2701(by)X
+0 f
+2840(attr)X
+1 f
+(,)S
+3082(and)X
+3228(the)X
+3356(object)X
+3582(that)X
+3732(the)X
+0 f
+3888(DIE)X
+1 f
+576 4560(belongs)N
+852(to)X
+941(is)X
+1021(specified)X
+1338(by)X
+0 f
+1473(dbg)X
+1 f
+(.)S
+1684(The)X
+1836(relocatable)X
+2216(address)X
+2484(that)X
+2631(is)X
+2711(the)X
+2836(value)X
+3037(of)X
+3132(the)X
+3258(attribute)X
+3553(is)X
+3634(specified)X
+3952(by)X
+0 f
+576 4656(pc_value)N
+1 f
+(.)S
+1023(The)X
+1171(symbol)X
+1429(to)X
+1514(be)X
+1613(used)X
+1782(for)X
+1898(relocation)X
+2241(is)X
+2316(specified)X
+2628(by)X
+2730(the)X
+0 f
+2878(sym_index)X
+1 f
+(,)S
+3352(which)X
+3570(is)X
+3645(the)X
+3765(index)X
+3965(of)X
+576 4752(the)N
+694(symbol)X
+949(in)X
+1031(the)X
+1149(Elf)X
+1267(symbol)X
+1522(table.)X
+576 4944(It)N
+652(returns)X
+902(the)X
+0 f
+1055(Dwarf_P_Attribute)X
+1 f
+1899(descriptor)X
+2248(for)X
+2370(the)X
+2496(attribute)X
+2791(on)X
+2899(success,)X
+3188(and)X
+0 f
+3360(DW_DLV_BADADDR)X
+1 f
+576 5040(on)N
+676(error.)X
+0 f
+576 5280(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_unsigned_const\()X
+960 5376(Dwarf_P_Debug)N
+1632(dbg,)X
+960 5472(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 5568(Dwarf_Half)N
+1488(attr,)X
+960 5664(Dwarf_Unsigned)N
+1680(value,)X
+960 5760(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2237(-)X
+2284(7)X
+2344(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+8 p
+%%Page: 8 8
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2237 384(-)N
+2284(8)X
+2344(-)X
+576 768(The)N
+735(function)X
+0 f
+1064(dwarf_add_AT_unsigned_const\(\))X
+1 f
+2490(adds)X
+2671(an)X
+2782(attribute)X
+3084(with)X
+3261(a)X
+0 f
+3360(Dwarf_Unsigned)X
+1 f
+576 864(value)N
+777(belonging)X
+1124(to)X
+1213(the)X
+1338("constant")X
+1698(class,)X
+1901(to)X
+1990(the)X
+0 f
+2143(DIE)X
+1 f
+2314(specified)X
+2631(by)X
+0 f
+2766(ownerdie)X
+1 f
+(.)S
+3217(The)X
+3368(object)X
+3590(that)X
+3736(the)X
+0 f
+3888(DIE)X
+1 f
+576 960(belongs)N
+845(to)X
+927(is)X
+1000(specified)X
+1310(by)X
+0 f
+1438(dbg)X
+1 f
+(.)S
+1642(The)X
+1787(attribute)X
+2074(is)X
+2147(specified)X
+2457(by)X
+0 f
+2585(attr)X
+1 f
+(,)S
+2817(and)X
+2953(its)X
+3048(value)X
+3242(is)X
+3315(specified)X
+3625(by)X
+0 f
+3753(value)X
+1 f
+(.)S
+576 1152(It)N
+652(returns)X
+902(the)X
+0 f
+1055(Dwarf_P_Attribute)X
+1 f
+1899(descriptor)X
+2248(for)X
+2370(the)X
+2496(attribute)X
+2791(on)X
+2899(success,)X
+3188(and)X
+0 f
+3360(DW_DLV_BADADDR)X
+1 f
+576 1248(on)N
+676(error.)X
+0 f
+576 1488(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_signed_const\()X
+960 1584(Dwarf_P_Debug)N
+1632(dbg,)X
+960 1680(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 1776(Dwarf_Half)N
+1488(attr,)X
+960 1872(Dwarf_Signed)N
+1584(value,)X
+960 1968(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 2112(The)N
+733(function)X
+0 f
+1060(dwarf_add_AT_signed_const\(\))X
+1 f
+2388(adds)X
+2568(an)X
+2677(attribute)X
+2977(with)X
+3152(a)X
+0 f
+3249(Dwarf_Signed)X
+1 f
+3858(value)X
+576 2208(belonging)N
+919(to)X
+1003(the)X
+1123("constant")X
+1478(class,)X
+1676(to)X
+1760(the)X
+0 f
+1908(DIE)X
+1 f
+2074(specified)X
+2386(by)X
+0 f
+2516(ownerdie)X
+1 f
+(.)S
+2962(The)X
+3109(object)X
+3327(that)X
+3469(the)X
+0 f
+3617(DIE)X
+1 f
+3783(belongs)X
+576 2304(to)N
+658(is)X
+731(specified)X
+1041(by)X
+0 f
+1169(dbg)X
+1 f
+(.)S
+1373(The)X
+1518(attribute)X
+1805(is)X
+1878(specified)X
+2188(by)X
+0 f
+2316(attr)X
+1 f
+(,)S
+2548(and)X
+2684(its)X
+2779(value)X
+2973(is)X
+3046(specified)X
+3356(by)X
+0 f
+3484(value)X
+1 f
+(.)S
+576 2496(It)N
+652(returns)X
+902(the)X
+0 f
+1055(Dwarf_P_Attribute)X
+1 f
+1899(descriptor)X
+2248(for)X
+2370(the)X
+2496(attribute)X
+2791(on)X
+2899(success,)X
+3188(and)X
+0 f
+3360(DW_DLV_BADADDR)X
+1 f
+576 2592(on)N
+676(error.)X
+0 f
+576 2832(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_reference\()X
+960 2928(Dwarf_P_Debug)N
+1632(dbg,)X
+960 3024(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 3120(Dwarf_Half)N
+1488(attr,)X
+960 3216(Dwarf_P_Die)N
+1536(otherdie,)X
+960 3312(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 3456(The)N
+737(function)X
+0 f
+1068(dwarf_add_AT_reference\(\))X
+1 f
+2256(adds)X
+2439(an)X
+2551(attribute)X
+2854(with)X
+3032(a)X
+3104(value)X
+3314(that)X
+3470(is)X
+3559(a)X
+3632 0.4531(reference)AX
+3970(to)X
+576 3552(another)N
+0 f
+865(DIE)X
+1 f
+1029(in)X
+1111(the)X
+1229(same)X
+1414(compilation-unit)X
+1967(to)X
+2049(the)X
+0 f
+2195(DIE)X
+1 f
+2359(specified)X
+2669(by)X
+0 f
+2797(ownerdie)X
+1 f
+(.)S
+3241(The)X
+3386(object)X
+3602(that)X
+3742(the)X
+0 f
+3888(DIE)X
+1 f
+576 3648(belongs)N
+847(to)X
+931(is)X
+1006(specified)X
+1318(by)X
+0 f
+1448(dbg)X
+1 f
+(.)S
+1654(The)X
+1802(attribute)X
+2092(is)X
+2168(specified)X
+2481(by)X
+0 f
+2612(attr)X
+1 f
+(,)S
+2847(and)X
+2986(the)X
+3107(other)X
+0 f
+3323(DIE)X
+1 f
+3490(being)X
+3691(referred)X
+3970(to)X
+576 3744(is)N
+649(specified)X
+959(by)X
+0 f
+1087(otherdie)X
+1 f
+(.)S
+576 3936(This)N
+738(cannot)X
+972(generate)X
+1265(DW_FORM_ref_addr)X
+1998 0.3889(references)AX
+2350(to)X
+0 f
+2460(DIE)X
+1 f
+(s)S
+2655(in)X
+2737(other)X
+2922(compilation)X
+3324(units.)X
+576 4128(It)N
+652(returns)X
+902(the)X
+0 f
+1055(Dwarf_P_Attribute)X
+1 f
+1899(descriptor)X
+2248(for)X
+2370(the)X
+2496(attribute)X
+2791(on)X
+2899(success,)X
+3188(and)X
+0 f
+3360(DW_DLV_BADADDR)X
+1 f
+576 4224(on)N
+676(error.)X
+0 f
+576 4464(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_flag\()X
+960 4560(Dwarf_P_Debug)N
+1632(dbg,)X
+960 4656(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 4752(Dwarf_Half)N
+1488(attr,)X
+960 4848(Dwarf_Small)N
+1536(flag,)X
+960 4944(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 5088(The)N
+721(function)X
+0 f
+1036(dwarf_add_AT_flag\(\))X
+1 f
+1968(adds)X
+2135(an)X
+2231(attribute)X
+2518(with)X
+2681(a)X
+0 f
+2766(Dwarf_Small)X
+1 f
+3315(value)X
+3510(belonging)X
+3851(to)X
+3934(the)X
+576 5184("flag")N
+796(class,)X
+1001(to)X
+1092(the)X
+0 f
+1247(DIE)X
+1 f
+1420(specified)X
+1739(by)X
+0 f
+1876(ownerdie)X
+1 f
+(.)S
+2329(The)X
+2483(object)X
+2708(that)X
+2857(the)X
+0 f
+3012(DIE)X
+1 f
+3185(belongs)X
+3463(to)X
+3553(is)X
+3634(specified)X
+3952(by)X
+0 f
+576 5280(dbg)N
+1 f
+(.)S
+780(The)X
+925(attribute)X
+1212(is)X
+1285(specified)X
+1595(by)X
+0 f
+1723(attr)X
+1 f
+(,)S
+1955(and)X
+2091(its)X
+2186(value)X
+2380(is)X
+2453(specified)X
+2763(by)X
+0 f
+2891(flag)X
+1 f
+(.)S
+576 5472(It)N
+652(returns)X
+902(the)X
+0 f
+1055(Dwarf_P_Attribute)X
+1 f
+1899(descriptor)X
+2248(for)X
+2370(the)X
+2496(attribute)X
+2791(on)X
+2899(success,)X
+3188(and)X
+0 f
+3360(DW_DLV_BADADDR)X
+1 f
+576 5568(on)N
+676(error.)X
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2237(-)X
+2284(8)X
+2344(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+9 p
+%%Page: 9 9
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2237 384(-)N
+2284(9)X
+2344(-)X
+0 f
+576 768(Dwarf_P_Attribute)N
+1440(dwarf_add_AT_string\()X
+960 864(Dwarf_P_Debug)N
+1632(dbg,)X
+960 960(Dwarf_P_Die)N
+1536(ownerdie,)X
+960 1056(Dwarf_Half)N
+1488(attr,)X
+960 1152(char)N
+1200(*string,)X
+960 1248(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 1392(The)N
+723(function)X
+0 f
+1040(dwarf_add_AT_string\(\))X
+1 f
+2070(adds)X
+2239(an)X
+2337(attribute)X
+2626(with)X
+2791(a)X
+2850(value)X
+3047(that)X
+3190(is)X
+3266(a)X
+3325(character)X
+3644(string)X
+3849(to)X
+3934(the)X
+0 f
+576 1488(DIE)N
+1 f
+743(specified)X
+1056(by)X
+0 f
+1187(ownerdie)X
+1 f
+(.)S
+1634(The)X
+1782(object)X
+2001(that)X
+2144(the)X
+0 f
+2293(DIE)X
+1 f
+2460(belongs)X
+2732(to)X
+2817(is)X
+2893(specified)X
+3206(by)X
+0 f
+3337(dbg)X
+1 f
+(.)S
+3543(The)X
+3690(attribute)X
+3979(is)X
+576 1584(specified)N
+886(by)X
+0 f
+1014(attr)X
+1 f
+(,)S
+1246(and)X
+1382(its)X
+1477(value)X
+1671(is)X
+1744(pointed)X
+2004(to)X
+2086(by)X
+0 f
+2214(string)X
+1 f
+(.)S
+576 1776(It)N
+652(returns)X
+902(the)X
+0 f
+1055(Dwarf_P_Attribute)X
+1 f
+1899(descriptor)X
+2248(for)X
+2370(the)X
+2496(attribute)X
+2791(on)X
+2899(success,)X
+3188(and)X
+0 f
+3360(DW_DLV_BADADDR)X
+1 f
+576 1872(on)N
+676(error.)X
+3 f
+11 s
+576 2112(4.4)N
+730(Expression)X
+1168(Creation)X
+1 f
+10 s
+576 2256(The)N
+725(following)X
+1060(functions)X
+1382(are)X
+1506(used)X
+1678(to)X
+1765(convert)X
+2031(location)X
+2314(expressions)X
+2713(into)X
+2862(blocks)X
+3096(so)X
+3192(that)X
+3337(attributes)X
+3660(with)X
+3827(values)X
+576 2352(that)N
+732(are)X
+867(location)X
+1161(expressions)X
+1571(can)X
+1719(store)X
+1911(their)X
+2094(values)X
+2335(as)X
+2438(a)X
+0 f
+2538(DW_FORM_blockn)X
+1 f
+3246(value.)X
+3496(This)X
+3673(is)X
+3761(for)X
+3890(both)X
+576 2448(.debug_info)N
+981(and)X
+1117(.debug_loc)X
+1491(expression)X
+1854(blocks.)X
+576 2640(To)N
+691(create)X
+910(an)X
+1012(expression,)X
+1401(first)X
+1556(call)X
+0 f
+1726(dwarf_new_expr\(\))X
+1 f
+2520(to)X
+2608(get)X
+2732(a)X
+0 f
+2822(Dwarf_P_Expr)X
+1 f
+3425(descriptor)X
+3773(that)X
+3920(can)X
+576 2736(be)N
+675(used)X
+845(to)X
+930(build)X
+1117(up)X
+1220(the)X
+1341(block)X
+1542(containing)X
+1903(the)X
+2024(location)X
+2305(expression.)X
+2711(Then)X
+2898(insert)X
+3098(the)X
+3218(parts)X
+3396(of)X
+3485(the)X
+3605(expression)X
+3970(in)X
+576 2832(prefix)N
+791(order)X
+984(\(exactly)X
+1266(the)X
+1387(order)X
+1580(they)X
+1741(would)X
+1964(be)X
+2064(interpreted)X
+2436(in)X
+2522(in)X
+2608(an)X
+2708(expression)X
+3075(interpreter\).)X
+3501(The)X
+3650(bytes)X
+3843(of)X
+3934(the)X
+576 2928(expression)N
+939(are)X
+1058(then)X
+1216(built-up)X
+1489(as)X
+1576(specified)X
+1886(by)X
+1986(the)X
+2104(user.)X
+0 f
+576 3168(Dwarf_Expr)N
+1104(dwarf_new_expr\()X
+960 3264(Dwarf_P_Debug)N
+1632(dbg,)X
+960 3360(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 3504(The)N
+723(function)X
+0 f
+1040(dwarf_new_expr\(\))X
+1 f
+1830(creates)X
+2076(a)X
+2134(new)X
+2290(expression)X
+2655(area)X
+2812(in)X
+2896(which)X
+3114(a)X
+3172(location)X
+3452(expression)X
+3818(stream)X
+576 3600(can)N
+716(be)X
+820(created.)X
+1120(It)X
+1196(returns)X
+1446(a)X
+0 f
+1537(Dwarf_P_Expr)X
+1 f
+2140(descriptor)X
+2488(that)X
+2635(can)X
+2774(be)X
+2877(used)X
+3051(to)X
+3140(add)X
+3283(operators)X
+3609(to)X
+3698(build)X
+3889(up)X
+3996(a)X
+576 3696(location)N
+854(expression.)X
+1257(It)X
+1326(returns)X
+0 f
+1597(NULL)X
+1 f
+1809(on)X
+1909(error.)X
+0 f
+576 3936(Dwarf_Unsigned)N
+1296(dwarf_add_expr_gen\()X
+960 4032(Dwarf_P_Expr)N
+1584(expr,)X
+960 4128(Dwarf_Small)N
+1536(opcode,)X
+960 4224(Dwarf_Unsigned)N
+1680(val1,)X
+960 4320(Dwarf_Unsigned)N
+1680(val2,)X
+960 4416(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 4560(The)N
+728(function)X
+0 f
+1050(dwarf_add_expr_gen\(\))X
+1 f
+2037(takes)X
+2229(an)X
+2332(operator)X
+2628(specified)X
+2946(by)X
+0 f
+3082(opcode)X
+1 f
+(,)S
+3418(along)X
+3624(with)X
+3794(up)X
+3902(to)X
+3992(2)X
+576 4656(operands)N
+899(specified)X
+1222(by)X
+0 f
+1363(val1)X
+1 f
+(,)S
+1608(and)X
+0 f
+1785(val2)X
+1 f
+(,)S
+2030(converts)X
+2335(it)X
+2412(into)X
+2569(the)X
+0 f
+2728(Dwarf)X
+1 f
+3001(representation)X
+3489(and)X
+3638(appends)X
+3934(the)X
+576 4752(bytes)N
+778(to)X
+873(the)X
+1004(byte)X
+1175(stream)X
+1422(being)X
+1634(assembled)X
+2002(for)X
+2130(the)X
+2262(location)X
+2554(expression)X
+2931(represented)X
+3336(by)X
+0 f
+3478(expr)X
+1 f
+(.)S
+3744(The)X
+3903(first)X
+576 4848(operand,)N
+883(if)X
+960(present,)X
+1240(to)X
+0 f
+1358(opcode)X
+1 f
+1674(is)X
+1755(in)X
+0 f
+1873(val1)X
+1 f
+(,)S
+2113(and)X
+2257(the)X
+2383(second)X
+2634(operand,)X
+2941(if)X
+3017(present,)X
+3296(is)X
+3376(in)X
+0 f
+3493(val2)X
+1 f
+(.)S
+3752(Both)X
+3934(the)X
+576 4944(operands)N
+886(may)X
+1044(actually)X
+1318(be)X
+1414(signed)X
+1643(or)X
+1731(unsigned)X
+2041(depending)X
+2396(on)X
+0 f
+2525(opcode)X
+1 f
+(.)S
+2874(It)X
+2944(returns)X
+3188(the)X
+3307(number)X
+3573(of)X
+3661(bytes)X
+3851(in)X
+3934(the)X
+576 5040(byte)N
+781(stream)X
+1062(for)X
+0 f
+1251(expr)X
+1 f
+1510(currently)X
+1867(generated,)X
+2267(i.e.)X
+2432(after)X
+2647(the)X
+2811(addition)X
+3139(of)X
+0 f
+3300(opcode)X
+1 f
+(.)S
+3694(It)X
+3809(returns)X
+0 f
+576 5136(DW_DLV_NOCOUNT)N
+1 f
+1268(on)X
+1368(error.)X
+576 5328(The)N
+726(function)X
+0 f
+1046(dwarf_add_expr_gen\(\))X
+1 f
+2031(works)X
+2252(for)X
+2371(all)X
+2476(opcodes)X
+2765(except)X
+3001(those)X
+3196(that)X
+3342(have)X
+3520(a)X
+3582(target)X
+3791(address)X
+576 5424(as)N
+668(an)X
+769(operand.)X
+1093(This)X
+1260(is)X
+1338(because)X
+1618(it)X
+1687(does)X
+1859(not)X
+1986(set)X
+2100(up)X
+2205(a)X
+2266(relocation)X
+2612(record)X
+2843(that)X
+2988(is)X
+3066(needed)X
+3319(when)X
+3517(target)X
+3724(addresses)X
+576 5520(are)N
+695(involved.)X
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2237(-)X
+2284(9)X
+2344(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+10 p
+%%Page: 10 10
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2217 384(-)N
+2264(10)X
+2364(-)X
+0 f
+576 768(Dwarf_Unsigned)N
+1296(dwarf_add_expr_addr\()X
+960 864(Dwarf_P_Expr)N
+1584(expr,)X
+960 960(Dwarf_Unsigned)N
+1680(address,)X
+960 1056(Dwarf_Signed)N
+1584(sym_index,)X
+960 1152(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 1296(The)N
+733(function)X
+0 f
+1060(dwarf_add_expr_addr\(\))X
+1 f
+2101(is)X
+2187(used)X
+2367(to)X
+2462(add)X
+2611(the)X
+0 f
+2770(DW_OP_addr)X
+1 f
+3283(opcode)X
+3548(to)X
+3643(the)X
+3774(location)X
+576 1392(expression)N
+950(represented)X
+1352(by)X
+1463(the)X
+1592(given)X
+0 f
+1828(Dwarf_P_Expr)X
+1 f
+2434(descriptor,)X
+0 f
+2833(expr)X
+1 f
+(.)S
+3095(The)X
+3250(value)X
+3454(of)X
+3551(the)X
+3679(relocatable)X
+576 1488(address)N
+840(is)X
+916(given)X
+1117(by)X
+0 f
+1248(address)X
+1 f
+(.)S
+1647(The)X
+1795(symbol)X
+2053(to)X
+2138(be)X
+2238(used)X
+2409(for)X
+2527(relocation)X
+2872(is)X
+2949(given)X
+3151(by)X
+0 f
+3283(sym_index)X
+1 f
+(,)S
+3759(which)X
+3979(is)X
+576 1584(the)N
+706(index)X
+916(of)X
+1015(the)X
+1145(symbol)X
+1412(in)X
+1506(the)X
+1636(Elf)X
+1766(symbol)X
+2033(table.)X
+2261(It)X
+2342(returns)X
+2597(the)X
+2727(number)X
+3004(of)X
+3102(bytes)X
+3302(in)X
+3395(the)X
+3524(byte)X
+3693(stream)X
+3938(for)X
+0 f
+576 1680(expr)N
+1 f
+833(currently)X
+1188(generated,)X
+1586(i.e.)X
+1749(after)X
+1962(the)X
+2125(addition)X
+2452(of)X
+2584(the)X
+0 f
+2775(DW_OP_addr)X
+1 f
+3320(operator.)X
+3694(It)X
+3809(returns)X
+0 f
+576 1776(DW_DLV_NOCOUNT)N
+1 f
+1268(on)X
+1368(error.)X
+0 f
+576 2016(Dwarf_Unsigned)N
+1296(dwarf_expr_current_offset\()X
+960 2112(Dwarf_P_Expr)N
+1584(expr,)X
+960 2208(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 2352(The)N
+732(function)X
+0 f
+1058(dwarf_expr_current_offset\(\))X
+1 f
+2386(returns)X
+2641(the)X
+2771(number)X
+3048(of)X
+3147(bytes)X
+3348(currently)X
+3670(in)X
+3764(the)X
+3894(byte)X
+576 2448(stream)N
+821(for)X
+946(the)X
+1075(location)X
+1364(expression)X
+1738(represented)X
+2140(by)X
+2251(the)X
+2380(given)X
+7 f
+2617(W\(Dwarf_P_Expr)X
+1 f
+3320(descriptor,)X
+0 f
+3720(expr)X
+1 f
+(.)S
+3983(It)X
+576 2544(returns)N
+0 f
+847(DW_DLV_NOCOUNT)X
+1 f
+1539(on)X
+1639(error.)X
+0 f
+576 2784(Dwarf_Addr)N
+1104(dwarf_expr_into_block\()X
+960 2880(Dwarf_P_Expr)N
+1584(expr,)X
+960 2976(Dwarf_Unsigned)N
+1680(*length,)X
+960 3072(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 3216(The)N
+746(function)X
+0 f
+1086(dwarf_expr_into_block\(\))X
+1 f
+2236(returns)X
+2505(the)X
+2649(address)X
+2936(of)X
+3049(the)X
+3193(start)X
+3377(of)X
+3490(the)X
+3634(byte)X
+3818(stream)X
+576 3312(generated)N
+914(for)X
+1033(the)X
+1156(location)X
+1439(expression)X
+1807(represented)X
+2202(by)X
+2306(the)X
+2428(given)X
+0 f
+2658(Dwarf_P_Expr)X
+1 f
+3258(descriptor,)X
+0 f
+3651(expr)X
+1 f
+(.)S
+3907(The)X
+576 3408(length)N
+842(of)X
+975(the)X
+1139(byte)X
+1343(stream)X
+1623(is)X
+1742(returned)X
+2076(in)X
+2204(the)X
+2368(location)X
+2692(pointed)X
+2998(to)X
+3126(by)X
+0 f
+3300(length)X
+1 f
+(.)S
+3694(It)X
+3809(returns)X
+0 f
+576 3504(DW_DLV_BADADDR)N
+1 f
+1268(on)X
+1368(error.)X
+3 f
+11 s
+576 3744(4.5)N
+730(Line)X
+924(Number)X
+1258(Operations)X
+1 f
+10 s
+576 3888(These)N
+807(are)X
+945(operations)X
+1318(on)X
+1437(the)X
+1574(.debug_line)X
+1989(section.)X
+2295(They)X
+2499(provide)X
+2783(information)X
+3201(about)X
+3419(instructions)X
+3832(in)X
+3934(the)X
+576 3984(program)N
+869(and)X
+1006(the)X
+1125(source)X
+1356(lines)X
+1528(the)X
+1647(instruction)X
+2010(come)X
+2205(from.)X
+2422(Typically,)X
+2770(code)X
+2943(is)X
+3017(generated)X
+3350(in)X
+3432(contiguous)X
+3803(blocks,)X
+576 4080(which)N
+795(may)X
+956(then)X
+1117(be)X
+1216(relocated)X
+1534(as)X
+1624(contiguous)X
+1998(blocks.)X
+2270(To)X
+2383(make)X
+2581(the)X
+2703(provision)X
+3029(of)X
+3120(relocation)X
+3465(information)X
+3867(more)X
+576 4176(efficient,)N
+888(the)X
+1010(information)X
+1412(is)X
+1489(recorded)X
+1794(in)X
+1879(such)X
+2049(a)X
+2108(manner)X
+2372(that)X
+2515(only)X
+2680(the)X
+2801(address)X
+3065(of)X
+3155(the)X
+3276(start)X
+3437(of)X
+3527(the)X
+3648(block)X
+3849(needs)X
+576 4272(to)N
+661(be)X
+760(relocated.)X
+1118(This)X
+1283(is)X
+1360(done)X
+1540(by)X
+1644(providing)X
+1979(the)X
+2101(address)X
+2366(of)X
+2457(the)X
+2579(first)X
+2732(instruction)X
+3098(in)X
+3184(a)X
+3244(block)X
+3446(using)X
+3643(the)X
+3765(function)X
+0 f
+576 4368(dwarf_lne_set_address\(\))N
+1 f
+(.)S
+1741(Information)X
+2145(about)X
+2343(the)X
+2461(instructions)X
+2854(in)X
+2936(the)X
+3054(block)X
+3252(are)X
+3371(then)X
+3529(added)X
+3741(using)X
+3934(the)X
+576 4464(function)N
+0 f
+893(dwarf_add_line_entry\(\))X
+1 f
+(,)S
+1991(which)X
+2209(specifies)X
+2512(offsets)X
+2748(from)X
+2926(the)X
+3046(address)X
+3309(of)X
+3398(the)X
+3518(first)X
+3670(instruction.)X
+576 4560(The)N
+721(end)X
+857(of)X
+944(a)X
+1000(contiguous)X
+1371(block)X
+1569(is)X
+1642(indicated)X
+1956(by)X
+2056(calling)X
+2294(the)X
+2412(function)X
+0 f
+2727(dwarf_lne_end_sequence\(\))X
+1 f
+(.)S
+0 f
+576 4800(Dwarf_Unsigned)N
+1296(dwarf_add_line_entry\()X
+960 4896(Dwarf_P_Debug)N
+1632(dbg,)X
+960 4992(Dwarf_Unsigned)N
+1680(file_index,)X
+960 5088(Dwarf_Addr)N
+1488(code_offset,)X
+960 5184(Dwarf_Unsigned)N
+1680(lineno,)X
+960 5280(Dwarf_Signed)N
+1584(column_number,)X
+960 5376(Dwarf_Bool)N
+1488(is_source_stmt_begin,)X
+960 5472(Dwarf_Bool)N
+1488(is_basic_block_begin,)X
+960 5568(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 5712(The)N
+729(function)X
+0 f
+1052(dwarf_add_line_entry\(\))X
+1 f
+2136(adds)X
+2311(an)X
+2415(entry)X
+2608(to)X
+2698(the)X
+2824(section)X
+3080(containing)X
+3447(information)X
+3854(about)X
+576 5808(source)N
+874(lines.)X
+1153(It)X
+1290(specifies)X
+1659(in)X
+0 f
+1837(code_offset)X
+1 f
+(,)S
+2472(the)X
+2657(offset)X
+2927(from)X
+3170(the)X
+3355(address)X
+3683(set)X
+3859(using)X
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2217(-)X
+2264(10)X
+2364(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+11 p
+%%Page: 11 11
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2217 384(-)N
+2264(11)X
+2364(-)X
+0 f
+576 768(dwarfdwarf_lne_set_address\(\))N
+1 f
+(,)S
+1961(of)X
+2049(the)X
+2168(address)X
+2430(of)X
+2518(the)X
+2637(first)X
+2788(instruction)X
+3152(in)X
+3236(a)X
+3294(contiguous)X
+3667(block.)X
+3907(The)X
+576 864(source)N
+822(file)X
+965(that)X
+1121(gave)X
+1309(rise)X
+1461(to)X
+1559(the)X
+1693(instruction)X
+2071(is)X
+2160(specified)X
+2486(by)X
+0 f
+2630(file_index)X
+1 f
+(,)S
+3166(the)X
+3299(source)X
+3544(line)X
+3699(number)X
+3979(is)X
+576 960(specified)N
+933(by)X
+0 f
+1108(lineno)X
+1 f
+(,)S
+1484(and)X
+1668(the)X
+1834(source)X
+2112(column)X
+2420(number)X
+2733(is)X
+2854(specified)X
+3212(by)X
+0 f
+3388(column_number)X
+1 f
+(.)S
+0 f
+576 1056(file_index)N
+1 f
+1084(is)X
+1165(the)X
+1290(index)X
+1495(of)X
+1589(the)X
+1714(source)X
+1951(file)X
+2085(in)X
+2174(a)X
+2237(list)X
+2361(of)X
+2455(source)X
+2692(files)X
+2857(which)X
+3080(is)X
+3160(built)X
+3333(up)X
+3440(using)X
+3640(the)X
+3765(function)X
+0 f
+576 1152(dwarf_add_file_decl\(\))N
+1 f
+(.)S
+0 f
+576 1344(is_source_stmt_begin)N
+1 f
+1563(is)X
+1643(a)X
+1706(boolean)X
+1987(flag)X
+2139(that)X
+2286(is)X
+2366(true)X
+2518(only)X
+2688(if)X
+2765(the)X
+2891(instruction)X
+3261(at)X
+0 f
+3375(code_address)X
+1 f
+3979(is)X
+576 1440(the)N
+741(first)X
+937(instruction)X
+1346(in)X
+1475(the)X
+1640(sequence)X
+2002(generated)X
+2382(for)X
+2543(the)X
+2707(source)X
+2983(line)X
+3169(at)X
+0 f
+3321(lineno)X
+1 f
+(.)S
+3715(Similarly,)X
+0 f
+576 1536(is_basic_block_begin)N
+1 f
+1563(is)X
+1643(a)X
+1706(boolean)X
+1987(flag)X
+2139(that)X
+2286(is)X
+2366(true)X
+2518(only)X
+2688(if)X
+2765(the)X
+2891(instruction)X
+3261(at)X
+0 f
+3375(code_address)X
+1 f
+3979(is)X
+576 1632(the)N
+694(first)X
+843(instruction)X
+1205(of)X
+1292(a)X
+1348(basic)X
+1533(block.)X
+576 1824(It)N
+645(returns)X
+0 f
+916(0)X
+1 f
+984(on)X
+1084(success,)X
+1365(and)X
+0 f
+1529(DW_DLV_NOCOUNT)X
+1 f
+2221(on)X
+2321(error.)X
+0 f
+576 2064(Dwarf_Unsigned)N
+1296(dwarf_lne_set_address\()X
+960 2160(Dwarf_P_Debug)N
+1632(dbg,)X
+960 2256(Dwarf_Addr)N
+1488(offs,)X
+960 2352(Dwarf_Unsigned)N
+1680(symidx,)X
+960 2448(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 2592(The)N
+734(function)X
+0 f
+1062(dwarf_lne_set_address\(\))X
+1 f
+2199(sets)X
+2352(the)X
+2484(target)X
+2701(address)X
+2976(at)X
+3068(which)X
+3298(a)X
+3368(contiguous)X
+3753(block)X
+3965(of)X
+576 2688(instructions)N
+978(begin.)X
+1225(Information)X
+1637(about)X
+1844(the)X
+1971(instructions)X
+2373(in)X
+2464(the)X
+2591(block)X
+2798(is)X
+2880(added)X
+3100(to)X
+3190(.debug_line)X
+3594(using)X
+3795(calls)X
+3970(to)X
+0 f
+576 2784(dwarfdwarf_add_line_entry\(\))N
+1 f
+1896(which)X
+2116(specifies)X
+2421(the)X
+2543(offset)X
+2750(of)X
+2841(each)X
+3013(instruction)X
+3379(in)X
+3465(the)X
+3588(block)X
+3791(relative)X
+576 2880(to)N
+659(the)X
+778(start)X
+937(of)X
+1025(the)X
+1144(block.)X
+1383(This)X
+1546(is)X
+1620(done)X
+1797(so)X
+1889(that)X
+2030(a)X
+2087(single)X
+2299(relocation)X
+2641(record)X
+2867(can)X
+2999(be)X
+3095(used)X
+3262(to)X
+3344(obtain)X
+3564(the)X
+3682(final)X
+3849(target)X
+576 2976(address)N
+837(of)X
+924(every)X
+1123(instruction)X
+1485(in)X
+1567(the)X
+1685(block.)X
+576 3168(The)N
+723(relocatable)X
+1098(address)X
+1361(of)X
+1450(the)X
+1570(start)X
+1730(of)X
+1819(the)X
+1939(block)X
+2139(of)X
+2228(instructions)X
+2623(is)X
+2698(specified)X
+3010(by)X
+0 f
+3140(offs)X
+1 f
+(.)S
+3394(The)X
+3542(symbol)X
+3800(used)X
+3970(to)X
+576 3264(relocate)N
+851(the)X
+969(address)X
+1230(is)X
+1303(given)X
+1501(by)X
+0 f
+1629(symidx)X
+1 f
+(,)S
+1957(which)X
+2173(is)X
+2246(the)X
+2364(index)X
+2562(of)X
+2649(the)X
+2767(symbol)X
+3022(in)X
+3104(the)X
+3222(Elf)X
+3340(symbol)X
+3595(table.)X
+576 3456(It)N
+645(returns)X
+0 f
+916(0)X
+1 f
+984(on)X
+1084(success,)X
+1365(and)X
+0 f
+1529(DW_DLV_NOCOUNT)X
+1 f
+2221(on)X
+2321(error.)X
+0 f
+576 3696(Dwarf_Unsigned)N
+1296(dwarf_lne_end_sequence\()X
+960 3792(Dwarf_P_Debug)N
+1632(dbg,)X
+960 3888(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 4032(The)N
+727(function)X
+0 f
+1048(dwarf_lne_end_sequence\(\))X
+1 f
+2226(indicates)X
+2537(the)X
+2662(end)X
+2805(of)X
+2899(a)X
+2962(contiguous)X
+3340(block)X
+3545(of)X
+3639(instructions.)X
+576 4128(To)N
+694(add)X
+839(information)X
+1246(about)X
+1453(another)X
+1723(block)X
+1930(of)X
+2026(instructions,)X
+2448(a)X
+2513(call)X
+2658(to)X
+0 f
+2776(dwarf_lne_set_address\(\))X
+1 f
+3908(will)X
+576 4224(have)N
+760(to)X
+854(be)X
+962(made)X
+1168(to)X
+1262(set)X
+1383(the)X
+1513(address)X
+1786(of)X
+1885(the)X
+2015(start)X
+2185(of)X
+2284(the)X
+2414(target)X
+2629(address)X
+2902(of)X
+3001(the)X
+3131(block,)X
+3361(followed)X
+3678(by)X
+3790(calls)X
+3970(to)X
+0 f
+576 4320(dwarf_add_line_entry\(\))N
+1 f
+1652(for)X
+1766(each)X
+1934(of)X
+2021(the)X
+2139(instructions)X
+2532(in)X
+2614(the)X
+2732(block.)X
+576 4512(It)N
+645(returns)X
+0 f
+916(0)X
+1 f
+984(on)X
+1084(success,)X
+1365(and)X
+0 f
+1529(DW_DLV_NOCOUNT)X
+1 f
+2221(on)X
+2321(error.)X
+0 f
+576 4752(Dwarf_Unsigned)N
+1296(dwarf_add_directory_decl\()X
+960 4848(Dwarf_P_Debug)N
+1632(dbg,)X
+960 4944(char)N
+1200(*name,)X
+960 5040(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 5184(The)N
+738(function)X
+0 f
+1070(dwarf_add_directory_decl\(\))X
+1 f
+2355(adds)X
+2539(the)X
+2674(string)X
+2893(specified)X
+3220(by)X
+0 f
+3365(name)X
+1 f
+3594(to)X
+3694(the)X
+3830(list)X
+3965(of)X
+576 5280(include)N
+853(directories)X
+1233(in)X
+1336(the)X
+1475(statement)X
+1823(program)X
+2136(prologue)X
+2462(of)X
+2570(the)X
+2709(.debug_line)X
+3125(section.)X
+3432(The)X
+3597(string)X
+3819(should)X
+576 5376(therefore)N
+887(name)X
+1081(a)X
+1137(directory)X
+1447(from)X
+1623(which)X
+1839(source)X
+2069(files)X
+2227(have)X
+2399(been)X
+2571(used)X
+2738(to)X
+2820(create)X
+3033(the)X
+3151(present)X
+3403(object.)X
+576 5568(It)N
+651(returns)X
+900(the)X
+1024(index)X
+1228(of)X
+1321(the)X
+1445(string)X
+1654(just)X
+1796(added,)X
+2035(in)X
+2124(the)X
+2249(list)X
+2373(of)X
+2467(include)X
+2730(directories)X
+3096(for)X
+3217(the)X
+3342(object.)X
+3605(This)X
+3774(index)X
+3979(is)X
+576 5664(then)N
+734(used)X
+901(to)X
+983(refer)X
+1156(to)X
+1238(this)X
+1373(string.)X
+1615(It)X
+1684(returns)X
+0 f
+1955(DW_DLV_NOCOUNT)X
+1 f
+2647(on)X
+2747(error.)X
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2217(-)X
+2264(11)X
+2364(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+12 p
+%%Page: 12 12
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2217 384(-)N
+2264(12)X
+2364(-)X
+0 f
+576 768(Dwarf_Unsigned)N
+1296(dwarf_add_file_decl\()X
+960 864(Dwarf_P_Debug)N
+1632(dbg,)X
+960 960(char)N
+1200(*name,)X
+960 1056(Dwarf_Unsigned)N
+1680(dir_idx,)X
+960 1152(Dwarf_Unsigned)N
+1680(time_mod,)X
+960 1248(Dwarf_Unsigned)N
+1680(length,)X
+960 1344(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 1488(The)N
+723(function)X
+0 f
+1040(dwarf_add_file_decl\(\))X
+1 f
+2070(adds)X
+2239(the)X
+2359(name)X
+2555(of)X
+2644(a)X
+2702(source)X
+2934(file)X
+3063(that)X
+3206(contributed)X
+3594(to)X
+3679(the)X
+3800(present)X
+576 1584(object.)N
+833(The)X
+979(name)X
+1174(of)X
+1262(the)X
+1381(file)X
+1508(is)X
+1581(specified)X
+1891(by)X
+0 f
+2019(name)X
+1 f
+(.)S
+2271(In)X
+2358(case)X
+2517(the)X
+2635(name)X
+2829(is)X
+2902(not)X
+3024(a)X
+3080(fully-qualified)X
+3563(pathname,)X
+3915(it)X
+3979(is)X
+576 1680(prefixed)N
+868(with)X
+1034(the)X
+1156(name)X
+1355(of)X
+1447(the)X
+1570(directory)X
+1885(specified)X
+2200(by)X
+0 f
+2333(dir_idx)X
+1 f
+(.)S
+0 f
+2762(dir_idx)X
+1 f
+3123(is)X
+3201(the)X
+3324(index)X
+3527(of)X
+3619(the)X
+3742(directory)X
+576 1776(to)N
+658(be)X
+754(prefixed)X
+1042(in)X
+1124(the)X
+1242(list)X
+1359(builtup)X
+1605(using)X
+0 f
+1826(dwarf_add_directory_decl\(\))X
+1 f
+(.)S
+0 f
+576 1968(time_mod)N
+1 f
+982(gives)X
+1173(the)X
+1293(time)X
+1457(at)X
+1537(which)X
+1755(the)X
+1875(file)X
+2004(was)X
+2151(last)X
+2284(modified,)X
+2615(and)X
+0 f
+2782(length)X
+1 f
+3093(gives)X
+3285(the)X
+3406(length)X
+3629(of)X
+3719(the)X
+3840(file)X
+3970(in)X
+576 2064(bytes.)N
+576 2256(It)N
+650(returns)X
+898(the)X
+1021(index)X
+1224(of)X
+1316(the)X
+1439(source)X
+1674(file)X
+1806(in)X
+1893(the)X
+2016(list)X
+2138(built)X
+2309(up)X
+2414(so)X
+2510(far)X
+2625(using)X
+2823(this)X
+2963(function,)X
+3275(on)X
+3380(success.)X
+3686(This)X
+3854(index)X
+576 2352(can)N
+723(then)X
+896(be)X
+1007(used)X
+1189(to)X
+1286(refer)X
+1474(to)X
+1571(this)X
+1721(source)X
+1966(file)X
+2108(in)X
+2205(calls)X
+2387(to)X
+0 f
+2512(dwarf_add_line_entry\(\))X
+1 f
+(.)S
+3643(On)X
+3776(error,)X
+3988(it)X
+576 2448(returns)N
+0 f
+847(DW_DLV_NOCOUNT)X
+1 f
+(.)S
+3 f
+11 s
+576 2688(4.6)N
+730(Fast)X
+913(Access)X
+1183(\(aranges\))X
+1556(Operations)X
+1 f
+10 s
+576 2832(These)N
+788(functions)X
+1106(operate)X
+1363(on)X
+1463(the)X
+1581(.debug_aranges)X
+2103(section.)X
+0 f
+576 3072(Dwarf_Unsigned)N
+1296(dwarf_add_arange\()X
+960 3168(Dwarf_P_Debug)N
+1632(dbg,)X
+960 3264(Dwarf_Addr)N
+1488(begin_address,)X
+960 3360(Dwarf_Unsigned)N
+1680(length,)X
+960 3456(Dwarf_Signed)N
+1584(symbol_index,)X
+960 3552(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 3696(The)N
+724(function)X
+0 f
+1042(dwarf_add_arange\(\))X
+1 f
+1929(adds)X
+2100(another)X
+2365(address)X
+2630(range)X
+2833(to)X
+2919(be)X
+3019(added)X
+3235(to)X
+3321(the)X
+3443(section)X
+3694(containing)X
+576 3792(address)N
+837(range)X
+1036(information,)X
+616 3888(.debug_aranges.)N
+1186(The)X
+1339(relocatable)X
+1720(start)X
+1886(address)X
+2155(of)X
+2250(the)X
+2376(range)X
+2583(is)X
+2664(specified)X
+2982(by)X
+0 f
+3118(begin_address)X
+1 f
+(,)S
+3790(and)X
+3934(the)X
+576 3984(length)N
+805(of)X
+901(the)X
+1028(address)X
+1297(range)X
+1504(is)X
+1585(specified)X
+1903(by)X
+0 f
+2039(length)X
+1 f
+(.)S
+2395(The)X
+2548(relocatable)X
+2929(symbol)X
+3192(to)X
+3282(be)X
+3386(used)X
+3561(to)X
+3651(relocate)X
+3934(the)X
+576 4080(start)N
+741(of)X
+836(the)X
+962(address)X
+1231(range)X
+1438(is)X
+1519(specified)X
+1837(by)X
+0 f
+1973(symbol_index)X
+1 f
+(,)S
+2597(which)X
+2821(is)X
+2902(the)X
+3028(index)X
+3234(of)X
+3329(the)X
+3455(symbol)X
+3718(in)X
+3808(the)X
+3934(Elf)X
+576 4176(symbol)N
+831(table.)X
+576 4368(It)N
+645(returns)X
+888(a)X
+944(non-zero)X
+1250(value)X
+1444(on)X
+1544(success,)X
+1825(and)X
+0 f
+1989(0)X
+1 f
+2057(on)X
+2157(error.)X
+3 f
+11 s
+576 4608(4.7)N
+730(Fast)X
+913(Access)X
+1183(\(pubnames\))X
+1649(Operations)X
+1 f
+10 s
+576 4752(These)N
+788(functions)X
+1106(operate)X
+1363(on)X
+1463(the)X
+1581(.debug_pubnames)X
+2182(section.)X
+0 f
+576 4992(Dwarf_Unsigned)N
+1296(dwarf_add_pubname\()X
+960 5088(Dwarf_P_Debug)N
+1632(dbg,)X
+960 5184(Dwarf_P_Die)N
+1536(die,)X
+960 5280(char)N
+1200(*pubname_name,)X
+960 5376(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 5520(The)N
+721(function)X
+0 f
+1036(dwarf_add_pubname\(\))X
+1 f
+1968(adds)X
+2135(the)X
+2253(pubname)X
+2567(specified)X
+2877(by)X
+0 f
+3006(pubname_name)X
+1 f
+3603(to)X
+3686(the)X
+3805(section)X
+576 5616(containing)N
+934(pubnames,)X
+1299(i.e.)X
+616 5712(.debug_pubnames.)N
+1257(The)X
+0 f
+1430(DIE)X
+1 f
+1594(that)X
+1734(represents)X
+2080(the)X
+2198(function)X
+2485(being)X
+2683(named)X
+2917(is)X
+2990(specified)X
+3300(by)X
+0 f
+3428(die)X
+1 f
+(.)S
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2217(-)X
+2264(12)X
+2364(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+13 p
+%%Page: 13 13
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2217 384(-)N
+2264(13)X
+2364(-)X
+576 768(It)N
+645(returns)X
+888(a)X
+944(non-zero)X
+1250(value)X
+1444(on)X
+1544(success,)X
+1825(and)X
+0 f
+1989(0)X
+1 f
+2057(on)X
+2157(error.)X
+3 f
+11 s
+576 1008(4.8)N
+730(Fast)X
+913(Access)X
+1183(\(weak)X
+1429(names\))X
+1719(Operations)X
+1 f
+10 s
+576 1152(These)N
+788(functions)X
+1106(operate)X
+1363(on)X
+1463(the)X
+1581(.debug_weaknames)X
+2232(section.)X
+0 f
+576 1392(Dwarf_Unsigned)N
+1296(dwarf_add_weakname\()X
+960 1488(Dwarf_P_Debug)N
+1632(dbg,)X
+960 1584(Dwarf_P_Die)N
+1536(die,)X
+960 1680(char)N
+1200(*weak_name,)X
+960 1776(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 1920(The)N
+723(function)X
+0 f
+1040(dwarf_add_weakname\(\))X
+1 f
+2022(adds)X
+2191(the)X
+2311(weak)X
+2503(name)X
+2700(specified)X
+3013(by)X
+0 f
+3144(weak_name)X
+1 f
+3599(to)X
+3684(the)X
+3805(section)X
+576 2016(containing)N
+934(weak)X
+1124(names,)X
+1369(i.e.)X
+596 2112(.debug_weaknames.)N
+1287(The)X
+0 f
+1460(DIE)X
+1 f
+1624(that)X
+1764(represents)X
+2110(the)X
+2228(function)X
+2515(being)X
+2713(named)X
+2947(is)X
+3020(specified)X
+3330(by)X
+0 f
+3458(die)X
+1 f
+(.)S
+576 2304(It)N
+645(returns)X
+888(a)X
+944(non-zero)X
+1250(value)X
+1444(on)X
+1544(success,)X
+1825(and)X
+0 f
+1989(0)X
+1 f
+2057(on)X
+2157(error.)X
+3 f
+11 s
+576 2544(4.9)N
+730(Static)X
+967(Function)X
+1327(Names)X
+1602(Operations)X
+1 f
+10 s
+576 2688(The)N
+725(.debug_funcnames)X
+1353(section)X
+1604(contains)X
+1895(the)X
+2017(names)X
+2246(of)X
+2337(static)X
+2530(function)X
+2821(names)X
+3050(defined)X
+3315(in)X
+3401(the)X
+3523(object,)X
+3763(and)X
+3903(also)X
+576 2784(the)N
+694(offsets)X
+928(of)X
+1015(the)X
+0 f
+1161(DIE)X
+1 f
+(s)S
+1356(that)X
+1496(represent)X
+1811(the)X
+1929(definitions)X
+2291(of)X
+2378(the)X
+2496(functions)X
+2814(in)X
+2896(the)X
+3014(.debug_info)X
+3419(section.)X
+0 f
+576 3024(Dwarf_Unsigned)N
+1296(dwarf_add_funcname\()X
+960 3120(Dwarf_P_Debug)N
+1632(dbg,)X
+960 3216(Dwarf_P_Die)N
+1536(die,)X
+960 3312(char)N
+1200(*func_name,)X
+960 3408(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 3552(The)N
+725(function)X
+0 f
+1044(dwarf_add_funcname\(\))X
+1 f
+2028(adds)X
+2199(the)X
+2321(name)X
+2519(of)X
+2610(a)X
+2670(static)X
+2863(function)X
+3154(specified)X
+3468(by)X
+0 f
+3600(func_name)X
+1 f
+576 3648(to)N
+670(the)X
+800(section)X
+1059(containing)X
+1429(the)X
+1559(names)X
+1796(of)X
+1895(static)X
+2096(functions)X
+2426(defined)X
+2699(in)X
+2793(the)X
+2923(object)X
+3151(represented)X
+3553(by)X
+0 f
+3692(dbg)X
+1 f
+(.)S
+3907(The)X
+0 f
+576 3744(DIE)N
+1 f
+740(that)X
+880(represents)X
+1226(the)X
+1344(definition)X
+1675(of)X
+1762(the)X
+1880(function)X
+2167(is)X
+2240(specified)X
+2550(by)X
+0 f
+2678(die)X
+1 f
+(.)S
+576 3936(It)N
+645(returns)X
+888(a)X
+944(non-zero)X
+1250(value)X
+1444(on)X
+1544(success,)X
+1825(and)X
+0 f
+1989(0)X
+1 f
+2057(on)X
+2157(error.)X
+3 f
+11 s
+576 4176(4.10)N
+774(File-scope)X
+1173(User-defined)X
+1678(Type)X
+1891(Names)X
+2166(Operations)X
+1 f
+10 s
+576 4320(The)N
+723(.debug_typenames)X
+1344(section)X
+1593(contains)X
+1882(the)X
+2002(names)X
+2229(of)X
+2318(file-scope)X
+2657(user-defined)X
+3081(types)X
+3272(in)X
+3356(the)X
+3476(given)X
+3677(object,)X
+3916(and)X
+576 4416(also)N
+725(the)X
+843(offsets)X
+1077(of)X
+1164(the)X
+0 f
+1310(DIE)X
+1 f
+(s)S
+1505(that)X
+1645(represent)X
+1960(the)X
+2078(definitions)X
+2440(of)X
+2527(the)X
+2645(types)X
+2834(in)X
+2916(the)X
+3034(.debug_info)X
+3439(section.)X
+0 f
+576 4656(Dwarf_Unsigned)N
+1296(dwarf_add_typename\()X
+960 4752(Dwarf_P_Debug)N
+1632(dbg,)X
+960 4848(Dwarf_P_Die)N
+1536(die,)X
+960 4944(char)N
+1200(*type_name,)X
+960 5040(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 5184(The)N
+728(function)X
+0 f
+1050(dwarf_add_typename\(\))X
+1 f
+2037(adds)X
+2211(the)X
+2336(name)X
+2537(of)X
+2631(a)X
+2694(file-scope)X
+3038(user-defined)X
+3468(type)X
+3634(specified)X
+3952(by)X
+0 f
+576 5280(type_name)N
+1 f
+1037(to)X
+1128(the)X
+1255(section)X
+1511(that)X
+1660(contains)X
+1956(the)X
+2083(names)X
+2316(of)X
+2411(file-scope)X
+2756(user-defined)X
+3186(type.)X
+3392(The)X
+3545(object)X
+3769(that)X
+3917(this)X
+576 5376(section)N
+825(belongs)X
+1096(to)X
+1180(is)X
+1255(specified)X
+1567(by)X
+0 f
+1697(dbg)X
+1 f
+(.)S
+1903(The)X
+0 f
+2078(DIE)X
+1 f
+2244(that)X
+2387(represents)X
+2736(the)X
+2857(definition)X
+3191(of)X
+3281(the)X
+3402(type)X
+3563(is)X
+3639(specified)X
+3952(by)X
+0 f
+576 5472(die)N
+1 f
+(.)S
+576 5664(It)N
+645(returns)X
+888(a)X
+944(non-zero)X
+1250(value)X
+1444(on)X
+1544(success,)X
+1825(and)X
+0 f
+1989(0)X
+1 f
+2057(on)X
+2157(error.)X
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2217(-)X
+2264(13)X
+2364(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+14 p
+%%Page: 14 14
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2217 384(-)N
+2264(14)X
+2364(-)X
+3 f
+11 s
+576 768(4.11)N
+774(File-scope)X
+1173(Static)X
+1410(Variable)X
+1760(Names)X
+2035(Operations)X
+1 f
+10 s
+576 912(The)N
+722(.debug_varnames)X
+1307(section)X
+1556(contains)X
+1845(the)X
+1965(names)X
+2192(of)X
+2281(file-scope)X
+2620(static)X
+2811(variables)X
+3123(in)X
+3207(the)X
+3327(given)X
+3527(object,)X
+3765(and)X
+3903(also)X
+576 1008(the)N
+694(offsets)X
+928(of)X
+1015(the)X
+0 f
+1161(DIE)X
+1 f
+(s)S
+1356(that)X
+1496(represent)X
+1811(the)X
+1929(definition)X
+2260(of)X
+2347(the)X
+2465(variables)X
+2775(in)X
+2857(the)X
+2975(.debug_info)X
+3380(section.)X
+0 f
+576 1248(Dwarf_Unsigned)N
+1296(dwarf_add_varname\()X
+960 1344(Dwarf_P_Debug)N
+1632(dbg,)X
+960 1440(Dwarf_P_Die)N
+1536(die,)X
+960 1536(char)N
+1200(*var_name,)X
+960 1632(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 1776(The)N
+741(function)X
+0 f
+1076(dwarf_add_varname\(\))X
+1 f
+2028(adds)X
+2215(the)X
+2353(name)X
+2568(of)X
+2676(a)X
+2753(file-scope)X
+3111(static)X
+3321(variable)X
+3621(specified)X
+3952(by)X
+0 f
+576 1872(var_name)N
+1 f
+996(to)X
+1094(the)X
+1228(section)X
+1491(that)X
+1647(contains)X
+1950(the)X
+2084(names)X
+2325(of)X
+2428(file-scope)X
+2781(static)X
+2986(variables)X
+3312(defined)X
+3588(by)X
+3703(the)X
+3836(object)X
+576 1968(represented)N
+967(by)X
+0 f
+1095(dbg)X
+1 f
+(.)S
+1299(The)X
+0 f
+1472(DIE)X
+1 f
+1636(that)X
+1776(represents)X
+2122(the)X
+2240(definition)X
+2571(of)X
+2658(the)X
+2776(static)X
+2965(variable)X
+3244(is)X
+3317(specified)X
+3627(by)X
+0 f
+3755(die)X
+1 f
+(.)S
+576 2160(It)N
+645(returns)X
+888(a)X
+944(non-zero)X
+1250(value)X
+1444(on)X
+1544(success,)X
+1825(and)X
+0 f
+1989(0)X
+1 f
+2057(on)X
+2157(error.)X
+3 f
+11 s
+576 2400(4.12)N
+774(Macro)X
+1045(Information)X
+1526(Creation)X
+1 f
+10 s
+576 2544(All)N
+702(strings)X
+939(passed)X
+1178(in)X
+1265(by)X
+1370(the)X
+1493(caller)X
+1697(are)X
+1821(copied)X
+2060(by)X
+2165(these)X
+2355(functions,)X
+2698(so)X
+2794(the)X
+2917(space)X
+3121(in)X
+3208(which)X
+3429(the)X
+3552(caller)X
+3756(provides)X
+576 2640(the)N
+701(strings)X
+941(may)X
+1106(be)X
+1209(ephemeral)X
+1570(\(on)X
+1703(the)X
+1827(stack,)X
+2038(or)X
+2131(immediately)X
+2557(reused)X
+2793(or)X
+2886(whatever\))X
+3234(without)X
+3504(this)X
+3645(causing)X
+3916(any)X
+576 2736(difficulty.)N
+0 f
+576 2880(int)N
+768(dwarf_def_macro\(Dwarf_P_Debug)X
+2208(dbg,)X
+960 2976(Dwarf_Unsigned)N
+1680(lineno,)X
+960 3072(char)N
+1200(*name)X
+960 3168(char)N
+1200(*value,)X
+960 3264(Dwarf_Error)N
+1536(*error\);)X
+1 f
+576 3408(Adds)N
+766(a)X
+823(macro)X
+1045(definition.)X
+1417(The)X
+0 f
+1591(name)X
+1 f
+1804(argument)X
+2128(should)X
+2362(include)X
+2620(the)X
+2740(parentheses)X
+3137(and)X
+3275(parameter)X
+3619(names)X
+3846(if)X
+3917(this)X
+576 3504(is)N
+652(a)X
+711(function-like)X
+1148(macro.)X
+1411(Neither)X
+1674(string)X
+1878(should)X
+2113(contain)X
+2371(extraneous)X
+2741(whitespace.)X
+0 f
+3216(dwarf_def_macro\(\))X
+1 f
+576 3600(adds)N
+748(the)X
+871(mandated)X
+1208(space)X
+1412(after)X
+1585(the)X
+1708(name)X
+1907(and)X
+2048(before)X
+2279(the)X
+2402(value)X
+2621(in)X
+2708(the)X
+2831(output)X
+3060(DWARF)X
+3375(section\(but)X
+3757(does)X
+3930(not)X
+576 3696(change)N
+829(the)X
+951(strings)X
+1188(pointed)X
+1452(to)X
+1538(by)X
+1642(the)X
+1764(arguments\).)X
+2189(If)X
+2267(this)X
+2406(is)X
+2483(a)X
+2543(definition)X
+2878(before)X
+3108(any)X
+3248(files)X
+3410(are)X
+3533(read,)X
+0 f
+3744(lineno)X
+1 f
+576 3792(should)N
+810(be)X
+907(0.)X
+1008(Returns)X
+0 f
+1306(DW_DLV_ERROR)X
+1 f
+1903(and)X
+2040(sets)X
+0 f
+2209(error)X
+1 f
+2470(if)X
+2540(there)X
+2722(is)X
+2796(an)X
+2893(error.)X
+3111(Returns)X
+0 f
+3409(DW_DLV_OK)X
+1 f
+3863(if)X
+3934(the)X
+576 3888(call)N
+712(was)X
+857(successful.)X
+0 f
+576 4032(int)N
+768(dwarf_undef)X
+1344(macro\(Dwarf_P_Debug)X
+2304(dbg,)X
+960 4128(Dwarf_Unsigned)N
+1680(lineno,)X
+960 4224(char)N
+1200(*name,)X
+960 4320(Dwarf_Error)N
+1536(*error\);)X
+1 f
+576 4464(Adds)N
+772(a)X
+835(macro)X
+1064(un-definition)X
+1510(note.)X
+1716(If)X
+1798(this)X
+1941(is)X
+2022(a)X
+2086(definition)X
+2425(before)X
+2659(any)X
+2803(files)X
+2969(are)X
+3096(read,)X
+0 f
+3311(lineno)X
+1 f
+3627(should)X
+3868(be)X
+3972(0.)X
+576 4560(Returns)N
+0 f
+885(DW_DLV_ERROR)X
+1 f
+1492(and)X
+1639(sets)X
+0 f
+1818(error)X
+1 f
+2089(if)X
+2169(there)X
+2361(is)X
+2445(an)X
+2552(error.)X
+2780(Returns)X
+0 f
+3088(DW_DLV_OK)X
+1 f
+3551(if)X
+3631(the)X
+3760(call)X
+3907(was)X
+576 4656(successful.)N
+0 f
+576 4800(int)N
+768(dwarf_start_macro_file\(Dwarf_P_Debug)X
+2544(dbg,)X
+960 4896(Dwarf_Unsigned)N
+1680(lineno,)X
+960 4992(Dwarf_Unsigned)N
+1680(fileindex,)X
+960 5088(Dwarf_Error)N
+1536(*error\);)X
+576 5232(fileindex)N
+1 f
+1050(is)X
+1145(an)X
+1263(index)X
+1483(in)X
+1587(the)X
+1727(.debug_line)X
+2145(header:)X
+2445(the)X
+2586(index)X
+2807(of)X
+2917(the)X
+3058(file)X
+3208(name.)X
+3465(See)X
+3624(the)X
+3765(function)X
+0 f
+576 5328(dwarf_add_file_decl\(\))N
+1 f
+(.)S
+1653(The)X
+0 f
+1835(lineno)X
+1 f
+2152(should)X
+2394(be)X
+2499(0)X
+2568(is)X
+2650(this)X
+2794(file)X
+2930(is)X
+3012(the)X
+3139(file)X
+3275(of)X
+3371(the)X
+3498(compilation)X
+3908(unit)X
+576 5424(source)N
+809(itself)X
+992(\(which,)X
+1258(of)X
+1348(course,)X
+1601(is)X
+1677(not)X
+1802(a)X
+1861(#include)X
+2160(in)X
+2245(any)X
+2384(file\).)X
+2581(Returns)X
+0 f
+2881(DW_DLV_ERROR)X
+1 f
+3480(and)X
+3620(sets)X
+0 f
+3792(error)X
+1 f
+576 5520(if)N
+645(there)X
+826(is)X
+899(an)X
+995(error.)X
+1212(Returns)X
+0 f
+1509(DW_DLV_OK)X
+1 f
+1961(if)X
+2030(the)X
+2148(call)X
+2284(was)X
+2429(successful.)X
+0 f
+576 5664(int)N
+768(dwarf_end_macro_file\(Dwarf_P_Debug)X
+2448(dbg,)X
+960 5760(Dwarf_Error)N
+1536(*error\);)X
+1 f
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2217(-)X
+2264(14)X
+2364(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+15 p
+%%Page: 15 15
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2217 384(-)N
+2264(15)X
+2364(-)X
+576 768(Returns)N
+0 f
+884(DW_DLV_ERROR)X
+1 f
+1491(and)X
+1638(sets)X
+0 f
+1817(error)X
+1 f
+2088(if)X
+2168(there)X
+2360(is)X
+2444(an)X
+2551(error.)X
+2779(Returns)X
+0 f
+3087(DW_DLV_OK)X
+1 f
+3550(if)X
+3630(the)X
+3759(call)X
+3907(was)X
+576 864(successful.)N
+0 f
+576 1008(int)N
+768(dwarf_vendor_ext\(Dwarf_P_Debug)X
+2256(dbg,)X
+768 1104(Dwarf_Unsigned)N
+1488(constant,)X
+768 1200(char)N
+1008(*)X
+1488(string,)X
+768 1296(Dwarf_Error*)N
+1488(error\);)X
+1 f
+576 1440(The)N
+725(meaning)X
+1025(of)X
+1116(the)X
+0 f
+1266(constant)X
+1 f
+1674(and)X
+1814(the)X
+0 f
+1912(string)X
+1 f
+2225(are)X
+2349(undefined)X
+2695(by)X
+2800(DWARF)X
+3114(itself,)X
+3319(but)X
+3446(the)X
+3569(string)X
+3776(must)X
+3956(be)X
+576 1536(an)N
+691(ordinary)X
+1002(null)X
+1165(terminated)X
+1547(string.)X
+1808(Returns)X
+0 f
+2124(DW_DLV_ERROR)X
+1 f
+2739(and)X
+2894(sets)X
+0 f
+3081(error)X
+1 f
+3360(if)X
+3448(there)X
+3648(is)X
+3740(an)X
+3855(error.)X
+576 1632(Returns)N
+0 f
+873(DW_DLV_OK)X
+1 f
+1325(if)X
+1394(the)X
+1512(call)X
+1648(was)X
+1793(successful.)X
+3 f
+11 s
+576 1776(4.13)N
+774(Low)X
+962(Level)X
+1190(\(.debug_frame\))X
+1790(operations)X
+1 f
+10 s
+576 1920(These)N
+804(functions)X
+1138(operate)X
+1411(on)X
+1528(the)X
+1663(.debug_frame)X
+2144(section.)X
+2448(Refer)X
+2664(to)X
+2 f
+2763(libdwarf.h)X
+1 f
+3130(for)X
+3261(the)X
+3396(register)X
+3674(names)X
+3916(and)X
+576 2016(register)N
+837(assignment)X
+1217(mapping.)X
+1557(Both)X
+1732(of)X
+1819(these)X
+2004(are)X
+2123(necessarily)X
+2500(machine)X
+2792(dependent.)X
+0 f
+576 2256(Dwarf_P_Fde)N
+1152(dwarf_new_fde\()X
+960 2352(Dwarf_P_Debug)N
+1632(dbg,)X
+960 2448(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 2592(The)N
+721(function)X
+0 f
+1036(dwarf_new_fde\(\))X
+1 f
+1776(returns)X
+2019(a)X
+2075(new)X
+0 f
+2257(Dwarf_P_Fde)X
+1 f
+2805(descriptor)X
+3146(that)X
+3286(should)X
+3520(be)X
+3617(used)X
+3785(to)X
+3868(build)X
+576 2688(a)N
+670(complete)X
+0 f
+1050(FDE)X
+1 f
+(.)S
+1292(Subsequent)X
+1719(calls)X
+1924(to)X
+2044(routines)X
+2359(that)X
+2536(build)X
+2757(up)X
+2894(the)X
+0 f
+3077(FDE)X
+1 f
+3278(should)X
+3548(use)X
+3712(the)X
+3867(same)X
+0 f
+576 2784(Dwarf_P_Fde)N
+1 f
+1124(descriptor.)X
+576 2976(It)N
+645(returns)X
+888(a)X
+944(valid)X
+0 f
+1152(Dwarf_P_Fde)X
+1 f
+1700(descriptor)X
+2041(on)X
+2141(success,)X
+2422(and)X
+0 f
+2586(DW_DLV_BADADDR)X
+1 f
+3278(on)X
+3378(error.)X
+0 f
+576 3216(Dwarf_Unsigned)N
+1296(dwarf_add_frame_cie\()X
+960 3312(Dwarf_P_Debug)N
+1632(dbg,)X
+960 3408(char)N
+1200(*augmenter,)X
+960 3504(Dwarf_Small)N
+1536(code_align,)X
+960 3600(Dwarf_Small)N
+1536(data_align,)X
+960 3696(Dwarf_Small)N
+1536(ret_addr_reg,)X
+960 3792(Dwarf_Ptr)N
+1440(init_bytes,)X
+960 3888(Dwarf_Unsigned)N
+1680(init_bytes_len,)X
+960 3984(Dwarf_Error)N
+1536(*error\);)X
+1 f
+576 4128(The)N
+721(function)X
+0 f
+1036(dwarf_add_frame_cie\(\))X
+1 f
+2064(creates)X
+2308(a)X
+0 f
+2392(CIE)X
+1 f
+(,)S
+2576(and)X
+2712(returns)X
+2955(an)X
+3051(index)X
+3249(to)X
+3331(it,)X
+3415(that)X
+3555(should)X
+3788(be)X
+3885(used)X
+576 4224(to)N
+661(refer)X
+837(to)X
+922(this)X
+0 f
+1088(CIE)X
+1 f
+(.)S
+0 f
+1323(CIE)X
+1 f
+(s)S
+1521(are)X
+1642(used)X
+1811(by)X
+0 f
+1941(FDE)X
+1 f
+(s)S
+2138(to)X
+2222(setup)X
+2413(initial)X
+2621(values)X
+2848(for)X
+2964(frames.)X
+3245(The)X
+3392(augmentation)X
+3850(string)X
+576 4320(for)N
+700(the)X
+0 f
+856(CIE)X
+1 f
+1030(is)X
+1113(specified)X
+1433(by)X
+0 f
+1571(augmenter)X
+1 f
+(.)S
+2073(The)X
+2228(code)X
+2410(alignement)X
+2796(factor,)X
+3034(data)X
+3198(alignment)X
+3548(factor,)X
+3787(and)X
+3934(the)X
+576 4416(return)N
+839(address)X
+1151(register)X
+1463(for)X
+1628(the)X
+0 f
+1825(CIE)X
+1 f
+2040(are)X
+2210(specified)X
+2570(by)X
+0 f
+2748(code_align)X
+1 f
+(,)S
+0 f
+3346(data_align)X
+1 f
+(,)S
+3916(and)X
+0 f
+576 4512(ret_addr_reg)N
+1 f
+1180(respectively.)X
+0 f
+1664(init_bytes)X
+1 f
+2172(points)X
+2395(to)X
+2485(the)X
+2611(bytes)X
+2809(that)X
+2958(represent)X
+3282(the)X
+3409(instructions)X
+3811(for)X
+3934(the)X
+0 f
+576 4608(CIE)N
+1 f
+740(being)X
+938(created,)X
+1211(and)X
+0 f
+1375(init_bytes_len)X
+1 f
+2067(specifies)X
+2368(the)X
+2486(number)X
+2751(of)X
+2838(bytes)X
+3027(of)X
+3114(instructions.)X
+576 4800(It)N
+645(returns)X
+888(an)X
+984(index)X
+1182(to)X
+1264(the)X
+0 f
+1410(CIE)X
+1 f
+1574(just)X
+1709(created)X
+1962(on)X
+2062(success.)X
+2363(On)X
+2481(error)X
+2658(it)X
+2722(returns)X
+0 f
+2993(DW_DLV_NOCOUNT)X
+1 f
+(.)S
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2217(-)X
+2264(15)X
+2364(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+16 p
+%%Page: 16 16
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2217 384(-)N
+2264(16)X
+2364(-)X
+0 f
+576 768(Dwarf_Unsigned)N
+1296(dwarf_add_frame_fde\()X
+960 864(Dwarf_P_Debug)N
+1632(dbg,)X
+960 960(Dwarf_P_Fde)N
+1536(fde,)X
+960 1056(Dwarf_P_Die)N
+1536(die,)X
+960 1152(Dwarf_Unsigned)N
+1680(cie,)X
+960 1248(Dwarf_Addr)N
+1488(virt_addr,)X
+960 1344(Dwarf_Unsigned)N
+1728(code_len,)X
+960 1440(Dwarf_Unsigned)N
+1680(sym_idx,)X
+960 1536(Dwarf_Error*)N
+1584(error\))X
+1 f
+576 1680(The)N
+724(function)X
+0 f
+1042(dwarf_add_frame_fde\(\))X
+1 f
+2073(adds)X
+2243(the)X
+0 f
+2392(FDE)X
+1 f
+2559(specified)X
+2872(by)X
+0 f
+3003(fde)X
+1 f
+3170(to)X
+3255(the)X
+3377(list)X
+3498(of)X
+0 f
+3617(FDE)X
+1 f
+(s)S
+3816(for)X
+3934(the)X
+576 1776(object)N
+799(represented)X
+1197(by)X
+1304(the)X
+1429(given)X
+0 f
+1661(dbg)X
+1 f
+(.)S
+0 f
+1899(die)X
+1 f
+2069(specifies)X
+2376(the)X
+0 f
+2528(DIE)X
+1 f
+2698(that)X
+2844(represents)X
+3196(the)X
+3320(function)X
+3613(whose)X
+3844(frame)X
+576 1872(information)N
+980(is)X
+1059(specified)X
+1375(by)X
+1482(the)X
+1607(given)X
+0 f
+1840(fde)X
+1 f
+(.)S
+0 f
+2079(cie)X
+1 f
+2250(specifies)X
+2558(the)X
+2683(index)X
+2888(of)X
+2982(the)X
+0 f
+3135(CIE)X
+1 f
+3306(that)X
+3453(should)X
+3693(be)X
+3796(used)X
+3970(to)X
+576 1968(setup)N
+770(the)X
+893(initial)X
+1104(conditions)X
+1462(for)X
+1580(the)X
+1702(given)X
+1904(frame.)X
+0 f
+2184(virt_addr)X
+1 f
+2640(represents)X
+2990(the)X
+3112(relocatable)X
+3489(address)X
+3754(at)X
+3836(which)X
+576 2064(the)N
+694(code)X
+867(for)X
+982(the)X
+1101(given)X
+1300(function)X
+1588(begins,)X
+1838(and)X
+0 f
+2003(sym_idx)X
+1 f
+2360(gives)X
+2550(the)X
+2669(index)X
+2868(of)X
+2956(the)X
+3075(relocatable)X
+3449(symbol)X
+3705(to)X
+3788(be)X
+3885(used)X
+576 2160(to)N
+670(relocate)X
+957(this)X
+1104(address)X
+1377(\()X
+0 f
+1404(virt_addr)X
+1 f
+1868(that)X
+2020(is\).)X
+0 f
+2228(code_len)X
+1 f
+2643(specifies)X
+2955(the)X
+3084(size)X
+3240(in)X
+3333(bytes)X
+3533(of)X
+3631(the)X
+3760(machine)X
+576 2256(instructions)N
+969(for)X
+1083(the)X
+1201(given)X
+1399(function.)X
+576 2448(It)N
+645(returns)X
+888(an)X
+984(index)X
+1182(to)X
+1264(the)X
+1382(given)X
+0 f
+1608(fde)X
+1 f
+(.)S
+0 f
+576 2688(Dwarf_Unsigned)N
+1296(dwarf_add_frame_info\()X
+960 2784(Dwarf_P_Debug)N
+1632(dbg,)X
+960 2880(Dwarf_P_Fde)N
+1536(fde,)X
+960 2976(Dwarf_P_Die)N
+1536(die,)X
+960 3072(Dwarf_Unsigned)N
+1680(cie,)X
+960 3168(Dwarf_Addr)N
+1488(virt_addr,)X
+960 3264(Dwarf_Unsigned)N
+1728(code_len,)X
+960 3360(Dwarf_Unsigned)N
+1680(sym_idx,)X
+960 3456(Dwarf_Signed)N
+1584(offset_into_exception_tables,)X
+960 3552(Dwarf_Unsigned)N
+1680(exception_table_symbol,)X
+960 3648(Dwarf_Error*)N
+1584(error\))X
+1 f
+576 3792(The)N
+724(function)X
+0 f
+1042(dwarf_add_frame_fde\(\))X
+1 f
+2073(adds)X
+2243(the)X
+0 f
+2392(FDE)X
+1 f
+2559(specified)X
+2872(by)X
+0 f
+3003(fde)X
+1 f
+3170(to)X
+3255(the)X
+3377(list)X
+3498(of)X
+0 f
+3617(FDE)X
+1 f
+(s)S
+3816(for)X
+3934(the)X
+576 3888(object)N
+799(represented)X
+1197(by)X
+1304(the)X
+1429(given)X
+0 f
+1661(dbg)X
+1 f
+(.)S
+0 f
+1899(die)X
+1 f
+2069(specifies)X
+2376(the)X
+0 f
+2528(DIE)X
+1 f
+2698(that)X
+2844(represents)X
+3196(the)X
+3320(function)X
+3613(whose)X
+3844(frame)X
+576 3984(information)N
+980(is)X
+1059(specified)X
+1375(by)X
+1482(the)X
+1607(given)X
+0 f
+1840(fde)X
+1 f
+(.)S
+0 f
+2079(cie)X
+1 f
+2250(specifies)X
+2558(the)X
+2683(index)X
+2888(of)X
+2982(the)X
+0 f
+3135(CIE)X
+1 f
+3306(that)X
+3453(should)X
+3693(be)X
+3796(used)X
+3970(to)X
+576 4080(setup)N
+770(the)X
+893(initial)X
+1104(conditions)X
+1462(for)X
+1580(the)X
+1702(given)X
+1904(frame.)X
+0 f
+2184(virt_addr)X
+1 f
+2640(represents)X
+2990(the)X
+3112(relocatable)X
+3489(address)X
+3754(at)X
+3836(which)X
+576 4176(the)N
+694(code)X
+867(for)X
+982(the)X
+1101(given)X
+1300(function)X
+1588(begins,)X
+1838(and)X
+0 f
+2003(sym_idx)X
+1 f
+2360(gives)X
+2550(the)X
+2669(index)X
+2868(of)X
+2956(the)X
+3075(relocatable)X
+3449(symbol)X
+3705(to)X
+3788(be)X
+3885(used)X
+576 4272(to)N
+670(relocate)X
+957(this)X
+1104(address)X
+1377(\()X
+0 f
+1404(virt_addr)X
+1 f
+1868(that)X
+2020(is\).)X
+0 f
+2228(code_len)X
+1 f
+2643(specifies)X
+2955(the)X
+3084(size)X
+3240(in)X
+3333(bytes)X
+3533(of)X
+3631(the)X
+3760(machine)X
+576 4368(instructions)N
+989(for)X
+1124(the)X
+1263(given)X
+1482(function.)X
+0 f
+1838(offset_into_exception_tables)X
+1 f
+3223(specifies)X
+3545(the)X
+3684(offset)X
+3908(into)X
+0 f
+576 4464(.MIPS.eh_region)N
+1 f
+1389(elf)X
+1567(section)X
+1887(where)X
+2177(the)X
+2368(exception)X
+2772(tables)X
+3051(for)X
+3237(this)X
+3444(function)X
+3803(begins.)X
+0 f
+576 4560(exception_table_symbol)N
+1 f
+1687(gives)X
+1891(the)X
+2024(index)X
+2238(of)X
+2341(the)X
+2475(relocatable)X
+2864(symbol)X
+3135(to)X
+3233(be)X
+3345(used)X
+3528(to)X
+3626(relocate)X
+3917(this)X
+576 4656(offset.)N
+576 4848(It)N
+645(returns)X
+888(an)X
+984(index)X
+1182(to)X
+1264(the)X
+1382(given)X
+0 f
+1608(fde)X
+1 f
+(.)S
+0 f
+576 5088(Dwarf_P_Fde)N
+1152(dwarf_fde_cfa_offset\()X
+960 5184(Dwarf_P_Fde)N
+1536(fde,)X
+960 5280(Dwarf_Unsigned)N
+1680(reg,)X
+960 5376(Dwarf_Signed)N
+1584(offset,)X
+960 5472(Dwarf_Error)N
+1536(*error\))X
+1 f
+576 5616(The)N
+742(function)X
+0 f
+1078(dwarf_fde_cfa_offset\(\))X
+1 f
+2175(appends)X
+2479(a)X
+0 f
+2585(DW_CFA_offset)X
+1 f
+3251(operation)X
+3596(to)X
+3700(the)X
+0 f
+3868(FDE)X
+1 f
+(,)S
+576 5712(specified)N
+890(by)X
+0 f
+1022(fde)X
+1 f
+(,)S
+1230(being)X
+1432(constructed.)X
+1866(The)X
+2015(first)X
+2168(operand)X
+2451(of)X
+2542(the)X
+0 f
+2692(DW_CFA_offset)X
+1 f
+3340(operation)X
+3666(is)X
+3742(specified)X
+576 5808(by)N
+0 f
+714(regP.)X
+1060(The)X
+1262(register)X
+1704(specified)X
+2194(should)X
+2540(not)X
+2742(exceed)X
+3088(6)X
+3194(bits.)X
+3541(The)X
+3744(second)X
+1 f
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2217(-)X
+2264(16)X
+2364(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+17 p
+%%Page: 17 17
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+2217 384(-)N
+2264(17)X
+2364(-)X
+0 f
+576 768(operand)N
+960(of)X
+1104(the)X
+1296(DW_CFA_offset)X
+1968(operation)X
+2448(is)X
+2592(specified)X
+3072(by)X
+3216(offset.)X
+576 960(It)N
+720(returns)X
+1104(the)X
+1296(given)X
+1584(fde)X
+1776(on)X
+1920(success,)X
+2352(and)X
+2544(DW_DLV_BADADDR)X
+3264(on)X
+3408(error.)X
+576 1200(Dwarf_P_Fde)N
+1152(dwarf_add_fde_inst\()X
+960 1296(Dwarf_P_Fde)N
+1536(fde,)X
+960 1392(Dwarf_Small)N
+1536(op,)X
+960 1488(Dwarf_Unsigned)N
+1680(val1,)X
+960 1584(Dwarf_Unsigned)N
+1680(val2,)X
+960 1680(Dwarf_Error)N
+1536(*error\))X
+576 1824(The)N
+773(function)X
+1210(dwarf_add_fde_inst\(\))X
+2223(adds)X
+2468(the)X
+2665(operation)X
+3150(specified)X
+3636(by)X
+3786(op)X
+3936(to)X
+576 1920(the)N
+776(FDE)X
+976(specified)X
+1464(by)X
+1616(fde.)X
+1912(Upto)X
+2160(two)X
+2360(operands)X
+2800(can)X
+3000(be)X
+3152(specified)X
+3640(in)X
+3792(val1,)X
+576 2016(and)N
+792(val2.)X
+1152(Based)X
+1464(on)X
+1632(the)X
+1848(operand)X
+2256(specified)X
+2760(Libdwarf)X
+3216(decides)X
+3624(how)X
+3840(many)X
+576 2112(operands)N
+1013(are)X
+1210(meaningful)X
+1743(for)X
+1940(the)X
+2137(operand.)X
+2622(It)X
+2771(also)X
+3016(converts)X
+3452(the)X
+3648(operands)X
+576 2208(to)N
+725(the)X
+922(appropriate)X
+1503(datatypes)X
+1988(even)X
+2233(they)X
+2478(are)X
+2676(passed)X
+3018(to)X
+3168(dwarf_add_fde_inst)X
+576 2304(as)N
+720(Dwarf_Unsigned.)X
+576 2496(It)N
+720(returns)X
+1104(the)X
+1296(given)X
+1584(fde)X
+1776(on)X
+1920(success,)X
+2352(and)X
+2544(DW_DLV_BADADDR)X
+3264(on)X
+3408(error.)X
+1 f
+576 6164($Revision:)N
+942(1.10)X
+1102($)X
+2217(-)X
+2264(17)X
+2364(-)X
+3070($Date:)X
+3304(1996/07/09)X
+3688(22:46:17)X
+3992($)X
+
+18 p
+%%Page: 18 18
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+0 f
+2112 768(CONTENTS)N
+576 1008(1.)N
+768(INTRODUCTION)X
+3 f
+1461(.)X
+1567(.)X
+1673(.)X
+1779(.)X
+1885(.)X
+1991(.)X
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(1)X
+768 1104(1.1)N
+1056(Purpose)X
+1440(and)X
+1632(Scope)X
+3 f
+1991(.)X
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(1)X
+768 1200(1.2)N
+1056(Definitions)X
+3 f
+1673(.)X
+1779(.)X
+1885(.)X
+1991(.)X
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(1)X
+768 1296(1.3)N
+1056(Overview)X
+3 f
+1567(.)X
+1673(.)X
+1779(.)X
+1885(.)X
+1991(.)X
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(1)X
+768 1392(1.4)N
+1056(Revision)X
+1488(History)X
+3 f
+1885(.)X
+1991(.)X
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(2)X
+576 1536(2.)N
+768(Type)X
+1008(Definitions)X
+3 f
+1673(.)X
+1779(.)X
+1885(.)X
+1991(.)X
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(2)X
+768 1632(2.1)N
+1056(General)X
+1440(Description)X
+3 f
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(2)X
+768 1728(2.2)N
+1056(Aggregate)X
+1536(Types)X
+3 f
+1885(.)X
+1991(.)X
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(2)X
+576 1872(3.)N
+768(Memory)X
+1104(Management)X
+3 f
+1673(.)X
+1779(.)X
+1885(.)X
+1991(.)X
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(2)X
+768 1968(3.1)N
+1056(Read-only)X
+1536(Properties)X
+3 f
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(2)X
+768 2064(3.2)N
+1056(Storage)X
+1440(Deallocation)X
+3 f
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(2)X
+576 2208(4.)N
+768(Functional)X
+1296(Interface)X
+3 f
+1779(.)X
+1885(.)X
+1991(.)X
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(2)X
+768 2304(4.1)N
+1056(Initialization)X
+1776(and)X
+1968(Termination)X
+2544(Operations)X
+3 f
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(3)X
+768 2400(4.2)N
+1056(Debugging)X
+1536(Information)X
+2112(Entry)X
+2400(Creation)X
+3 f
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(4)X
+768 2496(4.3)N
+1056(Attribute)X
+1536(Creation)X
+3 f
+1991(.)X
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(6)X
+768 2592(4.4)N
+1056(Expression)X
+1584(Creation)X
+3 f
+2097(.)X
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3984(9)X
+768 2688(4.5)N
+1056(Line)X
+1296(Number)X
+1632(Operations)X
+3 f
+2203(.)X
+2309(.)X
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3936(10)X
+768 2784(4.6)N
+1056(Fast)X
+1296(Access)X
+1632(\(aranges\))X
+2112(Operations)X
+3 f
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3936(12)X
+768 2880(4.7)N
+1056(Fast)X
+1296(Access)X
+1632(\(pubnames\))X
+2160(Operations)X
+3 f
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3936(12)X
+768 2976(4.8)N
+1056(Fast)X
+1296(Access)X
+1632(\(weak)X
+1920(names\))X
+2256(Operations)X
+3 f
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3936(13)X
+768 3072(4.9)N
+1056(Static)X
+1392(Function)X
+1824(Names)X
+2112(Operations)X
+3 f
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3936(13)X
+768 3168(4.10)N
+1056(File-scope)X
+1584(User-defined)X
+2208(Type)X
+2448(Names)X
+2736(Operations)X
+3 f
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3936(13)X
+768 3264(4.11)N
+1056(File-scope)X
+1584(Static)X
+1920(Variable)X
+2352(Names)X
+2640(Operations)X
+3 f
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3936(14)X
+768 3360(4.12)N
+1056(Macro)X
+1344(Information)X
+1920(Creation)X
+3 f
+2415(.)X
+2521(.)X
+2627(.)X
+2733(.)X
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3936(14)X
+768 3456(4.13)N
+1056(Low)X
+1248(Level)X
+1536(\(.debug_frame\))X
+2256(operations)X
+3 f
+2839(.)X
+2945(.)X
+3051(.)X
+3157(.)X
+3263(.)X
+3369(.)X
+3475(.)X
+3581(.)X
+3687(.)X
+3793(.)X
+0 f
+3936(15)X
+1 f
+2246 6164(-)N
+2293(i)X
+2335(-)X
+
+19 p
+%%Page: 19 19
+0(Courier)xf 0 f
+10 s 0 xH 0 xS 0 f
+1 f
+3 f
+12 s
+1446 576(A)N
+1539(Producer)X
+1948(Library)X
+2298(Interface)X
+2696(to)X
+2800(DWARF)X
+2 f
+11 s
+1049 720(UNIX)N
+9 f
+1254(\322)X
+2 f
+1346(International)X
+1834(Programming)X
+2349(Languages)X
+2757(Special)X
+3039(Interest)X
+3330(Group)X
+10 s
+2115 1152(ABSTRACT)N
+1 f
+576 1392(This)N
+755(document)X
+1108(describes)X
+1444(a)X
+1517(proposed)X
+1849(interface)X
+2169(to)X
+2269(a)X
+2343(library)X
+2595(of)X
+2700(functions)X
+3036(to)X
+3136(create)X
+3367(DWARF)X
+3694(debugging)X
+576 1488(information)N
+982(entries)X
+1224(and)X
+1368(DWARF)X
+1685(line)X
+1833(number)X
+2106(information.)X
+2532(It)X
+2609(does)X
+2784(not)X
+2913(make)X
+3114(recommendations)X
+3711(as)X
+3805(to)X
+3894(how)X
+576 1584(the)N
+694(functions)X
+1012(described)X
+1340(in)X
+1422(this)X
+1557(document)X
+1893(should)X
+2126(be)X
+2222(implemented)X
+2660(nor)X
+2787(does)X
+2954(it)X
+3018(suggest)X
+3278(possible)X
+3560(optimizations.)X
+576 1728(The)N
+735(document)X
+1086(is)X
+1174(oriented)X
+1472(to)X
+1569(creating)X
+1863(DWARF)X
+2187(version)X
+2458(2.)X
+2573(It)X
+2657(will)X
+2816(be)X
+2927(proposed)X
+3256(to)X
+3353(the)X
+3486(PLSIG)X
+3743(DWARF)X
+576 1824(committee)N
+934(as)X
+1021(soon)X
+1192(as)X
+1279(that)X
+1419(makes)X
+1644(any)X
+1780(sense.)X
+576 1968(No)N
+694(proposals)X
+1021(like)X
+1161(this)X
+1296(have)X
+1468(ever)X
+1627(been)X
+1799(submitted)X
+2134(to)X
+2216(the)X
+2334(PLSIG)X
+2576(committee....)X
+576 2112(The)N
+721(proposals)X
+1048(made)X
+1242(in)X
+1324(this)X
+1459(document)X
+1795(are)X
+1914(subject)X
+2161(to)X
+2243(change.)X
+576 2256($Revision:)N
+942(1.10)X
+1102($)X
+1162($Date:)X
+1396(1996/07/09)X
+1780(22:46:17)X
+2084($)X
+10 f
+576 5568(hhhhhhhhhhhh)N
+8 s
+9 f
+576 5664(\322)N
+1 f
+672(UNIX)X
+847(is)X
+906(a)X
+950(registered)X
+1217(trademark)X
+1491(of)X
+1560(UNIX)X
+1735(System)X
+1940(Laboratories,)X
+2294(Inc.)X
+2423(in)X
+2489(the)X
+2583(United)X
+2773(States)X
+2942(and)X
+3050(other)X
+3197(countries.)X
+
+20 p
+%%Page: 20 20
+0(Courier)xf 0 f
+8 s 0 xH 0 xS 0 f
+1 f
+
+20 p
+%%Trailer
+xt
+
+xs

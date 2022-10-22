@@ -1,0 +1,182 @@
+#3.7
+Navigation Example
+After double-clicking on an arc, the source code appears.  Let's explore the call further.
+Double-click "val" to move it into the Query Target field.  
+Now, from the Queries menu select "General" and "Where Symbol Used".
+The variable "val" is now the query target.
+
+
+
+--General
+--Macros
+--Variables
+--Functions
+--Files
+--Classes
+--Methods
+--Common Blocks
+--Types
+--Directories
+List Global Symbols
+List All Constants
+Where Symbol Used
+Where Defined?
+Find String
+Find Regular Expression
+
+
+
+
+List All Macros
+Where Defined?
+Where Undefined?
+Who Uses?
+List Unused Macros
+
+List All Global Variables
+Where Defined?
+Who References?
+Who Sets?
+Where Address Taken
+
+
+
+
+List All Functions
+Where Defined?
+Where Function Used
+Who Calls?
+Who is Called By?
+List Undefined
+List Unused Function
+List Local Declarations
+
+
+List All Files
+List All Header Files
+List Matching Files
+Who Includes?
+Who is included By?
+List All Classes
+Where Defined?
+List Subclasses
+List Superclasses
+List Methods in Class
+List All Methods
+Where Defined?
+Where Declared?
+
+
+List All Common Blocks
+List All Symbols in Common Block
+Where Common Block Defined?
+Where Common Block Referenced
+
+List All Types
+Where Type Defined
+List Functions of Type
+List Data of Type
+Where Type Used
+List Directories
+List Files
+
+
+
+"List All Global Symbols" returns all functions, macros, variables, classes, etc. found in your program files.
+"List All Constants" returns all constants in the source code.
+"Where Symbol Used" expects yu to type in a symbol (for example, function, macro, variable, etc.) and then identifies all source code locations where that symbol is referenced.
+"Where Defined?" expects you to type in a symbol (for example, function, macro, variable, etc.) and then identifies all source code locations where that symbol is defined.
+"Find String" expects you to type in a string and then identifies all source code locations that match that string.
+"Find Regular Expression" expects you to type in a a general expression and then identifies all source code locations that match that regular expression string.
+"List All Macros" returns all macros it finds in your program.
+"Where Defined?" expects you to type in a macro name and returns the source code locations where the macro is defined.
+"Where Undefined?"  expects you to type in a macro name and returns the source code locations where the macro is undefined.
+"Who Uses?"  expects you to type in a macro name and returns the source code locations where the macro is used.
+"List Unused Macros" lists all macros that are defined, but never used.
+"List All Global Variables"
+"Where Defined?"
+"Who References?"
+"Who Sets?"
+"Where Address Taken"
+"List All Functions"
+"Where Defined?"
+"Where Function Used"
+"Who Calls?"
+"Who is Called By?"
+"List Undefined"
+"List Unused Function"
+"List Local Declarations"
+"List All Files"
+"List All Header Files"
+"List Matching Files"
+"Who Includes?"
+"Who is included By?"
+"List All Classes"
+"Where Defined?"
+"List Subclasses"
+"List Superclasses"
+"List Methods in Class"
+"List All Methods"
+"Where Defined?"
+"Where Declared?"
+"List All Common Blocks"
+"List All Symbols in Common Block"
+"Where Common Block Defined?"
+"Where Common Block Referenced"
+"List All Types"
+"Where Type Defined"
+"List Functions of Type"
+"List Data of Type"
+"Where Type Used"
+"List Directories"
+"List Files"
+
+
+List All Packages
+Where Packages Defined
+List Functions in Package
+List Data in Package
+List Types in Package
+Where Package Withed
+
+
+
+
+List All Tagged Types
+Where Tagged Type Defined
+List Parent Tagged Types
+List Derived Tagged Types
+List Primitive Operations
+List Components
+Where Tagged Types Used
+
+
+
+List All Task Types
+Where Task Types Defined
+List Entries
+List Body Data
+List Body Functions
+List Body Types
+Where Task Type Used
+
+
+
+
+
+
+
+
+General
+Macros
+Variables
+Functions
+Files
+Classes
+Methods
+Common Blocks
+Types
+Directories
+Packages
+Tagged Types
+Task Types

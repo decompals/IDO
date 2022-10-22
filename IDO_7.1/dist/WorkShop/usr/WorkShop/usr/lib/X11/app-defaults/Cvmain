@@ -1,0 +1,1842 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! VIEW Common Resources                                                       !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*keyboardFocusPolicy:	pointer
+
+*sgiMode:		true
+*schemeFileList:	CaseVision
+*paletteFileList:	CaseVisionPalette
+*useSchemes:		all
+*useEnhancedFSB:        true
+
+*XmMenuShell*tearOffModel:		tear_off_enabled
+
+*useTtutil:		True
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*popupMenu*XmMenuShell*tearOffModel:        tear_off_disabled
+
+!
+! Launch menu labels
+!
+*launchMenu.labelString:	Launch Tool
+*launchMenu.mnemonic:		L
+
+!
+! Project menu labels
+!
+*projectMenu.labelString:		Project
+*projectMenu.mnemonic:			P
+*projectIconify.labelString:		Iconify
+*projectIconify.mnemonic:		I
+*projectRaise.labelString:		Raise
+*projectRaise.mnemonic:			R
+*projectRemapPaths.labelString:		Remap Paths...
+*projectRemapPaths.mnemonic:		m
+*projectProjectView.labelString:	Project View...
+*projectProjectView.mnemonic:		P
+*projectExit.labelString:		Exit
+*projectExit.mnemonic:			E
+
+!
+! Static Analyzer Query Menu Labels
+!
+*queryMenu.labelString: Query
+*queryMenu.mnemonic: Q
+
+*qmGeneral.labelString: General
+*qmGeneral.mnemonic: G
+*qmMacros.labelString: Macros
+*qmMacros.mnemonic: M
+*qmFunctions.labelString: Functions
+*qmFunctions.mnemonic: F
+*qmVariables.labelString: Variables
+*qmVariables.mnemonic: V
+
+*qmWhereSymbolDefined.labelString:	Where Defined ?
+*qmWhereMacroDefined.labelString:		Where Defined ?
+*qmWhereVariableDefined.labelString:	Where Defined ?
+*qmWhereFunctionDefined.labelString:	Where Defined ?
+
+!
+! Option menu labels
+!
+*optionMenu.labelString:
+
+
+
+!
+! Resource for determining what languages file suffixes indicate.
+! Used by cvsource and cvstatic
+!
+*suffixSource:		C++.c++ C++.C C++.cxx C++.h C++.cpp C++.cc C.c  Fortran.f Fortran.F Fortran90.f90 Ada.adb
+
+!!!!
+!!! NLS Messages
+!!!!
+*useNetLSLicense:					False
+*disableLicenseWarnings:              FALSE
+*disableThirtyDayLicenseWarnings:     FALSE
+
+*thirtyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of WorkShop.        
+*sixtyDayMessage:            Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*ninetyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*noLicenseServerMessage:     Unable to locate a license server.  Consult \nthe WorkShop Release Notes for information on\nsetting up your network license server.
+*notEnoughLicensesMessage:   No WorkShop licenses are available at this time. Contact\nyour sales representative or dealer to purchase additional\nlicenses or try again later.
+!
+*Evaluation*sixtyDayMessage:
+*Evaluation*ninetyDayMessage:
+*Evaluation*thirtyDayMessage: Your evaluation license for WorkShop\nwill expire in %d days.\n\nTo purchase a permanent license or extend\nyour evaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html\n\nor email: demolicense@sgi.com
+!
+*Evaluation*licenseExpiredMessage: Your evaluation period for WorkShop\nhas expired. \n\nTo purchase a permanent license or extend your\nevaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html or\n\nemail: demolicense@sgi.com
+!
+*noFlexlmLicenseMessage: WorkShop could not find a valid FlexLM license.\n\nIf you have an existing NetLS license for an earlier version of\nWorkShop, click on OK to use your old license.  Please contact Silicon\nGraphics to obtain a FlexLM replacement for your old license.  To avoid\nseeing this dialog again, set the "useNetLSLicense" resource in the\napplication defaults file to "True".\n\nTo obtain an Evaluation or Permanent license, please visit our license\nrequest web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*noLicenseMessage: Unable to find a WorkShop license.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*licenseExpiredMessage:      Your WorkShop License has expired.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*warnLoseLicenseMessage:     Unable to renew your software license.  Consult\nthe NetLS LSSERVER Release Notes for information on\ntroubleshooting your license server and network services.
+*regainLicenseMessage:       WorkShop license regained.
+*enterLicenseMessage: WorkShop requires a license. Please enter your license\nkey and click OK. Temporary license keys are available at the\nfollowing web site\n\nhttp://www.sgi.com/Products/license.html\n\nor call our technical support hotline at 1-800-800-4SGI.\n\nIf you have an existing NetLS license for a previous version of\nWorkShop, you can click Cancel to try to find a NetLS\nlicense.
+
+!!!!!
+!!!   Turn off all Xt and Motif warning messages
+!!!!!
+
+! This should be off when we ship, but ON for internal testing
+
+*silenceWarnings:  TRUE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of VIEW Common Resources                                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! PCSkit Common Resources                                                     !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*resultFormatPopupMenu*tearOffModel: 	XmTEAR_OFF_DISABLED
+*exprLanguagePopupMenu*tearOffModel: 	XmTEAR_OFF_DISABLED
+
+! Don't send standard messages by default, for improved stepping performance
+*sendStandardMessages:				False
+
+!
+! View Administration Menu
+!
+*administrationMenu.labelString:		Admin
+*setCurrentViewToggleMenuItem.labelString:	Active
+*cloneViewMenuItem.labelString:			Clone
+*quitViewMenuItem.labelString:			Close
+*saveTextMenuItem.labelString:			Save As Text...
+
+!
+! View Config Menu (optional)
+!
+*configMenu.labelString:			Config
+*preferencesMenuItem.labelString:		Preferences...
+
+!
+! Process Control Menu
+!
+*processControlMenu.labelString:		Process
+*continueProcessMenuItem.labelString:		Continue
+*stepOverSourceLineMenu.labelString:		Step Over
+*stepIntoSourceLineMenu.labelString:		Step Into
+*returnFromTopFrameMenuItem.labelString:	Return
+*stopProcessMenuItem.labelString:		Stop
+*killProcessMenuItem.labelString:		Kill
+*runProcessMenuItem.labelString:		Run
+*hangProcessMenuItem.labelString:		Hang
+
+!
+! Session Management Menu 
+!
+*sessionMenu.labelString:			Session
+*sessionMenu.execSessionMenuItem.labelString:	Execution...
+*sessionMenu.execSessionMenuItem.command:	SGI_Debug_ExecutionView
+*sessionMenu.iconifySessionMenuItem.labelString:Iconify
+*sessionMenu.raiseSessionMenuItem.labelString:	Raise
+*sessionMenu.switchSessionMenuItem.labelString:	Switch
+*sessionMenu.pathRemappingMenuItem.labelString:	Remap Paths...
+*sessionMenu.pathRemappingMenuItem.command:	SGI_Debug_PathRemap
+*sessionMenu.quitSessionMenuItem.labelString:	Exit
+
+!
+! View List Menu
+!
+*viewsMenu.labelString:				Views
+*ViewCommands:	Array Browser, Call Stack, Disassembly View, Exception View, Execution View, Expression View, File Browser, Memory View, Process Meter, Register View, Signal Panel, Source View, Structure Browser, Syscall Panel, Task View, Trap Manager, Variable Browser, X/Motif Analyzer
+*ViewCommands*Array Browser:	    SGI_Debug_ArrayBrowser
+*ViewCommands*Call Stack:	    SGI_Debug_CallStack
+*ViewCommands*Variable Browser:	    SGI_Debug_VarBrowser
+*ViewCommands*Exception View:	             SGI_Debug_ExceptionView
+*ViewCommands*Exception View-fileStat:   /usr/lib/WorkShop/cvexceptionview
+*ViewCommands*Execution View:	    SGI_Debug_ExecutionView
+*ViewCommands*Expression View:	    SGI_Debug_ExpressionView
+*ViewCommands*File Browser:	    SGI_Debug_FileBrowser
+*ViewCommands*Task View:	    SGI_Debug_TaskView
+*ViewCommands*Task View-fileStat:   /usr/lib/WorkShop/cvtaskview
+*ViewCommands*Trap Manager:	    SGI_Debug_TrapMgr
+*ViewCommands*Signal Panel:	    SGI_Debug_SignalPanel
+*ViewCommands*Syscall Panel:	    SGI_Debug_SyscallPanel
+*ViewCommands*Process Meter:	    SGI_Debug_ProcessMeter
+*ViewCommands*Structure Browser:    SGI_Debug_StructureBrowser
+*ViewCommands*Memory View:	    SGI_Debug_MemoryView
+*ViewCommands*Register View:	    SGI_Debug_RegisterView
+*ViewCommands*Disassembly View:	    SGI_Debug_DisView
+*ViewCommands*Source View:	    SGI_Debug_SourceView
+
+*ViewCommands*X/Motif Analyzer:     		SGI_Debug_Motif
+*ViewCommands*X/Motif Analyzer-fileStat:	/usr/lib/WorkShop/cvmotif
+*viewsMenu*X/Motif Analyzer.mnemonic:           X
+*viewsMenu*X/Motif Analyzer.labelString:        X/Motif\256 Analyzer
+
+! dialog boxes
+*switchProcessDialog*selectionLabelString: Process ID:
+*switchProcessDialog.dialogTitle: Switch Process
+*switchExecutableDialog*selectionLabelString: Core file:
+*switchExecutableDialog*executableLabel.labelString: Executable:
+*switchExecutableDialog.dialogTitle: Switch Executable
+
+!
+! Timeouts, in milliseconds
+!
+*xhangTimeout:			300000
+!*execTimeout:			500000
+*execTimeout:			0
+
+
+!
+! Mnemonics
+!
+*administrationMenu.mnemonic:		A
+*setCurrentViewToggleMenuItem.mnemonic:	A
+*cloneViewMenuItem.mnemonic:		l
+*quitViewMenuItem.mnemonic:		C
+*saveTextMenuItem.mnemonic:		S
+
+*configMenu.mnemonic:			C
+*preferencesMenuItem.mnemonic:		P
+
+
+*processControlMenu.mnemonic:		P
+*continueProcessMenuItem.mnemonic:	C
+*stepOverSourceLineMenu.mnemonic:	O
+*stepIntoSourceLineMenu.mnemonic:	I
+*returnFromTopFrameMenuItem.mnemonic:	R
+*stopProcessMenuItem.mnemonic:		S
+*killProcessMenuItem.mnemonic:		K
+*runProcessMenuItem.mnemonic:		u
+*hangProcessMenuItem.mnemonic:		H
+
+*sessionMenu.mnemonic:				S
+*sessionMenu.iconifySessionMenuItem.mnemonic:	I
+*sessionMenu.raiseSessionMenuItem.mnemonic:	R
+*sessionMenu.switchSessionMenuItem.mnemonic:	S
+*sessionMenu.pathRemappingMenuItem.mnemonic:	P
+*sessionMenu.quitSessionMenuItem.mnemonic:	E
+
+*viewsMenu.mnemonic:				V
+*viewsMenu*Array Browser.mnemonic:		A
+*viewsMenu*Call Stack.mnemonic:			C
+*viewsMenu*Variable Browser.mnemonic:		V
+*viewsMenu*Exception View.mnemonic:		n
+*viewsMenu*Expression View.mnemonic:		E
+*viewsMenu*File Browser.mnemonic:		l
+*viewsMenu*Task View.mnemonic:			k
+*viewsMenu*Trap Manager.mnemonic:		T
+*viewsMenu*Signal Panel.mnemonic:		i
+*viewsMenu*Syscall Panel.mnemonic:		y
+*viewsMenu*Process Meter.mnemonic:		c
+*viewsMenu*Source View.mnemonic:		o
+*viewsMenu*Structure Browser.mnemonic:		B
+*viewsMenu*Memory View.mnemonic:		M
+*viewsMenu*Register View.mnemonic:		R
+*viewsMenu*Disassembly View.mnemonic:		D
+*viewsMenu*Performance Analyzer.mnemonic:	P
+*viewsMenu*Static Analyzer.mnemonic:		S
+*viewsMenu*Build Analyzer.mnemonic:		u
+
+*viewsMenu*Call Stack.accelerator:		Alt<Key>C
+*viewsMenu*Structure Browser.accelerator:	Alt<Key>B
+*viewsMenu*Expression View.accelerator:		Alt<Key>E
+*viewsMenu*Call Stack.acceleratorText:		Alt+C
+*viewsMenu*Structure Browser.acceleratorText:	Alt+B
+*viewsMenu*Expression View.acceleratorText:	Alt+E
+
+*quitViewMenuItem.accelerator:		Ctrl<Key>C
+*quitViewMenuItem.acceleratorText:	Ctrl+C
+
+
+*libpathDialog.width:					440
+*libpathDialog.dialogTitle: 				Library Search Path
+*libpathDialog*resizable: 				False
+*libpathDialog*ldLibraryPathLabel.labelString:		$LD_LIBRARY_PATH: 
+*libpathDialog*rldRootLabel.labelString:		$_RLD_ROOT: 
+*libpathDialog*rldListLabel.labelString:		$_RLD_LIST: 
+*libpathDialog*ldLibraryPathLabel.recomputeSize:	False
+*libpathDialog*rldRootLabel.recomputeSize:		False
+*libpathDialog*rldListLabel.recomputeSize:		False
+*libpathDialog*ldLibraryPathLabel.alignment:		XmALIGNMENT_END
+*libpathDialog*rldRootLabel.alignment:			XmALIGNMENT_END
+*libpathDialog*rldListLabel.alignment:			XmALIGNMENT_END
+*libpathDialog*libList*scrollBarDisplayPolicy:		STATIC
+*libpathDialog*libList*scrollingPolicy:			AUTOMATIC 
+*libpathDialog*libList.visibleItemCount:		10
+*libpathDialog*dummy.leftOffset:			10 
+*libpathDialog*dummy.rightOffset:			10 
+*libpathDialog*dummy.topOffset:				10 
+*libpathDialog*dummy.bottomOffset:			10 
+*libpathDialog*rldListLabel.bottomOffset:		10 
+*libpathDialog*rldListText.bottomOffset:		10 
+*libpathDialog*buttonBox.entryAlignment:		XmALIGNMENT_BEGINNING
+*libpathDialog*buttonBox.packing:			XmPACK_COLUMN
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of PCSkit Common Resources                                              !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! BasicViews application specific resources                                   !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*schemeFileList: CaseVision
+*adaMode         false
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of BasicViews application specific resources                            !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! CallStack application specific resources                                    !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*callStack.title: Call Stack View
+
+*callStack*displayMenu.labelString:		Display
+*callStack*show_arg_values.labelString:		Arg Values
+*callStack*show_arg_values.set:			True
+*callStack*show_arg_names.labelString:		Arg Names
+*callStack*show_arg_names.set:			True
+*callStack*show_arg_types.labelString:		Arg Types
+*callStack*show_arg_types.set:			False
+*callStack*show_location.labelString:		Location
+*callStack*show_location.set:			True
+*callStack*show_pc.labelString:			PC
+*callStack*show_pc.set:				False
+*callStack*functionList.visibleItemCount:	10
+*callStack*functionList.width:			300
+
+!
+! mnemonics
+!
+*callStack*show_arg_values.mnemonic:		V
+*callStack*show_arg_names.mnemonic:		N
+*callStack*show_arg_types.mnemonic:		T
+*callStack*show_location.mnemonic:		L
+*callStack*show_pc.mnemonic:			P
+
+
+
+! Preferences Dialog
+*callStack*csprefDialog.dialogTitle:		Call Stack View Preferences
+*callStack*csprefDialog*selectionLabelString:	Maximum call stack depth:
+*callStack*buttonBox.topOffset:                   20
+*callStack*buttonBox.marginHeight:                0
+*callStack*buttonBox.marginWidth:                 0
+*callStack*buttonBox.orientation:                 XmHORIZONTAL
+*callStack*buttonBox.packing:                     XmPACK_COLUMN
+*callStack*buttonBox.entryAlignment:              XmALIGNMENT_CENTER
+*callStack*applyButton.labelString:               Apply
+*callStack*okButton.labelString:                  OK
+*callStack*closeButton.labelString:               Close
+*callStack*helpButton.labelString:                Help
+
+
+!
+! Don't modify these resources
+!
+*callStack*functionList.scrollBarDisplayPolicy: 	XmSTATIC
+*callStack*functionList.listSizePolicy: 		XmCONSTANT
+*callStack*labeledArrowButton*orientation: 	horizontal
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of CallStack application specific resources                             !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! ExpressionView application specific resources                               !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*expressionView.title: Expression View
+*expressionView*keyboardFocusPolicy:	explicit
+
+!
+! Expression chart arguments
+!
+*expressionView*exprHeader:	Expression:
+*expressionView*resultHeader:	Result:
+*expressionView*initialSize: 7
+*expressionView*maxNumOfExpr: 25
+
+
+!
+! Expression Field Language Popup Menu
+!
+*expressionView*exprLanguagePopupMenu*header.labelString:		Language
+*expressionView*exprLanguagePopupMenu*header.alignment:			XmALIGNMENT_BEGINNING
+
+!
+! Result Field Format Popup Menu
+!
+*expressionView*resultFormatPopupMenu*header.labelString:		Format
+*expressionView*resultFormatPopupMenu*header.alignment:			XmALIGNMENT_BEGINNING
+*expressionView*resultFormatPopupMenu*valueCascadeMenu.labelString:	Value
+*expressionView*resultFormatPopupMenu*addressCascadeMenu.labelString:	Address Of
+
+!
+! Load/Save expressions
+!
+*expressionView*loadViewSpecificMenuItem1.labelString:	Load Expressions...
+*expressionView*saveViewSpecificMenuItem1.labelString:	Save Expressions...
+
+!
+! Display menu
+*expressionView*clearAllMenuItem.labelString:	Clear All
+
+!
+!  Mnemonics
+!
+*expressionView*loadViewSpecificMenuItem1.mnemonic:	L
+*expressionView*saveViewSpecificMenuItem1.mnemonic:	S
+*expressionView*clearAllMenuItem.mnemonic:		C
+
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of ExpressionView application specific resources                        !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! VarBrowser application specific resources                                    !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*varBrowser.title: Variable Browser
+*varBrowser*keyboardFocusPolicy:	explicit
+
+!
+! Expression chart arguments
+!
+*varBrowser*exprHeader:		Variable:
+*varBrowser*resultHeader:	Result:
+*varBrowser*initialSize:	5
+*varBrowser*maxSymSize:		25
+
+!
+! Expression Field Language Popup Menu
+!
+*varBrowser*exprLanguagePopupMenu*header.labelString:		Language
+*varBrowser*exprLanguagePopupMenu*header.alignment:		XmALIGNMENT_BEGINNING
+*varBrowser*exprLanguagePopupMenu*XmToggleButtonGadget.sensitive:	False
+
+!
+! Result Field Format Popup Menu
+!
+*varBrowser*resultFormatPopupMenu*header.labelString:			Format
+*varBrowser*resultFormatPopupMenu*header.alignment:			XmALIGNMENT_BEGINNING
+*varBrowser*resultFormatPopupMenu*valueCascadeMenu.labelString:		Value
+*varBrowser*resultFormatPopupMenu*addressCascadeMenu.labelString:	Address Of
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of VarBrowser application specific resources                            !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! FileBrowser application specific resources                                  !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*fileBrowser.title: File Browser
+
+*fileBrowser*list.visibleItemCount:		10
+*fileBrowser*list.selectionPolicy:		XmSINGLE_SELECT
+*fileBrowser*list.listSizePolicy:		XmCONSTANT
+*fileBrowser*list.scrollBarDisplayPolicy:	XmSTATIC
+*fileBrowser*list.width:			250
+*fileBrowser*searchLabel.labelString:		Search: 
+*fileBrowser*searchLabel.leftOffset:		3
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of FileBrowser application specific resources                           !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! ExecutionView application specific resources                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*executionView.title: Execution View
+
+*executionView*text.editable:			False
+*executionView*text.cursorPositionVisible:	False
+*executionView*TerminalCommand: xwsh -geometry 60x10+#OverrideOffsetX+#OverrideOffsetY -name #ResName -title #Name -fg #FgPixel -bg #BgPixel -nomenu -xrm "#ResName*autoFork: False" -xrm "#ResName*allowSendEvents: True" -xrm "#ResName*overrideRedirect: True" -xrm "#ResName*keepOnScreen: False" -display #Display -e #Shell
+*executionView*UseTerminalGeometry:	True
+*executionView*UseOriginalName:	False
+
+!! Alternative xterm command, non-override-redirect window
+!*executionView*TerminalCommand: xterm -geometry 60x10 -name #ResName -title #Name -fg #FgPixel -bg #BgPixel -xrm "#ResName*allowSendEvents: True" -display #Display -borderwidth 0 -sb -e #Shell
+
+*executionView*text.bottomOffset:			10
+*executionView*bottomButtons.bottomOffset:		10
+*executionView*bottomButtons.rightOffset:		10
+*executionView*bottomButtons.marginHeight:		0
+*executionView*bottomButtons.marginWidth:		0
+*executionView*bottomButtons.orientation:		XmHORIZONTAL
+*executionView*bottomButtons.packing:			XmPACK_COLUMN
+*executionView*dismissButton.labelString:		Close
+*executionView*helpButton.labelString:			Help
+*xhangWaitTimeout:					10000
+*longCmdsOK:						False
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of ExecutionView application specific resources                         !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! MainView application specific resources                                     !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*mainView.title:					WorkShop Debugger
+*defaultSyncTimeout:					120
+
+!
+! Session menu
+!
+*mainSessionMenu.labelString:				Admin
+*mainSessionMenu.iconifySessionMenuItem.labelString:	Iconify
+*mainSessionMenu.raiseSessionMenuItem.labelString:	Raise
+*mainSessionMenu.switchProcessSessionMenuItem.labelString: Switch Process...
+*mainSessionMenu.switchExecutableSessionMenuItem.labelString: Switch Executable...
+*mainSessionMenu.detachSessionMenuItem.labelString:	Detach
+*mainSessionMenu.sharedObjectSessionMenuItem.labelString: Default Shared Objects...
+*mainSessionMenu.libSearchPathMenuItem.labelString: 	Library Search Path...
+*mainSessionMenu.4SpeedSessionMenuItem.labelString:	Performance Task...
+*mainSessionMenu.4SpeedSessionMenuItem.command:		SGI_Debug_PerfPanel
+*mainSessionMenu.glDebugSessionMenuItem.labelString:	GLdebug
+*mainSessionMenu.MultiSessionMenuItem.labelString:	Multiprocess View...
+*mainSessionMenu.MultiSessionMenuItem.command:		SGI_Debug_MPView
+*mainSessionMenu.loadSessionMenuItem.labelString:	Load Settings...
+*mainSessionMenu.saveSessionMenuItem.labelString:	Save Settings...
+*mainSessionMenu.quitSessionMenuItem.labelString:	Exit
+
+*tutorialHelp.labelString:	Tutorial...
+*tutorialLocation1:		/usr/sbin/ProDev_cbt
+*tutorialLocation2:		/CDROM/tutorial/ProDev_cbt
+
+*fileMenu.fileReloadMenuItem.labelString: Override Shared Object
+
+!
+! Mnemonics
+!
+*mainSessionMenu.mnemonic:				m
+*mainSessionMenu.iconifySessionMenuItem.mnemonic:	I
+*mainSessionMenu.raiseSessionMenuItem.mnemonic:		R
+*mainSessionMenu.switchProcessSessionMenuItem.mnemonic: w
+*mainSessionMenu.switchExecutableSessionMenuItem.mnemonic: x
+*mainSessionMenu.detachSessionMenuItem.mnemonic:	D
+*mainSessionMenu.executionSessionMenuItem.mnemonic:	c
+*mainSessionMenu.pathRemappingSessionMenuItem.mnemonic:	P
+*mainSessionMenu.4SpeedSessionMenuItem.mnemonic:	f
+*mainSessionMenu.sessionManagerMenuItem.mnemonic:	V
+*mainSessionMenu.glDebugSessionMenuItem.mnemonic:	G
+*mainSessionMenu.MultiSessionMenuItem.mnemonic:		M
+*mainSessionMenu.loadSessionMenuItem.mnemonic:		o
+*mainSessionMenu.saveSessionMenuItem.mnemonic:		S
+*mainSessionMenu.quitSessionMenuItem.mnemonic:		E
+*mainSessionMenu.sharedObjectSessionMenuItem.mnemonic:	h
+*mainSessionMenu.libSearchPathMenuItem.mnemonic:	P
+
+*fileMenu.fileReloadMenuItem.mnemonic: L
+
+
+!
+! Shared Object Dialog
+!
+
+*mainView*sharedObjectDialog.dialogTitle:	Shared Objects
+*mainView*sharedObjectForm.topOffset:		10
+*mainView*sharedObjectForm.bottomOffset:	10
+*mainView*sharedObjectForm.leftOffset:		10
+*mainView*sharedObjectForm.rightOffset:		10
+*mainView*sharedObjectDialog*sharedObjLabel.labelString:  Default Shared Object List:
+*mainView*sharedObjectDialog*shareValueLabel.labelString: 	Value: 
+*mainView*sharedObjectDialog*shareValueLabel.recomputeSize: 	False
+*mainView*sharedObjectDialog*shareAddBefore.labelString:	Insert Before
+*mainView*sharedObjectDialog*shareAddAfter.labelString: 	Insert After
+*mainView*sharedObjectDialog*shareModify.labelString: 	Modify
+*mainView*sharedObjectDialog*shareRemove.labelString: 	Remove
+
+*mainView*sharedObjectDialog*shareList.visibleItemCount:            6
+*mainView*sharedObjectDialog*shareList.selectionPolicy:             XmSINGLE_SELECT
+*mainView*sharedObjectDialog*shareList.listSizePolicy:              XmCONSTANT
+*mainView*sharedObjectDialog*shareList.scrollBarDisplayPolicy:      XmSTATIC
+*mainView*sharedObjectDialog*shareList.width:                       300
+*mainView*sharedObjectDialog*shareButtons.topOffset:                5
+*mainView*sharedObjectDialog*shareValueLabel.topOffset:		5
+*mainView*sharedObjectDialog*shareValueText.topOffset:		5
+*mainView*sharedObjectDialog*shareButtons.topOffset:		5
+*mainView*sharedObjectDialog*shareButtons.marginHeight:		0
+*mainView*sharedObjectDialog*shareButtons.marginWidth:		0
+*mainView*sharedObjectDialog*shareButtons.orientation:              XmHORIZONTAL
+*mainView*sharedObjectDialog*shareButtons.packing:                  XmPACK_COLUMN
+
+*mainView*sharedObjectDialog*bottomButtons.topOffset:             10
+*mainView*sharedObjectDialog*bottomButtons.marginHeight:          0
+*mainView*sharedObjectDialog*bottomButtons.marginWidth:           0
+*mainView*sharedObjectDialog*bottomButtons.orientation:           XmHORIZONTAL
+*mainView*sharedObjectDialog*bottomButtons.packing:               XmPACK_COLUMN
+*mainView*sharedObjectDialog*dismissButton.labelString: 	Close
+*mainView*sharedObjectDialog*helpButton.labelString: 	Help
+
+!
+! Execution parameters
+!
+
+*mainView*hostLabel.labelString:	Host: 
+*mainView*hostLabel.alignment:		XmALIGNMENT_END
+*mainView*hostText.columns:		12
+*mainView*hostText.editable:		False
+*mainView*hostText.blinkRate:		0
+*mainView*cmdLabel.labelString:		Command: 
+*mainView*cmdLabel.alignment:		XmALIGNMENT_END
+*mainView*cmdLabel.leftOffset:		20
+*mainView*cmdText.columns:		50
+
+*mainView*statePurify.labelString:	Purify
+*mainView*statePerformance.labelString:	Performance
+*mainView*stateDebugOnly.labelString:	Debug Only
+
+!
+! Control panel buttons
+!
+
+*mainView*controlComponent*controlRowcol.orientation:		XmVERTICAL
+*mainView*controlComponent*controlRowcol.packing:		XmPACK_COLUMN
+*mainView*controlComponent*controlRowcol.numColumns:		5
+*mainView*controlComponent*controlRowcol.adjustLast:		False
+*mainView*controlComponent*spacing.labelString:			
+*mainView*controlComponent*killRowcol.orientation:		XmVERTICAL
+*mainView*controlComponent*killRowcol.packing:			XmPACK_COLUMN
+*mainView*controlComponent*killRowcol.numColumns:		3
+*mainView*controlComponent*killRowcol.adjustLast:		False
+*mainView*controlComponent*controlRowcol.orientation:		XmVERTICAL
+*mainView*controlComponent*controlRowcol.packing:		XmPACK_COLUMN
+*mainView*controlComponent*controlRowcol.numColumns:		5
+*mainView*controlComponent*controlRowcol.adjustLast:		False
+*mainView*controlComponent*sampleRowcol.orientation:		XmVERTICAL
+*mainView*controlComponent*sampleRowcol.packing:		XmPACK_COLUMN
+*mainView*controlComponent*sampleRowcol.numColumns:		2
+*mainView*controlComponent*sampleRowcol.adjustLast:		False
+*mainView*controlComponent*printRowcol.orientation:		XmVERTICAL
+*mainView*controlComponent*printRowcol.packing:			XmPACK_COLUMN
+*mainView*controlComponent*printRowcol.numColumns:		2
+*mainView*controlComponent*printRowcol.adjustLast:		False
+*mainView*controlComponent*controlSeparator.orientation:	XmVERTICAL
+*mainView*controlComponent*sampleSeparator.orientation:		XmVERTICAL
+*mainView*controlComponent*printSeparator.orientation:		XmVERTICAL
+*mainView*controlComponent*continueProcessButton.labelString:		Continue
+*mainView*controlComponent*continueAllProcessButton.labelString:	Cont All
+*mainView*controlComponent*stepOverSourceLineButton.labelString:	Step Over
+*mainView*controlComponent*stepIntoSourceLineButton.labelString:	Step Into
+*mainView*controlComponent*returnFromTopFrameButton.labelString:	Return
+*mainView*controlComponent*stopProcessButton.labelString:	    Stop
+*mainView*controlComponent*stopAllProcessButton.labelString:	Stop All
+*mainView*controlComponent*sampleButton.labelString:		Sample
+*mainView*controlComponent*sampleButton.sensitive:		False
+
+*mainView*controlComponent*printButton.labelString:		Print
+*mainView*controlComponent*printButton.sensitive:		False
+
+*mainView*controlComponent*killProcessButton.labelString:	    Kill
+*mainView*controlComponent*killAllProcessButton.labelString:	Kill All
+*mainView*controlComponent*runProcessButton.labelString:	Run
+!! The run button needs to be initially insensitive, until the execution
+!! view starts
+*mainView*controlComponent*runButton.sensitive:			False
+*mainView*controlComponent*hangProcessButton.labelString:	Hang
+
+!
+! Custom button panel
+!
+*mainView*customButtonPanel*customButtons.orientation:          XmHORIZONTAL
+*mainView*customButtonPanel*customButtons.packing:              XmPACK_TIGHT
+*mainView*customButtonPanel*customButtons.height:               1
+*mainView*customButtonPanel*customButtons.adjustLast:           False
+
+
+!
+! Status line
+!
+*mainView*statusLabel.labelString:		Status: 
+*mainView*statusLabel.alignment:		XmALIGNMENT_END
+*mainView*statusLine.value:			No executable
+*mainView*statusLine*editMode:			XmMULTI_LINE_EDIT
+*mainView*statusLine.editable:			False
+*mainView*statusLine.blinkRate:			0
+*mainView*statusLine.rows:			2
+*mainView*statusLine.wordWrap:			False
+
+!
+! Let the svComponent and ttyComponent panes resize properly when
+! a .cvDebugger file changes the initial height of the ttyComponent
+!
+*mainView*svComponent*allowResize:		True
+!*mainView*ttyComponent*allowResize:		True
+
+!
+! Turn off performance annotations, by default
+!
+*mainView*svComponent*performance*wanted: True
+
+!
+! Changes to SourceView app-defaults which is included before
+!
+*pathRemapping:		True
+*annotations: sample inactiveSample stop inactiveStop context pc primary secondary bberror bbwarning intpExtentCompiled intpExtentParsed intpExtentEditable
+*iconCanvasVisible:	True
+*textEdit.editable:	False
+*mainView*menuBar*fileMenu.labelString:                  Source
+*mainView*menuBar*fileMenu.mnemonic:                  	 o
+*mainView*menuBar*fileMenu*fileInsertFile.labelString:   Insert Source...
+
+!
+! Tty interface
+!
+*mainView*ttyComponent*text.editMode:		XmMULTI_LINE_EDIT
+*mainView*ttyComponent*text.columns:		88
+*mainView*ttyComponent*text.rows:		6
+*mainView*ttyComponent*text.scrollHorizontal:	False
+*mainView*ttyComponent*text.wordWrap:		True
+
+!
+! Save before quit dialog
+!
+*mainView*saveBeforeQuitDialog*dialogTitle:		MainView
+*mainView*saveBeforeQuitDialog*okLabelString:		Yes
+*mainView*saveBeforeQuitDialog*cancelLabelString:	No
+*mainView*saveBeforeQuitDialog*messageString:		Settings have changed.  Save before quitting?
+
+!
+! Save settings dialog
+!
+*mainView*saveSettingsConfigToggle.alignment:		XmALIGNMENT_BEGINNING
+*mainView*saveSettingsConfigToggle.labelString:		Include window configuration
+*mainView*saveSettingsConfigToggle.set:			True
+
+|
+| Evaluate expression dialog
+|
+
+*mainView*exprDialog*dialogTitle:			Evaluate Expression
+*mainView*exprDialog*exprLabel.labelString:  		Expression:
+*mainView*exprDialog*selectionLabelString:  		Result:
+*mainView*exprDialog*okLabelString:         		Apply
+*mainView*exprDialog*cancelLabelString:     		Close
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of MainView application specific resources                              !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! SourceView Resources                                                        !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*pathRemapping:		False
+*debuggingInfo:		False
+*perfDebugging:		False
+*noStatus:		False
+
+*editorCommand: xwsh -e vi +%d
+!*editorCommand: jot -f -l %d
+!*editorCommand: gnuemacs +%d
+
+*builderCommand: cvmake -host %s -sessionType %d -sessionId %d -display %s %s %s
+
+*iconCanvasWidth:		6
+*lineNumbersWidth:		6
+*perfCanvasWidth:		11
+*perfLabel.labelString:
+
+! align canvas numbers with text
+*drawArea*topOffset: 2
+
+!*iconCanvasVisible:		False
+*lineNumbersVisible:		False
+*perfCanvasVisible:		False
+
+*nameLabel.labelString:		File: 
+*nameText.columns:	  	30
+*statusLabel.labelString:       (Editable)
+
+*sourceView.title:	Source View
+
+*fileMenu.labelString:			File
+*fileMenu*fileLoadFile.labelString:	Open...
+*fileMenu*fileSaveFile.labelString:	Save 
+*fileMenu*fileSaveAsFile.labelString:	Save As...
+*fileMenu*fileSaveAsText.labelString:	Save As Text...
+*fileMenu*fileVisitFile.labelString:	Open Separate...
+*fileMenu*fileInsertFile.labelString:	Insert File...
+*fileMenu*fileClone.labelString:	Clone
+*fileMenu*fileForkEditor.labelString:	Fork Editor
+*fileMenu*fileForkBuilder.labelString:	Recompile
+*fileMenu*fileReadOnly.labelString:	Make Read Only
+*fileMenu*fileSearch.labelString:	Search...
+*fileMenu*fileGotoLine.labelString:	Go To Line...
+*fileMenu*fileQuit.labelString:		Close
+
+*fileMenu*fileReadOnly.onLabelString:	Make Read Only
+*fileMenu*fileReadOnly.offLabelString:	Make Editable
+
+
+*displayMenu.labelString:		Display
+*displayMenu*displayToggleIcons.labelString: Show Icons
+*displayMenu*displayToggleLineNumbers.labelString: Show Line Numbers
+*displayMenu*displayTogglePerfData.labelString: Show Performance
+
+*displayMenu*displayToggleIcon.onLabelString: Show Icons
+*displayMenu*displayToggleIcon.offLabelString: Hide Icons
+*displayMenu*displayToggleLineNumbers.onLabelString: Show Line Numbers
+*displayMenu*displayToggleLineNumbers.offLabelString: Hide Line Numbers
+*displayMenu*displayPostPerfDialog.labelString: Data Highlights...
+
+*trapMenu.labelString:			Traps
+*trapMenu*trapSetMenu.labelString:	            Set Trap
+*trapMenu*trapClearMenu.labelString:	        Clear Trap
+*trapMenu*groupTrapMenuItem.labelString:        Group Trap Default
+*trapMenu*stopallTrapMenuItem.labelString:      Stop All Default
+*trapMenu*Stop_At_Function_Entry.labelString:	Stop At Function Entry
+*trapMenu*Stop_At_Function_Exit.labelString:	Stop At Function Exit
+*trapMenu*Sample_At_Function_Entry.labelString:	Sample At Function Entry
+*trapMenu*Sample_At_Function_Exit.labelString:	Sample At Function Exit
+*trapMenuFunctionEntryLabel:		%s At Function Entry
+*trapMenuFunctionExitLabel:                 %s At Function Exit
+
+*pcMenu.labelString:			PC
+*pcMenu*pcJumpTo.labelString:		Jump To
+*pcMenu*pcContinueTo.labelString:	Continue To
+
+*debuggingInfoMenu.labelString:			Info
+*debuggingInfoMenu.infoToggle.labelString:	Toggle Chattiness
+*debuggingInfoMenu.printHighlights.labelString:	Print Highlights
+
+*textEdit.scrollHorizontal:	False
+*textEdit.columns:		60
+*textEdit.rows:			24
+
+*searchDialog*searchControlLabel.labelString:    Search type:
+*searchDialog*caseSensitive.labelString:     Literal Case Sensitive
+*searchDialog*caseInsensitive.labelString:   Literal Case Insensitive
+*searchDialog*regexpr.labelString:           Regular Expression
+*searchDialog*selectionLabelString:  Search:
+*searchDialog*reset.labelString:     Reset
+*searchDialog*okLabelString:         Apply
+*searchDialog*applyLabelString:      Cancel
+*searchDialog*cancelLabelString:     Close
+*searchDialog*helpLabelString:       Help
+
+*searchDialog*caseInsensitive.set:   	  True
+
+
+*gotoDialog*okLabelString:         OK
+*gotoDialog*cancelLabelString:      Cancel
+*gotoDialog*helpLabelString:       Help
+*gotoDialog*selectionLabelString:  Go to line:
+*gotoDialog*showValue:	true
+
+*perfDialog*perfScale.width:	   	300
+*perfDialog*perfApply.labelString:      Apply
+*perfDialog*perfClose.labelString:      Close
+*perfDialog*perfCancel.labelString:     Cancel
+*perfDialog*perfHelp.labelString:       Help
+*perfDialog*separator.offset:	   10
+
+
+*loadFileDialog.dialogTitle:	Open
+*visitFileDialog.dialogTitle:	Open Separate
+*saveFileDialog.dialogTitle:	Save File
+*saveAsTextDialog.dialogTitle:	Save As Text
+*overwriteFileDialog.dialogTitle:	Overwrite File
+*insertFileDialog.dialogTitle: 	Insert File
+*searchDialog.dialogTitle:	Search
+*perfDialog.dialogTitle:	Performance Data Highlights
+*errorDialog.dialogTitle:	Error
+*queryDialog.dialogTitle:	Query
+*querySaveDialog.dialogTitle:	Save File Query
+*gotoDialog*dialogTitle:        Go To Line
+
+*querySaveDialog*okLabelString:         Yes
+*querySaveDialog*cancelLabelString:     No
+
+
+!*annotations: stop inactiveStop sample inactiveSample context pc primary secondary
+
+*stop*mode: 			highlightColor1
+*stop*pixmap: 			/usr/lib/X11/bitmaps/stopsign
+*stop*pixmapMask: 		/usr/lib/X11/bitmaps/stopsignMask
+!*stop*pixmap*foreground: 	red
+!*stop*pixmap*background: 	white
+!*stop*scrollBarColor: 		red
+*stop*atomName:			_SGI_VK_TRAPFLAVOR_STOP
+*stop*menuLabel:		Stop
+
+
+*sample*mode: 			highlightColor1
+*sample*pixmap: 		/usr/lib/X11/bitmaps/sample
+*sample*pixmapMask: 		/usr/lib/X11/bitmaps/sampleMask
+!*sample*pixmap*foreground: 	red
+!*sample*pixmap*background: 	white
+!*sample*scrollBarColor: 	red
+*sample*atomName:		_SGI_VK_TRAPFLAVOR_SAMPLE
+*sample*menuLabel:		Sample
+
+
+*pc*mode: 			highlightColor2
+*pc*pixmap:	 		/usr/lib/X11/bitmaps/arrow
+*pc*pixmapMask: 		/usr/lib/X11/bitmaps/arrowMask
+!*pc*pixmap*foreground: 	green
+!*pc*pixmap*background: 	white
+!*pc*scrollBarColor: 		green
+*pc*atomName:			_SGI_VK_PROGRAMCOUNTER_COLOR
+
+
+*search*mode: 			highlightColor3
+!*search*scrollBarColor: 	blue
+*search*atomName:		_SGI_VK_STRINGSEARCH_COLOR
+
+!! Cvstatic highlights
+*primary*mode:			highlightColor3
+*primary*atomName:		_SGI_VK_STATIC_PRIMARY
+*secondary*mode:		highlightColor5
+*secondary*atomName:		_SGI_VK_STATIC_SECONDARY
+
+*perf*mode:			highlightColor3
+*perf*atomName:			_SGI_VK_PERF_HIGHLIGHT
+
+
+*context*mode: 			highlightColor5
+*context*pixmap: 		/usr/lib/X11/bitmaps/context
+*context*pixmapMask: 		/usr/lib/X11/bitmaps/contextMask
+!*context*pixmap*foreground: 	green
+!*context*pixmap*background: 	white
+!*context*scrollBarColor: 	green
+*context*atomName:		_SGI_VK_CALLSTACK_COLOR
+
+
+*inactiveStop*mode: 		    highlightColor6
+*inactiveStop*pixmap: 		    /usr/lib/X11/bitmaps/stopsign
+*inactiveStop*pixmapMask: 	    /usr/lib/X11/bitmaps/inactiveStopsignMask
+!*inactiveStop*pixmap*foreground:   red
+!*inactiveStop*pixmap*background:   white
+!*inactiveStop*scrollBarColor: 	    red
+*inactiveStop*atomName:		    _SGI_VK_TRAPFLAVOR_STOP_INACTIVE
+
+*inactiveSample*mode: 		    highlightColor6
+*inactiveSample*pixmap: 	    /usr/lib/X11/bitmaps/sample
+*inactiveSample*pixmapMask: 	    /usr/lib/X11/bitmaps/inactiveSampleMask
+!*inactiveSample*pixmap*foreground: red
+!*inactiveSample*pixmap*background: white
+!*inactiveSample*scrollBarColor:    red
+*inactiveSample*atomName:	    _SGI_VK_TRAPFLAVOR_SAMPLE_INACTIVE
+
+*bberror*mode: 		    highlightColor4
+*bberror*atomName:	    _SGI_VK_BUILD_ERROR
+
+*bbwarning*mode: 	    highlightColor7
+*bbwarning*atomName:	    _SGI_VK_BUILD_WARNING
+
+
+!*perfAnnotations: instruct percentInstruct callCount percentPCHits loads stores FPopts
+
+*instruct*onMenuLabel: 		Show Instruction Count
+*instruct*offMenuLabel: 	Hide Instruction Count
+*instruct*atomName: 		_SGI_VK_PERFANNO_INSTRUCT
+*instruct*typeName: 		_SGI_VK_DOUBLE_DATA
+*instruct*canvasWidth: 		12
+*instruct*visible:		False
+*instruct*perfLabelString:	Inst
+*instruct*dialogLabelString:	Instructions
+
+*percentInstruct*onMenuLabel:	Show Ideal CPU Time
+*percentInstruct*offMenuLabel: 	Hide Ideal CPU Time
+*percentInstruct*atomName:	_SGI_VK_PERFANNO_IDEAL_TIME
+*percentInstruct*typeName:	_SGI_VK_FLOAT_DATA
+*percentInstruct*canvasWidth: 	9
+*percentInstruct*visible:	True
+*percentInstruct*perfLabelString:	Ideal (ms)
+*percentInstruct*dialogLabelString:	Ideal CPU Time
+
+*callCount*onMenuLabel: 	Show Execution Counts
+*callCount*offMenuLabel: 	Hide Execution Counts
+*callCount*atomName: 		_SGI_VK_PERFANNO_CALLCOUNT
+*callCount*typeName: 		_SGI_VK_DOUBLE_DATA
+*callCount*canvasWidth: 	12
+*callCount*visible:		True
+*callCount*perfLabelString:	Execs
+*callCount*dialogLabelString:	Executions
+
+*percentPCHits*onMenuLabel: 	Show Actual CPU Time
+*percentPCHits*offMenuLabel: 	Hide Actual CPU Time
+*percentPCHits*atomName: 		_SGI_VK_PERFANNO_CPU_TIME
+*percentPCHits*typeName: 		_SGI_VK_FLOAT_DATA
+*percentPCHits*canvasWidth: 	9
+*percentPCHits*visible:		True
+*percentPCHits*perfLabelString:		CPU (ms)
+*percentPCHits*dialogLabelString:	Actual CPU Time
+
+*loads*onMenuLabel: 	Show Load Counts
+*loads*offMenuLabel: 	Hide Load Counts
+*loads*atomName: 		_SGI_VK_PERFANNO_LOADS
+*loads*typeName: 		_SGI_VK_DOUBLE_DATA
+*loads*canvasWidth: 	12
+*loads*visible:		False
+*loads*perfLabelString:	Loads
+*loads*dialogLabelString:	Loads
+
+*stores*onMenuLabel: 	Show Store Counts
+*stores*offMenuLabel: 	Hide Store Counts
+*stores*atomName: 		_SGI_VK_PERFANNO_STORES
+*stores*typeName: 		_SGI_VK_DOUBLE_DATA
+*stores*canvasWidth: 	12
+*stores*visible:		False
+*stores*perfLabelString:	Stores
+*stores*dialogLabelString:	Stores
+
+*FPopts*onMenuLabel: 		Show FP op counts
+*FPopts*offMenuLabel: 		Hide FP op counts
+*FPopts*atomName: 		_SGI_VK_PERFANNO_FPOPTS
+*FPopts*typeName: 		_SGI_VK_DOUBLE_DATA
+*FPopts*canvasWidth: 		12
+*FPopts*visible:		False
+*FPopts*perfLabelString:	FPops
+*FPopts*dialogLabelString:	Floating Pt ops
+
+
+
+*fileMenu.mnemonic:			F
+*fileMenu*fileLoadFile.mnemonic:	O
+*fileMenu*fileSaveFile.mnemonic:	S
+*fileMenu*fileSaveAsFile.mnemonic:	A
+*fileMenu*fileSaveAsText.mnemonic:	T
+*fileMenu*fileVisitFile.mnemonic:	p
+*fileMenu*fileInsertFile.mnemonic:	I
+*fileMenu*fileClone.mnemonic:		l
+*fileMenu*fileForkEditor.mnemonic:	F
+*fileMenu*fileForkBuilder.mnemonic:	R
+*fileMenu*fileReadOnly.mnemonic:	M
+*fileMenu*fileSearch.mnemonic:		e
+*fileMenu*fileGotoLine.mnemonic:	G
+*fileMenu*fileQuit.mnemonic:		C
+
+
+*displayMenu.mnemonic:			D
+*displayMenu*displayToggleIcons.mnemonic: I
+*displayMenu*displayToggleLineNumbers.mnemonic: L
+*displayMenu*displayPostPerfDialog.mnemonic: D
+
+*trapMenu.mnemonic:			T
+*trapMenu*trapSetMenu.mnemonic:		S
+*trapMenu*trapClearMenu.mnemonic:	C
+*trapSetMenu*Stop.mnemonic:		S
+*Stop At Function Entry.mnemonic:	n
+*Stop At Function Exit.mnemonic:	x
+*trapSetMenu*Sample.mnemonic:		a
+*Sample At Function Entry.mnemonic:	r
+*Sample At Function Exit.mnemonic:	t
+*trapClearMenu*Stop.mnemonic:		S
+*trapClearMenu*Sample.mnemonic:		a
+
+*pcMenu.mnemonic:			P
+*pcMenu*pcJumpTo.mnemonic:		J
+*pcMenu*pcContinueTo.mnemonic:	        C
+
+
+*fileMenu*fileLoadFile.accelerator:	Ctrl<Key>O
+*fileMenu*fileLoadFile.acceleratorText:	Ctrl+O
+*fileMenu*fileSearch.accelerator:	Ctrl<Key>S
+*fileMenu*fileSearch.acceleratorText:	Ctrl+S
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! interpreter related configurations
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*intpExtentEditable*mode:       highlightColor9
+*intpExtentEditable*atomName:   _SGI_VK_INTPEXTENT_EDITABLE_COLOR
+
+*intpExtentParsed*mode:         highlightColor10
+*intpExtentParsed*atomName:     _SGI_VK_INTPEXTENT_PARSED_COLOR
+
+*intpExtentCompiled*mode:       highlightColor11
+*intpExtentCompiled*atomName:   _SGI_VK_INTPEXTENT_COMPILED_COLOR
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!								  !
+!	PureAccess -- app-defaults file				  !
+!								  !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*pureCommand: /usr/sbin/purify
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	PerfAccess -- app-defaults file				  !
+!								  !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*cvinstrLibDir: /usr/tmp/cvinstrlib
+*trackExecdProcesses: true
+*trackForkedProcesses: true
+*autoLaunchPerfTool: true
+*launchPerfToolFormat: /usr/sbin/cvperf -exp %s -executable %s -host %s -nowarn
+
+*perfConfigsDialog*exptLabel.labelString:	Experiment Directory: 
+*perfConfigsDialog*oldExptLabel.labelString:	Instrument Directory: 
+*perfConfigsDialog*trackExecdW.labelString:	Track Exec'd Processes
+*perfConfigsDialog*trackForkedW.labelString:	Track Forked Processes
+*perfConfigsDialog*autoLaunch.labelString:	Auto Launch Performance Analyzer
+
+!
+!	Instrumentation Panel
+!
+*perfInstDialog*dataCollector*regPtData.labelString:	Sampling Data
+*perfInstDialog*dataCollector*rUsage.labelString: 	Resource Usage
+*perfInstDialog*dataCollector*cSTrace.labelString: 	Call Stack
+*perfInstDialog*dataCollector*fCCounts.labelString:	Function Counts
+*perfInstDialog*dataCollector*bBCounts.labelString: 	Basic Block Counts
+*perfInstDialog*dataCollector*pCCounts.labelString: 	PC Profile Counts
+*perfInstDialog*dataCollector*otherData.labelString:	Tracing Data
+*perfInstDialog*dataCollector*mfTrace.labelString:	Malloc/Free Trace
+*perfInstDialog*dataCollector*scTrace.labelString:	Syscall Trace
+*perfInstDialog*dataCollector*pfTrace.labelString:	Page Fault Trace
+*perfInstDialog*dataCollector*ioTrace.labelString:	I/O Syscall Trace
+*perfInstDialog*dataCollector*fpTrace.labelString:	FP Exception Trace
+*perfInstDialog*dataCollector*sampLabel.labelString:	Pollpoint Sampling (secs): 
+*perfInstDialog*dataCollector*fgLabel.labelString:	Fine Grained Usage (secs): 
+*perfInstDialog*dataCollector*cstackLabel.labelString: Call Stack Profiling (msecs): 
+
+*perfInstDialog*dataCollector*sampLabel.alignment: ALIGNMENT_END
+*perfInstDialog*dataCollector*fgLabel.alignment:   ALIGNMENT_END
+*perfInstDialog*dataCollector*cstackLabel.alignment:   ALIGNMENT_END
+
+!
+!	Launch Display Panel
+!
+*perfPanel*launch.packing:	PACK_COLUMN
+*perfPanel*launch*ok.labelString:	OK
+*perfPanel*launch*apply.labelString:	Apply
+*perfPanel*launch*cancel.labelString:	Cancel
+*perfPanel*launch*close.labelString:	Close
+*perfPanel*launch*help.labelString:	Help
+
+*perfPanel*launch*ok.alignment:		ALIGNMENT_BEGINNING
+*perfPanel*launch*apply.alignment:	ALIGNMENT_BEGINNING
+*perfPanel*launch*cancel.alignment:	ALIGNMENT_BEGINNING
+*perfPanel*launch*close.alignment:	ALIGNMENT_BEGINNING
+*perfPanel*launch*help.alignment:	ALIGNMENT_BEGINNING
+
+
+!
+! Menu resources
+!
+*perfMenu.labelString: Perf
+*perfMenu.mnemonic: r
+*perfTaskMenu.labelString: Select Task
+*perfLaunchCvperf.labelString: Examine Results...
+*perfConfigs.labelString: Configs...
+
+!
+! task menu resources
+!
+*perfTaskMenu*identifyPhases.labelString: Determine bottlenecks, identify phases
+*perfTaskMenu*expFunc.labelString: Get Total Time per function & source line
+*perfTaskMenu*cpuHogs.labelString: Get CPU Time per function & source line
+*perfTaskMenu*cpuWastrels.labelString: Get Ideal Time (pixie) per function & source line
+*perfTaskMenu*ioHogs.labelString: Trace I/O activity
+*perfTaskMenu*sysHogs.labelString: Trace system calls
+*perfTaskMenu*memHogs.labelString: Trace page faults
+*perfTaskMenu*memLeaks.labelString: Find memory leaks
+*perfTaskMenu*fpeTracing.labelString: Find Floating Point Exceptions 
+*perfTaskMenu*pcSample.labelString: Get PC Sampling Times
+*perfTaskMenu*custom.labelString: Custom task
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	PerfPanel -- app-defaults file				  !
+!								  !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*perfPanel*optionPane*tearOffModel:	tear_off_disabled
+*perfPanel.title:			Performance Task
+*perfPanel*exptLabel.labelString:	Experiment Directory: 
+*perfPanel*statusLabel.labelString:	Performance Task Disabled
+*perfPanel*statusButton.labelString:	Enable Performance Task
+*perfPanel*oldExptLabel.labelString:	Instrument Directory: 
+*perfPanel*trackExecdW.labelString:	Track Exec'd Processes
+*perfPanel*trackExecdW.set:		True
+*perfPanel.horizontalSpacing:		0
+*perfPanel.verticalSpacing:		7
+*perfPanel*dataForm.horizontalSpacing:		0
+*perfPanel*dataForm.verticalSpacing:		7
+*perfPanel*dataForm.rightOffset:		10
+*perfPanel*dataForm.leftOffset:			10
+
+*perfPanel*dataForm.dataForm*taskFormW.optionMenu.topOffset:	10
+*perfPanel*dataForm.dataForm*taskFormW.taskLabel.topOffset:	10
+*perfPanel*dataForm.dataForm*taskFormW.optionMenu.bottomOffset:	10
+*perfPanel*dataForm.dataForm*taskFormW.taskLabel.bottomOffset:	10
+*perfPanel*dataForm.dataForm*taskFormW.optionMenu.rightOffset:	10
+*perfPanel*dataForm.dataForm*taskFormW.taskLabel.leftOffset:	10
+
+*perfPanel*dataForm.dataForm.taskFrameW.topOffset:	10
+*perfPanel*dataForm.dataForm.taskFrameW.shadowThickness:	3
+*perfPanel*dataForm.dataForm.taskFrameW.shadowType:	SHADOW_IN
+
+*perfPanel*dataForm.dataForm.exptLabel.topOffset:	20
+*perfPanel*dataForm.dataForm.exptText.topOffset:	20
+
+*perfPanel*exptLabel.alignment:		ALIGNMENT_END
+*perfPanel*oldExptLabel.alignment:	ALIGNMENT_END
+!
+!	Instrumentation Panel
+!
+*perfPanel*dataCollector*regPtData.labelString:	Sampling Data
+*perfPanel*dataCollector*rUsage.labelString: 	Resource Usage
+*perfPanel*dataCollector*cSTrace.labelString: 	Call Stack
+*perfPanel*dataCollector*fCCounts.labelString:	Function Counts
+*perfPanel*dataCollector*bBCounts.labelString: 	Basic Block Counts
+*perfPanel*dataCollector*pCCounts.labelString: 	PC Profile Counts
+*perfPanel*dataCollector*otherData.labelString:	Tracing Data
+*perfPanel*dataCollector*mfTrace.labelString:	Malloc/Free Trace
+*perfPanel*dataCollector*scTrace.labelString:	Syscall Trace
+*perfPanel*dataCollector*pfTrace.labelString:	Page Fault Trace
+*perfPanel*dataCollector*ioTrace.labelString:	I/O Syscall Trace
+*perfPanel*dataCollector*fpTrace.labelString:	FP Exception Trace
+*perfPanel*dataCollector*sampLabel.labelString:	Pollpoint Sampling (secs): 
+*perfPanel*dataCollector*fgLabel.labelString:	Fine Grained Usage (secs): 
+*perfPanel*dataCollector*cstackLabel.labelString: Call Stack Profiling (msecs): 
+
+*perfPanel*dataCollector*sampLabel.alignment: ALIGNMENT_END
+*perfPanel*dataCollector*fgLabel.alignment:   ALIGNMENT_END
+*perfPanel*dataCollector*cstackLabel.alignment:   ALIGNMENT_END
+
+!
+!	Launch Display Panel
+!
+*perfPanel*launch.packing:	PACK_COLUMN
+*perfPanel*launch*ok.labelString:	OK
+*perfPanel*launch*apply.labelString:	Apply
+*perfPanel*launch*cancel.labelString:	Cancel
+*perfPanel*launch*close.labelString:	Close
+*perfPanel*launch*help.labelString:	Help
+
+*perfPanel*launch*ok.alignment:		ALIGNMENT_BEGINNING
+*perfPanel*launch*apply.alignment:	ALIGNMENT_BEGINNING
+*perfPanel*launch*cancel.alignment:	ALIGNMENT_BEGINNING
+*perfPanel*launch*close.alignment:	ALIGNMENT_BEGINNING
+*perfPanel*launch*help.alignment:	ALIGNMENT_BEGINNING
+!
+! task menu resources
+!
+*perfPanel*taskLabel.labelString:  Performance Task: 
+*perfPanel*taskLabel.alignment: ALIGNMENT_END
+
+*perfPanel*identifyPhases.labelString: Determine bottlenecks, identify phases
+*perfPanel*expFunc.labelString: Get Total Time per function & source line
+*perfPanel*cpuHogs.labelString: Get CPU Time per function & source line
+*perfPanel*cpuWastrels.labelString: Get Ideal Time (pixie) per function & source line
+*perfPanel*ioHogs.labelString: Trace I/O activity
+*perfPanel*sysHogs.labelString: Trace system calls
+*perfPanel*memHogs.labelString: Trace page faults
+*perfPanel*memLeaks.labelString: Find memory leaks
+*perfPanel*fpeTracing.labelString: Find Floating Point Exceptions 
+*perfPanel*pcSample.labelString: Get PC Sampling Times
+*perfPanel*custom.labelString: Custom task
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	VkTachDoc  -- app-defaults file				  !
+!								  !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*instrWaitTimeout:					10000
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! SignalPanel application specific resources                                  !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*signalPanel.title: 				Signal Panel
+*signalPanel*toggleColumn1Title.labelString:	Trap:  
+*signalPanel*toggleColumn1Title.alignment:	XmALIGNMENT_BEGINNING
+*signalPanel*descriptionListTitle.labelString:	Signal:
+*signalPanel*descriptionListTitle.alignment:	XmALIGNMENT_BEGINNING
+*signalPanel*searchTextLabel.labelString:	Search: 
+*signalPanel*signalToggleList*scrollBarDisplayPolicy:	XmSTATIC
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of SignalPanel application specific resources                           !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! SyscallPanel application specific resources                                 !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*syscallPanel.title:				System Call Panel
+*syscallPanel*toggleColumn1Title.labelString:	Entry:  
+*syscallPanel*toggleColumn1Title.alignment:	XmALIGNMENT_BEGINNING
+*syscallPanel*toggleColumn2Title.labelString:	Exit:  
+*syscallPanel*toggleColumn2Title.alignment:	XmALIGNMENT_BEGINNING
+*syscallPanel*descriptionListTitle.labelString: System Call:
+*syscallPanel*descriptionListTitle.alignment: XmALIGNMENT_BEGINNING
+*syscallPanel*searchTextLabel.labelString:	Search: 
+*syscallPanel*syscallToggleList*scrollBarDisplayPolicy:		XmSTATIC
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of SyscallPanel application specific resources                          !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! TrapMgr application specific resources                                      !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*trapMgr.title: Trap Manager
+
+*trapMgr*trapMgrTopForm.topOffset:		5
+*trapMgr*trapMgrTopForm.bottomOffset:		5
+*trapMgr*trapMgrTopForm.leftOffset:		5
+*trapMgr*trapMgrTopForm.rightOffset:		5
+*trapMgr*trapButtons.topOffset:			10
+*trapMgr*trapButtons.rightOffset:		5
+*trapMgr*separator.topOffset:			5
+*trapMgr*trapToggleList.topOffset:		5
+*trapMgr*trapToggleList.bottomOffset:		5
+*trapMgr*trapToggleList.leftOffset:		5
+*trapMgr*trapToggleList.rightOffset:		5
+
+*trapMgr*trapMenu.labelString:			Traps
+*trapMgr*displayMenu.labelString:		Display
+*trapMgr*sourceLineTrapMenuItem.labelString:	At Source Line
+*trapMgr*functionEntryTrapMenuItem.labelString:	Entry Function
+*trapMgr*functionExitTrapMenuItem.labelString:	Exit Function
+*trapMgr*stopTrapMenuItem.labelString:		Stop Trap Default
+*trapMgr*sampleTrapMenuItem.labelString:	Sample Trap Default
+*trapMgr*groupTrapMenuItem.labelString:		Group Trap Default
+*trapMgr*stopallTrapMenuItem.labelString:	Stop All Default
+
+!
+! Mnemonics
+!
+*trapMgr*trapMenu.mnemonic:			T
+*trapMgr*displayMenu.mnemonic:			D
+*trapMgr*sourceLineTrapMenuItem.mnemonic:	L
+*trapMgr*functionEntryTrapMenuItem.mnemonic:	n
+*trapMgr*functionExitTrapMenuItem.mnemonic:	x
+*trapMgr*stopTrapMenuItem.mnemonic:		S
+*trapMgr*sampleTrapMenuItem.mnemonic:		a
+*trapMgr*groupTrapMenuItem.mnemonic:		G
+*trapMgr*stopallTrapMenuItem.mnemonic:		A
+*trapMgr*deleteAllMenuItem.labelString:   	D
+
+
+*trapMgr*trapEditorLabel.labelString:		Trap: 
+*trapMgr*conditionEditorLabel.labelString:	Condition: 
+*trapMgr*cycleEditorLabel.labelString:		Cycle Count: 
+*trapMgr*currentCountEditorLabel.labelString:	Current Count: 
+*trapMgr*trapEditorLabel.recomputeSize:		False
+*trapMgr*conditionEditorLabel.recomputeSize:	False
+*trapMgr*cycleEditorLabel.recomputeSize:	False
+*trapMgr*currentCountEditorLabel.recomputeSize:	False
+*trapMgr*trapEditorLabel.alignment:		XmALIGNMENT_END
+*trapMgr*conditionEditorLabel.alignment:	XmALIGNMENT_END
+*trapMgr*cycleEditorLabel.alignment:		XmALIGNMENT_END
+*trapMgr*currentCountEditorLabel.alignment:	XmALIGNMENT_END
+*trapMgr*currentCountEditor.editable:		False
+*trapMgr*currentCountEditor.blinkRate:		0
+
+*trapMgr*cycleEditor.columns:		4
+*trapMgr*currentCountEditor.columns:	4
+
+*trapMgr*trapToggleList*toggleColumn1Title.labelString:		Active:  
+*trapMgr*trapToggleList*descriptionListTitle.labelString:	Trap: 
+*trapMgr*trapToggleList*toggleColumn1Title.alignment:		XmALIGNMENT_BEGINNING
+*trapMgr*trapToggleList*descriptionListTitle.alignment:		XmALIGNMENT_BEGINNING
+*trapMgr*trapToggleList*searchTextLabel.labelString:		Search: 
+
+*trapMgr*trapRadioBoxLabel.labelString:			Count Mode: 
+*trapMgr*trapRadioBoxLabel.leftOffset:			20
+*trapMgr*trapRadioBox*cycleMode.labelString:		Cycle
+*trapMgr*trapRadioBox*thresholdMode.labelString:	Threshold
+!! pcs server doesn't support this, yet
+*trapMgr*trapRadioBox*thresholdMode.sensitive:		False
+
+*trapMgr*trapButtons.marginHeight:		0
+*trapMgr*trapButtons.marginWidth:		0
+*trapMgr*trapButtons.orientation:		XmHORIZONTAL
+*trapMgr*trapButtons.packing:			XmPACK_COLUMN
+*trapMgr*modifyTrapButton.labelString:		Modify
+*trapMgr*addTrapButton.labelString:		Add
+*trapMgr*resetButton.labelString:		Clear
+*trapMgr*deleteTrapButton.labelString:		Delete
+*trapMgr*trapToggleList*scrollBarDisplayPolicy:	XmSTATIC
+
+!
+! Load/Save formatting dialogs
+!
+*trapMgr*loadViewSpecificMenuItem1.labelString:  Load Traps...
+*trapMgr*saveViewSpecificMenuItem1.labelString:  Save Traps...
+
+!
+! Display menu
+*trapMgr*deleteAllMenuItem.labelString:   Delete All
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of TrapMgr application specific resources                               !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! Resources for the interpreter menus in SourceView
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*interpreterMenu.labelString: Fix+Continue
+*interpreterMenu.mnemonic: F
+*interpreterMenu*intpFuncEditMenuItem.labelString: Edit
+*interpreterMenu*intpFuncEditMenuItem.mnemonic: E
+*interpreterMenu*intpFuncEditMenuItem.accelerator: Alt Ctrl<Key>e
+*interpreterMenu*intpFuncEditMenuItem.acceleratorText: Alt+Ctrl+e
+*interpreterMenu*intpFuncExternalEditMenuItem.labelString: External Edit
+*interpreterMenu*intpFuncExternalEditMenuItem.mnemonic: x
+*interpreterMenu*intpFuncParseLoadMenuItem.labelString: Parse And Load 
+*interpreterMenu*intpFuncParseLoadMenuItem.mnemonic: P
+*interpreterMenu*intpFuncParseLoadMenuItem.accelerator: Alt Ctrl<Key>x
+*interpreterMenu*intpFuncParseLoadMenuItem.acceleratorText: Alt+Ctrl+x
+*interpreterMenu*intpFuncCancelEditMenuItem.accelerator: Alt Ctrl<Key>q
+*interpreterMenu*intpFuncCancelEditMenuItem.acceleratorText: Alt+Ctrl+q
+*interpreterMenu*intpFuncShowDiffMenu.labelString: Show Difference
+*interpreterMenu*intpFuncShowDiffMenu.mnemonic: D
+*intpFuncShowDiffMenu*intpDiffFuncItem.labelString: For Function
+*intpFuncShowDiffMenu*intpDiffFuncItem.mnemonic: F
+*intpFuncShowDiffMenu*intpDiffFileItem.labelString: For File
+*intpFuncShowDiffMenu*intpDiffFileItem.mnemonic: i
+*intpFuncShowDiffMenu*intpDiffSetDiffItem.labelString: Set Diff Tool...
+*intpFuncShowDiffMenu*intpDiffSetDiffItem.mnemonic: S
+*interpreterMenu*intpFuncSwitchMenuItem.labelString: Edited <--> Compiled
+*interpreterMenu*intpFuncSwitchMenuItem.mnemonic: n
+*interpreterMenu*intpFuncRuntimeMenuItem.labelString: Runtime Check Options...
+*interpreterMenu*intpFuncRuntimeMenuItem.mnemonic: R
+*interpreterMenu*intpFuncCancelEditMenuItem.labelString: Cancel Edit
+*interpreterMenu*intpFuncCancelEditMenuItem.mnemonic: C
+*interpreterMenu*intpFuncDeleteMenuItem.labelString: Delete Edits
+*interpreterMenu*intpFuncDeleteMenuItem.mnemonic: e
+*interpreterMenu*intpFuncSaveMenuItem.labelString: Save As...
+*interpreterMenu*intpFuncSaveMenuItem.mnemonic: a
+*interpreterMenu*intpAllSaveMenuItem.labelString: Save All Files...
+*interpreterMenu*intpAllSaveMenuItem.mnemonic: l
+*interpreterMenu*intpViewMenu.labelString: View
+*interpreterMenu*intpViewMenu.mnemonic: V
+*intpViewMenu*intpViewStatusMenuItem.labelString: Status Window...
+*intpViewMenu*intpViewStatusMenuItem.mnemonic: S
+*intpViewMenu*intpViewMessageMenuItem.labelString: Message Window...
+*intpViewMenu*intpViewMessageMenuItem.mnemonic: M
+*intpViewMenu*intpViewBuildEnvMenuItem.labelString: Build Environment Window...
+*intpViewMenu*intpViewBuildEnvMenuItem.mnemonic: B
+!*interpreterMenu*intpSessionMenu.labelString: Session
+!*interpreterMenu*intpSessionMenu.mnemonic: S
+!*intpSessionMenu*intpSessionUpdateMenuItem.labelString: Update...
+!*intpSessionMenu*intpSessionUpdateMenuItem.mnemonic: U
+!*intpSessionMenu*intpSessionSaveMenuItem.labelString: Save...
+!*intpSessionMenu*intpSessionSaveMenuItem.mnemonic: S
+!*intpSessionMenu*intpSessionSaveMenuItem.sensitive: FALSE
+! see also SourceView.cxx: programmatically deactivated
+!*intpSessionMenu*intpSessionRestoreMenuItem.labelString: Restore...
+!*intpSessionMenu*intpSessionRestoreMenuItem.mnemonic: R
+!*intpSessionMenu*intpSessionRestoreMenuItem.sensitive: FALSE
+! see also SourceView.cxx: programmatically deactivated
+"-*interpreterMenu*intpPrefsMenu.labelString: Preferences",
+"-*interpreterMenu*intpPrefsMenu.mnemonic: r",
+"-*intpPrefsMenu*intpPrefsShowPrefsMenuItem.labelString: Show Preferences...",
+"-*intpPrefsMenu*intpPrefsShowPrefsMenuItem.mnemonic: P",
+"-*intpPrefsMenu*intpPrefsResetPrefsMenuItem.labelString: Reset to Factory Defaults",
+"-*intpPrefsMenu*intpPrefsResetPrefsMenuItem.mnemonic: R",
+"-*intpPrefsMenu*intpPrefsSavePrefsMenuItem.labelString: Save Preferences...",
+"-*intpPrefsMenu*intpPrefsSavePrefsMenuItem.mnemonic: S",
+"-*intpPrefsMenu*intpPrefsLoadPrefsMenuItem.labelString: Load Preferences...",
+"-*intpPrefsMenu*intpPrefsLoadPrefsMenuItem.mnemonic: L",
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! IntpStatusWindow application specific resources                             !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*intp_status_window.title:				Fix+Continue Status
+*intp_status_window.iconName:				F+C Status
+*intp_status_window.geometry:				600x300
+
+!
+! Admin menu
+!
+*intp_admin_menu.labelString:				Admin
+*intp_admin_menu.mnemonic:				m
+*intp_admin_menu.set_diff_tool.labelString:		Set Diff Tool...
+*intp_admin_menu.set_diff_tool.mnemonic:		T
+*intp_admin_menu.set_edit_tool.labelString:		Set Edit Tool...
+*intp_admin_menu.set_edit_tool.mnemonic:		T
+*intp_admin_menu.close_item.labelString:		Close
+*intp_admin_menu.close_item.mnemonic:			C
+
+!
+! View menu
+!
+*intp_view_menu.labelString:				View
+*intp_view_menu.mnemonic:				V
+*intp_view_menu.sort_list.labelString:			Sort Status View
+*intp_view_menu.sort_list.mnemonic:			S
+*intp_view_menu.long_filename.labelString:		Show Long Filenames
+*intp_view_menu.long_filename.mnemonic:			F
+*intp_view_menu.long_filename.set:			True
+
+!
+! Interpreter menu
+!
+*intp_intp_menu.labelString:				Fix+Continue
+*intp_intp_menu.mnemonic:				F
+
+*intp_intp_menu.function_edit_external.labelString:	External Editor
+*intp_intp_menu.function_edit_external.mnemonic:	x
+*intp_intp_menu.function_edit_external.accelerator:	Ctrl<Key>x
+*intp_intp_menu.function_edit_external.acceleratorText: Ctrl+x
+
+*intp_intp_menu.function_parse.labelString:	        Parse And Load
+*intp_intp_menu.function_parse.mnemonic:	        P
+*intp_intp_menu.function_parse.accelerator:		Ctrl<Key>P
+*intp_intp_menu.function_parse.acceleratorText:         Ctrl+P
+
+*intp_intp_menu.all_file_save.labelString:              Update All Files...
+*intp_intp_menu.all_file_save.mnemonic:                 U
+
+*intp_intp_menu.show_diff_menu.labelString:	        Show Difference
+*intp_intp_menu.show_diff_menu.mnemonic:	        D
+
+*show_diff_menu.function_diff.labelString:              For Function
+*show_diff_menu.function_diff.mnemonic:                 u
+*show_diff_menu.file_diff.labelString:                  For File
+*show_diff_menu.file_diff.mnemonic:                     i
+
+*intp_intp_menu.enable_menu.labelString:	        Enable
+*intp_intp_menu.enable_menu.mnemonic:	                n
+
+*enable_menu.function_enable.labelString:               Function
+*enable_menu.function_enable.mnemonic:                  u
+*enable_menu.file_enable.labelString:                   Functions in File
+*enable_menu.file_enable.mnemonic:                      i
+*enable_menu.all_enable.labelString:                    All Functions
+*enable_menu.all_enable.mnemonic:                       A
+
+*intp_intp_menu.disable_menu.labelString:	        Disable
+*intp_intp_menu.disable_menu.mnemonic:	                i
+
+*disable_menu.function_disable.labelString:             Function
+*disable_menu.function_disable.mnemonic:                u
+*disable_menu.file_disable.labelString:                 Functions in File
+*disable_menu.file_disable.mnemonic:                    i
+*disable_menu.all_disable.labelString:                  All Functions
+*disable_menu.all_disable.mnemonic:                     A
+
+*intp_intp_menu.save_menu.labelString:	                Save
+*intp_intp_menu.save_menu.mnemonic:	                S
+
+*save_menu.function_save.labelString:                   Function...
+*save_menu.function_save.mnemonic:                      u
+*save_menu.file_save.labelString:                       File...
+*save_menu.file_save.mnemonic:                          i
+*save_menu.all_save.labelString:                        All Functions...
+*save_menu.all_save.mnemonic:                           A
+
+*intp_intp_menu.delete_menu.labelString:                Delete
+*intp_intp_menu.delete_menu.mnemonic:	                l
+
+*delete_menu.function_delete.labelString:               Function
+*delete_menu.function_delete.mnemonic:                  u
+*delete_menu.file_delete.labelString:                   Functions in File
+*delete_menu.file_delete.mnemonic:                      i
+*delete_menu.all_delete.labelString:                    All Functions
+*delete_menu.all_delete.mnemonic:                       A
+
+*intp_intp_menu.show_window_menu.labelString:		Show
+*intp_intp_menu.show_window_menu.mnemonic:		w
+
+*show_window_menu.message_window.labelString:           Message Window...
+*show_window_menu.message_window.mnemonic:              M
+*show_window_menu.buildenv_file.labelString:            Build Env for File...
+*show_window_menu.buildenv_file.mnemonic:               F
+*show_window_menu.buildenv_default.labelString:         Default Build Env...
+*show_window_menu.buildenv_default.mnemonic:            D
+
+! *intp_intp_menu.session_menu.labelString:		Session
+! *intp_intp_menu.session_menu.mnemonic:		        w
+
+! *session_menu.session_update.labelString:               Update...
+! *session_menu.session_update.mnemonic:                  U
+! *session_menu.session_save.labelString:                 Save...
+! *session_menu.session_save.mnemonic:                    S
+! *session_menu.session_save.sensitive:                   FALSE
+! see also SourceView.cxx: programmatically deactivated
+! *session_menu.session_restore.labelString:              Restore...
+! *session_menu.session_restore.mnemonic:                 R
+! *session_menu.session_restore.sensitive:                FALSE
+! see also SourceView.cxx: programmatically deactivated
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                              !
+! Fix and continue user preference dialog resources
+!                                                                              !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*intp_pref_dialog.dialogTitle:	       Fix+Continue Preference Dialog
+
+*prefEditCmdBase.columns: 25
+*prefEditCmdLabel.labelString: External Editor Command:
+*prefDiffCmdBase.columns: 25
+*prefDiffCmdLabel.labelString: File Difference Tool: 
+*prefTransferTrapsBase.labelString: Copy Traps On Previous Definition
+*prefTransferTrapsBase.alignment: XmALIGNMENT_BEGINNING
+*prefTransferTrapsOnChangedLinesBase.labelString: Copy Traps Even On Changed Lines
+*prefTransferTrapsOnChangedLinesBase.alignment: XmALIGNMENT_BEGINNING
+*prefMapChangedSourceLinesBase.labelString: Continue Even If Line Has Changed
+*prefMapChangedSourceLinesBase.alignment: XmALIGNMENT_BEGINNING
+*prefWarnBeforeRunBase.labelString: Warn Unfinished Edits Before Run
+*prefWarnBeforeRunBase.alignment: XmALIGNMENT_BEGINNING
+*prefWarnBeforeContinueBase.labelString: Warn Unfinished Edits Before Continue
+*prefWarnBeforeContinueBase.alignment: XmALIGNMENT_BEGINNING
+*prefSaveDeactivatedCodeBase.labelString: Save deactivated code during File Save
+*prefSaveDeactivatedCodeBase.alignment: XmALIGNMENT_BEGINNING
+
+!
+! resources for status view
+!
+
+*intp_status_view.allowResize:				true
+*intp_status_view.height:				200
+*intp_status_view.idLabel:				Id
+*intp_status_view.statusLabel:				Status
+*intp_status_view.savedLabel:				Saved?
+*intp_status_view.functionLabel:			Function
+*intp_status_view.fileLabel:				File
+
+*intp_status_view*status_view_title.labelString:	Redefined functions:
+*intp_status_view.status_list_label.labelString:	Id Status Saved? Function File
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! IntpMessageWindow application specific resources                            !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*intp_message_window.title:				Fix+Continue Error Messages
+*intp_message_window.iconName:				F+C Errors
+*intp_message_window.geometry:				600x400
+
+!
+! Admin menu
+!
+*intp_mw_admin_menu.labelString:			Admin
+*intp_mw_admin_menu.mnemonic:				m
+*intp_mw_admin_menu.clearall_item.labelString:		Clear All
+*intp_mw_admin_menu.clearall_item.mnemonic:		A
+*intp_mw_admin_menu.close_item.labelString:		Close
+*intp_mw_admin_menu.close_item.mnemonic:		C
+
+!
+! View menu
+!
+*intp_mw_view_menu.labelString:				View
+*intp_mw_view_menu.mnemonic:				V
+*intp_mw_view_menu.show_warnings.labelString:		Show Warnings
+*intp_mw_view_menu.show_warnings.mnemonic:		W
+*intp_mw_view_menu.show_warnings.accelerator:		Ctrl<Key>W
+*intp_mw_view_menu.show_warnings.acceleratorText:	Ctrl+W
+*intp_mw_view_menu.show_warnings.set:			False
+*intp_mw_view_menu.app_parse_msg.labelString:		Append Parse Messages
+*intp_mw_view_menu.app_parse_msg.mnemonic:		P
+*intp_mw_view_menu.app_parse_msg.set:			False
+*intp_mw_view_menu.app_load_msg.labelString:		Append Load Messages
+*intp_mw_view_menu.app_load_msg.mnemonic:		L
+*intp_mw_view_menu.app_load_msg.set:			False
+
+!
+! resources for load messages view
+!
+
+*intp_load_msg_view.allowResize:			true
+*intp_load_msg_view.height:				100
+*intp_load_msg_view.lmv_title.labelString:		Load Errors From Server:
+*intp_load_msg_view*clear_button.labelString:		Clear
+
+
+!
+! resources for parse messages view
+!
+
+*intp_parse_msg_view.allowResize:			true
+*intp_parse_msg_view.height:				200
+*intp_parse_msg_view.prv_title.labelString:		Parsing Errors and Warnings:
+
+*intp_parse_msg_view*clear_button.labelString:		Clear
+*intp_parse_msg_view*next_button.labelString:		Next
+*intp_parse_msg_view*rescan_button.labelString:		Rescan
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                              !
+! resources for build environment window                                       !
+!                                                                              !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*build_env_window.title:				Fix+Continue Build Environment
+*build_env_window.iconName:				F+C Bld Env
+*build_env_window.geometry:				=600x300
+*build_env_window.verticalSpacing:			5
+
+*build_env_window*optionMenu.labelString:		Build Environment Setting:
+
+*build_env_window*env_text.editMode:			XmMULTI_LINE_EDIT
+*build_env_window*env_text.resizeHeight:		True
+*build_env_window*env_text.resizeWidth:			True
+
+*build_env_window*file_label.labelString:		Selected File:
+*build_env_window*dir_label.labelString:		Compile directory:
+*build_env_window*cmd_label.labelString:		Compile command:
+
+*build_env_window*file_button.labelString:		Select File
+*build_env_window*clear_btn.labelString:		Clear
+*build_env_window*set_btn.labelString:			Set
+*build_env_window*unset_btn.labelString:		Unset
+*build_env_window*done_btn.labelString:			Done
+*build_env_window*file_button.resizable:		False
+*build_env_window*clear_btn.resizable:			False
+*build_env_window*set_btn.resizable:			False
+*build_env_window*unset_btn.resizable:			False
+*build_env_window*done_btn.resizable:			False
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                              !
+! Fix and continue user configurable resources
+!                                                                              !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+*diffCommand:		/usr/sbin/xdiff
+! *diffCommand:		/usr/sbin/gdiff
+
+! transfer traps from previous definition (or compiled code) to the new
+! definition on it successful parsing, automatically
+*fcTransferTraps:       true
+
+! transfer traps from previous definition (or compiled code) to the new
+! definition on it successful parsing, automatically - even those traps
+! on the lines which are changed in the new definition, if you can figure out
+*fcTransferTrapsOnChangedLines:       true
+
+! continue option
+*fcCanMapChangedSourceLines: true
+
+! warn if parse pending before run
+*fcWarnToParseBeforeRun: true
+
+! warn if parse pending before continue
+*fcWarnToParseBeforeContinue: true
+
+! warn if parse pending before continue
+*fcSaveDeactivatedCode: true
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! resources for F+C session update dialog
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*fcSessionUpdateUseAltSuffix: TRUE
+*fcSessionUpdateAltSuffix: .fcsave
+
+*fcprefUseOrigSuffixBase.labelString: Save back into original file names
+*fcprefUseAltSuffixBase.labelString: Append suffix to original file names
+*fcprefAltSuffixLabel.labelString:
+*fcprefAltSuffixLabel.recomputeWidth: FALSE
+*fcprefAltSuffixLabel.width: 30
+*fcintpSessionUpdPrefsRadioLabel.labelString: Save all modified files
+
+*fcSaveSingleFileLabel: Save %s + fixes
+*fcSaveAllFilesLabel: Save all modified files
+
+*fcC83buildRule: /usr/WorkShop/usr/bin/ncc -c -g
+*fcC89buildRule: /usr/WorkShop/usr/bin/ncc -c -g
+*fcCPlusPlusBuildRule: /usr/bin/NCC -c -g
+! *fcAdditionalCompilerOptions: -tf -h/usr/WorkShop/usr/lib/DCC -B

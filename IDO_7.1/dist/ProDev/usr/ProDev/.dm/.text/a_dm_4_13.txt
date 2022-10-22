@@ -1,0 +1,8 @@
+###4.13
+Variable Browser (continued)
+The Variable Browser lets you view or change the value of a variable.  Variables appear in the left column, values in the right.
+Select the Result cell next to "ax", click in the field, type "0" and press return.
+
+The variable browser indicates a value change by "folding" the top right corner of the result cell.  Clicking that corner toggles between the previous and current value
+0
+Try toggling between the new and old values of ay.  When you are done click on the bottom right arrow to continue.

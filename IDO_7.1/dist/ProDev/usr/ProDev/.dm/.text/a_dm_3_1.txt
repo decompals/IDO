@@ -1,0 +1,20 @@
+#3.1
+Fast Track
+Select the skill(s) you want to learn.  This lesson will include ONLY the skills that you select.  
+
+You want to be able to:
+    About the Static Analyzer
+    Queries
+    Making a Query
+    Looking at Results in Text View
+    Looking at Results in Call tree View
+    Examining Source Code Accessed from the Static Analyzer
+    Finding out Where a Variable is Used 
+    Building a Static Analyzer Database
+    Changing a File From Scanner Mode to Parser Mode
+    Rebuilding the Database
+    A Porting Example
+    Advantages of Parser Mode
+    For More Information on the Static Analyzer...
+
+Are you finished selecting?

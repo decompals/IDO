@@ -1,0 +1,59 @@
+<HEAD>
+<TITLE> Introducing CITE</TITLE>
+<!-- Changed by: Suresh Srinivas,  9-Apr-1996 -->
+</HEAD>
+<body bgcolor="#fffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+<P>
+<BR> <HR> <P>
+<H1><A NAME=CITE> Introduction to the CITE (Compiler Information Through Emacs) prototype</A></H1>
+<HR>
+
+<P>
+CITE is a package that works inside XEmacs to present detailed compiler
+information from the MIPS Pro compiler at the level of the source program.
+It is mostly meant to be used to understand how the program maps
+on to the machine -- in essence the program performance -- by providing
+access to information from the optimizations performed by the compiler. 
+</P>
+
+<P>
+It uses the familiar metaphor of hypertext that all of us use in World
+Wide Web browsers. It also uses context sensitive toolbars, context
+sensitive menus, flyby help to facilitate convenient access to compiler
+information.  </P>
+
+<P> 
+CITE works by reading information produced by the MIPS Pro compiler in
+the listing, trace, and assembly files. It then creates extents --
+regions in the XEmacs text buffer -- and adds the information that it
+reads as properties of the extents. These extents are set to respond
+to key and mouse events that would enable users to query the compiler
+information within these extents. These extents are also highlighted
+-- for example loops are highlighted/hypertexted as well as colored to
+show which loop was picked to be the inner most loop -- to enable
+users to know where to look for information.
+</P>
+
+<P>
+CITE also enables users to understand the interplay between optimizations.
+For example, what is the effect of high-level loop transformations on inner 
+loop optimizations such as software pipelining. Or how does inlining enable
+high-level loop transformations.
+</P>
+
+<P>
+CITE is a free package that any user of the MIPS Pro compiler interested 
+in understanding the performance of their program can get.
+</P>
+
+
+<HR>
+<P><ADDRESS>
+<I>Suresh Srinivas (ssuresh@mti) <BR>
+<FONT SIZE="-3"> </FONT><FONT SIZE="-1"> Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT><BR>
+May 30th 1996</I> <BR>
+<BR>
+<BR>
+</ADDRESS>
+</BODY>
+

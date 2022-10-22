@@ -1,0 +1,84 @@
+#ifndef GAMMA_2_4
+#define  HighlightForeground    #000000
+#define	 TrapColor		#e78080
+#define	 ScrollBarTrapColor	#e78080
+#define	 InactiveTrapColor	#a14e4e
+#define	 ScrollBarInactiveTrapColor	#ff8585
+#define	 ProgramCounterColor	#d9d9d9
+#define	 ScrollBarProgramCounterColor	#d9d9d9
+#define	 CallstackContext	#77bfbf
+#define	 ScrollBarCallstackContext	#77bfbf
+#define  SearchColor		#ffff74
+#define  ScrollBarSearchColor		#ffff74
+#define  TimeLineBackground	#3e5a60
+#define  ScrollBarColor1	#989898
+#define  ScrollBarColor2	#e6e6e6
+#define  CurrentColor		HighlightColor1
+#define  ViewerColor		HighlightColor2
+#define  ConstraintColor	HighlightColor4
+#define  ChartFillStyle		FillTiled
+#define  ChartLineStyle0	LineSolid
+#define  ChartLineStyle1	LineOnOffDash
+#define  ChartLineStyle2	LineDoubleDash
+#define  ChartLineStyle3	LineSolid
+#define  SessionColor4		BasicBackground
+#define  SessionColor5		#555555
+#define  SourceBackground	#64cfde
+#define  ModifiedBackground	#b078fd
+#define  DerivedBackground	#080c22
+#define  ObsoleteColor		#fdfb27
+#define  SyntaxErrorSymbolColor	#c90017
+#define  CheckMarkColor		#00fff8
+#define  SyntaxWarningColor	#9d4898
+#define  SyntaxErrorColor	#fbfa38
+#define  ScrollBarWarningColor	#ff1a5e
+#define  ScrollBarErrorColor	#cf37ce
+
+*XmScrolledWindow*topShadowColor: white
+*XmText*topShadowColor: 	  white
+*bottomShadowColor: 		  #232323
+#else
+#define  HighlightForeground    #000000
+#define	 TrapColor		#f1aaaa
+#define	 ScrollBarTrapColor	#f1aaaa
+#define	 InactiveTrapColor	#c37f7f
+#define	 ScrollBarInactiveTrapColor	#ffaeae
+#define	 ProgramCounterColor	#e8e8e8
+#define	 ScrollBarProgramCounterColor	#e8e8e8
+#define	 CallstackContext	#a3d7d7
+#define	 ScrollBarCallstackContext	#a3d7d7
+#define  SearchColor		#ffffa1
+#define  ScrollBarSearchColor		#ffffa1
+#define  TimeLineBackground	#6f8a90
+#define  ScrollBarColor1	#bcbcbc
+#define  ScrollBarColor2	#f0f0f0
+#define  CurrentColor		HighlightColor1
+#define  ViewerColor		HighlightColor2
+#define  ConstraintColor	HighlightColor4
+#define  ChartFillStyle		FillTiled
+#define  ChartLineStyle0	LineSolid
+#define  ChartLineStyle1	LineOnOffDash
+#define  ChartLineStyle2	LineDoubleDash
+#define  ChartLineStyle3	LineSolid
+#define  SessionColor4		BasicBackground
+#define  SessionColor5		#868686
+#define  SourceBackground	#93e2eb
+#define  ModifiedBackground	#cda4fe
+#define  DerivedBackground	#212b4e
+#define  ObsoleteColor		#fefd55
+#define  SyntaxErrorSymbolColor	#de003e
+#define  CheckMarkColor		#00fffb
+#define  SyntaxWarningColor	#c079bc
+#define  SyntaxErrorColor	#fdfc69
+#define  ScrollBarWarningColor	#ff438e
+#define  ScrollBarErrorColor	#e268e1
+
+*XmScrolledWindow*topShadowColor: white
+*XmText*topShadowColor: 	  white
+*bottomShadowColor: 		  #4f4f4f
+#endif
+
+
+#define  DrawingAreaNodeColor1  #dad3fa
+#define  DrawingAreaNodeColor2  #b992a0
+

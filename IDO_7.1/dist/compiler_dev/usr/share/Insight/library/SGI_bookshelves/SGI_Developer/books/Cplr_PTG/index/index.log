@@ -1,0 +1,8 @@
+<MKLOG name='./books/Cplr_PTG/index' version='-1' date='Sat Nov  9 21:19:14 1996' serial='-1' count='-1' user=''>
+
+MERGE vocab.dat :   1 files, Vocab size  4220 on                           .
+
+MERGE index.dat :   1 files, Vocab size  4220 on                           .
+
+DONE MAKING BOOK
+

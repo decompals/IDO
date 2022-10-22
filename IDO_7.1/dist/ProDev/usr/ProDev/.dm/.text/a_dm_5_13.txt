@@ -1,0 +1,16 @@
+###5.13
+Performance Tasks
+The Performance Analyzer provides 10 tasks (predefined experiments):
+Determine bottlenecks, identify phases
+Get Total Time per function & source line
+Get CPU Time per function & source line
+Get Ideal Time (pixie) per function & source line
+Trace I/O activity
+Trace system calls
+Trace page faults
+Find memory leaks
+Find floating point exceptions
+Custom task
+
+
+

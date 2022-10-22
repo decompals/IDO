@@ -1,0 +1,59 @@
+
+<HEAD>
+<body bgcolor="#fffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+<TITLE> Installing XEmacs</TITLE>
+<!-- Changed by: Suresh Srinivas, 10-Feb-1996 -->
+</HEAD>
+<BODY>
+<P>
+<BR> <HR> <P>
+<H1><A NAME=XEmacsInst> Installing XEmacs</A></H1>
+<P>
+<BR> <HR> <P>
+
+<P>
+XEmacs is a powerful, extensible text editor with full GUI
+support, initially based on an early version of GNU Emacs 19 from
+the Free Software Foundation and since kept up to date with recent
+versions of that product. The current version is 19.13.
+</P>
+
+<P>
+You can install XEmacs either from the FreeWare CD or from
+the <A HREF="http://xemacs.cs.uiuc.edu"> XEmacs</A> site. If you
+or your systems administrator plan to recompile XEmacs recompile
+it using "-O -32". Send me email if you have any problems.
+</P>
+
+<P>
+If you install XEmacs from the FreeWare CD for IRIX 6.2 then you will need to 
+fix the XEmacs executable as it is broken in the FreeWare CD. I have placed
+a good executable (it is compressed using gzip) in <tt> /usr/lib/cite/doc/xemacs-19.13-for6.2.gz </tt>.
+</P>
+
+<P>
+You will first need to uncompress the file (do it using <tt> gunzip </tt>).
+You should then copy the uncompressed file to <tt> /usr/freeware/bin/xemacs </tt>. The following two commands typed in your shell will do it for you.
+</P>
+
+<PRE>
+% cd /usr/lib/cite/doc
+% gunzip xemacs-19.13-for6.2.gz
+% cp xemacs-19.13-for6.2 /usr/freeware/bin/xemacs
+</PRE>
+
+<P>
+For more information on the freeware stuff check out the 
+<A HREF="http://www.sgi.com/Fun/free/software-dev.html">  Silicon Surf Freeware</A> site  or check with your SGI representative about the Freeware CD.
+</P>
+
+<BR> <HR>
+<P><ADDRESS>
+<I>Suresh Srinivas<BR>
+<FONT SIZE="-3"> </FONT><FONT SIZE="-1"> Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT><BR>
+May 30th 1996</I> <BR>
+<BR>
+(Explore the World of 
+<FONT SIZE="-3"><A HREF="http://xemacs.cs.uiuc.edu/"> <IMG SRC="xemacs.gif" WIDTH="163" HEIGHT="36"></A> </FONT>) <BR>
+</ADDRESS>
+</BODY>

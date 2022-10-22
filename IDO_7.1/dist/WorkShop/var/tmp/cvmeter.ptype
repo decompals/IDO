@@ -1,0 +1,5 @@
+ptype SGI_CV_METER
+{
+    start "/usr/sbin/cvmeter -autostarted";
+    handle: session SGI_Debug_ProcessMeter() => start;
+}

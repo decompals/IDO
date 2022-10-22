@@ -1,0 +1,40 @@
+<HEAD>
+<body bgcolor="#fffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+<TITLE>Known problems in CITE</TITLE>
+<!-- Changed by: Suresh Srinivas,  9-Apr-1996 -->
+</HEAD>
+
+<BODY>
+<P>
+<BR> <HR> <P>
+ <H1>Known problems in CITE</H1>
+<HR>
+
+The following are some of the known problems. There might be other bugs, if
+you encounter any please email them to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>.
+<OL>
+<LI> When LNO does not do optimization on a loop, it could be due to 
+several problems. One of them is dependence problems. CITE does not
+print out the details. In other case LNO might not optimize because of
+a scalar that it couldnt expand. The name of the scalar comes out wrong.
+
+<LI> CITE uses several heuristics to correlate the information produced
+by the code generator to the post LNO loop structure. If the code generator
+fails to produce the relevant information, the correlation will be wrong
+sometimes. I have seen examples of this for DO WHILE loops.
+
+<LI> Sometimes reverse if conversion destroys failure notes from the
+software pipeliner. There might be no information on the reason the inner
+loop did not software pipeline.
+</OL>
+</BODY>
+</HTML>
+<BR> <HR>
+<P><ADDRESS>
+<I>Suresh Srinivas (ssuresh@mti) <BR>
+<FONT SIZE="-3"> </FONT><FONT SIZE="-1"> Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT><BR>
+May 30th 1996</I> <BR>
+<BR>
+<BR>
+</ADDRESS>
+</BODY>

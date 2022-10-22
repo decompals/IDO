@@ -1,0 +1,5 @@
+#2.11
+ProDev WorkShop License
+When you request a permanent license, you must choose a concurrent or a nodelock license.
+
+A concurrent license lets users draw from a pool of licenses on a single machine.  A nodelock license can only be used on a specified host.

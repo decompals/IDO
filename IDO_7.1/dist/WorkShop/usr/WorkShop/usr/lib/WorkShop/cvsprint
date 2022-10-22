@@ -1,0 +1,132 @@
+#!/bin/ksh -p
+#Tag 3840
+
+#
+# Debugging boilerplate
+#
+#	All comments in this file are intended for the customizer.
+#	Read them all!
+#
+
+flags=?hdnv
+usage="Usage: ${0##*/} [-$flags] cmd fileset"
+
+if [ "$DEBUG" ] ; then
+	set -$DEBUG
+	: Debug enabled by envariable
+fi
+
+Usage () {
+        echo "$usage"
+        echo "	-?, -h	Help text (this stuff)."
+        echo "	-d	Debug execution (lots of output)."
+        echo "	-n	No-execute (echos what it would have done)."
+        echo "	-v	Verbose (echos before doing things)."
+}
+
+Log () {
+        [[ ! -z "$verbose" || ! -z "$noexecute" ]] && echo >&2 "$@"
+        : always return true
+}
+
+Do () {
+        Log "$@"
+        [[ -z "$noexecute" ]] && "$@"
+        typeset evalstatus=$?
+        [[ ! -z "$noexecute" || $evalstatus = 0 ]]
+}
+
+DO () {
+        Log "$@"
+        "$@"
+        typeset evalstatus=$?
+        [[ $evalstatus = 0 ]]
+}
+
+# Everyone needs a temp file!  Name it here, so CleanUp can clean it up.
+# Don't create yet, so it can be created as a directory if appropriate.
+tmpfile=/usr/tmp/${0##*/}.$$
+
+cleanuplist="$tmpfile"
+
+CleanUp () {
+        : Add your own clean-up actions here
+
+        Do /bin/rm -fr $cleanuplist
+}
+
+# Clean up in cases of "normal" aborts, leave really violent aborts
+# along (so intermediates, such as they are, can be used for debugging)
+SigList="EXIT HUP INT QUIT TERM"
+trap "trap - $SigList; CleanUp" $SigList
+
+# insert sema.ksh here if you want semaphoring commands
+
+verbose=
+noexecute=
+while getopts $flags flag; do
+	case $flag in
+	d)
+		export DEBUG=xv
+		set -$DEBUG
+		: Debug enabled by command line
+	        ;;
+	h | \?)
+	        Usage >&2
+                exit 0
+	        ;;
+	n)
+		noexecute=-n
+	        ;;
+	v)
+                verbose=-v
+                ;;
+	esac
+done
+
+# Now, flush the args just consumed
+while ((OPTIND > 1)) ; do
+        shift
+        ((OPTIND-=1))
+done
+
+
+#
+# Change the limits here to match your parameter list length
+# requirements.
+#
+if (( $# != 2 )) ; then
+        Usage >&2
+        exit 1
+fi
+
+#
+# End of Debugging boilerplate
+# Your stuff goes here
+#
+
+CMD=$1
+LEADER=$2
+
+(
+        DO echo AnalyzeFileset $LEADER
+	DO echo $CMD
+	DO echo Quit
+) > $tmpfile
+(
+        DO echo $CMD in $LEADER:
+	DO echo
+	DO /usr/sbin/cvstatic -iconic -qfile $tmpfile
+) |
+Do /usr/bin/lp -t"$CMD in $LEADER"
+
+
+
+
+#	If you use Emacs, and if you have sh-mode available, then this
+#	will turn it on for this file.
+
+#	Local variables:
+#	eval: (if (fboundp 'sh-mode) (sh-mode))
+#	compile-command: "cvsprint -n "
+#	end:

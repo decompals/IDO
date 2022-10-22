@@ -1,0 +1,5 @@
+#3.15
+For More Information about the Static Analyzer
+This tutorial covers the basic features of the Static Analyzer.  The Static Analyzer provides many different queries for source code in Fortran, C, C++, and Ada (with purchase of ProDev Ada).  It also provides the Browser, a facility for getting object-oriented information in C++ and Ada.
+To learn more about the Static Analyzer, refer to the ProDev Workshop Overview and Pro Dev Workshop Static Analyzer and Browser User's Guide.  These manuals are available through Insight, the Desktop Magic online documentation facility, and in hardcopy.
+Click the bottom right arrow to continue.

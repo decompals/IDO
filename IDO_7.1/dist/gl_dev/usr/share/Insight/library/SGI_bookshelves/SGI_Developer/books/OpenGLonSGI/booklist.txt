@@ -1,0 +1,1 @@
+<BOOK name="OpenGLonSGI" edition="19960309" alias = "OpenGL on Silicon Graphics Systems" type = "sgi_developer" hide = "FALSE" version = "007-2392-001" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

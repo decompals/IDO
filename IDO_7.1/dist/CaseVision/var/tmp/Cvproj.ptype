@@ -1,0 +1,5 @@
+ptype   SGI_CV_PROJECTVIEW
+{
+	start   "/usr/sbin/cvproj -autostarted";
+	handle: session Show_ProjectView() => start;
+}

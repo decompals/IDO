@@ -1,0 +1,6 @@
+Debugger, /usr/sbin/cvd -pcsnum #PCSnum -executable #Executable
+Build Analyzer, /usr/sbin/cvbuild -xrm "*host: #Host"
+Parallel Analyzer, /usr/sbin/cvpav -e #Executable
+Performance Analyzer, /usr/sbin/cvperf -exp #ExpDir -executable #Executable -host #Host -nowarn
+Static Analyzer, /usr/sbin/cvstatic
+Tester, /usr/sbin/cvxcov

@@ -1,0 +1,122 @@
+#!/bin/sh
+
+if test $# -gt 1
+then
+  echo "usage: setup_Tester_demo [target_directory]"
+  exit
+fi
+
+TARG="/usr/tmp/Tester_demo"
+if test $# -eq 1
+then
+    TARG=$1
+fi
+
+cp -r /usr/demos/WorkShop/Tester $TARG
+cd $TARG
+make -f Makefile.tutorial copyn
+echo ABCDEFGHIJKLMNOPQRSTUVWXYZ > alphabet
+cvcov runinstr -instr_file tut_instr_file copyn
+cvcov mktest -cmd "copyn alphabet targetfile 20"
+cvcov mktest -cmd 'copyn alphabet target' -des 'not enough arguments'
+cvcov mktest -cmd 'copyn alphabet target 20 extra_arg' -des 'too many arguments'
+cvcov mktest -cmd 'copyn no_file target 20' -des 'cannot access file'
+cvcov mktest -cmd 'copyn alphabet target 0' -des 'pass bad size arg'
+echo a > not_enough
+cvcov mktest -cmd 'copyn not_enough target 20' -des 'not enough data (less bytes than requested) in original file'
+cvcov mktest -cmd 'copyn alphabet /usr/bin/target 20' -des 'cannot create target executable due to permission problems'
+ls -ld /usr/bin
+cvcov mktest -cmd 'copyn alphabet targetfile  200' -des 'size arg too big'
+cvcov mktest -cmd 'copyn /usr/adm/sulog targetfile 20'
+
+cvcov mktset -des 'full coverage testset' -testname tut_testset
+
+cvcov addtest test0000 tut_testset
+cvcov addtest test0001 tut_testset
+cvcov addtest test0002 tut_testset
+cvcov addtest test0003 tut_testset
+cvcov addtest test0004 tut_testset
+cvcov addtest test0005 tut_testset
+cvcov addtest test0006 tut_testset
+cvcov addtest test0007 tut_testset
+cvcov addtest test0008 tut_testset
+
+cvcov runtest tut_testset
+
+# Note: The tutorial provides a more in depth demonstration
+#       of Tester. For in depth explanations, refer to the 
+#       tutorial documentation in the Tester User Manual. 
+#       If you want a very simple demo, perform the following.
+#       This demonstrates a subset of the functionality.
+#
+# 1. Run this setup script
+#    /usr/WorkShop/tutorial/setup_Tester_demo
+# 2. Describe instrumentation process.
+#    a. cat tut_instr_file
+#       Note that we have constrained the coverage to two functions,
+#       "main" and "copy_file", and that we will be doing
+#       argument tracing for the argument "size" in copy_file.
+# 3. Run the GUI test coverage tool, "cvxcov"
+# 4. Show analysis on first test
+#    a. Load test "test0000"
+#       Type test0000 in testname, hit <Enter>
+#    b. Show summary of test results
+#       Queries "List Summary"
+#          This shows summary over basic coverage types.   
+#          Note that Function Coverage covers 2 out of 2 functions,
+#          but block, branch, and arc coverage are inadequate.
+#          Note that summary information is user configurable/weighted.
+#       Show this result as a bar graph:
+#       Views "barGraphView"
+#       Then back to View "Text View".
+#    c. Show function coverage
+#       Queries "List Functions"
+#          This shows count information for each function that was
+#          instrumented for counting.
+#       Views "Call Tree View"
+#          Show graphical representation of same data.
+#          Note that nodes excluded from instrumentation are still
+#          shown (see legend for Included, Excluded, Not Covered). 
+#       Views "Text View" 
+#          Go back to the text report mode.
+#    d. Hone in on the arcs not taken from "main".
+#       Queries "List Arcs"
+#          Type in "main" for "Func Name" near the bottom.
+#          Hit "Apply"
+#          This shows the arcs not taken from "main".
+#    e. Show annotated SourceView.
+#       Double click on file "copyn.c".
+#          Note that 0 counted lines are highlighted and count 
+#          information is annotated on left side.
+#          It is clear that most of the error conditions
+#          are not covered.
+#    f. Show annotated Disassembly View.
+#       Hit "Disassembly" button.
+# 5. Show analysis of test set
+#    a. Show testset that contains 7 tests.
+#       Load test "tut_testset"
+#          Type "tut_testset" into Test Name, hit <Enter>
+#       Queries "Describe Test"
+#          This shows a testset with nine tests, the one we just
+#          analyzed and the new tests.
+#    b. Show summary of test results
+#       Queries "List Summary"
+#          Note that Function and Arc Coverage are 100%.
+#          However, assembly block and branch coverage are not.
+#          This is because compiler with -g generates blocks/branches
+#          that can never be executed. You can see this with
+#          Disassembly view if you want.
+#    c. Show annotated source       
+#       Queries "List Functions"
+#       Double click on copyn.c to show annotated source.
+#       Note that native source is fully covered, and counts
+#       show how some lines were hit by all tests,
+#       while other lines were hit by only a single test.
+#       For our purposes, we have full coverage.
+# 6. Show analysis of argument tracing
+#       Queries "List Argument Traces"
+#          This shows that function "copy_file" whose argument "size"
+#          was traced for BOUNDS (MIN AND MAX), has taken
+#          on a low value of 0 and a high value of 200.
+#          over all nine tests that were run.
+#          We can trace return values as well as function arguments.

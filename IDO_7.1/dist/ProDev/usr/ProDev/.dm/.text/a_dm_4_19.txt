@@ -1,0 +1,15 @@
+###4.19
+Multiprocess Debugging
+ProDev WorkShop supports multiprocess debugging, including processes spawned using fork or sproc.
+Drag your mouse over the window to learn its features.  Click on the bottom right arrow to continue.
+identifies the process
+identifies the parent process
+indicates state of the process
+identifies the process by file name
+shows the current function and program counter (PC) for any stopped process
+The Admin menu lets you perform general functions.
+The Config menu lets you set preferences regarding relationships between parent and child processes.
+The Process menu lets you add or remove processes.
+The Process control area lets you control each process in the list.
+The Process list area identifies each process by ID and name, the parent process ID, the state, and the current function and PC for any stopped processes.
+

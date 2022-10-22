@@ -1,0 +1,5 @@
+ptype SGI_CV_MP
+{
+    start "/usr/lib/WorkShop/cvmp";
+    handle: session SGI_Debug_cvmp() => start;
+}

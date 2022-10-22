@@ -1,0 +1,29 @@
+#4.1
+Fast Track
+Select the skill(s) you want to learn.  This lesson will include ONLY the skills that you select.  
+
+You want to be able to:
+     about the Debugger
+     starting the Debugger
+     Debugger main view
+     setting breakpoints
+     The Trap Manager
+     setting complex traps and watchpoints
+     starting the process
+     examining data
+     getting call stack information
+     pop up Expression Evaluator
+     Variable Browser 
+     Structure Browser
+     Examining Arrays
+     The Array Browser
+     multiprocess debugging
+     for more information
+
+
+
+Are you finished selecting?
+
+
+
+

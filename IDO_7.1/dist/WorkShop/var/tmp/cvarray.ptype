@@ -1,0 +1,5 @@
+ptype SGI_CV_ARRAY
+{
+    start "/usr/lib/WorkShop/cvarray";
+    handle: session SGI_Debug_ArrayBrowser() => start;
+}

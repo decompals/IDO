@@ -1,0 +1,126 @@
+TYPE CvstaticFileset
+	MATCH (glob("cvstatic.fileset"));
+	SUPERTYPE AsciiTextFile
+	LEGEND ProDev/WorkShop static analysis file set
+	CMD OPEN /usr/sbin/cvstatic -fileset $LEADER
+	CMD PRINT /usr/WorkShop/usr/lib/WorkShop/cvsprint ListDirectories $LEADER
+	MENUCMD :458:"Edit" $WINEDITOR $LEADER $REST
+	MENUCMD Analyze /usr/sbin/cvstatic -fileset `dirname $LEADER`/cvstatic.fileset
+	MENUCMD "Print Globals" /usr/WorkShop/usr/lib/WorkShop/cvsprint FindGlobalDefs $LEADER
+	MENUCMD "Print Macros" /usr/WorkShop/usr/lib/WorkShop/cvsprint FindAllMacros $LEADER
+	MENUCMD "Print Global Variables" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllVariable $LEADER
+	MENUCMD "Print Functions" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllFunction $LEADER
+	MENUCMD "Print Files" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllFile $LEADER
+	MENUCMD "Print Classes" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllClasses $LEADER
+	MENUCMD "Print Common Blocks" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllCommonBlocks $LEADER
+	MENUCMD "Print Types" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllTypes $LEADER
+	MENUCMD "Print Directories" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListDirectories $LEADER
+	ICON	{
+	    include("../iconlib/generic.doc.pre.fti");
+	    include("iconlib/sgi.cvstatic.fileset.fti");
+	}
+
+TYPE CvstaticDBFile
+	MATCH (glob("cvdb.*") ||
+	       glob("cvdb[0-9].*") ||
+	       glob("cvdb[0-9][0-9].*") ||
+	       glob("cvstatic.src") ||
+	       glob("cvstatic.buildlog") ||
+	       glob("cvstatic.errorlog") ||
+	       glob("vista.taf.*") ||
+	       glob("cvstatic.index") ||
+	       glob("cvstatic.posting") ||
+	       glob("cvstatic.xref"));
+	SUPERTYPE BinaryDataFile
+	LEGEND ProDev/WorkShop static analysis database
+	CMD OPEN /usr/sbin/cvstatic -fileset `dirname $LEADER`/cvstatic.fileset
+	CMD PRINT /usr/WorkShop/usr/lib/WorkShop/cvsprint ListDirectories `dirname $LEADER`/cvstatic.fileset
+	MENUCMD Analyze /usr/sbin/cvstatic -fileset `dirname $LEADER`/cvstatic.fileset
+	MENUCMD "Print Globals" /usr/WorkShop/usr/lib/WorkShop/cvsprint FindGlobalDefs `dirname $LEADER`/cvstatic.fileset
+	MENUCMD "Print Macros" /usr/WorkShop/usr/lib/WorkShop/cvsprint FindAllMacros `dirname $LEADER`/cvstatic.fileset
+	MENUCMD "Print Global Variables" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllVariable `dirname $LEADER`/cvstatic.fileset
+	MENUCMD "Print Functions" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllFunction `dirname $LEADER`/cvstatic.fileset
+	MENUCMD "Print Files" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllFile `dirname $LEADER`/cvstatic.fileset
+	MENUCMD "Print Classes" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllClasses `dirname $LEADER`/cvstatic.fileset
+	MENUCMD "Print Common Blocks" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllCommonBlocks `dirname $LEADER`/cvstatic.fileset
+	MENUCMD "Print Types" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllTypes `dirname $LEADER`/cvstatic.fileset
+	MENUCMD "Print Directories" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListDirectories `dirname $LEADER`/cvstatic.fileset
+	ICON	{
+        include("../iconlib/generic.doc.pre.fti");
+        if (opened) {
+            include("../iconlib/generic.doc.open.fti");
+            include("../default/iconlib/BinaryData.open.fti");
+	    include("iconlib/sgi.cvstatic.fileset.fti");
+        } else {
+            include("../iconlib/generic.doc.closed.fti");
+            include("../default/iconlib/BinaryData.closed.fti");
+	    include("iconlib/sgi.cvstatic.fileset.fti");
+	    }
+	}
+
+TYPE CvstaticDir
+	MATCH (glob("*.cvdb") && dircontains("cvstatic.fileset"));
+	SUPERTYPE Directory
+	SUPERTYPE SpecialFile
+	SPECIALFILE
+	LEGEND ProDev/WorkShop static analysis data set
+	CMD OPEN /usr/sbin/cvstatic -fileset $LEADER/cvstatic.fileset
+	CMD PRINT /usr/WorkShop/usr/lib/WorkShop/cvsprint ListDirectories $LEADER/cvstatic.fileset
+	MENUCMD Analyze /usr/sbin/cvstatic -fileset $LEADER/cvstatic.fileset
+	MENUCMD "Print Globals" /usr/WorkShop/usr/lib/WorkShop/cvsprint FindGlobalDefs $LEADER/cvstatic.fileset
+	MENUCMD "Print Macros" /usr/WorkShop/usr/lib/WorkShop/cvsprint FindAllMacros $LEADER/cvstatic.fileset
+	MENUCMD "Print Global Variables" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllVariable $LEADER/cvstatic.fileset
+	MENUCMD "Print Functions" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllFunction $LEADER/cvstatic.fileset
+	MENUCMD "Print Files" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllFile $LEADER/cvstatic.fileset
+	MENUCMD "Print Classes" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllClasses $LEADER/cvstatic.fileset
+	MENUCMD "Print Common Blocks" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllCommonBlocks $LEADER/cvstatic.fileset
+	MENUCMD "Print Types" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListAllTypes $LEADER/cvstatic.fileset
+	MENUCMD "Print Directories" /usr/WorkShop/usr/lib/WorkShop/cvsprint ListDirectories $LEADER/cvstatic.fileset
+	ICON	{
+        if (opened) {
+            include("../iconlib/generic.folder.open.fti");
+	    include("iconlib/sgi.cvstatic.fileset.fti");
+        } else {
+            include("../iconlib/generic.folder.closed.fti");
+	    include("iconlib/sgi.cvstatic.fileset.fti");
+	    }
+	}
+TYPE Cvstatic
+	MATCH tag == 0x00010990005;
+	LEGEND ProDev/WorkShop Static Analyzer 
+	SUPERTYPE Executable
+	DROPIF CvstaticFileset CvstaticDBFile CvstaticDir
+	CMD OPEN if [ $ARGC = 1 ]
+		then
+		    $LEADER
+		else
+		    $LEADER $REST
+		fi
+	CMD ALTOPEN if [ $ARGC = 1 ]
+		then
+		    launch -c $LEADER
+		else
+		    launch -c $LEADER $REST
+		fi
+	CMD DROP if [ $LEADERTYPE = CvstaticDir ] ; then
+			$TARGET -fileset $LEADER/cvstatic.fileset
+		 elif [ $LEADERTYPE = CvstaticFileset ] ; then
+			$TARGET -fileset $LEADER
+		 elif [ $LEADERTYPE = CvstaticDBFile ] ; then
+			$TARGET -fileset `dirname $LEADER`/cvstatic.fileset
+		 elif [ $LEADERTYPE = Directory ] ; then
+			cd $LEADER
+			$TARGET
+		 else
+			cd `dirname $LEADER`
+			$TARGET
+		 fi
+	ICON	{
+	    if (opened) {
+	        include ("../iconlib/generic.exec.open.fti");
+	        include ("iconlib/sgi.cvstatic.fileset.fti");
+	    } else {
+	        include ("../iconlib/generic.exec.closed.fti");
+	        include ("iconlib/sgi.cvstatic.fileset.fti");
+	    }
+        }

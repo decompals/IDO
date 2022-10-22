@@ -1,0 +1,20 @@
+###4.4
+Debugger Main View
+The Debugger Main View appears with the source code loaded. 
+Run your mouse over the window for descriptions.  Click the right arrow button when you are done.
+The Admin menu provides general-purpose options.
+The Views menu provides access to data viewing windows.
+The Query menu lets you make simple static analysis queries, such as where is a variable defined.
+The Source menu lets you manipulate source files and launch recompiles.
+The Display menu lets you show or hide items in the annotation column.
+The Perf menu lets you set up performance tuning tests.
+The Traps menu lets you set stop traps (breakpoints) and sample traps (for performance tuning).
+The PC pull-down menu provides alternatives for execution (process) control.
+The Fix+Continue menu lets you make changes to a function and continue without recompiling and relinking.
+The Help menu provides access to online help.
+The Purify button indicates a purity experiment has been set up.
+The Performance button indicates a performance tuning experiment has been set up.
+The control panel lets you control program execution.
+The annotation column lets you view and set traps and see the results of performance and coverage tests.
+The command line provides dbx-like commands.  You can set a watch point by typing: watch addr 0x400304 for write.
+The display area lets you view or edit your source code.

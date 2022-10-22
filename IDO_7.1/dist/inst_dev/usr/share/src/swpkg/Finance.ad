@@ -1,0 +1,40 @@
+!
+! $Header: /hosts/bonnie/proj/banyan/isms/buildtools/books/Swpkg_UG/RCS/Finance.ad,v 1.8 1996/01/21 01:03:50 dvogt Exp $
+!
+! finance -- application defaults 
+!
+! (c) Copyright 1993, Kirk Erickson and Silicon Graphics Inc.
+!
+! Permission to use, copy, modify, distribute, and sell this software
+! and its documentation for any purpose is hereby granted without fee,
+! provided that the above copyright notice appear in all copies and
+! that both that copyright notice and this permission notice appear in
+! supporting documentation, and that the name of Kirk Erickson and
+! Silicon Graphics Inc. not be used in advertising or publicity pertaining
+! to distribution of the software without specific, written prior
+! permission.  Kirk Erickson and Silicon Graphics Inc. make no
+! representations about the suitability of this software for any purpose.
+! It is provided "as is" without express or implied warranty.
+!
+! THE ABOVE-NAMED DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+! INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
+! EVENT SHALL THE ABOVE-NAMED BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+! CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
+! USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+! OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+! PERFORMANCE OF THIS SOFTWARE.
+
+Finance*background: DarkGreen
+Finance*fontList: 12x24
+
+Finance*yearsLabel.labelString:  Years
+Finance*yearsTextField.value:  15
+
+Finance*principalLabel.labelString:  Principal
+Finance*principalTextField.value:  75000
+
+Finance*rateLabel.labelString:  Rate
+Finance*rateTextField.value:  6.75
+
+Finance*paymentLabel.labelString:  Payment
+Finance*paymentTextField.value:  663.68

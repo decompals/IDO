@@ -1,0 +1,8 @@
+<MKLOG name='./books/Swpkg_UG/index' version='-1' date='Sat Mar  9 13:31:39 1996' serial='-1' count='-1' user=''>
+
+MERGE vocab.dat :   1 files, Vocab size  2278 on                           .
+
+MERGE index.dat :   1 files, Vocab size  2278 on                           .
+
+DONE MAKING BOOK
+

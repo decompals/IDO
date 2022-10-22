@@ -1,0 +1,108 @@
+TYPE Cvperf
+	MATCH tag == 0x00010990003;
+	LEGEND ProDev/WorkShop Performance Data Analyzer
+	SUPERTYPE Executable
+#	DROPIF Executable
+	CMD OPEN if [ $ARGC = 1 ]
+		then
+		    $LEADER
+		else
+		    $LEADER $REST
+		fi
+	CMD ALTOPEN if [ $ARGC = 1 ]
+		then
+		    launch -c $LEADER
+		else
+		    launch -c $LEADER $REST
+		fi
+	CMD DROP $TARGET $LEADER
+	ICON	{
+	    if (opened) {
+	        include ("../iconlib/generic.exec.open.fti");
+	        include ("iconlib/sgi.cvperf.fti");
+	    } else {
+	        include ("../iconlib/generic.exec.closed.fti");
+	        include ("iconlib/sgi.cvperf.fti");
+	    }
+        }
+
+
+TYPE CvperfExpDir
+	MATCH (glob("test[0-9][0-9][0-9][0-9]") && dircontains("DESC"));
+	SUPERTYPE Directory
+	SUPERTYPE SpecialFile
+	SPECIALFILE
+	LEGEND ProDev/WorkShop performance experiment
+	CMD PRINT /usr/sbin/cvexprnt $LEADER | lp
+	MENUCMD "Analyze" /usr/sbin/cvperf $LEADER
+	MENUCMD "Print Details" /usr/sbin/cvexprnt -d $LEADER | lp
+	MENUCMD "Print In Hex" /usr/sbin/cvexprnt -h $LEADER | lp
+	MENUCMD "Print Invariants" /usr/sbin/cvexprnt -q $LEADER | lp
+	MENUCMD "Print Selected Bead" \
+		launch -m "Print bead at what offset?" \
+		       -t "$LEADER | lp" \
+		       -c "/usr/sbin/cvexprnt -s "
+	ICON	{
+	    if (opened) {
+	        include ("../iconlib/generic.folder.open.fti");
+	        include ("iconlib/sgi.cvperf.expdir.open.fti");
+	    } else {
+	        include ("../iconlib/generic.folder.closed.fti");
+	        include ("iconlib/sgi.cvperf.fti");
+	    }
+        }
+
+TYPE CvperfCountsFile
+	MATCH	(long(0) == 0x0f0e0031);
+	LEGEND	Pixie counts file
+	CMD OPEN /usr/sbin/cvperf $LEADER
+	MENUCMD "Analyze" /usr/sbin/cvperf $LEADER
+	ICON	{
+	    if (opened) {
+	        include ("../iconlib/generic.doc.open.fti");
+	        include ("iconlib/sgi.cvperf.fti");
+	    } else {
+	        include ("../iconlib/generic.doc.closed.fti");
+	        include ("iconlib/sgi.cvperf.fti");
+	    }
+        }
+
+TYPE CvperfExpFile
+	MATCH	(tag == 0x00010990008 ||
+		 short(0) == 0x1313 ||
+		 glob("USER_SELECTIONS"));
+	LEGEND	ProDev/WorkShop performance file
+	CMD OPEN /usr/sbin/cvperf `/usr/bin/dirname $LEADER`
+	CMD PRINT /usr/sbin/cvexprnt `/usr/bin/dirname $LEADER`	| lp
+	MENUCMD "Analyze" /usr/sbin/cvperf `/usr/bin/dirname $LEADER`
+	MENUCMD "Print Details" /usr/sbin/cvexprnt -d \
+			`/usr/bin/dirname $LEADER` \
+			| lp
+	MENUCMD "Print In Hex" /usr/sbin/cvexprnt -h \
+			`/usr/bin/dirname $LEADER` \
+			| lp
+	MENUCMD "Print Invariants" /usr/sbin/cvexprnt -q \
+			`/usr/bin/dirname  $LEADER` \
+			| lp
+	MENUCMD "Print Selected Bead" \
+		launch -m "Print bead at what offset?" \
+		       -t "$LEADER | lp" \
+		       -c "/usr/sbin/cvexprnt -s "
+	ICON	{
+	    if (opened) {
+	        include ("../iconlib/generic.doc.open.fti");
+	        include ("iconlib/sgi.cvperf.fti");
+	    } else {
+	        include ("../iconlib/generic.doc.closed.fti");
+	        include ("iconlib/sgi.cvperf.fti");
+	    }
+        }
+
+CONVERT CvperfExpDir AsciiTextFile
+	COST 50
+	FILTER /usr/sbin/cvexprnt $LEADER
+
+CONVERT CvperfExpFile AsciiTextFile
+	COST 50
+	FILTER /usr/sbin/cvexprnt `/usr/bin/dirname $LEADER`
+

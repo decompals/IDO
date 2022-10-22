@@ -1,0 +1,14 @@
+#2.7
+ProDev Workshop Advantage
+The Static Analyzer is a cross-reference tool for analyzing and navigating source code. It provides structural and relational information for C, C++, Fortran, or Ada (with purchase of ProDev Ada). You can analyze programs that don't compile, a useful feature when porting code.
+Run the mouse over the main Static Analyzer window for a brief description on each of its functions. Click the bottom right arrow button when you are done.
+
+
+
+
+The Admin menu lets you perform general functions
+The Query Target field allows you to enter the target in specific queries.
+The display area shows the results of queries in the format you select.
+The Views menu lets you view data in a report format, as a call tree, class tree, or a file dependency graph.
+The History menu lets you review or repeat previous queries.
+The Queries menu lets you request specific relationship information related to one or more elements of your source code.

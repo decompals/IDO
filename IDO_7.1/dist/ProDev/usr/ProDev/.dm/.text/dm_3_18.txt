@@ -1,0 +1,33 @@
+#3.18
+Print Static Analyzer Results
+Using the "Admin" menu, you can save any display from the Static Analyzer as a PostScript file.  Then print this PostScript file through normal means.
+Click on the "Admin" menu and select the "Save Query..." option.
+Sorry.  You must click on the "Save Query" option of the "Admin" menu.
+Great!  Your graph is saved in a PostScript file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rescan
+Force Scan
+Change Fileset...
+Edit FileSet...
+General Options...
+Set Include Path
+Results Filter...
+Edit Selected Item
+Sort
+Save Query...
+C++ Browser
+Launch Tool
+Project
+Exit

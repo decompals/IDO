@@ -1,0 +1,20 @@
+#5.1
+Fast Track
+Select the skill(s) you want to learn.  This lesson will include ONLY the skills that you select.  
+
+You want to be able to:
+  Welcome to the Performance Analyzer
+  Setting up a Performance Experiment
+  Running a Performance Experiment
+  Understanding the Main Performance Analyzer Window
+  Looking at Function Statistics in the Function List
+  Looking at Function Statistics in Call Graph View
+  Looking at Performance Statistics in a Source Code Display
+  Analyzing Basic Resource Usage
+  Mapping the Call Stack to Sample Points
+  Looking at Resource Usage in Detail
+  Focusing on a Phase
+  For more Information on the Performance Analyzer
+
+
+Are you finished selecting?

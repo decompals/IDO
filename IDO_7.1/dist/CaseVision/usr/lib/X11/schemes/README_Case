@@ -1,0 +1,60 @@
+
+  This README file is directed toward current users of 5.2/6.0 systems
+  and those who have upgraded from 5.2 to 5.3.
+
+
+  ***************************************************************
+  *								*
+  *   The following schemes are not supported on 5.2 systems:	*
+  *								*
+  *   Arizona/       Gotham/        Inverness/     Metropolis/  *
+  *   Potrero/       RoseGarden/    Bayou/         GrayScale/   *
+  *   KeyWest/       Milan/         RedGreenSafe/  Vancouver/	*
+  *   Buckingham/    IndigoMagic/   Mendocino/     Pacific/     *
+  *   Rio/	     BlackAndWhite/				*
+  *								*
+  ***************************************************************
+
+
+	When WorkShop 2.4 was installed on your system,
+  you may have noticed a large number of new scheme names appearing
+  under /usr/lib/X11/schemes.  These new schemes are named for
+  places (e.g. Arizona) rather than the artist names (e.g. VanGogh)
+  that you have currently.  The new schemes will not be
+  supported until Irix 5.3 so please stick with using the just the
+  artist names in your .Xdefaults file for now.  
+
+	When you upgrade to 5.3, you will have the opportunity to
+  use the new scheme browser in the toolchest to preview and specify 
+  your scheme choice.  The 5.3 scheme browser will allow you to see 
+  a small sample picture of each system scheme before selecting the 
+  one you want for your entire desktop.  Before using the scheme 
+  browser to set your scheme choice, remove the "*scheme: <name>" 
+  setting from your .Xdefaults file so that the two mechanisms for
+  setting your scheme preference don't clash.  If you are using
+  an application that depends upon the old schemes and was not 
+  re-released for 5.3, say tvquery for example, prefix the scheme 
+  resource in your .Xdefaults file with the name of the application:
+
+	tvquery*scheme: Rembrandt
+
+  and the application will go on using the old schemes until a new
+  version is released that plays with the new ones.
+
+	In 5.3, only the place name schemes will be officially 
+  supported; the artist name schemes will still exist for the sake of
+  backward compatibility but they will not appear in the scheme browser.  
+  Some of the more popular artist schemes have been incorporated 
+  under new names into the official 5.3 scheme set.  The map between
+  these old scheme names and the new names is as follows:
+
+	Gainsborough	->	RedGreenSafe
+	Leonardo	->	Bayou
+	Monet		->	RoseGarden
+	Print		->	GrayScale
+	Rembrandt	->	Mendocino
+	Turner		->	Potrero
+	VanGogh		->	Buckingham
+	Whistler	->	Gotham
+	Willis		->	BlackAndWhite
+

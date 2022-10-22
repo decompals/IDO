@@ -1,0 +1,8 @@
+#2.2
+Using Your Silicon Graphics Mouse
+The Silicon Graphics mouse has 3 buttons;  left,  middle,  and right.
+LEFT:  Lets you select and drag things.  (This button acts like the button on a Macintosh mouse.)
+RIGHT:  Lets you pull down menus.
+Demo
+loading demo...
+Macintosh is a registered trademark of Apple Computer, Inc.

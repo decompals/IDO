@@ -1,0 +1,56 @@
+
+<TITLE>Loop Nest Transformations </TITLE>
+</HEAD>
+<BODY ALINK="#FF3300" VLINK="#330099" LINK="#CC0000" BGCOLOR="#fffff" TEXT="#000000">
+<P><!-- Changed by: Suresh Srinivas, 15-Feb-1996 --></P>
+<HR>
+<H1>Viewing Loop Nest Transformations through CITE</H1>
+<HR>
+<P><BR>
+ </P>
+
+<P>
+As the following figure suggests the "View Transformed" toolbar in CITE can 
+be used to view the transformed source after various phases of the compiler 
+such as Loop Nest Optimizer, IPA (post inlining), and the Code Generator.
+</P>
+
+<P><IMG SRC="mmj2.gif" ALIGN="MIDDLE" WIDTH="679" HEIGHT="781" SGI_SETWIDTH SGI_SETHEIGHT></P>
+
+<P>
+Clicking on "Source After LNO" button brings up a new window in which the
+transformed source after the Loop Nest Optimizer is displayed. Notice
+the a line has been highlighted. This line in the transformed source
+corresponds to the line on which the cursor was present in the original
+source. Similarly it is possible to view the transformed source post
+inlining and after the code generation as well.
+</P>
+
+<P><IMG SRC="mmj3.gif" ALIGN="MIDDLE" WIDTH="679" HEIGHT="758" SGI_SETWIDTH SGI_SETHEIGHT></P>
+
+
+<P>
+Both the fortran and C compiler provide a special compiler option
+<tt>-flist</tt> and <tt>-clist</tt> that allow the transformed source
+after the Loop Nest Optimizer to be saved. For example specifying
+<PRE>
+% f77 -64 -mips4 -O3 -flist -FLIST:ftn_file=test-after-lno.f  test.f
+</PRE>
+produces a new file <tt> test-after-lno.f </tt> that contains the
+fortran version of the transformed source. For more details on such options 
+check out the <tt> Makefile</tt> in the <I>Examples</I> directory that come 
+when CITE is installed.
+</P>
+
+<BR>
+<BR>
+<HR>
+<P></P>
+<ADDRESS><I>Suresh Srinivas (ssuresh@mti) </I><BR>
+<I> <FONT SIZE="-1">Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT></I><BR>
+<I> May 30th 1996</I> <BR>
+ <BR>
+ <BR>
+ </ADDRESS>
+</BODY>
+</HTML>

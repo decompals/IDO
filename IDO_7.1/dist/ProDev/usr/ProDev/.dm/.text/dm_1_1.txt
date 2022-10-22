@@ -1,0 +1,4 @@
+#1.1
+Navigating Through the Course
+Your keyboard's right and left arrow keys move you forward and back through the course...
+...or use the arrows in the lower right corner of the screen.

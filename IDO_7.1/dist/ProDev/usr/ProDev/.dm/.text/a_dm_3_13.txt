@@ -1,0 +1,3 @@
+#3.13
+Advantages of Parser Mode
+In this example, the "Where Function Used" query is applied to the variable getplanes. In Source View, only the function actually used is highlighted in contrast to scanner mode which would have highlighted both occurances.

@@ -1,0 +1,512 @@
+!! Magic flag to detect improper installation
+
+*caseSchemesLoaded: true
+
+#ifdef USE_FONTS
+!!
+!! Fonts
+!!
+
+!! all labels should be bold
+*ticMarks*fontList:     BoldLabelFont
+
+
+*SgList*fontList:       PlainLabelFont
+
+!!
+!! Data Browser special fonts
+!!
+!! type name and popup menus
+Cvstruct*dataBrowser*area*fontList:     SmallObliqueLabelFont
+Cvstruct*dataBrowser*resultFormatPopupMenu*fontList: SmallObliqueLabelFont
+Cvstruct*dataBrowser*popupMenu*fontList: SmallObliqueLabelFont
+!! expression name
+Cvstruct*dataBrowser*nameFont:          SmallBoldLabelFont
+!! structure fields
+Cvstruct*dataBrowser*area*dbStructure*fontList: SmallFixedWidthFont
+
+!!
+!! Cvstatic, mPView, ArraySpreadSheet, and Cvperf special fonts
+!!
+!! these need to be constant width because they form columns
+Cvstatic*text_view*XmList.fontList:     FixedWidthFont
+Cvstatic*text_view*SgList.fontList:     FixedWidthFont
+Cvstatic*text_view.label.fontList:      FixedWidthFont
+Cvperf*topNlist.fontList:               FixedWidthFont
+Cvperf*functionListLabel.fontList:      FixedWidthFont
+Cvperf*SgIconGadget.fontList:   FixedWidthFont
+Cvprocvu*framesW.fontList:              FixedWidthFont
+Cvprocvu*callstackHeader.fontList:      FixedWidthFont
+Cvstatic*SgIconGadget.fontList:         SmallPlainLabelFont
+Cvmp*mPView*listHeader.fontList:        FixedWidthFont
+Cvmp*mPView*list.fontList:              FixedWidthFont
+Cvarray*arraySpreadsheet*cell.fontList: FixedWidthFont
+Cvmachine*addressLabel.fontList:        FixedWidthFont
+
+!! Fix the tear off menu font problem where new items added to the
+!! cvstatic history list get the button font
+Cvstatic*TransientShell.XmRowColumn.XmPushButtonGadget.fontList: ObliqueLabelFont
+
+!!
+!! Register view special fonts
+!!
+!! needs to be constant width to compare hex values
+Cvmachine*registerView*value.fontList:  FixedWidthFont
+
+
+!!
+!! SourceView special font
+!!
+*perfLabel.fontList: TinyBoldLabelFont
+*canvasLabel.fontList: TinyBoldLabelFont
+*sourceView*showButton.fontList: SmallPlainLabelFont
+
+!!
+!! Cvhelp special font:  Needs to be narrower than a fixed width
+!!                              font so that non-Showcase cards will
+!!                              fit into the same width as Showcase cards
+!!
+Cvhelp*textSW*fontList:         PlainLabelFont
+Cvhelp*textFixedSW*fontList:    FixedWidthFont
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!  Fonts for WorkShopMP -- cvpav
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Cvpav*funcList.fontList: FixedWidthFont
+Cvpav*loopList.fontList: FixedWidthFont
+Cvpav*loopListLabel.fontList: FixedWidthFont
+Cvpav*loopListPerfLabel.fontList: PlainLabelFont
+Cvpav*loopListStatusLabel.fontList: PlainLabelFont
+Cvpav*dataTextWidget.fontList: PlainLabelFont
+Cvpav*popup_optionMenu*fontList: SmallObliqueLabelFont
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!  Fonts for WorkShop/Tester -- cvxcov
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Cvxcov*XmList.fontList:                 FixedWidthFont
+Cvxcov*SgList.fontList:                 FixedWidthFont
+Cvxcov*listOfHeaders.fontList:          FixedWidthFont
+Cvxcov*typeValueLabel.fontList:         FixedWidthFont
+Cvxcov*sizeLabel.fontList:              FixedWidthFont
+Cvxcov*incLabel.fontList:               SmallFixedWidthFont
+Cvxcov*exLabel.fontList:                SmallFixedWidthFont
+Cvxcov*ncLabel.fontList:                SmallFixedWidthFont
+
+#endif
+
+#ifdef USE_SPACING
+
+!! account for sgiMode when drawing scrolled window for SourceView
+#ifdef SGI_MODE
+*sourceView*textEditSW.scrolledWindowMarginHeight: 0
+*sourceView*textEditSW.spacing: 0
+*sourceView*textEdit.shadowThickness: 1
+#endif
+
+!!
+!! Spacing stuff
+!!
+
+!! we don't really want fat buttons on control panel
+*controlPanel*XmPushButton.marginHeight:        2
+*controlPanel*XmPushButton.marginWidth:         2
+
+
+!! move the text in lists slightly right to improve legibility
+*SgList*listMarginWidth:        3
+
+
+!! spacing between scrollbars and clients should be 2 pixels
+Cvmain*callStack*XmScrolledWindow*spacing:                      2
+!! Cvmain*expressionView*exprChart*XmScrolledWindow*spacing:    -4
+!! Cvmain*varBrowser*exprChart*XmScrolledWindow*spacing:                -4
+!! Cvmachine*registerView*exprChart*XmScrolledWindow.spacing:   -4
+!! *cvstruct*dbStructure*XmScrolledWindow.spacing:              -4
+!! *dataBrowser*area*dbStructure*form*structure*scroll.spacing:         -4
+!! Cvhelp*showcaseScrolledArea*spacing:                         -4
+
+
+!! for some bizarre reason, setting the SourceView scrollBar to 20
+!! yields 10 pixels across the top of the thumb where the
+!! ExpressionView and the CallStack need 18 to get the same thing
+*expressionView*XmScrollBar*width: 18
+*sourceView*XmScrollBar*width:     20
+
+!! Match SgScrollBar default width and height with Base specs for
+!! XmScrollBar
+*SgScrollBar.width: 18
+*SgScrollBar.height: 18
+
+#endif
+
+#ifdef USE_COLORS
+
+!! toggle lists should not be button colored but list colored (shows up
+!! in sgiMode but doesn't hurt to set it all the time)
+*toggleColumns.XmToggleButtonGadget.background: ScrolledListBackground
+!! array cells should not be button colored but background colored 
+*cells*XmPushButtonGadget.background:  BasicBackground
+
+
+!! sourceView has it's own text background because the color selected
+!! for text fields in some schemes may to be too intense 
+!! for SourceView's larger area
+*sourceView*textEdit.background:        TextBackground
+
+!! canvases should not be colored as drawing areas
+*sourceView*drawArea.background:        BasicBackground
+*canvasArea.background:         BasicBackground
+
+
+!! all SourceView icon outlines should be the same as the text foreground
+*pixmap*background:     TextForeground
+
+!! need to set the foreground of highlighted text so
+!! that black&white scheme will work
+*sourceView*textEdit.highlightForeground: HighlightForeground
+
+*sourceView*textEdit.highlightColor1:   TrapColor
+*sourceView*stop*pixmap*foreground:     TrapColor
+*sourceView*stop*scrollBarColor:        ScrollBarTrapColor
+
+*sourceView*textEdit.highlightColor6:           InactiveTrapColor
+*sourceView*inactiveStop*pixmap*foreground:     TrapColor
+*sourceView*inactiveStop*scrollBarColor:        ScrollBarInactiveTrapColor
+
+*sourceView*textEdit.highlightColor2:   ProgramCounterColor
+*sourceView*pc*pixmap*foreground:       ProgramCounterColor
+*sourceView*pc*scrollBarColor:          ScrollBarProgramCounterColor
+
+*sourceView*textEdit.highlightColor3:   SearchColor
+*sourceView*search*pixmap*foreground:   SearchColor
+*sourceView*search*scrollBarColor:      ScrollBarSearchColor
+*sourceView*primary*pixmap*foreground:  SearchColor
+*sourceView*primary*scrollBarColor:     ScrollBarSearchColor
+*sourceView*secondary*pixmap*foreground: CallstackContext
+*sourceView*secondary*scrollBarColor:   ScrollBarCallstackContext
+*sourceView*perf*pixmap*foreground:     SearchColor
+*sourceView*perf*scrollBarColor:        ScrollBarSearchColor
+
+*sourceView*sample*pixmap*foreground:   TrapColor
+*sourceView*sample*scrollBarColor:      ScrollBarTrapColor
+
+*sourceView*inactiveSample*pixmap*foreground:   InactiveTrapColor
+*sourceView*inactiveSample*scrollBarColor:      ScrollBarTrapColor
+
+*sourceView*textEdit.highlightColor5:   CallstackContext
+*sourceView*context*pixmap*foreground:  CallstackContext
+*sourceView*context*scrollBarColor:     ScrollBarCallstackContext
+
+*sourceView*textEdit.highlightColor7:   SyntaxWarningColor
+*sourceView*bbwarning*pixmap*foreground:   SyntaxWarningColor
+*sourceView*bbwarning*scrollBarColor:   ScrollBarWarningColor
+
+*sourceView*textEdit.highlightColor4:   SyntaxErrorColor
+*sourceView*bberror*pixmap*foreground:  SyntaxErrorColor
+*sourceView*bberror*scrollBarColor:     ScrollBarErrorColor
+
+*sourceView*textEdit.highlightColor9:   SessionColor1
+*sourceView*textEdit.highlightColor10:  SessionColor2
+*sourceView*textEdit.highlightColor11:  SessionColor3
+
+*sourceView*intpExtentEditable*scrollBarColor: SessionColor1
+*sourceView*intpExtentParsed*scrollBarColor:   SessionColor2
+*sourceView*intpExtentCompiled*scrollBarColor: SessionColor3
+
+*sourceView*instruct*swatchColor:               HighlightColor1
+*sourceView*instruct*scrollBarColor:            HighlightColor1
+
+*sourceView*percentInstruct*swatchColor:        HighlightColor2
+*sourceView*percentInstruct*scrollBarColor:     HighlightColor2
+
+*sourceView*callCount*swatchColor:              HighlightColor3
+*sourceView*callCount*scrollBarColor:           HighlightColor3
+
+*sourceView*percentPCHits*swatchColor:          HighlightColor4
+*sourceView*percentPCHits*scrollBarColor:       HighlightColor4
+
+*sourceView*loads*swatchColor:                  HighlightColor5
+*sourceView*loads*scrollBarColor:               HighlightColor5
+
+*sourceView*stores*swatchColor:                 HighlightColor6
+*sourceView*stores*scrollBarColor:              HighlightColor6
+
+*sourceView*FPopts*swatchColor:                 HighlightColor7
+*sourceView*FPopts*scrollBarColor:              HighlightColor7
+
+!!
+!! debugger views access to SourceView colors
+!!
+*currentPCbackground:           ProgramCounterColor
+*currentContextBackground:      CallstackContext
+*currentHighlightForeground:    TextForeground
+
+!!
+!! Stripchart resources
+!!
+#ifndef GAMMA_1_0
+
+#define  ChartColor1            #282768
+#define  ChartColor2            #842f2a
+#define  ChartColor3            #004200
+#define  ChartColor4             #ffff00
+#define  ChartColor5             #ff0000
+#define  ChartColor6             #0000ff
+#define  ChartColor7             #00ff00
+#define  ChartColor8             #7307e6
+#define  ChartColor9             #ff7900
+#define  ChartColor10             #00ffff
+#define  ChartColor11             #ff00ff
+#define  ChartColor12           #20441f
+
+#else
+
+#define  ChartColor1   #565597
+#define  ChartColor2   #ad5f59
+#define  ChartColor3   #037303
+#define  ChartColor4             #ffff00
+#define  ChartColor5             #ff0000
+#define  ChartColor6             #0000ff
+#define  ChartColor7             #00ff00
+#define  ChartColor8             #7307e6
+#define  ChartColor9             #ff7900
+#define  ChartColor10             #00ffff
+#define  ChartColor11             #ff00ff
+#define  ChartColor12   #4b754a
+
+#endif
+
+*charts.color0: ChartColor1
+*charts.color1: ChartColor2
+*charts.color2: ChartColor3
+*charts.color3: ChartColor4
+*charts.color4: ChartColor5
+*charts.color5: ChartColor6
+*charts.color6: ChartColor7
+*charts.color7: ChartColor8
+*charts.color8: ChartColor9
+*charts.color9: ChartColor10
+*charts.color10: ChartColor11
+*charts.color11: ChartColor12
+*charts.chartBackground: DrawingAreaBackground
+
+*charts.gridColor:      TextForeground
+Cvprocvu*stripchart.background: DrawingAreaBackground
+
+!!
+!! resources to make stripcharts and heapview work in B&W
+!!
+*fillStyle:  ChartFillStyle
+
+*fillTile0:  25_foreground
+*fillTile1:  slant_right
+*fillTile2:  50_foreground
+*fillTile3:  slant_left
+*fillTile4:  25_foreground
+*fillTile5:  slant_right
+*fillTile6:  50_foreground
+*fillTile7:  slant_left
+*fillTile8:  25_foreground
+*fillTile9:  slant_right
+*fillTile10:  50_foreground
+*fillTile11:  slant_left
+
+*charts*lineStyle0: ChartLineStyle0
+*charts*lineStyle1: ChartLineStyle1
+*charts*lineStyle2: ChartLineStyle2
+*charts*lineStyle3: ChartLineStyle3
+*charts*lineStyle4: ChartLineStyle0
+*charts*lineStyle5: ChartLineStyle1
+*charts*lineStyle6: ChartLineStyle2
+*charts*lineStyle7: ChartLineStyle3
+*charts*lineStyle8: ChartLineStyle0
+*charts*lineStyle9: ChartLineStyle1
+*charts*lineStyle10: ChartLineStyle2
+*charts*lineStyle11: ChartLineStyle3
+
+
+! Cvperf colors
+Cvperf*targetColor: DrawingAreaNodeColor1
+Cvperf*sourceColor: DrawingAreaNodeColor2
+
+
+! Registration Point (Trap) Colors
+*registrationPoint1.foreground: HighlightColor1
+*registrationPoint2.foreground: HighlightColor2
+*registrationPoint3.foreground: HighlightColor3
+*registrationPoint4.foreground: HighlightColor4
+*registrationPoint5.foreground: HighlightColor5
+*registrationPoint6.foreground: HighlightColor6
+*registrationPoint7.foreground: HighlightColor7
+*registrationPoint8.foreground: HighlightColor8
+
+
+!! TimeLine resources
+*LocalCaliperDrawingArea.background:    TimeLineBackground
+*GlobalCaliperDrawingArea.background:   TimeLineBackground
+*ScaleDrawingArea.background:           TimeLineBackground
+*CaliperDrawingArea.background:         TimeLineBackground
+*ticMarks.foreground:                   TextForeground
+*arrowHighlight.foreground:             TextForeground
+*newCaliper.foreground:                 TextForeground
+*oldCaliper.foreground:                 ButtonBackground
+
+
+!! Help colors
+!!
+Cvhelp*currentColor:            HighlightColor1
+Cvhelp*viewerColor:             HighlightColor2
+Cvhelp*constraintColor:         HighlightColor4
+Cvhelp*XmGraph*XmDrawingArea.background:    ScrolledListBackground
+Cvhelp*XmGraph*XmScrolledWindowClipWindow.background:    ScrolledListBackground
+Cvhelp*XmGraph*highlightColor:  TextForeground
+
+Cvstruct*dataBrowser*XmDrawingArea.background:  DrawingAreaBackground
+!! covers the case where drawing area is smaller than the scrolled window
+Cvstruct*dataBrowser*sw.ScrolledWindowClipWindow.background:    DrawingAreaBackground
+Cvstruct*dataBrowser*structure*scroll.ScrolledWindowClipWindow.background:      BasicBackground
+Cvstruct*dataBrowser*highlightColor:            TextForeground
+Cvstruct**outlineColor:         TextForeground
+Cvstruct*dataBrowser*typeColor1:                        HighlightColor1
+Cvstruct*dataBrowser*typeColor2:                        HighlightColor2
+Cvstruct*dataBrowser*typeColor3:                        HighlightColor3
+Cvstruct*dataBrowser*typeColor4:                        HighlightColor4
+Cvstruct*dataBrowser*typeColor5:                        HighlightColor5
+Cvstruct*dataBrowser*typeColor6:                        HighlightColor6
+Cvstruct*dataBrowser*typeColor7:                        HighlightColor7
+Cvstruct*dataBrowser*typeColor8:                        HighlightColor8
+
+
+!! highlight for suspect register values
+Cvmachine*registerView*changedBackground:       DrawingAreaNodeColor1
+Cvmachine*registerView*changedForeground:       TextForeground
+
+
+!! Cvstatic node colors
+*targetColor:           DrawingAreaNodeColor1
+*resultColor:           DrawingAreaNodeColor2
+Cvstatic*SgGraph*highlightColor: DrawingAreaContrastColor1
+!! Cvheapvu special colors
+Cvheapvu*maparea*mallocColor:           DrawingAreaContrastColor1
+Cvheapvu*maparea*mallocScrollBarColor:  ScrollBarColor1
+Cvheapvu*maparea*freeColor:             DrawingAreaContrastColor3
+Cvheapvu*maparea*reallocColor:          DrawingAreaContrastColor2
+Cvheapvu*maparea*reallocScrollBarColor: ScrollBarColor2
+Cvheapvu*maparea*badFreeColor:          TrapColor
+Cvheapvu*maparea*badFreeScrollBarColor: ScrollBarTrapColor
+Cvheapvu*maparea*borderColor:           BasicBackground
+Cvheapvu*maparea*highlightColor:        HighlightColor3
+
+
+!! Cvbuild node colors
+*buildGraph*sourceBackground:   SourceBackground
+*buildGraph*modifiedColor:      ModifiedBackground
+*buildGraph*derivedBackground:  DerivedBackground
+*buildGraph*obsoleteColor:      ObsoleteColor
+
+! error and checkmark icon colors 
+*buildLog*errorColor:           ScrollBarErrorColor
+*buildLog*checkColor:           CheckMarkColor
+
+
+
+!! Cvbuild graph node highlighting
+!!
+Cvbuild*XmGraph*highlightThickness: 1
+
+!!
+!! Cvstatic (C++ Browser) class graph arc colors for following relations
+!! among classes: inheritance, interaction, components and friends
+!!
+!! added by Ravi on Thu Jan  7 10:01:03 PST 1993
+!!
+
+Cvstatic*inheritance.foreground: HighlightColor1
+Cvstatic*interaction.foreground: HighlightColor2
+Cvstatic*components.foreground:  HighlightColor3
+Cvstatic*friends.foreground:     HighlightColor4
+
+!!
+!! Cvstatic (C++ Browser) class view highlight colors
+!!
+!! added by Ravi on Fri Oct 22 13:00:30 PDT 1993
+!!
+
+Cvstatic*browserHighlight:          SearchColor
+Cvstatic*browserScrollBarHighlight: ScrollBarSearchColor
+
+!!
+!!  fixes for drawing areas that shouldn't be colored as drawing areas
+!!
+*pane.chartArea.ScrolledWindowClipWindow.background: BasicBackground
+*pane.chartArea.ScrolledWindowClipWindow.charts.UserSysTime.blankVertical.background: BasicBackground
+*processUsage*ScrolledWindowClipWindow.background: BasicBackground
+*sysUsage*ScrolledWindowClipWindow.background:  BasicBackground
+*graphUsage*ScrolledWindowClipWindow.background: BasicBackground
+*pane*charts*blankVertical.background: BasicBackground
+
+
+!! round button icons
+!*continueOrStopButton*activeHighlightColor:      green
+!*continueOrStopButton*inactiveHighlightColor:    green
+!*continueOrStopButton*altActiveHighlightColor:   red
+!*continueOrStopButton*altInactiveHighlightColor: red
+
+
+!! session colors for menubars
+!! WARNING: these no longer match up because SessionColor2 became 
+!! SessionColor1 and the next two session colors (2 and 3) became 
+!! 3 and 4.  Therefore, CaseVision's sessionColor1 is now linked 
+!! to the previous session color 1 (now 4) as defined
+!! in the CaseVision pallette.
+*sessionColor1:         BasicBackground
+*sessionColor2:         SessionColor1
+*sessionColor3:         SessionColor2
+*sessionColor4:         SessionColor3
+*sessionColor5:         SessionColor5
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!  Colors for WorkShopMP -- cvpav
+!       the colors used are SourceView names, as they should match
+!       with the attached sourceviews
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Cvpav*parallelColor:    HighlightColor2
+Cvpav*serialColor:      HighlightColor8
+Cvpav*unparallelColor:  HighlightColor1
+Cvpav*oloopColor:       ScrollBarCallstackContext
+Cvpav*tloopColor:       HighlightColor3
+
+*drawArea*parallelColor:        HighlightColor2
+*drawArea*serialColor:  HighlightColor8
+*drawArea*unparallelColor:      HighlightColor1
+*drawArea*oloopColor:   ScrollBarCallstackContext
+*drawArea*tloopColor:   HighlightColor3
+
+*canvasArea*parallelColor:      HighlightColor2
+*canvasArea*serialColor:        HighlightColor8
+*canvasArea*unparallelColor:    HighlightColor1
+*canvasArea*oloopColor: ScrollBarCallstackContext
+*canvasArea*tloopColor: HighlightColor3
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!  Colors for WorkShop/Tester -- cvxcov
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Cvxcov*includeNodeColor:                DrawingAreaNodeColor1
+Cvxcov*excludeNodeColor:                BasicBackground
+Cvxcov*zeroCountNodeColor:              DrawingAreaNodeColor2
+Cvxcov*zeroCountArcColor:               ScrollBarColor2
+Cvxcov*listHighlightColor:              SessionColor2
+Cvxcov*textHighlightColor:              ScrollBarTrapColor
+Cvxcov*dataHighlightColor:              ScrollBarTroughColor
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!  Colors for Interpreter
+!     these are same as that of cvmake
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*_prv_list*errorColor:           ScrollBarErrorColor
+*_prv_list*checkColor:           CheckMarkColor
+
+#endif

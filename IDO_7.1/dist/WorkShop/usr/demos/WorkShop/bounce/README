@@ -1,0 +1,81 @@
+The files in this directory are from the book "Object-Oriented Programming
+with C++ and OSF/Motif", by Doug Young, available from Prentice Hall early
+1992.  The ISBN number is 0-13-630252-1.  All source is copyrighted by
+Prentice Hall.
+
+	Copyright 1992 by Prentice Hall
+	All Rights Reserved
+
+	Permission to use, copy, modify, and distribute this software without
+	fee is hereby granted, provided that the above copyright notice appear
+	in all copies and that both the copyright notice and this permission
+	notice appear in supporting documentation.
+
+The files in this directory implement a small application framework, called
+MotifApp, and a program that shows a simple animation. The demo program,
+"bounce", creates a "Stage" on which the user can place bouncing balls of
+various colors.  The speed of the animation can be controlled with a
+slider, and the animation can be started, stopped, and single stepped.
+
+This directory has been re-organized to serve as a simple self-contained
+collection of C++ classes to use for CASEVision/WorkShop demos. Normally, the
+files that make the applciation framework would be built in a separate library
+and linked with the files in the program. The "application framework" part
+consists of the files:
+
+	Actor.C
+	Clock.C
+	Cmd.C
+	CmdInterface.C
+	CmdList.C
+	ColorChooser.C
+	ColorModel.C
+	ColorView.C
+	DialogManager.C
+	HSVView.C
+	InfoDialogManager.C
+	Main.C
+	MainWindow.C
+	MenuBar.C
+	MenuWindow.C
+	NoUndoCmd.C
+	QuestionDialogManager.C
+	QuitCmd.C
+	RGBController.C
+	RGBView.C
+	SwatchView.C
+	TextView.C
+	UIComponent.C
+	UndoCmd.C
+	WarnNoUndoCmdC
+
+
+The files that belong to the bounce program itself are:
+
+	AddBallCmd.C
+	BounceApp.C
+	BounceClock.C
+	BounceWindow.C
+	BouncingBall.C
+	ControlPanel.C
+	RunCmd.C
+	Stage.C
+	StepCmd.C
+	StopCmd.C
+
+
+To build the program, just type "make". To run the demo, type "bounce". The
+file Bounce.appdefaults contains some useful resource settings for the
+program. You should install this as "Bounce" in your app-defaults directory
+(usually /usr/lib/X11/app-defaults).
+
+All code is preliminary, subject to change, and provided for purposes of
+demonstration only. In particular, there will be minor differences between
+the sources included here and the final form of the sources that appar in
+the book. 
+
+
+
+
+
+

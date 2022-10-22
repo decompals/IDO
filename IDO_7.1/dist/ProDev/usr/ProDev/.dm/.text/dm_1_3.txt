@@ -1,0 +1,13 @@
+#1.3
+The Fast Track
+At the beginning of each lesson you have an option of taking the entire lesson or taking the "Fast Track."  
+
+The Fast Track lets you review the learning objectives and choose what you want to learn.  The lesson will skip any objectives that you did not select.  Let's practice selecting lesson objectives.
+view file dependencies
+set a break point
+watch a variable
+Act as if you were on a Fast Track.  To the right, lesson objectives are written on buttons. Click once on each of these buttons to see what happens.
+If this were a real lesson, then learning how to "
+" would be included in the lesson.  Click on this objective again to deselect it or click on another objective.
+You have "deselected" the objective "
+".  When you deselect an objective, the computer will skip this part of the lesson.  Click on this objective again to select it.  You can also click on another objective.

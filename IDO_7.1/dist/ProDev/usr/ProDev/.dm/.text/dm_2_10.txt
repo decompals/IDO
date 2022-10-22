@@ -1,0 +1,5 @@
+#2.10
+ProDev WorkShop License
+A courtesy license, valid for a limited numbers of days, is shipped with ProDev WorkShop so that you can use ProDev WorkShop immediately.
+
+To obtain a permanent license, follow the directions on your "Software License Registration" card that is sent with your ProDev WorkShop software.

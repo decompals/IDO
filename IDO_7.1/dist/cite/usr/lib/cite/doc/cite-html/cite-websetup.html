@@ -1,0 +1,64 @@
+
+<HEAD>
+<BODY bgcolor="fffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+<TITLE> Setup for Web Install</TITLE>
+<!-- Changed by: Suresh Srinivas, 10-Feb-1996 -->
+</HEAD>
+<BODY>
+<P>
+<BR> <HR> <P>
+<H1><A NAME=WebSetup> Web Installation Set Up</A></H1>
+<BR> <HR> <P>
+
+<P>
+You need to perform this set up only if the following 
+item is not on your system<BR>
+ <BR>
+ /usr/sbin/tardist<BR>
+ <BR>
+</P>
+
+
+<P>
+This Set Up procedure will install <tt> tardist</tt> on your system. 
+It will also modify the <tt>mailcap</tt> and <tt>mime.types</tt> files in 
+<tt>/usr/local/lib/netscape</tt>.  That will enable your system to automatically
+unpackage a software distribution downloaded from the Web, open
+Software Manager and direct Software Manager to the distribution for
+installation. 
+</P>
+
+
+<H3>1. Download <I>webinstall.sh </I>script from the Web</H3>
+<OL>
+<LI>Bring up the <A HREF="webinstall.sh"><I>Save As </I></A>dialog box.<BR>
+<LI>Replace the contents of the <I>Selection </I>text field in the <I>Save As </I>dialog with: <CODE>/usr/tmp/webinstall.sh</CODE> 
+<LI>Click <I>OK </I>in the <I>Save As </I>window. This will save a file named <I>webinstall.sh</I> into the<I> /usr/tmp </I>directory. 
+</OL>
+
+<H3>2. Enter commands to run the script</H3>
+<OL>
+<LI>Open a shell window  from the <I>Desktop</I> toolchest. <BR>
+<LI>At the prompt type the following series of commands to run the set up script: <BR>
+<BR>
+
+ <I>%</I> su <BR>
+ <I>#</I> cd /usr/tmp <BR>
+ <I>#</I> sh webinstall.sh<BR>
+ <I>#</I> rm webinstall.sh<BR>
+ <I>#</I> exit<BR>
+ <BR>
+</OL>
+</BODY>
+</HTML>
+<BR> <HR>
+<P><ADDRESS>
+<I>Suresh Srinivas (ssuresh@mti) <BR>
+<FONT SIZE="-3"> </FONT><FONT SIZE="-1"> Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT><BR>
+April 3rd 1996</I> <BR>
+<BR>
+<BR>
+(Generously borrowed from the 
+<FONT SIZE="-3"><A HREF="http://www.sgi.com/Products/Evaluation/"> <IMG SRC="buttonSurf.gif" WIDTH="54" HEIGHT="54"></A> </FONT> web site) <BR>
+</ADDRESS>
+</BODY>

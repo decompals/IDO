@@ -1,0 +1,1 @@
+<BOOK name="MProAsLg_PG" edition="19961109" alias = "MIPSpro Assembly Language Programmer's Guide" type = "sgi_developer" hide = "FALSE" version = "007-2418-002" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

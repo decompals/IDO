@@ -1,0 +1,31 @@
+###4.9
+Examining Data
+The "Views" pull-down menu allows you to view data relevant to the current location.
+Select "Call Stack" from the Views menu.
+The Call Stack View displays the current function and call hierarchy, including functions, arguments, and locations.  Double-clicking a frame in the Call-Stack displays the function's code.
+Double-click the do-accel stack frame to return to the current PC location.
+Double-click the "iterate" stack frame to shift the stack to the "iterate" function.  
+The source code for iterate now appears in the source code display area with the call to the current frame highlighted.
+Click on the bottom right arrow to continue.
+
+
+Array Browser
+Call Stack
+Disassembly View
+Exception View
+Execution View
+Expression View
+File Browser
+Memory View
+Process Meter
+Register View
+Signal Panel
+Source View
+Structure Browser  Alt+B
+Syscall Panel
+Task View
+Trap Manager
+Variable Browser
+X/Motif Analyzer
+
+The source code for do_accel now appears in the source code display area with the call to the current frame highlighted.

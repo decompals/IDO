@@ -1,0 +1,10 @@
+<MKLOG name='./books/UI_Glines/index' version='-1' date='Sat Mar  9 17:54:05 1996' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    13038, offset    1, on   Sat Mar  9 17:54:11 1996.
+
+MERGE vocab.dat :   2 files, Vocab size  5037 on                           .
+
+MERGE index.dat :   2 files, Vocab size  5037 on                           .
+
+DONE MAKING BOOK
+

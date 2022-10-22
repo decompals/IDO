@@ -1,0 +1,14 @@
+<MKLOG name='./books/XLib_WinSys/index' version='-1' date='Sat Mar  9 11:54:08 1996' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    11802, offset 25230, on   Sat Mar  9 11:54:11 1996.
+
+FLUSH    3: Element    27097, offset 15303, on   Sat Mar  9 11:54:15 1996.
+
+FLUSH    4: Element    41604, offset    2, on   Sat Mar  9 11:54:18 1996.
+
+MERGE vocab.dat :   4 files, Vocab size 13014 on                           .
+
+MERGE index.dat :   4 files, Vocab size 13014 on                           .
+
+DONE MAKING BOOK
+

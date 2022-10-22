@@ -1,0 +1,23 @@
+#2.13
+Review
+Click on a question below and then type the answer for that crossword question. Note: You will not be able to backspace or delete letters.
+Across:
+1.  The Performance Analyzer finds these leaks.
+2.  The __________ Analyzer lets you visually inspect the structure and internal relationships of your code.
+3.  The _______________ Analyzer can pinpoint CPU, memory/swap, and I/O bottlenecks.
+5.  The most powerful environment for developing UNIX applications today.
+6.  During intense computer work, you should do non-computer related tasks for at least ___ minutes every hour.
+Down:
+1.  The Debugger lets you debug ________________ programs.
+4.  You can attach the Debugger to a running process or a ____ dump file.
+MEMORY
+PERFORMANCE
+DEVELOPERMAGIC
+CORE
+STATIC
+TEN
+MULTIPROCESS
+COMPILATION
+Reset
+Hint
+Answer

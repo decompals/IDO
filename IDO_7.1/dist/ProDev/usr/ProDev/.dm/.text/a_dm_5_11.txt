@@ -1,0 +1,5 @@
+###5.11
+
+If you select "Usage View (Graphs)" from the Views menu, you can see additional resource usage information.  This window is already displayed for the purpose of this exercise.
+Look at the data.  Click in the lower part of the scroll bar to see the other graphs.  Click the bottom right arrow when you are done.
+

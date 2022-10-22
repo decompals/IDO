@@ -1,0 +1,57 @@
+.\" 
+.\" finance -- mortgage loan calculator
+.\"
+.TH finance 1
+.SH NAME
+finance \- mortgage loan calculator
+.SH SYNOPSIS
+.B finance
+.SH DESCRIPTION
+
+Finance is a
+.B MOTIF
+based tool for figuring your monthly payment.
+Given a term in YEARS, the PRINCIPAL loan amount, and interest RATE,
+it computes the montly PAYMENT.  Setting the PAYMENT text field recomputes
+PRINCIPAL.
+
+By default, the four text fields will contain:
+
+.br
+           Years  15
+       Principal  75000
+            Rate  6.75
+         Payment  663.68
+
+Labels, and initial values can be configured through resources:
+
+.br
+Finance*background: DarkGreen
+.br
+Finance*fontList: 12x24
+.br
+Finance*yearsLabel.labelString:  Years
+.br
+Finance*yearsTextField.value:  15
+.br
+Finance*principalLabel.labelString:  Principal
+.br
+Finance*principalTextField.value:  75000
+.br
+Finance*rateLabel.labelString:  Rate
+.br
+Finance*rateTextField.value:  6.75
+.br
+Finance*paymentLabel.labelString:  Payment
+.br
+Finance*paymentTextField.value:  663.68
+
+.SH EXAMPLES
+finance
+.br
+
+.SH CAVEATS
+Precision may be off by a cent.
+
+.SH KEYWORDS
+loan, mortgage

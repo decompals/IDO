@@ -1,0 +1,704 @@
+<!-- Version $Revision: 1.7 $ of the TOC stylesheet -->
+
+<!ENTITY	add.left-indent	CDATA	"+=20"	>
+<!ENTITY	app.text-b4	CDATA	"if(isempty(attr(LBL,ancestor(APPENDIX))),'',switch(attr(LANG,ancestor(SGIDOC)),de,Anhang ,fr,Appendice ,ja_JP.EUC,•t˜^ ,DEFAULT,Appendix ) attr(LBL,ancestor(APPENDIX))join('<SAMP>  <','/SAMP>'))">
+<!ENTITY	body.font-size	CDATA	"12"	>
+<!ENTITY	body.line-space	CDATA	"14"	>
+<!ENTITY	chp.text-b4	CDATA	"if(isempty(attr(LBL,ancestor(CHAPTER))),'',switch(attr(LANG,ancestor(SGIDOC)),de,Kapitel ,fr,Chapitre ,ja_JP.EUC,‘æ ,DEFAULT,Chapter ) attr(LBL,ancestor(CHAPTER))switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC, Í,DEFAULT,)join('<SAMP>  <','/SAMP>'))">
+<!ENTITY	chp.title.font-family	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,gothic,DEFAULT,helvetica)"	>
+<!ENTITY	chp.title.font-size	CDATA	"12"	>
+<!ENTITY	chp.title.font-weight	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,Medium,DEFAULT,Bold)"	>
+<!ENTITY	chp.title.left-indent	CDATA	"40"	>
+<!ENTITY	chp.title.space-before	CDATA	"6"	>
+<!ENTITY	doc.title.font-size	CDATA	"16"	>
+<!ENTITY	doc.title.line-space	CDATA	"21"	>
+<!ENTITY	left-indent.1	CDATA	"4"	>
+<!ENTITY	title-font	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,mincho,DEFAULT,new century schoolbook)"	>
+<!ENTITY	title.font-family	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,gothic,DEFAULT,helvetica)"	>
+<!ENTITY	title.foreground	CDATA	"black"	>
+<!ENTITY	title.space-before	CDATA	"4"	>
+<!ENTITY	font-slant.roman	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,*,DEFAULT,Roman)"	>
+<!ENTITY	font-slant.italics	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,*,DEFAULT,Italics)"	>
+<!ENTITY	font-weight.bold	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,Medium,DEFAULT,Bold)"	>
+<!ENTITY	font-weight.medium	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,Medium,DEFAULT,Medium)"   >
+<!ENTITY	def.font-family	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,mincho,DEFAULT,times)"	>
+
+<sheet >
+
+
+
+<?INSTED COMMENT: GROUP #ROOT>
+
+<group name="#ROOT">
+	<left-indent>	&left-indent.1	</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP address>
+
+<group name="address">
+	<font-slant>	&font-slant.italics	</>
+	<break-before>	Line	</>
+	<text-before><address></>
+	<text-after>join('<','/address>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP b>
+
+<group name="b">
+	<font-weight>	&font-weight.bold	</>
+	<text-before><b></>
+	<text-after>join('<','/b>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP blockquote>
+
+<group name="blockquote">
+	<left-indent>	+=10	</>
+	<space-before>	14	</>
+	<break-before>	Line	</>
+	<text-before><blockquote></>
+	<text-after>join('<','/blockquote>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP br>
+
+<group name="br">
+	<break-before>	Line	</>
+	<text-before><br></>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP cite>
+
+<group name="cite">
+	<font-slant>	&font-slant.italics	</>
+	<text-before><cite></>
+	<text-after>join('<','/cite>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP code>
+
+<group name="code">
+	<font-family>	courier	</>
+	<text-before><code></>
+	<text-after>join('<','/code>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP dd>
+
+<group name="dd">
+	<left-indent>	+=55	</>
+	<text-before><dd></>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP dir>
+
+<group name="dir">
+	<left-indent>	+=10	</>
+	<space-before>	14	</>
+	<break-before>	Line	</>
+	<text-before><dir></>
+	<text-after>join('<','/dir>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP dl>
+
+<group name="dl">
+	<space-before>	14	</>
+	<break-before>	Line	</>
+	<text-before><dl></>
+	<text-after>join('<','/dl>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP dt>
+
+<group name="dt">
+	<width>	50	</>
+	<break-before>	Line	</>
+	<text-before><dt></>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP em>
+
+<group name="em">
+	<font-slant>	&font-slant.italics	</>
+	<text-before><em></>
+	<text-after>join('<','/em>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP h1>
+
+<group name="h1">
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	24	</>
+	<line-spacing>	29	</>
+	<break-before>	Line	</>
+	<text-before><h1></>
+	<text-after>join('<','/h1>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP h2>
+
+<group name="h2">
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	18	</>
+	<line-spacing>	22	</>
+	<break-before>	Line	</>
+	<text-before><h2></>
+	<text-after>join('<','/h2>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP h3>
+
+<group name="h3">
+	<font-weight>	&font-weight.bold	</>
+	<break-before>	Line	</>
+	<text-before><h3></>
+	<text-after>join('<','/h3>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP h4>
+
+<group name="h4">
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	12	</>
+	<line-spacing>	14	</>
+	<break-before>	Line	</>
+	<text-before><h4></>
+	<text-after>join('<','/h4>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP h5>
+
+<group name="h5">
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	10	</>
+	<line-spacing>	12	</>
+	<break-before>	Line	</>
+	<text-before><h5></>
+	<text-after>join('<','/h5>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP h6>
+
+<group name="h6">
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	8	</>
+	<line-spacing>	10	</>
+	<break-before>	Line	</>
+	<text-before><h6></>
+	<text-after>join('<','/h6>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP hr>
+
+<group name="hr">
+	<hrule>	Before	</>
+	<text-before><hr></>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP i>
+
+<group name="i">
+	<font-slant>	&font-slant.italics	</>
+	<text-before><i></>
+	<text-after>join('<','/i>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP kbd>
+
+<group name="kbd">
+	<font-family>	courier	</>
+	<text-before><kbd></>
+	<text-after>join('<','/kbd>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP li>
+
+<group name="li">
+	<left-indent>	+=10	</>
+	<first-indent>	-10	</>
+	<break-before>	Line	</>
+	<text-before><li></>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP menu>
+
+<group name="menu">
+	<left-indent>	+=10	</>
+	<space-before>	14	</>
+	<break-before>	Line	</>
+	<text-before><menu></>
+	<text-after>join('<','/menu>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP ol>
+
+<group name="ol">
+	<left-indent>	+=10	</>
+	<space-before>	14	</>
+	<break-before>	Line	</>
+	<text-before><ol></>
+	<text-after>join('<','/ol>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP p>
+
+<group name="p">
+	<space-before>	14	</>
+	<break-before>	Line	</>
+	<text-before><p></>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP pre>
+
+<group name="pre">
+	<font-family>	courier	</>
+	<space-before>	14	</>
+	<justification>	Verbatim	</>
+	<break-before>	Line	</>
+	<text-before><pre></>
+	<text-after>join('<','/pre>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP samp>
+
+<group name="samp">
+	<font-family>	courier	</>
+	<text-before><samp></>
+	<text-after>join('<','/samp>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP strong>
+
+<group name="strong">
+	<font-weight>	&font-weight.bold	</>
+	<text-before><strong></>
+	<text-after>join('<','/strong>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP title>
+
+<group name="title">
+	<font-family>	&title-font	</>
+	<font-weight>	&font-weight.medium	</>
+	<font-slant>	&font-slant.roman	</>
+	<font-size>	&body.font-size	</>
+	<foreground>	&title.foreground	</>
+	<line-spacing>	&body.line-space	</>
+	<justification>	Left	</>
+	<break-before>	True	</>
+</group>
+
+<style name="APPENDIX,TITLE" group="title">
+	<font-family>	&chp.title.font-family	</>
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	12	</>
+	<left-indent>	&chp.title.left-indent	</>
+	<space-before>	&chp.title.space-before	</>
+	<text-before>&app.text-b4</>
+</style>
+
+<style name="CHAPTER,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&chp.title.font-weight	</>
+	<font-size>	&chp.title.font-size	</>
+	<left-indent>	&chp.title.left-indent	</>
+	<space-before>	&chp.title.space-before	</>
+	<text-before>&chp.text-b4</>
+</style>
+
+<style name="GLOSSARY,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	12	</>
+	<space-before>	&title.space-before	</>
+</style>
+
+<style name="GLOSSARYENTRY" group="title">
+	<font-family>	&title.font-family	</>
+	<space-before>	&title.space-before	</>
+</style>
+
+<style name="INTRODUCTION,TITLE" group="title">
+	<font-family>	&title.font-family 	</>
+	<font-weight>	&chp.title.font-weight	</>
+	<font-size>	&chp.title.font-size	</>
+	<space-before>	&chp.title.space-before	</>
+</style>
+
+<style name="PART,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&font-weight.bold	</>
+	<left-indent>	40	</>
+	<space-before>	&title.space-before	</>
+	<text-before>PART switch(attr(LBL,ancestor(PART)),I,ONE,II,TWO,III,THREE,IV,FOUR,V,FIVE,VI,SIX,VII,SEVEN,VIII,EIGHT,IX,NINE,DEFAULT,TEN) join('<SAMP>	<','/SAMP>')	</>
+</style>
+
+<style name="REFERENCE,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&chp.title.font-weight	</>
+	<font-size>	&chp.title.font-size	</>
+	<space-before>	&chp.title.space-before	</>
+</style>
+
+<style name="REFNAME" group="title">
+	<font-family>	&title.font-family	</>
+	<font-size>	12	</>
+	<left-indent>	60	</>
+	<first-indent>	if(isempty(attr(LBL,ancestor(SECTION1))),0,-=25)	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION1))),'',join(attr(LBL,ancestor(SECTION1)),'   '))</>
+</style>
+
+<style name="SECTION1,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-size>	&chp.title.font-size	</>
+	<first-indent>	if(isempty(attr(LBL,ancestor(SECTION1))),0,-=25)	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION1))),'',join(attr(LBL,ancestor(SECTION1)),'   '))</>
+</style>
+
+<style name="SECTION2,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<first-indent>	if(isempty(attr(LBL,ancestor(SECTION2))),0,-=35)	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION2))),'',join(attr(LBL,ancestor(SECTION2)),'   '))</>
+</style>
+
+<style name="SECTION3,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION3))),'',join(attr(LBL,ancestor(SECTION3)),'   '))</>
+</style>
+
+<style name="SECTION4,TITLE" group="title">
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION4))),'',join(attr(LBL,ancestor(SECTION4)),'   '))</>
+</style>
+
+<style name="SGIDOC,TITLE" group="title">
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	&doc.title.font-size	</>
+	<line-spacing>	&doc.title.line-space	</>
+	<space-before>	&title.space-before	</>
+	<title-tag>	"	</>
+</style>
+
+<style name="SPARES,TITLE" group="title">
+</style>
+
+<style name="SSB,TITLE" group="title">
+</style>
+
+<style name="TITLEPAGE,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	&doc.title.font-size	</>
+	<line-spacing>	&doc.title.line-space	</>
+	<space-before>	&title.space-before	</>
+</style>
+
+<style name="WHITEPAPER,TITLE" group="title">
+</style>
+
+
+
+<?INSTED COMMENT: GROUP tt>
+
+<group name="tt">
+	<font-family>	courier	</>
+	<text-before><tt></>
+	<text-after>join('<','/tt>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP ul>
+
+<group name="ul">
+	<left-indent>	+=10	</>
+	<space-before>	14	</>
+	<break-before>	Line	</>
+	<text-before><ul></>
+	<text-after>join('<','/ul>')</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP var>
+
+<group name="var">
+	<font-slant>	Italics	</>
+	<text-before><var></>
+	<text-after>join('<','/var>')</>
+</group>
+
+
+
+<?INSTED COMMENT: UNGROUPED STYLES FOLLOW>
+
+<style name="#DEFAULT">
+	<font-family>	times	</>
+	<font-weight>	Medium	</>
+	<font-slant>	Roman	</>
+	<font-video>	Regular	</>
+	<font-size>	14	</>
+	<line-spacing>	17	</>
+</style>
+
+<style name="#SDATA">
+	<text-before>switch(attr(name),trade,'(TM)',mdash,'-',DEFAULT,join('&',attr(name),';'))</>
+</style>
+
+<style name="#TAGS">
+	<foreground>	purple	</>
+</style>
+
+<!-- Style"#toc-annot" is reserved, and defines the appearance of the
+     bookmarks, word frequencies, location markers, etc. in left margin.
+-->
+<style name="#TOC-ANNOT">
+	<font-family>	courier	</>
+	<font-weight>	Bold	</>
+	<font-size>	12	</>
+	<character-set>	fontspecific	</>
+	<foreground>	magenta	</>
+</style>
+
+<style name="APPENDIX">
+	<left-indent>	if(isempty(attr(LBL)),+=20,+=95)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="APPENDIX,SECTION1,SECTION2">
+	<left-indent>	if(isempty(attr(LBL)),+=14,+=35)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="APPENDIX,SECTION1,SECTION2,SECTION3">
+	<left-indent>	if(isempty(attr(LBL)),+=14,-=25)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="APPENDIX,TITLE,#TEXT-BEFORE">
+	<font-weight>	Medium	</>
+	<font-slant>	Italics	</>
+	<font-size>	12	</>
+	<break-after>	True	</>
+</style>
+
+<style name="BUTTON">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="CHAPTER">
+	<left-indent>	if(isempty(attr(LBL)),+=20,+=95)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="CHAPTER,TITLE,#TEXT-BEFORE">
+	<font-family>	helvetica	</>
+	<font-weight>	Medium	</>
+	<font-slant>	Italics	</>
+	<font-size>	12	</>
+	<break-after>	True	</>
+</style>
+
+<style name="COMMAND">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="EMPHASIS">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="FILENAME">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="FRONTMATTER">
+	<font-family>	helvetica	</>
+	<font-weight>	&chp.title.font-weight	</>
+	<font-size>	&chp.title.font-size	</>
+	<left-indent>	&chp.title.left-indent	</>
+	<space-before>	&chp.title.space-before	</>
+	<title-tag>	#TEXT-BEFORE	</>
+	<text-before>Front Matter</>
+</style>
+
+<style name="GLOSSARY">
+	<left-indent>	+=20	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="GLOSSARYTERM">
+	<left-indent>	+=15	</>
+	<title-tag>	GLOSSARYENTRY	</>
+</style>
+
+<style name="INTRODUCTION">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="INTRODUCTION,SECTION1">
+	<left-indent>	+=20	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="ITALICS">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="MANUAL">
+	<title-tag>	FRONTMATTER,TITLEPAGE,TITLE	</>
+</style>
+
+<style name="PARAGRAPH">
+	<font-weight>	Bold	</>
+</style>
+
+<style name="PART">
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="PART,TITLE,#TEXT-BEFORE">
+	<font-family>	helvetica	</>
+	<font-weight>	Medium	</>
+	<break-after>	True	</>
+</style>
+
+<style name="PROGRAMNAME">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="REFENTRY">
+	<title-tag>	REFMETA	</>
+</style>
+
+<style name="REFERENCE">
+	<left-indent>	if(isempty(attr(LBL)),+=20,+=95)	</>
+	<title-tag>	if(ancestor(APPENDIX),,TITLE)	</>
+</style>
+
+<style name="REFMETA">
+	<font-family>	helvetica	</>
+	<font-size>	12	</>
+	<left-indent>	60	</>
+	<first-indent>	if(isempty(attr(LBL,ancestor(SECTION1))),0,-=25)	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION1))),'',join(attr(LBL,ancestor(SECTION1)),'   '))</>
+</style>
+
+<style name="SECTION1">
+	<left-indent>	if(isempty(attr(LBL)),-=60,-=20)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SECTION2">
+	<left-indent>	if(isempty(attr(LBL)),+=15,+=30)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SECTION3">
+	<left-indent>	if(isempty(attr(LBL)),+=10,-=15)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SECTION4">
+	<left-indent>	+=20	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SPARES">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SSB">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SUPPORT">
+	<title-tag>	TITLEPAGE,TITLE	</>
+</style>
+
+<style name="SYM">
+	<font-family>	symbol	</>
+	<font-weight>	Medium	</>
+	<character-set>	symbol	</>
+</style>
+
+<style name="TITLE,#TEXT-BEFORE">
+	<font-weight>	Bold	</>
+</style>
+
+<style name="VARIABLE">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="WHITEPAPER">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	TITLE	</>
+</style>
+
+
+
+</sheet>

@@ -1,0 +1,150 @@
+!
+! Cvcord -- Cord Analyzer application defaults file
+!		CordApp class name
+!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!   Resources to control debugging output
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!*debuggingInfo:		True
+*silenceWarnings:		True
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!   Set up schemes and various global defaults
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*useSchemes:		all
+*baseSchemes:		Base
+*schemeFileList:	CaseVision
+*paletteFileList:	CaseVisionPalette
+*tearOffModel:		tear_off_enabled
+
+!*useTtutil:		True
+*useOldMenuArrangement:	True
+
+*keyboardFocusPolicy:   pointer
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! Turn off drag and drop
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*dragInitiatorProtocolStyle:	XmDRAG_NONE
+*dragReceiverProtocolStyle:	XmDRAG_NONE
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! Window and Icon titles
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Cvcord*title:	Cord Analyzer
+Cvcord*iconName:	Cord Analyzer
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! NLS Messages
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*disableLicenseWarnings:              False
+*disableThirtyDayLicenseWarnings:     False
+*disableSixtyDayLicenseWarnings:      False
+*disableNinetyDayLicenseWarnings:     False
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	Menu items for the LoopList Main window
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*admin_menu.labelString:		Admin
+*admin_menu.mnemonic:			A
+*admin_menu.saveCord.labelString:	Save Cord Feedback
+*admin_menu.saveCord.mnemonic:		S
+*admin_menu.saveSetFile.labelString:	Save Working Set List
+*admin_menu.saveSetFile.mnemonic:	W
+*admin_menu.iconify.labelString:	Iconify
+*admin_menu.iconify.mnemonic:		I
+*admin_menu.raise.labelString:		Raise
+*admin_menu.raise.mnemonic:		R
+*admin_menu.raise.accelerator:		Ctrl<Key>R
+*admin_menu.raise.acceleratorText:	Ctrl+R
+*admin_menu.exit.labelString:		Exit
+*admin_menu.exit.mnemonic:		E
+*admin_menu.close.labelString:		Close
+*admin_menu.close.mnemonic:		C
+*admin_menu.close.accelerator:		Ctrl<Key>C
+*admin_menu.close.acceleratorText:	Ctrl+C
+
+! Launch Tool and Project Menu stuff
+*launchMenu.labelString:		Launch Tool
+*launchMenu.mnemonic:			L
+*projectMenu.labelString:		Project
+*projectMenu.mnemonic:			P
+*projectIconify.labelString:		Iconify
+*projectRaise.labelString:		Raise
+*projectRemapPaths.labelString:		Remap Paths...
+*projectProjectView.labelString:	Project View...
+*projectExit.labelString:		Exit
+
+! File Menu stuff
+*file_menu.labelString:			File
+*file_menu.mnemonic:			F
+*file_menu.deleteAll.labelString:	Delete All Working Sets
+*file_menu.deleteAll.mnemonic:		S
+*file_menu.deleteSet.labelString:	Delete Selected Working Set
+*file_menu.deleteSet.mnemonic:		D
+*file_menu.addSet.labelString:		Add Working Set
+*file_menu.addSet.mnemonic:		A
+*file_menu.addSetFile.labelString:	Add Working Set List from File
+*file_menu.addSetFile.mnemonic:		F
+*file_menu.constructCording.labelString:	Construct Cording Feedback
+*file_menu.constructCording.mnemonic:	C
+*file_menu.constructUnion.labelString:	Construct Union of Selected Sets
+*file_menu.constructUnion.mnemonic:	U
+*file_menu.constructIntersection.labelString:	Construct Intersection of Selected Sets
+*file_menu.constructIntersection.mnemonic:	I
+*file_menu.readFeedback.labelString:	Read Feedback File
+*file_menu.readFeedback.mnemonic:	R
+
+*nodeListButton.labelString:	Show Function List
+*nextButton.labelString:	Next Set
+*prevButton.labelString:	Previous Set
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	Other Working Set list settings
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*listSets.width:			675
+*listSets.visibleItemCount:		12
+*listSets.selectionPolicy:		XmEXTENDED_SELECT
+*listSets.scrollBarDisplayPolicy:	XmSTATIC
+*listLabel.labelString:		\   Working-set    cord'd-set
+*listLabel2.labelString:	\  pgs. (util. %)     pgs       Working-set Name
+Cvcord*listLabel*fontList: -*-screen-medium-r-normal--13-*-*-*-*-*-iso8859-1
+Cvcord*listLabel2*fontList: -*-screen-medium-r-normal--13-*-*-*-*-*-iso8859-1
+Cvcord*listSets*fontList: -*-screen-medium-r-normal--13-*-*-*-*-*-iso8859-1
+
+*listSetsLabel.labelString:		Status:
+*listSetsStatusLabel.labelString:
+Cvcord*listSetsStatusLabel*fontList: -*-helvetica-medium-r-normal-*-12-*-*-*-*-*-iso8859-1
+*searchTextLabel.labelString:		Search: 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	Function Window settings
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Cvcord*funcWindow*title:		Function List
+Cvcord*funcWindow*iconName:		Functions
+Cvcord*funcWindow*funcListLabel*fontList: -*-screen-medium-r-normal--13-*-*-*-*-*-iso8859-1
+Cvcord*funcWindow*funcList*fontList: -*-screen-medium-r-normal--13-*-*-*-*-*-iso8859-1
+*funcWindow.width:			500
+*funcList.showIcons:			True
+*funcList.visibleItemCount:		12
+*funcList.scrollBarDisplayPolicy:	XmSTATIC
+*funcListLabel.labelString: \     Use    Address Insts.   Function(File)
+
+*infoLabel.labelString:			Selected Working Set: <none>
+*infoLabel2.labelString:		\    Total Pages: 0
+*infoLabel3.labelString:		Map of Working Set Pages:
+
+*untouchedPage.labelString:		Untouched Page
+*usedInsts.labelString:			Executed Insts.
+*unusedInsts.labelString:		Unused Insts.
+*unusedFuncs.labelString:		Unused Functions
+*tableData.labelString: Table Data
+
+*swatchFrameW.topOffset:	3
+*swatchFrameW.bottomOffset:	3
+*swatchFrameW.height:		14
+*swatchFrameW.width:		14
+*swatchForm.width:		150
+*swatchForm*alignment:		XmALIGNMENT_BEGINNING

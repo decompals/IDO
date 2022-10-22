@@ -1,0 +1,5 @@
+ptype SGI_CV_TTUTIL
+{
+    start "/usr/lib/CaseVision/ttutil -monitor";
+    handle: session SGI_Ttutil_Monitor() => start;
+}

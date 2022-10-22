@@ -1,0 +1,4 @@
+###4.20
+For More Information
+To learn more about Debugger, see the ProDev Workshop Overview and the Developer Magic Debugger User's Guide.  Both manuals are available in InSight, the Desktop Magic online documentation facility, and in hardcopy.
+Click on the bottom right arrow to continue.

@@ -1,0 +1,14 @@
+#5.3
+Start Performance Tuning
+To start performance tuning, start the Debugger in a data collection mode.  Move into your program's directory and type:  
+
+		cvspeed 
+Let's start the Debugger with a program.
+Your program "test" is located in the /usr/people/guest/program directory.  
+
+Use the shell on the right to start the Debugger with your program.
+cd 
+/usr/people/guest/program
+cvspeed
+Sorry.  You must first move into the /usr/people/guest/program directory using the cd command.
+Sorry.  To start the Debugger with your "test" program, type: cvspeed 

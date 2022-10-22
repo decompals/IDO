@@ -1,0 +1,565 @@
+#! /bin/ksh
+
+# $Header: /hosts/bonnie/proj/irix6.4-ssg/isms/cmplrs/targucode/abi/RCS/cc,v 1.4 1994/07/20 21:54:53 mpm Exp $
+# $Locker:  $
+
+#
+# SVID compliant cc command parse.
+#
+
+ABIDIR=${ABIDIR-$ROOT/usr/lib/abi}
+ABILIB=${ABIDIR}
+CMD=cc
+
+. $ABILIB/setup
+
+
+#
+# Parse the command line. The options supported by the script are taken
+# from the Unix System V Release 4 Programmer's Reference Manual.
+#
+
+while [[ -n "$1" ]]
+do
+	case "$1" in
+	-A)
+		if [[ -n "$A_opt" ]]
+		then
+			options="$options $A_opt$2"
+		fi
+		shift
+		;;
+
+	-A*)
+		if [[ -n "$A_opt" ]]
+		then
+			options="$options $A_opt${1#-A}"
+		fi
+		;;
+
+	-B)
+		case "$2" in
+		symbolic)
+			if [[ -n "$Bsymbolic_opt" ]]
+			then
+				options="$options $Bsymbolic_opt"
+			fi
+			;;
+
+		dynamic)
+			if [[ -n "$Bdynamic_opt" ]]
+			then
+				options="$options $Bdynamic_opt"
+			fi
+			;;
+
+		static)
+			if [[ -n "$Bstatic_opt" ]]
+			then
+				options="$options $Bstatic_opt"
+			fi
+			;;
+
+		esac
+		shift
+		;;
+
+	-Bsymbolic)
+		if [[ -n "$Bsymbolic_opt" ]]
+		then
+			options="$options $Bsymbolic_opt"
+		fi
+		;;
+
+	-Bdynamic)
+		if [[ -n "$Bdynamic_opt" ]]
+		then
+			options="$options $Bdynamic_opt"
+		fi
+		;;
+
+	-Bstatic)
+		if [[ -n "$Bstatic_opt" ]]
+		then
+			options="$options $Bstatic_opt"
+		fi
+		;;
+
+	-C)
+		if [[ -n "$C_opt" ]]
+		then
+			options="$options $C_opt"
+		fi
+		;;
+
+	-c)
+		if [[ -n "$c_opt" ]]
+		then
+			options="$options $c_opt"
+		fi
+		;;
+
+	-D)
+		if [[ -n "$D_opt" ]]
+		then
+			options="$options $D_opt$2"
+		fi
+		;;
+
+	-D*)
+		if [[ -n "$D_opt" ]]
+		then
+			options="$options $D_opt${1#-D}"
+		fi
+		;;
+
+	-d)
+		case "$2" in
+		y)
+			if [[ -n "$dy_opt" ]]
+			then
+				options="$options $dy_opt"
+			fi
+			;;
+
+		n)
+			if [[ -n "$dn_opt" ]]
+			then
+				options="$options $dn_opt"
+			fi
+			;;
+
+		*)
+			badopt "-d $2"
+			;;
+		esac
+		shift
+		;;
+
+	-d[yn])
+		case "${1#-d}" in
+		y)
+			if [[ -n "$dy_opt" ]]
+			then
+				options="$options $dy_opt"
+			fi
+			;;
+
+		n)
+			if [[ -n "$dn_opt" ]]
+			then
+				options="$options $dn_opt"
+			fi
+			;;
+		esac
+		;;
+
+	-E)
+		if [[ -n "$E_opt" ]]
+		then
+			options="$options $E_opt"
+		fi
+		;;
+
+	-f)
+		# obsolete option, ignore it
+		;;
+
+	-G)
+		if [[ -n "$G_opt" ]]
+		then
+			options="$options $G_opt"
+		fi
+		;;
+
+	-g)
+		if [[ -n "$g_opt" ]]
+		then
+			options="$options $g_opt"
+		fi
+		;;
+
+	-H)
+		if [[ -n "$H_opt" ]]
+		then
+			options="$options $H_opt"
+		fi
+		;;
+
+	-I)
+		if [[ -n "$I_opt" ]]
+		then
+			options="$options $I_opt$2"
+		fi
+		;;
+
+	-I*)
+		if [[ -n "$I_opt" ]]
+		then
+			options="$options $I_opt${1#-I}"
+		fi
+		;;
+
+	-J)
+		if [[ "$2" = "sfm" ]]
+		then
+			if [[ -n "$Jsfm_opt" ]]
+			then
+				options="$options $Jsfm_opt"
+			fi
+		else
+			badopt "$1 $2"
+		fi
+		shift
+		;;
+
+	-Jsfm)
+		if [[ -n "$Jsfm_opt" ]]
+		then
+			options="$options $Jsfm_opt"
+		fi
+		;;
+
+	-Kfpe)
+		if [[ -n "$Kfpe_opt" ]]
+		then
+			options="$options $Kfpe_opt"
+		fi
+		;;
+		
+	-Kmau)
+		if [[ -n "$Kmau_opt" ]]
+		then
+			options="$options $Kmau_opt"
+		fi
+		;;
+		
+	-Ksd)
+		if [[ -n "$Ksd_opt" ]]
+		then
+			options="$options $Ksd_opt"
+		fi
+		;;
+		
+	-Ksz)
+		if [[ -n "$Ksz_opt" ]]
+		then
+			options="$options $Ksz_opt"
+		fi
+		;;
+		
+	-KPIC)
+		if [[ -n "$KPIC_opt" ]]
+		then
+			options="$options $KPIC_opt"
+		fi
+		;;
+		
+	-Kminabi)
+		if [[ -n "$Kminabi_opt" ]]
+		then
+			options="$options $Kminabi_opt"
+		fi
+		;;
+
+	-Kxgot)
+		if [[ -n "$Kxgot_opt" ]]
+		then
+			options="$options $Kxgot_opt"
+		fi
+		;;
+
+	-K)
+		case "$2" in
+		fpe)
+			if [[ -n "$Kfpe_opt" ]]
+			then
+				options="$options $Kfpe_opt"
+			fi
+			;;
+
+		mau)
+			if [[ -n "$Kmau_opt" ]]
+			then
+				options="$options $Kmau_opt"
+			fi
+			;;
+
+		sd)
+			if [[ -n "$Ksd_opt" ]]
+			then
+				options="$options $Ksd_opt"
+			fi
+			;;
+
+		sz)
+			if [[ -n "$Ksz_opt" ]]
+			then
+				options="$options $Ksz_opt"
+			fi
+			;;
+
+		PIC)
+			if [[ -n "$KPIC_opt" ]]
+			then
+				options="$options $KPIC_opt"
+			fi
+			;;
+
+		minabi)
+			if [[ -n "$Kminabi_opt" ]]
+			then
+				options="$options $Kminabi_opt"
+			fi
+			;;
+
+		xgot)
+			if [[ -n "$Kxgot_opt" ]]
+			then
+				options="$options $Kxgot_opt"
+			fi
+			;;
+
+		*)
+			badopt "-K $2"
+			;;
+		esac
+		shift
+		;;
+
+	-L)
+		if [[ -n "$L_opt" ]]
+		then
+			options="$options $L_opt$2"
+		fi
+		shift
+		;;
+
+	-L*)
+		if [[ -n "$L_opt" ]]
+		then
+			options="$options $L_opt${1#-L}"
+		fi
+		;;
+
+	-l)
+		if [[ -n "$l_opt" ]]
+		then
+			options="$options $l_opt$2"
+		fi
+		shift
+		;;
+
+	-l*)
+		if [[ -n "$l_opt" ]]
+		then
+			options="$options $l_opt${1#-l}"
+		fi
+		;;
+
+	-O)
+		if [[ -n "$O_opt" ]]
+		then
+			options="$options $O_opt"
+		fi
+		;;
+
+	-o)
+		if [[ -n "$o_opt" ]]
+		then
+			options="$options $o_opt$2"
+		fi
+		shift
+		;;
+
+	-o*)
+		if [[ -n "$o_opt" ]]
+		then
+			options="$options $o_opt${1#-o}"
+		fi
+		;;
+
+	-P)
+		if [[ -n "$P_opt" ]]
+		then
+			options="$options $P_opt"
+		fi
+		;;
+
+	-p)
+		if [[ -n "$p_opt" ]]
+		then
+			options="$options $p_opt"
+		fi
+		;;
+
+	-Q)
+		case "$2" in
+		n)
+			if [[ -n "$Qn_opt" ]]
+			then
+				options="$options $Qn_opt"
+			fi
+			;;
+
+		y)
+			if [[ -n "$Qy_opt" ]]
+			then
+				options="$options $Qy_opt"
+			fi
+			;;
+
+		*)
+			badopt "-Q $2"
+			;;
+		esac
+		shift
+		;;
+
+	-Qn|-Qy)
+		case "${1#-Q}" in
+		n)
+			if [[ -n "$Qn_opt" ]]
+			then
+				options="$options $Qn_opt"
+			fi
+			;;
+
+		y)
+			if [[ -n "$Qy_opt" ]]
+			then
+				options="$options $Qy_opt"
+			fi
+			;;
+		esac
+		;;
+
+	-q)
+		if [[ -n "$q_opt" ]]
+		then
+			options="$options $q_opt"
+		fi
+		;;
+
+	-S)
+		if [[ -n "$S_opt" ]]
+		then
+			options="$options $S_opt"
+		fi
+		;;
+
+	-U)
+		if [[ -n "$U_opt" ]]
+		then
+			options="$options $U_opt$2"
+		fi
+		shift
+		;;
+
+	-U*)
+		if [[ -n "$U_opt" ]]
+		then
+			options="$options $U_opt${1#-U}"
+		fi
+		;;
+
+	-V)
+		if [[ -n "$V_opt" ]]
+		then
+			options="$options $V_opt"
+		fi
+		;;
+
+	-v)
+		if [[ -n "$v_opt" ]]
+		then
+			options="$options $v_opt"
+		fi
+		;;
+
+	-W)
+		echo "Warning: This option not supported for abi cc command ($1 $2)"
+		shift
+		;;
+
+	-W*)
+		echo "Warning: This option not supported for abi cc command ($1)"
+		;;
+
+	-X)
+		case "$2" in
+		a)
+			if [[ -n "$Xa_opt" ]]
+			then
+				options="$options $Xa_opt"
+			fi
+			;;
+
+		c)
+			if [[ -n "$Xc_opt" ]]
+			then
+				options="$options $Xc_opt"
+			fi
+			;;
+
+		t)
+			if [[ -n "$Xt_opt" ]]
+			then
+				options="$options $Xt_opt"
+			fi
+			;;
+		esac
+		shift
+		;;
+
+	-X[act])
+		case "${1#-X}" in
+		a)
+			if [[ -n "$Xa_opt" ]]
+			then
+				options="$options $Xa_opt"
+			fi
+			;;
+
+		c)
+			if [[ -n "$Xc_opt" ]]
+			then
+				options="$options $Xc_opt"
+			fi
+			;;
+
+		t)
+			if [[ -n "$Xt_opt" ]]
+			then
+				options="$options $Xt_opt"
+			fi
+			;;
+		esac
+		;;
+
+	-Y)
+		echo "Warning: This option not supported for abi cc command ($1 $2)"
+		shift
+		;;
+
+	-Y*)
+		echo "Warning: This option not supported for abi cc command ($1)"
+		;;
+
+	-*)
+		badopt $1
+		;;
+
+	*)
+		options="$options $1"
+		;;
+	esac
+	shift
+done
+
+
+#
+# Now call the proper CC with the machine dependent options.
+#
+
+${CC} $options $post

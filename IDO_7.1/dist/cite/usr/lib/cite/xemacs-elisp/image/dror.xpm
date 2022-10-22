@@ -1,0 +1,423 @@
+/* XPM */
+static char *dror[] = {
+/* width height num_colors chars_per_pixel */
+"   100   100      255            2",
+/* colors */
+".. c #050208",
+".# c #44769c",
+".a c #640e04",
+".b c #83acbe",
+".c c #293c4d",
+".d c #6a3b29",
+".e c #877470",
+".f c #370306",
+".g c #95402c",
+".h c #8a9099",
+".i c #afaca6",
+".j c #392019",
+".k c #a89098",
+".l c #67575f",
+".m c #041e34",
+".n c #b3c7cc",
+".o c #9a5d40",
+".p c #672114",
+".q c #1f0404",
+".r c #89a0a6",
+".s c #6a939f",
+".t c #520209",
+".u c #7d1e16",
+".v c #683c64",
+".w c #b2bbb2",
+".x c #87739b",
+".y c #405764",
+".z c #823c26",
+".A c #6a7584",
+".B c #512116",
+".C c #8991a6",
+".D c #a2bec7",
+".E c #697599",
+".F c #051423",
+".G c #655f7a",
+".H c #a67a97",
+".I c #844b33",
+".J c #99abaf",
+".K c #9e406c",
+".L c #ac6049",
+".M c #683121",
+".N c #49423f",
+".O c #38150c",
+".P c #adadb9",
+".Q c #aaa092",
+".R c #50170c",
+".S c #985139",
+".T c #211412",
+".U c #868797",
+".V c #050225",
+".W c #9aaebf",
+".X c #a16949",
+".Y c #99a1a7",
+".Z c #542844",
+".0 c #9790ab",
+".1 c #b3bec3",
+".2 c #823d36",
+".3 c #c4cbcc",
+".4 c #84214c",
+".5 c #532c1e",
+".6 c #737f8a",
+".7 c #545760",
+".8 c #8b5845",
+".9 c #342244",
+"#. c #7f331f",
+"## c #969192",
+"#a c #805e88",
+"#b c #444763",
+"#c c #070c18",
+"#d c #702040",
+"#e c #71849b",
+"#f c #a6a4b3",
+"#g c #a87556",
+"#h c #201f1d",
+"#i c #516881",
+"#j c #a4533b",
+"#k c #99a3b7",
+"#l c #6b2819",
+"#m c #709eb0",
+"#n c #580425",
+"#o c #bcc1c3",
+"#p c #79756a",
+"#q c #3d1947",
+"#r c #bdb4b8",
+"#s c #988794",
+"#t c #9b5f50",
+"#u c #250831",
+"#v c #86432a",
+"#w c #a0b8c3",
+"#x c #29302f",
+"#y c #66170d",
+"#z c #370529",
+"#A c #bcaf97",
+"#B c #39322e",
+"#C c #743222",
+"#D c #1f163f",
+"#E c #7a909f",
+"#F c #484f50",
+"#G c #44160d",
+"#H c #561839",
+"#I c #5c2215",
+"#J c #965546",
+"#K c #9899ab",
+"#L c #cbd4d5",
+"#M c #6f4d37",
+"#N c #974833",
+"#O c #250c08",
+"#P c #530c07",
+"#Q c #9472a1",
+"#R c #676b7d",
+"#S c #afb4bb",
+"#T c #5a5876",
+"#U c #8c4c39",
+"#V c #a2b3b1",
+"#W c #2c1510",
+"#X c #8c3522",
+"#Y c #723d35",
+"#Z c #8b8781",
+"#0 c #3c0c06",
+"#1 c #b49096",
+"#2 c #686865",
+"#3 c #8b98aa",
+"#4 c #04172d",
+"#5 c #5c170a",
+"#6 c #701740",
+"#7 c #7a90b3",
+"#8 c #303c68",
+"#9 c #999897",
+"a. c #665168",
+"a# c #826966",
+"aa c #344e50",
+"ab c #448274",
+"ac c #a48684",
+"ad c #995271",
+"ae c #3c5264",
+"af c #986a88",
+"ag c #804060",
+"ah c #ac8797",
+"ai c #3c6a54",
+"aj c #353443",
+"ak c #806a82",
+"al c #5b83a2",
+"am c #4c5167",
+"an c #ac6a52",
+"ao c #947268",
+"ap c #7a7d99",
+"aq c #5a3b31",
+"ar c #825856",
+"as c #3a3c41",
+"at c #4c364c",
+"au c #1f212f",
+"av c #bcba98",
+"aw c #646aa4",
+"ax c #ac8eb4",
+"ay c #7c5054",
+"az c #86b4bd",
+"aA c #6f5f55",
+"aB c #122739",
+"aC c #7d291a",
+"aD c #595f65",
+"aE c #52607e",
+"aF c #64629c",
+"aG c #7186b3",
+"aH c #1c3344",
+"aI c #6b0225",
+"aJ c #8a88b2",
+"aK c #554e4a",
+"aL c #a96d91",
+"aM c #41281e",
+"aN c #060c2d",
+"aO c #842858",
+"aP c #8c624c",
+"aQ c #540e3c",
+"aR c #a989ac",
+"aS c #4f517f",
+"aT c #577391",
+"aU c #bcc7c9",
+"aV c #b4a2a4",
+"aW c #5c2c1e",
+"aX c #5c6974",
+"aY c #7ca2b0",
+"aZ c #741a13",
+"a0 c #44301c",
+"a1 c #3c4264",
+"a2 c #a4527c",
+"a3 c #44363c",
+"a4 c #867c7d",
+"a5 c #687da0",
+"a6 c #854435",
+"a7 c #702a4c",
+"a8 c #957d99",
+"a9 c #704339",
+"b. c #584348",
+"b# c #272834",
+"ba c #787784",
+"bb c #353f51",
+"bc c #8caaa9",
+"bd c #a4acb0",
+"be c #a44a2c",
+"bf c #5c607e",
+"bg c #b47e9c",
+"bh c #8c5e7c",
+"bi c #b4a6b4",
+"bj c #b4745c",
+"bk c #746e84",
+"bl c #a6989d",
+"bm c #877c98",
+"bn c #a3c8cd",
+"bo c #380e30",
+"bp c #b89894",
+"bq c #9c7c70",
+"br c #743c26",
+"bs c #a45c42",
+"bt c #8ba3b7",
+"bu c #684278",
+"bv c #14161c",
+"bw c #745a74",
+"bx c #815246",
+"by c #371a1f",
+"bz c #a7a29f",
+"bA c #1f181f",
+"bB c #a4afbe",
+"bC c #a06955",
+"bD c #5c2e5c",
+"bE c #4c302e",
+"bF c #7c8285",
+"bG c #81342d",
+"bH c #7c869a",
+"bI c #2c241c",
+"bJ c #9689a6",
+"bK c #a45f4e",
+"bL c #641624",
+"bM c #bfb1a8",
+"bN c #746967",
+"bO c #14132c",
+"bP c #7c1747",
+"bQ c #344284",
+"bR c #94568c",
+"bS c #84467c",
+"bT c #343157",
+"bU c #8c6a7c",
+"bV c #bebcb2",
+"bW c #7c8ab4",
+"bX c #2c2f44",
+"bY c #889898",
+"bZ c #b2b3a6",
+"b0 c #7998b1",
+"b1 c #7c6060",
+"b2 c #a999b2",
+"b3 c #140305",
+"b4 c #440206",
+"b5 c #442016",
+"b6 c #14203c",
+"b7 c #742113",
+"b8 c #2c0504",
+/* pixels */
+".3.3aU.3.3.3.3aU.3#obdbdbBaU.3.3.3.3.3aU.3.3aU.3.3.3.3.3.3.1#e.U.h#EbB.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3aU#K.U.hbV.C#e#R.Aak.Hahb2#T#T#u#naI.t.tb4b4.fb3b3...............qb8.f.f.f.t#n#naI.laX#R.rbY.Ubl#S.A",
+".D.D.C.0#S#o#o#o#f#S.w.1aU.3.3aU.3aU.3.3.3aU.3.3.3.3.3.3aU#o.rbYaY#V.Cbd#o.1.3.3.3.3.3.3.3aU.3.3.3.3aU#S.G.G.C#f#o#o#obh.4.KaLbw#abo#n.t.t.t.tb4.f.qb3...........qb8.q.q.f.fb8b4#H.q.qbo.l#SbB#V#K#fbB.Y",
+"aUaU.1bd.0.ibZ.h.E#S.3.3.3.3.3.3.3.3aU.3.3aU.3.3.3aU#o#o.P#SbBaUaUaU.1#K#S#Sbd#S.3.3.3.3.3.3.3aU.3bd.w#kbB#f#k#K.Pbi#faf#d.4a2aLaLag#n.t.tb4b4.fb4.fb8...qb3b3b3.q.q.qb8.f.f.fb4#H#z#0#nat#f.1.1.1.1.Y#3",
+"aU.3.3.3aUaUaU.C#k#k.w.w.1#o.3aU.3aU.3.3aU.3aU.3.3.w.Y.Y#faU.3.3.3.3aU.3aU.3#S#k#f.1bV.1.3#o#Sbd.i.C#o.3.3aUaU#Kawbubu#6aQbPadbgahad.t.tb4.tb4b4.f.f.f.q.q.q.q.q.q.q.q.fb8.fb8b4aIaIaI#n.l#S.w#o.w#o.C.h",
+".3.3.3.3.3aUaU.waU#oaU.3bB#k.waU.3aU.3aU.3.3.3#o#f.Y#o#oaU.3.3.3.3.3.3.3.3.3.3aU#o#S#k#kbJbF#3#o#o#o.3.3.3.3.3aU#S#a#a#6bP#6a2#1axad#P.t.tb4b4.f.f.fb8b8b3b3.....q.q.qb8.fb8.fb4aIaIaI#na..1.1.1#S#S#k#V",
+".3.3.3.3.3.3aU.n.3.3.3.3.3.1#o.D.Db2.w.3aU#f#f.J.1#o.3.3.3.3.3aU.3aU.3.3.3.3aU.3.3aU#f#kbm.b.baRbJ.P#o.3#o.3.3.3.1#3bYag.4.4.Kbgbg.HbL.t.tb4.tb4.f.q.q............b3b3b8.f.f.f.taIaIaI.Z.s#w.b.b.Ua8.A.Y",
+".3.3.3.3.3.3aU#oaU.3.3.3.3.3.3.n.3#S#S.1.h#K.Y.1.3.3aU.3aU.3.3.3.3aU.3.3.3.3.3.3.1#k#f#f.1aUaUbB.P#kaUbB#k#K#S.3#K#S#Sap#dbP.KaLaLaLaQ.t.t.tb4.tb4b8b8.................qb4.f.t#naI#n#nakbd.w#V#VapbH.AbH",
+".3.3.3.3.3aU.3aU.3.3.3.3.3.3.3.3.3.3.3aUa5.h.U.1.P#o.3.3.3.3.3.3.3.3.3aU.3.3aU.P#K.PaU.3aU.3.3aU.3.3.3#obBbB.0#S.AbJbJ.haOaO.KbRbR.vb8.t.t.t.tb4b4b3b3.................qb4b4.taIaI#H#Hbf#s.i#E.halbt#7aF",
+".3.3.3.3.3.3#o.3.3.3.3.3.3.3.3.3.3.3.3#S#S.3.3.n#k.0#r#r#oaU.3.3.3.3.3.3.1.1#f#k#oaU.3.3.3.3.3#o.3aU.3#o.3#oaU#obkbubuaS.vbSaka8a8#b.V#z.t.t.t.t.fb3...................q.tb4aIaI#d.Aba#S#S#9aY#m.bbtbW.x",
+".3.3#L.3.3#o#oaU.3.3.3.3.3.3.3.3.3.3aU#K#f.3.3.3aU.1aU.1.W.Y#raU.3.3.3bB#3#3.1#o.3.3.3#o.3#o.3.3.3.3#o.3.3.3.3.i#E#f.Pbdb0#3aEbwbw#u.Vb3#z#z.t.tb4.....................q#n.taI#Pa##S#S.Q.r#V.w.w.1.1#V#S",
+".3.3.3.3#L.1#S#o.3.3#L.3.3.3.3.3.3.3.3.C#k.3.3.3.3.3.3.3.3#S#r#w#w.0bF#f.1.1.3.3aU#o.3.3.3.3#o.3#o.3.3.3#o.3#Kbd#w#K#K#o#S.1#k#ba1aN.V.V#D#DbD#nb4....................#z#n#n#qauaD.UaJbz#w.w.1.1.w#S#3.1",
+".3.3.3.3.3#S#S.n.3.3.3.3.3#L.3.3#L.3.3.C.J.3.3.3.3#L.3.3.3.3.3aUaU.rba.i#wbB.P#o.3.3.3#o.3.3#o.3.3#o.3#r#fb2#S#o.1#K#3#S#f.P#SbTbT.V#u#u#q#H.Z#ub8................b3b3#z#D#qae.caj#k#k.1.1bV.w#o.1.1.r.P",
+"#o#S.3.3.3#f#f.P.3.3.3.3.3.3.3.3.3.3.3#3bd.3.3.3.3.3.3.3.3.3.3.3.3#kbBaU#w#S#kb2#o.1#o#o#o.3.3.3#o#o#r#kbdbB#o.3.3.WbB#k.h.Yb2.9.9#u#qaQ#u#u.V.V.V.V.V.V.....V...V.V.VbOamam.yaHbTbz#KbMbV.1.1.1bV#S##ak",
+"#Kax#kbi.3.C.CbB.3.3#L.3#L.3.3.3#L.3.3bB.1.3aU.3.3.3.3.3.3.3.3.3.3#k#S.3.3aUaU#o.n#k#Kb2#r#o#o#r#r#9#w#oaU.3#o.3#o#oaU.J.YbBahaQ#H#z.V.V.V.V.V.V.V.V.V.V.V.V.V.V.VaNaB.y#Faaaaalaeak.ebY.Ca8bp.QbZ.hbk##",
+".3#L.n#r.3#V.W.b#k#o.3.3.3.3.3#LaU#L.3.naU.3.3.3.3aU.3.3.3.3.3.3.3.Y.PaU.3.3aU#oaU#o.P#S.w#waJakbkbl#oaU.3#oaU#o.3.3.3.n.J.ibW#D#D.V.V.V.V.V.V.V.V.V.V.V.V.VaNaN#8aX.calbY#9.J.1bt#EbHbt#k#Kbi.i#9.sb0#E",
+".3#L.3.3#obB#SaU.1bi.D.D.P.3.3.3#L.3.3#oaU.3.3.3.3.3.3.3.3.3.3.3.3#KbdaUaU.3aU.3#o#o#o#o.1.w.hbk#R.Q.wbtblbl#r#o#o#o#o#o.PbF.W#b#baN.V.V.V.V.V.V.V.V.VaNaN.c#i#iaDaXaG.w.1.n.1.1.1bY#3.C#f#s.xbabUbd.h.U",
+"#L.3#L#L.1#k#K#L.3#LaUaUbB#f#o#o#o.3aU#SaU.3.3#L.3.3.3.3.3.3.3.3.3#k#V.3.3aU.3#obZbz#s#sa4#p.l#2bNa4bF.6#pbaa#bq.k###9bl.QbF#9.r.raT#8bTbXbTbXbXbXbQbQ.#.sal.U.h.y#E.1.1aU#o#o#o.1#S#w#3bH.C#eaG#kb0#pba",
+".3.3#L.3.1#K#K.3#L.3.3#L.3.3.1.W.W#f.PaJaU.3.3.3.3.3#L.3#L.3.3.3.3#f#S#obZ.i.i#9#MbIb3.q#c....b3b3b3#cb3#O.q#W#W.T.T#O#Wa0a0aq#9.Y.P.P#S#S.w.w#K#K.1#S.1#SaJ#7#Eba#Z.n#o#o#o#oaU#w#S#S#S.JbB.1#o.n.1#kaE",
+"#L.3#L#L.1#K#K#L#L#L#L.3#L#L.3.naU#o#wa5bW#f#f#o#L.3#L.3.3.3#L.3.3#k#9.ebEbE#hbv............................................#c#h#h.N.x#9.Y#K.i.Y#k.1.1#f#9#S.1#o#Kba.1#oaUaUaU#o#S.hbY#9#w#oaUaU#oaU.1bH",
+"#L#L#L.3.1#K#K#L.3#L#L#L.3#L.3#L#L#LaU.naU.1#S#o.D#faUaU#L.3.3.1aU#p#B.T..........................................................b3#B#2#s#sbi.w.baG#7a####V#S#S#f.A.iaU#oaU#oaU#V.hbY#w#o#oaU#oaUaU.1bH",
+"#L.3#L.3.1.C#K.3#L#L#L#L.3#L#L.3#L.3.3.3#L.3#L.3aU#w.P.P.n.1.w.e.ebI..................................................................bAaAaAbz.1.Y.h.Cb0az#maJaJ.Ha4##.QaU.1.n#w.Aa5aT.0.0axblblaVavbZ#E",
+".3#L#L#L#o#k#K#L#L.3#L#L#L.3#L#L.3#L#L.3.3#L.3#L#L.3.3#L.nbt.l.T.T......................................................................b3#c.l#9ba#k.rbZ#o#oaUaUaU#f#kbJ.Q.Q.D#Ea5#7b0#K.0.0#K#9bcaY#m.s",
+"#L#L.3#L#o#Kb2#L#L#L#L#L#L#L#L#L#L#L.n.n.3#L#L.3.3#L.3.3#oa4bv..............................................................................bvb.#ebdbd.1aUaU.3#o.3#f#S#o#o#o.Dap#3#w#SaU#oaU#oaU.n.1.1.D",
+"#L#L#L#L#S.0.C#L#L#L#L#L#L#L.3#L.3#L#obB#L#L.3#L.3#L#o#o#p.T..................................................................................bA#F#2#RbVaU#o#o.3#o###SaUaU.3.1.Y#kbm.UbV#o#oaU#oaUaUaUaU",
+"#w#w#S.3#S.C.C#L#L#L#L#L#L#L#L#L#L#L.1.0.3.3#L.3.3#rbN#p.T....................................................................................#cajaj#x#9#o#o.3#o.3aJ.iaU.3aU#SbH.1#e.6bm#oaU#oaU#oaUaU.1",
+".n.n.1aJ.H#s#s#raU.3#L#L#L#L.3#L#L#L.1.C.3#L.3#L.1bNbvb3........................................................................................b3bvb3b.##bV#o#o#o.UbBaU#oaU#S.UaU.Ybta5.PbV#oaUaU#oaUbd",
+"#L#L#L#LaU.3aU#L.nbB#o#r#L.3#L#L#L#L.1bt#L.3.3.3#Z.T..............................................................................................b3#cbbbf#s#S.w#o.r#S#o.3#o.1.1#o.n.1#w.YbH.xbma8.k#Aba",
+"#L#L#L#L.3.3#L#L#L.3.3.3.D#k#r#L.3#L#obB.3.3.3bza0..................................................b3b3#O.q.q.q.q#O#O.q.qb3..........................as.U.Y#3#K#K#k#SaU#oaU.0.1aU#oaU.P.nbBbB.P#f#r.w#7",
+"#L#L#L#L.3aU.1#L#L#L#L#L#L.n#r.D#w#k#fbm#o#o#obN#c.............................q.R#Gb8b8b3...q.qb8.O.R#0.p#I.R#P#G#0#0#G#G#0#0b3b3.....................T#p.J.w.1#K.r#SaUaUaU.U#SaU#o#o.U#o.3#o.3aUaU#o#w",
+"#L#L#L#L.1#K#k#L#L#L#L#L#L#L#L.n.3.naz.s#f.Wbd#x..........................b3b8#0#5.R#P#P.R#I.B.MaW.z#C#.#v.z.z#l.p.p.p#laC#5.R#0#0b3..................#c.Nbz.1bV.nbY.haU#o#o#k.1aU#oaU.U.1#o.3#o#o.3bBbd",
+"#L#L#L#L.1.C.0#L#L#L#L#L#L#L#L#L#L#L.3aU.3.Y.r#h.........................q.q#0.p#l#l.M.Ma6#J.8bCbCbCbCbC#t.X.o.S#v#v.g.z#CaC.p.R#G.qb3..................#h##.w.1#w#kbfbZbz.ibz#r#o#o#obY.1.3aUaUaU#o#k#K",
+"#L#L#L#L.1.C#3#L#L#L#L#L#L#L#L#L#L#L.3.3aU#2#2...........................fb8.p#C.z.g.S.SbKbC#g#g#ganbC#gananbCbs#j.S.S#v#.#l.p.R.R#0b8..................#cbF.WazaYbm.y.A.6.Aa4#9.Ybcbcb0aJ.0aRaRaxbJbfap",
+"#L#L#L#L.3bBbB#L#L#L#L#L#L#L#L#L#L.3.3aU#S#B#B.........................q#I#I#C#..g#N.S#jbs.L#ganananbCbjanananbsbs.S#Jbe#N#.b7.p#5#0#0.q................bvbF.1.1#o.1b0btalalbH#9.J#w#w.b#K#fb2b2b2.0aFbB",
+"#L#L#L#L#LaUaU#L#L#L#L#L#L#L#L.3#L#L.3.1#9.Tbv.......................q.R#lb7aC.z#X#v#N#N#j#jbsbsbKbK.L.XbKbKbsbs.S#j.S.S.g.z#l#I#5#5#0b8b3..............bv#Z.w.1#o#obB.1#3bY#w.bbz#V#S#f#faU.3aUaU.1.h#o",
+"#L#L#L#L#L.3.3#L#L#L#L#L#L#L#L#L#L.3aU.1#2b3#c......................#0#5#lb7#.#.#X#X.g.g#N.g.gbebe.S#j.S#j#j.Sbe.S.g#N.g#X#X#.#l#l.p#P#0b3b3............b3#2.i#S#o#o.1#S#3#K#o#oaU.1#Sa8.U#oaU.3aU#o#K#o",
+".3.3#L#L.3#o#o#L#L#L#L#L#L#L#L#L#L#LaU#S.N..........................#0.BaC#l#..z#X.g.g#vbe.g#N#N#N#N.Sbe.S#Nbe#N.g.g.z#.#.aCaC#lb7#l.B#0.qb3...............T.e.e#S#o.1.w.Y#KaU#o#o.3.3bdbH#oaU#o.3.1.0aU",
+".3.3.P#V.Jbaba.iaU#L#L#L#L#L#L#L#L#LaUbdbI.........................q#0#5#l#l#..z#v.g#N#N#N.S.Sbe.S#N#N.Sbe.S#N.g#v#X.z#X.ub7#l#l#l.p.B#Gb3.q.................T.T#p.w#S#S#3bYaU.3aU.3aU#o.U##aU#oaUbV.C#o",
+"#L#L#LbnbcaG#Ebn.n.1.1.1#L#L#L#L#L#L.3bY#h.........................q#0.B#l#C#..z#v#N.S.S#j#jbs#j#jbs#j#j#j#j.S.gbe.g.g#.aCb7.p.p.p.p.R#0.qb3....................bI#Z.i#K.r.raU#o.3.3.3aU.C.C#k#k.0bzba#S",
+"#L#L#L#L.n#K.C#L#L#L.D.D#r.naU#L#L#L.1bN#c....................b3b3b8#0#5.p#I#l#.#v#v#N#N#JbKbKanbCbjbCbKbsbsbs.S.S.S.S.g#.#l#l.p#I#I.R#0b3b3......................aK#9.h#3#3#o.3.3#o.3.3#3bB.n.1#w#maS#Q",
+"#L#L#L#L.1#K#k#L#L#L#L#L#L.1.P#rbVaU.J.N.......................q.q.q#0.O#0#0#G#5#I#l#C.z#U.obC#gbjbq#gananbCan.XbK#jbsbe.zaC#l#I.p#I.R#0b3........................bIbk.U#KbY.3#o.3.3.3aU.W.1aUaUaU.wap#o",
+"#L#L#L#L.3#w#S#L#L#L#L#L#L#L.3.3.3bn#ibv......................b8.q.q..b3b3b3.q.q.q.q#O.q#O#l.2#J#JbKbCbKbKbKbCbK#J.S.Sa6.z#l.p#I.B.R.R#O..........................bv#ibF.h.haU.3.3.3.3.3.1.1aU.3.3.1bH#o",
+"#L#L#L#L.3.naU#L#L#L#L#L#L#L#L#L#L.3.7bv.....................q.q.q...q#Wb5aM.5aqaq#B#cbvb3.O#I#Ybr#t#J#U#J#U.S.z#l#I.B.R#O#O#O#Ob8#Ob8.q..........................#c.6.A#RaXbibi#r#r#rbVaU.1.3aUaU.w###S",
+"#L#L#L#L#L.3.3#L#L#L#L#L#L#L#L#L#L#LaXbA.....................qb3b3.q.BaW.zbr.z.z.zbr.5.5.B.B.d#v#v.o.o#U#U#Ua6.M.B#0#0......b3..b3..................................#M#2bf.Gak.HahbpbpbMbVbZ#o#oaUbd.Q#1",
+"#L#L#L#L#L.3.3#L#L#L#L#L#L#L#L#L#L.3#Rbv...................q#Ob8#O.B.M#C.p#I#P#G#G#0.R#0.p#..z#v#v#U#J.S#U.I.z.M#Iby#G#O.Oa0.5aMaM.Tb3............................bv#i.A.J.J.W.i#r.3#oaUaU#9aUaUaU.h#S.3",
+"#L#L#L#L#L.3aU#L#L#L#L#L#L#L#L#L#L#L#Rb6..................#O.O.5.5br.d.Bb8.fb3b3#W.T#Wby.R.p#.#laC.z#N#v.z.z#l.p.p#P.R#0.R#l#C#C#CaW.O............................bbbH#bbdbd#o.1#kblbz#obVba#o#oaU.U#S#o",
+"#L#L#L#L#L.1.1aU#L#L#L#L#L#L#L#L#L.3bH#F................b3.O.5brbr.z#I#0.q#O.Obv#O#BaAaA.Mb7#l#5.Rb7#..z#laC#0.R.R#0.fb8#Wby#G#0#0.R.Rb8..........................aD#V#e.ibd.3aU#o.1#S.J.Cap.1.1aUbd#oaU",
+".naU#r.3.3bl#KaV.3#L#L#L#L#L#L#L#L#Lbm.l.q..............#Ob5.M#v#v.z.M.B.B#I#I.BbyaW#.#.#l#l#I#P#P#5aCaC#5.R.f#G#5.O.O#ObXaDb.#O#O.q#0.Ob3b3......................#2.wbFbdbd.3.3.3aU.3#o.WaE#K#9.1#SaUaU",
+"#L.3.1#Ka8awawbc#f#o.3#L#L#L#L#L#L#Lbaa9.B.q.q........b3.O.B.M.z.z#va6.z#.#.#v#v.z#.#C#CaC#l#5#P#P#5b7b7#P#Pb8.f.a#5.R.ObEar#Y.O.Ob3b8.O#W#O....................bv.h.w.Gbd.P#o.3#o.3aU.3#oaT.h.hbd#k#o.3",
+"#L#L#L#L.1#K#3#L#LaU#k#f#o#L#L#L#L#L.xa6#..B.B.T.....qb3b5.B.M#v#va6.Ia6#v#v#v#v.z.z#.#.#l.p#5#5#5.ab7b7#P.R.f.f#Pb7aC.2.2.zaW.R.B#0.q.Rb5.B#O..................as#S#SaEbdbd.3#o.3.3.3.3#o#3.C.C.h.U.w.0",
+"#L#L#L#LaUbBbB#L#L#L.3#L.1#f.3#L#L.3ba#JaC.z#..Mb3..#W.T#G.B.d#v#v#U#U.S#N.S.g#X#X#N.g.g#..p#y.a#5.ab7aZ#P.t.fb4.RaCaC#X#v.zbG.M.M.B#G.B.B.B.O..............#c#c.6.1#S.7bd.i#o.3.3#o.3#o.n#3.1.1#ka5.W.w",
+"#L#L#L#L.3.1.1#L#L#L#L#L#L.1.1.P.PbZb1.g#laCaCbr.O.q#W#0.O.B#C#v#v#U.S#J.S#N.g.gbe#j.g.gaCb7#y#P#P.a.u.u#P#P.f#0#5aC#CbG#X#X.z#C.2.M#IaW#IaW.Ob3.........q..#F#FbZ.1bd#Tbma8#o.3#o.3.3.3#o.W.1.1.1.1aUaU",
+"#L#L#L#L.3#oaU#L#L#L#L#L#L#L#L.D.nb0bm#XbG.I#U.z#I#O#O#0.O.B#C#v#v#N#J#j#jbs#j#jbs.S#Nbe#X.p#y#P#P.a.u.u#5#5.f#P.p#.#.#X#.aCaCbG#.#C.M#l.B.B#Wb3.......f#Pb3.N.N#SaU#faT.A.A##bV#o.3#o.3aU.Y.1.1#S#oaUaU",
+"#L#L#L#L#LaU.3#L#L#L#L#L#L#L#L#L#L.1b2.2#t#JbKbGaW#0#W#0.O#I#.#v.g.S#jbsbK.LbKananan.L.X#X.a#P.a.aaZaC.u#y.a.f.faC.g.g.g#X#XaCaC#.#.#l.M.B#I#Wb3...O.O.R.p#ObAbA.hbd.J.Y.J.Y#Z#sav#o#o.w.P.C.Y.Yba.i#Aav",
+"#L#L#L#L.3.3aU#L#L#L#L#L#L#L#L#L#L#o#9adan#N.S.2aW#0#O#W.OaW.z#v#N.Sbsbs.L.Lanbjbjanbsbsb7#5#5.p#yaC.S.gb7.p#0.f#lbsbsbs#N#X.gbG#X#.#l#l.B.B#Wb3b8.B.R#PbG.Tb#aB.EaG#E.w.1.1.h.J.Y.w.D#k.0.hbkbk#e.1#oaU",
+"#L#L#L#L#LaU.3#L#L#L#L#L#L#L#L#L#L#obq#N#j#j#ja6#l#O#0#O#GaW.z#N#N.Sbsbs.Lanbj#gan.Lbe.SaZaC#C.p.p#.#j#NaZ.p#P#0#y.S#Nan.L#N#N.g.gbGb7.p.B.Bb8b3b5.p.p.R.2#Oas.N.P.1.6aUaU.3bdbz#f#K#3#oaU#V.U.U.1aUaUaU",
+"#L#L#L#L#L.3.3#L#L#L#L#L#L#L#L#L#L#oaybGbGbGbG.2.2.O#O#O.O#I.z.g#v#Nbebs.L.Lanan.L.Lbe#NaCb7aC#0#G#ybGbG#P#P.R#5#y#N#N.L.LbKbe#N.g#Xb7#I.R.R#Ob3.B.2#Y.p#l#O.N#F#S.1.U#oaU.3#o#K.1bZ.P#k#o.P.G#RbdaUaU.3",
+"#L#L#L#L#L.3.3#L#L#L#L#L#L#L#L#L#L.3ay#lbG#Y#Ya6ar.Ob8#O.O.pbr#X#Xbebe#j.L.Lbj.L.L.S.g.gaCb7#l#P.R#0b7.p#0#0#5#yb7.g.g.Lan.L#jbe#N.gb7#I#G#G.q.T.MaP#t#Y.R...7aK#o#o#KaU.3aUaU.ibz#oaUbB#K#K.Ga.#S#oaUaU",
+"#L#L#L#L#L.1.n.3#L#L#L#L#L#L#L#L#L.3a8#CbG.2a6#U.Sb5#O#O.OaW#..z.z.g.S#jbs#jbsbsbe.g#X#XaCb7.p#l.p.p#I.R.t#0#P#5aC.g.g.S#j.L.L#N#N#XaC.p#0#0b3#W.MbC#tbx#0..aDaD#o.n.iaUaUaU.3.1bJ.1.w.3#wa5#2#2.waUaUbV",
+"#f#f#o.3biaGal.n.n.P#L.3#L#L#L#L#L#L.1#a.M#C#Ca6bs.5#O#O.O#Ibr.z.z#N.Sbe.z.g.z.z#.b7b7.pb7.p.p#l#l.M#l#I#G#P#0#5#yaCaC#Xbe.S#j#N#N.gaC.R#0#Ob3.OaW#J#Ja6.q#c#ZbFaU#o#SaU.3aU.3aUbd#KblaU.3.r.6ap.1.naU#o",
+".naU#r.3#f.C#3#L#L.3.P.P.3#L#L#L#L.3.3#Sak.2.2.2.M#O.q#O.O.B.z.z#v#N.S.S#v#v.z#.aCb7#l#laC.M.za6a6a6a6.2aWaW.B.R#P#P#5.p#C#X#N.g.g.zb7.R#Ob8b3.B.B#l.p.p.q#h#9.Y#o.1#o.3#o.3#o.3#o#3#3bd#o#f#EbHaUaUaUaU",
+"#L#L#L#L#o.C.0#L#L#LaUaU#f#S.3#L#L#o#o#L.1a8a8b.#O..#O.q#WaWbr#v#v.S.X.o.S#U.I.z#C#CaC#C#..z#N#J#J#J.8#Ja6#v#C#l.R.B.R#P#5.p#X.g#N#X.p#G.q.q#O.M.5.R.R#0..aubdbzaU#S.w.3.3.3.3.3.3.1#ob2.1bd.CbYaU.3aU.3",
+"#L#L#L#LbV#3#3#L#L#L#L#L#L#S#K#r#rblac#1#o#oaU.WaT.c#O#O.O.B.d.z#v.S.X.X.o.X.o#l#P#y#y.pb7#.aC.g.g.S#N.g#X#XaCaC#l#5#I.B#I#l#.#N.g#.#I#Gb3.qb5.MaW.B.B.f..#x#SbZaU#K#S.3.3.3#o.3#o.3.3#Sbl#V#k#kaU#o.3aU",
+"#L#L#L#LaU#k#k#L#L#L#L#L#L#L.3#L#L#K#f#oaU.Wbc.1aUbYb##x.T.B.M.zbr.8.X#g#g.XaP#l.R.M#M#vaPbx#Y#Ca7b7aZ#ybL#y#I.R#P.f#0#0#l.I.I.S#Nbr.B#0..b3.Ba6.Mbybyb3#c#2.1#oaU.Ubd#o.3#o.3.3.3aU.3aU.Y.C.h.h#o#o#oaU",
+"#L#L#L#LaUbB#S#L#L#L#L#L#L#L#L#L#L#K#f#L#L.n.3#S#KaU#TaD#W.O.Mbrbr.I.X#g#g#g#g.I#I#P#y#Ibr.8aoblblaobUa#ararbxa9.Ob8.f.R#v.o.o.S.S.M.R#O....b3.B.5#O#O..#h.U#rbM.i.U.Y#V#f.P.i#o#o.3.3aU.1#ea.#T#Qac.Q.i",
+"#L#L#L#LaU.1#w#L#L#L#L#L#L#L#L#L#L#K.W#L#L#L#L.3#f.Wa4a4.j.O#I.dbr#vaP#g#g#g#g.oaC#5#P#P.a#y.z#t#t.I.8bxa9a9.M#I#0.f#0#l.S.o.X.I#UaW#G.q......aj#R.c.cb6aEbmbpbpa8.GaJb0bJaJ#1bMaU.Dbn.D.1aX.6.6.1#waz.Y",
+"#L#L#L#L.3.1aU#L#L#L#L#L#L#L#L#L#L#k.P#L#L#L#L#L#L.D##.ha3#W.B.Maq.d.I.X.X#g.X.X.IaC.paZaZaZaCaCbG.u.uaZaZ.a#Pb4.f.R#0br.X.X.obrbr#G.Ob3....#c.A#o.W.W#k#o.3.3aU#f.U.3.3.3.3aU.3aU.n.n.n.1aEbFba#SaU.3.3",
+"#L#L#L#L#L.3.3#L#L#L#L#L#L#L#L#L#L.1.1#L#L#L#L#L#L.3aU.3#p.T.Oa0.B.Mbr.8.oaP.o.o.8.I#v#vbGbG#UbKbK.Ka6#XaZ.u#y.t#0#I.B#v.o.o.I.B.B.O#O......au.YaU.3aUaUaU.3aU.3#k.haU#o.3#o.3aU.3.3.3aU.1aD.6.6#SaUaUaU",
+"#L#L#L#L.3.3#L#L#L#L#L#L#L#L#L#L#L#o.1#L#L.3#L.3#L#L.3#L#Z.T#Wb5b5aqbr.I#U.S.8.o.o.o.8.8#J#j#JbK#J#J#N.2#XbG#C.paW.M.M.I.o.IaW#G.O#0........aDbVaUaUaU.3aU.3.3.3bd#3.3.3.3.3.3.3.3aU.3.3.1aE.r.raUaU.3aU",
+"#L#L#L#L.3.3#L#L#L#L#L#L#L#L#L#L#LaUaU#L#L#L#L#L.3#L.3#L##.T#O.O.O.B.d#M.I.I.I.S.o.o.S.o.o#t#J#U#Ja6a6a6.2a6br.d#Cbrbr.I.z.M.B#W#0b3....aub6#9aU.3aU.3#o.3aU.3.3.1#S.3.3.3.3.3aU.3.3.3aUbY.6.1.1aUaU#o.3",
+"#L#L#L#L#fbB.P.D#o#L#L#L#L#L#L#L#L.3#o.3#L#L#L#L#L#L.3#L###W.q#W#Wb5aWbr.I.I#v#v.S.o.X.o#t.X#t#U#U.2.2.Ia6#va6.z.zbr.zbr.Mb5.O.q.q....#caDaX.waU.3bV.3.3.3aU.3.3#obV.3.3#o.3.3.3aU.3.3#Sam#3aUaU.3aU.3aU",
+"bMbM.3#obkbtbt.D#k.3#L#L#L#L#L#L#L#L.1#L#L.3#L#L.3#L.3#L##.j#O.q.q.O.B.Mbrbr#v.I.S.obs.obs.Xbs.S#N#U#N#J#J.S#U.I.z.dbraW.B.O#Ob3b3....#x.JbzaU.3aU.3.3.3aU.3.3.3.1#o.3.3.3.3.3.3.3aU.3bdbb.YaU#oaUaU#o.3",
+".3.3#L.3.w#L.3#L#L.n#k.W.3#L#L#L#L.3#f.3#L#L#L#L.3#L.3#L##b5.Ob3.q.q.O.BaWaW.dbr#v.S.S.S#N.g#Na6#N.g#v#N#v.g#v#v.d#laW.B.O.qb3........aX.1#oaUaU.3.3.3.3.3.3aUaU.Y#o.3#o.3.3.3aU.3.3.3#ka1.YaUaU.3#o.3aU",
+"#L#L#L#L.3#L#L.3#L#LaUaU.1.P.3#L#L#S.r.n#obi.P.3#L.3#L.3bl.Bby#W.Tb3#O.Ob5.B.5.Mbr#v.I.I#v.g#N#U#U#Ua6#X.z.z.zbr#lb5#G#0#Ob3........#cbaaUaU#o.3.3bV.3.3#o.3bVaUbF#o.3.3.3.3.3aU.3#oaUbF#T.PaU.3aU.3#o#o",
+"#L#L#L.3.3.3#L#L#L#L#L#L#L.P.3#L.3.Y.W#L.3#o#o#r#L.3#L.3.0b5.B.O.O.q...q.O.O#G.5.M.d.z.z#v#U#J#Jad#J#U.z#C#C.M.5.R#O#0.q.q..........#x#Z#A#AbV#obV.3.3.3.3.3#o#oapbV#o#oaU#oaU.3aU.3aU#3.U.1.1#o#o#o.3aU",
+"#L#L#L.3.3#L#L#L#L#L#L#L.3#L#L.3#Lbd#S.3#L.3.3.W#r.3.3#LblbE.B#Gb5#Ob3...q.q#W.O.5.d.d.d#va6a6.I#U.I#U#Y.M.M.pb5#0.qb3b3......b3....#hbf.s.sbHafbpbVbV#S#rbV#S.i#Z#Q#Q.H#A#A#oaU#w.D.D#w.Y#9.x.x.H#AbVaU",
+"#L#L#L#o.3#L#L#L#L#L#L#L#L#L#L#L#L#KbB#L.3#L#L.3#kb2#o.3.0.B.B.B.Bby.qb3b3...q.q.O.BaW.5.Ma9a6#Y.2#Y#C.M#IaW#G.Ob3...........q..b3..#x#S.1.1#o#o#o.n.nbt.h#E.U.U#S#o#o#o.3aU.3.D.b.Waz.JaG.1bV#o#o#oaUaU",
+"#L#L#L.3aU#L#L#L#L#L#L#L#L#L#L#L#L#fbB#L#L.3.3#L.3.1#w.W#Rb5#I.B#I.B.O.q..b3b3b3.qb8.Ob5.BaWaWaW#IaW.B.B#G.O#0b3..........b3.qb3....#B.w.3aU.3#o.3.3.3.3.1#w.CaJ.P.3.3.3.3.3.3.3.3aU.3.1#SaU.3#oaUaUaUaU",
+"#L#L#L#o.3#L#L#L#L#L#L#L#L#L#L#L#L.1.1#L#L.3#L.3#o.e.7.7asby#I#I.paW.B.O.q.qb3b3b3.q#O.q#O#O.O#0.O.O#O#O.q.qb3............b8b8b3b3..as.1#o.3#o.3.3#o.3aU.3.3#f.i#S.3.3.3.3.3.3.3.3.3aU.1#oaUaUaUaU.3aUaU",
+"#L#L#L#S.1#L#L#L#L#L#L#L#L#L#L#L#L.naU.3#L#oaU#Ka.#O......#0.B#laW#laW.5.O.Ob3b3b3...qb3.q.q.q.q.q.q.q..................b8#0b8......#B.i#o#o.3#o.3#o.3aU.3aU.1.1aUaUaU.3aU.3aUaUaUaU.3.J.1aUaUaU.3aUaUaU",
+"#L#L#L#f#S#L#L#L#L#L#L#L#L#L#L.3#L.3.3#L#obabkbO...V.....V#O.RaW.paW.d.M.B.B.O.q#O.qb3b3b3b3.q.q.q.q.qb3b3..b3........b8#0b4b8......b3b..Ybl.w#o#oaU#o.3aU.1bBbdaU.3aU.3aU.3.3aU.3aU#o.6.1aU.3#oaUaUaUaU",
+"#L.3#L#k.W#L#L#L#L#L#L#L#L#L#L.3#LaU#LaUbkbObO.............q.RaW#I#l.M.MaW#I#G.O#G#G#G.O.O#W#O#O.q.q.q.q.q.q.q.qb3.q.q#G.R#Gb8.........VbAbAaA#S.3#oaU#o.3#SbY#KaU.3aU#o.3aU.3aU.3#oaU.A.1#oaUaUaUaUaU.3",
+"#fbBa8aGbn.3.n#faU#L#L#L#L#L#L.3.3#o.3.CbO.................q#G#I#I#C#C#C.M#l.B.R.R.B.M.M.d.d.d.d.d.d.5.B.O.O.f.qb3#0#0.B#5#0.q..............bvb.bz#oaUaU#obd.U.UaU#o.3.3aU.3aUaUaU#oaUbm.1.3aU.3aU.3#oaU",
+".3.3bBaJ#L#L#L.1#S#w.3#L#L#L.3aUaU#f#oaS.V.....V.........V.q#G.p#I#lbG#C#l.M.p.R.R#I#l#l.z#U.8.8.8.8a6#l#G.R#0.q.q.R#G#I#5#G.q.......V...V......#F.Qbz#oaU#S.Y#k#o.3aUaU#oaUaUaU.3.3#o.Y#o#oaU#oaUaUaUaU",
+"#L#L.1#7#L#L#L#L#LbB#w.W.naU#L.1.1aJ#3b6.V.................q#0#I#I.M#CbG#CbG#l#l#5.B#l#I#C#U.o.o.o#J.z#I.R#G.f.q.f.R.R.p.R#0.q...............V....aKaK#S#o.1#S#S#o#o.3aUaU#o.3#o.3aU#o.1aUaUaUaU.3aU#oaU",
+"#L#LaUbB#L#L#L#L#L#L.3.3.Wb2bibmbm.Ga5aN.V................b3#0#I#5#l#CbG.z#C#CaW.p#l#I#I.p#.#N#J#ja6#..R#0#0.f.f#G#y#I#5.R#0.q...........V.......V#cb3#p.1.1#o.1aU.3#oaU.3aU.3#oaU.1#o#S#o.1.1.w#o#oaUaU",
+"#L#L.3.3#L#L#L#L#L#L#L#L#L.1#rbmbm#kapaN.V.................q#0.R#I#l#C#..z.z.zbGaC.p#l#l#l.pbG.g.gbG#5#P#0#P#0.f.R#I.p#y.R.fb3........................#xbzbabz.Y#k.Y#faVbVbMaUaU.3#9.YbkaGap.x.x###Vbz.J",
+"#L#L.3.3#L#L#L#L.3#L#L#L.3#L.3.C.C.1aS.V...V.V.............q#0.R.R#l#l.z#v.za6.z#.#C.M#C.M.p#l#l#l.p.R.R.R.R#0.R#5#l#I#I.R.fb3....#c..#c.........V...V#c#2#R.h##b0#3bJbp.i#AaU.nbt.G.G#E.n.1.1.1.Dazaz.b",
+"#L#L.3.n#L#L#L#L#L#L#L#L.3#L#L#k.W.1bb.V.V.V.V......b3b3.q.q#0.R.R.paWbGa6a6.ga6.2.2.zbGbG#CaW.p#l#l#I.p.R.R.R.R#I#l.p#I#G.f..........#c#c#c.V.....V....#x.Y#o.naU#oaU#oaU.3aU#o#wbHbH#k.naUaUaUaUaU.n.n",
+"#L#L.3.n.3#L.3#L.3#L#L#L.3#LaUbBbd.Uau.V.V.V.V....b3b8b8.qb8#0.R.B.paCbr.2.2a6a6#N.2.z.2.z.2.zbG#C#C#l#I#5#I.R.R.p#I#I.R#Gb8b3..........#c#c#c...V...V...VaK.Pbd#o.n#oaUaUaU#oaU#o.w#w#oaU#oaU.1aUaUaU#o",
+"#L#L.3.n#L.3#L.3#L.3.3#L.3aU.hbbbbb6.V...V.V.V.V...q.f#0#0#0.O.R.R#I#lbG#v#va6#Na6#U.I#U#Ua6a6#va6.zbG#l.p.p#5#I#l#I#l#5#0b8.q............#c.F.......V....#caKaK.P.1#o.n#oaUaUaU#S#3#3#oaU#oaUaUaUaU#oaU",
+"#L#LaU.1.3#L#L#L.3#L#w.wbFae#x#4#4#c.V.V.V.V.V.V..#c#0.O#0#G.R.R.B#l#l.z.2#v.ga6#N.S#U.S.S#J#N#Na6a6.z#CaWaW.p#l.p#I.p.R#0.f.q.qb3b3b3.q#Ob3.F...V.V...V...V#c.Vas#2bz.1#o.1aUaUbd.6bF.n#oaUaU.1aUaU.1.n",
+"#L#LaU.1#L.3.3aU.J.6#b#Fb6.m#4#4#4.V.V...V.V.V.V.V..#0#W.R.R.B#I#I#l.M#C.2a6a6#N#U#N#U.S#U#J.S.S#N#v.2#CaC#l#l#l#l#5#I.R#0#0.f.q.q.q.q#O#O#O.F#c.....V.....V......#c#xaA.6.A#9av#k.A.A#o.n#o.n#o.n.1#o.1",
+".3.3a8#Z.h#sahaA#x#4#4#4#4#4.m.F#4#c...V.V...V.V.V...q#Ob5#I.MaW#l.M#C#C.zbG.g#N#J.S#U#U.S.S#U#U#N#U.2#..M#C#laW#l.B#I.R#G#G.Ob8b8#O#O#O#W#Wbv#c...V.........V...V..#c#c#c#c#haqayaD.l.J.w.1.1.1.1.1.1.1",
+"aU.n.6#ZaaaBaB#4#4.F.F.F#4#4.m.m#4#c.V...V.V.V...V.V.V..boaW.d.M.M.d.d.z.z.za6#U#J#J#J#J#J#U.S#N#Na6a6.z#C#CbG.M#l.B.B.R.B.B.R.O#0#O.O.O#W.O#c.....V.V.....V........#c#c#c#c#c#c#c#cbvaBaD#Z.i#V#V.w.1.1",
+"ababaHaB.F.F.F.F.F.F.F.F.F.m.m#4#4.F.V.V.V.V.V.V.V.V...V..b5.d.2#Y.2#Y.2.2a6a6#U#J#J#t#J#J#J#J#J.S#U#Na6.2.2.z.M#l.B.B.5aWaW.B#G#G.O.O.jbI#W.F.V...V.V.......V...V.V#c#c#c#c.F#c#c#c#c#c#c#h#xb##xaibY.1",
+"#4.m.F.F.F#c.F.F.F.F.F#4.F.F.m.m#4.F.V...V...V.V.V.V.V.V.V#u.d.2a9.2a6.I.I.Ia6#U#J#t#t#t#J#t#J#J#J#J#J.S#U#Ua6#CaWaW#I.M.d.M.M.B.5.B.B.O.TbA#c.V...V.....V...V...V....#c#c#c#c#c#c....#c#c#c#c#c#c.Fb#am",
+"#4#4.F.F.F.F#caN.F.F.F.F#4#4#4.m.m.FaN.V.V.V.V...V.V.V.V...Vbya9.I.Iay.I#U#U#U#J#t#t#tbC#t#t#t#t#t#t#t#J#J#Ja6#Y#IaW#l#Y#Y#Y.daqaWaW.B.jbO#4#c...V.V.V.....V...V...V...V#c#c#c#c#c.V#c#c#c..#c#c#c....#c",
+".F#4.F.FaN.F.F.F.F.F.F.F#4#4#4.m.m#4#c.V...V.V.V.V.V...V.....V.daq#Uar#U.I#U#U.8#taoaPbCbCbC#tbC#tbC#t#t#J#J#U#Ca7.d.da9.2a9.2.d#YaW.5bI#4#4.V...V...V.....V...V.....V#c#c#c#c#c#c#c#c#c#c#c#c#c#c......",
+".F.F.F.F.F.F.FaN.F.F#4#4.F#4#4.m.m.maN...V.V.V.V..#c#4.FaN....aqaqbx.8.8bx.8.8#J.X.XanbCbCbCbCbCbCbCbCbK#t#t#Ubr.M#C#Ca6.I.2#Ybr.d.d.5b6.F.F...V.V...V.......V...V....#caN#c#c#c#c#c#c#c#caN#c#c#c.V#c..",
+".F.F#4#4#4.F#4.F.F.F#4#4#4#4#4.m#4.m.F.V.V...V..#caN.m.m#c...VaWaqay#t.8.8.8#J.o#tanbCbCbC#tbC#tbC#tbCbC#t#t#U#Cbrbrbra9.2a9bG.M.MaWb5.F.F#4...V...V.V.....V...V...V..#caN.F.F#caN#c#c#c#c#c#caN#c#c...."
+};
+SIMPLE  =                    T                                                  BITPIX  =                    8                                                  NAXIS   =                    2                                                  NAXIS1  =                  100                                                  NAXIS2  =                  100                                                  HISTORY Written by XV 3.10                                                      END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             	>>ckihhmjoxxxzutuuvwvqq^IIIISTRKBB;,	
+	
+
+
+	BBbebaaeiszzzzxvvvzztpp_IBHHUXTPJJA7		
+
+
+	
+
+
+
+	HHcb`]]bftzwwywtsstuojj]J?FFPSSPII@8"		
+		
+
+
+
+$UU\^]]]_gnossqrqrrsojgg\H7>>LONG??82*					
+			CTTUVZZZZaipppllkjjkhd^^VH777@ED?44+*$
+		
+
+'Tii-#	-JMMOOSVVV_illlihidd`^XSSOG8005;91''##  
+
+
+	
+++3W⌠╣ццy┌E!!:FDDHKLPPX`giiiggb``YUNJJHB;//+.,% 
+
+'Y┤╗╗╟Ё╧╩хх▄▀▀▒▒f,	*5<;;@EHMMX_dcaacea__]TIAA@?:00('$ 
+
+
+A^^^ё╥╪╩╩╪╩╩╫ооб╥хллд═}KK'-/22<AHTT[\a`bbcfd``YSI??;;822' 	2duu∙╡ёuu©©ю©©©╫╫╫оои╩нммнмк╥╥│N)
+
+ $&..:@LVVZ\]accceb\\UNF<<78:55(8f═╨©©аб╚}}юабаабю©©оох╬нмммммллиа▌>> ++4>NVVY[\^^^[Z[VVQG?6602766*	
+
+NN╚╪©абббб╢∙∙юбааацббюяяи╫нннммнооммх╙╙▀"**4ALVVYZ\USSTSOJJG>500'/766-  
+
+V╚╚╬ююаццбб©╡╡╫бцаабббаппйюяяяонооолол╕╕╩?
+**5>MXXWWUPLLID>99930**%)4990#   		3≥╬╬аааадддб╡┤┤╔бцббббббяяхйпяяпоооонол░░╨T	++8@KTTTQJDEEA88>>6**%%#/771'
+eo⌠⌠■⌠⌠²╟╟ю╬°ee┴╪╫╩╩╢╖╒═ррхипяяппооом╫╨││╗─  //;GMOOMJ@===97I[[K/$!!)440' -═z÷÷═╒╖╛╦╦цде²²u├│──∙╔═ёяяе╟пяяппоии╜⌡╘┘┘ex   	11=EKMMG=69444Iajj\D)!002(	   x╪╧╫╫юцдбдддде╨╨╣╫╪╨╨©аюаяя╫▐пяяяо╟╞╞©хо╩╩├  
+!22@HIII<5/166F^moohQ5$$,,3,MM╞а╩╣╣аддцдддддбб╧бцббдцбцхх╜▀ноо╫╣╣ййпяндд╖юU#44BIGAA4/)0<<P]fhheU9''$$2.Lёё©ц╡÷÷бдееццддебб═©дццедцц╙╙▌─╫фф╘цпяяппмйй©й▐ #44AFE==/%(2>>HKGGGD<+	/- Iёююац╙┼┼цеедддддфбб┐╩цццддбцммн║╝ооопяяяпооммглфp(66=EA99&"'%%"#)f╢юццбд╟∙∙деедеефефааu╧дддцбцдяяо╖╡ппяррррпяпооикнаvv,88=G?..			
+L°°╥ааццдд╫╝╝ддеефффефбб}╧цббцббдяяо╣╫яяярярряяпооюеомбб≈X0::<<3
+6╙ааццдддеед╧╧бфееггфдедд╕©цццеццдяяоадпппяяпппяпоо╤╩омллк╪─UU<$1666/    =╧ццдееддфгг╘╘╦фефххффгфф╦©цццедцдппядгяяпяроояяппп╖╟омммли╩╝╝h-2221!%%28:8873-##	  4╧ццедеффф╬╢██╙ффгггфгфгг╩╡цддддцбпппафяяяяяппяпопп÷╘омммй╗²бб√6/..$	!077COSNNLJ>66*  /╞╬╬╬╬а©©═█┬▀▀╟ю©аддд╦÷╗╗╓┬╪╫╫╬абаяяягхяяяряппопооо╙╡онйй╘╤елл 4.''"4CKKQY]^^`]LAA7) b┬┬┌┐°╫╫ЁЁ╬╟╟┤▄┘▌╞╞а╬╡╤╤╠⌡≤▌╝╬бяяякйоооппяям╡цкк·╘мл╬╬╦лмлл≈0+&4@JPPT_ffff^SFFB7'.├╜╜╧©аффхфг©©z╩©аеефгфдд■┼╦╫╫©бццррякхннопядд╦╞йоо╝≥ею╟╟лмнмм≈.'	++5BLU\\VZ___aYRMMNG8''zббцефффхфгюю┐аггггггедд~`╜ееецдбккпй╥ййямю╖╖фопяям╔хооооллмм√+,::BNWcff_\^]][ZYZZXUI99* d╫╫цефгггфгдд═аффгггггхх╓D║ццдцццЁЁй©o══╢╔╬ккряпррн╫мпппоннмм∙%.>MMRZbjooosscc[bgff^XQGG<,  /╕╕цдеффгфххх╩©гггггггхх╘=²ббццддппяп╓╝╝╢╪прррппппгцнппппонлл■)9HXXSYelqqrvq^^SRYWWTQPKKL>+ ``╨деееггфгга╬ггггггфгг╢T≥ддедддяяяяфккяяярряппппдбноооооммм░  3GQ\\\dklllkkhbb\XWTTMFGIIXQA+ !!≤цееефффгг╩╠ефггхгггге▓{╪╪ддцдяяряйккяяяяяппоооаюопнноонлл┼((:LWaaclkifffknmmibXOOD75AA^eY<"" ^╨цеефеггг╛≤еггггффффг╧Z≥≥бццдяярплиияяяяяпяяяя╣╧ппооннмееy"33?Qakkmof]WWMLarrcYM<<.!11XmmW//  "║цддддфггё▀ееффеффггф╪`||╡ццдпппяи╬╬срррряяпяяё╛яопппн╤▐▐:+??JZqzzzt[@6646FKK>=9.."  NpwnHH(  
+s╬╚╚═╫ффф╕▌ееффффеююю╨^}}Ёбцдяяяре╣╣рсррррпппп°╖япппй╖╖% 5JJRi|─nE)$$'5Qnn_hdOO@6;iqw\\4"7n77"_├║║┤e█√▌▌⌡Ёю╧╧╨╨c||╦╢╚²яяппц╞╞яррррряяпп ╕погг╠÷ю]]&=NNZt┌┐┐}\/&33Kfz  {togg\Q#$UfneeA'05┤ЁЁ╝▀═╛╙╙╠╬еееф╧}\\├░⌡╙яяяя©╒╒яяррряпклл·ёдб╔╔╨а▌,,+BNNay}}r:)=UUj_OII=75440- =W]aaI-0X?''l╬╬ц┬╛деееефеец²■▐▐©юацяярр╩∙∙ррррро╢²╧╧÷▌°©аа╗m=2IRRhxurrh7(.44?EHZZgaVNNDA900+1<L\\M4
+
+*E;--0╟╟ц Ёфффеефее╤÷╜══дддеяяср╧⌠⌠рррее╗╡аоою©л╪▀▀N5JTTermaa]NCBCCJP]iiffgUUB:-(('/6LYYM8#<7++!╕╕б╟╨еффефф╫╫═╨╙▒▒цдддбб╨г╗■■пяи╜╜╫яяяялд╤vQQX>5LSS`fcVVNJC<==CDOWWUWQ<<-*$))4BL^\\P='00::4  б╫╫дееее╫  ╛ю╔┴┴бдцд╔╔╨х╙╫ф╚ггрряяян╥r@FF[p45KOO_d_VVPTI=;;867??B?2$$ )/DDQ`ii``SB,@hhV──б©╥цдддц╛²²цд⌡||╫юа©ллрян╫╫йолссяяяяяк┼GKTT_g(7IQQ^ejllklcVLLA85::62'"-@WWdnuoaaSB1Awwa^^ю©╛цеефа▐╦╦д╢{hh╦аб╧ррсряииоссррррярреb>HLLYe" 7IRR[cmxxzuiYYF:?##";330;\\oxzmccR@1##>mmK'SS╪╫°бффе╘ёбб╝°°``╝бцдссррнффяряяяярярр©bKLNNOP 6LXX]gpxx┌}ytaa?@@  0MI%%%+1^^x{rf^^P>2((3QQ6@HH╣╩┬юфф╪°╨╞╞╒╪╞hh╝дцдттсрнееярряярряяяа┤`hiiY>"9P[[eoryy┐└{wff9@B99Gia66 /eeysf^WWL=5--*66(P??╟╧─©дд╛÷╘≤≤юб╜┬┬╣ццдссрянееоссррсяяпп©÷e─eeS>"9O\\hnpuu~└└}nn:+033CdZ66<ppp`XTPPG?;11--&L''x└┬╧╫╫▐╔²╣╣═≈█ss┐╨юассррнффнррссяппяя╨°ToooL9!4JXXempssvx{xxP+&''6HC//BZZVQKEGGHA<22&;▌╜ё═÷÷├░╣©©╤╡░══z╛╜╢рряпкююпрсррпям╦╦∙─SJ]]R0 /GUU_hjmmhjnlaaN6+##.A<**2IILGECJJH=:22	 "	BB╞бёwoo≤╨цеефб°╩╩╝©ббррряи╧╧прряян╪╨╞╞╠k];CCM&",EWW]djee]YcgYYE81##*<;%%,EENNQLLLF4877   MM╜а╖[┘┘юеефффц╖©©╪╧бцяяяре╝╝пссйй╪╕гоолwjDJJ?
+#,EXX^^bbbWQR]XXI60)))87  )@@TWRJAA2$/33      |╩╞\╙╙ддефффю▓╥╥ёz╚╥рряп╨  ояг╕╕юкпппл─YF33  &/DTTY[[YYVVUSII>4,**,99!!(@@PSN=++&++      =╟Ё_╙╙деееефб∙■■▄┴╦√йй╨⌡▄oo÷╘╫ццпяпппл}R/  "/CQQVWPMMTRQLCCD:*%%+;;%%&,,#8eO          ▌╤f╙╙фдеффеюo██╕║цц╫╫╡бе²²╓бояярряяям│\   +@RRQB10091'8JJ?=.!!,?A++!.4`H		         g╦│╚╚еефффа╙a⌡⌡╩╡беяяяпр╤╤бряяяррряям┌L         2NNL3!1dd>9<))9JN=="%-%##&           [╚~╚╚ддю╥╥╕▓y╪╪б╛╫дсссрсеекрсссрряррмm        77LD-!!!&7DAAQ[ZOO;52$$(6BDD7             >┤M╖╖а╬·║║╬╨}╫╫д┴╟цссрярккмяссссррррлo         -EG77$#$  6JRUU`je[[LB8$$5900             hr╖╖ё╛╥аадю·аад▒╡цсссяпииорррррряяякf         +>LLMOSL77*5ESSila``U@-             Olddv█ ╒╒╠╩╞ююц╗═°ррсрлаапрррряяпппй]         
+
+
+--;BB08OOki_ddaO;44#           zpff╛Ё╦╩╩©ю╨цце╦∙╢ррррф╟╟рррссяякйй╥`          
+7Sffvwsrr{tgccZK>222.(           a┘░░бефггф╬©еее╧┌аррсс╬÷÷ясряяп╬╜╨╨ф╒D          +0:KK\lv──┬┤{{}yqnnfTD<77/(           )v┤≈≈цефффд╙╤ееф╦┐╬сстр╩√√ярм╦╦╦©еппо©p          -66>JRWaaksx}}ztrroigddXJ@9441*          Q■▐⌠⌠бдеффф≈╛╩╩╝▌X─ссн╪ё┬┬╬╪╬╣╣йппяяпц▓          ->>GQZ_ddimpnnnjhiid_\ZZLB;5555+
+
+        '┼╘·≤≤бееггг▐▐ёё⌠╒}Ёии╜╚·yy╚©орряяпппнф╖+            
+->>IRV[^^aeeeebceff_[WRRG?:7778,        p╥╦╠√√бддффб┬■аае╩░аддмок╩╩мяяррппяппнф╞D          0>>HLPUZZ\Y\``_ccccb]XRRMFBB==:.		       ww╤ю╩╥⌡⌡аюбее╛┘╫дде╩■бссрряллояярряппппнф╥m          -<<FKOQYY`Y[ddghihhgea\\URMG==4%      
+g╟╟©©╤╥√√юцц╦╦┴┘бддд╪⌡аррсрмццпяпррряооонф©⌠          &<<EMRU__gkpqqsswvvqniggcYQA00)       ┘╧╧╬╬╛╦∙∙╟·╒╠╠╘╓цддц╧█©ссррц╛╛яяяссряпоомхе╞77           00EMV]hhox┐~~{z─}}xsmiidZN<//      ┘╧╧©╨⌠·}}│ ╗╝╝╓°╓╓╓╕≤i╝ттсс╨▒▒яряяяяяооопкхдgg           5FR[eeqx┌└└~|│wqhffWKA8++        ╘╘√└Usuu─√·²²▄⌠ ≥≥²▐g}ссяя╧■■рсяппяппппоиех             4:9EEZffwwzuvttmgYZZSB>6$$        ░╦╦╢╓c╡╖╖║╦╬©©▒╪дццдб║≤ррпя╪²²рсряяяппии╫╗┼ё╘╘2           .+##&32;;MJJTTM=833>>/-        H═╪╪©⌠░аааё╪дюю└╩дццдц╜╕рряри╬╬рссяяо©╧╢╢╓╒┌╫©©i           $# %#11,!"!'         n╖╦╦÷ Ёацц└╢еаа▌╫еддцц╫Ёяярпллляяиии╥╔╨ммоа╙кии╘4                	
+          :└÷≈≈≥═╢ббб≈╦ецц╛╬╡╜╜╜╢╨┼яяплеггню╞╪╪лкнппп╫²нккб┬                                   		:e▐╤╤╫≈╟бцц╦╤ц╨╨╢║┌└└┼≥╝|бб╣≈█▌▌╦ейяяяпояяп╧▒мммк╨j                                            K∙╧ааб▄╛бцц╢┴ц°°y╜╧ааццб╚ЁЁЁеЁ▓▓няярряяоппп╧■нммли╤oo                                          
+544≤╪бццц▀╜цдд╢┐╫└╬бббаббюпппп╦⌠⌠пяяррпооннна╛мммнмл©©u                                       Mii╩абццц≤╡дее©═╔├├╥аабббаабоооп©║║опппппяпооои╬мннмлкййбx                                     G┐╗╗╫ааддц╔╤╫╬╬╣~∙╟╟ба©ююю╫╩╦ннон╫÷÷нпооооонннойгмммлкйййц÷\                                   [°}··╠юаббб╔╕▌ёё╤▄~░░⌡⌡≤  ═√█┐нннм╦≈≈моооомнммммххлммме╡╞╞╫╪╦{{%                                ``ё╨⌡▒▒▐╒■░░▐─░╘╫╫╪╝sxx√≤≤÷÷╙╟Ё▄ннмн╨≤≤нонннмммммлцдф╤╤©Ё╘ццййх©©y5                           5f██╚Ё║┬┬t▌╚ЁЁ╗t╗юббба╜▌▌Ё©юаааю©┐мммм╪°°момлллллееа╡{▐╕╕юйлллкйихх║·w88                     H|≥··╜²║╫╫╗≤Ё╫╫■z╩юааба╡▐▐≥Ё╪ббаа╪└ллмм╨  лммллйи╫ёё╙╠├©ххйкйккиииии╕╠╬╠╠╘∙R%
+1/D⌡⌡╜╞Ё╣╣╥  ╦╦╧Ё▌▌▌x▌╬©ююаю╢ЁЁ╤═╝╬╬©╫╒_ммлл╩÷÷млкдд╛╛╬©©иа╠гиииййиихххииё╞ееедю╣═▄▄u[ff┐zwwn┌▒■■⌡╕∙≈≈o>6666/2EEi┘y▀▀R▄╪╫╬╬©╬╥ЁЁ■┴▌└└═▐{sммллб╞╞г╧╠╤╤╜дйкккиюеиихгхххииигг ╘ееецбб©╫╫╧╤░qq÷╣÷÷÷╣©аббб╚┘╖JJ8ee[b└╢╪╪╬╬╦∙∙░╖▌yyw╖▓┼йй©╩ф╛╛÷╔╩ййкййкккй©цииигфиийиихх·╛фффебцюЁЁ╦╝▌qq÷©цддбдееею╖╛▀?d;y∙∙╔╧═┤┤÷╓║╛╛≤▀█┬··÷╛ц░░╖хйккккийййи╞╦хххихииихгхх╕╡фффб©╫═°°Ёбю╦╦≥╜юццццдаа╕ ╝▐22	$LKKDwOxx▒▄▀║║╟▀q▓╨╨бикёё╡иийййииййих≤╙хххихииихгии═╛цЁЁ║╒╬╧ююеееее©╥╓╙╙адд╜╜ё▒·╓..+.
+TTP.:²²Ё╨╩╩╩╩╤▓tииййл╣╣╪ихииийиииии░╕ххиййййиххдд t╝╝╝╡цфгфффедееее╧╔╔╡а╬≈≈╢╔╛╤44
+..;     ''M57╒╒╩╩╧╨╨╩╥≥╜ййкйк╦╦╬ииййййиххии░╔ххиихххф╤╥ЁЁ≤└╗╪╪фффдффффефффффдд═╙╟²²а╟╧╕GGD&       ##+ `▄▄╔╡╧╩╩╨╣√╦иийийююдййиийийиихг■╖ххиф╫юю╘═╣еефе╛∙∙╨цфеффггффффееффц╛┬╙╙╘░≥aee	        ""*%v╠╠╒≈╛╣╣╩╩╝╟иийхиеееххииихихххи╣╤еею╒∙╤╤адгиихге╫╫╓═беффггхггфефффдюuVV[Mbv┬┬G        &+:zz╣╠ ■■÷·┼│хххииеебихииихххххиб}▌▌╦╡©гггххххгггххц╠⌡╝еефефггггю╚╚■╢u▓▓▒JSjssS       *+11e▀╚▀▀{═▌kхххииффбххиихххфф╥╢╩┼°°╪хггггххггфгхгггг╦║╗╗╩ец╝╝╕©╠²²╦ц≤╡╡│EBe┬┬┐0      $,''v╛╦╝╝┐v├хххихфф╪гхиии╪©╠╠═╦фд╙╙╖╥аххгххгггхххххххе╔╔└═°√√╜цфффгх╪▒▒UCMg■■┼1    +++;│╠··┤┼n⌡ггхххее╢дцдд╝║╦еедфффффб╖·©©егхххгхххххдб╢══▓└≤╫╫агфггхе╤tt;=>n··s$***$`╥╦╦╤╥ё╜ффиигцц▒║·╧╧╪аггггфффффхе╧÷÷╖дгххффгфф╣║╕╫╪╪фю╤╙╙≈╬фггд≥pTT<6?r≤≤j"		)++$_╤╩╩╪╩√█дд╫╚■╜╜░uЁеефггххггхгффххг©©╙╢╞еед╥ ╟╟╛Ёдггггигее╚╤╗╘╘·⌡╡╚╚zBIs┤┤[$	
+1@╔╨╨╪╩·√╣╣█²Ё╬╬ю╔╣╨╨дгфхххггфеегхгххх╬≈■■╛⌠╚©©гггхгггфгххфе╟ee▐╗а╫╫sGe┐kk## 
+
+2"c╞╛╛≤╓╜°ггддфггффб╗╗╜фхггигфгеегггггх╢├┴┴┼╟еххххгхххгххххфф⌡▄▄╪▒oox┬≈ё\\)#    %(([eo√√▀°╡q                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

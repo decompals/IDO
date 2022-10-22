@@ -1,0 +1,7 @@
+###5.12
+Focusing on a Phase
+The Time Line calipers let you see performance data between any two sample points in the experiment.  This filters out data not relevant to this phase.
+Select the right caliper and drag it to sample point 3.  
+Click on the OK button.  
+Notice the function list has changed to reflect the program's execution within the new caliper setting.
+Click on the bottom right arrow to continue.

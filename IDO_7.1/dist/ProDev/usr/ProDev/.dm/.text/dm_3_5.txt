@@ -1,0 +1,6 @@
+#3.5
+Set Up Your Files
+You can also ask the Static Analyzer to "parse" your code for detailed run-time information, such as pointer and data-type definitions.  
+
+"Parser" mode takes longer and uses more memory, so its best used on specific files for detailed run-time information. You must be able to compile code to use parser mode. 
+

@@ -1,0 +1,9 @@
+#3.2
+Static Analysis
+ProDev WorkShop has a Static Analyzer that helps you see your code's structure.  
+
+The ability to visualize your program's structure greatly helps documentation and debugging efforts.  It is also vital for restructuring and re-engineering existing code.  
+  
+
+ 
+  

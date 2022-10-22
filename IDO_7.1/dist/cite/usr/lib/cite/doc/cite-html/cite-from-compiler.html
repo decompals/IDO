@@ -1,0 +1,40 @@
+<HEAD>
+<body bgcolor="#fffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+<TITLE>Producing compiler information for CITE</TITLE>
+</HEAD>
+
+<BODY>
+<P>
+<BR> <HR> <P>
+ <H1>Producing compiler information for CITE</H1>
+<HR>
+
+<P>
+CITE uses information produced by the loop nest optimizer (which runs
+at the optimization level <tt> -O3 </tt>) and the code generator in the
+listing, transformed source, and assembly files. With the MIPS Pro Compiler
+it is possible to produce all the relevant files that CITE
+needs with one additional compilation option.  The option is <tt>
+-LIST:cite </tt> or <tt> -LIST:cite=on </tt>. So for example 
+<PRE>
+  f77 -o mm.O3 -64 -mips4 -TARG:processor=r10000 -O3 -LIST:cite mm.f
+</PRE>
+
+would produce a listing file (<tt> mm.l</tt>), a transformed file after
+LNO (named as <tt>mm-after-lno.f</tt>), assembly file (<tt>mm.s</tt>),
+and a mapping file (<tt>mm.loc</tt> which gives the line number
+mapping between original source and transformed source). Since we are
+targetting the r10000, prefetching information will be there in the
+listing file.</P>
+
+</BODY>
+</HTML>
+<BR> <HR>
+<P><ADDRESS>
+<I>Suresh Srinivas (ssuresh@mti) <BR>
+<FONT SIZE="-3"> </FONT><FONT SIZE="-1"> Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT><BR>
+May 16th 1996</I> <BR>
+<BR>
+<BR>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,6 @@
+###4.8
+Starting the Process
+After you set your traps, you start the process using the Run button. The process continues until you hit a trap or click the Stop button.  
+Click the Run button.
+The program starts and then stops at the trap.  The green highlight indicates the PC, the current code location.  You can now view data.
+Click on the bottom right arrow to continue.

@@ -1,0 +1,459 @@
+<!-- Version $Revision: 1.7 $ of the fulltext print stylesheet -->
+
+<!ENTITY	add.left-indent	CDATA	"+=20"	>
+<!ENTITY	app.text-b4	CDATA	"if(isempty(attr(LBL,ancestor(APPENDIX))),'',switch(attr(LANG,ancestor(SGIDOC)),de,Anhang ,fr,Appendice ,ja_JP.EUC,•t˜^ ,DEFAULT,Appendix ) attr(LBL,ancestor(APPENDIX)))"	>
+<!ENTITY	body.font-family	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,Ryumin-Light-RKSJ-H,DEFAULT,new century schoolbook)"	>
+<!ENTITY	body.font-size	CDATA	"12"	>
+<!ENTITY	body.line-space	CDATA	"14"	>
+<!ENTITY	character-set	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,shiftjis,DEFAULT,)"	>
+<!ENTITY	chp.text-b4	CDATA	"if(isempty(attr(LBL,ancestor(CHAPTER))),'',switch(attr(LANG,ancestor(SGIDOC)),de,Kapitel ,fr,Chapitre ,ja_JP.EUC,‘æ ,DEFAULT,Chapter ) attr(LBL,ancestor(CHAPTER))) if(isempty(attr(LBL,ancestor(CHAPTER))),'',switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC, Í,DEFAULT,))"	>
+<!ENTITY	chp.title.font-size	CDATA	"12"	>
+<!ENTITY	chp.title.font-weight	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,Medium,DEFAULT,Bold)"	>
+<!ENTITY	chp.title.left-indent	CDATA	"40"	>
+<!ENTITY	chp.title.space-before	CDATA	"6"	>
+<!ENTITY	doc.title.font-size	CDATA	"16"	>
+<!ENTITY	doc.title.line-space	CDATA	"21"	>
+<!ENTITY	left-indent.1	CDATA	"4"	>
+<!ENTITY	title-font	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,Ryumin-Light-RKSJ-H,DEFAULT,new century schoolbook)"	>
+<!ENTITY	title.font-family	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,GothicBBB-Medium-RKSJ-H,DEFAULT,helvetica)"	>
+<!ENTITY	title.foreground	CDATA	"black"	>
+<!ENTITY	title.space-before	CDATA	"4"	>
+<!ENTITY	font-slant.roman	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,*,DEFAULT,Roman)"	>
+<!ENTITY	font-slant.italics	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,*,DEFAULT,Italics)"	>
+<!ENTITY	font-weight.bold	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,Medium,DEFAULT,Bold)"	>
+<!ENTITY	font-weight.medium	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,Medium,DEFAULT,Medium)"   >
+<!ENTITY	refmeta.font-family	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,GothicBBB-Medium-RKSJ-H,DEFAULT,helvetica)"	>
+<!ENTITY	def.font-family CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,Ryumin-Light-RKSJ-H,DEFAULT,times)"	>
+
+<sheet >
+
+
+
+<?INSTED COMMENT: GROUP #ROOT>
+
+<group name="#ROOT">
+	<left-indent>	&left-indent.1	</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP title>
+
+<group name="title">
+	<font-family>	&title-font	</>
+	<font-weight>	&font-weight.medium	</>
+	<font-slant>	&font-slant.roman	</>
+	<font-size>	&body.font-size	</>
+	<foreground>	&title.foreground	</>
+	<line-spacing>	&body.line-space	</>
+	<justification>	Left	</>
+	<break-before>	True	</>
+</group>
+
+<style name="APPENDIX,TITLE" group="title">
+	<font-family>   &title.font-family      </>
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	12	</>
+	<left-indent>	&chp.title.left-indent	</>
+	<space-before>	&chp.title.space-before	</>
+	<text-before>Appendix attr(LBL,ancestor())</>
+</style>
+
+<style name="CHAPTER,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&chp.title.font-weight	</>
+	<font-size>	&chp.title.font-size	</>
+	<left-indent>	&chp.title.left-indent	</>
+	<space-before>	&chp.title.space-before	</>
+	<text-before>&chp.text-b4</>
+</style>
+
+<style name="GLOSSARY,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	12	</>
+	<space-before>	&title.space-before	</>
+</style>
+
+<style name="GLOSSARYENTRY" group="title">
+	<font-family>	&title.font-family	</>
+	<space-before>	&title.space-before	</>
+</style>
+
+<style name="INTRODUCTION,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&chp.title.font-weight	</>
+	<font-size>	&chp.title.font-size	</>
+	<space-before>	&chp.title.space-before	</>
+</style>
+
+<style name="PART,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&font-weight.bold	</>
+	<character-set> &character-set  </>
+	<left-indent>	40	</>
+	<space-before>	&title.space-before	</>
+	<text-before>PART switch(attr(LBL,ancestor(PART)),I,ONE,II,TWO,III,THREE,IV,FOUR,V,FIVE,VI,SIX,VII,SEVEN,VIII,EIGHT,IX,NINE,DEFAULT,TEN)</>
+</style>
+
+<style name="REFERENCE,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&chp.title.font-weight	</>
+	<font-size>	&chp.title.font-size	</>
+	<space-before>	&chp.title.space-before	</>
+</style>
+
+<style name="REFNAME" group="title">
+	<font-family>	&title.font-family	</>
+	<font-size>	12	</>
+	<left-indent>	60	</>
+	<first-indent>	if(isempty(attr(LBL,ancestor(SECTION1))),0,-=25)	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION1))),'',join(attr(LBL,ancestor(SECTION1)),'   '))</>
+</style>
+
+<style name="SECTION1,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-size>	&chp.title.font-size	</>
+	<first-indent>	if(isempty(attr(LBL,ancestor(SECTION1))),0,-=25)	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION1))),'',join(attr(LBL,ancestor(SECTION1)),'   '))</>
+</style>
+
+<style name="SECTION2,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<first-indent>	if(isempty(attr(LBL,ancestor(SECTION2))),0,-=35)	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION2))),'',join(attr(LBL,ancestor(SECTION2)),'   '))</>
+</style>
+
+<style name="SECTION3,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION3))),'',join(attr(LBL,ancestor(SECTION3)),'   '))</>
+</style>
+
+<style name="SECTION4,TITLE" group="title">
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION4))),'',join(attr(LBL,ancestor(SECTION4)),'   '))</>
+</style>
+
+<style name="SGIDOC,TITLE" group="title">
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	&doc.title.font-size	</>
+	<line-spacing>	&doc.title.line-space	</>
+	<space-before>	&title.space-before	</>
+	<title-tag>	"	</>
+</style>
+
+<style name="SPARES,TITLE" group="title">
+</style>
+
+<style name="SSB,TITLE" group="title">
+</style>
+
+<style name="TITLEPAGE,TITLE" group="title">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	&doc.title.font-size	</>
+	<line-spacing>	&doc.title.line-space	</>
+	<space-before>	&title.space-before	</>
+</style>
+
+
+<?INSTED COMMENT: UNGROUPED STYLES FOLLOW>
+
+<!-- Default settings for printing of annotations -->
+<style name="#ANNOT">
+	<font-family>	&def.font-family	</>
+	<font-weight>	&font-weight.medium	</>
+	<font-slant>	&font-slant.roman	</>
+	<font-video>	regular	</>
+	<font-size>	12	</>
+	<character-set>	&character-set	</>
+	<score>	none	</>
+	<line-spacing>	24	</>
+	<break-before>	line	</>
+	<break-after>	line	</>
+</style>
+
+<style name="#ROOT">
+	<break-before>	Line	</>
+</style>
+
+<style name="#SDATA">
+	<font-family>	attr(font)	</>
+	<font-weight>	&font-weight.medium	</>
+	<font-slant>	&font-slant.roman	</>
+	<character-set>	attr(charset)	</>
+	<text-before>char(attr(code))</>
+</style>
+
+<style name="#TAGS">
+	<foreground>	purple	</>
+</style>
+
+<!-- Style"#toc-annot" is reserved, and defines the appearance of the
+     bookmarks, word frequencies, location markers, etc. in left margin.
+-->
+<style name="#TOC-ANNOT">
+	<font-family>	courier	</>
+	<font-weight>	&font-weight.bold	</>
+	<font-size>	12	</>
+	<character-set>	fontspecific	</>
+	<foreground>	magenta	</>
+</style>
+
+<style name="APPENDIX">
+	<left-indent>	if(isempty(attr(LBL)),+=20,+=95)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="APPENDIX,SECTION1,SECTION2">
+	<left-indent>	if(isempty(attr(LBL)),+=14,+=35)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="APPENDIX,SECTION1,SECTION2,SECTION3">
+	<left-indent>	if(isempty(attr(LBL)),+=14,-=25)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="APPENDIX,TITLE,#TEXT-BEFORE">
+	<font-weight>	&font-weight.medium	</>
+	<font-slant>	&font-slant.italics	</>
+	<font-size>	12	</>
+	<break-after>	True	</>
+</style>
+
+<style name="BNF">
+	<hide>	All	</>
+</style>
+
+<style name="BUTTON">
+	<font-slant>	&font-slant.italics	</>
+</style>
+
+<style name="CAUTION">
+	<hide>	All	</>
+</style>
+
+<style name="CHAPTER">
+	<left-indent>	if(isempty(attr(LBL)),+=20,+=95)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="CHAPTER,TITLE,#TEXT-BEFORE">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&font-weight.medium	</>
+	<font-slant>	&font-slant.italics	</>
+	<font-size>	12	</>
+	<break-after>	True	</>
+</style>
+
+<style name="CHECKOFF">
+	<hide>	All	</>
+</style>
+
+<style name="CODE">
+	<hide>	All	</>
+</style>
+
+<style name="COMMAND">
+	<font-slant>	&font-slant.italics	</>
+</style>
+
+<style name="CREDITSPAGE">
+	<hide>	All	</>
+</style>
+
+<style name="DOCNUMBER">
+	<hide>	All	</>
+</style>
+
+<style name="EMPHASIS">
+	<font-slant>	&font-slant.italics	</>
+</style>
+
+<style name="EXAMPLE">
+	<hide>	All	</>
+</style>
+
+<style name="FIGURE">
+	<hide>	All	</>
+</style>
+
+<style name="FILENAME">
+	<font-slant>	&font-slant.italics	</>
+</style>
+
+<style name="GLOSSARY">
+	<left-indent>	+=20	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="GLOSSARYDEF">
+	<hide>	All	</>
+</style>
+
+<style name="GLOSSARYTERM">
+	<left-indent>	+=15	</>
+	<title-tag>	GLOSSARYENTRY	</>
+</style>
+
+<style name="HANGLIST">
+	<hide>	All	</>
+</style>
+
+<style name="HANGLISTIND">
+	<hide>	All	</>
+</style>
+
+<style name="HELPTOPIC,TITLE">
+	<hide>	All	</>
+</style>
+
+<style name="HINT">
+	<hide>	All	</>
+</style>
+
+<style name="INDEXREF">
+	<hide>	All	</>
+</style>
+
+<style name="INDEXTERM">
+	<hide>	All	</>
+</style>
+
+<style name="INTRODUCTION">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="INTRODUCTION,SECTION1">
+	<left-indent>	+=20	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="ITALICS">
+	<font-slant>	&font-slant.italics	</>
+</style>
+
+<style name="MSG">
+	<hide>	All	</>
+</style>
+
+<style name="NOTE">
+	<hide>	All	</>
+</style>
+
+<style name="PARAGRAPH">
+	<font-weight>	&font-weight.bold	</>
+	<hide>	All	</>
+</style>
+
+<style name="PART">
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="PART,TITLE,#TEXT-BEFORE">
+	<font-family>	&title.font-family	</>
+	<font-weight>	&font-weight.medium	</>
+	<break-after>	True	</>
+</style>
+
+<style name="PROGRAMNAME">
+	<font-slant>	&font-slant.italics	</>
+</style>
+
+<style name="REFENTRY">
+	<title-tag>	REFMETA	</>
+</style>
+
+<style name="REFERENCE">
+	<left-indent>	if(isempty(attr(LBL)),+=20,+=95)	</>
+	<title-tag>	if(ancestor(APPENDIX),,TITLE)	</>
+</style>
+
+<style name="REFMETA">
+	<font-family>	&refmeta.font-family	</>
+	<font-size>	12	</>
+	<left-indent>	60	</>
+	<first-indent>	if(isempty(attr(LBL,ancestor(SECTION1))),0,-=25)	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION1))),'',join(attr(LBL,ancestor(SECTION1)),'   '))</>
+</style>
+
+<style name="SECTION1">
+	<left-indent>	if(isempty(attr(LBL)),-=60,-=20)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SECTION2">
+	<left-indent>	if(isempty(attr(LBL)),+=15,+=30)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SECTION3">
+	<left-indent>	if(isempty(attr(LBL)),+=10,-=15)	</>
+	<hide>	Children	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SECTION4">
+	<left-indent>	+=20	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SGIDOC">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	MANUAL,FRONTMATTER,TITLEPAGE,TITLE	</>
+</style>
+
+<style name="SHORTCUT">
+	<hide>	All	</>
+</style>
+
+<style name="SPARES">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SSB">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SUPPORT">
+	<title-tag>	TITLEPAGE,TITLE	</>
+</style>
+
+<style name="SYM">
+	<font-family>	symbol	</>
+	<font-weight>	Medium	</>
+	<character-set>	symbol	</>
+</style>
+
+<style name="TABLE">
+	<hide>	All	</>
+</style>
+
+<style name="TIP">
+	<hide>	All	</>
+</style>
+
+<style name="TITLE,#TEXT-BEFORE">
+	<font-weight>	&font-weight.bold	</>
+</style>
+
+<style name="VARIABLE">
+	<font-slant>	&font-slant.italics	</>
+</style>
+
+<style name="WARNING">
+	<hide>	All	</>
+</style>
+
+
+
+</sheet>

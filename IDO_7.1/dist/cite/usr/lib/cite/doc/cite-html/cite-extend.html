@@ -1,0 +1,107 @@
+<HEAD>
+<body bgcolor="#fffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+<TITLE>Extending CITE</TITLE>
+<!-- Changed by: Suresh Srinivas,  9-Apr-1996 -->
+</HEAD>
+
+<BODY>
+<P>
+<BR> <HR> <P>
+ <H1>Extending CITE</H1>
+<HR>
+
+<P>
+All of the sources for CITE (written in Emacs Lisp) is available in 
+<tt> /usr/lib/cite/xemacs-elisp </tt>. You could extend CITE by
+adding or modifying the sources.
+</P>
+
+<P>
+For example here is a small program I wrote that runs after CITE
+has annotated the post LNO loops. It generates a report that contains
+the various loops as well as the number of cycles each loop is estimated
+to take. Loops that did not software pipeline have a "*" at the end.
+</P>
+
+<PRE>
+
+(defvar my-own-info '())
+
+(defun obtain-cycles (string)
+  (string-match "[0-9]+\\s-+cycles" string)
+  (let ((m (match-data)))
+    (substring string (first m) (second m))))
+
+(defun is-swps (string)
+  (if (null (string-match "#<swps>" string))
+      "*"
+    ""))
+
+(defun collect-into-my-own-info ()
+  (interactive)
+  (setq my-own-info '())
+  (let ((e (next-extent nil))
+	(n nil))
+    (while (not (null e))
+      (let ((prop (extent-property e 'cg-loop-note)))
+	(setq n (next-extent e))
+	(if prop
+	    (setq my-own-info 
+		  (cons (list (extent-string e)
+			      (obtain-cycles prop)
+			      (is-swps prop)
+			my-own-info)))))
+	(setq e n))))
+
+(defun script-out ()
+  (interactive)
+  (mapcar (function 
+  	    (lambda (x)
+	      (princ (first x))
+	      (princ "   ")
+	      (princ (second x))
+	      (princ "   ")
+	      (princ (third x))
+	      (princ "\n"))) (reverse my-own-info)))
+
+</PRE>
+
+<P>
+First put this in a file or an emacs buffer and evaluate it. 
+After that in the post LNO buffer first do an 
+<tt> M-x collect-into-my-own-info </tt> to collect all of the CG information
+into the list <tt> my-own-info </tt>. Next evaluate <tt> (script-out) </tt>
+in the <tt> *scratch* </tt> buffer.  This should produce an output of
+the form (this example is from an industry code called Abacus in which one
+of the big loops gets fissioned into 15 smaller loops and that hurts 
+performance). We wanted to get details on each of the 15 smaller loops
+as well as see which ones got software pipelined.
+<PRE>
+ DO kAct13 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        112 cycles
+ DO kAct14 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        35 cycles
+ DO kAct15 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        80 cycles
+ DO kAct0 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        132 cycles
+ DO kAct1 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        161 cycles
+ DO kAct2 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        95 cycles
+ DO kAct3 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        98 cycles   *
+ DO kAct4 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        125 cycles
+ DO kAct5 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        123 cycles  *
+ DO kAct6 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        94 cycles
+ DO kAct7 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        90 cycles
+ DO kAct8 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        194 cycles  *
+ DO kAct9 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        237 cycles  *
+ DO kAct10 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        96 cycles  *
+ DO kAct11 = seonly0kAct, MIN((seonly0kAct + 999), nAct), 1        81 cycles  
+</PRE>
+
+</BODY>
+</HTML>
+<BR> <HR>
+<P><ADDRESS>
+<I>Suresh Srinivas (ssuresh@mti) <BR>
+<FONT SIZE="-3"> </FONT><FONT SIZE="-1"> Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT><BR>
+May 30th 1996</I> <BR>
+<BR>
+<BR>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,251 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! VIEW Common Resources                                                       !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*keyboardFocusPolicy:	pointer
+
+*sgiMode:		true
+*schemeFileList:	CaseVision
+*paletteFileList:	CaseVisionPalette
+*useSchemes:		all
+*useEnhancedFSB:        true
+
+*XmMenuShell*tearOffModel:		tear_off_enabled
+
+*useTtutil:		True
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*popupMenu*XmMenuShell*tearOffModel:        tear_off_disabled
+
+!
+! Launch menu labels
+!
+*launchMenu.labelString:	Launch Tool
+*launchMenu.mnemonic:		L
+
+!
+! Project menu labels
+!
+*projectMenu.labelString:		Project
+*projectMenu.mnemonic:			P
+*projectIconify.labelString:		Iconify
+*projectIconify.mnemonic:		I
+*projectRaise.labelString:		Raise
+*projectRaise.mnemonic:			R
+*projectRemapPaths.labelString:		Remap Paths...
+*projectRemapPaths.mnemonic:		m
+*projectProjectView.labelString:	Project View...
+*projectProjectView.mnemonic:		P
+*projectExit.labelString:		Exit
+*projectExit.mnemonic:			E
+
+!
+! Static Analyzer Query Menu Labels
+!
+*queryMenu.labelString: Query
+*queryMenu.mnemonic: Q
+
+*qmGeneral.labelString: General
+*qmGeneral.mnemonic: G
+*qmMacros.labelString: Macros
+*qmMacros.mnemonic: M
+*qmFunctions.labelString: Functions
+*qmFunctions.mnemonic: F
+*qmVariables.labelString: Variables
+*qmVariables.mnemonic: V
+
+*qmWhereSymbolDefined.labelString:	Where Defined ?
+*qmWhereMacroDefined.labelString:		Where Defined ?
+*qmWhereVariableDefined.labelString:	Where Defined ?
+*qmWhereFunctionDefined.labelString:	Where Defined ?
+
+!
+! Option menu labels
+!
+*optionMenu.labelString:
+
+
+
+!
+! Resource for determining what languages file suffixes indicate.
+! Used by cvsource and cvstatic
+!
+*suffixSource:		C++.c++ C++.C C++.cxx C++.h C++.cpp C++.cc C.c  Fortran.f Fortran.F Fortran90.f90 Ada.adb
+
+!!!!
+!!! NLS Messages
+!!!!
+*useNetLSLicense:					False
+*disableLicenseWarnings:              FALSE
+*disableThirtyDayLicenseWarnings:     FALSE
+
+*thirtyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of WorkShop.        
+*sixtyDayMessage:            Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*ninetyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*noLicenseServerMessage:     Unable to locate a license server.  Consult \nthe WorkShop Release Notes for information on\nsetting up your network license server.
+*notEnoughLicensesMessage:   No WorkShop licenses are available at this time. Contact\nyour sales representative or dealer to purchase additional\nlicenses or try again later.
+!
+*Evaluation*sixtyDayMessage:
+*Evaluation*ninetyDayMessage:
+*Evaluation*thirtyDayMessage: Your evaluation license for WorkShop\nwill expire in %d days.\n\nTo purchase a permanent license or extend\nyour evaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html\n\nor email: demolicense@sgi.com
+!
+*Evaluation*licenseExpiredMessage: Your evaluation period for WorkShop\nhas expired. \n\nTo purchase a permanent license or extend your\nevaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html or\n\nemail: demolicense@sgi.com
+!
+*noFlexlmLicenseMessage: WorkShop could not find a valid FlexLM license.\n\nIf you have an existing NetLS license for an earlier version of\nWorkShop, click on OK to use your old license.  Please contact Silicon\nGraphics to obtain a FlexLM replacement for your old license.  To avoid\nseeing this dialog again, set the "useNetLSLicense" resource in the\napplication defaults file to "True".\n\nTo obtain an Evaluation or Permanent license, please visit our license\nrequest web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*noLicenseMessage: Unable to find a WorkShop license.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*licenseExpiredMessage:      Your WorkShop License has expired.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*warnLoseLicenseMessage:     Unable to renew your software license.  Consult\nthe NetLS LSSERVER Release Notes for information on\ntroubleshooting your license server and network services.
+*regainLicenseMessage:       WorkShop license regained.
+*enterLicenseMessage: WorkShop requires a license. Please enter your license\nkey and click OK. Temporary license keys are available at the\nfollowing web site\n\nhttp://www.sgi.com/Products/license.html\n\nor call our technical support hotline at 1-800-800-4SGI.\n\nIf you have an existing NetLS license for a previous version of\nWorkShop, you can click Cancel to try to find a NetLS\nlicense.
+
+!!!!!
+!!!   Turn off all Xt and Motif warning messages
+!!!!!
+
+! This should be off when we ship, but ON for internal testing
+
+*silenceWarnings:  TRUE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of VIEW Common Resources                                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! Cvmake Resources                                                      !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*buildLog.title:			Build View
+
+*buildLog*geometry: =600x350
+
+*buildCommand:		make
+*defaultMakefiles:	Makefile makefile
+
+*useToolTalk: 		True
+*runBuild:		True
+
+*discardDuplicateErrorMessages: True
+*showWarnings: True
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!
+!! These are the regular expression patterns used to match errors and warnings
+!! You can extend them in your own resource settings by continuing from
+!! the next number after the last one used here
+!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*errorPattern0: "([^"\n]*)$F", line ([0-9]+)$L( .col. [0-9]+.){0,1}:[^\n]* error(.[0-9]+.){0,1}:[ 	]*([^\n]*)$M\n([^\n]*\n[	 -]*\^\n){0,1}
+*errorPattern1:	a{0,1}cpp:[ 	]*error ([^:\n]*)$F:([0-9]+)$L:([^\n]*)$M\n
+*errorPattern2:	a{0,1}ccom:[ 	]*Error: ([^,\n]*)$F, line ([0-9]+)$L:([^\n]*)$M\n
+*errorPattern3: Undefined:\n[^\n]*
+*errorPattern4: ^([^:\n]*)$F:([0-9]+)$L:([^\n]*No such file or directory)$M
+*errorPattern5: Can't locate file for:[^\n]*\n
+*errorPattern6:	`[^'\n]*'[ 	]*not remade because of errors
+*errorPattern7: ^([^:\n]*)$F(\[[0-9]+]){0,1}: syntax error at line ([0-9]+)$L[ 	]*:([^\n]*)$M\n
+*errorPattern8: Error on line ([0-9]+)$L of ([^:\n]*)$F:[ 	]*([^\n]*)$M
+*errorPattern9: ^([^:\n]*)$F:([0-9]+)$L:([^\n]*unterminated string or character constant)$M
+*errorPattern10: cfe: Error: ([^"\n]*)$F, line ([0-9]+)$L: ([^\n]*)$M\n([^\n]*\n[	 -]*^\n){0,1}
+*errorPattern11: "([^"\n]*)$F", line ([0-9]+)$L: (sorry, not implemented[^\n]*)$M\n([^\n]*\n[	 -]*\^\n){0,1}
+*errorPattern12: ###[^\n]*\n *### in line ([0-9]+)$L [^\n]*of file ([^ ]+)$F ###((\n *### *error[^\n]*###)+)$M
+*errorPattern13: Error:[^\n]*
+
+
+*warningPattern0: "([^"\n]*)$F", line ([0-9]+)$L( .col. [0-9]+.){0,1}: warning(.[0-9]+.){0,1}:[ 	]*([^\n]*)$M\n([^\n]*\n[        -]*^\n){0,1}
+*warningPattern1: a{0,1}cpp: warning ([^:\n]*)$F:([0-9]+)$L:([^\n]*)$M\n
+*warningPattern2: a{0,1}ccom:[ 	]*Warning[ 0-9]*: ([^,\n]*)$F, line ([0-9]+)$L:([^\n]*)$M\n
+*warningPattern3: conflicts:[ 	]*[0-9]+[ 	]*[shift/reduce]+
+*warningPattern4: Warning:[^:\n]*:[ 	]*multiply defined
+*warningPattern5: ^([^:\n]*)$F:([0-9]+)$L:[ 	]*(warning:[^\n]*)$M\n
+*warningPattern6: Warning on line ([0-9]+)$L of ([^:\n]*)$F:[ 	]*([^\n]*)$M
+*warningPattern7: Warning:[^\n]* 
+
+*administrationMenu.labelString:	Admin
+*quitViewMenuItem.labelString:		Exit
+*preferencesViewMenuItem.labelString:	Preferences...
+*optionsViewMenuItem.labelString:	Build Options...
+
+Cvmake*buildDocPreferences.dialogTitle: Build View Preferences
+Cvmake*optionsDialog.dialogTitle:               Build Options Dialog
+
+*optionsLabel.labelString:	Build Options:
+*optionList: 			printDescription ignoreErrors continueOnFailure silentMode noBuiltIns noExecute noCompatibility environmentOverrides touchTargets questionStatus unconditionalBuild
+
+*printDescription.optionString:		-p
+*printDescriptionBase.labelString:	Print Macro And Target Descriptions (-p)
+
+*ignoreErrors.optionString:	-i
+*ignoreErrorsBase.labelString:	Ignore Error Codes (-i)
+
+*continueOnFailure.optionString:	-k
+*continueOnFailureBase.labelString:	Continue After Build Failure (-k)
+
+*silentMode.optionString:	-s
+*silentModeBase.labelString:	Don't Echo Command Lines (-s)
+
+*noBuiltIns.optionString:	-r
+*noBuiltInsBase.labelString:	Don't Use Built-In Rules (-r)
+
+*noExecute.optionString:	-n
+*noExecuteBase.labelString:	Don't Execute Build Scripts (-n)
+
+*noCompatibility.optionString:		-B
+*noCompatibilityBase.labelString:	No Compatibility Mode For Old Makefiles (-B)
+
+*environmentOverrides.optionString:	-e
+*environmentOverridesBase.labelString:	Environment Variables Override Macros (-e)
+
+*touchTargets.optionString:		-t
+*touchTargetsBase.labelString:		Touch Target Files (-t)
+
+*questionStatus.optionString:		-q
+*questionStatusBase.labelString:	Question And Return Status (-q)
+
+*unconditionalBuild.optionString:	-u
+*unconditionalBuildBase.labelString:	Unconditional Build (-u)
+
+*targetLabel.labelString:	Target(s):
+*directoryLabel.labelString:	Directory:
+*makeProgramLabel.labelString:	Maker Program: 
+*macroSettingsLabel.labelString:Macro Settings: 
+
+*makefileLabel.labelString:	Makefile: 
+
+*discardDuplicatesToggleLabel.labelString:	Discard Duplicate Errors: 
+*showWarningsToggleLabel.labelString:		Show Warnings: 
+
+*buildButtons.entryAlignment:		ALIGNMENT_BEGINNING
+*navigateButtons.entryAlignment:	ALIGNMENT_BEGINNING
+
+*helpButton.labelString:	Help
+*okButton.labelString:		OK
+*closeButton.labelString:	Close
+*applyButton.labelString:	Apply
+
+*buildLog*runBtn.labelString:		Build
+*buildLog*interruptBtn.labelString:	Interrupt
+*buildLog*suspendBtn.labelString:	Suspend
+*buildLog*resumeBtn.labelString:	Resume
+
+*buildLog*nextBtn.labelString:		Next Error
+*buildLog*rescanBtn.labelString:	Rescan
+*buildLog*clearBtn.labelString:		Clear
+
+*buildLog*errors.showIcons:	True
+
+*transcriptSize:	5
+*errorListSize: 	6

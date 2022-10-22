@@ -1,0 +1,4 @@
+#3.11
+Rebuilding the Database
+After specifying the fileset, you need to build the database.  You can force a new scan by choosing "Force Scan" from the Admin menu or simply by making a query.
+Click on the bottom right arrow to continue.

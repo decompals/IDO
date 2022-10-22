@@ -1,0 +1,261 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! VIEW Common Resources                                                       !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*keyboardFocusPolicy:	pointer
+
+*sgiMode:		true
+*schemeFileList:	CaseVision
+*paletteFileList:	CaseVisionPalette
+*useSchemes:		all
+*useEnhancedFSB:        true
+
+*XmMenuShell*tearOffModel:		tear_off_enabled
+
+*useTtutil:		True
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*popupMenu*XmMenuShell*tearOffModel:        tear_off_disabled
+
+!
+! Launch menu labels
+!
+*launchMenu.labelString:	Launch Tool
+*launchMenu.mnemonic:		L
+
+!
+! Project menu labels
+!
+*projectMenu.labelString:		Project
+*projectMenu.mnemonic:			P
+*projectIconify.labelString:		Iconify
+*projectIconify.mnemonic:		I
+*projectRaise.labelString:		Raise
+*projectRaise.mnemonic:			R
+*projectRemapPaths.labelString:		Remap Paths...
+*projectRemapPaths.mnemonic:		m
+*projectProjectView.labelString:	Project View...
+*projectProjectView.mnemonic:		P
+*projectExit.labelString:		Exit
+*projectExit.mnemonic:			E
+
+!
+! Static Analyzer Query Menu Labels
+!
+*queryMenu.labelString: Query
+*queryMenu.mnemonic: Q
+
+*qmGeneral.labelString: General
+*qmGeneral.mnemonic: G
+*qmMacros.labelString: Macros
+*qmMacros.mnemonic: M
+*qmFunctions.labelString: Functions
+*qmFunctions.mnemonic: F
+*qmVariables.labelString: Variables
+*qmVariables.mnemonic: V
+
+*qmWhereSymbolDefined.labelString:	Where Defined ?
+*qmWhereMacroDefined.labelString:		Where Defined ?
+*qmWhereVariableDefined.labelString:	Where Defined ?
+*qmWhereFunctionDefined.labelString:	Where Defined ?
+
+!
+! Option menu labels
+!
+*optionMenu.labelString:
+
+
+
+!
+! Resource for determining what languages file suffixes indicate.
+! Used by cvsource and cvstatic
+!
+*suffixSource:		C++.c++ C++.C C++.cxx C++.h C++.cpp C++.cc C.c  Fortran.f Fortran.F Fortran90.f90 Ada.adb
+
+!!!!
+!!! NLS Messages
+!!!!
+*useNetLSLicense:					False
+*disableLicenseWarnings:              FALSE
+*disableThirtyDayLicenseWarnings:     FALSE
+
+*thirtyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of WorkShop.        
+*sixtyDayMessage:            Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*ninetyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*noLicenseServerMessage:     Unable to locate a license server.  Consult \nthe WorkShop Release Notes for information on\nsetting up your network license server.
+*notEnoughLicensesMessage:   No WorkShop licenses are available at this time. Contact\nyour sales representative or dealer to purchase additional\nlicenses or try again later.
+!
+*Evaluation*sixtyDayMessage:
+*Evaluation*ninetyDayMessage:
+*Evaluation*thirtyDayMessage: Your evaluation license for WorkShop\nwill expire in %d days.\n\nTo purchase a permanent license or extend\nyour evaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html\n\nor email: demolicense@sgi.com
+!
+*Evaluation*licenseExpiredMessage: Your evaluation period for WorkShop\nhas expired. \n\nTo purchase a permanent license or extend your\nevaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html or\n\nemail: demolicense@sgi.com
+!
+*noFlexlmLicenseMessage: WorkShop could not find a valid FlexLM license.\n\nIf you have an existing NetLS license for an earlier version of\nWorkShop, click on OK to use your old license.  Please contact Silicon\nGraphics to obtain a FlexLM replacement for your old license.  To avoid\nseeing this dialog again, set the "useNetLSLicense" resource in the\napplication defaults file to "True".\n\nTo obtain an Evaluation or Permanent license, please visit our license\nrequest web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*noLicenseMessage: Unable to find a WorkShop license.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*licenseExpiredMessage:      Your WorkShop License has expired.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*warnLoseLicenseMessage:     Unable to renew your software license.  Consult\nthe NetLS LSSERVER Release Notes for information on\ntroubleshooting your license server and network services.
+*regainLicenseMessage:       WorkShop license regained.
+*enterLicenseMessage: WorkShop requires a license. Please enter your license\nkey and click OK. Temporary license keys are available at the\nfollowing web site\n\nhttp://www.sgi.com/Products/license.html\n\nor call our technical support hotline at 1-800-800-4SGI.\n\nIf you have an existing NetLS license for a previous version of\nWorkShop, you can click Cancel to try to find a NetLS\nlicense.
+
+!!!!!
+!!!   Turn off all Xt and Motif warning messages
+!!!!!
+
+! This should be off when we ship, but ON for internal testing
+
+*silenceWarnings:  TRUE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of VIEW Common Resources                                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! Cvbuild Resources                                                      !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*buildBrowser.title:			Build Analyzer
+*buildWin.title:			Show Config Record	
+*buildGraph_overview.title:		Build Analyzer Overview
+*buildDocPreferences.title:		Build Analyzer Preferences
+
+*setMakefileDialog_popup.title:		Set Makefile Dialog
+*setBuildOptionsDialog_popup.title:		Set Build Options Dialog
+*setWorkingDirectoryDialog_popup.title:		Set Working Directory Dialog
+
+*buildBrowser*geometry: =500x500
+*buildGraph_overview*geometry: =300x350
+
+*buildOptions:	
+*systemMakefile:	/usr/include/make/system.mk
+*defaultMakefiles:	Makefile makefile
+
+*excludeList:		/usr/include/X11
+*includeList:
+
+*useToolTalk: 			True
+*discardDuplicatesToggle*set:	True
+*showWarningsToggle*set:	True
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!
+!! These are the regular expression patterns used to match errors and warnings
+!! You can extend them in your own resource settings by continuing from
+!! the next number after the last one used here
+!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*errorPattern0: "([^"\n]*)$F", line ([0-9]+)$L: error:[ 	]*([^\n]*)$M\n
+*errorPattern1:	a{0,1}cpp:[ 	]*error ([^:\n]*)$F:([0-9]+)$L:([^\n]*)$M\n
+*errorPattern2:	a{0,1}ccom:[ 	]*Error: ([^,\n]*)$F, line ([0-9]+)$L:([^\n]*)$M\n
+*errorPattern3: Undefined:\n[^\n]*
+*errorPattern4: ^([^:\n]*)$F:([0-9]+)$L:([^\n]*No such file or directory)$M
+*errorPattern5: Can't locate file for:[^\n]*\n
+*errorPattern6:	`[^'\n]*'[ 	]*not remade because of errors
+*errorPattern7: ^([^:\n]*)$F(\[[0-9]+]){0,1}: syntax error at line ([0-9]+)$L[ 	]*:([^\n]*)$M\n
+*errorPattern8: ^Error on line ([0-9]+)$L of ([^:\n]*)$F:[ 	]*([^\n]*)$M\n
+*errorPattern9: ^([^:\n]*)$F:([0-9]+)$L:[0-9]+:[ 	]error:([^\n]*)$M\n
+
+*warningPattern0: "([^"\n]*)$F", line ([0-9]+)$L: warning:[ 	]*([^\n]*)$M\n
+*warningPattern1: a{0,1}cpp: warning ([^:\n]*)$F:([0-9]+)$L:([^\n]*)$M\n
+*warningPattern2: a{0,1}ccom:[ 	]*Warning[ 0-9]*: ([^,\n]*)$F, line ([0-9]+)$L:([^\n]*)$M\n
+*warningPattern3: conflicts:[ 	]*[0-9]+[ 	]*[shift/reduce]+
+*warningPattern4: Warning:[^:\n]*:[ 	]*multiply defined
+*warningPattern5: ^([^:\n]*)$F:([0-9]+)$L:[ 	]*(warning:[^\n]*)$M\n
+*warningPattern6: ^([^:\n]*)$F:([0-9]+)$L:[0-9]+:[ 	]warning:([^\n]*)$M\n
+
+*annotations: bberror bbwarning
+
+*administrationMenu.labelString:	Admin
+*selectionMenu.labelString:		Select
+*displayMenu.labelString:		Display
+*queryMenu.labelString:			Query
+*operMenu.labelString:			Operation
+*buildMenu.labelString:			Build
+*filterMenu.labelString:		Filter
+*helpMenu.labelString:			Help
+
+*quitViewMenuItem.labelString:		Exit
+*redisplayMenuItem.labelString:		Refresh Graph Display
+*buildAllMenuItem.labelString:		Build Default Target
+*buildSelectedMenuItem.labelString:	Build Selected Target(s)
+*showBuildMenuItem.labelString:		Show Build Rule
+*showCRMenuItem.labelString:		Show Config Record
+*useToolTalkToggle.labelString:		Use ToolTalk
+*setMakefileMenuItem.labelString:	Set Makefile...
+*setBuildOptionsMenuItem.labelString:	Set Build Options...
+*setWorkingDirectoryMenuItem.labelString:Set Working Directory...
+*setMakefileDialog*label.labelString:	Makefile:
+*setBuildOptionsDialog*label.labelString:	Build Options:
+*setWorkingDirectoryDialog*label.labelString:	Directory:
+*filterDialog.title:	File Filter Dialog
+*filterMenuItem.labelString:	Select Files To Display...
+*whyOutOfDateMenuItem.labelString:	Why Is This File Out Of Date?
+*whatWillChangeMenuItem.labelString:	What Will Changing This File Affect?
+*fileStatisticsMenuItem.labelString:   File Statistics
+*listNamedDOsMenuItem.labelString:   List DOs With Same Name
+*checkInFileMenuItem.labelString:   File Checkin
+*checkOutFileMenuItem.labelString:   File Checkout
+*unCheckOutFileMenuItem.labelString:   File Uncheckout
+*listCheckOutsMenuItem.labelString:   List File Checkouts	
+*diffVersionsMenuItem.labelString:   Diff File Versions...
+*editFileMenuItem.labelString:   Edit File
+*excludeTextLabel.labelString:	Don't Show Files Matching: 
+*includeTextLabel.labelString:	But Do Show Files Matching: 
+*directoryLabel.labelString:	Directory:
+*makefileLabel.labelString:	Makefile:
+*selectedNodeLabel.labelString:	Targets:
+*discardDuplicatesToggle*labelString:	Discard Duplicate Errors
+*showWarningsToggle*labelString:	Show Warnings
+
+*graphPrefrences_popup.title:		Graph Display Options
+*predefDepGraphToggleBase*labelString:	Predefined Dependencies Graph	
+*detailDepGraphToggleBase*labelString:	Detailed Dependencies Graph
+
+*diffVersionsDialog*title:		Diff File Versions
+*FilenameRev1Label*labelString:		Filename Version1: 
+*FilenameRev2Label*labelString:		Filename Version2: 
+
+*showCrossingArcs: 		False
+*mapLabel: 			False
+*arcDirection: 			UNDIRECTED
+
+*buildButtons.entryAlignment:		ALIGNMENT_CENTER
+
+*helpButton.labelString:	Help
+*okButton.labelString:		OK
+*closeButton.labelString:	Close
+*applyButton.labelString:	Apply
+
+*buildGraph*sourceShadowThickness: 3
+*buildGraph*derivedShadowThickness: 1
+*XmGraph*XmIconGadget*shadowThickness: 0
+
+*transcriptSize:	5
+*errorListSize: 	6
+
+*XmGraph*highlightThickness:	1          
+*XmGraph*skewOverviewScale:	True
+
+*queryMenu*fileStatisticsMenuItem.accelerator:   Ctrl<Key>F
+*queryMenu*fileStatisticsMenuItem.acceleratorText:       Ctrl+F
+*queryMenu*listNamedDOsMenuItem.accelerator:     Ctrl<Key>D
+*queryMenu*listNamedDOsMenuItem.acceleratorText: Ctrl+D
+*buildMenu*showBuildMenuItem.accelerator:     Ctrl<Key>D
+*buildMenu*showBuildMenuItem.acceleratorText: Ctrl+D
+*buildMenu*showCRMenuItem.accelerator:     Ctrl<Key>R
+*buildMenu*showCRMenuItem.acceleratorText: Ctrl+R

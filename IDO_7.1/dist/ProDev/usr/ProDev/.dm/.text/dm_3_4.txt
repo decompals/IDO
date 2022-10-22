@@ -1,0 +1,11 @@
+#3.4
+Set Up Your Files
+When you start the Static Analyzer with the -e option...
+
+		% cvstatic -e [your_program] 
+
+...your code is automatically "scanned" into the Static Analyzer.  
+
+
+"Scanning" your code means that high-level static information is gathered and stored into a database.  This "Scanner" mode is great for quick program overviews because it's very fast and works on code that can't be compiled.
+

@@ -1,0 +1,9 @@
+#3.8
+Navigation Example
+The Static Analyzer now shows where "val" is used.
+Double-click the result containing line 48.
+Double click the result containing line 269.
+Next, double-click the result containing line 269.
+Click on the bottom right arrow to continue.
+Source View now shows where "val" is declared.
+Source View now shows "val" being set at line 269.

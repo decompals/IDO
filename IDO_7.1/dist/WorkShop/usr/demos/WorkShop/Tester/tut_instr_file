@@ -1,0 +1,3 @@
+COUNTS -bbcounts -fpcounts -branchcounts
+CONSTRAIN main,copy_file
+TRACE BOUNDS copy_file(size)

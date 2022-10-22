@@ -1,0 +1,15 @@
+#3.3
+Start the Static Analyzer
+To start the Static Analyzer with the executable program "jello", move into the appropriate directory and type:  
+
+		                    cvstatic jello 
+Let's start the Static Analyzer with the program "jello" in the mock shell to the right.
+Change directories to: /usr/people/guest/program.  
+
+Use the mock shell on the right to start the Static Analyzer with the jello program.
+cd /usr/people/guest/program
+jello 
+cvstatic jello
+
+Sorry.  You must type cd /usr/people/guest/program  to move into the correct directory.
+Sorry.  To start the Static Analyzer with your "jello" program, type: cvstatic jello

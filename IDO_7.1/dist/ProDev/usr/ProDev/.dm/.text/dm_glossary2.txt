@@ -1,0 +1,806 @@
+anti-leak:
+	A problem that occurs when a program frees a
+	structure that it had already freed.  (Also
+	referred to as a bad free or double free.)
+
+
+arc:
+	A relation between two entities in a program depicted
+	graphically as lines between rectangles (nodes). For
+	example, arcs can represent function calls, file
+	dependency, or inheritance.
+
+
+Array Browser:
+	A Debugger view that displays the values of an array
+	in a spreadsheet format and can also depict them
+	graphically in a 3D rendering.
+
+
+bad free:
+	A problem that occurs when a program frees a malloced
+	piece of memory that it had already freed (also
+	referred to as an anti-leak condition or double free).
+
+
+Bar Graph View:
+	A display mode of Tester that shows a summary of
+	coverage information in a bar graph.
+
+
+basic block:
+	A block of machine-level instructions used as a metric
+	in  Performance Analyzer and Tester experiments.
+	A basic block is the largest set of consecutive machine
+	instructions that can be formed with no branches into
+	or out of them.
+
+
+boundary overrun:
+	A problem that occurs when a program writes beyond a
+	specified region, for example, overwriting the end of
+	an array or a malloced structure.
+
+
+boundary underrun:
+	A problem that occurs when a program writes in front of
+	a specified region, for example, writing ahead of the first
+	element in an array or a malloced structure.
+
+
+Browser (Static Analyzer):
+	A facility within the Static Analyzer for viewing structural
+	and relationship information in C++ or Ada programs. It
+	provides three views: Browser View for displaying member
+	and class information; Class Graph for displaying inheritance,
+	containment, interaction, and friend relationships in
+	the class hierarchy; and Call Graph for displaying the
+	calling relationships of methods and virtual methods.
+
+
+breakpoint:
+	See trap
+
+
+Build Analyzer:
+	A view that displays a graph of program files
+	(source and object) indicating build dependencies
+	and provides access to the source files.
+
+
+Build Manager:
+	A tool for recompiling programs within WorkShop.
+	The Build Manager has two windows: Build Analyzer
+	and Build View.
+
+
+Build View:
+	A view that lets you run compiles. In addition,
+	Build View displays compile errors and provides
+	access to the code containing the errors.
+
+
+calipers:
+	See time line
+
+
+call graph:
+	A generic term for views used in several tools
+	(Static Analyzer, C++ Browser, Performance
+	Analyzer, and Tester) that display a graph of the
+	calling hierarchy of functions. Double-clicking a
+	function in a call graph causes the Source View window
+	to be displayed showing the function's source code.
+
+
+Call Graph:
+	A display mode of the C++ Browser that shows methods
+	and their calls. See also call graph and C++ Browser.
+
+
+Call Graph View:
+	A display mode of the Performance Analyzer that shows
+	functions, their calls, and associated performance data.
+	See also call graph and C++ Browser.
+
+
+Call Stack:
+	A view that displays the call stack at the current context.
+	In the Debugger, this means where the process is stopped;
+	in the Performance Analyzer, this means sample traps and
+	other events where data was written out to disk. Each
+	frame in the Call Stack window can show the function;
+	argument names, values, and types; the function's source
+	file and line number; and the PC (program counter). 
+        Double-clicking a frame in the Call Stack causes the 
+        Source View window to be displayed showing the corresponding 
+        source code.
+
+
+Call Tree View (Static Analyzer version):
+	A display mode of the Static Analyzer that displays
+	the results of function queries as a call graph.
+	See also call graph and Static Analyzer.
+
+
+Call Tree View (Tester version):
+	A display mode of Tester that displays function
+	coverage information in a call graph. See also Tester
+
+
+Call View:
+	A display mode of the C++ Browser for displaying
+	member and class information. See also C++ Browser
+
+
+Class Graph:
+	A display mode of the C++ Browser for displaying
+	inheritance, containment, interaction, and friend
+	relationships in the class hierarchy.
+
+
+Class Tree View:
+	A display mode of the Static Analyzer that displays
+	the results of class queries as a class hierarchy.
+	See also Static Analyzer
+
+
+ClearCase(TM):
+	A tool in the Developer Magic(TM) environment
+	for performing configuration management and
+	version control.
+
+
+command line (Debugger):
+	A field in the Debugger Main View that lets
+	you enter a set of commands similar to dbx commands.
+
+
+cord:
+	A system command used to rearrange procedures
+	in an executable to reduce paging and achieve
+	better instruction cache mapping.  The Cord Analyzer
+	and Working Set View let you analyze the effectiveness
+	of an arrangement and try out new arrangements to
+	improve efficiency.
+
+
+Cord Analyzer:
+	A tool that lets you analyze the paging efficiency
+	of your executable's working sets, that is, the
+	executable code brought into memory during a particular
+	phase or operation. It also calculates an optimized
+	ordering and lets you try out different working set
+	configurations to reduce paging problems. The Cord
+	Analyzer works with the Working Set View, a part of the
+	Performance Analyzer. See also cord, working set, and
+	Working Set View.
+
+
+counts:
+	The number of times a piece of code (function, line,
+	instruction, or basic block) was executed as listed
+	by Tester or the Performance Analyzer.
+
+
+coverage:
+	A term used in Tester. Coverage means a test has
+	exercised a particular unit of source code, such as
+	functions, individual source lines, arcs, blocks,
+	or branches. In the case of branches, coverage means
+	the branch has been executed under both true and
+	false conditions.
+
+CPU-bound:
+	A performance analysis term for a condition in which
+	a process spends its time in the CPU and is limited
+	by CPU speed and availability.
+
+
+CPU time:
+	A performance analysis metric approximating the time
+	spent in the CPU. CPU time is calculated by multiplying
+	by 10 ms the number of times a PC appears in the profile of a
+	function, source line, or instruction.
+
+
+cvcord:
+	The name of the Cord Analyzer executable. See also Cord
+	Analyzer.
+
+
+cvcov:
+	The name of the Tester command line interface executable.
+	See also Tester
+
+
+cvd:
+	The name of the Debugger. cvd has options for attaching
+	the Debugger to a running process (-pid), examining core
+	files (executable), and running from a remote host (-host).
+	See also Debugger.
+
+
+cvperf:
+	The name of the executable that calls the Performance
+	Analyzer. cvperf has an option (-exp) for designating
+	the name of the experiment directory.
+	See also Performance Analyzer.
+
+
+cvspeed:
+	The name of the executable that brings up the Performance
+	Panel, a window for setting up Performance Analyzer
+	experiments. See also Performance Panel.
+
+
+cvstatic:
+	The name of the executable that calls the
+	Static Analyzer. See also Static Analyzer
+
+
+cvxcov:
+	The name of the executable that calls the
+	graphical interface of Tester. See also Tester.
+
+
+cycle count:
+	The specified number of times to hit a breakpoint before
+	stopping the process, it defaults to 1. The cycle count
+	for any trap can be set through the Trap Manager view
+	in the Debugger.
+
+
+DCC:
+	A native C++ compiler that allows you to use dynamic
+	classes (also known as Delta C++).  See also the DCC(1)
+	reference page for more information
+
+
+Debugger:
+	A tool in WorkShop for analyzing general software
+	problems using a live process. The Debugger
+	lets you stop the process at specific locations in the
+	code by setting breakpoints (referred to as traps) or
+	by clicking the Stop button. At each trap, you can
+	display special windows called views, for examining
+	data. See also cvd.
+
+
+Disassembly View:
+	A view that lets you see the program's machine-level
+	code.  The Debugger version shows you the code;
+	the Performance Analyzer version additionally displays
+	performance data for each line.
+
+
+double free:
+	See bad free.
+
+
+DSO (dynamic shared object):
+	An ELF (Executable and Linking Format) format
+	object file, similar in structure to an executable
+	program but with no main. It has a shared component,
+	consisting of shared text and read-only data;
+	a private component, consisting of data and the GOT
+	(Global Offset Table); several sections that hold
+	information necessary to load and link the object;
+	and a liblist, the list of other shared objects
+	referenced by this object. Most of the libraries
+	supplied by SGI are available as dynamic shared
+	objects.
+
+
+erroneous free:
+	A problem that occurs when a program calls free() on
+	addresses that were not returned by malloc, such as
+	static, global, or automatic variables, or other
+	invalid expressions.
+
+
+event:
+	An action that takes place during a process,
+	such as a function call, signal, or a form of
+	user interaction. The Performance Analyzer uses
+	event tracing in experiments to help you correlate
+	measurements to points in the process where events
+	occurred.
+
+
+exclusive performance data:
+	Performance Analyzer data collected for a function without
+	including the data for any functions it calls. See also
+	inclusive performance data
+
+
+Execution View:
+	A Debugger view that serves as a simple shell to
+	provide access outside of WorkShop. It's typically
+	used to set environment variables, inspect error messages,
+	and conduct I/O with the program being debugged.
+
+
+experiment:
+	The model for using the Performance Analyzer and
+	Tester. The steps in creating an experiment are (1) creating
+	a directory to hold the results, (2) instrumenting the
+	executable (instrumentation is recompiling with special
+	libraries for collecting data), (3) running the
+	instrumented executable as a test, and (4) analyzing
+	the results using the views in the tools.
+
+
+Expression View:
+	A Debugger view that lets you evaluate one or more
+	expressions whenever the process stops or the callstack
+	context is changed. Expression View lets you save sets
+	of expressions for subsequent reuse, specify the language
+	of the expression (Ada, Fortran, C, or C++), and specify
+	the format for the resulting values.
+
+
+File Dependency View:
+	A display mode of the Static Analyzer that displays
+	the results of queries in a graph indicating file
+	dependency relationships.  See also Static Analyzer
+
+Fileset Editor:
+
+	A window for specifying a fileset, that is, the set
+	of files to be used in creating a database for Static
+	Analyzer queries.  The Fileset Editor also lets you
+	specify whether a file is to be analyzed using scanner
+	mode or parser mode. See also parser mode, scanner mode,
+	and Static Analyzer
+
+
+fine-grained usage:
+	A technique in performance analysis that captures
+	resource usage data between sample traps.
+
+
+Fix + Continue:
+	A feature in the Debugger that lets you make source level
+	changes and continue debugging without having to perform
+	a full compile and relinking.
+
+
+floating point exception:
+	A problem that occurs when a program cannot complete
+	a numerical calculation due to division by zero,
+	overflow, underflow, inexact result, or invalid
+	operand. Floating point exceptions can be captured
+	by the Performance Analyzer and can also be
+	identified in the Array Browser.
+
+
+freed memory:
+	Freed memory is memory that was originally malloced and
+	has been returned for general use by calling free().
+	Accessing freed memory is a problem that occurs when
+	a program attempts to read or write this memory, possibly
+	corrupting the free list maintained by malloc.
+
+
+inclusive performance data:
+	Performance Analyzer data collected for a function where
+	the total includes data for all of the called functions.
+	See also exclusive performance data
+
+
+instrumentation:
+	See experiment
+
+
+I/O View:
+	A Performance Analyzer view that displays a chart
+	devoted to I/O system calls. I/O View can identify
+	up to 10 files involved in I/O.
+
+
+IRIS IM(TM):
+	A user interface toolkit on Silicon Graphics(R) systems
+	based on X/Motif(R).
+
+
+IRIS IM Analyzer:
+	A Debugger view for debugging X/Motif applications.
+	The IRIS IM Analyzer lets you look at object data,
+	set breakpoints at the object or X protocol level,
+	trace X and widget events, and tune performance.
+
+
+IRIS ViewKit(TM):
+	A Developer Magic toolkit that provides predefined
+	widgets and classes for building applications.
+
+
+Leak View:
+	A Performance Analyzer view that displays each memory
+	leak that occurred in your experiment, its size, the
+	number of times the leak occurred at that location
+	during the experiment, and the call stack corresponding
+	to the selected leak.
+
+
+library search path:
+	A path you may need to specify when debugging
+	executables or core files to indicate which DSOs
+	(dynamic shared objects) are required for debugging.
+	See also DSO
+
+
+Main View:
+	The main window of the Debugger. The MainView provides
+	access to other tools and views, process controls,
+	a source code display, and a command line for entering
+	a set of commands similar to dbx. You can also add custom
+	buttons to Main View using the command line.
+
+
+Malloc Error View:
+	A Performance Analyzer view that displays each malloc
+	error (leaks and bad frees) that occurred in an experiment,
+	the number of times the malloc occurred (a count is kept
+	of mallocs with identical call stacks), and the call stack
+	corresponding to the selected malloc error.
+
+
+malloc debugging library:
+	A special library (libmalloc_cv.a) for detecting heap
+	corruption problems.  Relinking your executable with the
+	malloc library sets up mechanisms for trapping
+	memory problems.
+
+
+Malloc View:
+	A Performance Analyzer view that displays each malloc
+	(whether or not it caused a problem) that occurred in
+	your experiment, its size, the number of times the
+	malloc occurred (a count is kept of mallocs with
+	identical call stacks), and the call stack corresponding
+	to the selected malloc.
+
+
+MegaDev:
+	The package name for a set of advanced Developer Magic
+	tools for the development of C and C++ applications.
+
+
+Memory-bound:
+	A performance analysis term for a condition in which a
+	process continuously needs to swap out pages of memory.
+
+
+memory leak:
+	A problem when a program dynamically allocates memory
+	and fails to deallocate that memory when it is through
+	with the space.
+
+
+Memory View:
+	A Debugger view that lets you see or change the contents
+	of memory locations.
+
+
+Multiprocess View:
+	A Debugger view that lets you manage the debugging of a
+	multiprocess executable. For example, you can set traps
+	in individual processes or across groups of processes.
+
+
+NCC:
+	A native C++ compiler that uses the same compiler
+	as DCC, but doesn't allow you to use dynamic classes.
+
+
+node:
+	The rectangles in graphical views. A node may
+	represent a function, class, or file depending on
+	the type of graph.
+
+
+Overview window:
+	A window in graphical views that displays the current
+	graph at a reduced scale and lets you navigate to
+	different parts of the graph.
+
+
+palette:
+	The portion of the RapidApp window that provides user
+	interface elements for creating graphical interfaces.
+	See also RapidApp
+
+
+parser mode:
+	A method of extracting Static Analyzer data from
+	source files. Parser mode uses the compiler to build
+	the Static Analyzer database. It is language-specific
+	and very thorough; as a result, it is slower than
+	scanner mode. See also scanner mode and Static Analyzer.
+
+
+Path Remapping:
+	A dialog box that lets you set mappings to redirect
+	filenames to their actual locations in the file system when building
+        your executable.
+
+
+PC (program counter):
+	The current line in a stopped process, indicated by a
+	right-pointing arrow with a highlight in the source code
+	display areas and by a highlighted frame in the Call
+	Stack views.
+
+
+Performance Analyzer:
+	A tool in ProDev WorkShop for measuring the performance
+	of an application. To use the tool, you select one of
+	the predefined analysis tasks, run an experiment, and
+	examine the results in one of the Performance Analyzer
+	views. See also cvperf.
+
+
+Performance Panel:
+	A window for setting up Performance Analyzer experiments.
+	The panel displays toggles and fields for specifying data
+	to be captured. As a convenience, you can select performance
+	tasks (such as "Determine bottlenecks..." or "Find memory
+	leaks") from a menu that specifies the data automatically.
+	See also cvspeed.
+
+
+performance task:
+	See Performance Panel
+
+
+phase:
+	A performance analysis term for a period covering a 
+        single activity in an experiment.
+
+
+pollpoint sampling:
+	A performance analysis technique that captures performance 
+        data, such as resource usage or event tracing, at regular 
+        intervals.
+
+
+Process Meter:
+	A view that monitors the resource usage
+	of a running process without saving the data.
+	See also Performance Analyzer and
+	Performance Panel.
+
+
+ProDev WorkShop:
+	The package name for the core WorkShop tools.
+
+
+profile:
+	A record of a program's PC (program counter),
+	call stack, and resource consumption over time,
+	used in performance analysis.
+
+
+Project View:
+	A Debugger view for managing ProDev WorkShop
+	and MegaDev tools operating on a common target.
+
+
+query:
+	The term for a search through a Static Analyzer
+	database to locate elements in your program.
+	Queries are similar to the IRIX grep command
+	but provide a more specific search. For example,
+	you can perform a query to find where a method is
+	defined. See also Static Analyzer.
+
+
+RapidApp:
+	A tool in the Developer Magic environment for creating
+	graphical interfaces quickly and easily. RapidApp lets
+	you drag and drop user interface elements (for example,
+	IRIS IM widgets, IRIS ViewKit components, Inventor components,
+	and so on) onto a template window to create the interface.
+
+
+Register View:
+	A Debugger view that lets you see or change
+	the contents of the machine registers.
+
+
+Results Filter:
+	A dialog box that lets you limit the scope
+	of Static Analyzer queries. See also query
+	and Static Analyzer
+
+
+sample trap:
+	Similar to a stop trap except that instead of stopping
+	the process, performance data is written out to disk
+	and the process continues running. See also trap
+
+
+sampling:
+	In performance analysis, the capture
+	of performance data, such as resource usage
+	or event tracing, at points in an experiment
+	so that a graph of usage over time can be created.
+
+
+scanner mode:
+	A method of extracting Static Analyzer data
+	from source files.  Scanner mode is fast but not
+	language-specific so that the source code need
+	not be compilable. Results may have minor
+	inaccuracies. See also parser mode and
+	Static Analyzer.
+
+
+Signal Panel:
+	A dialog box for specifying signals to trap.
+
+
+Smart Build:
+	An option to the compiler where only those
+	files that must be recompiled are recompiled.
+
+
+Source View:
+	A window for viewing or editing source code.
+	Source View is an alternative editing window
+	to Main View. If you have conducted Performance
+	Analyzer or Tester experiments, you can view the
+	results in the column to the left of the source
+	code display area.
+
+
+stack:
+	See Call Stack
+
+
+Static Analyzer:
+	A tool in ProDev WorkShop for viewing the
+	structure of a program at different levels and
+	locating where elements of the program are used
+	or defined. The Static Analyzer works by extracting
+	structure and location information from files
+	that you specify and storing the information in
+	a database for subsequent analysis.  You can view
+	the analysis as a text list or graphically. See
+	also cvstatic, Call Tree View, Class Tree View,
+	File Dependency View, and Text View
+
+
+stop trap:
+	A breakpoint. See also trap
+
+
+Structure Browser:
+	A Debugger view that graphically displays data structures
+	including data values and pointer relationships.
+
+
+Syscall Panel:
+	A dialog box for specifying system calls to trap. You can
+	designate whether to trap the system calls at the entry or
+	exit from the call.
+
+
+test group:
+	A grouping of experiments in Tester used to
+	test a common DSO (dynamic shared object).
+
+
+test set:
+	A group of experiments in Tester used to test
+	a common executable.
+
+
+Tester:
+	A tool in ProDev WorkShop for measuring dynamic
+	coverage over a set of tests. It tracks the execution
+	of functions, individual source lines, arcs, blocks,
+	and branches. Tester has both a command line and a
+	graphical interface.
+
+
+Text View (Static Analyzer version):
+	A display mode of the Static Analyzer that displays
+	the results of queries as a scrollable text list.
+	See also Static Analyzer
+
+
+Text View (Tester version):
+	A display mode of Tester that displays function
+	coverage information in a report form. See also Tester
+
+
+time line:
+	A feature in the main Performance Analyzer
+	window that shows where events occurred in an
+	experiment and provides calipers for controlling
+	the scope of analysis for the Performance
+	Analyzer views.
+
+
+tracing:
+	A record of a specified type of event (such as
+	reads and writes, system calls, page faults,
+	floating point exceptions, and mallocs, reallocs,
+	and frees) over time, used in performance analysis.
+
+
+trap:
+	A mechanism for trapping data at specified
+	points and conditions in a live process. Also
+	referred to as a breakpoint. There are two types
+	of traps: stop traps are used in debugging to
+	halt a process, and sample traps are used in
+	performance analysis to collect data without
+	halting the process. See also watchpoint
+
+
+Trap Manager:
+	A window for managing traps. It lets you set simple
+	or conditional traps, browse (or modify) a list of
+	traps, and save or load a set of traps.
+
+
+uninitialized memory:
+	Memory that is allocated but not assigned any specific
+	contents. Accessing uninitialized memory is a problem
+	that occurs when a program attempts to read memory that
+	has not yet been initialized with valid information.
+
+
+Usage View (Graphical):
+	A Performance Analyzer view that contains charts
+	indicating resource usage and the occurrence of
+	events, corresponding to time intervals set by the
+	time line calipers.
+
+
+Usage View (Textual):
+	A Performance Analyzer view that displays the
+	actual resource usage values corresponding to
+	time intervals set by the time line calipers.
+
+
+Variable Browser:
+	A Debugger view that displays the local variables valid
+	in the current context and their values (or addresses).
+	The Variable Browser also lets you view the previous
+	value at the breakpoint. You can enter a new value directly
+	if you wish.
+
+
+view:
+	A window that lets you analyze data.
+
+
+ViewKit:
+	See IRIS ViewKit
+
+
+watchpoint:
+	A trap that fires when a specified variable or
+	address is read, written, or executed.
+
+
+working set:
+	The set of executable pages, functions, and
+	instructions brought into memory during a particular
+	phase or operation. See also Working Set View.
+
+
+Working Set View:
+	A Performance Analyzer view that lets you
+	measure the coverage of the dynamic shared objects
+	(DSOs) that make up your executable.  It indicates
+	instructions, functions, and pages that were not used
+	in a particular phase or operation in an experiment.
+	Working Set View works with the Cord Analyzer. See also
+	working set and Cord Analyzer
+

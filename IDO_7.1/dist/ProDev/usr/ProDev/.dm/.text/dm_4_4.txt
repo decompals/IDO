@@ -1,0 +1,17 @@
+#4.4
+Setting Breakpoints
+The Debugger lets you visually debug your code. You visually control your program's execution while trapping bugs and examining data.
+The Debugger numbers each line of code.  Click to the left of a line number to set a breakpoint.  
+
+Click again to remove the breakpoint.
+	zclear();
+	clear();
+
+	pushmatrix();
+	multmtrix(view);
+	draw_floor();
+	draw_jello();
+
+	if ((a+=1)>3600) a -= 3600;
+	if ((b+=3)>3600) a -= 3600;
+	if ((c+=7)>3600) a -= 3600;

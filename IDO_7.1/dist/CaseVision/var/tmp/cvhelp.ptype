@@ -1,0 +1,7 @@
+ptype SGI_CV_CVHELP
+{
+ start "/usr/lib/onlineHelp/cvhelp -noAlready";
+ handle: session SGI_helpRequest(in string prefix, in string token) => start;
+ handle: session SGI_helpRequestCatalog(in string prefix, in string token) => start;
+ observe: session load_file() => start;
+}

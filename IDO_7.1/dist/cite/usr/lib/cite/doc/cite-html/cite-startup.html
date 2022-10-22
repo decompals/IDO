@@ -1,0 +1,53 @@
+<HEAD>
+<body bgcolor="#fffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+<TITLE>Starting up CITE</TITLE>
+<!-- Changed by: Suresh Srinivas,  9-Apr-1996 -->
+</HEAD>
+
+<BODY>
+<P>
+<BR> <HR> <P>
+ <H1>Starting up CITE</H1>
+<HR>
+
+<H3> Starting up XEmacs </H3>
+<OL>
+<LI> <tt> /usr/gnu/bin/xemacs</tt> &amp will start up XEmacs.<BR>
+If you have made the necessary changes to your <tt>.emacs</tt> file then this 
+will also load up the necessary CITE files. <BR>
+<LI> Select a file from either the <tt> File-->Open</tt>
+menu or the Open toolbar button <IMG ALIGN=MIDDLE SRC="open.gif" WIDTH="66" HEIGHT="33" ALT="open"> <BR>
+</OL>
+
+<H3> Starting up CITE </H3>
+<P>
+If the selected file is a Fortran or C file with a <tt>.f</tt> or <tt>.c</tt>
+extension then the toolbar changes to the CITE toolbar.
+Also a shell window comes up (you can choose to not have the shell window
+come up) by changing one of the CITE options.
+</P>
+
+<P> If you have other extensions for your fortran and C files such as
+a <tt>.for</tt> or <tt> .see</tt> then you can add the following to
+your <tt>.emacs</tt> file so that CITE toolbar is loaded for files
+with that extension as well.  </P>
+
+<PRE>
+(setq auto-mode-alist
+      (append 
+	'(("\\.for$"  . fortran-mode)
+	  ("\\.see$"  . c-mode))
+	auto-mode-alist))
+</PRE>
+
+</BODY>
+</HTML>
+<BR> <HR>
+<P><ADDRESS>
+<I>Suresh Srinivas (ssuresh@mti) <BR>
+<FONT SIZE="-3"> </FONT><FONT SIZE="-1"> Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT><BR>
+May 30th 1996</I> <BR>
+<BR>
+<BR>
+</ADDRESS>
+</BODY>

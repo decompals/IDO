@@ -1,0 +1,76 @@
+#ifndef GAMMA_1_0
+#define  HighlightForeground    #ffffff
+#define	 TrapColor		#000000
+#define	 ScrollBarTrapColor	#000000
+#define	 InactiveTrapColor	#000000
+#define	 ScrollBarInactiveTrapColor	#000000
+#define	 ProgramCounterColor	#000000
+#define	 ScrollBarProgramCounterColor	#000000
+#define	 CallstackContext	#000000
+#define	 ScrollBarCallstackContext	#000000
+#define  SearchColor		#000000
+#define  ScrollBarSearchColor		#000000
+#define  TimeLineBackground	#ffffff
+#define  ScrollBarColor1	#ffffff
+#define  ScrollBarColor2	#ffffff
+#define  CurrentColor		HighlightColor1
+#define  ViewerColor		HighlightColor2
+#define  ConstraintColor	HighlightColor4
+#define  ChartFillStyle		FillTiled
+#define  ChartLineStyle0	LineSolid
+#define  ChartLineStyle1	LineOnOffDash
+#define  ChartLineStyle2	LineDoubleDash
+#define  ChartLineStyle3	LineSolid
+#define  SessionColor4		BasicBackground
+#define  SessionColor5		BasicBackground
+#define  SourceBackground	#ffffff
+#define  ModifiedBackground	#ffffff
+#define  DerivedBackground	#ffffff
+#define  ObsoleteColor		#ffffff
+#define  SyntaxErrorSymbolColor	#000000
+#define  CheckMarkColor		#ffffff
+#define  SyntaxWarningColor	#000000
+#define  SyntaxErrorColor	#000000
+#define  ScrollBarWarningColor  #000000
+#define  ScrollBarErrorColor    #000000
+#else
+#define  HighlightForeground    #ffffff
+#define	 TrapColor		#000000
+#define	 ScrollBarTrapColor	#000000
+#define	 InactiveTrapColor	#000000
+#define	 ScrollBarInactiveTrapColor	#000000
+#define	 ProgramCounterColor	#000000
+#define	 ScrollBarProgramCounterColor	#000000
+#define	 CallstackContext	#000000
+#define	 ScrollBarCallstackContext	#000000
+#define  SearchColor		#000000
+#define  ScrollBarSearchColor		#000000
+#define  TimeLineBackground	#ffffff
+#define  ScrollBarColor1	#ffffff
+#define  ScrollBarColor2	#ffffff
+#define  CurrentColor		HighlightColor1
+#define  ViewerColor		HighlightColor2
+#define  ConstraintColor	HighlightColor4
+#define  ChartFillStyle		FillTiled
+#define  ChartLineStyle0	LineSolid
+#define  ChartLineStyle1	LineOnOffDash
+#define  ChartLineStyle2	LineDoubleDash
+#define  ChartLineStyle3	LineSolid
+#define  SessionColor4		BasicBackground
+#define  SessionColor5		BasicBackground
+#define  SourceBackground	#ffffff
+#define  ModifiedBackground	#ffffff
+#define  DerivedBackground	#ffffff
+#define  ObsoleteColor		#ffffff
+#define  SyntaxErrorSymbolColor	#000000
+#define  CheckMarkColor		#ffffff
+#define  SyntaxWarningColor	#000000
+#define  SyntaxErrorColor	#000000
+#define  ScrollBarWarningColor  #000000
+#define  ScrollBarErrorColor    #000000
+#endif
+
+
+#define  DrawingAreaNodeColor1  #ffffff
+#define  DrawingAreaNodeColor2  #ffffff
+

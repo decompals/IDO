@@ -1,0 +1,8 @@
+###4.3
+Starting the Debugger
+You can start the Debugger from the command line by typing cvd "executable_name" or from the desktop by dropping an application onto the Debugger icon.
+Type: cvd jello at the shell command line.
+cvd jello
+The Debugger Main View appears with the source code loaded.  
+Sorry,you must first type: cvd jello.  Try Again!
+Click on the bottom right arrow to continue.

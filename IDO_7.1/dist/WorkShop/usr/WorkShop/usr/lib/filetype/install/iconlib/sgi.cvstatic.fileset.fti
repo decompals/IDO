@@ -1,0 +1,488 @@
+
+#Beam
+		color(-119);
+		bgnoutlinepolygon();
+			vertex(7.60, 85.60);
+			vertex(33.20, 45.60);
+			vertex(67.20, 64.80);
+			vertex(14.00, 91.80);
+		endoutlinepolygon(-119);
+
+#Beam
+		bgnoutlinepolygon();
+			vertex(93.40, 85.20);
+			vertex(82.00, 51.20);
+			vertex(54.20, 64.20);
+			vertex(86.00, 90.80);
+		endoutlinepolygon(-119);
+
+#	Left Wheel
+		color(iconcolor);
+		bgnoutlinepolygon();
+			vertex(76.34, 39.77);
+			vertex(76.91, 37.36);
+			vertex(78.34, 35.60);
+			vertex(80.03, 34.66);
+			vertex(81.81, 34.60);
+			vertex(83.73, 35.16);
+			vertex(85.30, 36.49);
+			vertex(86.39, 37.79);
+			vertex(86.55, 40.51);
+			vertex(86.67, 42.31);
+			vertex(86.17, 44.97);
+			vertex(85.54, 46.98);
+			vertex(84.13, 48.38);
+			vertex(81.95, 48.45);
+			vertex(79.66, 48.23);
+			vertex(77.40, 46.78);
+			vertex(76.69, 44.69);
+			vertex(76.34, 43.12);
+		endoutlinepolygon(outlinecolor);
+
+#	Lines on Left Wheel
+		color(outlinecolor);
+		bgnline();
+			vertex(80.59, 46.62);
+			vertex(80.03, 44.23);
+			vertex(79.75, 43.43);
+			vertex(79.48, 42.12);
+			vertex(80.03, 39.87);
+			vertex(81.09, 38.19);
+			vertex(82.63, 37.07);
+			vertex(83.81, 37.33);
+			vertex(84.81, 38.72);
+			vertex(85.05, 40.43);
+			vertex(84.96, 42.50);
+			vertex(84.50, 44.76);
+			vertex(83.81, 46.40);
+			vertex(82.08, 47.60);
+		endline();
+
+#	Path_4
+		bgnline();
+			vertex(83.00, 43.42);
+			vertex(82.08, 42.59);
+			vertex(81.89, 41.62);
+			vertex(82.30, 40.55);
+			vertex(83.20, 41.00);
+		endline();
+
+#	Car Shadow
+		color(shadowcolor);
+		bgnline();
+			vertex(81.33, 45.87);
+			vertex(44.29, 41.86);
+		endline();
+
+#	Left Wheel
+		color(iconcolor);
+		bgnoutlinepolygon();
+			vertex(49.79, 34.95);
+			vertex(50.54, 31.69);
+			vertex(52.49, 29.27);
+			vertex(54.89, 27.90);
+			vertex(57.46, 27.74);
+			vertex(60.20, 28.36);
+			vertex(62.56, 30.06);
+			vertex(63.56, 32.28);
+			vertex(64.51, 35.33);
+			vertex(64.17, 37.80);
+			vertex(64.17, 41.34);
+			vertex(63.39, 44.04);
+			vertex(61.39, 46.02);
+			vertex(58.32, 46.23);
+			vertex(55.01, 46.07);
+			vertex(51.71, 44.25);
+			vertex(50.57, 41.50);
+			vertex(49.96, 39.45);
+		endoutlinepolygon(outlinecolor);
+
+#	Lines on Left Wheel
+		color(outlinecolor);
+		bgnline();
+			vertex(54.94, 36.76);
+			vertex(55.11, 34.91);
+			vertex(56.54, 32.53);
+			vertex(58.76, 31.01);
+			vertex(60.43, 31.31);
+			vertex(61.91, 33.05);
+			vertex(62.37, 35.32);
+			vertex(62.32, 38.14);
+			vertex(61.73, 41.16);
+			vertex(60.86, 43.38);
+			vertex(58.45, 45.09);
+		endline();
+
+#	Left Wheel Hub Front
+		bgnline();
+			vertex(59.24, 40.43);
+			vertex(58.63, 38.22);
+			vertex(59.48, 35.58);
+			vertex(60.77, 37.48);
+			vertex(60.24, 39.30);
+			vertex(59.03, 39.95);
+		endline();
+
+#	Left Wheel Hub Rear
+		bgnline();
+			vertex(59.24, 40.43);
+			vertex(57.38, 38.84);
+			vertex(56.93, 36.88);
+			vertex(57.64, 34.75);
+			vertex(59.48, 35.58);
+		endline();
+
+#	Right Wheel
+		color(iconcolor);
+		bgnoutlinepolygon();
+			vertex(28.02, 33.03);
+			vertex(27.92, 30.48);
+			vertex(28.81, 28.05);
+			vertex(29.84, 26.23);
+			vertex(31.22, 25.10);
+			vertex(33.03, 24.35);
+			vertex(34.57, 24.56);
+			vertex(36.66, 25.44);
+			vertex(37.87, 26.68);
+			vertex(38.70, 28.18);
+			vertex(39.39, 31.02);
+			vertex(38.88, 33.80);
+		endoutlinepolygon(outlinecolor);
+
+#	Path_6
+		color(outlinecolor);
+		bgnline();
+			vertex(32.41, 32.56);
+			vertex(32.54, 31.10);
+			vertex(32.98, 29.20);
+			vertex(34.17, 26.78);
+			vertex(36.42, 26.00);
+			vertex(37.80, 26.63);
+		endline();
+
+#	Path_7
+		bgnline();
+			vertex(32.87, 29.73);
+			vertex(34.16, 28.44);
+			vertex(35.53, 27.50);
+			vertex(36.46, 28.01);
+			vertex(37.38, 29.25);
+			vertex(37.74, 31.05);
+			vertex(36.43, 34.13);
+		endline();
+
+#	Upper Pink Body of Car
+		color(9);
+		bgnoutlinepolygon();
+			vertex(76.44, 47.26);
+			vertex(85.65, 42.81);
+			vertex(90.13, 44.33);
+			vertex(90.16, 46.30);
+			vertex(88.68, 48.55);
+			vertex(89.14, 49.58);
+			vertex(89.30, 51.58);
+			vertex(88.59, 52.84);
+			vertex(87.03, 53.19);
+			vertex(79.08, 54.11);
+			vertex(77.29, 60.20);
+			vertex(75.10, 62.17);
+			vertex(73.44, 62.81);
+			vertex(71.70, 64.17);
+			vertex(64.18, 65.71);
+			vertex(59.52, 66.00);
+			vertex(54.80, 65.60);
+			vertex(51.05, 65.15);
+			vertex(46.57, 64.01);
+			vertex(41.41, 62.09);
+			vertex(37.93, 59.61);
+			vertex(37.03, 58.50);
+			vertex(37.09, 57.60);
+			vertex(32.58, 49.96);
+			vertex(34.31, 48.62);
+		endoutlinepolygon(outlinecolor);
+
+#	Lower Pink Part of Car
+		color(-153);
+		bgnoutlinepolygon();
+			vertex(85.37, 43.29);
+			vertex(86.91, 43.68);
+			vertex(86.40, 47.38);
+			vertex(85.01, 48.49);
+			vertex(78.79, 48.41);
+			vertex(70.71, 48.68);
+			vertex(56.96, 48.65);
+			vertex(55.97, 49.43);
+			vertex(55.30, 50.24);
+			vertex(54.55, 50.66);
+			vertex(49.98, 51.22);
+			vertex(44.52, 51.38);
+			vertex(40.37, 50.98);
+			vertex(39.37, 52.16);
+			vertex(33.35, 49.37);
+			vertex(29.79, 51.19);
+			vertex(26.28, 51.86);
+			vertex(22.28, 52.28);
+			vertex(18.65, 52.30);
+			vertex(15.26, 51.80);
+			vertex(13.20, 51.01);
+			vertex(12.45, 49.97);
+			vertex(12.96, 48.98);
+			vertex(14.12, 47.89);
+			vertex(16.00, 45.63);
+			vertex(20.58, 38.94);
+			vertex(20.15, 38.21);
+			vertex(19.58, 36.27);
+			vertex(19.95, 34.55);
+			vertex(21.02, 33.28);
+			vertex(24.78, 32.61);
+			vertex(29.73, 32.31);
+			vertex(34.12, 32.48);
+			vertex(44.80, 33.54);
+			vertex(49.82, 34.88);
+			vertex(52.63, 35.60);
+			vertex(55.82, 37.44);
+			vertex(54.45, 39.96);
+			vertex(54.96, 42.01);
+			vertex(57.06, 43.71);
+			vertex(60.15, 44.54);
+			vertex(62.20, 43.74);
+			vertex(63.25, 42.18);
+			vertex(63.31, 39.70);
+			vertex(64.39, 39.19);
+			vertex(77.18, 40.53);
+			vertex(80.08, 45.22);
+			vertex(82.43, 46.07);
+		endoutlinepolygon(outlinecolor);
+
+#	License Plate
+		color(iconcolor);
+		bgnoutlinepolygon();
+			vertex(26.58, 41.10);
+			vertex(28.56, 39.65);
+			vertex(30.35, 37.33);
+			vertex(32.05, 37.94);
+			vertex(34.26, 38.30);
+			vertex(37.54, 37.91);
+			vertex(35.94, 40.36);
+			vertex(34.04, 42.83);
+			vertex(32.06, 43.98);
+		endoutlinepolygon(outlinecolor);
+
+#	Left Taillight
+		bgnoutlinepolygon();
+			vertex(44.75, 41.11);
+			vertex(45.42, 41.78);
+			vertex(45.32, 42.85);
+			vertex(45.12, 43.56);
+			vertex(44.72, 44.54);
+			vertex(44.06, 45.45);
+			vertex(42.85, 45.97);
+			vertex(41.72, 45.11);
+			vertex(41.98, 43.40);
+			vertex(42.67, 42.09);
+			vertex(42.95, 41.35);
+			vertex(43.59, 40.96);
+		endoutlinepolygon(outlinecolor);
+
+#	Right Taillight
+		bgnoutlinepolygon();
+			vertex(20.19, 40.54);
+			vertex(20.32, 41.59);
+			vertex(19.42, 42.94);
+			vertex(17.85, 43.25);
+			vertex(17.85, 41.67);
+			vertex(18.76, 40.00);
+		endoutlinepolygon(outlinecolor);
+
+#	Rear Bumper Outline
+		bgnoutlinepolygon();
+			vertex(36.99, 32.75);
+			vertex(44.39, 34.51);
+			vertex(49.75, 36.79);
+			vertex(50.02, 39.05);
+			vertex(49.10, 40.53);
+			vertex(48.52, 41.36);
+			vertex(47.42, 40.94);
+			vertex(44.65, 39.08);
+			vertex(39.11, 37.09);
+			vertex(33.32, 36.20);
+			vertex(27.14, 36.20);
+			vertex(23.48, 36.92);
+			vertex(20.35, 38.56);
+			vertex(19.69, 36.25);
+			vertex(20.14, 34.57);
+			vertex(21.04, 33.42);
+			vertex(24.51, 32.53);
+			vertex(31.24, 32.39);
+		endoutlinepolygon(outlinecolor);
+
+#	Trunk Outline
+		color(outlinecolor);
+		bgnline();
+			vertex(23.44, 37.94);
+			vertex(24.24, 41.73);
+			vertex(26.63, 44.89);
+			vertex(29.94, 47.43);
+			vertex(33.01, 48.98);
+		endline();
+
+#	Defines White Back Window
+		color(iconcolor);
+		bgnpolygon();
+			vertex(39.37, 52.16);
+			vertex(38.02, 54.06);
+			vertex(37.64, 55.15);
+			vertex(38.10, 55.66);
+			vertex(37.03, 57.56);
+			vertex(32.58, 49.96);
+			vertex(33.35, 49.37);
+		endpolygon();
+
+#	Path_16
+		bgnpolygon();
+			vertex(38.10, 55.66);
+			vertex(40.50, 56.04);
+			vertex(43.63, 55.87);
+			vertex(47.25, 56.03);
+			vertex(51.09, 55.50);
+			vertex(55.25, 54.47);
+			vertex(58.30, 53.62);
+			vertex(59.11, 56.44);
+			vertex(59.75, 58.75);
+			vertex(60.06, 61.26);
+			vertex(60.19, 62.08);
+			vertex(59.29, 62.39);
+			vertex(56.24, 62.72);
+			vertex(52.08, 62.50);
+			vertex(47.61, 62.01);
+			vertex(43.44, 61.16);
+			vertex(39.70, 59.59);
+			vertex(37.03, 57.56);
+		endpolygon();
+
+#	Outline of Rear Window
+		color(outlinecolor);
+		bgnline();
+			vertex(42.71, 46.20);
+			vertex(39.37, 52.16);
+			vertex(38.02, 54.06);
+			vertex(37.64, 55.15);
+			vertex(38.10, 55.66);
+			vertex(40.50, 56.04);
+			vertex(43.63, 55.87);
+			vertex(47.25, 56.03);
+			vertex(51.09, 55.50);
+			vertex(55.25, 54.47);
+			vertex(58.30, 53.62);
+			vertex(59.11, 56.44);
+			vertex(59.75, 58.75);
+			vertex(60.06, 61.26);
+			vertex(60.19, 62.08);
+			vertex(59.29, 62.39);
+			vertex(56.24, 62.72);
+			vertex(52.08, 62.50);
+			vertex(47.61, 62.01);
+			vertex(43.44, 61.16);
+			vertex(39.70, 59.59);
+			vertex(37.03, 57.56);
+			vertex(32.58, 49.96);
+			vertex(33.35, 49.37);
+			vertex(39.37, 52.16);
+		endline();
+
+#	Side Window 
+		color(iconcolor);
+		bgnoutlinepolygon();
+			vertex(61.73, 53.33);
+			vertex(66.12, 53.49);
+			vertex(69.58, 52.92);
+			vertex(70.67, 58.13);
+			vertex(70.57, 59.72);
+			vertex(69.98, 61.50);
+			vertex(68.61, 62.77);
+			vertex(66.29, 62.88);
+			vertex(64.02, 61.65);
+			vertex(62.77, 59.88);
+			vertex(62.07, 58.45);
+		endoutlinepolygon(outlinecolor);
+
+#	Crunch Outlines
+		color(outlinecolor);
+		bgnline();
+			vertex(64.52, 39.49);
+			vertex(65.40, 39.77);
+			vertex(66.95, 41.05);
+			vertex(68.65, 44.07);
+			vertex(70.13, 47.55);
+			vertex(71.72, 51.04);
+			vertex(72.31, 54.86);
+			vertex(72.14, 58.79);
+			vertex(70.88, 62.24);
+			vertex(69.02, 64.83);
+			vertex(67.10, 65.59);
+			vertex(64.24, 65.76);
+		endline();
+
+#	Path_22
+		bgnline();
+			vertex(74.86, 40.64);
+			vertex(76.62, 43.31);
+			vertex(78.52, 46.45);
+			vertex(79.19, 51.20);
+			vertex(79.08, 54.36);
+		endline();
+
+#	Side Window 
+		color(iconcolor);
+		bgnoutlinepolygon();
+			vertex(74.01, 53.75);
+			vertex(76.77, 53.45);
+			vertex(77.05, 56.44);
+			vertex(76.38, 58.90);
+			vertex(74.76, 61.06);
+			vertex(73.76, 61.26);
+			vertex(73.35, 60.72);
+			vertex(73.16, 58.35);
+			vertex(73.54, 56.54);
+		endoutlinepolygon(outlinecolor);
+
+#	Hood edge
+		color(outlinecolor);
+		bgnline();
+			vertex(88.90, 51.56);
+			vertex(79.30, 52.37);
+		endline();
+
+#	Front Bumper Outline
+		color(iconcolor);
+		bgnoutlinepolygon();
+			vertex(88.04, 45.51);
+			vertex(89.17, 43.84);
+			vertex(90.56, 45.21);
+			vertex(89.92, 46.90);
+			vertex(89.33, 47.72);
+			vertex(88.22, 47.29);
+		endoutlinepolygon(outlinecolor);
+
+#Spotlight
+		color(-187);
+		bgnoutlinepolygon();
+			vertex(87.49, 96.31);
+			vertex(91.87, 98.81);
+			vertex(95.95, 98.22);
+			vertex(98.89, 93.06);
+			vertex(97.73, 87.22);
+			vertex(94.29, 82.37);
+			vertex(83.02, 90.43);
+		endoutlinepolygon(-136);
+
+#Spotlight
+		bgnoutlinepolygon();
+			vertex(11.69, 97.11);
+			vertex(6.66, 99.03);
+			vertex(2.49, 97.96);
+			vertex(0.31, 92.56);
+			vertex(2.54, 86.97);
+			vertex(7.00, 82.63);
+			vertex(16.89, 93.02);
+		endoutlinepolygon(-136);

@@ -1,0 +1,21 @@
+To build all of the OpenGL samples, type make. Look in the
+makefile for the order in which directories must be built.
+
+You can set the different object styles by setting the env variable GLSTYLE:
+
+    setenv GLSTYLE 32
+    setenv GLSTYLE n32
+    setenv GLSTYLE 64
+
+Note that all three styles are made by default.
+If you do set one of the style flags above, do the following also:
+
+    setenv INSTOPTS -t
+
+This will insure that make install will still work since make install
+will try to install all three styles.
+
+You can enable debugging by setting the env variable GLDEBUG:
+
+    setenv GLDEBUG y
+

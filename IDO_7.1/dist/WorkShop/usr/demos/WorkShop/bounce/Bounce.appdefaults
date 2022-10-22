@@ -1,0 +1,8 @@
+Bounce*sgiMode: true
+Bounce*useSchemes: all
+Bounce*clock*titleString:    		Frames Per Second
+Bounce*quit*labelString:     		Quit
+Bounce*XmScale*orientation:  		horizontal
+Bounce*colorChooser_popup*title:      	Color Chooser
+Bounce*stage.width:             	400
+Bounce*stage.height:            	200

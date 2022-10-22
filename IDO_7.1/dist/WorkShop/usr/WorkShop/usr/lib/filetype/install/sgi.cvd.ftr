@@ -1,0 +1,40 @@
+TYPE Cvd
+     MATCH	tag == 0x00010990001;
+     LEGEND	ProDev/WorkShop Debugger
+     SUPERTYPE	Executable
+#     DROPIF Executable CoreFile
+     CMD OPEN	if [ $ARGC = 1 ]
+		then
+		    $LEADER
+		else
+		    $LEADER $REST
+		fi
+    CMD ALTOPEN	if [ $ARGC = 1 ]
+		then
+		    launch -c $LEADER
+		else
+		    launch -c $LEADER $REST
+		fi
+    CMD DROP	if [ $LEADERTYPE = CoreFile ]
+		then
+		  deadprocess=`file $LEADER | sed -e "s/^[^\']*\'//" -e "s/\'$//"`
+		  if [ -r "$LEADER" ]; then 
+		    deadprocessFullPath=`which "$deadprocess"`
+		    if [ "$?" = 0 ]; then
+		        /usr/sbin/cvd $deadprocessFullPath $LEADER
+                    else
+                        xconfirm -t "'$deadprocess' `gettxt uxsgidesktop:377 'not found in search path, so unable to run debugger.'`"
+                    fi
+		  fi
+		else
+		  $TARGET $LEADER $REST
+		fi
+    ICON	{
+	if (opened) {
+	    include ("../iconlib/generic.exec.open.fti");
+	    include ("iconlib/sgi.cvd.fti");
+	} else {
+	    include ("../iconlib/generic.exec.closed.fti");
+	    include ("iconlib/sgi.cvd.fti");
+	}
+    }

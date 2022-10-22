@@ -1,0 +1,119 @@
+<!-- Version $Revision: 1.1 $ of the figures TOC stylesheet -->
+
+<!ENTITY	add.left-indent	CDATA	"+=20"	>
+<!ENTITY	body.font-size	CDATA	"12"	>
+<!ENTITY	body.line-space	CDATA	"14"	>
+<!ENTITY	doc.title.font-size	CDATA	"14"	>
+<!ENTITY	doc.title.line-space	CDATA	"21"	>
+<!ENTITY        figure.text-b4 CDATA   "switch(attr(LANG,ancestor(SGIDOC)),de,Bilderverzeichnis,fr,Liste des Figures,DEFAULT,List of Figures)"   >
+<!ENTITY	left-indent.1	CDATA	"4"	>
+<!ENTITY	title-font	CDATA	"new century schoolbook"	>
+<!ENTITY	title.space-before	CDATA	"4"	>
+
+<sheet >
+
+
+
+<?INSTED COMMENT: GROUP #ROOT>
+
+<group name="#ROOT">
+	<left-indent>	&left-indent.1	</>
+</group>
+
+
+
+<?INSTED COMMENT: UNGROUPED STYLES FOLLOW>
+
+<style name="#SDATA">
+	<font-family>	attr(font)	</>
+	<character-set>	attr(charset)	</>
+	<text-before>char(attr(code))</>
+</style>
+
+<style name="#TAGS">
+	<font-weight>	Bold	</>
+</style>
+
+<!-- Style"#toc-annot" is reserved, and defines the appearance of the
+     bookmarks, word frequencies, location markers, etc. in left margin.
+-->
+<style name="#TOC-ANNOT">
+	<font-family>	courier	</>
+	<font-weight>	Bold	</>
+	<font-size>	12	</>
+	<foreground>	magenta	</>
+</style>
+
+<style name="BUTTON">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="CAPTION">
+	<left-indent>	130	</>
+	<first-indent>	-95	</>
+	<space-before>	&title.space-before	</>
+	<justification>	Left	</>
+	<break-before>	Line	</>
+	<text-before>content(child(PREFIX))</>
+</style>
+
+<style name="CAPTION,#TEXT-BEFORE">
+	<font-weight>	Bold	</>
+</style>
+
+<style name="COMMAND">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="EMPHASIS">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="FIGURE">
+	<title-tag>	CAPTION	</>
+</style>
+
+<style name="FILENAME">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="ITALICS">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="PREFIX">
+	<hide>	Children	</>
+</style>
+
+<style name="PROGRAMNAME">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="SGIDOC">
+	<font-family>	&title-font	</>
+	<font-size>	&body.font-size	</>
+	<left-indent>	&add.left-indent	</>
+	<line-spacing>	&body.line-space	</>
+	<space-before>	9	</>
+	<break-before>	True	</>
+	<break-after>	False	</>
+	<title-tag>	""	</>
+	<text-before>&figure.text-b4</>
+</style>
+
+<style name="SGIDOC,#TEXT-BEFORE">
+	<font-family>	&title-font	</>
+	<font-weight>	Bold	</>
+	<font-slant>	Roman	</>
+	<font-size>	&doc.title.font-size	</>
+	<space-before>	2	</>
+	<break-before>	True	</>
+</style>
+
+<style name="VARIABLE">
+	<font-slant>	Italics	</>
+</style>
+
+
+
+</sheet>

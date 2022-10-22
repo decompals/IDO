@@ -1,0 +1,7 @@
+#1.0
+Welcome
+ProDev WorkShop provides advanced visual tools for source code analysis, debugging, performance tuning, and testing.
+
+
+This quick start tutorial helps you get the most power from the ProDev WorkShop tools.  
+Click anywhere to continue...

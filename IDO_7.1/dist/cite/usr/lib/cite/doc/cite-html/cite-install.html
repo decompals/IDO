@@ -1,0 +1,64 @@
+<HEAD>
+<body bgcolor="#fffff" text="#000000" link="#CC0000" alink="#FF3300" vlink="#330099">
+<TITLE>Installation of the CITE (Compilation Information Through Emacs) compiler tool prototype</TITLE>
+<!-- Changed by: Suresh Srinivas,  9-Apr-1996 -->
+</HEAD>
+
+<BODY>
+<P>
+<BR> <HR> <P>
+ <H1>Installation of the CITE (Compilation Information Through Emacs) compiler tool prototype</H1>
+<HR>
+
+
+<H3>1. Download <I>CITE</I> over the Web</H3>
+<OL>
+<LI> CITE would have been installed in <tt> /usr/lib/cite </tt>
+</OL>
+
+<H3>2. Modifying <I>.emacs</I></H3>
+
+<P>
+If you dont have a <tt>.emacs</tt> file then you can copy the sample
+file from the XEmacs distribution and make the changes suggested below: <BR> 
+<tt> cp /usr/gnu/lib/xemacs-19.13/etc/sample.emacs ~/.emacs</tt> 
+</P>
+
+<P>
+You will also need to modify your <tt>.emacs</tt> file to load CITE.
+You will need to copy the following <tt>elisp</tt> code to the end of
+your <tt> .emacs</tt> file.
+</P>
+
+<PRE>
+(if (and (string-match "XEmacs" emacs-version)
+       (boundp 'emacs-major-version)
+       (= emacs-major-version 19)
+       (>= emacs-minor-version 12))
+    (progn
+      (set-default-toolbar-position 'left)
+      (add-spec-list-to-specifier top-toolbar-height '((global (nil . 0))))
+      (add-spec-list-to-specifier bottom-toolbar-height '((global (nil . 0))))
+      (add-spec-list-to-specifier left-toolbar-width '((global (nil . 37))))
+      (add-spec-list-to-specifier right-toolbar-width '((global (nil . 0))))
+      (load-file "/usr/lib/cite/xemacs-elisp/cite.elc")))
+</PRE>
+
+<P>
+The above elisp code loads CITE only when you are running XEmacs
+version greater than or equal to 19.12. It also sets the toolbar to be
+on the left side.  If you are using GNU Emacs then the following also
+makes sure that you can use the same <tt> .emacs</tt> file under both
+GNU Emacs and XEmacs. It isolates the loading of CITE to be only under
+XEmacs. 
+</P>
+
+<BR> <HR>
+<P><ADDRESS>
+<I>Suresh Srinivas (ssuresh@mti) <BR>
+<FONT SIZE="-3"> </FONT><FONT SIZE="-1"> Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT><BR>
+April 3rd 1996</I> <BR>
+<BR>
+<BR>
+</ADDRESS>
+</BODY>

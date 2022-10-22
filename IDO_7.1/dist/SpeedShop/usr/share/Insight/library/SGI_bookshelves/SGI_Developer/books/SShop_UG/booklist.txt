@@ -1,0 +1,1 @@
+<BOOK name="SShop_UG" edition="19961108" alias = "SpeedShop User's Guide" type = "sgi_developer" hide = "FALSE" version = "007-3311-001" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

@@ -1,0 +1,5 @@
+ptype SGI_CV_CVPERF
+{
+	start "/usr/sbin/cvperf";
+	handle:	session load_performance() => start;
+}

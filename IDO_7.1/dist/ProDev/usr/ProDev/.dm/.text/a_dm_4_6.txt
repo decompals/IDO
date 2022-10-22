@@ -1,0 +1,29 @@
+###4.6
+The Trap Manager
+The Trap Manager lets you specify, control, organize, and save configurations of traps. It lists all of the traps in a process and lets you add, delete, modify, or disable traps.
+Bring up the Trap Manager by selecting "Trap Manager" from the Views menu.
+The Trap field lets you enter trap definitions.
+The Condition field lets you specify boolean conditions for traps.
+The Cycle Count field lets you specify how many times the trap can be triggered before firing.
+The Current Count field shows how many times the trap has been triggered.
+The list area lets you view or change all traps and their active/inactive status.
+Drag your mouse over the Trap Manager window to review its features.  Click on the bottom right arrow to continue.
+
+Array Browser
+Call Stack
+Disassembly View
+Exception View
+Execution View
+Expression View
+File Browser
+Memory View
+Process Meter
+Register View
+Signal Panel
+Source View
+Structure Browser  Alt+B
+Syscall Panel
+Task View
+Trap Manager
+Variable Browser
+X/Motif Analyzer

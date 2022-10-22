@@ -1,0 +1,1371 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! VIEW Common Resources                                                       !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*keyboardFocusPolicy:	pointer
+
+*sgiMode:		true
+*schemeFileList:	CaseVision
+*paletteFileList:	CaseVisionPalette
+*useSchemes:		all
+*useEnhancedFSB:        true
+
+*XmMenuShell*tearOffModel:		tear_off_enabled
+
+*useTtutil:		True
+
+!!
+!! Motif bug #177064, tearing off popup menus core dumps
+!!
+*popupMenu*XmMenuShell*tearOffModel:        tear_off_disabled
+
+!
+! Launch menu labels
+!
+*launchMenu.labelString:	Launch Tool
+*launchMenu.mnemonic:		L
+
+!
+! Project menu labels
+!
+*projectMenu.labelString:		Project
+*projectMenu.mnemonic:			P
+*projectIconify.labelString:		Iconify
+*projectIconify.mnemonic:		I
+*projectRaise.labelString:		Raise
+*projectRaise.mnemonic:			R
+*projectRemapPaths.labelString:		Remap Paths...
+*projectRemapPaths.mnemonic:		m
+*projectProjectView.labelString:	Project View...
+*projectProjectView.mnemonic:		P
+*projectExit.labelString:		Exit
+*projectExit.mnemonic:			E
+
+!
+! Static Analyzer Query Menu Labels
+!
+*queryMenu.labelString: Query
+*queryMenu.mnemonic: Q
+
+*qmGeneral.labelString: General
+*qmGeneral.mnemonic: G
+*qmMacros.labelString: Macros
+*qmMacros.mnemonic: M
+*qmFunctions.labelString: Functions
+*qmFunctions.mnemonic: F
+*qmVariables.labelString: Variables
+*qmVariables.mnemonic: V
+
+*qmWhereSymbolDefined.labelString:	Where Defined ?
+*qmWhereMacroDefined.labelString:		Where Defined ?
+*qmWhereVariableDefined.labelString:	Where Defined ?
+*qmWhereFunctionDefined.labelString:	Where Defined ?
+
+!
+! Option menu labels
+!
+*optionMenu.labelString:
+
+
+
+!
+! Resource for determining what languages file suffixes indicate.
+! Used by cvsource and cvstatic
+!
+*suffixSource:		C++.c++ C++.C C++.cxx C++.h C++.cpp C++.cc C.c  Fortran.f Fortran.F Fortran90.f90 Ada.adb
+
+!!!!
+!!! NLS Messages
+!!!!
+*useNetLSLicense:					False
+*disableLicenseWarnings:              FALSE
+*disableThirtyDayLicenseWarnings:     FALSE
+
+*thirtyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease contact your sales or service representative to complete your\nsoftware registration or to purchase additional copies of WorkShop.        
+*sixtyDayMessage:            Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*ninetyDayMessage:           Your temporary WorkShop license will expire in %d days.\nPlease complete and return the registration card\nincluded with your software to obtain a permanent license\nconfigured for your installation.          
+*noLicenseServerMessage:     Unable to locate a license server.  Consult \nthe WorkShop Release Notes for information on\nsetting up your network license server.
+*notEnoughLicensesMessage:   No WorkShop licenses are available at this time. Contact\nyour sales representative or dealer to purchase additional\nlicenses or try again later.
+!
+*Evaluation*sixtyDayMessage:
+*Evaluation*ninetyDayMessage:
+*Evaluation*thirtyDayMessage: Your evaluation license for WorkShop\nwill expire in %d days.\n\nTo purchase a permanent license or extend\nyour evaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html\n\nor email: demolicense@sgi.com
+!
+*Evaluation*licenseExpiredMessage: Your evaluation period for WorkShop\nhas expired. \n\nTo purchase a permanent license or extend your\nevaluation period, contact your local sales\nrepresentative or call Silicon Graphics directly\nat 1.800.800.7441 or 1.415.960.1980.\n\nExtensions are also available at the following\nweb site:\n\nhttp://www.sgi.com/Products/license.html or\n\nemail: demolicense@sgi.com
+!
+*noFlexlmLicenseMessage: WorkShop could not find a valid FlexLM license.\n\nIf you have an existing NetLS license for an earlier version of\nWorkShop, click on OK to use your old license.  Please contact Silicon\nGraphics to obtain a FlexLM replacement for your old license.  To avoid\nseeing this dialog again, set the "useNetLSLicense" resource in the\napplication defaults file to "True".\n\nTo obtain an Evaluation or Permanent license, please visit our license\nrequest web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*noLicenseMessage: Unable to find a WorkShop license.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*licenseExpiredMessage:      Your WorkShop License has expired.  To obtain an Evaluation\nor Permanent license, please visit our license request web page:\n\n          http://www.sgi.com/Products/license.html\n\n          or send a blank email message to:\n\n          license@sgi.com for a Permanent License or\n\n          demolicense@sgi.com for an Evaluation License.\n\nIn North America, Silicon Graphics' customers may request\nPermanent licenses by sending a facsimile to:\n\n          (415) 390-0537\n\n          or by calling our technical support hotline:\n\n          1-800-800-4SGI\n\nIf you are outside of North America or you are not a Silicon\nGraphics support customer, then contact your local support provider.\n\nNote: Permanent Licenses require verification of entitlement\n(i.e., Proof-of-Purchase).
+*warnLoseLicenseMessage:     Unable to renew your software license.  Consult\nthe NetLS LSSERVER Release Notes for information on\ntroubleshooting your license server and network services.
+*regainLicenseMessage:       WorkShop license regained.
+*enterLicenseMessage: WorkShop requires a license. Please enter your license\nkey and click OK. Temporary license keys are available at the\nfollowing web site\n\nhttp://www.sgi.com/Products/license.html\n\nor call our technical support hotline at 1-800-800-4SGI.\n\nIf you have an existing NetLS license for a previous version of\nWorkShop, you can click Cancel to try to find a NetLS\nlicense.
+
+!!!!!
+!!!   Turn off all Xt and Motif warning messages
+!!!!!
+
+! This should be off when we ship, but ON for internal testing
+
+*silenceWarnings:  TRUE
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+! End of VIEW Common Resources                                                !
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                !
+! FSkit Common Resources                                         !
+!                                                                !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*useSchemes: 	all
+*baseScheme: 	Base
+*defaultScheme: Lascaux
+!*scheme:
+*debugScheme: False
+!*useSmallFonts: False
+*allowUndocumented: False
+
+*schemeFileList: CaseVision
+*paletteFileList: CaseVisionPalette
+
+!
+! Start the session manager
+!
+*startSessionManager:				True
+
+!
+! Administration Menu
+!
+*administrationMenu.labelString:	Admin
+*administrationMenu.mnemonic:		A
+*cloneViewMenuItem.labelString:		New
+*cloneViewMenuItem.mnemonic:		N
+*iconifyViewMenuItem.labelString:	Iconify
+*iconifyViewMenuItem.mnemonic:		I
+*raiseViewMenuItem.labelString:		Raise
+*raiseViewMenuItem.mnemonic:		R
+*experimentViewMenuItem.labelString:	Experiment...
+*experimentViewMenuItem.mnemonic:	x
+*pathRemappingViewMenuItem.labelString:	Remap Paths...
+*pathRemappingViewMenuItem.mnemonic:	P
+*saveTextViewMenuItem.labelString:	Save As Text...
+*saveTextViewMenuItem.mnemonic:		a
+
+*administrationMenu.quitViewMenuItem.mnemonic:		E
+*quitViewMenuItem.labelString:		Close
+*quitViewMenuItem.mnemonic:             C
+*quitViewMenuItem.accelerator:          Ctrl<Key>C
+*quitViewMenuItem.acceleratorText: 	Ctrl+C
+
+
+!
+! Session Management Menu 
+!
+*sessionMenu.labelString:			Admin
+*sessionMenu.mnemonic:				A
+*sessionMenu.loadSessionMenuItem.labelString:	Load Settings...
+*sessionMenu.saveSessionMenuItem.labelString:	Save Settings...
+*sessionMenu.saveSessionMenuItem.mnemonic:	S
+*sessionMenu.iconifySessionMenuItem.labelString:	Iconify
+*sessionMenu.iconifySessionMenuItem.mnemonic:	I
+*sessionMenu.raiseSessionMenuItem.labelString:	Raise
+*sessionMenu.raiseSessionMenuItem.mnemonic:	R
+*sessionMenu.quitSessionMenuItem.labelString:	Exit
+*sessionMenu.quitSessionMenuItem.mnemonic:	E
+*sessionMenu.rerunExptMenuItem.labelString:	Rerun Experiment
+*sessionMenu.rerunExptMenuItem.mnemonic:	n
+
+!
+! Project menu labels
+!
+*projectMenu.labelString:	Project
+*projectIconify.labelString:	Iconify
+*projectRaise.labelString:	Raise
+*projectRemapPaths.labelString:	Remap Paths...
+*projectExit.labelString:	Exit
+
+!
+! View Config Menu (optional)
+!
+*configMenu.labelString:		Config
+*configMenu.mnemonic:			C
+*configMenu.preferencesMenuItem.labelString:	Preferences...
+*configMenu.preferencesMenuItem.mnemonic:	P
+*configMenu.rankDialogMenuItem.mnemonic:	S
+
+!
+! Thread Menu
+!
+*threadMenu.labelString:	Thread
+*threadMenu.mnemonic:		T
+
+*executableMenu.labelString:	Executable
+*executableMenu.mnemonic:	E
+
+!
+! View List Menu
+!
+*viewsMenu.labelString:		Views
+*viewsMenu.mnemonic:		V
+
+*viewsMenu.UsageViewMenuItem.labelString:	Usage View (Graphs)
+*viewsMenu.UsageViewMenuItem.mnemonic:	G
+*viewsMenu.UsageViewTMenuItem.labelString:	Usage View (Numerical)
+*viewsMenu.UsageViewTMenuItem.mnemonic:	N
+*viewsMenu.IOViewMenuItem.labelString:		I/O View
+*viewsMenu.IOViewMenuItem.mnemonic:	I
+*viewsMenu.GraphViewMenuItem.labelString:	Call Graph View
+*viewsMenu.GraphViewMenuItem.mnemonic:	C
+*viewsMenu.GpViewMenuItem.labelString:		Butterfly View
+*viewsMenu.GpViewMenuItem.mnemonic:	B
+*viewsMenu.LeakViewMenuItem.labelString:	Leak View
+*viewsMenu.LeakViewMenuItem.mnemonic:	L
+*viewsMenu.MallocViewMenuItem.labelString:	Malloc View
+*viewsMenu.MallocViewMenuItem.mnemonic:	M
+*viewsMenu.MallocErrorViewMenuItem.labelString:	Malloc Error View
+*viewsMenu.MallocErrorViewMenuItem.mnemonic:	E
+*viewsMenu.HeapViewMenuItem.labelString:	Heap View
+*viewsMenu.HeapViewMenuItem.mnemonic:	H
+*viewsMenu.CallStackMenuItem.labelString:	Call Stack View
+*viewsMenu.CallStackMenuItem.mnemonic:	S
+*viewsMenu.TextUtilMenuItem.labelString:	Working Set View
+*viewsMenu.TextUtilMenuItem.mnemonic:	W
+*viewsMenu.NodeMenuItem.labelString:		Node View
+*viewsMenu.NodeMenuItem.mnemonic:	N
+
+
+*functionCountsW.labelString:	Calls
+*addressW.labelString:		Address
+*alphaW.labelString:		Alphabetic
+*coverageW.labelString:		Instr'n Coverage
+*pixstatsW.labelString:		Pixstats/ Cycles-per Instr'n
+
+*inclPercentageDataW*labelString:	Incl. Percentage
+*exclPercentageDataW*labelString:	Excl. Percentage
+*inclTotalTimeW*labelString:		Incl. Total Time
+*exclTotalTimeW*labelString:		Excl. Total Time
+*inclCpuTimeW*labelString:		Incl. CPU Time
+*exclCpuTimeW*labelString:		Excl. CPU Time
+*inclIdealTimeW*labelString:		Incl. Ideal Time
+*exclIdealTimeW*labelString:		Excl. Ideal Time
+*inclBytesLeaked*labelString:		Incl. bytes leaked
+*exclBytesLeaked*labelString:		Excl. bytes leaked
+*inclBytesMallocd*labelString:		Incl. bytes malloc'd
+*exclBytesMallocd*labelString: 		Excl. bytes malloc'd
+*inclSysCallCountsW*labelString: 	Incl. System calls
+*exclSysCallCountsW*labelString: 	Excl. System calls
+*inclPageFaultCountsW*labelString: 	Incl. Page faults
+*exclPageFaultCountsW*labelString: 	Excl. Page faults
+
+*inclCycleCountsW*labelString: 		Incl. Cycles 
+*exclCycleCountsW*labelString: 		Excl. Cycles
+*inclInstructionCountsW*labelString: 	Incl. Instr'ns 
+*exclInstructionCountsW*labelString: 	Excl. Instr'ns
+*inclFlptOpnCountsW*labelString: 	Incl. FP operations
+*exclFlptOpnCountsW*labelString: 	Excl. FP operations
+*inclLoadCountsW*labelString: 		Incl. Load counts
+*exclLoadCountsW*labelString: 		Excl. Load counts
+*inclStoreCountsW*labelString: 		Incl. Store counts
+*exclStoreCountsW*labelString: 		Excl. Store counts
+*inclBytesReadW*labelString: 		Incl. Bytes Read
+*exclBytesReadW*labelString: 		Excl. Bytes Read
+*inclBytesWrittenW*labelString: 	Incl. Bytes Written
+*exclBytesWrittenW*labelString: 	Excl. Bytes Written
+*inclFpeCountsW*labelString: 		Incl. FP Exceptions
+*exclFpeCountsW*labelString: 		Excl. FP Exceptions
+
+*arcPercentageDataW*labelString:	Incl. Percentage
+*arcTotalTimeW*labelString: 		Incl. Total Time
+*arcCpuTimeW*labelString: 		Incl. CPU Time
+*arcIdealTimeW*labelString: 		Incl. Ideal Time
+*arcBytesLeaked*labelString: 		Incl. bytes leaked
+*arcBytesMallocd*labelString: 		Incl. bytes malloc'd
+*arcSysCallCountsW*labelString: 	Incl. System calls
+*arcPageFaultCountsW*labelString: 	Incl. Page faults
+*arcBytesReadW*labelString: 		Incl. Bytes Read
+*arcBytesWrittenW*labelString: 		Incl. Bytes Written
+*arcFpeCountsW*labelString: 		Incl. FP Exceptions
+*arcExecutionCountsW*labelString:	Calls
+
+*inclFunctionTimesLabel.labelString:	Function Times/Counts
+*exclFunctionTimesLabel.labelString:	Function Times/Counts
+*functionMiscLabel.labelString:		Function Times/Counts
+*inclArcTimesLabel.labelString:		Arc Times/Counts
+*profPrefDialog*ArcBase.width:		200
+*profPrefDialog*FunctionsBase.width:		400
+
+*profQueryThreadComp.dialogTitle:	Query Thread
+*profQueryThreadComp*labelW.labelString:	Bring up view on:
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                               !
+! End of FSkit Common Resources                                 !
+!                                                               !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Experiment Description Panel
+!
+*expDirForm.leftOffset:			10
+*expDirForm.rightOffset:		10
+*expDirForm.topOffset:			10
+*expDirForm.bottomOffset:		10
+*expDirForm*expDirLabel.labelString:	Experiment Dir or Pixie .Counts File: 
+*expDirForm*expDirLabel.alignment:	XmALIGNMENT_END
+*expDirForm*expDirLabel.recomputeSize:	False
+*expDirForm*targetLabel.labelString:	Executable: 
+*expDirForm*targetLabel.alignment:	XmALIGNMENT_END
+*expDirForm*targetLabel.recomputeSize:	False
+*expDirForm*pidLabel.labelString:	Target Process Id: 
+*expDirForm*pidLabel.alignment:		XmALIGNMENT_END
+*expDirForm*pidLabel.recomputeSize:	False
+*expDirForm*hostLabel.labelString:	Host: 
+*expDirForm*hostLabel.alignment:	XmALIGNMENT_END
+*expDirForm*hostLabel.recomputeSize:	False
+*expDirForm*cmdLabel.labelString:	Command Line: 
+*expDirForm*cmdLabel.alignment:		XmALIGNMENT_END
+*expDirForm*cmdLabel.recomputeSize:	False
+*expDirForm*expDirText.columns:		40
+*expDirForm*targetText.blinkRate:	0
+*expDirForm*pidText.blinkRate:		0
+*expDirForm*hostText.blinkRate:		0
+*expDirForm*cmdText.blinkRate:		0
+*expDirForm*buttonBox.topOffset:	10
+*expDirForm*buttonBox.marginHeight:	0
+*expDirForm*buttonBox.marginWidth:	0
+*expDirForm*buttonBox.orientation:	XmHORIZONTAL
+*expDirForm*buttonBox.entryAlignment:	XmALIGNMENT_BEGINNING
+*expDirForm*buttonBox.packing:		XmPACK_COLUMN
+*expDirForm*applyButton.labelString:	Apply
+*expDirForm*okButton.labelString:	OK
+*expDirForm*cancelButton.labelString:	Cancel
+*expDirForm*helpButton.labelString:	Help
+
+*ExperimentView*windowTitle:		Experiment
+*Cvperfmw*windowTitle:	WorkShop Performance Analyzer
+*Cvperfmw*iconName:	Perf Analyzer
+*profPrefDialog.dialogTitle:		Data Display Options
+*profPrefDialog*form.topOffset:		10
+*profPrefDialog*form.bottomOffset:	10
+*profPrefDialog*form.leftOffset:	10
+*profPrefDialog*form.rightOffset:	10
+*filterNodesInFunctionListToggleW.labelString:          Hide 0 Functions in Function List
+*filterNodesInGraphToggleW.labelString:         Hide 0 Functions in Graph
+*filterArcsToggleW.labelString:                 Hide 0 Arcs
+
+*rankDialogMenuItem.labelString:	Sort...
+
+*nodeModeLabel.labelString:  	Display Data As:
+*nodeModeLabel.recomputeSize:   False
+*nodeModeLabel.alignment:	XmALIGNMENT_END
+*timesW.labelString:		Times/Counts
+*percentageW.labelString:	Percentages
+
+*optionPane*tearOffModel:	tear_off_disabled
+*nameStyleLabel.labelString:	Function Name Style:
+*nameStyleLabel.recomputeSize:	False
+*nameStyleLabel.alignment:	XmALIGNMENT_END
+*demangleButton*labelString: Demangled
+*asisButton*labelString: As is
+*functionButton*labelString: Function
+*classButton*labelString: Class::Function
+
+*profPrefDialog*separator.topOffset:	5
+
+*perfDataLabelW.topOffset:	5
+*perfDataLabelW.labelString:	Data Displayed:
+
+! *Cvperfmw*geometry:	450x308
+
+*Cvperfmw*chartArea.leftOffset: 	5
+
+*MwSaveText*optionsRC.orientation:	XmVERTICAL
+*MwSaveText*optionsRC*topLinesRC.orientation:	XmHORIZONTAL
+*MwSaveText*optionsRC*appendTextRC.orientation:	XmHORIZONTAL
+
+*topLinesText.columns:		5
+*appendTextLabel.labelString:	Append To File: 
+*appendTextLabel.recomputeSize:	False
+*appendTextLabel.alignment:	XmALIGNMENT_END
+*appendTextToggle.labelString:	
+*appendTextToggle.set:		True
+
+*topLinesLabel.labelString:	Number Of Lines To Save: 
+*topLinesLabel.recomputeSize:	False
+*topLinesLabel.alignment:	XmALIGNMENT_END
+
+!*MwForm.StripChartMgrBase.height:		150
+*MwForm*timeLineForm.height:                   225
+*MwForm*Flist.height:				275
+
+*taskLabel.labelString:		Task: 
+*taskLabel.recomputeSize:	False
+
+!*SwatchSW.scrollBarDisplayPolicy:	XmAS_NEEDED
+*SwatchSW.scrollBarDisplayPolicy:	XmSTATIC
+*SwatchSW.scrollingPolicy:		XmAUTOMATIC
+*SwatchSW.visualPolicy:		XmCONSTANT
+
+*SwatchSW.height:			30
+! *timeLineScrollBar.height:			10
+!
+! Caliper manipulation area
+!
+*_controlForm.leftArea.topOffset:		5
+*_controlForm.leftOffset:			5
+*_controlForm.rightOffset:			5
+*_controlForm.bottomOffset:			5
+*_controlForm*leftLabel.leftOffset:		10
+*_controlForm*leftLabel.labelString:		Begin: 
+*_controlForm*leftLabel.alignment:		XmALIGNMENT_END
+*_controlForm*leftLabel.recomputeSize:		False
+*_controlForm*rightLabel.leftOffset:		10
+*_controlForm*rightLabel.labelString:		End: 
+*_controlForm*rightLabel.alignment:		XmALIGNMENT_END
+*_controlForm*rightLabel.recomputeSize:		False
+*_controlForm*leftGhostCaliperLabelW.blinkRate:	0
+*_controlForm*rightGhostCaliperLabelW.blinkRate:	0
+*_controlForm*buttonBox.topOffset:		5
+*_controlForm*buttonBox.marginHeight:		0
+*_controlForm*buttonBox.marginWidth:		0
+*_controlForm*buttonBox.orientation:		XmHORIZONTAL
+*_controlForm*buttonBox.entryAlignment:		XmALIGNMENT_CENTER
+*_controlForm*buttonBox.packing:			XmPACK_COLUMN
+*_controlForm*syncButton.labelString:		Sync
+*_controlForm*okButton.labelString:		OK
+*_controlForm*cancelButton.labelString:		Cancel
+*_controlForm*autoScrollToggle.labelString:	Look At New Data
+*_controlForm*autoScrollToggle.topOffset:	10
+*_controlForm*autoScrollToggle.recomputeSize:	False
+*_controlForm*eventLabel.labelString:		Event: 
+*_controlForm*eventLabel.leftOffset:		10
+*_controlForm*optionMenu.leftOffset:		10
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	TimeLine Control Panel labels.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*halfSec.labelString:	.5 sec
+*twoSec.labelString:	2 sec
+*fiveSec.labelString:	5 sec
+*tenSec.labelString:	10 sec
+*thirtySec.labelString:	30 sec
+*oneMin.labelString:	1 min
+*twoMin.labelString:	2 min
+*fiveMin.labelString:	5 min
+*tenMin.labelString:	10 min
+*thirtyMin.labelString:	30 min
+*oneHour.labelString:	1 hour
+*fullScale.labelString:	Full Scale
+
+!
+! Caliper adjustments
+!
+*caliperframe.topOffset:				5
+*caliperframe.leftOffset:				10
+*caliperframe.rightOffset:				35
+
+!*eventRightArrow.height:			10
+!*eventLeftArrow.height:				10
+!*bothRightArrow.height:				10
+!*bothLeftArrow.height:				10
+!*rightRightArrow.height:			10
+!*rightLeftArrow.height:				10
+!*leftRightArrow.height:				10
+!*leftLeftArrow.height:				10
+*Flist.visibleItemCount: 10
+*Flist.width: 560
+*Flist.scrollBarDisplayPolicy: XmSTATIC
+
+*Flist*functionListLabel.labelString:	\ \n\ \n\ 
+
+*Flist*searchTextLabel.labelString: Search: 
+*Flist*searchTextLabel.height: 30
+*Flist*searchText.editable: True
+*Flist*searchText.height: 30
+
+*Flist*operationBox.orientation:		XmHORIZONTAL
+*Flist*operationBox*showNodeButton.labelString:	Show Node
+*Flist*operationBox*showSourceButton.labelString:	Source
+*Flist*operationBox*showAsmButton.labelString:	Disassembled Source
+
+Cvperf*rankBoxLabelW.labelString:		Sort Function List by:
+*Flist*filterNodesInFunctionListToggleW.labelString:          Hide 0 Functions
+
+*profRankBox.dialogTitle:               	Sort Options
+*profRankBox*dummy.topOffset:			10
+*profRankBox*dummy.leftOffset:			10
+*profRankBox*dummy.rightOffset:			10
+*profRankBox*dummy.bottomOffset:			10
+
+Cvperf*MwForm.Flist*topNlist.scrollBarDisplayPolicy:	XmSTATIC
+
+*UsageView.geometry:		700x1000
+!
+! Preferences dialog chart selection options
+!
+*UserSysTime.labelString:	User/Sys Time
+*MajorMinorFaults.labelString:	Major/Minor Faults
+*ContextSwitches.labelString:	Context Switches
+*BytesTransferred.labelString:	Bytes Read/Written
+*RWSystemCalls.labelString:	Read/Write Sys Calls
+*OtherSysCalls.labelString:	Other Sys Calls
+*TotalSysCalls.labelString:	Total Sys Calls
+*Signals.labelString:		Signals
+*ProcessSize.labelString:	Process Size
+*MallocFree.labelString:	Malloc/Free/Sbreak Events
+*PageFaults.labelString:	Page Fault Events
+*SysCalls.labelString:		Sys Call Events
+*FloatingPointExceptions.labelString:	Fl. Pt. Exceptions
+
+!
+! General button box characteristics
+!
+*buttonBox.topOffset:		10
+*buttonBox.marginHeight:	0
+*buttonBox.marginWidth:		0
+*buttonBox.orientation:		XmHORIZONTAL
+*buttonBox.entryAlignment:	XmALIGNMENT_BEGINNING
+*buttonBox.packing:		XmPACK_COLUMN
+*applyButton.labelString:	Apply
+*okButton.labelString:		OK
+*cancelButton.labelString:	Cancel
+*closeButton.labelString:	Close
+*helpButton.labelString:	Help
+
+!
+! Preferences dialog
+!
+*procPrefDialog*dialogTitle:			Graphical Usage View Preferences
+*procPrefDialog*prefForm.leftOffset:		10
+*procPrefDialog*prefForm.rightOffset:		10
+*procPrefDialog*prefForm.topOffset:		10
+*procPrefDialog*prefForm.bottomOffset:		10
+*procPrefDialog*usageLabel.labelString:		Usage Charts:
+*procPrefDialog*usageCharts.leftOffset:		10
+*procPrefDialog*usageCharts.orientation:	XmVERTICAL
+*procPrefDialog*usageCharts.packing:		XmPACK_COLUMN
+*procPrefDialog*usageCharts.numColumns:		3
+*procPrefDialog*usageCharts.entryAlignment:	XmALIGNMENT_BEGINNING
+*procPrefDialog*usageCharts*recomputeSize:	False
+*procPrefDialog*eventLabel.labelString:		Event Charts:
+*procPrefDialog*eventLabel.topOffset:		10
+*procPrefDialog*eventCharts.leftOffset:		10
+*procPrefDialog*eventCharts.orientation:	XmHORIZONTAL
+*procPrefDialog*eventCharts.packing:		XmPACK_COLUMN
+*procPrefDialog*eventCharts.numColumns:		1
+*procPrefDialog*eventCharts.entryAlignment:	XmALIGNMENT_BEGINNING
+*procPrefDialog*eventCharts*recomputeSize:	False
+*procPrefDialog*leftStuff.topOffset:		10
+*procPrefDialog*leftStuff.marginHeight:		0
+*procPrefDialog*leftStuff.marginWidth:		0
+*procPrefDialog*leftStuff.orientation:		XmVERTICAL
+*procPrefDialog*leftStuff.packing:		XmPACK_COLUMN
+*procPrefDialog*leftStuff.entryAlignment:	XmALIGNMENT_END
+*procPrefDialog*leftStuff*recomputeSize:	False
+*procPrefDialog*rightStuff.topOffset:		10
+*procPrefDialog*rightStuff.marginHeight:	0
+*procPrefDialog*rightStuff.marginWidth:		0
+*procPrefDialog*rightStuff.orientation:		XmVERTICAL
+*procPrefDialog*rightStuff.packing:		XmPACK_COLUMN
+*procPrefDialog*rightStuff.entryAlignment:	XmALIGNMENT_BEGINNING
+*procPrefDialog*rightStuff*recomputeSize:	False
+*procPrefDialog*gridLabel.labelString:		Show Sample Points: 
+*procPrefDialog*gridToggle.labelString:
+*procPrefDialog*smoothLabel.labelString:	Show Only Summary Value Between Sample Points: 
+*procPrefDialog*smoothToggle.labelString:
+*procPrefDialog*ignoreSyncLabel.labelString:	Ignore Synchronize Requests: 
+*procPrefDialog*ignoreSyncToggle.labelString:
+*procPrefDialog*chartHeightLabel.labelString:	Chart Height (pixels): 
+*procPrefDialog*chartHeightText.columns:	5
+*procPrefDialog*scaleLabel.labelString:		Chart/Time-Segment Scale: 
+
+*UsageView.windowTitle:				Usage View (Graphs)
+*UsageView.iconName:				Usage
+!
+! Stripchart scrolled window
+!
+*StripChartMgrBase.swatchRC.orientation:                XmHORIZONTAL
+*StripChartMgrBase.swatchRC.rightAttachment:            XmATTACH_FORM
+*StripChartMgrBase.swatchRC.rightOffset:                20
+*StripChartMgrBase.swatchRC.packing:                    XmPACK_COLUMN
+*StripChartMgrBase.swatchRC.marginWidth:                0
+*StripChartMgrBase.unitW.width:                         20
+*StripChartMgrBase.swatchRC.topAttachment:      XmATTACH_NONE
+*StripChartMgrBase.swatchRC.bottomAttachment:   XmATTACH_NONE
+*StripChartMgrBase.swatchRC.leftAttachment:     XmATTACH_NONE
+*StripChartMgrBase*UserSysTime.stripframe.height:		100
+
+
+*StatusW.alignment:		XmALIGNMENT_BEGINNING
+
+*chartArea.width:			450
+*chartArea.height:			150
+*chartArea.visualPolicy:		XmCONSTANT
+*chartArea.scrollingPolicy:		XmAUTOMATIC
+*chartArea.scrollBarDisplayPolicy:	XmSTATIC
+*chartArea*charts.marginWidth:		5
+*chartArea*charts.marginHeight:		5
+*chartArea*charts.orientation:		XmVERTICAL
+*chartArea*charts.packing:		XmPACK_TIGHT
+*chartArea*charts.resizeWidth:		False
+*chartArea*charts.spacing:		10
+! to override schemes line
+Cvperf*chartArea*charts.spacing:	10
+
+*SwatchSW.visualPolicy:		XmCONSTANT
+*SwatchSW.scrollingPolicy:		XmAUTOMATIC
+*SwatchSW.scrollBarDisplayPolicy:	XmSTATIC
+
+*SwatchSW*SwatchBase.resizeWidth:		False
+*SwatchSW*SwatchBase.packing:		XmPACK_TIGHT
+
+*StatusSW.visualPolicy:		XmCONSTANT
+*StatusSW.scrollingPolicy:		XmAUTOMATIC
+*StatusSW.scrollBarDisplayPolicy:	XmSTATIC
+
+*StatusRC.orientation:		XmVERTICAL
+*StatusRC.packing:           XmPACK_TIGHT
+*StatusRC.numColumns:           1
+*StatusRC.resizeWidth:		False
+
+!
+! StripChart Labels
+!
+*UserTime.labelString:		User Time
+*SysTime.labelString:		Sys Time
+*MajFaults.labelString:	Maj Faults
+*MinFaults.labelString:	Min Faults
+*InvSwtchs.labelString:	Inv Swtchs
+*Volswtchs.labelString:	Vol Swtchs
+*BytesRead.labelString:	Bytes Read
+*BytesWrite.labelString:	Bytes Write
+*read.labelString:		read()
+*write.labelString:		write()
+*poll.labelString:		poll()
+*ioctl.labelString:		ioctl()
+*SysCalls.labelString:		Sys Calls
+*Signals.labelString:		Signals
+*flPtException.labelString:	Fl.Pt.Excptn.
+
+*UsageViewT*XmRowColumn.marginWidth:		0
+*UsageViewT*XmRowColumn.marginHeight:		0
+*UsageViewT*XmRowColumn.packing:		XmPACK_TIGHT
+*UsageViewT*leftStuff.entryAlignment:		XmALIGNMENT_END
+*UsageViewT*rightStuff.entryAlignment:		XmALIGNMENT_BEGINNING
+*UsageViewT*XmLabelGadget.recomputeSize:	False
+
+*UsageViewT*LeftSample*indexLabel.labelString:		Begin Sample: 
+*UsageViewT*RightSample*indexLabel.labelString:		End Sample: 
+
+*UsageViewT*LeftSample*timeStampLabel.labelString:	Time Stamp: 
+*UsageViewT*LeftSample*indexValue.labelString:		0
+*UsageViewT*LeftSample*timeStampValue.labelString:	00:00:00.000
+*UsageViewT*LeftSample*processTimeLabel.labelString:	Process Time: 
+*UsageViewT*LeftSample*processTimeValue.labelString:	000.000
+*UsageViewT*LeftSample*recomputeSize:			False
+*UsageViewT*LeftSample.entryAlignment:			XmALIGNMENT_BEGINNING
+
+*UsageViewT*RightSample*timeStampLabel.labelString:	Time Stamp: 
+*UsageViewT*RightSample*indexValue.labelString:		0
+*UsageViewT*RightSample*timeStampValue.labelString:	00:00:00.000
+*UsageViewT*RightSample*processTimeLabel.labelString:	Process Time: 
+*UsageViewT*RightSample*processTimeValue.labelString:	000.000
+*UsageViewT*RightSample*recomputeSize:			False
+*UsageViewT*RightSample.entryAlignment:			XmALIGNMENT_BEGINNING
+
+*UsageViewT*scrolledArea.scrollingPolicy:		XmAUTOMATIC
+*UsageViewT*scrolledArea.scrollBarDisplayPolicy:	XmSTATIC
+*UsageViewT*scrolledArea.bottomOffset:			10
+*UsageViewT*scrolledArea.height:			200
+
+*UsageViewT*labelsRC.entryAlignment:			XmALIGNMENT_END
+*UsageViewT*valuesRC.entryAlignment:			XmALIGNMENT_END
+*UsageViewT*ratesRC.entryAlignment:			XmALIGNMENT_END
+
+*UsageViewT*ProcessLabel.labelString:	Machine Resources Used By Target Executables:
+*UsageViewT*ProcessLabel.alignment:	XmALIGNMENT_BEGINNING
+*UsageViewT*SystemLabel.labelString:	Machine Resources Used System Wide:
+*UsageViewT*SystemLabel.alignment:	XmALIGNMENT_BEGINNING
+
+*UsageViewT.windowTitle:			Usage View (Numerical)
+*UsageViewT.iconName:				Usage 
+
+*UsageViewT*wallclockTimeW.labelString:	Delta Wall Clock Time: 
+*UsageViewT*wallclockTimeW.alignment:	XmALIGNMENT_END
+*UsageViewT*realTime.labelString:	Delta Process Time: 
+*UsageViewT*realTime.alignment:		XmALIGNMENT_END
+
+*UsageViewT*sampleSeparator.leftOffset:	20
+*UsageViewT*RightSample.leftOffset:	20
+
+*UsageViewT*labelsRCW.entryAlignment:	XmALIGNMENT_END
+*UsageViewT*firstRCW.entryAlignment:	XmALIGNMENT_END
+    
+!    Set up widgets like this:
+!    //|--------------------------------------------------------
+!    //|                                                       |
+!    //|        |---------------------------------------- topUnitW |
+!    //|        |                                         |        |
+!    //| Swatch |                                         |        |
+!    //| Swatch |  Drawing Area                           |        |
+!    //| Swatch |                                         |        |
+!    //| Swatch |                                         |        |
+!    //|        |                                         |        |
+!    //|        |--------------------------------------bottomUnitW |
+!    //|--------------------------------------------------------
+
+*swatchRC.orientation:		XmVERTICAL
+*swatchRC.topAttachment:	XmATTACH_FORM
+*swatchRC.bottomAttachment:	XmATTACH_FORM
+*swatchRC.leftAttachment:	XmATTACH_FORM
+*swatchRC.width:		200
+*swatchRC.marginWidth:		0
+*swatchRC.marginHeight:		0
+    
+*topUnitW.topAttachment:   	XmATTACH_FORM
+*topUnitW.topOffset:   		0
+*topUnitW.rightAttachment: 	XmATTACH_FORM
+*topUnitW.alignment:       	XmALIGNMENT_BEGINNING
+*topUnitW.width:       		50
+*topUnitW.leftAttachment:   	XmATTACH_WIDGET
+*topUnitW.leftOffset:   	5
+*topUnitW.leftWidget:   	stripframe
+
+*bottomUnitW.bottomAttachment:  XmATTACH_FORM
+*bottomUnitW.bottomOffset:   	0
+*bottomUnitW.rightAttachment:  	XmATTACH_FORM
+*bottomUnitW.alignment:       	XmALIGNMENT_BEGINNING
+*bottomUnitW.leftAttachment:   	XmATTACH_WIDGET
+*bottomUnitW.leftWidget:   	stripframe
+*bottomUnitW.leftOffset:   	5
+*bottomUnitW.width:       	50
+
+*stripframe.topAttachment:    	XmATTACH_FORM
+*stripframe.bottomAttachment: 	XmATTACH_FORM
+*stripframe.leftAttachment:   	XmATTACH_FORM
+*stripframe.leftOffset:   	210
+*stripframe.rightAttachment:   	XmATTACH_FORM
+*stripframe.rightOffset:   	55
+
+! somehow setting the height of the form seems ineffective.
+!*stripChartForm.height:		100
+*stripframe.height:		100
+*UsageView*StripChartMgrBase*UserSysTime.stripframe.height:		300
+
+*stripChartForm*swatchLabel.alignment:		XmALIGNMENT_END
+!
+!	I/O View - app-defaults
+!	ioView - class name
+!
+*ioView*windowTitle:	IOView
+*ioView*iconName:	IOView
+*ioView.width:		500
+*ioView.height:		200
+
+*ioView*fileNameLabel.labelString:			Filename :
+*ioView*fileDescriptorLabel.labelString:		File Descriptor :
+*ioView*fileNameLabel.alignment:			XmALIGNMENT_END
+*ioView*fileDescriptorLabel.alignment:			XmALIGNMENT_END
+*ioView*fileNameLabel.width:				120
+*ioView*fileDescriptorLabel.width:			120
+
+*ioView*fileDescriptorW.alignment:			XmALIGNMENT_BEGINNING
+*ioView*fileNameW.alignment:				XmALIGNMENT_BEGINNING
+*ioView*topUnitW.alignment:				XmALIGNMENT_BEGINNING
+*GraphView*windowTitle:	Call Graph View
+*GraphView*iconName:	Call Graph
+*GraphView.geometry:600x500
+*GraphView*saveTextViewMenuItem.labelString:	Save As PostScript...
+*PaGraph*mapLabel: true
+*PaGraph*showDescendants.labelString:	Show All Children
+*PaGraph*editable: True
+*twinsButton*mappedWhenManaged: false
+
+!
+!	Stuff for control panel
+!
+*impChildrenDialog*dialogTitle:			Show Important Children
+*impChildrenDialog*selectionLabelString: 	Show Important Children of:
+*impChildrenTB.labelString:			Important Children
+*impChildrenDialog*parentPctTextW.columns:	3
+*impChildrenDialog*noiseTextW.columns:	3
+*impChildrenDialog*parentPctSbW.topOffset:		5
+*impChildrenDialog*noiseSbW.topOffset:		5
+*impChildrenDialog*keyLabelW.labelString:	Threshold key (same as function list ranking key):
+
+*impChildrenDialog*parentPctSbW.width:	50
+*impChildrenDialog*noiseSbW.width:		50
+!*impChildrenDialog*parentPctTextW.width:	5
+!*impChildrenDialog*noiseTextW.width:		5
+*impChildrenDialog*parentPctLabelW.labelString:	Importance threshold (% of caller's time):
+*impChildrenDialog*noiseLabelW.labelString:	Noise threshold (% of total time):
+
+*parentPctSbW.value:				5
+!
+!
+*impParentsDialog*dialogTitle:			Show Important Parents
+*impParentsDialog*selectionLabelString: 	Show Important Parents of:
+*impParentsTB.labelString:			Important Parents
+*impParentsDialog*childPctTextW.columns:	3
+*impParentsDialog*noiseTextW.columns:	3
+*impParentsDialog*childPctSbW.topOffset:		5
+*impParentsDialog*noiseSbW.topOffset:		5
+*impParentsDialog*keyLabelW.labelString:	Threshold key (same as function list ranking key):
+
+*impParentsDialog*childPctSbW.width:	50
+*impParentsDialog*noiseSbW.width:		50
+!*impParentsDialog*childPctTextW.width:	5
+!*impParentsDialog*noiseTextW.width:		5
+*impParentsDialog*childPctLabelW.labelString:	Importance threshold (% of calls):
+*impParentsDialog*noiseLabelW.labelString:	Noise threshold (% of total time):
+
+*childPctSbW.value:				5
+
+*butterflyTB.labelString:			Butterfly
+*chainTB.labelString:				Chain
+*fullTB.labelString:				Full
+*clearTB.labelString:				Clear Graph
+*graphTypeW.orientation:               		XmHORIZONTAL
+
+*chainDialog*dialogTitle:			Chain
+*chainDialog*chooseLabelW.labelString:		Configure Chain:
+*chainDialog*newSourceW.labelString: 		Make Source
+*chainDialog*newTargetW.labelString: 		Make Target
+*chainDialog*sourceLabelW.labelString: 		Source Node:
+*chainDialog*selectionLabelString: 		Target Node:
+*chainDialog*followZeros.labelString:	Follow zero arcs and nodes in construction of chain?
+
+
+*postChainTB.labelString:				Prune Chains
+*postChainDialog*dialogTitle:			Prune Chains
+*postChainDialog*selectionLabelString: 		Node:
+*postChainDialog*hideOtherPathW.labelString:		Hide Paths Not Through
+*postChainDialog*hideThisPathW.labelString:		Hide Paths Through
+
+*arcOptionLabelW.labelString:			Arc Annotation Options:
+*arcCountsW.labelString:			Counts
+*arcPercentW.labelString:			Percentages
+*filterNodesToggleW.labelString:		Hide 0 Functions
+*filterArcsToggleW.labelString:			Hide 0 Arcs
+
+*profGraphPrefRc.orientation:			XmVERTICAL
+*arcOptionRc.orientation:			XmHORIZONTAL
+
+*profGraphPrefDialog.dialogTitle:		Call Graph Display Options
+
+*form.topOffset:				10
+*form.bottomOffset:				10
+*form.leftOffset:				10
+*form.rightOffset:				10
+*form*buttonBox.topOffset:			5
+
+*PaGraph_overview*title:                   Call Graph Context View
+*PaGraph_overview.width:                                  325
+*PaGraph_overview.height:                                 500
+
+*GpView*windowTitle:	Butterfly View
+*GpView*iconName:	Butterfly
+*GpView.geometry:600x600
+*GpView*saveTextViewMenuItem.labelString:	Save As Text...
+
+*GpView*gpListLabel.labelString:	\ \n\ \n\ 
+*GpView*gpAttrListLabel.labelString:	\ \nAttrib.\n\ \ \ %
+*GpView*parentLabel.labelString:	Immediate Parents:
+*GpView*selectLabel.labelString:	Selected function:
+*GpView*showSourceButton.labelString:	Source
+*GpView*showZerosMenuItem.labelString:	Show Zero Arcs
+*GpView*showAllArcsMenuItem.labelString:	Show All Arcs Individually
+*GpView*childLabel.labelString:		Immediate Children:
+*GpView*parentlist.visibleItemCount:	10
+*GpView*childlist.visibleItemCount:	10
+Cvperf*GpView*gpAttrListLabel*fontList:        -*-screen-medium-r-normal-*-13-*-*-*-*-*-iso8859-1
+Cvperf*GpView*gpListLabel*fontList:        -*-screen-medium-r-normal-*-13-*-*-*-*-*-iso8859-1
+Cvperf*GpView*parentlist*fontList:         -*-screen-medium-r-normal-*-13-*-*-*-*-*-iso8859-1
+Cvperf*GpView*childlist*fontList:         -*-screen-medium-r-normal-*-13-*-*-*-*-*-iso8859-1
+Cvperf*GpView*selectNode*fontList:         -*-screen-medium-r-normal-*-13-*-*-*-*-*-iso8859-1
+!	Heap View -- app-defaults file
+!	heapView - class name
+
+! Widget Labels
+!
+*heapView*windowTitle:		Heap View
+*heapView*iconName:		Heap View
+
+!	Map Button labels
+*heapView*VkMap*matchFrees.labelString:  Malloc Errors
+*heapView*VkMap*zoomIn.labelString:	Zoom In
+*heapView*VkMap*zoomOut.labelString:	Zoom Out
+
+!	Map Resources
+*heapView*VkMap.height:			450
+*heapView*VkMap*badFree.labelString:	bad free
+*heapView*VkMap*searchLabel.alighnemt:	ALIGNMENT_END
+*heapView*VkMap*mapframe.shadowType:	SHADOW_ETCHED_IN
+*heapView*VkMap*searchLabel.labelString: Search: 
+
+*heapView*VkMap*statLine1.labelString:	\ 
+*heapView*VkMap*statLine2.labelString:	\ 
+
+! Heap View Event List
+*heapView*funcList.visibleItemCount:	5
+*heapView*eventList.visibleItemCount:	3
+*heapView*framePanel*funcList.scrollBarDisplayPolicy:	XmSTATIC
+*heapView*framePanel*funcList.listSizePolicy:	XmCONSTANT
+*heapView*framePanel*funcList.spacing:		1
+*heapView*framePanel*eventList.scrollBarDisplayPolicy:	XmSTATIC
+*heapView*framePanel*eventList.listSizePolicy:	XmCONSTANT
+*heapView*framePanel*eventList.spacing:		1
+*heapView*framePanel.width:		450
+*heapView*framePanel*frameRowcol.marginWidth: 0
+*heapView*framePanel*frameRowcol.marginHeight: 0
+
+*heapView*swatchForm.width:				100
+
+*heapView*swatchRC.bottomAttachment:	XmATTACH_NONE
+*heapView*swatchRC.orientation:          XmHORIZONTAL
+
+!
+!	Call Stack View app-defaults
+*callStack*windowTitle:				Call Stack
+*callStack*iconName:				Call Stack
+*callStack.width:				325
+
+*callStack*Callstack.scrollBarDisplayPolicy:	XmSTATIC
+*callStack*Callstack.listSizePolicy:		XmCONSTANT
+*callStack*Callstack.visibleItemCount:		10
+
+*callStack*trapsList.scrollBarDisplayPolicy:	XmSTATIC
+*callStack*trapsList.visibleItemCount:		1
+
+*callStack*CsForm*trapsLabel.labelString:	Event Type:
+*callStack*CsForm*trapsLabel.alignment:		XmALIGNMENT_BEGINNING
+
+*callStack*threadLabel.labelString:       Thread:  
+*callStack*threadLabel.width:       	117
+
+!
+! labels for the sample descriptor component.
+!
+*callStack*CsForm*sample*indexLabel.labelString:	Event number: 
+*callStack*CsForm*sample*indexValue.labelString:	0
+
+*callStack*CsForm*sample*timeStampLabel.labelString:	Time Stamp: 
+*callStack*CsForm*sample*timeStampValue.labelString:	00:00:00.000
+
+*callStack*CsForm*sample*processTimeLabel.labelString:	Process Time: 
+*callStack*CsForm*sample*processTimeValue.labelString:	000.000
+
+*callStack*callStack*sample*leftStuff.entryAlignment:	XmALIGNMENT_END
+
+! END	Call Stack View app-defaults
+
+
+*svMgr.windowTitle:		Source View
+*sourceView.windowTitle:	Profiling View
+*sourceView.dialogTitle:	Profiling View
+*annotations: 		perf
+*pathRemapping: 	true
+*perfAnnotations:	callCount percentInstruct percentPCHits instruct FPopts stores loads
+!*debuggingInfo: True
+
+
+// Kim, Here is a list of all canvases. 
+
+"Cvperf*perfAnnotations: INCL_TOTAL_TIME INCL_CPU_TIME INCL_IDEAL_TIME INCL_MALLOC_COUNTS INCL_SYSCALL_COUNTS INCL_PAGEFAULT_COUNTS INCL_FLPT_COUNTS INCL_LOADS INCL_STORES INCL_BYTES_READ INCL_BYTES_WRITTEN INCL_FPE_COUNTS INCL_INSTRUCTION_COUNTS EXCL_TOTAL_TIME EXCL_CPU_TIME EXCL_IDEAL_TIME EXCL_MALLOC_COUNTS EXCL_SYSCALL_COUNTS EXCL_PAGEFAULT_COUNTS EXCL_FLPT_COUNTS EXCL_LOADS EXCL_STORES EXCL_BYTES_READ EXCL_BYTES_WRITTEN EXCL_FPE_COUNTS EXCL_INSTRUCTION_COUNTS",
+
+//===========================================================
+//	Inclusive Counts and Times
+
+"Cvperf*INCL_TOTAL_TIME*onMenuLabel: 		Show Incl. Total Time",
+"Cvperf*INCL_TOTAL_TIME*offMenuLabel: 	Hide Incl. Total Time",
+"Cvperf*INCL_TOTAL_TIME*atomName: 		_SGI_VK_PERFANNO_INCL_TOTAL_TIME",
+"Cvperf*INCL_TOTAL_TIME*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_TOTAL_TIME*canvasWidth: 		12",
+"Cvperf*INCL_TOTAL_TIME*visible:		False",
+"Cvperf*INCL_TOTAL_TIME*perfLabelString:	Incl.Total(ms)",
+"Cvperf*INCL_TOTAL_TIME*dialogLabelString:	Incl. Total Time",
+
+"Cvperf*INCL_CPU_TIME*onMenuLabel: 		Show Incl. CPU Time",
+"Cvperf*INCL_CPU_TIME*offMenuLabel: 		Hide Incl. CPU Time",
+"Cvperf*INCL_CPU_TIME*atomName: 		_SGI_VK_PERFANNO_INCL_CPU_TIME",
+"Cvperf*INCL_CPU_TIME*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_CPU_TIME*canvasWidth: 		12",
+"Cvperf*INCL_CPU_TIME*visible:		False",
+"Cvperf*INCL_CPU_TIME*perfLabelString:	Incl.CPU(ms)",
+"Cvperf*INCL_CPU_TIME*dialogLabelString:	Incl. CPU Time",
+
+"Cvperf*INCL_IDEAL_TIME*onMenuLabel: 		Show Incl. Ideal Time",
+"Cvperf*INCL_IDEAL_TIME*offMenuLabel: 	Hide Incl. Ideal Time",
+"Cvperf*INCL_IDEAL_TIME*atomName: 		_SGI_VK_PERFANNO_INCL_IDEAL_TIME",
+"Cvperf*INCL_IDEAL_TIME*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_IDEAL_TIME*canvasWidth: 		12",
+"Cvperf*INCL_IDEAL_TIME*visible:		False",
+"Cvperf*INCL_IDEAL_TIME*perfLabelString:	Incl.Ideal(ms)",
+"Cvperf*INCL_IDEAL_TIME*dialogLabelString:	Incl. Ideal Time",
+
+"Cvperf*INCL_MALLOC_COUNTS*onMenuLabel: 	Show Incl. Malloc Counts",
+"Cvperf*INCL_MALLOC_COUNTS*offMenuLabel: 	Hide Incl. Malloc Counts",
+"Cvperf*INCL_MALLOC_COUNTS*atomName: 		_SGI_VK_PERFANNO_INCL_MALLOC_COUNTS",
+"Cvperf*INCL_MALLOC_COUNTS*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_MALLOC_COUNTS*canvasWidth: 		12",
+"Cvperf*INCL_MALLOC_COUNTS*visible:		False",
+"Cvperf*INCL_MALLOC_COUNTS*perfLabelString:	Incl.malloc",
+"Cvperf*INCL_MALLOC_COUNTS*dialogLabelString:	Incl. Malloc Counts",
+
+"Cvperf*INCL_SYSCALL_COUNTS*onMenuLabel: 	Show System Call Count",
+"Cvperf*INCL_SYSCALL_COUNTS*offMenuLabel: 	Hide System Call Count",
+"Cvperf*INCL_SYSCALL_COUNTS*atomName: 	_SGI_VK_PERFANNO_INCL_SYSCALL_COUNTS",
+"Cvperf*INCL_SYSCALL_COUNTS*typeName: 	_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_SYSCALL_COUNTS*canvasWidth: 	12",
+"Cvperf*INCL_SYSCALL_COUNTS*visible:		False",
+"Cvperf*INCL_SYSCALL_COUNTS*perfLabelString:	Incl.SysCall",
+"Cvperf*INCL_SYSCALL_COUNTS*dialogLabelString:	Incl. System Calls",
+
+"Cvperf*INCL_PAGEFAULT_COUNTS*onMenuLabel: 	Show Page Fault Count",
+"Cvperf*INCL_PAGEFAULT_COUNTS*offMenuLabel: 	Hide Page Fault Count",
+"Cvperf*INCL_PAGEFAULT_COUNTS*atomName: 	_SGI_VK_PERFANNO_INCL_PAGEFAULT_COUNTS",
+"Cvperf*INCL_PAGEFAULT_COUNTS*typeName: 	_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_PAGEFAULT_COUNTS*canvasWidth: 	12",
+"Cvperf*INCL_PAGEFAULT_COUNTS*visible:	False",
+"Cvperf*INCL_PAGEFAULT_COUNTS*perfLabelString:	Incl.PgFlt",
+"Cvperf*INCL_PAGEFAULT_COUNTS*dialogLabelString:	Incl. Page Faults",
+
+"Cvperf*INCL_FLPT_COUNTS*onMenuLabel: 	Show Floating Pt Count",
+"Cvperf*INCL_FLPT_COUNTS*offMenuLabel: 	Hide Floating Pt Count",
+"Cvperf*INCL_FLPT_COUNTS*atomName: 		_SGI_VK_PERFANNO_INCL_FLPT_COUNTS",
+"Cvperf*INCL_FLPT_COUNTS*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_FLPT_COUNTS*canvasWidth: 	12",
+"Cvperf*INCL_FLPT_COUNTS*visible:		False",
+"Cvperf*INCL_FLPT_COUNTS*perfLabelString:	Incl.FlPt",
+"Cvperf*INCL_FLPT_COUNTS*dialogLabelString:	Incl. Floating Pt Counts",
+
+"Cvperf*INCL_LOADS*onMenuLabel: 	Show Incl. Loads",
+"Cvperf*INCL_LOADS*offMenuLabel: 	Hide Incl. Loads",
+"Cvperf*INCL_LOADS*atomName: 		_SGI_VK_PERFANNO_INSTRUCT",
+"Cvperf*INCL_LOADS*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_LOADS*canvasWidth: 	12",
+"Cvperf*INCL_LOADS*visible:		False",
+"Cvperf*INCL_LOADS*perfLabelString:	Incl.Lds",
+"Cvperf*INCL_LOADS*dialogLabelString:	Incl. Loads",
+
+"Cvperf*INCL_STORES*onMenuLabel: 	Show Incl. Stores",
+"Cvperf*INCL_STORES*offMenuLabel: 	Hide Incl. Stores",
+"Cvperf*INCL_STORES*atomName: 	_SGI_VK_PERFANNO_INCL_STORES",
+"Cvperf*INCL_STORES*typeName: 	_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_STORES*canvasWidth: 	12",
+"Cvperf*INCL_STORES*visible:		False",
+"Cvperf*INCL_STORES*perfLabelString:	Incl.Stores",
+"Cvperf*INCL_STORES*dialogLabelString:	Incl. Stores",
+
+"Cvperf*INCL_BYTES_READ*onMenuLabel: 		Show Incl. Bytes Read",
+"Cvperf*INCL_BYTES_READ*offMenuLabel: 	Hide Incl. Bytes Read",
+"Cvperf*INCL_BYTES_READ*atomName: 		_SGI_VK_PERFANNO_INCL_BYTES_READ",
+"Cvperf*INCL_BYTES_READ*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_BYTES_READ*canvasWidth: 		12",
+"Cvperf*INCL_BYTES_READ*visible:		False",
+"Cvperf*INCL_BYTES_READ*perfLabelString:	Incl.Reads",
+"Cvperf*INCL_BYTES_READ*dialogLabelString:	Incl. Bytes Read",
+
+"Cvperf*INCL_BYTES_WRITTEN*onMenuLabel: 	Show Incl. Bytes Written",
+"Cvperf*INCL_BYTES_WRITTEN*offMenuLabel: 	Hide Incl. Bytes Written",
+"Cvperf*INCL_BYTES_WRITTEN*atomName: 		_SGI_VK_PERFANNO_INCL_BYTES_WRITTEN",
+"Cvperf*INCL_BYTES_WRITTEN*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_BYTES_WRITTEN*canvasWidth: 		12",
+"Cvperf*INCL_BYTES_WRITTEN*visible:		False",
+"Cvperf*INCL_BYTES_WRITTEN*perfLabelString:	Incl.Writes",
+"Cvperf*INCL_BYTES_WRITTEN*dialogLabelString:	Incl. Bytes Written",
+
+"Cvperf*INCL_FPE_COUNTS*onMenuLabel: 		Show Incl. Floating Pt Counts",
+"Cvperf*INCL_FPE_COUNTS*offMenuLabel: 	Hide Incl. Floating Pt Counts",
+"Cvperf*INCL_FPE_COUNTS*atomName: 		_SGI_VK_PERFANNO_INCL_FPE_COUNTS",
+"Cvperf*INCL_FPE_COUNTS*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_FPE_COUNTS*canvasWidth: 		12",
+"Cvperf*INCL_FPE_COUNTS*visible:		False",
+"Cvperf*INCL_FPE_COUNTS*perfLabelString:	Incl.Fpops",
+"Cvperf*INCL_FPE_COUNTS*dialogLabelString:	Incl. Floating Pt Counts",
+
+"Cvperf*INCL_INSTRUCTION_COUNTS*onMenuLabel: 		Show Instruction Count",
+"Cvperf*INCL_INSTRUCTION_COUNTS*offMenuLabel: 	Hide Instruction Count",
+"Cvperf*INCL_INSTRUCTION_COUNTS*atomName: 		_SGI_VK_PERFANNO_INSTRUCT",
+"Cvperf*INCL_INSTRUCTION_COUNTS*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*INCL_INSTRUCTION_COUNTS*canvasWidth: 		12",
+"Cvperf*INCL_INSTRUCTION_COUNTS*visible:		False",
+"Cvperf*INCL_INSTRUCTION_COUNTS*perfLabelString:	Incl.Inst",
+"Cvperf*INCL_INSTRUCTION_COUNTS*dialogLabelString:	Incl. Instructions",
+
+//=================================================================
+//	Inclusive Counts and Times
+
+"Cvperf*EXCL_TOTAL_TIME*onMenuLabel: 		Show Excl. Total Time",
+"Cvperf*EXCL_TOTAL_TIME*offMenuLabel: 	Hide Excl. Total Time",
+"Cvperf*EXCL_TOTAL_TIME*atomName: 		_SGI_VK_PERFANNO_EXCL_TOTAL_TIME",
+"Cvperf*EXCL_TOTAL_TIME*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_TOTAL_TIME*canvasWidth: 		12",
+"Cvperf*EXCL_TOTAL_TIME*visible:		False",
+"Cvperf*EXCL_TOTAL_TIME*perfLabelString:	Excl.Total(ms)",
+"Cvperf*EXCL_TOTAL_TIME*dialogLabelString:	Excl. Total Time",
+
+"Cvperf*EXCL_CPU_TIME*onMenuLabel: 		Show Excl. CPU Time",
+"Cvperf*EXCL_CPU_TIME*offMenuLabel: 		Hide Excl. CPU Time",
+"Cvperf*EXCL_CPU_TIME*atomName: 		_SGI_VK_PERFANNO_EXCL_CPU_TIME",
+"Cvperf*EXCL_CPU_TIME*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_CPU_TIME*canvasWidth: 		12",
+"Cvperf*EXCL_CPU_TIME*visible:		False",
+"Cvperf*EXCL_CPU_TIME*perfLabelString:	Excl.CPU(ms)",
+"Cvperf*EXCL_CPU_TIME*dialogLabelString:	Excl. CPU Time",
+
+"Cvperf*EXCL_IDEAL_TIME*onMenuLabel: 		Show Excl. Ideal Time",
+"Cvperf*EXCL_IDEAL_TIME*offMenuLabel: 	Hide Excl. Ideal Time",
+"Cvperf*EXCL_IDEAL_TIME*atomName: 		_SGI_VK_PERFANNO_EXCL_IDEAL_TIME",
+"Cvperf*EXCL_IDEAL_TIME*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_IDEAL_TIME*canvasWidth: 		12",
+"Cvperf*EXCL_IDEAL_TIME*visible:		False",
+"Cvperf*EXCL_IDEAL_TIME*perfLabelString:	Excl.Ideal(ms)",
+"Cvperf*EXCL_IDEAL_TIME*dialogLabelString:	Excl. Ideal Time",
+
+"Cvperf*EXCL_MALLOC_COUNTS*onMenuLabel: 	Show Excl. Malloc Counts",
+"Cvperf*EXCL_MALLOC_COUNTS*offMenuLabel: 	Hide Excl. Malloc Counts",
+"Cvperf*EXCL_MALLOC_COUNTS*atomName: 		_SGI_VK_PERFANNO_EXCL_MALLOC_COUNTS",
+"Cvperf*EXCL_MALLOC_COUNTS*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_MALLOC_COUNTS*canvasWidth: 		12",
+"Cvperf*EXCL_MALLOC_COUNTS*visible:		False",
+"Cvperf*EXCL_MALLOC_COUNTS*perfLabelString:	Excl.malloc",
+"Cvperf*EXCL_MALLOC_COUNTS*dialogLabelString:	Excl. Malloc Counts",
+
+"Cvperf*EXCL_SYSCALL_COUNTS*onMenuLabel: 	Show System Call Count",
+"Cvperf*EXCL_SYSCALL_COUNTS*offMenuLabel: 	Hide System Call Count",
+"Cvperf*EXCL_SYSCALL_COUNTS*atomName: 	_SGI_VK_PERFANNO_EXCL_SYSCALL_COUNTS",
+"Cvperf*EXCL_SYSCALL_COUNTS*typeName: 	_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_SYSCALL_COUNTS*canvasWidth: 	12",
+"Cvperf*EXCL_SYSCALL_COUNTS*visible:		False",
+"Cvperf*EXCL_SYSCALL_COUNTS*perfLabelString:	Excl.SysCall",
+"Cvperf*EXCL_SYSCALL_COUNTS*dialogLabelString:	Excl. System Calls",
+
+"Cvperf*EXCL_PAGEFAULT_COUNTS*onMenuLabel: 	Show Page Fault Count",
+"Cvperf*EXCL_PAGEFAULT_COUNTS*offMenuLabel: 	Hide Page Fault Count",
+"Cvperf*EXCL_PAGEFAULT_COUNTS*atomName: 	_SGI_VK_PERFANNO_EXCL_PAGEFAULT_COUNTS",
+"Cvperf*EXCL_PAGEFAULT_COUNTS*typeName: 	_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_PAGEFAULT_COUNTS*canvasWidth: 	12",
+"Cvperf*EXCL_PAGEFAULT_COUNTS*visible:	False",
+"Cvperf*EXCL_PAGEFAULT_COUNTS*perfLabelString:	Excl.PgFlt",
+"Cvperf*EXCL_PAGEFAULT_COUNTS*dialogLabelString:	Excl. Page Faults",
+
+"Cvperf*EXCL_FLPT_COUNTS*onMenuLabel: 	Show Floating Pt Count",
+"Cvperf*EXCL_FLPT_COUNTS*offMenuLabel: 	Hide Floating Pt Count",
+"Cvperf*EXCL_FLPT_COUNTS*atomName: 		_SGI_VK_PERFANNO_EXCL_FLPT_COUNTS",
+"Cvperf*EXCL_FLPT_COUNTS*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_FLPT_COUNTS*canvasWidth: 	12",
+"Cvperf*EXCL_FLPT_COUNTS*visible:		False",
+"Cvperf*EXCL_FLPT_COUNTS*perfLabelString:	Excl.FlPt",
+"Cvperf*EXCL_FLPT_COUNTS*dialogLabelString:	Excl. Floating Pt Counts",
+
+"Cvperf*EXCL_LOADS*onMenuLabel: 	Show Excl. Loads",
+"Cvperf*EXCL_LOADS*offMenuLabel: 	Hide Excl. Loads",
+"Cvperf*EXCL_LOADS*atomName: 		_SGI_VK_PERFANNO_INSTRUCT",
+"Cvperf*EXCL_LOADS*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_LOADS*canvasWidth: 	12",
+"Cvperf*EXCL_LOADS*visible:		False",
+"Cvperf*EXCL_LOADS*perfLabelString:	Excl.Lds",
+"Cvperf*EXCL_LOADS*dialogLabelString:	Excl. Loads",
+
+"Cvperf*EXCL_STORES*onMenuLabel: 	Show Excl. Stores",
+"Cvperf*EXCL_STORES*offMenuLabel: 	Hide Excl. Stores",
+"Cvperf*EXCL_STORES*atomName: 	_SGI_VK_PERFANNO_EXCL_STORES",
+"Cvperf*EXCL_STORES*typeName: 	_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_STORES*canvasWidth: 	12",
+"Cvperf*EXCL_STORES*visible:		False",
+"Cvperf*EXCL_STORES*perfLabelString:	Excl.Stores",
+"Cvperf*EXCL_STORES*dialogLabelString:	Excl. Stores",
+
+"Cvperf*EXCL_BYTES_READ*onMenuLabel: 		Show Excl. Bytes Read",
+"Cvperf*EXCL_BYTES_READ*offMenuLabel: 	Hide Excl. Bytes Read",
+"Cvperf*EXCL_BYTES_READ*atomName: 		_SGI_VK_PERFANNO_EXCL_BYTES_READ",
+"Cvperf*EXCL_BYTES_READ*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_BYTES_READ*canvasWidth: 		12",
+"Cvperf*EXCL_BYTES_READ*visible:		False",
+"Cvperf*EXCL_BYTES_READ*perfLabelString:	Excl.Reads",
+"Cvperf*EXCL_BYTES_READ*dialogLabelString:	Excl. Bytes Read",
+
+"Cvperf*EXCL_BYTES_WRITTEN*onMenuLabel: 	Show Excl. Bytes Written",
+"Cvperf*EXCL_BYTES_WRITTEN*offMenuLabel: 	Hide Excl. Bytes Written",
+"Cvperf*EXCL_BYTES_WRITTEN*atomName: 		_SGI_VK_PERFANNO_EXCL_BYTES_WRITTEN",
+"Cvperf*EXCL_BYTES_WRITTEN*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_BYTES_WRITTEN*canvasWidth: 		12",
+"Cvperf*EXCL_BYTES_WRITTEN*visible:		False",
+"Cvperf*EXCL_BYTES_WRITTEN*perfLabelString:	Excl.Writes",
+"Cvperf*EXCL_BYTES_WRITTEN*dialogLabelString:	Excl. Bytes Written",
+
+"Cvperf*EXCL_FPE_COUNTS*onMenuLabel: 		Show Excl. Floating Pt Counts",
+"Cvperf*EXCL_FPE_COUNTS*offMenuLabel: 	Hide Excl. Floating Pt Counts",
+"Cvperf*EXCL_FPE_COUNTS*atomName: 		_SGI_VK_PERFANNO_EXCL_FPE_COUNTS",
+"Cvperf*EXCL_FPE_COUNTS*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_FPE_COUNTS*canvasWidth: 		12",
+"Cvperf*EXCL_FPE_COUNTS*visible:		False",
+"Cvperf*EXCL_FPE_COUNTS*perfLabelString:	Excl.Fpops",
+"Cvperf*EXCL_FPE_COUNTS*dialogLabelString:	Excl. Floating Pt Counts",
+
+"Cvperf*EXCL_INSTRUCTION_COUNTS*onMenuLabel: 		Show Instruction Count",
+"Cvperf*EXCL_INSTRUCTION_COUNTS*offMenuLabel: 	Hide Instruction Count",
+"Cvperf*EXCL_INSTRUCTION_COUNTS*atomName: 		_SGI_VK_PERFANNO_INSTRUCT",
+"Cvperf*EXCL_INSTRUCTION_COUNTS*typeName: 		_SGI_VK_DOUBLE_DATA",
+"Cvperf*EXCL_INSTRUCTION_COUNTS*canvasWidth: 		12",
+"Cvperf*EXCL_INSTRUCTION_COUNTS*visible:		False",
+"Cvperf*EXCL_INSTRUCTION_COUNTS*perfLabelString:	Excl.Inst",
+"Cvperf*EXCL_INSTRUCTION_COUNTS*dialogLabelString:	Excl. Instructions",
+
+*loadTrapsW.labelString:			Use the same sample traps?
+*loadTrapsW.set:			True
+*collectSameW.labelString:	Collect the same data?
+*collectSameW.set:			True
+*profExptConfigDialog*buttonBox.topAttachment:	XmATTACH_WIDGET
+*profExptConfigDialog*buttonBox.topWidget:	nodeOptionW
+*profExptConfigDialog.dialogTitle:		Set Up Experiment.
+*profExptConfigDialog*labelW.labelString:	Rerun Experiment?
+*rerunDialog.dialogTitle:			Rerun Experiment.
+
+*swatchFrameW.topOffset:		3
+*swatchFrameW.bottomOffset:		3
+*swatchFrameW.height:		14
+*swatchFrameW.width:		14
+*swatchForm.width:		200
+*valueWidget.width:		100
+*valueWidget.resizeWidth:               False
+*swatchLabel.alignment:		XmALIGNMENT_END
+
+*LeakView.geometry:		500x500
+*LeakView*windowTitle:		Leak View
+*LeakView*iconName:		Leak View
+*LeakView*LeakListW.height:	250
+*LeakView*LeakListW.scrollBarDisplayPolicy:	XmSTATIC
+*LeakView*LeakListW.selectionPolicy:    XmEXTENDED_SELECT
+
+*LeakView*Callstack.scrollBarDisplayPolicy:	XmSTATIC
+*LeakView*Callstack.listSizePolicy:	XmCONSTANT
+*LeakView*Callstack.visibleItemCount:	10
+*LeakView*NLeaksW.labelString:	Selected leak:
+*LeakView*TotalBytesLeakedW.labelString:	Total bytes leaked:
+
+
+*MallocView.geometry:		500x500
+*MallocView*windowTitle:	Malloc View
+*MallocView*iconName:		Malloc View
+*MallocView*MallocListW.height:	250
+
+*MallocView*MallocListW.scrollBarDisplayPolicy:	XmSTATIC
+*MallocView*MallocListW.selectionPolicy:        XmEXTENDED_SELECT
+
+*MallocView*Callstack.scrollBarDisplayPolicy:	XmSTATIC
+*MallocView*Callstack.listSizePolicy:	XmCONSTANT
+*MallocView*Callstack.visibleItemCount:	10
+*MallocView*NMallocsW.labelString:	Selected malloc:
+*MallocView*TotalBytesMallocedW.labelString: Total bytes malloced:
+
+*MallocErrorView.geometry:		500x500
+*MallocErrorView*windowTitle:		Malloc Error View
+*MallocErrorView*iconName:		Malloc Error View
+*MallocErrorView*MallocErrorListW.height:	250
+*MallocErrorView*MallocErrorListW.scrollBarDisplayPolicy:	XmSTATIC
+*MallocErrorView*MallocErrorListW.selectionPolicy:    XmEXTENDED_SELECT
+
+*MallocErrorView*Callstack.scrollBarDisplayPolicy:	XmSTATIC
+*MallocErrorView*Callstack.listSizePolicy:	XmCONSTANT
+*MallocErrorView*Callstack.visibleItemCount:	10
+*MallocErrorView*NMallocErrorsW.labelString:	Selected error:
+*MallocErrorView*TotalBytesMallocErroredW.labelString:	Total errors:
+
+
+*NodeView.geometry:		500x500
+*NodeView*windowTitle:		Node View
+*NodeView*iconName:		Node View
+
+*NodeView*nodeNameLabel.labelString:	Selected Node:
+*NodeView*nodeName.labelString:		a_very_long_node_name_string_to_set_length_appropriately
+
+*NodeView*leftStuff.entryAlignment:	XmALIGNMENT_END
+*NodeView*rightStuff.entryAlignment:	XmALIGNMENT_BEGINNING
+
+*NodeView*nodeNameLabel.labelString:	Function: 
+*NodeView*funcCallLabel.labelString:	Number of Calls: 
+*NodeView*cumTotalLabel.labelString:	Cum. Total Time: 
+*NodeView*cumHeuristicTimeLabel.labelString: Cum. Time (heuristic): 
+*NodeView*totalTimeLabel.labelString:	Total Time: 
+*NodeView*cpuTimeLabel.labelString:	Actual CPU Time: 
+*NodeView*idealTimeLabel.labelString:	Ideal CPU Time: 
+
+*NodeView*cyclesLabel.labelString:	Ideal Cycles: 
+*NodeView*instructionsLabel.labelString:		Instructions: 
+*NodeView*loadsLabel.labelString:	Loads: 
+*NodeView*storesLabel.labelString:	Stores: 
+*NodeView*fpOpsLabel.labelString:	Floating Point Operations: 
+
+*NodeView*addressLabel.labelString:	Start Address: 
+*NodeView*instAddressLabel.labelString:	Instrumented Start Address: 
+*NodeView*wordSizeLabel.labelString:	Size (words): 
+*NodeView*instWordSizeLabel.labelString:	Instrumented Size (words): 
+*NodeView*basicBlocksLabel.labelString:	Basic Blocks: 
+*NodeView*binNumLabel.labelString:	Bin Number: 
+*NodeView*libraryLabel.labelString:	Library: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Items for the Text Utilization View
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*TextUtilView.geometry:		750x700
+*TextUtilView*windowTitle:	Working Set View
+*TextUtilView*iconName:		Working Set
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Save As Text submenu items
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*saveWorkingSet.labelString:	Save Working Set
+*saveWorkingSet.mnemonic:	W
+*saveCordMapFile.labelString:	Save Cord Map File
+*saveCordMapFile.mnemonic:	M
+*saveCordFeedback.labelString:	Save Cord Feedback
+*saveCordFeedback.mnemonic:	C
+*saveTextSum.labelString:	Save Summary Data as Text
+*saveTextSum.mnemonic:		S
+*saveTextFunc.labelString:	Save Function Data as Text
+*saveTextFunc.mnemonic:		F
+*saveTextPage.labelString:	Save Page Data as Text
+*saveTextPage.mnemonic:		P
+*saveTextAll.labelString:	Save All Data as Text
+*saveTextAll.mnemonic:		A
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!	Other RegionList settings
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Cvperf*TextUtilView*regionListLabel*fontList: -*-screen-medium-r-normal--13-*-*-*-*-*-iso8859-1
+Cvperf*TextUtilView*regionListLabel2*fontList: -*-screen-medium-r-normal--13-*-*-*-*-*-iso8859-1
+Cvperf*TextUtilView*regionList*fontList: -*-screen-medium-r-normal--13-*-*-*-*-*-iso8859-1
+Cvperf*TextUtilView*mapArea*fontList: -*-screen-medium-r-normal--13-*-*-*-*-*-iso8859-1
+
+
+*TextUtilView*regionList.visibleItemCount: 12
+*TextUtilView*scrollBarDisplayPolicy: XmSTATIC
+*TextUtilView*regionListLabel.labelString: Text or DSO            Ideal         Counts of:             % Coverage of:       Avg. Covg. of Touched:
+*TextUtilView*regionListLabel2.labelString: Region Name             Time   Instrs.  Funcs. Pages    Instrs.  Funcs.  Pages        Pages    Funcs.
+
+*TextUtilView*infoLabel.labelString: Selected DSO: <none>
+*TextUtilView*infoLabel2.labelString: Pages: 0
+*TextUtilView*infoLabel3.labelString: Map of DSO pages
+
+*TextUtilView*searchTextLabel.labelString: Search: 
+*TextUtilView*swatchForm.width:		140
+
+*TextUtilView*untouchedPage.labelString: Untouched Page
+*TextUtilView*usedInsts.labelString: Executed Insts.
+*TextUtilView*unusedFuncs.labelString: Unused Functions
+*TextUtilView*tableData.labelString: Table Data
+*TextUtilView*unusedInsts.labelString: Unused Insts.

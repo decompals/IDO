@@ -1,0 +1,45 @@
+#2.9
+The ProDev WorkShop Advantage
+The ProDev Workshop Performance Analyzer lets you run performance tuning experiments and analyze your program's performance, memory usage and leaks, and system activity.
+
+Let's review the various ways that you can optimize your code using the Performance Analyzer.
+Exercise:
+Select a performance task by clicking on the Option menu to the right of "Performance Task:"
+This performance task measures machine resource activity when your program is being slowed down by I/O calls and you want to find the responsible code.
+"Get Total Time per function"
+CPU Time
+Select Task
+Examine Results...
+Configs...
+
+Determine bottlenecks,identify phases
+Get Total Time per function & source line
+Get CPU Time per function & source line
+Get Ideal Time(pixie) per function & source line
+Trace I/O activity
+Trace system calls
+Trace page faults
+Find memory leaks
+Find Floating Point Exceptions
+Get PC Sampling Times
+Custom task
+
+Ideal Time (pixie)
+Use "Trace I/O activity" when your program is being slowed down by I/O calls and you want to find the responsible code.
+Use "Trace system calls" when you suspect that system calls are slowing down performance and you wish to determine the responsible code.
+This performance task indicates high page faulting activity and identifies the responsible code.
+Use "Find memory leaks" to identify where memory leaks and bad frees may occur.
+Use "Find floating point exceptions" when you suspect that large, unaccountable periods of time are being spent in floating point exception handlers.
+"Get PC Custom task" lets you analyze your code's performance based on parameters that you define.
+
+Use this task to get a general overview of your program's performance, including the location of bottlenecks and their nature--IO-,memory, or CPU-bound.
+Use this task to see the total time spent by function, source code line,  and instruction at specified sample traps.
+Use this task to see CPU usage by function, source code line, and instruction at specified sample traps.
+Use this task to see ideal time, spent by function, source code line, and instruction at specified sample traps.  Ideal time assumes one cycle per instruction and provides useful information when compared with total time.
+Use this task when your program is being slowed down by I/O calls and you want to find the responsible code.
+Use this task when when you suspect that system calls are slowing down performance and you wish to determine the responsible code.
+Use this task when there is an indication of high page faulting activity and you wish to identify the responsible code.
+Use this task to identify where memory leaks and bad frees may occur.
+Use this task when you suspect that large, unaccountable periods of time are being spent in floating point exception handlers.
+Use this task to get a statistical sampling of where the PC spent time.
+Use this task to specify a custom experiment. 

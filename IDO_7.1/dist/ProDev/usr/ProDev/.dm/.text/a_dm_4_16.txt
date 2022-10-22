@@ -1,0 +1,6 @@
+###4.16
+Structure Browser (continued)
+Field names appear in the left column of the structure graphics, values in the right.  Double-clicking a pointer address dereferences it.
+Double-click the "next" address.
+As you can see, the window expands indicating that you have dereferenced a pointer.
+Click on the bottom right arrow to continue.

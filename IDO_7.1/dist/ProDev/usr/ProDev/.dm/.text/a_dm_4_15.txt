@@ -1,0 +1,29 @@
+###4.15
+Structure Browser
+The Structure Browser displays the structure for a given expression and lets you dereference pointers.
+Select "Structure Browser" from the Views menu to bring up the Structure Browser window.
+Type jello_conec in the Expression field.
+jello_conec
+Sorry you must enter jello_conec.
+You are now viewing the jello_conec structure.
+Click on the bottom right arrow to continue.
+
+
+Array Browser
+Call Stack
+Disassembly View
+Exception View
+Execution View
+Expression View
+File Browser
+Memory View
+Process Meter
+Register View
+Signal Panel
+Source View
+Structure Browser  
+Syscall Panel
+Task View
+Trap Manager
+Variable Browser
+X/Motif Analyzer

@@ -1,0 +1,6 @@
+###5.4
+Running a Performance Experiment
+After you've selected a task, the Debugger indicates performance mode using the indicator at the upper right. 
+Click the Run button.
+A message box displays indicating that instrumentation is in progress.
+Click the bottom right arrow to continue.

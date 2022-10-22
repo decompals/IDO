@@ -1,0 +1,1 @@
+<BOOK name="OpenGL_PG" edition="19960309" alias = "OpenGL Programming Guide (Addison-Wesley Publishing Company)" type = "generic" hide = "FALSE" version = "860-0105-002" srchres = "FALSE" srchtags = "" group = "other" >

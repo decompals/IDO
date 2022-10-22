@@ -1,0 +1,74 @@
+#ifndef GAMMA_1_0
+#define  HighlightForeground    #ffffff
+#define	 TrapColor		#ff0000
+#define	 ScrollBarTrapColor	#ff0000
+#define	 InactiveTrapColor	#851c1c
+#define	 ScrollBarInactiveTrapColor	#851c1c
+#define	 ProgramCounterColor	#118111
+#define	 ScrollBarProgramCounterColor	#5fff5f
+#define	 CallstackContext	#857c1d
+#define	 ScrollBarCallstackContext	#dcd256
+#define  SearchColor		#4d2d94
+#define  ScrollBarSearchColor		#a97eff
+#define  TimeLineBackground	#4d6b72
+#define  ScrollBarColor1	#1f92fa
+#define  ScrollBarColor2	#ff7e42
+#define  CurrentColor		HighlightColor8
+#define  ViewerColor		HighlightColor6
+#define  ConstraintColor	HighlightColor3
+#define  ChartFillStyle		FillSolid
+#define  ChartLineStyle0	LineSolid
+#define  ChartLineStyle1	LineSolid
+#define  ChartLineStyle2	LineSolid
+#define  ChartLineStyle3	LineSolid
+#define  SessionColor4		BasicBackground
+#define  SessionColor5		#142f3b
+#define  SourceBackground	#65e9f2
+#define  ModifiedBackground	#a2abfa
+#define  DerivedBackground	#22263c
+#define  ObsoleteColor		#fdfc46
+#define  CheckMarkColor		#60c6b8
+#define  SyntaxWarningColor	#a25b1c
+#define  SyntaxErrorColor	#7f377c
+#define  ScrollBarWarningColor	#ff8f2d
+#define  ScrollBarErrorColor	#e665e4
+#else
+#define  HighlightForeground    #ffffff
+#define	 TrapColor		#ff0000
+#define	 ScrollBarTrapColor	#ff0000
+#define	 InactiveTrapColor	#aa4040
+#define	 ScrollBarInactiveTrapColor	#aa4040
+#define	 ProgramCounterColor	#30a730
+#define	 ScrollBarProgramCounterColor	#8aff8a
+#define	 CallstackContext	#aaa342
+#define	 ScrollBarCallstackContext	#e9e281
+#define  SearchColor		#7957b6
+#define  ScrollBarSearchColor		#c5a4ff
+#define  TimeLineBackground	#79949a
+#define  ScrollBarColor1	#45b4fc
+#define  ScrollBarColor2	#ffa46e
+#define  CurrentColor		HighlightColor8
+#define  ViewerColor		HighlightColor6
+#define  ConstraintColor	HighlightColor3
+#define  ChartFillStyle		FillSolid
+#define  ChartLineStyle0	LineSolid
+#define  ChartLineStyle1	LineSolid
+#define  ChartLineStyle2	LineSolid
+#define  ChartLineStyle3	LineSolid
+#define  SessionColor4		BasicBackground
+#define  SessionColor5		#355966
+#define  SourceBackground	#8ff1f7
+#define  ModifiedBackground	#c0c7fc
+#define  DerivedBackground	#494e67
+#define  ObsoleteColor		#fefd72
+#define  CheckMarkColor		#8bdad0
+#define  SyntaxWarningColor	#c08641
+#define  SyntaxErrorColor	#a562a3
+#define  ScrollBarWarningColor	#ffb257
+#define  ScrollBarErrorColor	#ef8fee
+#endif
+
+
+#define  DrawingAreaNodeColor1  #102d64
+#define  DrawingAreaNodeColor2  #5f0d22
+

@@ -1,0 +1,1 @@
+<BOOK name="OpenGL_RM" edition="19960309" alias = "OpenGL Reference Manual (Addison-Wesley Publishing Company)" type = "generic" hide = "FALSE" version = "860-0029-002 2/94" srchres = "FALSE" srchtags = "" group = "other" >

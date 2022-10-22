@@ -1,0 +1,11 @@
+#2.1
+Fast Track 
+Select the skill(s) you want to learn.  This lesson will include ONLY the skills that you select.  
+
+You want to be able to:
+    integrate Developmer Magic into the software development process
+    recognize the ProDev WorkShop advantage
+    review ProDev WorkShop licensing issues
+    identify healthwise work habits (ergonomic tips)
+
+Are you finished selecting?

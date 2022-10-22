@@ -1,0 +1,19 @@
+###5.7
+Call Graph View
+Call Graph View helps you find time-consuming function calls, using a call graph.  
+Select "Call Graph View" from the Views menu. 
+This causes the functions calling "main" (the selected function) and those that "main" calls to appear.  Note their performance statistics. 
+Click on the Butterfly button.
+Click on the bottom right arrow to continue.
+The Call Graph View window appears.  It's blank until you select data.
+
+Usage View (Graphs)
+Usage View (Numerical)
+I/O View
+Call Graph View
+Leak View
+Malloc View
+Malloc Error View
+Heap View
+Call Stack
+Working Set View

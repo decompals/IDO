@@ -1,0 +1,4 @@
+###5.2
+Welcome to the Performance Analyzer
+The ProDev WorkShop Performance Analyzer lets you run performance tuning experiments and analyze your program's performance, memory usage, and system activity.
+Click on the bottom right arrow to continue.

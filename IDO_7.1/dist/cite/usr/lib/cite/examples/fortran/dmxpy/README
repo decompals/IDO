@@ -1,0 +1,4 @@
+
+dmxpy is from the BLAS2 -- vector matrix multiply.
+
+This shows loop interchange, outer loop unrolling, and blocking.

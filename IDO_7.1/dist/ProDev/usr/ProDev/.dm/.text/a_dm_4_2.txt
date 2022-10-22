@@ -1,0 +1,9 @@
+###4.2
+About the Debugger
+The ProDev WorkShop Debugger is a source-level debugging tool that provides special views for displaying program data and execution status.
+Click on each of the planets for a description of the various functions of the Debugger.
+use graphical views for displaying local variables, source-level expressions, array variables, and data structures
+get dynamic updates of views as the program executes
+manage fast data watchpoints and other traps
+debug code at the machine level
+

@@ -1,0 +1,70 @@
+
+<TITLE>Viewing Post LNO Optimizations </TITLE>
+</HEAD>
+<BODY ALINK="#FF3300" VLINK="#330099" LINK="#CC0000" BGCOLOR="#fffff" TEXT="#000000">
+<P><!-- Changed by: Suresh Srinivas, 15-Feb-1996 --></P>
+<HR>
+<H1>Viewing Post LNO Optimizations in CITE</H1>
+<HR>
+<P><BR>
+ </P>
+
+<P>
+In the original subroutine there was but one inner loop. Any guesses on
+how many inner loops are in the transformed source after LNO? We will
+know the number by the end of this section.
+</P>
+
+<P>
+First let us go back to the "Annotate/Hypertext" toolbar. The third toolbar
+button on the right toolbar allows us to annotate all of the loops after
+the Loop Nest Optimizer with the software pipelining information. 
+</P>
+<P><IMG SRC="mmj5.gif" ALIGN="MIDDLE" WIDTH="674" HEIGHT="781" SGI_SETWIDTH SGI_SETHEIGHT></P>
+
+<P>
+First we will see what the Loop Nest Optimizer has done. We can do this
+by annotating the original loop nests and obtaining the information about
+the loop nest as in the <A HREF="cite-interchange.html"
+TARGET="display">interchange example</A>. As the following figure shows
+this loop nests has been cache blocked for both the primary and
+secondary caches as well as register blocked (outer loop unrolled).
+</P>
+
+<P><IMG SRC="mmj6.gif" ALIGN="MIDDLE" WIDTH="653" HEIGHT="805" SGI_SETWIDTH SGI_SETHEIGHT></P>
+
+<P>
+Looking next at the inner loops after the loop nest optimizer, we see that
+there are 4 of them now. The original source had one. The other three 
+inner loops are newly created by LNO. They are in the cache and register
+winddown sections of the transformed code. Also notice that the assignment
+to <tt> C(i,j)</tt> has been peeled out and the inner loop there is not
+annotated. That is not a worthwhile inner loop to be optimized and LNO
+marks it that way. CITE knows about it from the trace information generated
+by LNO and skips it as well. For the rest of the inner loops CITE annotates
+them with software pipelining information. In the future there will be other
+information such as the estimated iterations of the loop, whether it is a
+cache winddown or register winddown loop etc.,
+</P>
+
+<P><IMG SRC="mmj7.gif" ALIGN="MIDDLE" WIDTH="793" HEIGHT="910" SGI_SETWIDTH SGI_SETHEIGHT></P>
+
+<P>
+The final figure just shows querying the annotation on the first of the
+4 inner loops revealing the software pipelining information.
+</P>
+
+<P><IMG SRC="mmj8.gif" ALIGN="MIDDLE" WIDTH="624" HEIGHT="767" SGI_SETWIDTH SGI_SETHEIGHT></P>
+
+ <BR>
+ <BR>
+<HR>
+<P></P>
+<ADDRESS><I>Suresh Srinivas (ssuresh@mti) </I><BR>
+<I> <FONT SIZE="-1">Questions and comments to <A HREF="mailto:ssuresh@mti.sgi.com">ssuresh@mti.sgi.com</A>. </FONT></I><BR>
+<I> May 30th 1996</I> <BR>
+ <BR>
+ <BR>
+ </ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,7 @@
+ptype	SGI_CV_PATHREMAP
+{
+	start	"/usr/lib/WorkShop/cvpathRemap";
+	handle:	session Show_PathRemap() => start;
+	handle:	session Map_Filename() => start;
+	handle: session SGI_PATH_REMAP_Add_Substitute() => start;
+}

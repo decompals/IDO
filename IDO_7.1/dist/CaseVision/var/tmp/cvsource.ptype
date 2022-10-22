@@ -1,0 +1,8 @@
+ptype SGI_CV_CVSOURCE
+{
+ start "/usr/sbin/cvsource";
+ handle: session Open(in string contents, in int readOnly, in int mapped, in int shareLevel, in string initialPos, out string viewID) => start;
+ handle: session Open(in string contents, in int readOnly, in int mapped, in int shareLevel, in string initialPos, in string viewID);
+ handle: session Open(in string contents, in int readOnly, in int mapped, in int shareLevel, in string initialPos, out string viewID, in string filename) => start;
+ handle: session Open(in string contents, in int readOnly, in int mapped, in int shareLevel, in string initialPos, in string viewID, in string filename);
+}

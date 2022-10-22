@@ -1,0 +1,11 @@
+
+              PGM = finance
+            CLASS = Finance
+
+             SRCS = main.c
+             OBJS = main.o
+
+  EXTRA_LIBRARIES = -lXm -lXt -lX11 -lm
+
+ComplexProgramTarget($(PGM))
+InstallAppDefaults($(CLASS))

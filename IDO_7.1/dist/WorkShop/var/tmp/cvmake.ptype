@@ -1,0 +1,5 @@
+ptype SGI_CV_CVMAKE
+{
+	start "/usr/sbin/cvmake -autostarted";
+	handle: session StartBuild() => start;
+}

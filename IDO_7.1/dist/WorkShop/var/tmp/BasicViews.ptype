@@ -1,0 +1,6 @@
+ptype SGI_CV_CVMAIN
+{
+    start "/usr/lib/WorkShop/cvmain -autostarted";
+    handle: session SGI_Debug_Start_Debugger_Resource() => start;
+    handle: session SGI_Debug_Start_Debugger_Executable() => start;
+}

@@ -1,0 +1,11 @@
+#3.14
+Identify Source Files Using Include Files
+To graphically display class hierarchies, "query" the database for a complete file listing. 
+
+Then go to the "View" menu and choose the graphic file dependency view.  
+Use the "Queries" and "View" menus to display your code's file dependencies.
+Sorry.  You must first go to the "Query" menu and choose "List all files..."
+Sorry.  You have already queried the database.
+
+Now, go to the "View" menu and choose "File Dependencies"
+

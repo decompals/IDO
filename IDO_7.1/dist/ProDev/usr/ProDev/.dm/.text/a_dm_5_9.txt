@@ -1,0 +1,4 @@
+###5.9
+
+The resource usage chart in the Performance Analyzer window roughly indicates a program's phases.  The tick marks represent sample points (at which performance data was taken). This program ran mostly in system mode between points 1 and 3 and in user mode for the remainder of the experiment. 
+Click on the bottom right arrow to continue.

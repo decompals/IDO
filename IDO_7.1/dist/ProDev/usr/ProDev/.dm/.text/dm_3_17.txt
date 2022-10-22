@@ -1,0 +1,4 @@
+#3.17
+Filter Static Analyzer Displays
+Use the "Results Filter" to filter the display of a query.
+

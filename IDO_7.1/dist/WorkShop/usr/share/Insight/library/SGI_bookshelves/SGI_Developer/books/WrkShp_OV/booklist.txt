@@ -1,0 +1,1 @@
+<BOOK name="WrkShp_OV" edition="19961014" alias = "Developer Magic: ProDev WorkShop Overview" type = "sgi_developer" hide = "FALSE" version = "007-2582-003" sort = "002652" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

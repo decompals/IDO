@@ -1,0 +1,3 @@
+##2.4.1
+Workshop provides you with a powerful set of tools that allow you to visualize your code and optimize its structure in less time than traditional development environments.
+Click on the monitor for a word from the director of the Developer Magic Product line.

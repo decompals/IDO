@@ -1,0 +1,7524 @@
+1
+KEY
+callcallbacklist
+XtCallCallbackList
+KEY
+callbacklist
+XtCallbackList
+KEY
+widgetcore
+CorePart
+KEY
+objectcore
+ObjectPart
+KEY
+widgetrec
+WidgetRec
+KEY
+widgetclass
+CoreClassPart
+KEY
+widget:name
+name
+KEY
+object:name
+xrm_name
+KEY
+widget:widget_class
+widget_class
+KEY
+widgetclass:class_name
+class_name
+KEY
+widget:parent
+parent
+KEY
+widget:num_popups
+num_popups
+KEY
+widget:popup_list
+popup_list
+KEY
+widgettype
+Widget
+KEY
+widgetrecsuffix
+Rec
+KEY
+compositerec
+CompositeClassRec
+KEY
+compositepart
+CompositePart
+KEY
+compositechildren
+children
+KEY
+compositenumchildren
+num_children
+KEY
+coreclassinited
+class_inited
+KEY
+coreclasspart
+CoreClassPart
+KEY
+gctype
+GC
+KEY
+gcstruct
+Xlib_XGC
+KEY
+temporaryString
+widgetOutputStr
+KEY
+nametowidget
+(void *) XtNameToWidget((void *) 0x%llx, "*%s")
+KEY
+nametowidget2
+(void *) XtNameToWidget((void *) 0x%llx, widgetOutputStr)
+KEY
+windowtowidget
+(void *) XtWindowToWidget(XtDisplayOfObject((void *) 0x%llx), (unsigned long) 0x%x)
+KEY
+xrmquarktostring
+(char *) XrmQuarkToString((int) %lld)
+KEY
+xmanycallbackstruct
+XmAnyCallbackStruct
+KEY
+windowtype
+Window
+KEY
+pixmaptype
+Pixmap
+KEY
+drawabletype
+Drawable
+KEY
+xeventtype
+XAnyEvent
+KEY
+xeventtypeptr
+&XEvent
+KEY
+xeventtypemember
+type
+KEY
+xeventsendeventmember
+send_event
+KEY
+classtype
+WidgetClass
+KEY
+classsuffix
+ClassRec
+KEY
+shellclass
+TopLevelShell
+KEY
+xmeditreshandlependingmessages
+XmEditresHandlePendingMessages((void *) 0x%llx, (unsigned long) 0x%x)
+KEY
+xtwindowofobject
+(unsigned long) XtWindowOfObject((void *) 0x%llx)
+KEY
+callbackBreak
+uitBreakPtCallback1
+KEY
+eventBreak
+uitBreakPtEvent
+KEY
+requestBreak
+uitBreakPtRequestInternal
+KEY
+breakptconfigure1
+doWidgetBreakPtMask = %d
+KEY
+breakptconfigure2
+doEventBreakPtMask = %d
+KEY
+evHandlerBreak
+uitBreakPtEvHandler
+KEY
+resourceBreak
+uitBreakPtResource
+KEY
+timeoutBreak
+uitBreakPtTimeout
+KEY
+inputBreak
+uitBreakPtInput
+KEY
+stateBreak
+uitBreakPtStateChange
+KEY
+constraintrecsuffix
+ConstraintRec
+KEY
+constraintmember
+constraints
+KEY
+constrainttype
+CorePart
+KEY
+constraintmember2
+constraints
+KEY
+constrainttype2
+ObjectPart
+KEY
+widgetoutputconfigure
+uitWidgetOutputConfigure("%s")
+KEY
+widgetoutputconfigure2
+uitWidgetOutputConfigure(widgetOutputStr)
+KEY
+widgetoutputconfigureclose
+uitWidgetOutputConfigure(0)
+KEY
+eventoutputconfigurefd
+eventOutputFd = 0x%llx
+KEY
+widgetoutputforceoff
+widgetOutputFd = 0
+KEY
+eventoutputforceoff
+eventOutputFd = 0
+STRUCT
+CompositePart CompositePtr
+16
+children WidgetList 0 4
+num_children Cardinal 4 4
+num_slots Cardinal 8 4
+insert_position XtOrderProc 12 4
+
+STRUCT
+CompositeRec
+132
+core CorePart 0 116
+composite CompositePart 116 16
+
+STRUCT
+CompositeClassPart CompositePartPtr
+20
+geometry_manager XtGeometryHandler 0 4
+change_managed XtWidgetProc 4 4
+insert_child XtWidgetProc 8 4
+delete_child XtWidgetProc 12 4
+extension XtPointer 16 4
+
+STRUCT
+CompositeClassExtensionRec CompositeClassExtension
+20
+next_extension XtPointer 0 4
+record_type XrmQuark 4 4
+version long 8 4
+record_size Cardinal 12 4
+accepts_objects Boolean 16 1
+allows_change_managed_set Boolean 17 1
+
+STRUCT
+CompositeClassRec
+136
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+
+STRUCT
+ConstraintPart
+4
+mumble XtPointer 0 4
+
+STRUCT
+ConstraintRec ConstraintWidget
+136
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+
+STRUCT
+ConstraintClassPart
+28
+resources XtResourceList 0 4
+num_resources Cardinal 4 4
+constraint_size Cardinal 8 4
+initialize XtInitProc 12 4
+destroy XtWidgetProc 16 4
+set_values XtSetValuesFunc 20 4
+extension XtPointer 24 4
+
+STRUCT
+ConstraintClassExtensionRec ConstraintClassExtension
+20
+next_extension XtPointer 0 4
+record_type XrmQuark 4 4
+version long 8 4
+record_size Cardinal 12 4
+get_values_hook XtArgsProc 16 4
+
+STRUCT
+ConstraintClassRec
+164
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+
+STRUCT
+CorePart
+116
+self Widget 0 4
+widget_class WidgetClass 4 4
+parent Widget 8 4
+xrm_name XrmName 12 4
+being_destroyed Boolean 16 1
+destroy_callbacks XtCallbackList 20 4
+constraints XtPointer 24 4
+x Position 28 2
+y Position 30 2
+width Dimension 32 2
+height Dimension 34 2
+border_width Dimension 36 2
+managed Boolean 38 1
+sensitive Boolean 39 1
+ancestor_sensitive Boolean 40 1
+event_table XtEventTable 44 4
+tm XtTMRec 48 16
+accelerators XtTranslations 64 4
+border_pixel Pixel 68 4
+border_pixmap Pixmap 72 4
+popup_list WidgetList 76 4
+num_popups Cardinal 80 4
+name String 84 4
+screen Screen 88 4
+colormap Colormap 92 4
+window Window 96 4
+depth Cardinal 100 4
+background_pixel Pixel 104 4
+background_pixmap Pixmap 108 4
+visible Boolean 112 1
+mapped_when_managed Boolean 113 1
+
+STRUCT
+WidgetRec CoreRec
+116
+core CorePart 0 116
+
+STRUCT
+CoreClassPart
+116
+superclass WidgetClass 0 4
+class_name String 4 4
+widget_size Cardinal 8 4
+class_initialize XtProc 12 4
+class_part_initialize XtWidgetClassProc 16 4
+class_inited XtEnum 20 1
+initialize XtInitProc 24 4
+initialize_hook XtArgsProc 28 4
+realize XtRealizeProc 32 4
+actions XtActionList 36 4
+num_actions Cardinal 40 4
+resources XtResourceList 44 4
+num_resources Cardinal 48 4
+xrm_class XrmClass 52 4
+compress_motion Boolean 56 1
+compress_exposure XtEnum 57 1
+compress_enterleave Boolean 58 1
+visible_interest Boolean 59 1
+destroy XtWidgetProc 60 4
+resize XtWidgetProc 64 4
+expose XtExposeProc 68 4
+set_values XtSetValuesFunc 72 4
+set_values_hook XtArgsFunc 76 4
+set_values_almost XtAlmostProc 80 4
+get_values_hook XtArgsProc 84 4
+accept_focus XtAcceptFocusProc 88 4
+version XtVersionType 92 4
+callback_private XtPointer 96 4
+tm_table String 100 4
+query_geometry XtGeometryHandler 104 4
+display_accelerator XtStringProc 108 4
+extension XtPointer 112 4
+
+STRUCT
+WidgetClassRec CoreClassRec
+116
+core_class CoreClassPart 0 116
+
+STRUCT
+XtActionsRec
+8
+string String 0 4
+proc XtActionProc 4 4
+
+STRUCT
+XtConvertArgRec XtConvertArgList
+12
+address_mode XtAddressMode 0 4
+address_id XtPointer 4 4
+size Cardinal 8 4
+
+STRUCT
+XtWidgetGeometry
+24
+request_mode XtGeometryMask 0 4
+x Position 4 2
+y Position 6 2
+width Dimension 8 2
+height Dimension 10 2
+border_width Dimension 12 2
+sibling Widget 16 4
+stack_mode int 20 4
+
+STRUCT
+XtCallbackRec XtCallbackList
+8
+callback XtCallbackProc 0 4
+closure XtPointer 4 4
+
+STRUCT
+XtPopdownIDRec XtPopdownID
+8
+shell_widget Widget 0 4
+enable_widget Widget 4 4
+
+STRUCT
+SubstitutionRec Substitution
+8
+match char 0 1
+substitution String 4 4
+
+STRUCT
+XtCheckpointTokenRec XtCheckpointToken
+32
+save_type int 0 4
+interact_style int 4 4
+shutdown Boolean 8 1
+fast Boolean 9 1
+cancel_shutdown Boolean 10 1
+phase int 12 4
+interact_dialog_type int 16 4
+request_cancel Boolean 20 1
+request_next_phase Boolean 21 1
+save_success Boolean 22 1
+type int 24 4
+widget Widget 28 4
+
+STRUCT
+XtCreateHookDataRec XtCreateHookData
+16
+type String 0 4
+widget Widget 4 4
+args ArgList 8 4
+num_args Cardinal 12 4
+
+STRUCT
+XtChangeHookDataRec XtChangeHookData
+16
+type String 0 4
+widget Widget 4 4
+event_data XtPointer 8 4
+num_event_data Cardinal 12 4
+
+STRUCT
+XtChangeHookSetValuesDataRec XtChangeHookSetValuesData
+16
+old Widget 0 4
+req Widget 4 4
+args ArgList 8 4
+num_args Cardinal 12 4
+
+STRUCT
+XtConfigureHookDataRec XtConfigureHookData
+40
+type String 0 4
+widget Widget 4 4
+changeMask XtGeometryMask 8 4
+changes XWindowChanges 12 28
+
+STRUCT
+XtGeometryHookDataRec XtGeometryHookData
+20
+type String 0 4
+widget Widget 4 4
+request XtWidgetGeometry 8 4
+reply XtWidgetGeometry 12 4
+result XtGeometryResult 16 4
+
+STRUCT
+XtDestroyHookDataRec XtDestroyHookData
+8
+type String 0 4
+widget Widget 4 4
+
+STRUCT
+XtTMRec XtTM
+16
+translations XtTranslations 0 4
+proc_table XtBoundActions 4 4
+current_state _XtStateRec 8 4
+lastEventTime long 12 4
+
+STRUCT
+ObjectPart
+28
+self Widget 0 4
+widget_class WidgetClass 4 4
+parent Widget 8 4
+xrm_name XrmName 12 4
+being_destroyed Boolean 16 1
+destroy_callbacks XtCallbackList 20 4
+constraints XtPointer 24 4
+
+STRUCT
+ObjectRec
+28
+object ObjectPart 0 28
+
+STRUCT
+ObjectClassPart
+116
+superclass WidgetClass 0 4
+class_name String 4 4
+widget_size Cardinal 8 4
+class_initialize XtProc 12 4
+class_part_initialize XtWidgetClassProc 16 4
+class_inited XtEnum 20 1
+initialize XtInitProc 24 4
+initialize_hook XtArgsProc 28 4
+obj1 XtProc 32 4
+obj2 XtPointer 36 4
+obj3 Cardinal 40 4
+resources XtResourceList 44 4
+num_resources Cardinal 48 4
+xrm_class XrmClass 52 4
+obj4 Boolean 56 1
+obj5 XtEnum 57 1
+obj6 Boolean 58 1
+obj7 Boolean 59 1
+destroy XtWidgetProc 60 4
+obj8 XtProc 64 4
+obj9 XtProc 68 4
+set_values XtSetValuesFunc 72 4
+set_values_hook XtArgsFunc 76 4
+obj10 XtProc 80 4
+get_values_hook XtArgsProc 84 4
+obj11 XtProc 88 4
+version XtVersionType 92 4
+callback_private XtPointer 96 4
+obj12 String 100 4
+obj13 XtProc 104 4
+obj14 XtProc 108 4
+extension XtPointer 112 4
+
+STRUCT
+ObjectClassExtensionRec ObjectClassExtension
+24
+next_extension XtPointer 0 4
+record_type XrmQuark 4 4
+version long 8 4
+record_size Cardinal 12 4
+allocate XtAllocateProc 16 4
+deallocate XtDeallocateProc 20 4
+
+STRUCT
+ObjectClassRec
+116
+object_class ObjectClassPart 0 116
+
+STRUCT
+RectObjPart
+14
+x Position 0 2
+y Position 2 2
+width Dimension 4 2
+height Dimension 6 2
+border_width Dimension 8 2
+managed Boolean 10 1
+sensitive Boolean 11 1
+ancestor_sensitive Boolean 12 1
+
+STRUCT
+RectObjRec
+44
+object ObjectPart 0 28
+rectangle RectObjPart 28 14
+
+STRUCT
+RectObjClassPart
+116
+superclass WidgetClass 0 4
+class_name String 4 4
+widget_size Cardinal 8 4
+class_initialize XtProc 12 4
+class_part_initialize XtWidgetClassProc 16 4
+class_inited XtEnum 20 1
+initialize XtInitProc 24 4
+initialize_hook XtArgsProc 28 4
+rect1 XtProc 32 4
+rect2 XtPointer 36 4
+rect3 Cardinal 40 4
+resources XtResourceList 44 4
+num_resources Cardinal 48 4
+xrm_class XrmClass 52 4
+rect4 Boolean 56 1
+rect5 XtEnum 57 1
+rect6 Boolean 58 1
+rect7 Boolean 59 1
+destroy XtWidgetProc 60 4
+resize XtWidgetProc 64 4
+expose XtExposeProc 68 4
+set_values XtSetValuesFunc 72 4
+set_values_hook XtArgsFunc 76 4
+set_values_almost XtAlmostProc 80 4
+get_values_hook XtArgsProc 84 4
+rect9 XtProc 88 4
+version XtVersionType 92 4
+callback_private XtPointer 96 4
+rect10 String 100 4
+query_geometry XtGeometryHandler 104 4
+rect11 XtProc 108 4
+extension XtPointer 112 4
+
+STRUCT
+RectObjClassRec
+116
+rect_class RectObjClassPart 0 116
+
+STRUCT
+ShellClassPart
+4
+extension XtPointer 0 4
+
+STRUCT
+ShellClassExtensionRec ShellClassExtension
+20
+next_extension XtPointer 0 4
+record_type XrmQuark 4 4
+version long 8 4
+record_size Cardinal 12 4
+root_geometry_manager XtGeometryHandler 16 4
+
+STRUCT
+ShellClassRec
+140
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+
+STRUCT
+ShellPart
+32
+geometry char 0 4
+create_popup_child_proc XtCreatePopupChildProc 4 4
+grab_kind XtGrabKind 8 4
+spring_loaded Boolean 12 1
+popped_up Boolean 13 1
+allow_shell_resize Boolean 14 1
+client_specified Boolean 15 1
+save_under Boolean 16 1
+override_redirect Boolean 17 1
+popup_callback XtCallbackList 20 4
+popdown_callback XtCallbackList 24 4
+visual Visual 28 4
+
+STRUCT
+ShellRec ShellWidget
+164
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+
+STRUCT
+OverrideShellClassPart
+4
+extension XtPointer 0 4
+
+STRUCT
+OverrideShellClassRec
+144
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+override_shell_class OverrideShellClassPart 140 4
+
+STRUCT
+OverrideShellRec OverrideShellWidget
+168
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+override OverrideShellPart 164 4
+
+STRUCT
+WMShellClassPart
+4
+extension XtPointer 0 4
+
+STRUCT
+WMShellClassRec
+144
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+wm_shell_class WMShellClassPart 140 4
+
+STRUCT
+WMShellRec WMShellWidget
+296
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+wm WMShellPart 164 132
+
+STRUCT
+TransientShellClassPart
+4
+extension XtPointer 0 4
+
+STRUCT
+TransientShellClassRec
+152
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+wm_shell_class WMShellClassPart 140 4
+vendor_shell_class VendorShellClassPart 144 4
+transient_shell_class TransientShellClassPart 148 4
+
+STRUCT
+TransientShellPart
+4
+transient_for Widget 0 4
+
+STRUCT
+TransientShellRec TransientShellWidget
+304
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+wm WMShellPart 164 132
+vendor VendorShellPart 296 4
+transient TransientShellPart 300 4
+
+STRUCT
+TopLevelShellClassPart
+4
+extension XtPointer 0 4
+
+STRUCT
+TopLevelShellClassRec
+152
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+wm_shell_class WMShellClassPart 140 4
+vendor_shell_class VendorShellClassPart 144 4
+top_level_shell_class TopLevelShellClassPart 148 4
+
+STRUCT
+TopLevelShellPart
+12
+icon_name char 0 4
+iconic Boolean 4 1
+icon_name_encoding Atom 8 4
+
+STRUCT
+TopLevelShellRec TopLevelShellWidget
+312
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+wm WMShellPart 164 132
+vendor VendorShellPart 296 4
+topLevel TopLevelShellPart 300 12
+
+STRUCT
+ApplicationShellClassPart
+4
+extension XtPointer 0 4
+
+STRUCT
+ApplicationShellClassRec
+156
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+wm_shell_class WMShellClassPart 140 4
+vendor_shell_class VendorShellClassPart 144 4
+top_level_shell_class TopLevelShellClassPart 148 4
+application_shell_class ApplicationShellClassPart 152 4
+
+STRUCT
+ApplicationShellPart
+16
+class char 0 4
+xrm_class XrmClass 4 4
+argc int 8 4
+argv char 12 4
+
+STRUCT
+ApplicationShellRec ApplicationShellWidget
+328
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+wm WMShellPart 164 132
+vendor VendorShellPart 296 4
+topLevel TopLevelShellPart 300 12
+application ApplicationShellPart 312 16
+
+STRUCT
+SessionShellClassPart
+4
+extension XtPointer 0 4
+
+STRUCT
+SessionShellClassRec
+160
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+wm_shell_class WMShellClassPart 140 4
+vendor_shell_class VendorShellClassPart 144 4
+top_level_shell_class TopLevelShellClassPart 148 4
+application_shell_class ApplicationShellClassPart 152 4
+session_shell_class SessionShellClassPart 156 4
+
+STRUCT
+SessionShellPart
+156
+connection SmcConn 0 4
+session_id String 4 4
+restart_command String 8 4
+clone_command String 12 4
+discard_command String 16 4
+resign_command String 20 4
+shutdown_command String 24 4
+environment String 28 4
+current_dir String 32 4
+program_path String 36 4
+restart_style char 40 1
+checkpoint_state char 41 1
+join_session Boolean 42 1
+save_callbacks XtCallbackList 44 4
+interact_callbacks XtCallbackList 48 4
+cancel_callbacks XtCallbackList 52 4
+save_complete_callbacks XtCallbackList 56 4
+die_callbacks XtCallbackList 60 4
+error_callbacks XtCallbackList 64 4
+save XtSaveYourself 68 4
+input_id XtInputId 72 4
+ses20 XtPointer 76 4
+ses19 XtPointer 80 4
+ses18 XtPointer 84 4
+ses17 XtPointer 88 4
+ses16 XtPointer 92 4
+ses15 XtPointer 96 4
+ses14 XtPointer 100 4
+ses13 XtPointer 104 4
+ses12 XtPointer 108 4
+ses11 XtPointer 112 4
+ses10 XtPointer 116 4
+ses9 XtPointer 120 4
+ses8 XtPointer 124 4
+ses7 XtPointer 128 4
+ses6 XtPointer 132 4
+ses5 XtPointer 136 4
+ses4 XtPointer 140 4
+ses3 XtPointer 144 4
+ses2 XtPointer 148 4
+ses1 XtPointer 152 4
+
+STRUCT
+SessionShellRec SessionShellWidget
+484
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+wm WMShellPart 164 132
+vendor VendorShellPart 296 4
+topLevel TopLevelShellPart 300 12
+application ApplicationShellPart 312 16
+session SessionShellPart 328 156
+
+STRUCT
+VendorShellClassPart
+4
+extension XtPointer 0 4
+
+STRUCT
+VendorShellClassRec
+148
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+wm_shell_class WMShellClassPart 140 4
+vendor_shell_class VendorShellClassPart 144 4
+
+STRUCT
+VendorShellPart
+4
+vendor_specific int 0 4
+
+STRUCT
+VendorShellRec VendorShellWidget
+300
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+wm WMShellPart 164 132
+vendor VendorShellPart 296 4
+
+STRUCT
+XExtData
+16
+number int 0 4
+next _XExtData 4 4
+private_data XPointer 12 4
+
+STRUCT
+XExtCodes
+16
+extension int 0 4
+major_opcode int 4 4
+first_event int 8 4
+first_error int 12 4
+
+STRUCT
+XGCValues
+92
+function int 0 4
+plane_mask long 4 4
+foreground long 8 4
+background long 12 4
+line_width int 16 4
+line_style int 20 4
+cap_style int 24 4
+join_style int 28 4
+fill_style int 32 4
+fill_rule int 36 4
+arc_mode int 40 4
+tile Pixmap 44 4
+stipple Pixmap 48 4
+ts_x_origin int 52 4
+ts_y_origin int 56 4
+font Font 60 4
+subwindow_mode int 64 4
+graphics_exposures Bool 68 4
+clip_x_origin int 72 4
+clip_y_origin int 76 4
+clip_mask Pixmap 80 4
+dash_offset int 84 4
+dashes char 88 1
+
+STRUCT
+Visual
+32
+ext_data XExtData 0 4
+visualid VisualID 4 4
+class int 8 4
+red_mask long 12 4
+green_mask long 16 4
+blue_mask long 20 4
+bits_per_rgb int 24 4
+map_entries int 28 4
+
+STRUCT
+Screen
+80
+ext_data XExtData 0 4
+display _XDisplay 4 4
+root Window 8 4
+width int 12 4
+height int 16 4
+mwidth int 20 4
+mheight int 24 4
+ndepths int 28 4
+depths Depth 32 4
+root_depth int 36 4
+root_visual Visual 40 4
+default_gc GC 44 4
+cmap Colormap 48 4
+white_pixel long 52 4
+black_pixel long 56 4
+max_maps int 60 4
+min_maps int 64 4
+backing_store int 68 4
+save_unders Bool 72 4
+root_input_mask long 76 4
+
+STRUCT
+XWindowAttributes
+92
+x int 0 4
+y int 4 4
+width int 8 4
+height int 12 4
+border_width int 16 4
+depth int 20 4
+visual Visual 24 4
+root Window 28 4
+class int 32 4
+bit_gravity int 36 4
+win_gravity int 40 4
+backing_store int 44 4
+backing_planes long 48 4
+backing_pixel long 52 4
+save_under Bool 56 4
+colormap Colormap 60 4
+map_installed Bool 64 4
+map_state int 68 4
+all_event_masks long 72 4
+your_event_mask long 76 4
+do_not_propagate_mask long 80 4
+override_redirect Bool 84 4
+screen Screen 88 4
+
+STRUCT
+XRectangle
+8
+x short 0 2
+y short 2 2
+width short 4 2
+height short 6 2
+
+STRUCT
+XKeyEvent
+60
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+root Window 20 4
+subwindow Window 24 4
+time Time 28 4
+x int 32 4
+y int 36 4
+x_root int 40 4
+y_root int 44 4
+state int 48 4
+keycode int 52 4
+same_screen Bool 56 4
+
+STRUCT
+XButtonEvent
+60
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+root Window 20 4
+subwindow Window 24 4
+time Time 28 4
+x int 32 4
+y int 36 4
+x_root int 40 4
+y_root int 44 4
+state int 48 4
+button int 52 4
+same_screen Bool 56 4
+
+STRUCT
+XMotionEvent
+60
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+root Window 20 4
+subwindow Window 24 4
+time Time 28 4
+x int 32 4
+y int 36 4
+x_root int 40 4
+y_root int 44 4
+state int 48 4
+is_hint char 52 1
+same_screen Bool 56 4
+
+STRUCT
+XCrossingEvent
+68
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+root Window 20 4
+subwindow Window 24 4
+time Time 28 4
+x int 32 4
+y int 36 4
+x_root int 40 4
+y_root int 44 4
+mode int 48 4
+detail int 52 4
+same_screen Bool 56 4
+focus Bool 60 4
+state int 64 4
+
+STRUCT
+XFocusChangeEvent
+28
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+mode int 20 4
+detail int 24 4
+
+STRUCT
+XKeymapEvent 	
+52
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+key_vector[32] char 20 32
+
+STRUCT
+XExposeEvent
+40
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+x int 20 4
+y int 24 4
+width int 28 4
+height int 32 4
+count int 36 4
+
+STRUCT
+XGraphicsExposeEvent
+48
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+drawable Drawable 16 4
+x int 20 4
+y int 24 4
+width int 28 4
+height int 32 4
+count int 36 4
+major_code int 40 4
+minor_code int 44 4
+
+STRUCT
+XNoExposeEvent
+28
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+drawable Drawable 16 4
+major_code int 20 4
+minor_code int 24 4
+
+STRUCT
+XVisibilityEvent
+24
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+state int 20 4
+
+STRUCT
+XCreateWindowEvent
+48
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+parent Window 16 4
+window Window 20 4
+x int 24 4
+y int 28 4
+width int 32 4
+height int 36 4
+border_width int 40 4
+override_redirect Bool 44 4
+
+STRUCT
+XDestroyWindowEvent
+24
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+event Window 16 4
+window Window 20 4
+
+STRUCT
+XUnmapEvent
+28
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+event Window 16 4
+window Window 20 4
+from_configure Bool 24 4
+
+STRUCT
+XMapEvent
+28
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+event Window 16 4
+window Window 20 4
+override_redirect Bool 24 4
+
+STRUCT
+XMapRequestEvent
+24
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+parent Window 16 4
+window Window 20 4
+
+STRUCT
+XReparentEvent
+40
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+event Window 16 4
+window Window 20 4
+parent Window 24 4
+x int 28 4
+y int 32 4
+override_redirect Bool 36 4
+
+STRUCT
+XConfigureEvent
+52
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+event Window 16 4
+window Window 20 4
+x int 24 4
+y int 28 4
+width int 32 4
+height int 36 4
+border_width int 40 4
+above Window 44 4
+override_redirect Bool 48 4
+
+STRUCT
+XGravityEvent
+32
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+event Window 16 4
+window Window 20 4
+x int 24 4
+y int 28 4
+
+STRUCT
+XResizeRequestEvent
+28
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+width int 20 4
+height int 24 4
+
+STRUCT
+XConfigureRequestEvent
+56
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+parent Window 16 4
+window Window 20 4
+x int 24 4
+y int 28 4
+width int 32 4
+height int 36 4
+border_width int 40 4
+above Window 44 4
+detail int 48 4
+value_mask long 52 4
+
+STRUCT
+XCirculateEvent
+28
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+event Window 16 4
+window Window 20 4
+place int 24 4
+
+STRUCT
+XCirculateRequestEvent
+28
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+parent Window 16 4
+window Window 20 4
+place int 24 4
+
+STRUCT
+XPropertyEvent
+32
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+atom Atom 20 4
+time Time 24 4
+state int 28 4
+
+STRUCT
+XSelectionClearEvent
+28
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+selection Atom 20 4
+time Time 24 4
+
+STRUCT
+XSelectionRequestEvent
+40
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+owner Window 16 4
+requestor Window 20 4
+selection Atom 24 4
+target Atom 28 4
+property Atom 32 4
+time Time 36 4
+
+STRUCT
+XSelectionEvent
+36
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+requestor Window 16 4
+selection Atom 20 4
+target Atom 24 4
+property Atom 28 4
+time Time 32 4
+
+STRUCT
+XColormapEvent
+32
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+colormap Colormap 20 4
+new Bool 24 4
+state int 28 4
+
+STRUCT
+XMappingEvent
+32
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+request int 20 4
+first_keycode int 24 4
+count int 28 4
+
+STRUCT
+XErrorEvent
+20
+type int 0 4
+display Display 4 4
+resourceid XID 8 4
+serial long 12 4
+error_code char 16 1
+request_code char 17 1
+minor_code char 18 1
+
+STRUCT
+XAnyEvent XEvent
+20
+type int 0 4
+serial long 4 4
+send_event Bool 8 4
+display Display 12 4
+window Window 16 4
+
+STRUCT
+XFontSetExtents
+16
+max_ink_extent XRectangle 0 8
+max_logical_extent XRectangle 8 8
+
+STRUCT
+XIMPreeditStateNotifyCallbackStruct
+4
+state XIMPreeditState 0 4
+
+STRUCT
+XIMStringConversionCallbackStruct
+12
+position XIMStringConversionPosition 0 2
+type XIMStringConversionType 2 2
+operation XIMStringConversionOperation 4 2
+factor short 6 2
+text XIMStringConversionText 8 4
+
+STRUCT
+XIMPreeditDrawCallbackStruct
+16
+caret int 0 4
+chg_first int 4 4
+chg_length int 8 4
+text XIMText 12 4
+
+STRUCT
+XIMPreeditCaretCallbackStruct
+12
+position int 0 4
+direction XIMCaretDirection 4 4
+style XIMCaretStyle 8 4
+
+STRUCT
+_XFreeFuncRec
+36
+
+STRUCT
+_XExtension
+72
+next _XExten 0 4
+codes XExtCodes 4 16
+name char 56 4
+next_flush _XExten 68 4
+
+STRUCT
+XmArrowButtonGadgetClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmArrowButtonGadgetClassRec
+164
+rect_class RectObjClassPart 0 116
+gadget_class XmGadgetClassPart 116 40
+arrow_button_class XmArrowButtonGadgetClassPart 156 8
+
+STRUCT
+XmArrowButtonGadgetPart
+60
+activate_callback XtCallbackList 0 4
+arm_callback XtCallbackList 4 4
+disarm_callback XtCallbackList 8 4
+direction char 12 1
+selected Boolean 13 1
+top_count short 14 2
+cent_count short 16 2
+bot_count short 18 2
+top XRectangle 20 4
+cent XRectangle 24 4
+bot XRectangle 28 4
+old_x Position 32 2
+old_y Position 34 2
+arrow_GC GC 36 4
+timer XtIntervalId 40 4
+multiClick char 44 1
+click_count int 48 4
+insensitive_GC GC 52 4
+_SG_vendorExtension caddr_t 56 4
+
+STRUCT
+XmArrowButtonGadgetRec
+132
+object ObjectPart 0 28
+rectangle RectObjPart 28 14
+gadget XmGadgetPart 44 28
+arrowbutton XmArrowButtonGadgetPart 72 60
+
+STRUCT
+XmArrowButtonClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmArrowButtonClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+arrowbutton_class XmArrowButtonClassPart 148 8
+
+STRUCT
+XmArrowButtonPart
+60
+activate_callback XtCallbackList 0 4
+arm_callback XtCallbackList 4 4
+disarm_callback XtCallbackList 8 4
+direction char 12 1
+selected Boolean 13 1
+top_count short 14 2
+cent_count short 16 2
+bot_count short 18 2
+top XRectangle 20 4
+cent XRectangle 24 4
+bot XRectangle 28 4
+arrow_GC GC 32 4
+timer XtIntervalId 36 4
+multiClick char 40 1
+click_count int 44 4
+armTimeStamp Time 48 4
+insensitive_GC GC 52 4
+_SG_vendorExtension caddr_t 56 4
+
+STRUCT
+XmArrowButtonRec
+244
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+arrowbutton XmArrowButtonPart 184 60
+
+STRUCT
+XmObjectClassExtRec XmObjectClassExt
+16
+next_extension XtPointer 0 4
+record_type XrmQuark 4 4
+version long 8 4
+record_size Cardinal 12 4
+
+STRUCT
+XmGenericClassExtRec XmGenericClassExt
+16
+next_extension XtPointer 0 4
+record_type XrmQuark 4 4
+version long 8 4
+record_size Cardinal 12 4
+
+STRUCT
+XmWrapperDataRec XmWrapperData
+40
+next _XmWrapperDataRec 0 4
+widgetClass WidgetClass 4 4
+initializeLeaf XtInitProc 8 4
+setValuesLeaf XtSetValuesFunc 12 4
+getValuesLeaf XtArgsProc 16 4
+realize XtRealizeProc 20 4
+classPartInitLeaf XtWidgetClassProc 24 4
+resize XtWidgetProc 28 4
+geometry_manager XtGeometryHandler 32 4
+init_depth Cardinal 36 4
+
+STRUCT
+XmBaseClassExtRec XmBaseClassExt
+120
+next_extension XtPointer 0 4
+record_type XrmQuark 4 4
+version long 8 4
+record_size Cardinal 12 4
+initializePrehook XtInitProc 16 4
+setValuesPrehook XtSetValuesFunc 20 4
+initializePosthook XtInitProc 24 4
+setValuesPosthook XtSetValuesFunc 28 4
+secondaryObjectClass WidgetClass 32 4
+secondaryObjectCreate XtInitProc 36 4
+getSecResData XmGetSecResDataFunc 40 4
+flags[32] char 44 32
+getValuesPrehook XtArgsProc 76 4
+getValuesPosthook XtArgsProc 80 4
+classPartInitPrehook XtWidgetClassProc 84 4
+classPartInitPosthook XtWidgetClassProc 88 4
+ext_resources XtResourceList 92 4
+compiled_ext_resources XtResourceList 96 4
+num_ext_resources Cardinal 100 4
+use_sub_resources Boolean 104 1
+widgetNavigable XmWidgetNavigableProc 108 4
+focusChange XmFocusChangeProc 112 4
+wrapperData XmWrapperData 116 4
+
+STRUCT
+XmWidgetExtDataRec XmWidgetExtData
+12
+widget Widget 0 4
+reqWidget Widget 4 4
+oldWidget Widget 8 4
+
+STRUCT
+XmBulletinBoardConstraintPart XmBulletinBoardConstraint
+1
+unused char 0 1
+
+STRUCT
+XmBulletinBoardClassPart
+20
+always_install_accelerators Boolean 0 1
+extension XtPointer 12 4
+_SG_vendorExtension caddr_t 16 4
+
+STRUCT
+XmBulletinBoardClassRec
+216
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+
+STRUCT
+XmBulletinBoardPart
+84
+margin_width Dimension 0 2
+margin_height Dimension 2 2
+default_button Widget 4 4
+dynamic_default_button Widget 8 4
+cancel_button Widget 12 4
+dynamic_cancel_button Widget 16 4
+focus_callback XtCallbackList 20 4
+map_callback XtCallbackList 24 4
+unmap_callback XtCallbackList 28 4
+text_translations XtTranslations 32 4
+button_font_list XmFontList 36 4
+label_font_list XmFontList 40 4
+text_font_list XmFontList 44 4
+allow_overlap Boolean 48 1
+default_position Boolean 49 1
+auto_unmanage Boolean 50 1
+resize_policy char 51 1
+old_width Dimension 52 2
+old_height Dimension 54 2
+old_shadow_thickness Dimension 56 2
+shadow_type char 58 1
+in_set_values Boolean 59 1
+no_resize Boolean 61 1
+dialog_style char 62 1
+dialog_title XmString 64 4
+shell Widget 68 4
+_UNUSED Widget 72 4
+_SG_vendorExtension caddr_t 80 4
+
+STRUCT
+XmBulletinBoardRec
+320
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+
+STRUCT
+XmCascadeButtonGCacheObjClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmCascadeButtonGCacheObjClassRec
+148
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+label_class_cache XmLabelGCacheObjClassPart 132 8
+cascade_button_class_cache XmCascadeButtonGCacheObjClassPart 140 8
+
+STRUCT
+XmCascadeButtonGCacheObjPart
+16
+cascade_pixmap Pixmap 0 4
+map_delay int 4 4
+armed_pixmap Pixmap 8 4
+_SG_vendorExtension caddr_t 12 4
+
+STRUCT
+XmCascadeButtonGCacheObjRec
+80
+object ObjectPart 0 28
+ext XmExtPart 28 12
+label_cache XmLabelGCacheObjPart 40 24
+cascade_button_cache XmCascadeButtonGCacheObjPart 64 16
+
+STRUCT
+XmCascadeButtonGadgetPart
+36
+submenu Widget 0 4
+activate_callback XtCallbackList 4 4
+cascade_callback XtCallbackList 8 4
+armed Boolean 12 1
+cascade_rect XRectangle 14 8
+timer XtIntervalId 24 4
+cache XmCascadeButtonGCacheObjPart 28 4
+_SG_vendorExtension caddr_t 32 4
+
+STRUCT
+XmCascadeButtonGadgetRec
+172
+object ObjectPart 0 28
+rectangle RectObjPart 28 14
+gadget XmGadgetPart 44 28
+label XmLabelGadgetPart 72 64
+cascade_button XmCascadeButtonGadgetPart 136 36
+
+STRUCT
+_SG_XmCascadeBGClassExtPart
+4
+cascade_state_array visual_state_array 0 4
+
+STRUCT
+_SG_XmCascadeBGClassExtRec _SG_XmCascadeBGClassExt
+20
+common _SgClassExtensionRec 0 16
+cascadebg _SG_XmCascadeBGClassExtPart 16 4
+
+STRUCT
+XmCascadeButtonGadgetClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension _SgClassExtension 4 4
+
+STRUCT
+XmCascadeButtonGadgetClassRec
+180
+rect_class RectObjClassPart 0 116
+gadget_class XmGadgetClassPart 116 40
+label_class XmLabelGadgetClassPart 156 16
+cascade_button_class XmCascadeButtonGadgetClassPart 172 8
+
+STRUCT
+XmCascadeButtonPart
+44
+activate_callback XtCallbackList 0 4
+cascade_callback XtCallbackList 4 4
+submenu Widget 8 4
+cascade_pixmap Pixmap 12 4
+map_delay int 16 4
+armed Boolean 20 1
+cascade_rect XRectangle 22 8
+timer XtIntervalId 32 4
+armed_pixmap Pixmap 36 4
+_SG_vendorExtension caddr_t 40 4
+
+STRUCT
+XmCascadeButtonRec
+312
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+label XmLabelPart 184 84
+cascade_button XmCascadeButtonPart 268 44
+
+STRUCT
+XmCascadeButtonWidgetRec
+312
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+label XmLabelPart 184 84
+cascade_button XmCascadeButtonPart 268 44
+
+STRUCT
+XmCascadeButtonClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmCascadeButtonClassRec
+176
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+label_class XmLabelClassPart 148 20
+cascade_button_class XmCascadeButtonClassPart 168 8
+
+STRUCT
+XmCommandConstraintPart XmCommandConstraint
+1
+unused char 0 1
+
+STRUCT
+XmCommandClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmCommandClassRec
+236
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+selection_box_class XmSelectionBoxClassPart 216 12
+command_class XmCommandClassPart 228 8
+
+STRUCT
+XmCommandPart
+20
+callback XtCallbackList 0 4
+value_changed_callback XtCallbackList 4 4
+history_max_items int 8 4
+error Boolean 12 1
+_SG_vendorExtension caddr_t 16 4
+
+STRUCT
+XmCommandRec
+456
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+selection_box XmSelectionBoxPart 320 116
+command XmCommandPart 436 20
+
+STRUCT
+XmDesktopClassPart XmDesktopClassPartPtr
+20
+child_class WidgetClass 0 4
+insert_child XtWidgetProc 4 4
+delete_child XtWidgetProc 8 4
+extension XtPointer 12 4
+_SG_vendorExtension caddr_t 16 4
+
+STRUCT
+XmDesktopClassRec
+152
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+desktop_class XmDesktopClassPart 132 20
+
+STRUCT
+XmDesktopPart XmDesktopPartPtr
+20
+parent Widget 0 4
+children Widget 4 4
+num_children Cardinal 8 4
+num_slots Cardinal 12 4
+_SG_vendorExtension caddr_t 16 4
+
+STRUCT
+XmDesktopRec
+60
+object ObjectPart 0 28
+ext XmExtPart 28 12
+desktop XmDesktopPart 40 20
+
+STRUCT
+XmDialogShellExtClassPart XmDialogShellExtClassPartPtr
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmDialogShellExtClassRec
+188
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+desktop_class XmDesktopClassPart 132 20
+shell_class XmShellExtClassPart 152 12
+vendor_class XmVendorShellExtClassPart 164 16
+dialog_class XmDialogShellExtClassPart 180 8
+
+STRUCT
+XmDialogShellExtPart
+8
+empty int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmDialogShellExtRec
+216
+object ObjectPart 0 28
+ext XmExtPart 28 12
+desktop XmDesktopPart 40 20
+shell XmShellExtPart 60 12
+vendor XmVendorShellExtPart 72 136
+dialog XmDialogShellExtPart 208 8
+
+STRUCT
+XmDialogShellPart
+12
+grab_kind XtGrabKind 0 4
+old_x Position 4 2
+old_y Position 6 2
+_SG_vendorExtension caddr_t 8 4
+
+STRUCT
+XmDialogShellRec
+316
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+wm WMShellPart 164 132
+vendor VendorShellPart 296 4
+transient TransientShellPart 300 4
+dialog XmDialogShellPart 304 12
+
+STRUCT
+XmDialogShellWidgetRec
+316
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+wm WMShellPart 164 132
+vendor VendorShellPart 296 4
+transient TransientShellPart 300 4
+dialog XmDialogShellPart 304 12
+
+STRUCT
+XmDialogShellClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmDialogShellClassRec
+160
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+wm_shell_class WMShellClassPart 140 4
+vendor_shell_class VendorShellClassPart 144 4
+transient_shell_class TransientShellClassPart 148 4
+dialog_shell_part XmDialogShellClassPart 152 8
+
+STRUCT
+XmDisplayClassPart
+12
+GetDisplay XmDisplayGetDisplayProc 0 4
+extension XtPointer 4 4
+_SG_vendorExtension caddr_t 8 4
+
+STRUCT
+XmDisplayClassRec
+168
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+wm_shell_class WMShellClassPart 140 4
+vendor_shell_class VendorShellClassPart 144 4
+top_level_shell_class TopLevelShellClassPart 148 4
+application_shell_class ApplicationShellClassPart 152 4
+display_class XmDisplayClassPart 156 12
+
+STRUCT
+XmModalDataRec XmModalData
+16
+wid Widget 0 4
+ve XmVendorShellExtObject 4 4
+grabber XmVendorShellExtObject 8 4
+exclusive Boolean 12 1
+springLoaded Boolean 13 1
+
+STRUCT
+XmDisplayPart XmDisplayPartPtr
+104
+dragInitiatorProtocolStyle char 0 1
+dragReceiverProtocolStyle char 1 1
+userGrabbed char 2 1
+dragContextClass WidgetClass 4 4
+dropTransferClass WidgetClass 8 4
+dropSiteManagerClass WidgetClass 12 4
+activeDC XmDragContext 16 4
+dsm XmDropSiteManagerObject 20 4
+lastDragTime Time 24 4
+proxyWindow Window 28 4
+modals XmModalData 32 4
+numModals Cardinal 36 4
+maxModals Cardinal 40 4
+xmim_info XtPointer 44 4
+bindingsString String 48 4
+bindings XmKeyBindingRec 52 4
+lastKeyEvent XKeyEvent 56 4
+keycode_tag[XmKEYCODE_TAG_SIZE] char 60 32
+shellCount int 92 4
+displayInfo XtPointer 96 4
+_SG_vendorExtension caddr_t 100 4
+
+STRUCT
+XmDisplayRec
+432
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+wm WMShellPart 164 132
+vendor VendorShellPart 296 4
+topLevel TopLevelShellPart 300 12
+application ApplicationShellPart 312 16
+display XmDisplayPart 328 104
+
+STRUCT
+XmDragContextClassPart
+16
+start XmDragStartProc 0 4
+cancel XmDragCancelProc 4 4
+extension XtPointer 8 4
+_SG_vendorExtension _SgClassExtension 12 4
+
+STRUCT
+XmDragContextClassRec
+132
+core_class CoreClassPart 0 116
+drag_class XmDragContextClassPart 116 16
+
+STRUCT
+XmDragReceiverInfoStruct XmDragReceiverInfo
+40
+frame Window 0 4
+window Window 4 4
+shell Widget 8 4
+flags char 12 1
+dragProtocolStyle char 13 1
+xOrigin int 16 4
+yOrigin int 20 4
+width int 24 4
+height int 28 4
+depth int 32 4
+iccInfo XtPointer 36 4
+
+STRUCT
+_SG_XmDragContextExtPart
+12
+dragAlongWidget Widget 0 4
+dragAlongHotX Position 4 2
+dragAlongHotY Position 6 2
+dragRealCursor Cursor 8 4
+
+STRUCT
+_SG_XmDragContextExtRec _SG_XmDragContextExt
+16
+common _SgInstanceExtensionRec 0 4
+rsrc _SG_XmDragContextExtPart 4 12
+
+STRUCT
+XmDragContextPart
+212
+exportTargets Atom 0 4
+numExportTargets Cardinal 4 4
+convertProc XmConvertSelectionRec 8 4
+clientData XtPointer 12 4
+sourceCursorIcon XmDragIconObject 16 4
+stateCursorIcon XmDragIconObject 20 4
+operationCursorIcon XmDragIconObject 24 4
+sourcePixmapIcon XmDragIconObject 28 4
+cursorBackground Pixel 32 4
+cursorForeground Pixel 36 4
+validCursorForeground Pixel 40 4
+invalidCursorForeground Pixel 44 4
+noneCursorForeground Pixel 48 4
+dragMotionCallback XtCallbackList 52 4
+operationChangedCallback XtCallbackList 56 4
+siteEnterCallback XtCallbackList 60 4
+siteLeaveCallback XtCallbackList 64 4
+topLevelEnterCallback XtCallbackList 68 4
+topLevelLeaveCallback XtCallbackList 72 4
+dropStartCallback XtCallbackList 76 4
+dropFinishCallback XtCallbackList 80 4
+dragDropFinishCallback XtCallbackList 84 4
+dragOperations char 88 1
+incremental Boolean 89 1
+blendModel char 90 1
+srcWindow Window 92 4
+dragStartTime Time 96 4
+iccHandle Atom 100 4
+sourceWidget Widget 104 4
+sourceIsExternal Boolean 108 1
+topWindowsFetched Boolean 109 1
+commType char 110 1
+animationType char 111 1
+operation char 112 1
+operations char 113 1
+lastEventState int 116 4
+dragCompletionStatus char 120 1
+dragDropCompletionStatus char 121 1
+forceIPC Boolean 122 1
+serverGrabbed Boolean 123 1
+useLocal Boolean 124 1
+inDropSite Boolean 125 1
+dragTimerId XtIntervalId 128 4
+roundOffTime Time 132 4
+lastChangeTime Time 136 4
+crossingTime Time 140 4
+dragFinishTime Time 144 4
+dropFinishTime Time 148 4
+dropSelection Atom 152 4
+srcShell Widget 156 4
+startX Position 160 2
+startY Position 162 2
+siteID XmID 164 4
+currScreen Screen 168 4
+currWmRoot Window 172 4
+curDragOver XmDragOverShellWidget 176 4
+origDragOver XmDragOverShellWidget 180 4
+currReceiverInfo XmDragReceiverInfoStruct 184 4
+rootReceiverInfo XmDragReceiverInfoStruct 188 4
+receiverInfos XmDragReceiverInfoStruct 192 4
+numReceiverInfos Cardinal 196 4
+maxReceiverInfos Cardinal 200 4
+trackingMode char 204 1
+activeProtocolStyle char 205 1
+activeBlendModel char 206 1
+dragDropCancelEffect Boolean 207 1
+_SG_vendorExtension _SG_XmDragContextExt 208 4
+
+STRUCT
+XmDragContextRec
+328
+core CorePart 0 116
+drag XmDragContextPart 116 212
+
+STRUCT
+XmDragIconClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmDragIconClassRec
+124
+rectangle_class RectObjClassPart 0 116
+dragIcon_class XmDragIconClassPart 116 8
+
+STRUCT
+XmDragIconPart XmDragIconPartPtr
+44
+depth Cardinal 0 4
+pixmap Pixmap 4 4
+width Dimension 8 2
+height Dimension 10 2
+mask Pixmap 12 4
+hot_x Position 16 2
+hot_y Position 18 2
+offset_x Position 20 2
+offset_y Position 22 2
+attachment char 24 1
+isDirty Boolean 25 1
+region Region 28 4
+restore_region Region 32 4
+x_offset Position 36 2
+y_offset Position 38 2
+_SG_vendorExtension caddr_t 40 4
+
+STRUCT
+XmDragIconRec
+88
+object ObjectPart 0 28
+rectangle RectObjPart 28 14
+drag XmDragIconPart 44 44
+
+STRUCT
+XmDragOverShellClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmDragOverShellClassRec
+156
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+wm_shell_class WMShellClassPart 140 4
+vendor_shell_class VendorShellClassPart 144 4
+dragOver_shell_class XmDragOverShellClassPart 148 8
+
+STRUCT
+XmBackingRec XmBacking
+8
+x Position 0 2
+y Position 2 2
+pixmap Pixmap 4 4
+
+STRUCT
+XmDragOverBlendRec XmDragOverBlend
+16
+sourceIcon XmDragIconObject 0 4
+sourceX Position 4 2
+sourceY Position 6 2
+mixedIcon XmDragIconObject 8 4
+gc GC 12 4
+
+STRUCT
+XmDragOverShellPart
+92
+hotX Position 0 2
+hotY Position 2 2
+cursorState char 4 1
+mode char 5 1
+activeMode char 6 1
+initialX Position 8 2
+initialY Position 10 2
+stateIcon XmDragIconObject 12 4
+opIcon XmDragIconObject 16 4
+cursorBlend XmDragOverBlendRec 20 16
+rootBlend XmDragOverBlendRec 36 16
+cursorForeground Pixel 52 4
+cursorBackground Pixel 56 4
+ncCursor Cursor 60 4
+activeCursor Cursor 64 4
+backing XmBackingRec 68 8
+tmpPix Pixmap 76 4
+tmpBit Pixmap 80 4
+isVisible Boolean 84 1
+_SG_vendorExtension caddr_t 88 4
+
+STRUCT
+XmDragOverShellRec
+392
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+wm WMShellPart 164 132
+vendor VendorShellPart 296 4
+drag XmDragOverShellPart 300 92
+
+STRUCT
+XmDrawingAreaConstraintPart XmDrawingAreaConstraint
+1
+unused char 0 1
+
+STRUCT
+XmDrawingAreaClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmDrawingAreaClassRec
+204
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+drawing_area_class XmDrawingAreaClassPart 196 8
+
+STRUCT
+XmDrawingAreaPart
+24
+margin_width Dimension 0 2
+margin_height Dimension 2 2
+resize_callback XtCallbackList 4 4
+expose_callback XtCallbackList 8 4
+input_callback XtCallbackList 12 4
+resize_policy char 16 1
+_SG_vendorExtension caddr_t 20 4
+
+STRUCT
+XmDrawingAreaRec
+260
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+drawing_area XmDrawingAreaPart 236 24
+
+STRUCT
+XmDrawnButtonClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmDrawnButtonClassRec
+176
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+label_class XmLabelClassPart 148 20
+drawnbutton_class XmDrawnButtonClassPart 168 8
+
+STRUCT
+XmDrawnButtonPart
+56
+pushbutton_enabled Boolean 0 1
+shadow_type char 1 1
+activate_callback XtCallbackList 4 4
+arm_callback XtCallbackList 8 4
+disarm_callback XtCallbackList 12 4
+expose_callback XtCallbackList 16 4
+resize_callback XtCallbackList 20 4
+armed Boolean 24 1
+old_width Dimension 26 2
+old_height Dimension 28 2
+old_shadow_thickness Dimension 30 2
+old_highlight_thickness Dimension 32 2
+timer XtIntervalId 36 4
+multiClick char 40 1
+click_count int 44 4
+armTimeStamp Time 48 4
+_SG_vendorExtension caddr_t 52 4
+
+STRUCT
+XmDrawnButtonRec
+324
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+label XmLabelPart 184 84
+drawnbutton XmDrawnButtonPart 268 56
+
+STRUCT
+XmDropSiteManagerClassPart
+88
+createInfo XmDSMCreateInfoProc 0 4
+destroyInfo XmDSMDestroyInfoProc 4 4
+startUpdate XmDSMStartUpdateProc 8 4
+retrieveInfo XmDSMRetrieveInfoProc 12 4
+updateInfo XmDSMUpdateInfoProc 16 4
+endUpdate XmDSMEndUpdateProc 20 4
+updateDSM XmDSMUpdateProc 24 4
+processMotion XmDSMProcessMotionProc 28 4
+processDrop XmDSMProcessDropProc 32 4
+operationChanged XmDSMOperationChangedProc 36 4
+changeRoot XmDSMChangeRootProc 40 4
+insertInfo XmDSMInsertInfoProc 44 4
+removeInfo XmDSMRemoveInfoProc 48 4
+syncTree XmDSMSyncTreeProc 52 4
+getTreeFromDSM XmDSMGetTreeFromDSMProc 56 4
+createTable XmDSMCreateDSInfoTable 60 4
+destroyTable XmDSMDestroyDSInfoTable 64 4
+registerInfo XmDSMRegisterInfoProc 68 4
+widgetToInfo XmDSMWidgetToInfoProc 72 4
+unregisterInfo XmDSMUnregisterInfoProc 76 4
+extension XtPointer 80 4
+_SG_vendorExtension caddr_t 84 4
+
+STRUCT
+XmDropSiteManagerClassRec
+204
+object_class ObjectClassPart 0 116
+dropManager_class XmDropSiteManagerClassPart 116 88
+
+STRUCT
+_XmDropSiteUpdateInfoRec _XmDropSiteUpdateInfo
+12
+dsm XmDropSiteManagerObject 0 4
+refWidget Widget 4 4
+next __XmDropSiteUpdateInfoRec 8 4
+
+STRUCT
+XmDropSiteManagerPart XmDropSiteManagerPartPtr
+80
+notifyProc XtCallbackProc 0 4
+treeUpdateProc XtCallbackProc 4 4
+client_data XtPointer 8 4
+dragUnderData XtPointer 12 4
+curInfo XtPointer 16 4
+curTime Time 20 4
+curX Position 24 2
+curY Position 26 2
+oldX Position 28 2
+oldY Position 30 2
+curDropSiteStatus char 32 1
+curDragContext Widget 36 4
+curAnimate Boolean 40 1
+curOperations char 41 1
+curOperation char 42 1
+curAncestorClipRegion XmRegion 44 4
+newAncestorClipRegion XmRegion 48 4
+dsTable XtPointer 52 4
+dsRoot XtPointer 56 4
+rootX Position 60 2
+rootY Position 62 2
+rootW Dimension 64 2
+rootH Dimension 66 2
+clipperList XtPointer 68 4
+updateInfo _XmDropSiteUpdateInfo 72 4
+_SG_vendorExtension caddr_t 76 4
+
+STRUCT
+XmDropSiteManagerRec
+108
+object ObjectPart 0 28
+dropManager XmDropSiteManagerPart 28 80
+
+STRUCT
+XmDropTransferClassPart
+16
+start_drop_transfer XmDropTransferStartTransferProc 0 4
+add_drop_transfer XmDropTransferAddTransferProc 4 4
+extension XtPointer 8 4
+_SG_vendorExtension _SgClassExtension 12 4
+
+STRUCT
+XmDropTransferClassRec
+132
+object_class ObjectClassPart 0 116
+dropTransfer_class XmDropTransferClassPart 116 16
+
+STRUCT
+XmDropTransferListRec XmDropTransferList
+8
+transfer_list XmDropTransferEntry 0 4
+num_transfers Cardinal 4 4
+
+STRUCT
+_SG_XmDropTransferExtPart
+8
+suspended Boolean 0 1
+save_selection Atom 4 4
+
+STRUCT
+_SG_XmDropTransferExtRec _SG_XmDropTransferExt
+12
+common _SgInstanceExtensionRec 0 4
+rsrc _SG_XmDropTransferExtPart 4 8
+
+STRUCT
+XmDropTransferPart
+72
+drop_transfers XmDropTransferEntry 0 4
+num_drop_transfers Cardinal 4 4
+selection Atom 8 4
+dragContext Widget 12 4
+timestamp Time 16 4
+incremental Boolean 20 1
+source_window Window 24 4
+tag int 28 4
+transfer_callback XtSelectionCallbackProc 32 4
+transfer_status char 36 1
+motif_drop_atom Atom 40 4
+drop_transfer_lists XmDropTransferList 44 4
+num_drop_transfer_lists Cardinal 48 4
+cur_drop_transfer_list Cardinal 52 4
+cur_xfer Cardinal 56 4
+cur_targets Atom 60 4
+cur_client_data XtPointer 64 4
+_SG_vendorExtension _SG_XmDropTransferExt 68 4
+
+STRUCT
+XmDropTransferRec
+100
+object ObjectPart 0 28
+dropTransfer XmDropTransferPart 28 72
+
+STRUCT
+XmExtClassPart XmExtClassPartPtr
+16
+syn_resources XmSyntheticResource 0 4
+num_syn_resources int 4 4
+extension XtPointer 8 4
+_SG_vendorExtension caddr_t 12 4
+
+STRUCT
+XmExtClassRec
+132
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+
+STRUCT
+XmExtPart XmExtPartPtr
+12
+logicalParent Widget 0 4
+extensionType char 4 1
+_SG_vendorExtension caddr_t 8 4
+
+STRUCT
+XmExtRec
+40
+object ObjectPart 0 28
+ext XmExtPart 28 12
+
+STRUCT
+XmExtCache
+100
+data[XmNUM_BYTES] char 0 99
+inuse Boolean 99 1
+
+STRUCT
+XmFileSelectionBoxConstraintPart XmFileSelectionBoxConstraint
+1
+unused char 0 1
+
+STRUCT
+XmFileSelectionBoxClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmFileSelectionBoxClassRec
+236
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+selection_box_class XmSelectionBoxClassPart 216 12
+file_selection_box_class XmFileSelectionBoxClassPart 228 8
+
+STRUCT
+XmFileSelectionBoxPart
+72
+directory XmString 0 4
+pattern XmString 4 4
+dir_list_label Widget 8 4
+dir_list_label_string XmString 12 4
+dir_list Widget 16 4
+dir_list_items XmString 20 4
+dir_list_item_count int 24 4
+dir_list_selected_item_position int 28 4
+filter_label Widget 32 4
+filter_label_string XmString 36 4
+filter_text Widget 40 4
+dir_mask XmString 44 4
+no_match_string XmString 48 4
+qualify_search_data_proc XmQualifyProc 52 4
+dir_search_proc XmSearchProc 56 4
+file_search_proc XmSearchProc 60 4
+file_type_mask char 64 1
+list_updated Boolean 65 1
+_SG_vendorExtension caddr_t 68 4
+
+STRUCT
+XmFileSelectionBoxRec
+508
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+selection_box XmSelectionBoxPart 320 116
+file_selection_box XmFileSelectionBoxPart 436 72
+
+STRUCT
+XmFormAttachmentRec XmFormAttachment
+24
+type char 0 1
+w Widget 4 4
+percent int 8 4
+offset int 12 4
+value int 16 4
+tempValue int 20 4
+
+STRUCT
+XmFormConstraintPart XmFormConstraint
+112
+att[4] XmFormAttachmentRec 0 96
+next_sibling Widget 96 4
+sorted Boolean 100 1
+resizable Boolean 101 1
+preferred_width Dimension 102 2
+preferred_height Dimension 104 2
+_SG_vendorExtension caddr_t 108 4
+
+STRUCT
+XmFormConstraintRec XmFormConstraintPtr
+120
+manager XmManagerConstraintPart 0 8
+form XmFormConstraintPart 8 112
+
+STRUCT
+XmFormClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmFormClassRec
+224
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+form_class XmFormClassPart 216 8
+
+STRUCT
+XmFormPart
+24
+horizontal_spacing Dimension 0 2
+vertical_spacing Dimension 2 2
+fraction_base int 4 4
+rubber_positioning Boolean 8 1
+first_child Widget 12 4
+initial_width Boolean 16 1
+initial_height Boolean 17 1
+processing_constraints Boolean 18 1
+_SG_vendorExtension caddr_t 20 4
+
+STRUCT
+XmFormRec
+344
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+form XmFormPart 320 24
+
+STRUCT
+XmFrameClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmFrameClassRec
+204
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+frame_class XmFrameClassPart 196 8
+
+STRUCT
+XmFramePart
+32
+margin_width Dimension 0 2
+margin_height Dimension 2 2
+shadow_type char 4 1
+old_width Dimension 6 2
+old_height Dimension 8 2
+old_shadow_thickness Dimension 10 2
+old_shadow_x Position 12 2
+old_shadow_y Position 14 2
+work_area Widget 16 4
+title_area Widget 20 4
+processing_constraints Boolean 24 1
+_SG_vendorExtension caddr_t 28 4
+
+STRUCT
+XmFrameRec
+268
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+frame XmFramePart 236 32
+
+STRUCT
+XmFrameConstraintPart XmFrameConstraint
+16
+unused int 0 4
+child_type char 4 1
+child_h_alignment char 5 1
+child_h_spacing Dimension 6 2
+child_v_alignment char 8 1
+_SG_vendorExtension caddr_t 12 4
+
+STRUCT
+XmFrameConstraintRec XmFrameConstraintPtr
+24
+manager XmManagerConstraintPart 0 8
+frame XmFrameConstraintPart 8 16
+
+STRUCT
+XmCacheClassPart XmCacheClassPartPtr
+28
+cache_head XmGadgetCache 0 12
+cache_copy XmCacheCopyProc 12 4
+cache_delete XmGadgetCacheProc 16 4
+cache_compare XmCacheCompareProc 20 4
+_SG_vendorExtension caddr_t 24 4
+
+STRUCT
+_SG_XmGadgetClassExtPart
+8
+render_shadows XmRenderShadowsProc 0 4
+default_state_array visual_state_array 4 4
+
+STRUCT
+_SG_XmGadgetClassExtRec _SG_XmGadgetClassExt
+24
+common _SgClassExtensionRec 0 16
+gadget _SG_XmGadgetClassExtPart 16 8
+
+STRUCT
+XmGadgetClassExtRec XmGadgetClassExt
+24
+next_extension XtPointer 0 4
+record_type XrmQuark 4 4
+version long 8 4
+record_size Cardinal 12 4
+widget_baseline XmWidgetBaselineProc 16 4
+widget_display_rect XmWidgetDisplayRectProc 20 4
+
+STRUCT
+XmGadgetClassPart
+40
+border_highlight XtWidgetProc 0 4
+border_unhighlight XtWidgetProc 4 4
+arm_and_activate XtActionProc 8 4
+input_dispatch XmWidgetDispatchProc 12 4
+visual_change XmVisualChangeProc 16 4
+syn_resources XmSyntheticResource 20 4
+num_syn_resources int 24 4
+cache_part XmCacheClassPartPtr 28 4
+extension XtPointer 32 4
+_SG_vendorExtension _SgClassExtension 36 4
+
+STRUCT
+XmGadgetClassRec
+156
+rect_class RectObjClassPart 0 116
+gadget_class XmGadgetClassPart 116 40
+
+STRUCT
+_SG_XmGadgetExtPart
+20
+instance_state_array visual_state_array 0 4
+visual_state int 4 4
+shader shaderptr 8 4
+background Pixel 12 4
+draw_frame Boolean 16 1
+
+STRUCT
+_SG_XmGadgetExtRec _SG_XmGadgetExt
+24
+common _SgInstanceExtensionRec 0 4
+gadget _SG_XmGadgetExtPart 4 20
+
+STRUCT
+XmGadgetPart
+28
+shadow_thickness Dimension 0 2
+highlight_thickness Dimension 2 2
+help_callback XtCallbackList 4 4
+user_data XtPointer 8 4
+traversal_on Boolean 12 1
+highlight_on_enter Boolean 13 1
+have_traversal Boolean 14 1
+unit_type char 15 1
+navigation_type XmNavigationType 16 1
+highlight_drawn Boolean 17 1
+highlighted Boolean 18 1
+visible Boolean 19 1
+event_mask Mask 20 4
+_SG_vendorExtension _SG_XmGadgetExt 24 4
+
+STRUCT
+XmGadgetRec
+72
+object ObjectPart 0 28
+rectangle RectObjPart 28 14
+gadget XmGadgetPart 44 28
+
+STRUCT
+XmLabelGCacheObjClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmLabelGCacheObjClassRec
+140
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+label_class_cache XmLabelGCacheObjClassPart 132 8
+
+STRUCT
+XmLabelGCacheObjPart
+24
+label_type char 0 1
+alignment char 1 1
+string_direction char 2 1
+margin_height Dimension 4 2
+margin_width Dimension 6 2
+margin_left Dimension 8 2
+margin_right Dimension 10 2
+margin_top Dimension 12 2
+margin_bottom Dimension 14 2
+recompute_size Boolean 16 1
+skipCallback Boolean 17 1
+menu_type char 18 1
+_SG_vendorExtension caddr_t 20 4
+
+STRUCT
+XmLabelGCacheObjRec
+64
+object ObjectPart 0 28
+ext XmExtPart 28 12
+label_cache XmLabelGCacheObjPart 40 24
+
+STRUCT
+XmLabelGadgetClassPart
+16
+setOverrideCallback XtWidgetProc 0 4
+menuProcs XmMenuProc 4 4
+extension XtPointer 8 4
+_SG_vendorExtension caddr_t 12 4
+
+STRUCT
+XmLabelGadgetClassRec
+172
+rect_class RectObjClassPart 0 116
+gadget_class XmGadgetClassPart 116 40
+label_class XmLabelGadgetClassPart 156 16
+
+STRUCT
+XmLabelGadgetPart
+64
+_label _XmString 0 4
+_acc_text _XmString 4 4
+mnemonic KeySym 8 4
+mnemonicCharset XmStringCharSet 12 4
+accelerator char 16 4
+font XmFontList 20 4
+pixmap Pixmap 24 4
+pixmap_insen Pixmap 28 4
+normal_GC GC 32 4
+insensitive_GC GC 36 4
+TextRect XRectangle 40 8
+acc_TextRect XRectangle 48 8
+cache XmLabelGCacheObjPart 56 4
+_SG_vendorExtension caddr_t 60 4
+
+STRUCT
+XmLabelGadgetRec
+136
+object ObjectPart 0 28
+rectangle RectObjPart 28 14
+gadget XmGadgetPart 44 28
+label XmLabelGadgetPart 72 64
+
+STRUCT
+XmLabelClassPart
+20
+setOverrideCallback XtWidgetProc 0 4
+menuProcs XmMenuProc 4 4
+translations String 8 4
+extension XtPointer 12 4
+_SG_vendorExtension _SgClassExtension 16 4
+
+STRUCT
+XmLabelClassRec
+168
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+label_class XmLabelClassPart 148 20
+
+STRUCT
+_SG_XmLabelExtPart
+2
+draw_label_frame Boolean 0 1
+shadow_type char 1 1
+
+STRUCT
+_SG_XmLabelExtRec _SG_XmLabelExt
+8
+common _SgInstanceExtensionRec 0 4
+rsrc _SG_XmLabelExtPart 4 2
+
+STRUCT
+XmLabelPart
+84
+_label _XmString 0 4
+_acc_text _XmString 4 4
+mnemonic KeySym 8 4
+mnemonicCharset XmStringCharSet 12 4
+accelerator char 16 4
+label_type char 20 1
+alignment char 21 1
+string_direction char 22 1
+font XmFontList 24 4
+margin_height Dimension 28 2
+margin_width Dimension 30 2
+margin_left Dimension 32 2
+margin_right Dimension 34 2
+margin_top Dimension 36 2
+margin_bottom Dimension 38 2
+recompute_size Boolean 40 1
+pixmap Pixmap 44 4
+pixmap_insen Pixmap 48 4
+normal_GC GC 52 4
+insensitive_GC GC 56 4
+TextRect XRectangle 60 8
+acc_TextRect XRectangle 68 8
+skipCallback Boolean 76 1
+menu_type char 77 1
+_SG_vendorExtension _SG_XmLabelExt 80 4
+
+STRUCT
+XmLabelRec
+268
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+label XmLabelPart 184 84
+
+STRUCT
+XmListClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmListClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+list_class XmListClassPart 148 8
+
+STRUCT
+XmListPart
+224
+spacing Dimension 0 2
+ItemSpacing short 2 2
+margin_width Dimension 4 2
+margin_height Dimension 6 2
+font XmFontList 8 4
+items XmString 12 4
+itemCount int 16 4
+selectedItems XmString 20 4
+selectedIndices int 24 4
+selectedItemCount int 28 4
+visibleItemCount int 32 4
+LastSetVizCount int 36 4
+SelectionPolicy char 40 1
+ScrollBarDisplayPolicy char 41 1
+SizePolicy char 42 1
+StrDir XmStringDirection 43 1
+AutoSelect Boolean 44 1
+DidSelection Boolean 45 1
+FromSetSB Boolean 46 1
+FromSetNewSize Boolean 47 1
+AddMode Boolean 48 1
+LeaveDir char 49 1
+HighlightThickness char 50 1
+ClickInterval int 52 4
+DragID XtIntervalId 56 4
+SingleCallback XtCallbackList 60 4
+MultipleCallback XtCallbackList 64 4
+ExtendCallback XtCallbackList 68 4
+BrowseCallback XtCallbackList 72 4
+DefaultCallback XtCallbackList 76 4
+NormalGC GC 80 4
+InverseGC GC 84 4
+HighlightGC GC 88 4
+DashTile Pixmap 92 4
+InternalList ElementPtr 96 4
+LastItem int 100 4
+FontHeight int 104 4
+top_position int 108 4
+Event char 112 1
+LastHLItem int 116 4
+StartItem int 120 4
+OldStartItem int 124 4
+EndItem int 128 4
+OldEndItem int 132 4
+BaseX Position 136 2
+BaseY Position 138 2
+MouseMoved Boolean 140 1
+AppendInProgress Boolean 141 1
+Traversing Boolean 142 1
+KbdSelection Boolean 143 1
+DownCount short 144 2
+DownTime Time 148 4
+CurrentKbdItem int 152 4
+SelectionType char 156 1
+InsensitiveGC GC 160 4
+vmin int 164 4
+vmax int 168 4
+vOrigin int 172 4
+vExtent int 176 4
+hmin int 180 4
+hmax int 184 4
+hOrigin int 188 4
+hExtent int 192 4
+MaxWidth Dimension 196 2
+CharWidth Dimension 198 2
+XOrigin Position 200 2
+hScrollBar XmScrollBarWidget 204 4
+vScrollBar XmScrollBarWidget 208 4
+Mom XmScrolledWindowWidget 212 4
+MaxItemHeight Dimension 216 2
+_SG_vendorExtension caddr_t 220 4
+
+STRUCT
+XmListRec
+408
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+list XmListPart 184 224
+
+STRUCT
+XmMainWindowConstraintPart XmMainWindowConstraint
+1
+unused char 0 1
+
+STRUCT
+XmMainWindowClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmMainWindowClassRec
+212
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+swindow_class XmScrolledWindowClassPart 196 8
+mwindow_class XmMainWindowClassPart 204 8
+
+STRUCT
+XmMainWindowPart
+44
+AreaWidth Dimension 0 2
+AreaHeight Dimension 2 2
+margin_width Dimension 4 2
+margin_height Dimension 6 2
+CommandWindow Widget 8 4
+MenuBar Widget 12 4
+Message Widget 16 4
+CommandLoc char 20 1
+Sep1 XmSeparatorGadget 24 4
+Sep2 XmSeparatorGadget 28 4
+Sep3 XmSeparatorGadget 32 4
+ManagingSep Boolean 36 1
+ShowSep Boolean 37 1
+_SG_vendorExtension caddr_t 40 4
+
+STRUCT
+XmMainWindowRec
+380
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+swindow XmScrolledWindowPart 236 100
+mwindow XmMainWindowPart 336 44
+
+STRUCT
+XmManagerClassExtRec XmManagerClassExt
+20
+next_extension XtPointer 0 4
+record_type XrmQuark 4 4
+version long 8 4
+record_size Cardinal 12 4
+
+STRUCT
+_SG_XmManagerClassExtPart
+8
+render_shadows XmRenderShadowsProc 0 4
+default_state_array visual_state_array 4 4
+
+STRUCT
+_SG_XmManagerClassExtRec _SG_XmManagerClassExt
+24
+common _SgClassExtensionRec 0 16
+manager _SG_XmManagerClassExtPart 16 8
+
+STRUCT
+XmManagerClassPart
+32
+translations String 0 4
+syn_resources XmSyntheticResource 4 4
+num_syn_resources int 8 4
+syn_constraint_resources XmSyntheticResource 12 4
+num_syn_constraint_resources int 16 4
+parent_process XmParentProcessProc 20 4
+extension XtPointer 24 4
+_SG_vendorExtension _SgClassExtension 28 4
+
+STRUCT
+XmManagerClassRec
+196
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+
+STRUCT
+_SG_XmManagerExtPart
+16
+instance_state_array visual_state_array 0 4
+visual_state int 4 4
+shader shaderptr 8 4
+draw_frame Boolean 12 1
+draw_internal_frame Boolean 13 1
+
+STRUCT
+_SG_XmManagerExtRec _SG_XmManagerExt
+20
+common _SgInstanceExtensionRec 0 4
+instance _SG_XmManagerExtPart 4 16
+
+STRUCT
+XmManagerPart
+100
+foreground Pixel 0 4
+shadow_thickness Dimension 4 2
+top_shadow_color Pixel 8 4
+top_shadow_pixmap Pixmap 12 4
+bottom_shadow_color Pixel 16 4
+bottom_shadow_pixmap Pixmap 20 4
+highlight_color Pixel 24 4
+highlight_pixmap Pixmap 28 4
+help_callback XtCallbackList 32 4
+user_data XtPointer 36 4
+traversal_on Boolean 40 1
+unit_type char 41 1
+navigation_type XmNavigationType 42 1
+event_handler_added Boolean 43 1
+active_child Widget 44 4
+highlighted_widget Widget 48 4
+accelerator_widget Widget 52 4
+has_focus Boolean 56 1
+string_direction XmStringDirection 57 1
+keyboard_list XmKeyboardData 60 4
+num_keyboard_entries short 64 2
+size_keyboard_list short 66 2
+selected_gadget XmGadget 68 4
+eligible_for_multi_button_event XmGadget 72 4
+background_GC GC 76 4
+highlight_GC GC 80 4
+top_shadow_GC GC 84 4
+bottom_shadow_GC GC 88 4
+initial_focus Widget 92 4
+_SG_vendorExtension _SG_XmManagerExt 96 4
+
+STRUCT
+XmManagerRec
+236
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+
+STRUCT
+XmManagerConstraintPart
+8
+unused int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmManagerConstraintRec XmManagerConstraintPtr
+8
+manager XmManagerConstraintPart 0 8
+
+STRUCT
+_SG_XmMenuShellExtPart
+12
+drop_shadow Window 0 4
+draw_drop_shadow Boolean 4 1
+shadow_cmap Colormap 8 4
+
+STRUCT
+_SG_XmMenuShellExtRec _SG_XmMenuShellExt
+16
+common _SgInstanceExtensionRec 0 4
+instance _SG_XmMenuShellExtPart 4 12
+
+STRUCT
+XmMenuShellPart
+28
+focus_policy char 0 1
+focus_data XmFocusData 4 4
+private_shell Boolean 8 1
+default_font_list XmFontList 12 4
+button_font_list XmFontList 16 4
+label_font_list XmFontList 20 4
+_SG_vendorExtension _SG_XmMenuShellExt 24 4
+
+STRUCT
+XmMenuShellRec
+196
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+override OverrideShellPart 164 4
+menu_shell XmMenuShellPart 168 28
+
+STRUCT
+XmMenuShellWidgetRec
+196
+core CorePart 0 116
+composite CompositePart 116 16
+shell ShellPart 132 32
+override OverrideShellPart 164 4
+menu_shell XmMenuShellPart 168 28
+
+STRUCT
+XmMenuShellClassPart
+24
+popdownOne XtActionProc 0 4
+popdownEveryone XtActionProc 4 4
+popdownDone XtActionProc 8 4
+popupSharedMenupane XmMenuPopupProc 12 4
+extension XtPointer 16 4
+_SG_vendorExtension _SgClassExtension 20 4
+
+STRUCT
+XmMenuShellClassRec
+168
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+shell_class ShellClassPart 136 4
+override_shell_class OverrideShellClassPart 140 4
+menu_shell_class XmMenuShellClassPart 144 24
+
+STRUCT
+XmMessageBoxConstraintPart XmMessageBoxConstraint
+1
+unused char 0 1
+
+STRUCT
+XmMessageBoxClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmMessageBoxClassRec
+224
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+message_box_class XmMessageBoxClassPart 216 8
+
+STRUCT
+XmMessageBoxPart
+60
+dialog_type char 0 1
+default_type char 1 1
+internal_pixmap Boolean 2 1
+minimize_buttons Boolean 3 1
+message_alignment char 4 1
+message_string XmString 8 4
+message_wid Widget 12 4
+symbol_pixmap Pixmap 16 4
+symbol_wid Widget 20 4
+ok_label_string XmString 24 4
+ok_callback XtCallbackList 28 4
+ok_button Widget 32 4
+cancel_label_string XmString 36 4
+cancel_callback XtCallbackList 40 4
+help_label_string XmString 44 4
+help_button Widget 48 4
+separator Widget 52 4
+_SG_vendorExtension caddr_t 56 4
+
+STRUCT
+XmMessageBoxRec
+380
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+message_box XmMessageBoxPart 320 60
+
+STRUCT
+XmPanedWindowClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmPanedWindowClassRec
+204
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+paned_window_class XmPanedWindowClassPart 196 8
+
+STRUCT
+XmPanedWindowConstraintPart
+36
+position int 0 4
+dheight int 4 4
+dy Position 8 2
+olddy Position 10 2
+min Dimension 12 2
+max Dimension 14 2
+isPane Boolean 16 1
+allow_resize Boolean 17 1
+skip_adjust Boolean 18 1
+sash Widget 20 4
+separator Widget 24 4
+position_index short 28 2
+_SG_vendorExtension caddr_t 32 4
+
+STRUCT
+XmPanedWindowConstraintRec XmPanedWindowConstraintPtr
+44
+manager XmManagerConstraintPart 0 8
+panedw XmPanedWindowConstraintPart 8 36
+
+STRUCT
+XmPanedWindowPart
+52
+refiguremode Boolean 0 1
+separator_on Boolean 1 1
+margin_width Dimension 2 2
+margin_height Dimension 4 2
+spacing Dimension 6 2
+sash_width Dimension 8 2
+sash_height Dimension 10 2
+sash_shadow_thickness Dimension 12 2
+sash_indent Position 14 2
+starty int 16 4
+increment_count short 20 2
+pane_count short 22 2
+num_slots short 24 2
+num_managed_children short 26 2
+recursively_called Boolean 28 1
+resize_at_realize Boolean 29 1
+top_pane XmPanedWindowConstraintPtr 32 4
+bottom_pane XmPanedWindowConstraintPtr 36 4
+flipgc GC 40 4
+managed_children WidgetList 44 4
+_SG_vendorExtension _SG_PanedWExtension 48 4
+
+STRUCT
+XmPanedWindowRec
+288
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+paned_window XmPanedWindowPart 236 52
+
+STRUCT
+XmPrimitiveClassExtRec XmPrimitiveClassExt
+28
+next_extension XtPointer 0 4
+record_type XrmQuark 4 4
+version long 8 4
+record_size Cardinal 12 4
+widget_baseline XmWidgetBaselineProc 16 4
+widget_display_rect XmWidgetDisplayRectProc 20 4
+widget_margins XmWidgetMarginsProc 24 4
+
+STRUCT
+_SG_XmPrimitiveClassExtPart
+8
+render_shadows XmRenderShadowsProc 0 4
+default_state_array visual_state_array 4 4
+
+STRUCT
+_SG_XmPrimitiveClassExtRec _SG_XmPrimitiveClassExt
+24
+common _SgClassExtensionRec 0 16
+primitive _SG_XmPrimitiveClassExtPart 16 8
+
+STRUCT
+XmPrimitiveClassPart
+32
+border_highlight XtWidgetProc 0 4
+border_unhighlight XtWidgetProc 4 4
+translations String 8 4
+arm_and_activate XtActionProc 12 4
+syn_resources XmSyntheticResource 16 4
+num_syn_resources int 20 4
+extension XtPointer 24 4
+_SG_vendorExtension _SgClassExtension 28 4
+
+STRUCT
+XmPrimitiveClassRec
+148
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+
+STRUCT
+_SG_XmPrimitiveExtPart
+16
+instance_state_array visual_state_array 0 4
+visual_state int 4 4
+shader shaderptr 8 4
+draw_frame Boolean 12 1
+
+STRUCT
+_SG_XmPrimitiveExtRec _SG_XmPrimitiveExt
+20
+common _SgInstanceExtensionRec 0 4
+instance _SG_XmPrimitiveExtPart 4 16
+
+STRUCT
+XmPrimitivePart
+68
+foreground Pixel 0 4
+shadow_thickness Dimension 4 2
+top_shadow_color Pixel 8 4
+top_shadow_pixmap Pixmap 12 4
+bottom_shadow_color Pixel 16 4
+bottom_shadow_pixmap Pixmap 20 4
+highlight_thickness Dimension 24 2
+highlight_color Pixel 28 4
+highlight_pixmap Pixmap 32 4
+help_callback XtCallbackList 36 4
+user_data XtPointer 40 4
+traversal_on Boolean 44 1
+highlight_on_enter Boolean 45 1
+have_traversal Boolean 46 1
+unit_type char 47 1
+navigation_type XmNavigationType 48 1
+highlight_drawn Boolean 49 1
+highlighted Boolean 50 1
+highlight_GC GC 52 4
+top_shadow_GC GC 56 4
+bottom_shadow_GC GC 60 4
+_SG_vendorExtension _SG_XmPrimitiveExt 64 4
+
+STRUCT
+XmPrimitiveRec
+184
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+
+STRUCT
+XmProtocolClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmProtocolClassRec XmProtocolObjectClass
+140
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+protocol_class XmProtocolClassPart 132 8
+
+STRUCT
+XmProtocolPart XmProtocolPartPtr
+32
+pre_hook XtCallbackRec 0 8
+post_hook XtCallbackRec 8 8
+callbacks XtCallbackList 16 4
+atom Atom 20 4
+active Boolean 24 1
+_SG_vendorExtension caddr_t 28 4
+
+STRUCT
+XmProtocolRec XmProtocol XmProtocolList
+72
+object ObjectPart 0 28
+ext XmExtPart 28 12
+protocol XmProtocolPart 40 32
+
+STRUCT
+XmProtocolMgrRec XmProtocolMgr XmProtocolMgrList
+16
+property Atom 0 4
+protocols XmProtocolList 4 4
+num_protocols Cardinal 8 4
+max_protocols Cardinal 12 4
+
+STRUCT
+XmAllProtocolsMgrRec XmAllProtocolsMgr
+16
+protocol_mgrs XmProtocolMgrList 0 4
+num_protocol_mgrs Cardinal 4 4
+max_protocol_mgrs Cardinal 8 4
+shell Widget 12 4
+
+STRUCT
+XmPushButtonGCacheObjClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmPushButtonGCacheObjClassRec
+148
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+label_class_cache XmLabelGCacheObjClassPart 132 8
+pushbutton_class_cache XmPushButtonGCacheObjClassPart 140 8
+
+STRUCT
+XmPushButtonGCacheObjPart
+36
+fill_on_arm Boolean 0 1
+arm_color Pixel 4 4
+arm_pixmap Pixmap 8 4
+unarm_pixmap Pixmap 12 4
+multiClick char 16 1
+default_button_shadow_thickness Dimension 18 2
+fill_gc GC 20 4
+background_gc GC 24 4
+timer XtIntervalId 28 4
+_SG_vendorExtension caddr_t 32 4
+
+STRUCT
+XmPushButtonGCacheObjRec
+100
+object ObjectPart 0 28
+ext XmExtPart 28 12
+label_cache XmLabelGCacheObjPart 40 24
+pushbutton_cache XmPushButtonGCacheObjPart 64 36
+
+STRUCT
+XmPushButtonGadgetClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmPushButtonGadgetClassRec
+180
+rect_class RectObjClassPart 0 116
+gadget_class XmGadgetClassPart 116 40
+label_class XmLabelGadgetClassPart 156 16
+pushbutton_class XmPushButtonGadgetClassPart 172 8
+
+STRUCT
+XmPushButtonGadgetPart
+32
+activate_callback XtCallbackList 0 4
+arm_callback XtCallbackList 4 4
+disarm_callback XtCallbackList 8 4
+show_as_default Dimension 12 2
+armed Boolean 14 1
+click_count int 16 4
+compatible Boolean 20 1
+cache XmPushButtonGCacheObjPart 24 4
+_SG_vendorExtension caddr_t 28 4
+
+STRUCT
+XmPushButtonGadgetRec
+168
+object ObjectPart 0 28
+rectangle RectObjPart 28 14
+gadget XmGadgetPart 44 28
+label XmLabelGadgetPart 72 64
+pushbutton XmPushButtonGadgetPart 136 32
+
+STRUCT
+XmPushButtonClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension _SgClassExtension 4 4
+
+STRUCT
+XmPushButtonClassRec
+176
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+label_class XmLabelClassPart 148 20
+pushbutton_class XmPushButtonClassPart 168 8
+
+STRUCT
+_SG_XmPushButtonExtPart
+12
+locate_pixmap Pixmap 0 4
+locate_arm_pixmap Pixmap 4 4
+pixmap_locate_highlight Boolean 8 1
+
+STRUCT
+_SG_XmPushButtonExtRec _SG_XmPushButtonExt
+16
+common _SgInstanceExtensionRec 0 4
+instance _SG_XmPushButtonExtPart 4 12
+
+STRUCT
+XmPushButtonPart
+64
+fill_on_arm Boolean 0 1
+show_as_default Dimension 2 2
+arm_color Pixel 4 4
+arm_pixmap Pixmap 8 4
+activate_callback XtCallbackList 12 4
+arm_callback XtCallbackList 16 4
+disarm_callback XtCallbackList 20 4
+armed Boolean 24 1
+unarm_pixmap Pixmap 28 4
+fill_gc GC 32 4
+background_gc GC 36 4
+timer XtIntervalId 40 4
+multiClick char 44 1
+click_count int 48 4
+armTimeStamp Time 52 4
+compatible Boolean 56 1
+default_button_shadow_thickness Dimension 58 2
+_SG_vendorExtension _SG_XmPushButtonExt 60 4
+
+STRUCT
+XmPushButtonRec
+332
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+label XmLabelPart 184 84
+pushbutton XmPushButtonPart 268 64
+
+STRUCT
+XmButtonEventStatusRec
+68
+time Time 0 4
+verified Boolean 4 1
+waiting_to_be_managed Boolean 5 1
+event XButtonEvent 8 60
+
+STRUCT
+XmReplayInfoRec
+8
+time Time 0 4
+toplevel_menu Widget 4 4
+
+STRUCT
+XmMenuFocusRec
+12
+oldWidget Widget 0 4
+oldFocus Window 4 4
+oldRevert int 8 4
+
+STRUCT
+XmMenuStateRec XmMenuState
+116
+RC_LastSelectToplevel Widget 0 4
+RC_ButtonEventStatus XmButtonEventStatusRec 4 68
+RC_ReplayInfo XmReplayInfoRec 72 8
+RC_activeItem Widget 80 4
+RC_menuFocus XmMenuFocusRec 84 12
+RC_allowAcceleratedInsensitiveUnmanagedMenuItems Boolean 96 1
+MS_LastManagedMenuTime Time 100 4
+MU_InDragMode Boolean 104 1
+MU_CurrentMenuChild Widget 108 4
+MU_InPMMode Boolean 112 1
+
+STRUCT
+XmRCKidGeometryRec XmRCKidGeometry
+36
+kid Widget 0 4
+box XtWidgetGeometry 4 24
+margin_top Dimension 28 2
+margin_bottom Dimension 30 2
+baseline Dimension 32 2
+
+STRUCT
+_SG_XmRowColumnExtPart
+12
+btn_drop_shadow1 Window 0 4
+btn_drop_shadow2 Window 4 4
+current_user Widget 8 4
+
+STRUCT
+_SG_XmRowColumnExtRec _SG_XmRowColumnExt
+16
+common _SgInstanceExtensionRec 0 4
+instance _SG_XmRowColumnExtPart 4 12
+
+STRUCT
+XmRowColumnPart
+164
+margin_height Dimension 0 2
+margin_width Dimension 2 2
+spacing Dimension 4 2
+entry_border Dimension 6 2
+help_pushbutton Widget 8 4
+cascadeBtn Widget 12 4
+option_label XmString 16 4
+option_submenu Widget 20 4
+boxes XmRCKidGeometry 24 4
+entry_class WidgetClass 28 4
+entry_callback XtCallbackList 32 4
+map_callback XtCallbackList 36 4
+unmap_callback XtCallbackList 40 4
+memory_subwidget Widget 44 4
+num_columns short 48 2
+menuPost String 52 4
+postButton int 56 4
+postEventType int 60 4
+postModifiers int 64 4
+menu_accelerator String 68 4
+mnemonic KeySym 72 4
+mnemonicCharSet XmStringCharSet 76 4
+entry_alignment char 80 1
+packing char 81 1
+type char 82 1
+orientation char 83 1
+armed Boolean 84 1
+adjust_margin Boolean 85 1
+adjust_last Boolean 86 1
+do_alignment Boolean 87 1
+radio Boolean 88 1
+radio_one Boolean 89 1
+homogeneous Boolean 90 1
+resize_width Boolean 91 1
+resize_height Boolean 92 1
+popup_enabled Boolean 93 1
+old_width Dimension 94 2
+old_height Dimension 96 2
+old_shadow_thickness Dimension 98 2
+postFromList Widget 100 4
+postFromCount int 104 4
+postFromListSize int 108 4
+lastSelectToplevel Widget 112 4
+popupPosted Widget 116 4
+oldFocusPolicy char 120 1
+TearOffModel char 121 1
+ParentShell Widget 124 4
+tear_off_control Widget 128 4
+to_state Boolean 132 1
+tear_off_activated_callback XtCallbackList 136 4
+tear_off_deactivated_callback XtCallbackList 140 4
+tear_off_lastSelectToplevel Widget 144 4
+tear_off_focus_item Widget 148 4
+entry_vertical_alignment char 152 1
+popup_menu_click char 153 1
+popup_timeout_timer XtIntervalId 156 4
+_SG_vendorExtension _SG_XmRowColumnExt 160 4
+
+STRUCT
+XmRowColumnRec
+400
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+row_column XmRowColumnPart 236 164
+
+STRUCT
+XmRowColumnWidgetRec
+400
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+row_column XmRowColumnPart 236 164
+
+STRUCT
+XmRowColumnClassPart
+20
+menuProcedures XmMenuProc 0 4
+armAndActivate XtActionProc 4 4
+traversalHandler XmMenuTraversalProc 8 4
+extension XtPointer 12 4
+_SG_vendorExtension _SgClassExtension 16 4
+
+STRUCT
+XmRowColumnClassRec
+216
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+row_column_class XmRowColumnClassPart 196 20
+
+STRUCT
+XmRowColumnConstraintPart
+16
+was_managed Boolean 0 1
+margin_top Dimension 2 2
+margin_bottom Dimension 4 2
+baseline Dimension 6 2
+position_index short 8 2
+_SG_vendorExtension caddr_t 12 4
+
+STRUCT
+XmRowColumnConstraintRec
+24
+manager XmManagerConstraintPart 0 8
+row_column XmRowColumnConstraintPart 8 16
+
+STRUCT
+XmSashClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmSashClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+sash_class XmSashClassPart 148 8
+
+STRUCT
+XmSashPart
+12
+sash_action XtCallbackList 0 4
+has_focus Boolean 4 1
+_SG_vendorExtension caddr_t 8 4
+
+STRUCT
+XmSashRec
+196
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+sash XmSashPart 184 12
+
+STRUCT
+SashCallDataRec SashCallData
+12
+event XEvent 0 4
+params String 4 4
+num_params Cardinal 8 4
+
+STRUCT
+XmScaleConstraintPart XmScaleConstraint
+1
+unused char 0 1
+
+STRUCT
+XmScaleClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension _SgClassExtension 4 4
+
+STRUCT
+XmScaleClassRec
+204
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+scale_class XmScaleClassPart 196 8
+
+STRUCT
+_SG_XmScaleExtPart
+24
+scaleX Position 0 2
+scaleY Position 2 2
+scaleWidth Dimension 4 2
+scaleHeight Dimension 6 2
+slidingMode XmSlidingMode 8 4
+editable Boolean 12 1
+sliderVisual XmSliderVisual 16 4
+slanted Boolean 20 1
+exposeChildFirst Boolean 21 1
+
+STRUCT
+_SG_XmScaleExtRec _SG_XmScaleExt
+28
+common _SgInstanceExtensionRec 0 4
+instance _SG_XmScaleExtPart 4 24
+
+STRUCT
+XmScalePart
+84
+value int 0 4
+maximum int 4 4
+minimum int 8 4
+orientation char 12 1
+processing_direction char 13 1
+title XmString 16 4
+font_list XmFontList 20 4
+font_struct XFontStruct 24 4
+show_value Boolean 28 1
+decimal_points short 30 2
+scale_width Dimension 32 2
+scale_height Dimension 34 2
+highlight_thickness Dimension 36 2
+highlight_on_enter Boolean 38 1
+drag_callback XtCallbackList 40 4
+value_changed_callback XtCallbackList 44 4
+last_value int 48 4
+slider_size int 52 4
+foreground_GC GC 56 4
+show_value_x int 60 4
+show_value_y int 64 4
+show_value_width int 68 4
+show_value_height int 72 4
+scale_multiple int 76 4
+_SG_vendorExtension _SG_XmScaleExt 80 4
+
+STRUCT
+XmScaleRec
+320
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+scale XmScalePart 236 84
+
+STRUCT
+XmScreenClassPart XmScreenClassPartPtr
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmScreenClassRec
+144
+core_class CoreClassPart 0 116
+desktop_class XmDesktopClassPart 116 20
+screen_class XmScreenClassPart 136 8
+
+STRUCT
+XmDragCursorRec XmDragCursorCache
+24
+next _XmDragCursorRec 0 4
+cursor Cursor 4 4
+stateIcon XmDragIconObject 8 4
+opIcon XmDragIconObject 12 4
+sourceIcon XmDragIconObject 16 4
+dirty Boolean 20 1
+
+STRUCT
+XmScratchPixmapRec
+20
+next XmScratchPixmap 0 4
+pixmap Pixmap 4 4
+depth Cardinal 8 4
+width Dimension 12 2
+height Dimension 14 2
+inUse Boolean 16 1
+
+STRUCT
+XmScreenPart XmScreenPartPtr
+132
+mwmPresent Boolean 0 1
+numReparented short 2 2
+darkThreshold int 4 4
+foregroundThreshold int 8 4
+lightThreshold int 12 4
+defaultNoneCursorIcon XmDragIconObject 16 4
+defaultValidCursorIcon XmDragIconObject 20 4
+defaultInvalidCursorIcon XmDragIconObject 24 4
+defaultMoveCursorIcon XmDragIconObject 28 4
+defaultCopyCursorIcon XmDragIconObject 32 4
+defaultLinkCursorIcon XmDragIconObject 36 4
+defaultSourceCursorIcon XmDragIconObject 40 4
+nullCursor Cursor 44 4
+cursorCache XmDragCursorRec 48 4
+maxCursorWidth Cardinal 52 4
+maxCursorHeight Cardinal 56 4
+menuCursor Cursor 60 4
+unpostBehavior char 64 1
+font_struct XFontStruct 68 4
+h_unit int 72 4
+v_unit int 76 4
+scratchPixmaps XmScratchPixmap 80 4
+moveOpaque char 84 1
+xmStateCursorIcon XmDragIconObject 88 4
+xmMoveCursorIcon XmDragIconObject 92 4
+xmCopyCursorIcon XmDragIconObject 96 4
+xmLinkCursorIcon XmDragIconObject 100 4
+xmSourceCursorIcon XmDragIconObject 104 4
+imageGC GC 108 4
+imageGCDepth int 112 4
+imageForeground Pixel 116 4
+imageBackground Pixel 120 4
+screenInfo XtPointer 124 4
+_SG_vendorExtension caddr_t 128 4
+
+STRUCT
+XmScreenRec
+268
+core CorePart 0 116
+desktop XmDesktopPart 116 20
+screen XmScreenPart 136 132
+
+STRUCT
+_SG_XmScrollBarClassExtPart
+4
+arrow_render_shadows XmRenderShadowsProc 0 4
+
+STRUCT
+_SG_XmScrollBarClassExtRec _SG_XmScrollBarClassExt
+20
+common _SgClassExtensionRec 0 16
+scrollBar _SG_XmScrollBarClassExtPart 16 4
+
+STRUCT
+XmScrollBarClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension _SgClassExtension 4 4
+
+STRUCT
+XmScrollBarClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+scrollBar_class XmScrollBarClassPart 148 8
+
+STRUCT
+_SG_XmScrollBarExtPart
+68
+arrows_adjacent char 0 1
+arrows_type char 1 1
+located_pixmap Drawable 4 4
+divot_pixmap Drawable 8 4
+arrow_state_array visual_state_array 12 4
+thumb_state_array visual_state_array 16 4
+arrow1_state int 20 4
+arrow2_state int 24 4
+arrow1_located Boolean 28 1
+arrow2_located Boolean 29 1
+thumb_located Boolean 30 1
+divot_drawn Boolean 31 1
+divot_x short 32 2
+divot_y short 34 2
+show_thumb Boolean 36 1
+thumb_visual_state int 40 4
+thumb_shader shaderptr 44 4
+slidingMode XmSlidingMode 48 4
+editable Boolean 52 1
+sliderVisual XmSliderVisual 56 4
+slanted Boolean 60 1
+bg_gc GC 64 4
+
+STRUCT
+_SG_XmScrollBarExtRec _SG_XmScrollBarExt
+72
+common _SgInstanceExtensionRec 0 4
+instance _SG_XmScrollBarExtPart 4 68
+
+STRUCT
+XmScrollBarPart
+188
+value int 0 4
+minimum int 4 4
+maximum int 8 4
+slider_size int 12 4
+orientation char 16 1
+processing_direction char 17 1
+show_arrows Boolean 18 1
+increment int 20 4
+page_increment int 24 4
+initial_delay int 28 4
+repeat_delay int 32 4
+value_changed_callback XtCallbackList 36 4
+increment_callback XtCallbackList 40 4
+decrement_callback XtCallbackList 44 4
+page_increment_callback XtCallbackList 48 4
+page_decrement_callback XtCallbackList 52 4
+to_top_callback XtCallbackList 56 4
+to_bottom_callback XtCallbackList 60 4
+drag_callback XtCallbackList 64 4
+unhighlight_GC GC 68 4
+foreground_GC GC 72 4
+trough_color Pixel 76 4
+pixmap Drawable 80 4
+sliding_on Boolean 84 1
+etched_slider Boolean 85 1
+saved_value int 88 4
+flags char 92 1
+change_type char 93 1
+timer XtIntervalId 96 4
+initial_x short 100 2
+initial_y short 102 2
+separation_x short 104 2
+separation_y short 106 2
+slider_x short 108 2
+slider_y short 110 2
+slider_width short 112 2
+slider_height short 114 2
+slider_area_x short 116 2
+slider_area_y short 118 2
+slider_area_width short 120 2
+slider_area_height short 122 2
+arrow1_x short 124 2
+arrow1_y short 126 2
+arrow1_orientation char 128 1
+arrow1_selected Boolean 129 1
+arrow2_x short 130 2
+arrow2_y short 132 2
+arrow2_orientation char 134 1
+arrow2_selected Boolean 135 1
+arrow_width short 136 2
+arrow_height short 138 2
+arrow1_top_count short 140 2
+arrow1_cent_count short 142 2
+arrow1_bot_count short 144 2
+arrow1_top XRectangle 148 4
+arrow1_cent XRectangle 152 4
+arrow1_bot XRectangle 156 4
+arrow2_top_count short 160 2
+arrow2_cent_count short 162 2
+arrow2_bot_count short 164 2
+arrow2_top XRectangle 168 4
+arrow2_cent XRectangle 172 4
+arrow2_bot XRectangle 176 4
+unavailable_GC GC 180 4
+_SG_vendorExtension _SG_XmScrollBarExt 184 4
+
+STRUCT
+XmScrollBarRec
+372
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+scrollBar XmScrollBarPart 184 188
+
+STRUCT
+XmScrolledWindowConstraintPart XmScrolledWindowConstraint
+1
+child_type char 0 1
+
+STRUCT
+XmScrolledWindowClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension _SgClassExtension 4 4
+
+STRUCT
+_SG_XmScrolledWExtRec _SG_XmScrolledWExt
+12
+common _SgInstanceExtensionRec 0 4
+instance _SG_XmScrolledWExtPart 4 8
+
+STRUCT
+XmScrolledWindowClassRec
+204
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+swindow_class XmScrolledWindowClassPart 196 8
+
+STRUCT
+XmScrolledWindowPart
+100
+vmin int 0 4
+vmax int 4 4
+vOrigin int 8 4
+vExtent int 12 4
+hmin int 16 4
+hmax int 20 4
+hOrigin int 24 4
+hExtent int 28 4
+hsbX Position 32 2
+hsbY Position 34 2
+hsbWidth Dimension 36 2
+hsbHeight Dimension 38 2
+vsbX Position 40 2
+vsbY Position 42 2
+vsbWidth Dimension 44 2
+vsbHeight Dimension 46 2
+GivenHeight Dimension 48 2
+GivenWidth Dimension 50 2
+AreaWidth Dimension 52 2
+AreaHeight Dimension 54 2
+WidthPad Dimension 56 2
+HeightPad Dimension 58 2
+XOffset Position 60 2
+YOffset Position 62 2
+pad Dimension 64 2
+hasHSB Boolean 66 1
+hasVSB Boolean 67 1
+InInit Boolean 68 1
+FromResize Boolean 69 1
+VisualPolicy char 70 1
+ScrollPolicy char 71 1
+ScrollBarPolicy char 72 1
+Placement char 73 1
+hScrollBar XmScrollBarWidget 76 4
+vScrollBar XmScrollBarWidget 80 4
+ClipWindow XmDrawingAreaWidget 84 4
+WorkWindow Widget 88 4
+traverseObscuredCallback XtCallbackList 92 4
+_SG_vendorExtension _SG_XmScrolledWExt 96 4
+
+STRUCT
+XmScrolledWindowRec
+336
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+swindow XmScrolledWindowPart 236 100
+
+STRUCT
+XmSelectionBoxConstraintPart XmSelectionBoxConstraint
+1
+unused char 0 1
+
+STRUCT
+XmSelectionBoxClassPart
+12
+extension XtPointer 4 4
+_SG_vendorExtension caddr_t 8 4
+
+STRUCT
+XmSelectionBoxClassRec
+228
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+selection_box_class XmSelectionBoxClassPart 216 12
+
+STRUCT
+XmSelectionBoxPart
+116
+list_label Widget 0 4
+list_label_string XmString 4 4
+list Widget 8 4
+list_items XmString 12 4
+list_item_count int 16 4
+list_visible_item_count int 20 4
+list_selected_item_position int 24 4
+selection_label Widget 28 4
+selection_label_string XmString 32 4
+text Widget 36 4
+text_string XmString 40 4
+text_columns short 44 2
+work_area Widget 48 4
+separator Widget 52 4
+ok_button Widget 56 4
+ok_label_string XmString 60 4
+apply_button Widget 64 4
+apply_label_string XmString 68 4
+cancel_label_string XmString 72 4
+help_button Widget 76 4
+help_label_string XmString 80 4
+ok_callback XtCallbackList 84 4
+apply_callback XtCallbackList 88 4
+cancel_callback XtCallbackList 92 4
+no_match_callback XtCallbackList 96 4
+text_accelerators XtAccelerators 100 4
+must_match Boolean 104 1
+adding_sel_widgets Boolean 105 1
+minimize_buttons Boolean 106 1
+dialog_type char 107 1
+child_placement char 108 1
+_SG_vendorExtension caddr_t 112 4
+
+STRUCT
+XmSelectionBoxRec
+436
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+selection_box XmSelectionBoxPart 320 116
+
+STRUCT
+XmSeparatorGCacheObjClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmSeparatorGCacheObjClassRec
+140
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+separator_class_cache XmSeparatorGCacheObjClassPart 132 8
+
+STRUCT
+XmSeparatorGCacheObjPart
+12
+margin Dimension 0 2
+orientation char 2 1
+separator_type char 3 1
+separator_GC GC 4 4
+_SG_vendorExtension caddr_t 8 4
+
+STRUCT
+XmSeparatorGCacheObjRec
+52
+object ObjectPart 0 28
+ext XmExtPart 28 12
+separator_cache XmSeparatorGCacheObjPart 40 12
+
+STRUCT
+XmSeparatorGadgetClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmSeparatorGadgetClassRec
+164
+rect_class RectObjClassPart 0 116
+gadget_class XmGadgetClassPart 116 40
+separator_class XmSeparatorGadgetClassPart 156 8
+
+STRUCT
+XmSeparatorGadgetPart
+8
+cache XmSeparatorGCacheObjPart 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmSeparatorGadgetRec
+80
+object ObjectPart 0 28
+rectangle RectObjPart 28 14
+gadget XmGadgetPart 44 28
+separator XmSeparatorGadgetPart 72 8
+
+STRUCT
+XmSeparatorClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmSeparatorClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+separator_class XmSeparatorClassPart 148 8
+
+STRUCT
+XmSeparatorPart
+12
+margin Dimension 0 2
+orientation char 2 1
+separator_type char 3 1
+separator_GC GC 4 4
+_SG_vendorExtension caddr_t 8 4
+
+STRUCT
+XmSeparatorRec
+196
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+separator XmSeparatorPart 184 12
+
+STRUCT
+_SgClassExtensionRec _SgClassExtension
+16
+version long 0 4
+isize Cardinal 4 4
+rsrc_ptr XtResource 8 4
+rsrc_num int 12 4
+
+STRUCT
+_SgInstanceExtensionRec _SgInstanceExtension
+4
+version long 0 4
+
+STRUCT
+_SgApplicationShellRsrcRec _SgApplicationShellRsrc
+4
+MakeCompilerHappy int 0 4
+
+STRUCT
+_SgCompositeRsrcRec _SgCompositeRsrc
+4
+MakeCompilerHappy int 0 4
+
+STRUCT
+_SgConstraintRsrcRec _SgConstraintRsrc
+4
+MakeCompilerHappy int 0 4
+
+STRUCT
+_SgCoreRsrcRec _SgCoreRsrc
+4
+MakeCompilerHappy int 0 4
+
+STRUCT
+_SgObjectRsrcRec _SgObjectRsrc
+2
+sg_feature Boolean 0 1
+sg_look Boolean 1 1
+
+STRUCT
+_SgOverrideShellRsrcRec _SgOverrideShellRsrc
+4
+MakeCompilerHappy int 0 4
+
+STRUCT
+_SgRectObjRsrcRec _SgRectObjRsrc
+4
+MakeCompilerHappy int 0 4
+
+STRUCT
+_SgShellRsrcRec _SgShellRsrc
+4
+MakeCompilerHappy int 0 4
+
+STRUCT
+_SgTopLevelShellRsrcRec _SgTopLevelShellRsrc
+4
+MakeCompilerHappy int 0 4
+
+STRUCT
+_SgTransientShellRsrcRec _SgTransientShellRsrc
+4
+MakeCompilerHappy int 0 4
+
+STRUCT
+_SgVendorShellRsrcRec _SgVendorShellRsrc
+4
+MakeCompilerHappy int 0 4
+
+STRUCT
+_SgWMShellRsrcRec _SgWMShellRsrc
+4
+MakeCompilerHappy int 0 4
+
+STRUCT
+XmShellExtClassPart XmShellExtClassPartPtr
+12
+structureNotifyHandler XtEventHandler 0 4
+extension XtPointer 4 4
+_SG_vendorExtension caddr_t 8 4
+
+STRUCT
+XmShellExtClassRec
+164
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+desktop_class XmDesktopClassPart 132 20
+shell_class XmShellExtClassPart 152 12
+
+STRUCT
+XmShellExtPart XmShellExtPartPtr
+12
+lastConfigureRequest long 0 4
+useAsyncGeometry Boolean 4 1
+_SG_vendorExtension caddr_t 8 4
+
+STRUCT
+XmShellExtRec
+72
+object ObjectPart 0 28
+ext XmExtPart 28 12
+desktop XmDesktopPart 40 20
+shell XmShellExtPart 60 12
+
+STRUCT
+XmTearOffButtonClassPart
+8
+translations String 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmTearOffButtonClassRec
+184
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+label_class XmLabelClassPart 148 20
+pushbutton_class XmPushButtonClassPart 168 8
+tearoffbutton_class XmTearOffButtonClassPart 176 8
+
+STRUCT
+XmTearOffButtonPart
+12
+margin Dimension 0 2
+orientation char 2 1
+separator_type char 3 1
+separator_GC GC 4 4
+_SG_vendorExtension caddr_t 8 4
+
+STRUCT
+XmTearOffButtonRec
+344
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+label XmLabelPart 184 84
+pushbutton XmPushButtonPart 268 64
+tear_off_button XmTearOffButtonPart 332 12
+
+STRUCT
+XmExcludedParentPaneRec
+12
+pane_list_size short 0 2
+pane Widget 4 4
+num_panes short 8 2
+
+STRUCT
+_SG_XmTextFieldExtPart
+16
+selection_background Pixel 0 4
+selection_foreground Pixel 4 4
+error_background Pixel 8 4
+cursor_visible_on_focus Boolean 12 1
+post_motion_call Boolean 13 1
+
+STRUCT
+_SG_XmTextFieldExtRec _SG_XmTextFieldExt
+20
+common _SgInstanceExtensionRec 0 4
+rsrc _SG_XmTextFieldExtPart 4 16
+
+STRUCT
+InputDataRec InputData
+112
+widget XmTextWidget 0 4
+sarray XmTextScanType 4 4
+sarraycount int 8 4
+new_sel_length int 12 4
+threshold int 16 4
+selectionHint SelectionHint 20 8
+Sel2Hint SelectionHint 28 8
+select_id XtIntervalId 36 4
+stype XmTextScanType 40 4
+extendDir XmTextScanDirection 44 4
+Sel2ExtendDir XmTextScanDirection 48 4
+origLeft XmTextPosition 52 4
+origRight XmTextPosition 56 4
+Sel2OrigLeft XmTextPosition 60 4
+Sel2OrigRight XmTextPosition 64 4
+stuffpos XmTextPosition 68 4
+sel2Left XmTextPosition 72 4
+sel2Right XmTextPosition 76 4
+anchor XmTextPosition 80 4
+select_pos_x Position 84 2
+select_pos_y Position 86 2
+pendingdelete Boolean 88 1
+syncing Boolean 89 1
+extending Boolean 90 1
+Sel2Extending Boolean 91 1
+hasSel2 Boolean 92 1
+has_destination Boolean 93 1
+selectionMove Boolean 94 1
+cancel Boolean 95 1
+overstrike Boolean 96 1
+sel_start Boolean 97 1
+dest_time Time 100 4
+sec_time Time 104 4
+lasttime Time 108 4
+
+STRUCT
+InputRec
+24
+data _InputDataRec 0 4
+Invalidate InputInvalidateProc 4 4
+GetValues InputGetValuesProc 8 4
+SetValues InputSetValuesProc 12 4
+destroy XtWidgetProc 16 4
+GetSecResData InputGetSecResProc 20 4
+
+STRUCT
+LineTableExtraRec LineTableExtra
+4
+width Dimension 0 2
+wrappedbychar Boolean 2 1
+
+STRUCT
+OutputDataRec OutputData
+152
+fontlist XmFontList 0 4
+blinkrate int 4 4
+wordwrap Boolean 8 1
+cursor_position_visible Boolean 9 1
+autoshowinsertpoint Boolean 10 1
+hasfocus Boolean 11 1
+has_rect Boolean 12 1
+handlingexposures Boolean 13 1
+exposevscroll Boolean 14 1
+exposehscroll Boolean 15 1
+resizewidth Boolean 16 1
+resizeheight Boolean 17 1
+scrollvertical Boolean 18 1
+scrollhorizontal Boolean 19 1
+scrollleftside Boolean 20 1
+scrolltopside Boolean 21 1
+ignorevbar Boolean 22 1
+ignorehbar Boolean 23 1
+cursor_on int 24 2
+refresh_ibeam_off Boolean 26 1
+suspend_hoffset Boolean 27 1
+use_fontset Boolean 28 1
+have_inverted_image_gc Boolean 29 1
+blinkstate OnOrOff 32 4
+insertx Position 36 2
+inserty Position 38 2
+number_lines int 40 4
+leftmargin int 44 4
+rightmargin int 48 4
+topmargin int 52 4
+bottommargin int 56 4
+scrollwidth int 60 4
+vsliderSize int 64 4
+hoffset int 68 4
+averagecharwidth int 72 4
+tabwidth int 76 4
+columns short 80 2
+rows short 82 2
+lineheight Dimension 84 2
+minwidth Dimension 86 2
+minheight Dimension 88 2
+prevW Dimension 90 2
+prevH Dimension 92 2
+cursorwidth Dimension 94 2
+cursorheight Dimension 96 2
+font_ascent Dimension 98 2
+font_descent Dimension 100 2
+timerid XtIntervalId 104 4
+cursor Pixmap 108 4
+add_mode_cursor Pixmap 112 4
+ibeam_off Pixmap 116 4
+stipple_tile Pixmap 120 4
+gc GC 124 4
+imagegc GC 128 4
+vbar Widget 132 4
+hbar Widget 136 4
+font XFontStruct 140 4
+save_gc GC 144 4
+columns_set short 148 2
+rows_set short 150 2
+
+STRUCT
+OutputRec
+64
+data _OutputDataRec 0 4
+XYToPos XYToPosProc 4 4
+PosToXY PosToXYProc 8 4
+MeasureLine MeasureLineProc 12 4
+Draw DrawProc 16 4
+DrawInsertionPoint DrawInsertionPointProc 20 4
+MakePositionVisible MakePositionVisibleProc 24 4
+MoveLines MoveLinesProc 28 4
+Invalidate InvalidateProc 32 4
+GetPreferredSize GetPreferredSizeProc 36 4
+GetValues GetValuesProc 40 4
+SetValues SetValuesProc 44 4
+realize XmRealizeOutProc 48 4
+destroy XtWidgetProc 52 4
+resize XmResizeFlagProc 56 4
+expose XtExposeProc 60 4
+
+STRUCT
+XmTextClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension _SgClassExtension 4 4
+
+STRUCT
+XmTextClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+text_class XmTextClassPart 148 8
+
+STRUCT
+LineRec Line
+20
+start XmTextPosition 0 4
+changed Boolean 4 1
+changed_position XmTextPosition 8 4
+past_end Boolean 12 1
+extra LineTableExtra 16 4
+
+STRUCT
+XmTextLineTableRec XmTextLineTable
+4
+
+STRUCT
+RangeRec
+8
+from XmTextPosition 0 4
+to XmTextPosition 4 4
+
+STRUCT
+Ranges
+12
+number Cardinal 0 4
+maximum Cardinal 4 4
+range RangeRec 8 4
+
+STRUCT
+_SG_XmTextExtPart
+16
+selection_background Pixel 0 4
+selection_foreground Pixel 4 4
+error_background Pixel 8 4
+cursor_visible_on_focus Boolean 12 1
+post_motion_call Boolean 13 1
+
+STRUCT
+_SG_XmTextExtRec _SG_XmTextExt
+20
+common _SgInstanceExtensionRec 0 4
+rsrc _SG_XmTextExtPart 4 16
+
+STRUCT
+XmTextPart
+228
+source XmTextSource 0 4
+activate_callback XtCallbackList 4 4
+focus_callback XtCallbackList 8 4
+losing_focus_callback XtCallbackList 12 4
+value_changed_callback XtCallbackList 16 4
+modify_verify_callback XtCallbackList 20 4
+wcs_modify_verify_callback XtCallbackList 24 4
+motion_verify_callback XtCallbackList 28 4
+gain_primary_callback XtCallbackList 32 4
+lose_primary_callback XtCallbackList 36 4
+value char 40 4
+wc_value wchar_t 44 4
+margin_height Dimension 48 2
+margin_width Dimension 50 2
+cursor_position_x Position 52 2
+output_create OutputCreateProc 56 4
+input_create InputCreateProc 60 4
+top_character XmTextPosition 64 4
+bottom_position XmTextPosition 68 4
+cursor_position XmTextPosition 72 4
+max_length int 76 4
+edit_mode int 80 4
+auto_show_cursor_position Boolean 84 1
+editable Boolean 85 1
+verify_bell Boolean 86 1
+add_mode Boolean 87 1
+traversed Boolean 88 1
+in_redisplay Boolean 89 1
+needs_redisplay Boolean 90 1
+in_refigure_lines Boolean 91 1
+needs_refigure_lines Boolean 92 1
+in_setvalues Boolean 93 1
+in_resize Boolean 94 1
+in_expose Boolean 95 1
+highlight_changed Boolean 96 1
+pendingoff Boolean 97 1
+char_size char 98 1
+on_or_off OnOrOff 100 4
+output Output 104 4
+input Input 108 4
+first_position XmTextPosition 112 4
+last_position XmTextPosition 116 4
+forget_past XmTextPosition 120 4
+force_display XmTextPosition 124 4
+new_top XmTextPosition 128 4
+last_top_char XmTextPosition 132 4
+dest_position XmTextPosition 136 4
+disable_depth int 140 4
+pending_scroll int 144 4
+total_lines int 148 4
+top_line int 152 4
+vsbar_scrolling int 156 4
+number_lines Cardinal 160 4
+maximum_lines Cardinal 164 4
+line Line 168 4
+repaint Ranges 172 12
+highlight _XmHighlightData 184 12
+old_highlight _XmHighlightData 196 12
+inner_widget Widget 208 4
+line_table XmTextLineTable 212 4
+table_size int 216 4
+table_index int 220 4
+_SG_vendorExtension _SG_XmTextExt 224 4
+
+STRUCT
+XmTextRec
+412
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+text XmTextPart 184 228
+
+STRUCT
+XmSourceDataRec XmSourceData
+64
+source XmTextSource 0 4
+widgets XmTextWidget 4 4
+left XmTextPosition 8 4
+right XmTextPosition 12 4
+ptr char 16 4
+value char 20 4
+gap_start char 24 4
+gap_end char 28 4
+PSWC_NWLN char 32 4
+length int 36 4
+maxlength int 40 4
+old_length int 44 4
+numwidgets int 48 4
+maxallowed int 52 4
+prim_time Time 56 4
+hasselection Boolean 60 1
+editable Boolean 61 1
+
+STRUCT
+XmTextSourceRec
+36
+data _XmSourceDataRec 0 4
+AddWidget AddWidgetProc 4 4
+CountLines CountLinesProc 8 4
+RemoveWidget RemoveWidgetProc 12 4
+ReadSource ReadProc 16 4
+Replace ReplaceProc 20 4
+Scan ScanProc 24 4
+GetSelection GetSelectionProc 28 4
+SetSelection SetSelectionProc 32 4
+
+STRUCT
+XmToggleButtonGCacheObjClassPart
+8
+foo int 0 4
+_SG_vendorExtension _SgClassExtension 4 4
+
+STRUCT
+XmToggleButtonGCacheObjClassRec
+148
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+label_class_cache XmLabelGCacheObjClassPart 132 8
+toggle_class_cache XmToggleButtonGCacheObjClassPart 140 8
+
+STRUCT
+XmToggleButtonGCacheObjPart
+36
+ind_type char 0 1
+visible Boolean 1 1
+spacing Dimension 2 2
+indicator_dim Dimension 4 2
+on_pixmap Pixmap 8 4
+insen_pixmap Pixmap 12 4
+ind_on Boolean 16 1
+fill_on_select Boolean 17 1
+select_color Pixel 20 4
+select_GC GC 24 4
+background_gc GC 28 4
+_SG_vendorExtension caddr_t 32 4
+
+STRUCT
+XmToggleButtonGCacheObjRec
+100
+object ObjectPart 0 28
+ext XmExtPart 28 12
+label_cache XmLabelGCacheObjPart 40 24
+toggle_cache XmToggleButtonGCacheObjPart 64 36
+
+STRUCT
+XmToggleButtonGadgetClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension _SgClassExtension 4 4
+
+STRUCT
+XmToggleButtonGadgetClassRec
+180
+rect_class RectObjClassPart 0 116
+gadget_class XmGadgetClassPart 116 40
+label_class XmLabelGadgetClassPart 156 16
+toggle_class XmToggleButtonGadgetClassPart 172 8
+
+STRUCT
+_SG_XmToggleGadgetExtPart
+24
+indicator_render XmRenderIndicatorProc 0 4
+indicator_render_shadows XmRenderShadowsProc 4 4
+indicator_visual_state int 8 4
+indicator_visual_array visual_state_array 12 4
+indicator_background Pixel 16 4
+indicator_shader shaderptr 20 4
+
+STRUCT
+_SG_XmToggleGadgetExtRec _SG_XmToggleGadgetExt
+28
+common _SgInstanceExtensionRec 0 4
+instance _SG_XmToggleGadgetExtPart 4 24
+
+STRUCT
+XmToggleButtonGadgetPart
+24
+indicator_set Boolean 0 1
+set Boolean 1 1
+visual_set Boolean 2 1
+Armed Boolean 3 1
+value_changed_CB XtCallbackList 4 4
+arm_CB XtCallbackList 8 4
+disarm_CB XtCallbackList 12 4
+cache XmToggleButtonGCacheObjPart 16 4
+_SG_vendorExtension _SG_XmToggleGadgetExt 20 4
+
+STRUCT
+XmToggleButtonGadgetRec
+160
+object ObjectPart 0 28
+rectangle RectObjPart 28 14
+gadget XmGadgetPart 44 28
+label XmLabelGadgetPart 72 64
+toggle XmToggleButtonGadgetPart 136 24
+
+STRUCT
+XmToggleButtonClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension _SgClassExtension 4 4
+
+STRUCT
+XmToggleButtonClassRec
+176
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+label_class XmLabelClassPart 148 20
+toggle_class XmToggleButtonClassPart 168 8
+
+STRUCT
+_SG_XmToggleExtPart
+44
+indicator_render XmRenderIndicatorProc 0 4
+indicator_render_shadows XmRenderShadowsProc 4 4
+indicator_visual_state int 8 4
+indicator_visual_array visual_state_array 12 4
+indicator_background Pixel 16 4
+indicator_shader shaderptr 20 4
+indicator_shadow_thickness int 24 4
+indicator_select_shader shaderptr 28 4
+locate_pixmap Pixmap 32 4
+locate_select_pixmap Pixmap 36 4
+pixmap_locate_highlight Boolean 40 1
+
+STRUCT
+_SG_XmToggleExtRec _SG_XmToggleExt
+48
+common _SgInstanceExtensionRec 0 4
+instance _SG_XmToggleExtPart 4 44
+
+STRUCT
+XmToggleButtonPart
+52
+ind_type char 0 1
+visible Boolean 1 1
+spacing Dimension 2 2
+indicator_dim Dimension 4 2
+indicator_set Boolean 6 1
+on_pixmap Pixmap 8 4
+insen_pixmap Pixmap 12 4
+set Boolean 16 1
+visual_set Boolean 17 1
+ind_on Boolean 18 1
+fill_on_select Boolean 19 1
+select_color Pixel 20 4
+select_GC GC 24 4
+background_gc GC 28 4
+value_changed_CB XtCallbackList 32 4
+arm_CB XtCallbackList 36 4
+disarm_CB XtCallbackList 40 4
+Armed Boolean 44 1
+_SG_vendorExtension _SG_XmToggleExt 48 4
+
+STRUCT
+XmToggleButtonRec
+320
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+label XmLabelPart 184 84
+toggle XmToggleButtonPart 268 52
+
+STRUCT
+XmVendorShellExtClassPart XmVendorShellExtClassPartPtr
+16
+delete_window_handler XtCallbackProc 0 4
+offset_handler XtCallbackProc 4 4
+extension XtPointer 8 4
+_SG_vendorExtension caddr_t 12 4
+
+STRUCT
+XmVendorShellExtClassRec
+180
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+desktop_class XmDesktopClassPart 132 20
+shell_class XmShellExtClassPart 152 12
+vendor_class XmVendorShellExtClassPart 164 16
+
+STRUCT
+XmVendorShellExtPart XmVendorShellExtPartPtr
+136
+default_font_list XmFontList 0 4
+focus_policy char 4 1
+focus_data XmFocusData 8 4
+delete_response char 12 1
+unit_type char 13 1
+mwm_hints MwmHints 16 20
+mwm_info MwmInfo 36 8
+mwm_menu String 44 4
+focus_moved_callback XtCallbackList 48 4
+old_managed Widget 52 4
+xAtMap Position 56 2
+yAtMap Position 58 2
+xOffset Position 60 2
+yOffset Position 62 2
+lastOffsetSerial long 64 4
+lastMapRequest long 68 4
+externalReposition Boolean 72 1
+mapStyle char 73 1
+realize_callback XtCallbackList 76 4
+grab_kind XtGrabKind 80 4
+audible_warning Boolean 84 1
+button_font_list XmFontList 88 4
+label_font_list XmFontList 92 4
+text_font_list XmFontList 96 4
+input_method_string String 100 4
+preedit_type_string String 104 4
+light_threshold int 108 4
+dark_threshold int 112 4
+foreground_threshold int 116 4
+im_height int 120 4
+im_info XtPointer 124 4
+im_vs_height_set Boolean 128 1
+_SG_vendorExtension caddr_t 132 4
+
+STRUCT
+XmVendorShellExtRec
+208
+object ObjectPart 0 28
+ext XmExtPart 28 12
+desktop XmDesktopPart 40 20
+shell XmShellExtPart 60 12
+vendor XmVendorShellExtPart 72 136
+
+STRUCT
+XmDefaultBindingStringRec XmDefaultBindingString
+8
+vendorName String 0 4
+defaults String 4 4
+
+STRUCT
+XmKeyBindingRec XmKeyBinding
+8
+keysym KeySym 0 4
+modifiers int 4 4
+
+STRUCT
+XmVirtualKeysymRec XmVirtualKeysym
+8
+name String 0 4
+keysym KeySym 4 4
+
+STRUCT
+XmWorldClassPart XmWorldClassPartPtr
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmWorldClassRec
+160
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+desktop_class XmDesktopClassPart 132 20
+world_class XmWorldClassPart 152 8
+
+STRUCT
+XmWorldPart XmWorldPartPtr
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmWorldRec
+68
+object ObjectPart 0 28
+ext XmExtPart 28 12
+desktop XmDesktopPart 40 20
+world XmWorldPart 60 8
+
+STRUCT
+XmAnyCallbackStruct
+8
+reason int 0 4
+event XEvent 4 4
+
+STRUCT
+XmArrowButtonCallbackStruct
+12
+reason int 0 4
+event XEvent 4 4
+click_count int 8 4
+
+STRUCT
+XmDrawingAreaCallbackStruct
+12
+reason int 0 4
+event XEvent 4 4
+window Window 8 4
+
+STRUCT
+XmDrawnButtonCallbackStruct
+16
+reason int 0 4
+event XEvent 4 4
+window Window 8 4
+click_count int 12 4
+
+STRUCT
+XmPushButtonCallbackStruct
+12
+reason int 0 4
+event XEvent 4 4
+click_count int 8 4
+
+STRUCT
+XmRowColumnCallbackStruct
+20
+reason int 0 4
+event XEvent 4 4
+widget Widget 8 4
+data char 12 4
+callbackstruct char 16 4
+
+STRUCT
+XmScrollBarCallbackStruct
+16
+reason int 0 4
+event XEvent 4 4
+value int 8 4
+pixel int 12 4
+
+STRUCT
+XmToggleButtonCallbackStruct
+12
+reason int 0 4
+event XEvent 4 4
+set int 8 4
+
+STRUCT
+XmListCallbackStruct
+36
+reason int 0 4
+event XEvent 4 4
+item XmString 8 4
+item_length int 12 4
+item_position int 16 4
+selected_items XmString 20 4
+selected_item_count int 24 4
+selected_item_positions int 28 4
+selection_type char 32 1
+
+STRUCT
+XmSelectionBoxCallbackStruct
+16
+reason int 0 4
+event XEvent 4 4
+value XmString 8 4
+length int 12 4
+
+STRUCT
+XmCommandCallbackStruct
+16
+reason int 0 4
+event XEvent 4 4
+value XmString 8 4
+length int 12 4
+
+STRUCT
+XmFileSelectionBoxCallbackStruct
+40
+reason int 0 4
+event XEvent 4 4
+value XmString 8 4
+length int 12 4
+mask XmString 16 4
+mask_length int 20 4
+
+STRUCT
+XmScaleCallbackStruct
+12
+reason int 0 4
+event XEvent 4 4
+value int 8 4
+
+STRUCT
+XmTextBlockRec XmTextBlock
+12
+ptr char 0 4
+length int 4 4
+format XmTextFormat 8 4
+
+STRUCT
+XmTextVerifyCallbackStruct XmTextVerifyPtr
+32
+reason int 0 4
+event XEvent 4 4
+doit Boolean 8 1
+currInsert long 12 4
+newInsert long 16 4
+startPos long 20 4
+endPos long 24 4
+text XmTextBlock 28 4
+
+STRUCT
+XmTextBlockRecWcs XmTextBlockWcs
+8
+wcsptr wchar_t 0 4
+length int 4 4
+
+STRUCT
+XmTextVerifyCallbackStructWcs XmTextVerifyPtrWcs
+32
+reason int 0 4
+event XEvent 4 4
+doit Boolean 8 1
+currInsert long 12 4
+newInsert long 16 4
+startPos long 20 4
+endPos long 24 4
+text XmTextBlockWcs 28 4
+
+STRUCT
+XmTraverseObscuredCallbackStruct
+16
+
+STRUCT
+XmSecondaryResourceDataRec XmSecondaryResourceData
+24
+base_proc XmResourceBaseProc 0 4
+client_data XtPointer 4 4
+name String 8 4
+res_class String 12 4
+resources XtResourceList 16 4
+num_resources Cardinal 20 4
+
+STRUCT
+XmSimpleMenuRec XmSimpleMenu
+48
+count int 0 4
+post_from_button int 4 4
+callback XtCallbackProc 8 4
+label_string XmStringTable 12 4
+accelerator String 16 4
+accelerator_text XmStringTable 20 4
+mnemonic XmKeySymTable 24 4
+mnemonic_charset XmStringCharSetTable 28 4
+button_type XmButtonTypeTable 32 4
+button_set int 36 4
+option_label XmString 40 4
+option_mnemonic KeySym 44 4
+
+STRUCT
+_XmHighlightRec
+8
+position XmTextPosition 0 4
+mode XmHighlightMode 4 4
+
+STRUCT
+_XmHighlightData
+12
+number Cardinal 0 4
+maximum Cardinal 4 4
+list _XmHighlightRec 8 4
+
+STRUCT
+_XmTextActionRec
+12
+event XEvent 0 4
+params String 4 4
+num_params Cardinal 8 4
+
+STRUCT
+_XmTextDropTransferRec
+20
+widget Widget 0 4
+insert_pos XmTextPosition 4 4
+num_chars int 8 4
+timestamp Time 12 4
+move Boolean 16 1
+
+STRUCT
+XmTextContextDataRec XmTextContextData
+12
+screen Screen 0 4
+context XContext 4 4
+type char 8 1
+
+STRUCT
+XmKidGeometryRec XmKidGeometry
+28
+kid Widget 0 4
+box XtWidgetGeometry 4 24
+
+STRUCT
+XmGeoRowLayoutRec XmGeoRowLayout
+36
+
+STRUCT
+XmGeoColumnLayoutRec XmGeoColumnLayout
+36
+
+STRUCT
+XmGeoMatrixRec
+116
+
+STRUCT
+XmPartResource
+28
+resource_name String 0 4
+resource_class String 4 4
+resource_type String 8 4
+resource_size Cardinal 12 4
+resource_offset Cardinal 16 4
+default_type String 20 4
+default_addr XtPointer 24 4
+
+STRUCT
+XmRegionRec XmRegion
+20
+size long 0 4
+numRects long 4 4
+rects XmRegionBox 8 4
+extents XmRegionBox 12 8
+
+STRUCT
+XmFocusMovedCallbackStruct XmFocusMovedCallback
+24
+reason int 0 4
+event XEvent 4 4
+cont Boolean 8 1
+old_focus Widget 12 4
+new_focus Widget 16 4
+focus_policy char 20 1
+
+STRUCT
+SgArcClassPart
+8
+input_dispatch DispatchProc 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgArcClassRec
+124
+core_class CoreClassPart 0 116
+arc_class SgArcClassPart 116 8
+
+STRUCT
+SgArcPart
+100
+width int 0 4
+dashes int 4 4
+dash_offset int 8 4
+direction char 12 1
+style char 13 1
+cap_style char 14 1
+attribute Atom 16 4
+to Widget 20 4
+from Widget 24 4
+to_side short 28 2
+from_side short 30 2
+to_pos short 32 2
+from_pos short 34 2
+foreground Pixel 36 4
+highlight Boolean 40 1
+visible Boolean 41 1
+font XmFontList 44 4
+label _XmString 48 4
+labelwidth Dimension 52 2
+labelheight Dimension 54 2
+map_name Boolean 56 1
+siblings ArcList 60 4
+gc GC 64 4
+cleargc GC 68 4
+arm_callback XtCallbackList 72 4
+activate_callback XtCallbackList 76 4
+disarm_callback XtCallbackList 80 4
+user_data XtPointer 84 4
+armed Boolean 88 1
+rank int 92 4
+_SG_vendorExtension caddr_t 96 4
+
+STRUCT
+SgArcRec
+216
+core CorePart 0 116
+arc SgArcPart 116 100
+
+STRUCT
+SgColorChooserClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgColorChooserClassRec
+224
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+color_chooser_class SgColorChooserClassPart 216 8
+
+STRUCT
+SgColorChooserPart
+272
+default_type char 0 1
+minimize_buttons Boolean 1 1
+ok_label_string XmString 4 4
+ok_callback XtCallbackList 8 4
+ok_button Widget 12 4
+apply_label_string XmString 16 4
+apply_callback XtCallbackList 20 4
+apply_button Widget 24 4
+cancel_label_string XmString 28 4
+cancel_callback XtCallbackList 32 4
+help_label_string XmString 36 4
+help_button Widget 40 4
+separator Widget 44 4
+current_color_label_string XmString 48 4
+stored_color_label_string XmString 52 4
+hue_label_string XmString 56 4
+saturation_label_string XmString 60 4
+value_label_string XmString 64 4
+red_label_string XmString 68 4
+green_label_string XmString 72 4
+blue_label_string XmString 76 4
+drag_callback XtCallbackList 80 4
+value_changed_callback XtCallbackList 84 4
+show_sliders ShowSliders 88 4
+rgb_base int 92 4
+wysiwyg Boolean 96 1
+use_gl Boolean 97 1
+double_buffer Boolean 98 1
+color_hexagon_obj ColorHexagon 100 4
+work_proc_run Boolean 104 1
+work_event XEvent 108 4
+sep_widget Widget 112 4
+color_hexagon_widget Widget 116 4
+gray_button_widget Widget 120 4
+hue_label_widget Widget 124 4
+hue_text_widget Widget 128 4
+sat_label_widget Widget 132 4
+sat_text_widget Widget 136 4
+value_label_widget Widget 140 4
+value_text_widget Widget 144 4
+red_label_widget Widget 148 4
+red_text_widget Widget 152 4
+green_label_widget Widget 156 4
+green_text_widget Widget 160 4
+blue_label_widget Widget 164 4
+blue_text_widget Widget 168 4
+current_color_draw Widget 172 4
+stored_color_draw Widget 176 4
+left_arrow_button Widget 180 4
+right_arrow_button Widget 184 4
+sliders_widget Widget 188 4
+current_color_label Widget 192 4
+stored_color_label Widget 196 4
+hue_slider GLColorSliderGadgetP 200 4
+sat_slider GLColorSliderGadgetP 204 4
+value_slider GLColorSliderGadgetP 208 4
+red_slider GLColorSliderGadgetP 212 4
+green_slider GLColorSliderGadgetP 216 4
+blue_slider GLColorSliderGadgetP 220 4
+hue_slider_widget Widget 224 4
+sat_slider_widget Widget 228 4
+value_slider_widget Widget 232 4
+red_slider_widget Widget 236 4
+green_slider_widget Widget 240 4
+blue_slider_widget Widget 244 4
+current_color_swatch ColorChooserSwatch 248 4
+stored_color_swatch ColorChooserSwatch 252 4
+has_focus void 256 4
+geo_created Boolean 260 1
+workarea_height Dimension 262 2
+rgb_sliders_managed Boolean 264 1
+hs_sliders_managed Boolean 265 1
+_SG_vendorExtension caddr_t 268 4
+
+STRUCT
+SgColorChooserRec
+592
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+color_chooser SgColorChooserPart 320 272
+
+STRUCT
+SgDialClassPart
+4
+ignore int 0 4
+
+STRUCT
+SgDialClassRec
+152
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+dial_class SgDialClassPart 148 4
+
+STRUCT
+SgDialPart
+1608
+indicator_color Pixel 0 4
+foreground Pixel 4 4
+minimum int 8 4
+maximum int 12 4
+start int 16 4
+end int 20 4
+markers int 24 4
+marker_length Dimension 28 2
+position Position 30 2
+indicator_x Position 32 2
+indicator_y Position 34 2
+center_x Position 36 2
+center_y Position 38 2
+inner_diam Position 40 2
+outer_diam Position 42 2
+dial_GC GC 44 4
+indicator_GC GC 48 4
+inverse_GC GC 52 4
+segments[MAXDIALSEGMENTS] XPoint 56 1440
+select XtCallbackList 1496 4
+value_changed XtCallbackList 1500 4
+pre_drag_position Position 1504 2
+Ilength Position 1506 2
+Gangle double 1512 8
+dialVisual SgDialVisual 1520 4
+knob_GC1 GC 1524 4
+knob_GC2 GC 1528 4
+knob_GC3 GC 1532 4
+shader shaderptr 1536 4
+knob_pts[5] XPoint 1540 20
+old_knob_pts[5] XPoint 1560 20
+knob_accent_pts[HLPTS] XPoint 1580 24
+located Boolean 1604 1
+dragging Boolean 1605 1
+
+STRUCT
+SgDialRec
+1792
+core CorePart 0 116
+prim XmPrimitivePart 116 68
+dial SgDialPart 184 1608
+
+STRUCT
+SgDropPocketClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgDropPocketClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+dropPocketClass SgDropPocketClassPart 148 8
+
+STRUCT
+SgDropPocketPart
+56
+iconDataBasePath String 0 4
+name XmString 4 4
+loadedDataBase Boolean 8 1
+iconDB fiFileIconDB 12 4
+icon SgIcon 16 16
+gc GC 32 4
+normalPixel Pixel 36 4
+activePixel Pixel 40 4
+_SGI_ICON Atom 44 4
+iconUpdateCallback XtCallbackList 48 4
+_SG_vendorExtension caddr_t 52 4
+
+STRUCT
+SgDropPocketRec
+240
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+dropPocket SgDropPocketPart 184 56
+
+STRUCT
+SgDynaMenuClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgDynaMenuClassRec
+204
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+dynaMenu_class SgDynaMenuClassPart 196 8
+
+STRUCT
+SgDynaMenuPart
+28
+historyPopup Widget 0 4
+historyButton Widget 4 4
+historyItems XmString 8 4
+historyItemCount int 12 4
+maxHistoryCount int 16 4
+dynaPushCallback XtCallbackList 20 4
+_SG_vendorExtension caddr_t 24 4
+
+STRUCT
+SgDynaMenuRec
+264
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+dynaMenu SgDynaMenuPart 236 28
+
+STRUCT
+XmFileSelectionBoxConstraintPart XmFileSelectionBoxConstraint
+1
+unused char 0 1
+
+STRUCT
+XmFileSelectionBoxClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+XmFileSelectionBoxClassRec
+236
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+selection_box_class XmSelectionBoxClassPart 216 12
+file_selection_box_class XmFileSelectionBoxClassPart 228 8
+
+STRUCT
+XmFileSelectionBoxPart
+72
+directory XmString 0 4
+pattern XmString 4 4
+dir_list_label Widget 8 4
+dir_list_label_string XmString 12 4
+dir_list Widget 16 4
+dir_list_items XmString 20 4
+dir_list_item_count int 24 4
+dir_list_selected_item_position int 28 4
+filter_label Widget 32 4
+filter_label_string XmString 36 4
+filter_text Widget 40 4
+dir_mask XmString 44 4
+no_match_string XmString 48 4
+qualify_search_data_proc XmQualifyProc 52 4
+dir_search_proc XmSearchProc 56 4
+file_search_proc XmSearchProc 60 4
+file_type_mask char 64 1
+list_updated Boolean 65 1
+_SG_vendorExtension caddr_t 68 4
+
+STRUCT
+XmFileSelectionBoxRec
+508
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+selection_box XmSelectionBoxPart 320 116
+file_selection_box XmFileSelectionBoxPart 436 72
+
+STRUCT
+SgFinderClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgFinderClassRec
+204
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+finder_class SgFinderClassPart 196 8
+
+STRUCT
+SgFinderPart
+576
+dropPocket Widget 0 4
+zbText Widget 4 4
+zoomBar Widget 8 4
+text Widget 12 4
+historyBar Widget 16 4
+divisions[MAXDIVS] Dimension 20 510
+fontStruct XFontStruct 532 4
+divisionCount int 536 4
+oldFirstPos int 540 4
+oldLastPos int 544 4
+separator char 548 1
+addHistoryOnActivate Boolean 549 1
+useDropPocket Boolean 550 1
+useHistoryMenu Boolean 551 1
+historyPixmap Pixmap 552 4
+insensitiveHistoryPixmap Pixmap 556 4
+activate_callback XtCallbackList 560 4
+value_changed_callback XtCallbackList 564 4
+setTextSectionFunc SgSetTextFunc 568 4
+_SG_vendorExtension caddr_t 572 4
+
+STRUCT
+SgFinderRec
+812
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+finder SgFinderPart 236 576
+
+STRUCT
+GlxDrawClassPart
+4
+extension caddr_t 0 4
+
+STRUCT
+GlxMDrawClassRec
+152
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+glxDraw_class GlxDrawClassPart 148 4
+
+STRUCT
+GlxDrawClassRec
+120
+core_class CoreClassPart 0 116
+glxDraw_class GlxDrawClassPart 116 4
+
+STRUCT
+GlxDrawPart
+100
+config GLXconfig 0 4
+visualInfo XVisualInfo 4 4
+override_colormap Boolean 8 1
+ginit_callback XtCallbackList 12 4
+resize_callback XtCallbackList 16 4
+expose_callback XtCallbackList 20 4
+input_callback XtCallbackList 24 4
+overlay_info GlxDrawWindowInfo 28 24
+underlay_info GlxDrawWindowInfo 52 24
+popup_info GlxDrawWindowInfo 76 24
+
+STRUCT
+GlxMDrawRec
+284
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+glxDraw GlxDrawPart 184 100
+
+STRUCT
+GlxDrawRec
+216
+core CorePart 0 116
+glxDraw GlxDrawPart 116 100
+
+STRUCT
+SgGraphClassPart
+8
+extension caddr_t 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgGraphClassRec
+204
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+graph_class SgGraphClassPart 196 8
+
+STRUCT
+SgGraphPart
+372
+bufferWindow Window 0 4
+bufferPixmap Pixmap 4 4
+bufferWindowCount int 8 4
+current_action ActionMode 12 4
+last_button_time Time 16 4
+double_click_interval int 20 4
+scroll_increment int 24 4
+indicate_child_cursor Cursor 28 4
+indicate_parent_cursor Cursor 32 4
+ptr_cursor Cursor 36 4
+motion_cursor Cursor 40 4
+indicate_cursor Cursor 44 4
+high_right_cursor Cursor 48 4
+high_left_cursor Cursor 52 4
+low_right_cursor Cursor 56 4
+low_left_cursor Cursor 60 4
+foreground Pixel 64 4
+start_x int 68 4
+start_y int 72 4
+end_x int 76 4
+end_y int 80 4
+delta_x int 84 4
+delta_y int 88 4
+pick_delta int 92 4
+child_spacing int 96 4
+sibling_spacing int 100 4
+original_child_spacing int 104 4
+original_sibling_spacing int 108 4
+gc GC 112 4
+xorgc GC 116 4
+highlightgc GC 120 4
+overview_top_gc GC 124 4
+overview_bottom_gc GC 128 4
+overview_markgc GC 132 4
+overview_arc_gc GC 136 4
+overview_node_gc GC 140 4
+show_overview_arcs Boolean 144 1
+edit_mode Boolean 145 1
+add_mode Boolean 146 1
+nodes_movable Boolean 147 1
+arcs_selectable Boolean 148 1
+arcs_editable Boolean 149 1
+auto_layout_mode autoLayoutType 152 4
+layoutKey Atom 156 4
+siblings_visible Boolean 160 1
+re_layout Boolean 161 1
+re_orient Boolean 162 1
+layed_out Boolean 163 1
+batch_drawing_mode Boolean 164 1
+layoutStyle char 165 1
+direction char 166 1
+arc_draw_mode char 167 1
+arcs WidgetList 168 4
+selected_arcs ArcList 172 12
+selected_nodes NodeList 184 12
+user_roots NodeList 196 12
+n_arcs int 208 4
+n_arc_slots int 212 4
+root NodePtr 216 4
+current_node NodePtr 220 4
+current_subgraph NodePtr 224 4
+current_arc Widget 228 4
+highlighted_arc Widget 232 4
+indicated_widget Widget 236 4
+overview_widget Widget 240 4
+overview_in_motion Boolean 244 1
+arc_highlight_color Pixel 248 4
+overview_arc_color Pixel 252 4
+overview_node_color Pixel 256 4
+overview_viewport_top_color Pixel 260 4
+overview_viewport_bottom_color Pixel 264 4
+overview_rect XRectangle 268 8
+x_scale_factor float 276 4
+y_scale_factor float 280 4
+skew_overview Boolean 284 1
+allow_grandchild_input Boolean 285 1
+default_widget_class int 288 4
+allow_multiple_selections Boolean 292 1
+arc_style char 300 1
+butterfly_widget Widget 304 4
+graph_too_big_callback XtCallbackList 308 4
+user_button_callback XtCallbackList 312 4
+graph_changed XtCallbackList 316 4
+new_arc XtCallbackList 320 4
+new_node XtCallbackList 324 4
+node_moved XtCallbackList 328 4
+arc_moved XtCallbackList 332 4
+double_click XtCallbackList 336 4
+select_node XtCallbackList 340 4
+deselect XtCallbackList 344 4
+select_arc XtCallbackList 348 4
+select_subgraph XtCallbackList 352 4
+is_scrolled Boolean 356 1
+show_crossing_arcs Boolean 357 1
+clip_width Dimension 358 2
+clip_height Dimension 360 2
+scrollbar_width Dimension 362 2
+adjust_size int 364 4
+_SG_vendorExtension caddr_t 368 4
+
+STRUCT
+SgGraphRec
+608
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+graph SgGraphPart 236 372
+
+STRUCT
+SgGraphConstraintsRec SgGraphConstraintPtr
+40
+manager XmManagerConstraintPart 0 8
+old_mask int 8 4
+node NodePtr 12 4
+delta_x int 16 4
+delta_y int 20 4
+old_x int 24 4
+old_y int 28 4
+overview_highlight_color Pixel 32 4
+extension caddr_t 36 4
+
+STRUCT
+SgGridConstraintPart SgGridConstraint
+36
+gravity int 0 4
+resizable_horiz Boolean 4 1
+resizable_vert Boolean 5 1
+row int 8 4
+column int 12 4
+prefH Dimension 16 2
+prefW Dimension 18 2
+cursorX int 20 4
+cursorY int 24 4
+moveOnly Boolean 28 1
+builderAction Boolean 29 1
+_SG_vendorExtension caddr_t 32 4
+
+STRUCT
+SgGridConstraintRec SgGridConstraintPtr
+44
+manager XmManagerConstraintPart 0 8
+grid SgGridConstraintPart 8 36
+
+STRUCT
+SgGridClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgGridClassRec
+224
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+grid_class SgGridClassPart 216 8
+
+STRUCT
+SgGridPart
+48
+buildMode Boolean 0 1
+automatic Boolean 1 1
+default_spacing Dimension 2 2
+num_rows int 4 4
+num_columns int 8 4
+row_info RowColumnInfo 12 4
+col_info RowColumnInfo 16 4
+matrix WidgetList 20 4
+show_grid Boolean 24 1
+rowString String 28 4
+colString String 32 4
+rowResizeString String 36 4
+colResizeString String 40 4
+_SG_vendorExtension caddr_t 44 4
+
+STRUCT
+SgGridRec
+368
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+grid SgGridPart 320 48
+
+STRUCT
+SgHorzPanedWindowClassPart
+8
+extension caddr_t 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgHorzPanedWindowClassRec
+204
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+paned_window_class SgHorzPanedWindowClassPart 196 8
+
+STRUCT
+SgHorzPanedWindowConstraintPart
+36
+position int 0 4
+dwidth int 4 4
+dx Position 8 2
+olddx Position 10 2
+min Dimension 12 2
+max Dimension 14 2
+isPane Boolean 16 1
+allow_resize Boolean 17 1
+skip_adjust Boolean 18 1
+sash Widget 20 4
+separator Widget 24 4
+position_index short 28 2
+_SG_vendorExtension caddr_t 32 4
+
+STRUCT
+SgHorzPanedWindowConstraintRec SgHorzPanedWindowConstraintPtr
+44
+manager XmManagerConstraintPart 0 8
+panedw SgHorzPanedWindowConstraintPart 8 36
+
+STRUCT
+SgHorzPanedWindowPart
+56
+refiguremode Boolean 0 1
+separator_on Boolean 1 1
+margin_width Dimension 2 2
+margin_height Dimension 4 2
+spacing Dimension 6 2
+sash_width Dimension 8 2
+sash_height Dimension 10 2
+sash_shadow_thickness Dimension 12 2
+sash_indent Position 14 2
+sash_offset Position 16 2
+startx int 20 4
+increment_count short 24 2
+pane_count short 26 2
+num_slots short 28 2
+num_managed_children short 30 2
+recursively_called Boolean 32 1
+resize_at_realize Boolean 33 1
+top_pane SgHorzPanedWindowConstraintPtr 36 4
+bottom_pane SgHorzPanedWindowConstraintPtr 40 4
+flipgc GC 44 4
+managed_children WidgetList 48 4
+_SG_vendorExtension _SG_HPanedWExtension 52 4
+
+STRUCT
+SgHorzPanedWindowRec
+292
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+paned_window SgHorzPanedWindowPart 236 56
+
+STRUCT
+SgIconGCacheObjClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgIconGCacheObjClassRec
+140
+object_class ObjectClassPart 0 116
+ext_class XmExtClassPart 116 16
+icon_class_cache SgIconGCacheObjClassPart 132 8
+
+STRUCT
+SgIconGCacheObjPart
+52
+alignment char 0 1
+string_direction char 1 1
+margin_height Dimension 2 2
+margin_width Dimension 4 2
+margin_left Dimension 6 2
+margin_right Dimension 8 2
+margin_top Dimension 10 2
+margin_bottom Dimension 12 2
+margin_middle Dimension 14 2
+foreground Pixel 16 4
+background Pixel 20 4
+top_shadow_color Pixel 24 4
+bottom_shadow_color Pixel 28 4
+highlight_color Pixel 32 4
+recompute_size Boolean 36 1
+skipCallback Boolean 37 1
+menu_type char 38 1
+show_cascade Boolean 39 1
+pixmap_width Dimension 40 2
+pixmap_height Dimension 42 2
+icon_placement int 44 4
+_SG_vendorExtension caddr_t 48 4
+
+STRUCT
+SgIconGCacheObjRec
+64
+ext XmExtPart 0 12
+icon_cache SgIconGCacheObjPart 12 52
+
+STRUCT
+SgIconGadgetClassPart
+16
+setOverrideCallback XtWidgetProc 0 4
+menuProcs XmMenuProc 4 4
+extension XtPointer 8 4
+_SG_vendorExtension caddr_t 12 4
+
+STRUCT
+SgIconGadgetClassRec
+172
+rect_class RectObjClassPart 0 116
+gadget_class XmGadgetClassPart 116 40
+icon_class SgIconGadgetClassPart 156 16
+
+STRUCT
+SgIconGadgetPart
+88
+_label _XmString 0 4
+font XmFontList 4 4
+bitmap Pixmap 8 4
+bitmap_insen Pixmap 12 4
+pixmap Pixmap 16 4
+pixmap_insen Pixmap 20 4
+shadow_type char 24 1
+double_click_callback XtCallbackList 28 4
+normal_GC GC 32 4
+topshadow_GC GC 36 4
+bottomshadow_GC GC 40 4
+insensitive_GC GC 44 4
+inverse_GC GC 48 4
+TextRect XRectangle 52 8
+pixmapRect XRectangle 60 8
+cascade_pixmap Pixmap 68 4
+cascade_width int 72 4
+cascade_height int 76 4
+cache SgIconGCacheObjPart 80 4
+_SG_vendorExtension caddr_t 84 4
+
+STRUCT
+SgIconGadgetRec
+160
+object ObjectPart 0 28
+rectangle RectObjPart 28 14
+gadget XmGadgetPart 44 28
+icon SgIconGadgetPart 72 88
+
+STRUCT
+SgListClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgListClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+list_class SgListClassPart 148 8
+
+STRUCT
+SgListPart
+284
+ItemSpacing short 0 2
+margin_width Dimension 2 2
+margin_height Dimension 4 2
+font XmFontList 8 4
+items XmString 12 4
+itemCount int 16 4
+selectedItems XmString 20 4
+selectedIndices int 24 4
+selectedItemCount int 28 4
+visibleItemCount int 32 4
+LastSetVizCount int 36 4
+SelectionPolicy char 40 1
+ScrollBarDisplayPolicy char 41 1
+SizePolicy char 42 1
+StrDir XmStringDirection 43 1
+AutoSelect Boolean 44 1
+DidSelection Boolean 45 1
+FromSetSB Boolean 46 1
+FromSetNewSize Boolean 47 1
+AddMode Boolean 48 1
+LeaveDir char 49 1
+HighlightThickness char 50 1
+ClickInterval int 52 4
+DragID XtIntervalId 56 4
+SingleCallback XtCallbackList 60 4
+MultipleCallback XtCallbackList 64 4
+ExtendCallback XtCallbackList 68 4
+BrowseCallback XtCallbackList 72 4
+DefaultCallback XtCallbackList 76 4
+NormalGC GC 80 4
+InverseGC GC 84 4
+HighlightGC GC 88 4
+DashTile Pixmap 92 4
+InternalList SgListElementPtr 96 4
+LastItem int 100 4
+FontHeight int 104 4
+top_position int 108 4
+Event char 112 1
+LastHLItem int 116 4
+StartItem int 120 4
+OldStartItem int 124 4
+EndItem int 128 4
+OldEndItem int 132 4
+BaseX Position 136 2
+BaseY Position 138 2
+MouseMoved Boolean 140 1
+AppendInProgress Boolean 141 1
+Traversing Boolean 142 1
+KbdSelection Boolean 143 1
+DownCount short 144 2
+DownTime Time 148 4
+CurrentKbdItem int 152 4
+SelectionType char 156 1
+InsensitiveGC GC 160 4
+vmin int 164 4
+vmax int 168 4
+vOrigin int 172 4
+vExtent int 176 4
+hmin int 180 4
+hmax int 184 4
+hOrigin int 188 4
+hExtent int 192 4
+MaxWidth Dimension 196 2
+CharWidth Dimension 198 2
+XOrigin Position 200 2
+hScrollBar SgScrollBarWidget 204 4
+vScrollBar SgScrollBarWidget 208 4
+Mom XmScrolledWindowWidget 212 4
+MaxItemHeight Dimension 216 2
+hasIcons Boolean 218 1
+update Boolean 219 1
+iconWidth short 220 2
+indicatedIcon int 224 4
+fields int 228 4
+numFields int 232 4
+selectedField int 236 4
+arm_color Pixel 240 4
+field_margin int 244 4
+spacing Dimension 248 2
+IconActivateCallback XtCallbackList 252 4
+IconDisarmCallback XtCallbackList 256 4
+IconArmCallback XtCallbackList 260 4
+FieldChangedCallback XtCallbackList 264 4
+ArmGC GC 268 4
+IconGC GC 272 4
+indentIcons Boolean 276 1
+defaultIconWidth Dimension 278 2
+_SG_vendorExtension caddr_t 280 4
+
+STRUCT
+SgListRec
+468
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+list SgListPart 184 284
+
+STRUCT
+PuiPrintBoxClassPart
+4
+dummy int 0 4
+
+STRUCT
+PuiPrintBoxClassRec
+220
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+puiPrintBox_class PuiPrintBoxClassPart 216 4
+
+STRUCT
+PuiPrintBoxPart
+496
+res_num_printers int 0 4
+res_printer_list SLPrinterStruct 4 4
+res_default_printer char 8 4
+res_printer char 12 4
+res_job_type int 16 4
+res_filename char 20 4
+res_fd int 24 4
+res_buffer XtPointer 28 4
+res_bufsize int 32 4
+res_print_policy int 36 4
+res_show_fname Boolean 40 1
+res_show_opts Boolean 41 1
+res_show_numcopies Boolean 42 1
+res_show_bannertitle Boolean 43 1
+res_show_completion Boolean 44 1
+res_show_handling Boolean 45 1
+res_show_printeroptions Boolean 46 1
+res_show_optionsbutton Boolean 47 1
+res_show_savebutton Boolean 48 1
+res_filename_sensitive Boolean 49 1
+res_numcopies_sensitive Boolean 50 1
+res_poptions_sensitive Boolean 51 1
+res_button_placement int 52 4
+res_button_spacing int 56 4
+res_vis_count int 60 4
+res_printer_font XFontStruct 64 4
+res_def_printer_font XFontStruct 68 4
+res_busy_cursor Cursor 72 4
+res_printb_label XmString 76 4
+res_user1b_label XmString 80 4
+res_user2b_label XmString 84 4
+res_user3b_label XmString 88 4
+res_user4b_label XmString 92 4
+res_optionsb_label XmString 96 4
+res_saveb_label XmString 100 4
+res_cancelb_label XmString 104 4
+res_helpb_label XmString 108 4
+res_files_label XmString 112 4
+res_plist_label XmString 116 4
+res_opts_label XmString 120 4
+res_numcopies_label XmString 124 4
+res_title_label XmString 128 4
+res_deftitle_label XmString 132 4
+res_spectitle_label XmString 136 4
+res_complete_label XmString 140 4
+res_complete_mail_label XmString 144 4
+res_complete_mess_label XmString 148 4
+res_handling_label XmString 152 4
+res_handling_copy_label XmString 156 4
+res_handling_link_label XmString 160 4
+res_spec_options_label XmString 164 4
+res_savedlg_title_label XmString 168 4
+res_savedlg_saveb_label XmString 172 4
+res_savedlg_userb_label XmString 176 4
+res_savedlg_allb_label XmString 180 4
+res_savedlg_cancelb_label XmString 184 4
+res_savedlg_msg_label XmString 188 4
+res_print_callback XtCallbackList 192 4
+res_user1_callback XtCallbackList 196 4
+res_user2_callback XtCallbackList 200 4
+res_user3_callback XtCallbackList 204 4
+res_user4_callback XtCallbackList 208 4
+res_save_callback XtCallbackList 212 4
+res_cancel_callback XtCallbackList 216 4
+res_help_callback XtCallbackList 220 4
+res_jobinfo_callback XtCallbackList 224 4
+res_pr_select_callback XtCallbackList 228 4
+res_pr_action_callback XtCallbackList 232 4
+res_error_callback XtCallbackList 236 4
+res_opt_error_callback XtCallbackList 240 4
+res_numcopies int 244 4
+res_job_title char 248 4
+res_mail Boolean 252 1
+res_message Boolean 253 1
+res_copy Boolean 254 1
+res_spec_opts char 256 4
+work_area Widget 260 4
+pf_form Widget 264 4
+option_form Widget 268 4
+separator Widget 272 4
+action_form Widget 276 4
+printb_widget Widget 280 4
+user1b_widget Widget 284 4
+user2b_widget Widget 288 4
+user3b_widget Widget 292 4
+user4b_widget Widget 296 4
+optionsb_widget Widget 300 4
+saveb_widget Widget 304 4
+cancelb_widget Widget 308 4
+helpb_widget Widget 312 4
+files_label_widget Widget 316 4
+plist_label_widget Widget 320 4
+opts_label_widget Widget 324 4
+numcopies_label_widget Widget 328 4
+title_label_widget Widget 332 4
+complete_label_widget Widget 336 4
+handling_label_widget Widget 340 4
+spec_options_label_widget Widget 344 4
+files_widget Widget 348 4
+plist_widget Widget 352 4
+action_rc Widget 356 4
+opts_rc_widget Widget 360 4
+opts_sw_widget Widget 364 4
+save_dialog_widget Widget 368 4
+save_list_widget Widget 372 4
+save_msg_widget Widget 376 4
+selected_printer_index int 380 4
+adding_pb_widgets Boolean 384 1
+tfield_sensitive PuiPrintBoxFieldColors 388 16
+tfield_insensitive PuiPrintBoxFieldColors 404 16
+user_name char 420 4
+printer_options PuiPrinterOption 424 4
+init_error_code int 428 4
+option_panels PuiOptionPanel 432 4
+num_copies int 436 4
+copy_file int 440 4
+mail int 444 4
+job_title char 448 4
+options char 452 4
+numcopies_text_widget Widget 456 4
+banner_deftitle_widget Widget 460 4
+banner_spectitle_widget Widget 464 4
+banner_select_widget Widget 468 4
+banner_text_widget Widget 472 4
+complete_mail_widget Widget 476 4
+complete_mess_widget Widget 480 4
+handling_link_widget Widget 484 4
+handling_copy_widget Widget 488 4
+spec_options_widget Widget 492 4
+
+STRUCT
+PuiPrintBoxRec
+816
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+printBox PuiPrintBoxPart 320 496
+
+STRUCT
+PuiRootWinClassPart
+4
+dummy int 0 4
+
+STRUCT
+PuiRootWinClassRec
+120
+core_class CoreClassPart 0 116
+puiRootWin_class PuiRootWinClassPart 116 4
+
+STRUCT
+PuiRootWinPart
+4
+res_window Window 0 4
+
+STRUCT
+PuiRootWinRec
+120
+core CorePart 0 116
+rootWin PuiRootWinPart 116 4
+
+STRUCT
+SgRubberBoardConstraintPart SgRubberBoardConstraint
+20
+initialX Position 0 2
+initialY Position 2 2
+finalX Position 4 2
+finalY Position 6 2
+initialWidth Dimension 8 2
+initialHeight Dimension 10 2
+finalWidth Dimension 12 2
+finalHeight Dimension 14 2
+_SG_vendorExtension caddr_t 16 4
+
+STRUCT
+SgRubberBoardConstraintRec SgRubberBoardConstraintPtr
+28
+manager XmManagerConstraintPart 0 8
+rubber SgRubberBoardConstraintPart 8 20
+
+STRUCT
+SgRubberBoardClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgRubberBoardClassRec
+224
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+rubber_class SgRubberBoardClassPart 216 8
+
+STRUCT
+SgRubberBoardPart
+16
+initialWidth Dimension 0 2
+initialHeight Dimension 2 2
+finalWidth Dimension 4 2
+finalHeight Dimension 6 2
+setInitial Boolean 8 1
+setFinal Boolean 9 1
+_SG_vendorExtension caddr_t 12 4
+
+STRUCT
+SgRubberBoardRec
+336
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+rubber SgRubberBoardPart 320 16
+
+STRUCT
+SgScrollBarClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgScrollBarClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+scrollBar_class SgScrollBarClassPart 148 8
+
+STRUCT
+SgScrollBarPart
+200
+value int 0 4
+minimum int 4 4
+maximum int 8 4
+slider_size int 12 4
+orientation char 16 1
+processing_direction char 17 1
+show_arrows Boolean 18 1
+increment int 20 4
+page_increment int 24 4
+initial_delay int 28 4
+repeat_delay int 32 4
+value_changed_callback XtCallbackList 36 4
+increment_callback XtCallbackList 40 4
+decrement_callback XtCallbackList 44 4
+page_increment_callback XtCallbackList 48 4
+page_decrement_callback XtCallbackList 52 4
+to_top_callback XtCallbackList 56 4
+to_bottom_callback XtCallbackList 60 4
+drag_callback XtCallbackList 64 4
+unhighlight_GC GC 68 4
+foreground_GC GC 72 4
+trough_color Pixel 76 4
+pixmap Drawable 80 4
+sliding_on Boolean 84 1
+etched_slider Boolean 85 1
+saved_value int 88 4
+flags char 92 1
+change_type char 93 1
+timer XtIntervalId 96 4
+initial_x short 100 2
+initial_y short 102 2
+separation_x short 104 2
+separation_y short 106 2
+slider_x short 108 2
+slider_y short 110 2
+slider_width short 112 2
+slider_height short 114 2
+slider_area_x short 116 2
+slider_area_y short 118 2
+slider_area_width short 120 2
+slider_area_height short 122 2
+arrow1_x short 124 2
+arrow1_y short 126 2
+arrow1_orientation char 128 1
+arrow1_selected Boolean 129 1
+arrow2_x short 130 2
+arrow2_y short 132 2
+arrow2_orientation char 134 1
+arrow2_selected Boolean 135 1
+arrow_width short 136 2
+arrow_height short 138 2
+arrow1_top_count short 140 2
+arrow1_cent_count short 142 2
+arrow1_bot_count short 144 2
+arrow1_top XRectangle 148 4
+arrow1_cent XRectangle 152 4
+arrow1_bot XRectangle 156 4
+arrow2_top_count short 160 2
+arrow2_cent_count short 162 2
+arrow2_bot_count short 164 2
+arrow2_top XRectangle 168 4
+arrow2_cent XRectangle 172 4
+arrow2_bot XRectangle 176 4
+unavailable_GC GC 180 4
+trough_pixmap_callback XtCallbackList 184 4
+area_pixmap Drawable 188 4
+pixmap_mask Drawable 192 4
+_SG_vendorExtension caddr_t 196 4
+
+STRUCT
+SgScrollBarRec
+384
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+scrollBar SgScrollBarPart 184 200
+
+STRUCT
+SgSpringBoxConstraintPart SgSpringBoxConstraint
+32
+top int 0 4
+bottom int 4 4
+left int 8 4
+right int 12 4
+vert int 16 4
+horiz int 20 4
+prefH Dimension 24 2
+prefW Dimension 26 2
+_SG_vendorExtension caddr_t 28 4
+
+STRUCT
+SgSpringBoxConstraintRec SgSpringBoxConstraintPtr
+40
+manager XmManagerConstraintPart 0 8
+spring_box SgSpringBoxConstraintPart 8 32
+
+STRUCT
+SgSpringBoxClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgSpringBoxClassRec
+224
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+bulletin_board_class XmBulletinBoardClassPart 196 20
+spring_box_class SgSpringBoxClassPart 216 8
+
+STRUCT
+SgSpringBoxPart
+8
+orientation char 0 1
+min_spacing Dimension 2 2
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgSpringBoxRec
+328
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+bulletin_board XmBulletinBoardPart 236 84
+spring_box SgSpringBoxPart 320 8
+
+STRUCT
+SgThumbWheelClassPart
+8
+make_compiler_happy int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgThumbWheelClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+thumbWheel_class SgThumbWheelClassPart 148 8
+
+STRUCT
+SgThumbWheelPart
+152
+lower_bound int 0 4
+upper_bound int 4 4
+home_position int 8 4
+angle_range int 12 4
+angle_factor int 16 4
+value int 20 4
+orientation char 24 1
+animate Boolean 25 1
+show_home_button Boolean 26 1
+value_changed_callback XtCallbackList 28 4
+drag_callback XtCallbackList 32 4
+infinite Boolean 36 1
+dragging Boolean 37 1
+drag_begin_value int 40 4
+last_mouse_position int 44 4
+pegged Boolean 48 1
+pegged_mouse_position int 52 4
+viewable_pixels Dimension 56 2
+user_pixels int 60 4
+pix1 Pixmap 64 4
+pix2 Pixmap 68 4
+pix3 Pixmap 72 4
+pix4 Pixmap 76 4
+pix1_hilite Pixmap 80 4
+pix2_hilite Pixmap 84 4
+pix3_hilite Pixmap 88 4
+pix4_hilite Pixmap 92 4
+current_quiet_pixmap Pixmap 96 4
+current_hilite_pixmap Pixmap 100 4
+wheel_hilite Boolean 104 1
+button_quiet_pixmap Pixmap 108 4
+button_hilite_pixmap Pixmap 112 4
+button_hilite Boolean 116 1
+foreground_GC GC 120 4
+shader shaderptr 124 4
+wheel_x int 128 4
+wheel_y int 132 4
+button_x int 136 4
+button_y int 140 4
+home_button_armed Boolean 144 1
+_SG_vendorExtension caddr_t 148 4
+
+STRUCT
+SgThumbWheelRec
+336
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+thumbWheel SgThumbWheelPart 184 152
+
+STRUCT
+SgVisualDrawingAreaClassPart
+4
+mumble int 0 4
+
+STRUCT
+SgVisualDrawingAreaClassRec
+208
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+drawing_area_class XmDrawingAreaClassPart 196 8
+visual_drawing_area_class SgVisualDrawingAreaClassPart 204 4
+
+STRUCT
+SgVisualDrawingAreaPart
+32
+visual Visual 0 4
+installColormap Boolean 4 1
+ditherBackground Boolean 5 1
+parentShell Widget 8 4
+override Boolean 12 1
+savedColormaps Colormap 16 4
+numSavedColormaps int 20 4
+colormapInstalled Boolean 24 1
+backgroundString char 28 4
+
+STRUCT
+SgVisualDrawingAreaRec
+292
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+drawing_area XmDrawingAreaPart 236 24
+visual_drawing_area SgVisualDrawingAreaPart 260 32
+
+STRUCT
+SgZbTextClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgZbTextClassRec
+204
+core_class CoreClassPart 0 116
+composite_class CompositeClassPart 116 20
+constraint_class ConstraintClassPart 136 28
+manager_class XmManagerClassPart 164 32
+zbtext_class SgZbTextClassPart 196 8
+
+STRUCT
+SgZbTextPart
+12
+zoomBar Widget 0 4
+text Widget 4 4
+_SG_vendorExtension caddr_t 8 4
+
+STRUCT
+SgZbTextRec
+248
+core CorePart 0 116
+composite CompositePart 116 16
+constraint ConstraintPart 132 4
+manager XmManagerPart 136 100
+zbtext SgZbTextPart 236 12
+
+STRUCT
+SgZoomBarClassPart
+8
+foo int 0 4
+_SG_vendorExtension caddr_t 4 4
+
+STRUCT
+SgZoomBarClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+zoombar_class SgZoomBarClassPart 148 8
+
+STRUCT
+SgZoomBarPart
+40
+activate_callback XtCallbackList 0 4
+arm_callback XtCallbackList 4 4
+disarm_callback XtCallbackList 8 4
+armed Boolean 12 1
+click_count int 16 4
+section_widths Dimension 20 4
+section_count int 24 4
+pushed_section int 28 4
+located_section int 32 4
+_SG_vendorExtension caddr_t 36 4
+
+STRUCT
+SgZoomBarRec
+224
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+zoomBar SgZoomBarPart 184 40
+
+STRUCT
+GlxMDrawClassRec
+152
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+glxDraw_class GlxDrawClassPart 148 4
+
+STRUCT
+GlxMDrawRec
+284
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+glxDraw GlxDrawPart 184 100
+
+STRUCT
+Xlib_XGC SpecialPart
+112
+ext_data XExtData 0 4
+gid GContext 4 4
+rects Bool 8 4
+dashes Bool 12 4
+dirty long 16 4
+values XGCValues 20 92
+
+STRUCT
+XmTextFieldClassPart
+8
+extension XtPointer 0 4
+_SG_vendorExtension _SgClassExtension 4 4
+
+STRUCT
+XmTextFieldClassRec
+156
+core_class CoreClassPart 0 116
+primitive_class XmPrimitiveClassPart 116 32
+text_class XmTextFieldClassPart 148 8
+
+STRUCT
+_SG_XmTextFieldExtPart
+16
+selection_background Pixel 0 4
+selection_foreground Pixel 4 4
+error_background Pixel 8 4
+cursor_visible_on_focus Boolean 12 1
+post_motion_call Boolean 13 1
+
+STRUCT
+_SG_XmTextFieldExtRec _SG_XmTextFieldExt
+20
+common _SgInstanceExtensionRec 0 4
+rsrc _SG_XmTextFieldExtPart 4 16
+
+STRUCT
+XmTextFieldPart
+280
+activate_callback XtCallbackList 0 4
+focus_callback XtCallbackList 4 4
+losing_focus_callback XtCallbackList 8 4
+modify_verify_callback XtCallbackList 12 4
+wcs_modify_verify_callback XtCallbackList 16 4
+motion_verify_callback XtCallbackList 20 4
+gain_primary_callback XtCallbackList 24 4
+lose_primary_callback XtCallbackList 28 4
+value_changed_callback XtCallbackList 32 4
+value char 36 4
+wc_value wchar_t 40 4
+font_list XmFontList 44 4
+font XFontStruct 48 4
+selection_array XmTextScanType 52 4
+highlight _XmHighlightData 56 12
+gc GC 68 4
+image_gc GC 72 4
+save_gc GC 76 4
+ibeam_off Pixmap 80 4
+add_mode_cursor Pixmap 84 4
+cursor Pixmap 88 4
+putback Pixmap 92 4
+stipple_tile Pixmap 96 4
+image_clip Pixmap 100 4
+cursor_position XmTextPosition 104 4
+new_h_offset XmTextPosition 108 4
+h_offset XmTextPosition 112 4
+orig_left XmTextPosition 116 4
+orig_right XmTextPosition 120 4
+prim_pos_left XmTextPosition 124 4
+prim_pos_right XmTextPosition 128 4
+prim_anchor XmTextPosition 132 4
+sec_pos_left XmTextPosition 136 4
+sec_pos_right XmTextPosition 140 4
+sec_anchor XmTextPosition 144 4
+stuff_pos XmTextPosition 148 4
+select_pos_x Position 152 2
+prim_time Time 156 4
+dest_time Time 160 4
+sec_time Time 164 4
+last_time Time 168 4
+timer_id XtIntervalId 172 4
+select_id XtIntervalId 176 4
+blink_rate int 180 4
+selection_array_count int 184 4
+threshold int 188 4
+size_allocd int 192 4
+string_length int 196 4
+cursor_height int 200 4
+cursor_width int 204 4
+sarray_index int 208 4
+max_length int 212 4
+max_char_size int 216 4
+columns short 220 2
+margin_width Dimension 222 2
+margin_height Dimension 224 2
+average_char_width Dimension 226 2
+margin_top Dimension 228 2
+margin_bottom Dimension 230 2
+font_ascent Dimension 232 2
+font_descent Dimension 234 2
+resize_width Boolean 236 1
+pending_delete Boolean 237 1
+editable Boolean 238 1
+verify_bell Boolean 239 1
+cursor_position_visible Boolean 240 1
+traversed Boolean 241 1
+add_mode Boolean 242 1
+has_focus Boolean 243 1
+blink_on Boolean 244 1
+cursor_on int 246 2
+refresh_ibeam_off Boolean 248 1
+have_inverted_image_gc Boolean 249 1
+has_primary Boolean 250 1
+has_secondary Boolean 251 1
+has_destination Boolean 252 1
+sec_drag Boolean 253 1
+selection_move Boolean 254 1
+pending_off Boolean 255 1
+fontlist_created Boolean 256 1
+has_rect Boolean 257 1
+do_drop Boolean 258 1
+cancel Boolean 259 1
+extending Boolean 260 1
+sec_extending Boolean 261 1
+changed_visible Boolean 262 1
+have_fontset Boolean 263 1
+in_setvalues Boolean 264 1
+do_resize Boolean 265 1
+redisplay Boolean 266 1
+overstrike Boolean 267 1
+sel_start Boolean 268 1
+extension XtPointer 272 4
+_SG_vendorExtension _SG_XmTextFieldExt 276 4
+
+STRUCT
+XmTextFieldRec
+464
+core CorePart 0 116
+primitive XmPrimitivePart 116 68
+text XmTextFieldPart 184 280
+
+CBNAME
+activate_callback
+*
+XmNactivateCallback
+CBNAME
+arm_callback
+*
+XmNarmCallback
+CBNAME
+disarm_callback
+*
+XmNdisarmCallback
+CBNAME
+focus_callback
+*
+XmNfocusCallback
+CBNAME
+losing_focus_callback
+*
+XmNlosingFocusCallback
+CBNAME
+map_callback
+*
+XmNmapCallback
+CBNAME
+unmap_callback
+*
+XmNunmapCallback
+CBNAME
+cascade_callback
+*
+XmNcascadingCallback
+CBNAME
+callback
+XmCommand
+XmNcommandEnteredCallback
+CBNAME
+value_changed_callback
+XmCommand
+XmNcommandChangedCallback
+CBNAME
+dragMotionCallback
+XmDragContext
+XmNdragMotionCallback
+CBNAME
+operationChangedCallback
+XmDragContext
+XmNoperationChangedCallback
+CBNAME
+siteEnterCallback
+XmDragContext
+XmNdropSiteEnterCallback
+CBNAME
+siteLeaveCallback
+XmDragContext
+XmNdropSiteLeaveCallback
+CBNAME
+topLevelEnterCallback
+XmDragContext
+XmNtopLevelEnterCallback
+CBNAME
+topLevelLeaveCallback
+XmDragContext
+XmNtopLevelLeaveCallback
+CBNAME
+dropStartCallback
+XmDragContext
+XmNdropStartCallback
+CBNAME
+dropFinishCallback
+XmDragContext
+XmNdropFinishCallback
+CBNAME
+dragDropFinishCallback
+XmDragContext
+XmNdragDropFinishCallback
+CBNAME
+resize_callback
+*
+XmNresizeCallback
+CBNAME
+expose_callback
+*
+XmNexposeCallback
+CBNAME
+input_callback
+*
+XmNinputCallback
+CBNAME
+help_callback
+*
+XmNhelpCallback
+CBNAME
+SingleCallback
+XmList
+XmNsingleSelectionCallback
+CBNAME
+MultipleCallback
+XmList
+XmNmultipleSelectionCallback
+CBNAME
+ExtendCallback
+XmList
+XmNextendedSelectionCallback
+CBNAME
+BrowseCallback
+XmList
+XmNbrowseSelectionCallback
+CBNAME
+DefaultCallback
+XmList
+XmNdefaultActionCallback
+CBNAME
+ok_callback
+*
+XmNokCallback
+CBNAME
+cancel_callback
+*
+XmNcancelCallback
+CBNAME
+entry_callback
+XmRowColumn
+XmNentryCallback
+CBNAME
+tear_off_activated_callback
+XmRowColumn
+XmNtearOffMenuActivateCallback
+CBNAME
+tear_off_deactivated_callback
+XmRowColumn
+XmNtearOffMenuDeactivateCallback
+CBNAME
+drag_callback
+*
+XmNdragCallback
+CBNAME
+value_changed_callback
+*
+XmNvalueChangedCallback
+CBNAME
+increment_callback
+*
+XmNincrementCallback
+CBNAME
+decrement_callback
+*
+XmNdecrementCallback
+CBNAME
+page_increment_callback
+*
+XmNpageIncrementCallback
+CBNAME
+page_decrement_callback
+*
+XmNpageDecrementCallback
+CBNAME
+to_top_callback
+*
+XmNtoTopCallback
+CBNAME
+to_bottom_callback
+*
+XmNtoBottomCallback
+CBNAME
+traverseObscuredCallback
+XmScrolledWindow
+XmNtraverseObscuredCallback
+CBNAME
+apply_callback
+*
+XmNapplyCallback
+CBNAME
+no_match_callback
+XmSelectionBox
+XmNnoMatchCallback
+CBNAME
+modify_verify_callback
+*
+XmNmodifyVerifyCallback
+CBNAME
+wcs_modify_verify_callback
+*
+XmNmodifyVerifyCallbackWcs
+CBNAME
+motion_verify_callback
+*
+XmNmotionVerifyCallback
+CBNAME
+gain_primary_callback
+*
+XmNgainPrimaryCallback
+CBNAME
+lose_primary_callback
+*
+XmNlosePrimaryCallback
+CBNAME
+value_changed_CB
+*
+XmNvalueChangedCallback
+CBSTRUCT
+XmArrowButton
+*
+XmArrowButtonCallbackStruct
+CBSTRUCT
+XmArrowButtonGadget
+*
+XmArrowButtonCallbackStruct
+CBSTRUCT
+XmBulletinBoard
+*
+XmAnyCallbackStruct
+CBSTRUCT
+XmCascadeButton
+*
+XmAnyCallbackStruct
+CBSTRUCT
+XmCascadeButtonGadget
+*
+XmAnyCallbackStruct
+CBSTRUCT
+XmCommandCallbackStruct
+*
+XmCommandCallbackStruct
+CBSTRUCT
+XmDragContext
+XmNdropFinishCallback
+XmDropFinishCallbackStruct
+CBSTRUCT
+XmDragContext
+XmNdropSiteEnterCallback
+XmDropSiteEnterCallbackStruct
+CBSTRUCT
+XmDragContext
+XmNdropSiteLeaveCallback
+XmDropSiteLeaveCallbackStruct
+CBSTRUCT
+XmDragContext
+XmNdropStartCallback
+XmDropStartCallbackStruct
+CBSTRUCT
+XmDragContext
+XmNoperationChangedCallback
+XmOperationChangedCallbackStruct
+CBSTRUCT
+XmDragContext
+XmNtopLevelEnterCallback
+XmTopLevelEnterCallbackStruct
+CBSTRUCT
+XmDragContext
+XmNtopLevelLeaveCallback
+XmTopLevelLeaveCallbackStruct
+CBSTRUCT
+XmDrawingArea
+*
+XmDrawingAreaCallbackStruct
+CBSTRUCT
+XmDrawnButton
+*
+XmDrawnButtonCallbackStruct
+CBSTRUCT
+XmDropSite
+XmNdragProc
+XmDragProcCallbackStruct
+CBSTRUCT
+XmDropSite
+XmNdropProc
+XmDropProcCallbackStruct
+CBSTRUCT
+XmFileSelectionBox
+*
+XmFileSelectionBoxCallbackStruct
+CBSTRUCT
+XmGadget
+*
+XmAnyCallbackStruct
+CBSTRUCT
+XmList
+*
+XmListCallbackStruct
+CBSTRUCT
+XmManager
+*
+XmAnyCallbackStruct
+CBSTRUCT
+XmMessageBox
+*
+XmAnyCallbackStruct
+CBSTRUCT
+XmPrimitive
+*
+XmAnyCallbackStruct
+CBSTRUCT
+XmPushButton
+*
+XmPushButtonCallbackStruct
+CBSTRUCT
+XmPushButtonGadget
+*
+XmPushButtonCallbackStruct
+CBSTRUCT
+XmRowColumn
+*
+XmRowColumnCallbackStruct
+CBSTRUCT
+XmScale
+*
+XmScaleCallbackStruct
+CBSTRUCT
+XmScrollBar
+*
+XmScrollBarCallbackStruct
+CBSTRUCT
+XmScrolledWindow
+XmNtraverseObscuredCallback
+XmNtraverseObscuredCallbackStruct
+CBSTRUCT
+XmSelectionBox
+*
+XmSelectionBoxCallbackStruct
+CBSTRUCT
+XmText
+*
+XmAnyCallbackStruct
+CBSTRUCT
+XmText
+XmNlosingFocusCallback
+XmTextVerifyCallbackStruct
+CBSTRUCT
+XmText
+XmNmodifyVerifyCallback
+XmTextVerifyCallbackStruct
+CBSTRUCT
+XmText
+XmNmotionVerifyCallback
+XmTextVerifyCallbackStruct
+CBSTRUCT
+XmText
+XmNmotionVerifyCallbackWcs
+XmTextVerifyCallbackWcsStruct
+CBSTRUCT
+XmTextField
+*
+XmAnyCallbackStruct
+CBSTRUCT
+XmTextField
+XmNlosingFocusCallback
+XmTextVerifyCallbackStruct
+CBSTRUCT
+XmTextField
+XmNmodifyVerifyCallback
+XmTextVerifyCallbackStruct
+CBSTRUCT
+XmTextField
+XmNmotionVerifyCallback
+XmTextVerifyCallbackStruct
+CBSTRUCT
+XmTextField
+XmNmotionVerifyCallbackWcs
+XmTextVerifyCallbackWcsStruct
+CBSTRUCT
+XmToggleButton
+*
+XmToggleButtonCallbackStruct
+CBSTRUCT
+XmToggleButtonGadget
+*
+XmToggleButtonCallbackStruct
+ENUM
+XGCValues
+function
+0 GXclear GXand GXandReverse GXcopy GXandInverted GXnoop GXxor GXor GXnor GXequiv GXinvert GXorReverse GXcopyInverted GXorInverted GXnand GXset
+ENUM
+XGCValues
+line_style
+0 LineSolid LineOnOffDash LineDoubleDash
+ENUM
+XGCValues
+cap_style
+0 CapNotLast CapButt CapRound CapProjecting
+ENUM
+XGCValues
+join_style
+0 JoinMiter JoinRound JoinBevel
+ENUM
+XGCValues
+fill_style
+0 FillSolid FillTiled FillStippled FillOpaqueStippled
+ENUM
+XGCValues
+fill_rule
+0 EvenOddRule WindingRule
+ENUM
+XGCValues
+arc_mode
+0 ArcChord ArcPieSlice
+ENUM
+XGCValues
+subwindow_mode
+0 ClipByChildren IncludeInferiors
+ENUM
+XWindowAttributes
+class
+1 InputOutput InputOnly
+ENUM
+XWindowAttributes
+backing_store
+0 NotUseful WhenMapped Always
+ENUM
+XWindowAttributes
+map_state
+0 IsUnmapped IsUnviewable IsViewable
+ENUM
+X[A-Za-z]*Event$
+type
+2 KeyPress KeyRelease ButtonPress ButtonRelease MotionNotify EnterNotify LeaveNotify FocusIn FocusOut KeymapNotify Expose GraphicsExpose NoExpose VisibilityNotify CreateNotify DestroyNotify UnmapNotify MapNotify MapRequest ReparentNotify ConfigureNotify ConfigureRequest GravityNotify ResizeRequest CirculateNotify CirculateRequest PropertyNotify SelectionClear SelectionRequest SelectionNotify ColormapNotify ClientMessage MappingNotify
+ENUM
+Xm[A-Za-z]*CallbackStruct$
+reason
+0 XmCR_NONE XmCR_HELP XmCR_VALUE_CHANGED XmCR_INCREMENT XmCR_DECREMENT XmCR_PAGE_INCREMENT XmCR_PAGE_DECREMENT XmCR_TO_TOP XmCR_TO_BOTTOM XmCR_DRAG XmCR_ACTIVATE XmCR_ARM XmCR_DISARM ? ? ? XmCR_MAP XmCR_UNMAP XmCR_FOCUS XmCR_LOSING_FOCUS XmCR_MODIFYING_TEXT_VALUE XmCR_MOVING_INSERT_CURSOR XmCR_EXECUTE XmCR_SINGLE_SELECT XmCR_MULTIPLE_SELECT XmCR_EXTENDED_SELECT XmCR_BROWSE_SELECT XmCR_DEFAULT_ACTION XmCR_CLIPBOARD_DATA_REQUEST XmCR_CLIPBOARD_DATA_DELETE XmCR_CASCADING XmCR_OK XmCR_CANCEL ? ? ? ? XmCR_APPLY XmCR_NO_MATCH XmCR_COMMAND_ENTERED XmCR_COMMAND_CHANGED XmCR_EXPOSE XmCR_RESIZE XmCR_INPUT XmCR_GAIN_PRIMARY XmCR_LOSE_PRIMARY XmCR_CREATE XmCR_TEAR_OFF_ACTIVATE XmCR_TEAR_OFF_DEACTIVATE XmCR_OBSCURED_TRAVERSAL XmCR_PROTOCOL
+ENUM
+XButtonEvent
+button
+1 Button1 Button2 Button3 Button4 Button5
+ENUM
+Xm[A-Za-z]*Part
+resize_policy
+0 XmRESIZE_NONE XmRESIZE_GROW XmRESIZE_ANY
+ENUM
+Xm[A-Za-z]*Part
+unit_type
+0 XmPIXELS Xm100TH_MILLIMETERS Xm1000TH_INCHES Xm100TH_POINTS Xm100TH_FONT_UNITS
+ENUM
+Xm[A-Za-z]*Part
+focus_policy
+0 XmEXPLICIT XmPOINTER
+ENUM
+XmRowColumnPart
+TearOffModel
+0 XmTEAR_OFF_ENABLED TEAR_OFF_DISABLED
+ENUM
+Xm[A-Za-z]*Part
+alignment
+0 XmALIGNMENT_BEGINNING XmALIGNMENT_CENTER XmALIGNMENT_END
+ENUM
+Xm[A-Za-z]*Part
+entry_alignment
+0 XmALIGNMENT_BEGINNING XmALIGNMENT_CENTER XmALIGNMENT_END
+ENUM
+[A-Za-z]*Part
+pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+background_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+border_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+cascade_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+armed_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+pixmap_insen
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+top_shadow_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+bottom_shadow_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+highlight_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+arm_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+unarm_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+locate_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+locate_arm_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+on_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+insen_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+[A-Za-z]*Part
+locate_select_pixmap
+2 XmUNSPECIFIED_PIXMAP
+ENUM
+XmFormAttachmentRec
+type
+0 XmATTACH_NONE XmATTACH_FORM XmATTACH_OPPOSITE_FORM XmATTACH_WIDGET XmATTACH_OPPOSITE_WIDGET XmATTACH_POSITION XmATTACH_SELF
+ENUM
+XmListPart
+SelectionPolicy
+0 XmSINGLE_SELECT XmMULTIPLE_SELECT XmEXTENDED_SELECT XmBROWSE_SELECT
+ENUM
+XmListPart
+ScrollBarDisplayPolicy
+0 XmSTATIC XmAS_NEEDED
+ENUM
+XmListPart
+SizePolicy
+0 XmVARIABLE XmCONSTANT XmRESIZE_IF_POSSIBLE
+ENUM
+[A-Za-z]*Part
+label_type
+1 XmPIXMAP XmSTRING
+ENUM
+[A-Za-z]*Part
+string_direction
+0 XmSTRING_DIRECTION_L_TO_R XmSTRING_DIRECTION_R_TO_L
+ENUM
+[A-Za-z]*Part
+multiClick
+0 XmMULTICLICK_DISCARD XmMULTICLICK_KEEP
+ENUM
+[A-Za-z]*Part
+shadow_type
+5 XmSHADOW_ETCHED_IN XmSHADOW_ETCHED_OUT XmSHADOW_IN XmSHADOW_OUT
+ENUM
+XmBulletinBoardPart
+dialog_style
+0 XmDIALOG_MODELESS XmDIALOG_PRIMARY_APPLICATION_MODAL XmDIALOG_FULL_APPLICATION_MODAL XmDIALOG_SYSTEM_MODAL
+ENUM
+[A-Za-z]*Part
+orientation
+0 XmNO_ORIENTATION XmVERTICAL XmHORIZONTAL
+ENUM
+[A-Za-z]*Part
+separator_type
+0 XmNO_LINE XmSINGLE_LINE XmDOUBLE_LINE XmSINGLE_DASHED_LINE XmDOUBLE_DASHED_LINE XmSHADOW_ETCHED_IN XmSHADOW_ETCHED_OUT XmSHADOW_ETCHED_IN_DASH XmSHADOW_ETCHED_OUT_DASH XmINVALID_SEPARATOR_TYPE
+ENUM
+[A-Za-z]*Part
+menu_type
+0 XmWORK_AREA XmMENU_BAR XmMENU_PULLDOWN XmMENU_POPUP XmMENU_OPTION
+ENUM
+XmRowColumnPart
+packing
+0 XmNO_PACKING XmPACK_TIGHT XmPACK_COLUMN XmPACK_NONE
+ENUM
+XmRowColumnPart
+type
+0 XmWORK_AREA XmMENU_BAR XmMENU_PULLDOWN XmMENU_POPUP XmMENU_OPTION
+ENUM
+XmRowColumnPart
+oldFocusPolicy
+0 XmEXPLICIT XmPOINTER
+ENUM
+XmRowColumnPart
+entry_vertical_alignment
+0 XmALIGNMENT_BASELINE_TOP XmALIGNMENT_CENTER XmALIGNMENT_BASELINE_BOTTOM XmALIGNMENT_CONTENTS_TOP XmALIGNMENT_CONTENTS_BOTTOM
+ENUM
+XmScrolledWindowPart
+VisualPolicy
+0 XmVARIABLE XmCONSTANT XmRESIZE_IF_POSSIBLE
+ENUM
+XmScrolledWindowPart
+ScrollPolicy
+0 XmAUTOMATIC XmAPPLICATION_DEFINED
+ENUM
+XmScrolledWindowPart
+ScrollBarPolicy
+0 XmSTATIC XmAS_NEEDED
+ENUM
+_XmHighlightRec
+mode
+0 XmHIGHLIGHT_NORMAL XmHIGHLIGHT_SELECTED XmHIGHLIGHT_SECONDARY_SELECTED
+ENUM
+[A-Za-z]*Part
+processing_direction
+0 XmMAX_ON_TOP XmMAX_ON_BOTTOM XmMAX_ON_LEFT XmMAX_ON_RIGHT
+ENUM
+XmScrollBarPart
+change_type
+0 XmCR_NONE XmCR_HELP XmCR_VALUE_CHANGED XmCR_INCREMENT XmCR_DECREMENT XmCR_PAGE_INCREMENT XmCR_PAGE_DECREMENT
+ENUM
+XmScrollBarPart
+arrow1_orientation
+0 XmARROW_UP XmARROW_DOWN XmARROW_LEFT XmARROW_RIGHT
+ENUM
+XmScrollBarPart
+arrow2_orientation
+0 XmARROW_UP XmARROW_DOWN XmARROW_LEFT XmARROW_RIGHT
+ENUM
+[A-Za-z]*Part
+direction
+0 XmARROW_UP XmARROW_DOWN XmARROW_LEFT XmARROW_RIGHT
+ENUM
+[A-Za-z]*Part
+ind_type
+1 XmN_OF_MANY XmONE_OF_MANY
+MASK
+XButtonEvent
+state
+ShiftMask LockMask ControlMask Mod1Mask Mod2Mask Mod3Mask Mod4Mask Mod5Mask Button1Mask Button2Mask Button3Mask Button4Mask Button5Mask ? ? AnyModifier
+MASK
+XWindowAttributes
+all_event_masks
+KeyPressMask KeyReleaseMask ButtonPressMask ButtonReleaseMask EnterWindowMask LeaveWindowMask PointerMotionMask PointerMotionHintMask Button1MotionMask Button2MotionMask Button3MotionMask Button4MotionMask Button5MotionMask ButtonMotionMask KeymapStateMask ExposureMask VisibilityChangeMask StructureNotifyMask ResizeRedirectMask SubstructureNotifyMask SubstructureRedirectMask FocusChangeMask PropertyChangeMask ColormapChangeMask OwnerGrabButtonMask
+MASK
+XWindowAttributes
+your_event_mask
+KeyPressMask KeyReleaseMask ButtonPressMask ButtonReleaseMask EnterWindowMask LeaveWindowMask PointerMotionMask PointerMotionHintMask Button1MotionMask Button2MotionMask Button3MotionMask Button4MotionMask Button5MotionMask ButtonMotionMask KeymapStateMask ExposureMask VisibilityChangeMask StructureNotifyMask ResizeRedirectMask SubstructureNotifyMask SubstructureRedirectMask FocusChangeMask PropertyChangeMask ColormapChangeMask OwnerGrabButtonMask
+MASK
+XWindowAttributes
+do_not_propagate_mask
+KeyPressMask KeyReleaseMask ButtonPressMask ButtonReleaseMask EnterWindowMask LeaveWindowMask PointerMotionMask PointerMotionHintMask Button1MotionMask Button2MotionMask Button3MotionMask Button4MotionMask Button5MotionMask ButtonMotionMask KeymapStateMask ExposureMask VisibilityChangeMask StructureNotifyMask ResizeRedirectMask SubstructureNotifyMask SubstructureRedirectMask FocusChangeMask PropertyChangeMask ColormapChangeMask OwnerGrabButtonMask
+MASK
+XmGadgetPart
+event_mask
+KeyPressMask KeyReleaseMask ButtonPressMask ButtonReleaseMask EnterWindowMask LeaveWindowMask PointerMotionMask PointerMotionHintMask Button1MotionMask Button2MotionMask Button3MotionMask Button4MotionMask Button5MotionMask ButtonMotionMask KeymapStateMask ExposureMask VisibilityChangeMask StructureNotifyMask ResizeRedirectMask SubstructureNotifyMask SubstructureRedirectMask FocusChangeMask PropertyChangeMask ColormapChangeMask OwnerGrabButtonMask
+MASK
+Screen
+root_input_mask
+KeyPressMask KeyReleaseMask ButtonPressMask ButtonReleaseMask EnterWindowMask LeaveWindowMask PointerMotionMask PointerMotionHintMask Button1MotionMask Button2MotionMask Button3MotionMask Button4MotionMask Button5MotionMask ButtonMotionMask KeymapStateMask ExposureMask VisibilityChangeMask StructureNotifyMask ResizeRedirectMask SubstructureNotifyMask SubstructureRedirectMask FocusChangeMask PropertyChangeMask ColormapChangeMask OwnerGrabButtonMask

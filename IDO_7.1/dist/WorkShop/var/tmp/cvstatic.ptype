@@ -1,0 +1,6 @@
+ptype SGI_CV_CVSTATIC {
+   start "/usr/sbin/cvstatic -iconic -autostarted";
+   handle : 
+	session SGI_Cvstatic_AnalyzeExecutable()
+		=> start;
+};

@@ -1,0 +1,4 @@
+#3.6
+Looking at Results in Call Tree View
+Call Tree View uses a graph of functions (nodes) and calls (arcs) to answer the query.  Double-clicking a node or arc brings up the associated source code.
+Double-click the arc between "main" and "draw_everything."
