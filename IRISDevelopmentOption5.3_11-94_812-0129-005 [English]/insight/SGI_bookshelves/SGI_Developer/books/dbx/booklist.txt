@@ -1,0 +1,1 @@
+<BOOK name="dbx" edition="19941103" alias = "dbx User's Guide" type = "sgi_developer" hide = "FALSE" version = "007-0906-090, 10,94" sort = "002353" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

@@ -1,0 +1,10 @@
+<MKLOG name='./books/IndigoMagic_IG/index' version='-1' date='Fri Nov 11 13:05:51 1994' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    12740, offset 26966, on   Fri Nov 11 13:05:57 1994.
+
+MERGE vocab.dat :   2 files, Vocab size  5229 on                           .
+
+MERGE index.dat :   2 files, Vocab size  5229 on                           .
+
+DONE MAKING BOOK
+

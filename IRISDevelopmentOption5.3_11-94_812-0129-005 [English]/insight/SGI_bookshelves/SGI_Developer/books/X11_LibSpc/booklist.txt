@@ -1,0 +1,1 @@
+<BOOK name="X11_LibSpc" edition="19941103" alias = "X11 Input Extension Library Specification (X Consortium)" type = "generic" hide = "FALSE" version = "008-2493-001" sort = "012050" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

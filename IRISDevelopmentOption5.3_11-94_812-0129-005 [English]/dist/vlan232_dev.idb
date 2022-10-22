@@ -1,0 +1,13 @@
+f 0444 root sys usr/relnotes/vlan232_dev/TC vlan232/man/relnotes_dev/TC sum(26845) size(53) f(2382268179) cmpsize(0) vlan232_dev.man.relnotes
+f 0444 root sys usr/relnotes/vlan232_dev/ch1.z vlan232/man/relnotes_dev/ch1.z sum(6016) size(1651) f(1123398626) cmpsize(0) vlan232_dev.man.relnotes
+f 0444 root sys usr/relnotes/vlan232_dev/ch2.z vlan232/man/relnotes_dev/ch2.z sum(42759) size(1777) f(2097751430) cmpsize(0) vlan232_dev.man.relnotes
+f 0444 root sys usr/share/catman/p_man/cat3/rs232_vlan_alive.z vlan232/man/man3/rs232_vlan_alive.z sum(4377) size(1110) f(1863318487) cmpsize(0) vlan232_dev.man.vlan
+f 0444 root sys usr/share/catman/p_man/cat3/rs232_vlan_close.z vlan232/man/man3/rs232_vlan_close.z sum(40412) size(772) f(1670053356) cmpsize(0) vlan232_dev.man.vlan
+f 0444 root sys usr/share/catman/p_man/cat3/rs232_vlan_cmd.z vlan232/man/man3/rs232_vlan_cmd.z sum(42086) size(1584) f(1836133281) cmpsize(0) vlan232_dev.man.vlan
+f 0444 root sys usr/share/catman/p_man/cat3/rs232_vlan_open.z vlan232/man/man3/rs232_vlan_open.z sum(37996) size(821) f(3536783252) cmpsize(0) vlan232_dev.man.vlan
+d 0755 demos demos usr/video/vlan232/cmd vlan232/cmd vlan232_dev.sw.vlan
+f 0444 demos demos usr/video/vlan232/cmd/Makefile vlan232/cmd/user.mk sum(36259) size(1255) f(3414988267) cmpsize(755) vlan232_dev.sw.vlan
+f 0444 demos demos usr/video/vlan232/cmd/vlan232alive.c vlan232/cmd/vlan232alive.c sum(10066) size(4029) f(2293116199) cmpsize(2143) vlan232_dev.sw.vlan
+f 0444 demos demos usr/video/vlan232/cmd/vlan232cmd.c vlan232/cmd/vlan232cmd.c sum(45351) size(4404) f(443457908) cmpsize(2305) vlan232_dev.sw.vlan
+f 0644 root sys usr/video/vlan232/include/rs232_vlan.h vlan232/include/rs232_vlan.h sum(63330) size(2081) f(3136977748) cmpsize(1193) vlan232_dev.sw.vlan
+f 0444 root sys usr/video/vlan232/lib/libvlan232.a vlan232/lib/libvlan232.a sum(25357) size(11496) f(2352083058) cmpsize(5821) vlan232_dev.sw.vlan

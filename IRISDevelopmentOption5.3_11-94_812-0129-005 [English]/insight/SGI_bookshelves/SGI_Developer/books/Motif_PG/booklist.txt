@@ -1,0 +1,1 @@
+<BOOK name="Motif_PG" edition="19941103" alias = "OSF/Motif Programmer's Guide (Open Software Foundation)" type = "generic" hide = "FALSE" version = "862-0009-002, 8/93" sort = "008820" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

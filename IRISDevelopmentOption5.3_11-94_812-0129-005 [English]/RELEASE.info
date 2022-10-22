@@ -1,0 +1,22 @@
+Silicon Graphics Software Release 5.3 1572035
+This CD contains the following products:
+
+4Dgifts:  4Dgifts example and gift source, 5.3
+c_dev:  C, 3.19
+compiler_dev:  Base Compiler Development Environment, 5.3
+complib:  complib Execution Environment, 1.1
+dev:  Development System, 5.3
+dmedia_dev:  IRIS Digital Media Development Environment, 5.3
+dvdr:  Device Driver, 4.0
+gl_dev:  Graphics Library Development System, 5.3
+inst_dev:  Software Packager, 1.0
+irix4_c:  Ansi C, 3.10.1
+irix4_dev:  Development System, 4.1.1
+irix4_gl_x_dev:  Graphics Library and X11 Development System Maint, 4.0.5H
+irix4_motif_dev:  Motif Development System Maint, 4.0.5
+motif_books:  OSF Motif developer books, 1.2.3
+motif_dev:  IRIX IM Development Software, IRIX/IM 1.2.3-5.3 (based on OSF/Motif 1.2.3+)
+svideodev:  IndigoVideo Development Environment, 2.1
+vlan232_dev:  Serial Video LAN Development Environment 1.4.2
+x_books:  O'Reilly & Associates, Inc. developer books, X11R5
+x_dev:  X11 Development Environment, 3.3 based on X11R6

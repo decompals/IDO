@@ -1,0 +1,10 @@
+<MKLOG name='./books/T_IRIX_Prog/index' version='-1' date='Fri Nov 11 13:06:36 1994' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    13984, offset 21266, on   Fri Nov 11 13:06:44 1994.
+
+MERGE vocab.dat :   2 files, Vocab size  5547 on                           .
+
+MERGE index.dat :   2 files, Vocab size  5547 on                           .
+
+DONE MAKING BOOK
+

@@ -1,0 +1,1 @@
+<BOOK name="SwpkgHelp" edition="19941109" alias = "Software Packager Help" type = "generic" hide = "TRUE" version = "007-2520-001" sort = "999" srchres = "TRUE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

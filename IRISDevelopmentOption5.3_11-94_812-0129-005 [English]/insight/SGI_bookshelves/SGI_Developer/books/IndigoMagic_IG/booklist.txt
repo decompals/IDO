@@ -1,0 +1,1 @@
+<BOOK name="IndigoMagic_IG" edition="19941111" alias = "Indigo Magic Desktop Integration Guide" type = "sgi_developer" hide = "FALSE" version = "007-2006-080" sort = "004201" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

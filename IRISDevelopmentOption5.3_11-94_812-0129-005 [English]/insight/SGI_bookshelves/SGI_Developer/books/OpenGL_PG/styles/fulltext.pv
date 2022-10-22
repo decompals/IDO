@@ -1,0 +1,1436 @@
+<!-- Version $Revision: 1.1 $ of the fulltext print stylesheet -->
+
+<!ENTITY	app.text-b4	CDATA	"if(isempty(attr(LBL,ancestor(APPENDIX))),'',switch(attr(LANG,ancestor(SGIDOC)),de,Anhang ,fr,Appendice ,DEFAULT,Appendix ) attr(LBL,ancestor(APPENDIX)))"	>
+<!ENTITY	body.font-family	CDATA	"new century schoolbook"	>
+<!ENTITY	body.font-size	CDATA	"10"	>
+<!ENTITY	body.line-space	CDATA	"12"	>
+<!ENTITY	bullet-color	CDATA	"grey30"	>
+<!ENTITY	bullet.font-family	CDATA	"symbol"	>
+<!ENTITY	bullet.font-size	CDATA	"14"	>
+<!ENTITY	bullet.left-indent	CDATA	"+=18"	>
+<!ENTITY	bullpara.space-b4	CDATA	"4"	>
+<!ENTITY	caution.text-b4	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),de,Vorsicht,fr,Avertissement,DEFAULT,Caution):  "	>
+<!ENTITY	chp.text-b4	CDATA	"if(isempty(attr(LBL,ancestor(CHAPTER))),'',switch(attr(LANG,ancestor(SGIDOC)),de,Kapitel ,fr,Chapitre ,DEFAULT,Chapter ) attr(LBL,ancestor(CHAPTER)))"	>
+<!ENTITY	chp.title.font-size	CDATA	"14"	>
+<!ENTITY	chp.title.line-space	CDATA	"16"	>
+<!ENTITY	chp.title.space-b4	CDATA	"4"	>
+<!ENTITY	command-font	CDATA	"courier"	>
+<!ENTITY	comment.left-indent	CDATA	"30"	>
+<!ENTITY	comment.right-indent	CDATA	"5"	>
+<!ENTITY	default.foreground	CDATA	"black"	>
+<!ENTITY	default.space-after	CDATA	"5"	>
+<!ENTITY	default.space-b4	CDATA	"5"	>
+<!ENTITY	doc.title.font-size	CDATA	"18"	>
+<!ENTITY	doc.title.line-space	CDATA	"20"	>
+<!ENTITY	entry1.left-indent	CDATA	"+=10"	>
+<!ENTITY	gloss.first-indent	CDATA	"-20"	>
+<!ENTITY	gloss.lbl.font-size	CDATA	"12"	>
+<!ENTITY	gloss.lbl.line-space	CDATA	"14"	>
+<!ENTITY	gloss.lbl.space-bef	CDATA	"20"	>
+<!ENTITY	gloss.left-indent	CDATA	"50"	>
+<!ENTITY	gloss.space-after	CDATA	"10"	>
+<!ENTITY	hang.left-indent	CDATA	"+=80"	>
+<!ENTITY	hint.text-b4	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),de,Hinweis,fr,Conseil,DEFAULT,Hint):  "	>
+<!ENTITY	indent.first-indent	CDATA	"-=10"	>
+<!ENTITY	index.left-indent	CDATA	"+=20"	>
+<!ENTITY	index.space-after	CDATA	"15"	>
+<!ENTITY	index.space-before	CDATA	"10"	>
+<!ENTITY	index.text-b4	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),de,Index,fr,Index,DEFAULT,Index)"	>
+<!ENTITY	indexref.left-indent	CDATA	"62"	>
+<!ENTITY	left-indent.1	CDATA	"30"	>
+<!ENTITY	note.first-indent	CDATA	"-=36"	>
+<!ENTITY	note.foreground	CDATA	"black"	>
+<!ENTITY	note.space-aft	CDATA	"10"	>
+<!ENTITY	note.space-before	CDATA	"10"	>
+<!ENTITY	note.text-b4	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),de,Bemerkung,fr,Note,DEFAULT,Note):  "	>
+<!ENTITY	right-indent.1	CDATA	"25"	>
+<!ENTITY	sec1.line-spacing	CDATA	"14"	>
+<!ENTITY	sec1.space-before	CDATA	"25"	>
+<!ENTITY	sec1.title.font-size	CDATA	"12"	>
+<!ENTITY	sec2.space-before	CDATA	"15"	>
+<!ENTITY	sec4.space-before	CDATA	"12"	>
+<!ENTITY	short.text-b4	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),de,Abk&uuml;rzung,fr,Raccourci,DEFAULT,Shortcut):  "	>
+<!ENTITY	table-font	CDATA	"helvetica"	>
+<!ENTITY	table.space-before	CDATA	"2"	>
+<!ENTITY	tip.text-b4	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),de,Ratschlag,fr,Astuce,DEFAULT,Tip):  "	>
+<!ENTITY	title	CDATA	"black"	>
+<!ENTITY	title-font	CDATA	"new century schoolbook"	>
+<!ENTITY	title.left-indent	CDATA	"-6"	>
+<!ENTITY	title.text.b4-lsp	CDATA	"+=2"	>
+<!ENTITY	title.text.b4-size	CDATA	"12"	>
+<!ENTITY	warning.text-b4	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),de,Warnung,fr,Attention,DEFAULT,Warning):  "	>
+<!ENTITY	wp.font-family	CDATA	"courier"	>
+<!ENTITY	wp.font-size	CDATA	"10"	>
+<!ENTITY	wp.line-spacing	CDATA	"12"	>
+<!ENTITY	wp.space-before	CDATA	"35"	>
+
+<sheet >
+
+
+
+<?INSTED COMMENT: GROUP #TAGS>
+
+<group name="#TAGS">
+	<font-family>	helvetica	</>
+	<font-weight>	Medium	</>
+	<font-size>	*	</>
+	<foreground>	purple	</>
+	<score>	Under	</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP note-caut-warn>
+
+<group name="note-caut-warn">
+	<first-indent>	&note.first-indent	</>
+	<space-before>	&note.space-before	</>
+	<space-after>	&note.space-aft	</>
+	<break-before>	True	</>
+	<text-before>&note.text-b4</>
+</group>
+
+<style name="BULLET,CAUTION" group="note-caut-warn">
+	<left-indent>	+=72	</>
+	<first-indent>	-=53	</>
+	<text-before>&caution.text-b4</>
+</style>
+
+<style name="BULLET,HINT" group="note-caut-warn">
+	<left-indent>	+=58	</>
+	<first-indent>	-=40	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<break-before>	Line	</>
+	<text-before>&hint.text-b4</>
+</style>
+
+<style name="BULLET,NOTE" group="note-caut-warn">
+	<left-indent>	+=55	</>
+</style>
+
+<style name="BULLET,SHORTCUT" group="note-caut-warn">
+	<left-indent>	+=75	</>
+	<first-indent>	-=57	</>
+	<text-before>&short.text-b4</>
+</style>
+
+<style name="BULLET,TIP" group="note-caut-warn">
+	<left-indent>	+=48	</>
+	<first-indent>	-=30	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<break-before>	Line	</>
+	<text-before>&tip.text-b4</>
+</style>
+
+<style name="BULLET,WARNING" group="note-caut-warn">
+	<left-indent>	+=77	</>
+	<first-indent>	-=58	</>
+	<text-before>&warning.text-b4</>
+</style>
+
+<style name="BULLETIND,CAUTION" group="note-caut-warn">
+	<left-indent>	+=71	</>
+	<first-indent>	-=53	</>
+	<text-before>&caution.text-b4</>
+</style>
+
+<style name="BULLETIND,HINT" group="note-caut-warn">
+	<left-indent>	+=54	</>
+	<first-indent>	-=35	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<break-before>	Line	</>
+	<text-before>&hint.text-b4</>
+</style>
+
+<style name="BULLETIND,NOTE" group="note-caut-warn">
+	<left-indent>	+=55	</>
+</style>
+
+<style name="BULLETIND,TIP" group="note-caut-warn">
+	<left-indent>	+=49	</>
+	<first-indent>	-=30	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<break-before>	Line	</>
+	<text-before>&tip.text-b4</>
+</style>
+
+<style name="BULLETIND,WARNING" group="note-caut-warn">
+	<left-indent>	+=76	</>
+	<first-indent>	-=58	</>
+	<text-before>&warning.text-b4</>
+</style>
+
+<style name="CAUTION" group="note-caut-warn">
+	<left-indent>	+=53	</>
+	<first-indent>	-=53	</>
+	<text-before>&caution.text-b4</>
+</style>
+
+<style name="HANGBODY,CAUTION" group="note-caut-warn">
+	<left-indent>	+=135	</>
+	<first-indent>	-=55	</>
+	<text-before>&caution.text-b4</>
+</style>
+
+<style name="HANGBODY,HINT" group="note-caut-warn">
+	<left-indent>	+=110	</>
+	<first-indent>	-=30	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<break-before>	Line	</>
+	<text-before>&hint.text-b4</>
+</style>
+
+<style name="HANGBODY,NOTE" group="note-caut-warn">
+	<left-indent>	+=115	</>
+</style>
+
+<style name="HANGBODY,TIP" group="note-caut-warn">
+	<left-indent>	+=110	</>
+	<first-indent>	-=30	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<break-before>	Line	</>
+	<text-before>&tip.text-b4</>
+</style>
+
+<style name="HINT" group="note-caut-warn">
+	<left-indent>	+=40	</>
+	<first-indent>	-=40	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<break-before>	Line	</>
+	<text-before>&hint.text-b4</>
+</style>
+
+<style name="LIST,CAUTION" group="note-caut-warn">
+	<left-indent>	+=75	</>
+	<first-indent>	-=55	</>
+	<text-before>&caution.text-b4</>
+</style>
+
+<style name="LIST,NOTE" group="note-caut-warn">
+	<left-indent>	+=60	</>
+</style>
+
+<style name="NOTE" group="note-caut-warn">
+	<left-indent>	+=37	</>
+</style>
+
+<style name="SHORTCUT" group="note-caut-warn">
+	<left-indent>	+=57	</>
+	<first-indent>	-=57	</>
+	<text-before>&short.text-b4</>
+</style>
+
+<style name="TIP" group="note-caut-warn">
+	<left-indent>	+=30	</>
+	<first-indent>	-=30	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<break-before>	Line	</>
+	<text-before>&tip.text-b4</>
+</style>
+
+<style name="WARNING" group="note-caut-warn">
+	<left-indent>	+=58	</>
+	<first-indent>	-=58	</>
+	<text-before>&warning.text-b4</>
+</style>
+
+
+
+<?INSTED COMMENT: GROUP titles>
+
+<group name="titles">
+	<font-weight>	Bold	</>
+	<foreground>	&title	</>
+	<justification>	Left	</>
+	<break-before>	True	</>
+</group>
+
+<style name="APPENDIX,TITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+	<hrule>	Before	</>
+	<text-before>&app.text-b4</>
+</style>
+
+<style name="CHAPTER,TITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+	<hrule>	Before	</>
+	<text-before>&chp.text-b4</>
+</style>
+
+<style name="GLOSSARY,TITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+	<hrule>	Before	</>
+</style>
+
+<style name="INTRODUCTION,TITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+	<hrule>	Before	</>
+</style>
+
+<style name="SECTION1,TITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+	<space-before>	&sec1.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION1))),'',join(attr(LBL,ancestor(SECTION1)),'   '))</>
+</style>
+
+<style name="SECTION2,TITLE" group="titles">
+	<font-size>	&sec1.title.font-size	</>
+	<line-spacing>	&sec1.line-spacing	</>
+	<space-before>	&sec2.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION2))),'',join(attr(LBL,ancestor(SECTION2)),'   '))</>
+</style>
+
+<style name="SECTION3,TITLE" group="titles">
+	<font-size>	&body.font-size	</>
+	<line-spacing>	&body.line-space	</>
+	<space-before>	&sec2.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION3))),'',join(attr(LBL,ancestor(SECTION3)),'   '))</>
+</style>
+
+<style name="SECTION4,TITLE" group="titles">
+	<font-size>	&body.font-size	</>
+	<line-spacing>	&body.line-space	</>
+	<space-before>	&sec4.space-before	</>
+	<text-before>if(isempty(attr(LBL,ancestor(SECTION4))),'',join(attr(LBL,ancestor(SECTION4)),'   '))</>
+</style>
+
+<style name="SPARES,TITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+	<space-before>	&wp.space-before	</>
+</style>
+
+<style name="SSB,TITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+	<space-before>	&wp.space-before	</>
+</style>
+
+<style name="SUBTITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+</style>
+
+<style name="SUPPORT,TITLEPAGE,TITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&doc.title.line-space	</>
+	<space-after>	&chp.title.space-b4	</>
+</style>
+
+<style name="TITLEPAGE,TITLE" group="titles">
+	<font-size>	&doc.title.font-size	</>
+	<line-spacing>	&doc.title.line-space	</>
+	<space-after>	&chp.title.space-b4	</>
+</style>
+
+<style name="WHITEPAPER,TITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+	<space-before>	&wp.space-before	</>
+	<hrule>	Before	</>
+</style>
+
+
+
+<?INSTED COMMENT: UNGROUPED STYLES FOLLOW>
+
+<!-- Default settings for printing of annotations -->
+<style name="#ANNOT">
+	<font-family>	times	</>
+	<font-weight>	medium	</>
+	<font-slant>	roman	</>
+	<font-video>	regular	</>
+	<font-size>	12	</>
+	<character-set>	iso8859-1	</>
+	<score>	none	</>
+	<line-spacing>	24	</>
+	<break-before>	line	</>
+	<break-after>	line	</>
+</style>
+
+<style name="#FOOTER">
+	<font-family>	new century schoolbook	</>
+	<font-size>	10	</>
+	<left-indent>	36	</>
+	<right-indent>	30	</>
+	<line-spacing>	14	</>
+	<text-before>pagenum() </>
+</style>
+
+<style name="#HEADER">
+	<font-family>	new century schoolbook	</>
+	<font-size>	10	</>
+	<left-indent>	36	</>
+	<right-indent>	30	</>
+	<line-spacing>	14	</>
+	<text-before>content(child(TITLE,ancestor(TITLEPAGE)))</>
+</style>
+
+<style name="#QUERY">
+	<font-video>	Inverse	</>
+	<foreground>	gray55	</>
+</style>
+
+<style name="#SDATA">
+	<font-family>	attr(font)	</>
+	<character-set>	attr(charset)	</>
+	<text-before>char(attr(code))</>
+</style>
+
+<style name="#TAGS">
+	<font-size>	-=2	</>
+	<foreground>	purple	</>
+</style>
+
+<style name="APPENDIX">
+	<space-before>	&sec1.space-before	</>
+	<break-before>	True	</>
+</style>
+
+<style name="APPENDIX,TITLE,#TEXT-BEFORE">
+	<font-weight>	Bold	</>
+	<font-slant>	Italics	</>
+	<font-size>	&title.text.b4-size	</>
+	<break-after>	True	</>
+</style>
+
+<style name="ARGUMENT">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="AUDIO">
+	<icon-position>	Right	</>
+	<icon-type>	sound	</>
+</style>
+
+<style name="BNF">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="BNFRULE">
+	<left-indent>	&bullet.left-indent	</>
+	<break-before>	True	</>
+</style>
+
+<style name="BNFTERM">
+	<space-before>	&default.space-b4	</>
+	<break-before>	True	</>
+</style>
+
+<style name="BOLD">
+	<font-weight>	Bold	</>
+</style>
+
+<style name="BOX">
+	<space-before>	10	</>
+	<space-after>	2	</>
+	<hrule>	After	</>
+	<break-before>	Line	</>
+</style>
+
+<style name="BULLET">
+	<vertical-offset>	0	</>
+	<space-after>	0	</>
+	<break-before>	True	</>
+	<break-after>	False	</>
+	<text-before>·</>
+</style>
+
+<style name="BULLET,#TEXT-BEFORE">
+	<font-family>	&bullet.font-family	</>
+	<font-size>	&bullet.font-size	</>
+	<character-set>	symbol	</>
+	<foreground>	&bullet-color	</>
+</style>
+
+<style name="BULLET,CODE">
+	<font-family>	&command-font	</>
+	<left-indent>	&bullet.left-indent	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="BULLET,EXAMPLE">
+	<font-family>	&command-font	</>
+	<left-indent>	&bullet.left-indent	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="BULLET,PARAGRAPH">
+	<select>	BULLETPARA*FIRST*eq(1,cnum())	</>
+</style>
+
+<style name="BULLET,TABLE,ROW,CELL">
+	<left-indent>	if(eq(cnum(),1),48,int(add(48,mult(1.30,attr(LEFT)))))	</>
+	<width>	int(mult(1.30,attr(WIDTH)))	</>
+	<column>	True	</>
+</style>
+
+<style name="BULLETIND">
+	<text-before>-</>
+</style>
+
+<style name="BULLETIND,#TEXT-BEFORE">
+	<font-family>	&bullet.font-family	</>
+	<font-size>	&bullet.font-size	</>
+	<character-set>	symbol	</>
+	<foreground>	&bullet-color	</>
+</style>
+
+<style name="BULLETIND,CODE">
+	<font-family>	&command-font	</>
+	<left-indent>	+=20	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="BULLETIND,EXAMPLE">
+	<font-family>	&command-font	</>
+	<left-indent>	+=20	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="BULLETIND,PARAGRAPH">
+	<select>	BULLETPARA*FIRST*eq(1,cnum())	</>
+</style>
+
+<style name="BULLETLIST">
+	<space-after>	0	</>
+</style>
+
+<style name="BULLETLIST,#TEXT-BEFORE">
+	<font-family>	&bullet.font-family	</>
+	<font-size>	&bullet.font-size	</>
+	<character-set>	symbol	</>
+	<foreground>	&bullet-color	</>
+</style>
+
+<style name="BULLETLIST,BULLET">
+	<break-before>	True	</>
+	<break-after>	False	</>
+	<text-before>·</>
+</style>
+
+<style name="BULLETLIST,BULLET,#TEXT-BEFORE">
+	<font-family>	&bullet.font-family	</>
+	<font-size>	&bullet.font-size	</>
+	<character-set>	symbol	</>
+	<foreground>	&bullet-color	</>
+</style>
+
+<style name="BULLETLISTIND,BULLETIND">
+	<left-indent>	&bullet.left-indent	</>
+	<break-before>	True	</>
+	<break-after>	False	</>
+	<text-before>-</>
+</style>
+
+<style name="BULLETLISTIND,BULLETIND,#TEXT-BEFORE">
+	<font-family>	&body.font-family	</>
+	<font-size>	&bullet.font-size	</>
+	<foreground>	&bullet-color	</>
+</style>
+
+<style name="BULLETPARA*FIRST*FALSE">
+	<font-size>	&body.font-size	</>
+	<left-indent>	&bullet.left-indent	</>
+	<space-before>	&bullpara.space-b4	</>
+	<break-before>	True	</>
+</style>
+
+<style name="BULLETPARA*FIRST*TRUE">
+	<font-size>	&body.font-size	</>
+	<left-indent>	&bullet.left-indent	</>
+	<break-before>	False	</>
+	<break-after>	False	</>
+</style>
+
+<style name="BULLETSQUAREIND">
+	<left-indent>	&bullet.left-indent	</>
+	<vertical-offset>	0	</>
+	<space-after>	0	</>
+	<break-before>	True	</>
+	<break-after>	False	</>
+	<text-before>·</>
+</style>
+
+<style name="BULLETSQUAREIND,#TEXT-BEFORE">
+	<font-family>	&bullet.font-family	</>
+	<font-size>	&bullet.font-size	</>
+	<foreground>	&bullet-color	</>
+</style>
+
+<style name="BULLETSQUAREIND,CODE">
+	<font-family>	&command-font	</>
+	<left-indent>	&bullet.left-indent	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="BULLETSQUAREIND,NOTE">
+	<left-indent>	+=54	</>
+	<first-indent>	-=37	</>
+	<space-before>	&note.space-before	</>
+	<space-after>	&note.space-aft	</>
+	<break-before>	True	</>
+	<text-before>&note.text-b4</>
+</style>
+
+<style name="BULLETSQUAREIND,PARAGRAPH">
+	<space-before>	&default.space-b4	</>
+	<break-before>	True	</>
+	<select>	BULLETPARA*FIRST*eq(1,cnum())	</>
+</style>
+
+<style name="BUTTON">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="CALLOUT">
+	<font-family>	helvetica	</>
+</style>
+
+<style name="CAPTION">
+	<font-family>	&body.font-family	</>
+	<font-size>	&body.font-size	</>
+	<left-indent>	&left-indent.1	</>
+	<break-before>	True	</>
+	<break-after>	Line	</>
+	<column>	False	</>
+</style>
+
+<style name="CAUTION,#TEXT-BEFORE">
+	<font-weight>	Bold	</>
+	<foreground>	&note.foreground	</>
+</style>
+
+<style name="CELL">
+	<left-indent>	if(eq(cnum(),1),30,int(mult(1.55,attr(LEFT))))	</>
+	<width>	int(mult(1.30,attr(WIDTH)))	</>
+	<column>	True	</>
+</style>
+
+<style name="CELL_PARAGRAPH">
+	<space-before>	if(eq(cnum(),1),0,default.space-b4)	</>
+	<break-before>	True	</>
+</style>
+
+<style name="CHAPTER">
+	<space-before>	&sec1.space-before	</>
+	<break-before>	True	</>
+</style>
+
+<style name="CHAPTER,TITLE,#TEXT-BEFORE">
+	<font-weight>	Bold	</>
+	<font-slant>	Italics	</>
+	<font-size>	&title.text.b4-size	</>
+	<break-after>	True	</>
+</style>
+
+<style name="CODE">
+	<font-family>	&command-font	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="CODE,SCREENDISPLAY">
+	<font-family>	&command-font	</>
+</style>
+
+<style name="CODE,USERINPUT">
+	<font-family>	&command-font	</>
+	<font-weight>	Bold	</>
+</style>
+
+<style name="COMMAND">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="COMMENT">
+	<font-slant>	Italics	</>
+	<left-indent>	&comment.left-indent	</>
+	<right-indent>	&comment.right-indent	</>
+	<break-before>	True	</>
+</style>
+
+<style name="CONTRIBUTORS">
+	<font-weight>	Bold	</>
+	<space-before>	&chp.title.space-b4	</>
+</style>
+
+<style name="COORDINATE">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="COPYRIGHT">
+	<font-weight>	Bold	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="CREDITSPAGE">
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="CREDITSPAGE,PARAGRAPH">
+	<break-after>	True	</>
+</style>
+
+<style name="DATE">
+	<break-after>	True	</>
+</style>
+
+<style name="DECL">
+	<hrule>	Surround	</>
+</style>
+
+<style name="DOCNUMBER">
+	<space-before>	&chp.title.space-b4	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="DOCTITLE">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="EMPHASIS">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="ENTRY1">
+	<space-after>	&index.space-after	</>
+	<break-before>	True	</>
+</style>
+
+<style name="ENTRY1,INDEXTERM">
+	<left-indent>	&entry1.left-indent	</>
+	<first-indent>	&indent.first-indent	</>
+</style>
+
+<style name="ENTRY2">
+	<select>	ENTRY2*FIRST*eq(1,cnum())	</>
+</style>
+
+<style name="ENTRY2*FIRST*FALSE">
+	<left-indent>	&index.left-indent	</>
+	<first-indent>	&indent.first-indent	</>
+	<space-before>	&index.space-before	</>
+	<break-before>	True	</>
+</style>
+
+<style name="ENTRY2*FIRST*TRUE">
+	<left-indent>	&index.left-indent	</>
+	<first-indent>	&indent.first-indent	</>
+	<break-before>	True	</>
+</style>
+
+<style name="ENTRY2,INDEXTERM">
+	<left-indent>	&index.left-indent	</>
+	<first-indent>	&indent.first-indent	</>
+</style>
+
+<style name="ENTRY3">
+	<select>	ENTRY3*FIRST*eq(1,cnum())	</>
+</style>
+
+<style name="ENTRY3*FIRST*FALSE">
+	<left-indent>	&index.left-indent	</>
+	<space-before>	&index.space-before	</>
+	<break-before>	True	</>
+</style>
+
+<style name="ENTRY3*FIRST*TRUE">
+	<left-indent>	&index.left-indent	</>
+	<break-before>	True	</>
+</style>
+
+<style name="EXAMPLE">
+	<font-family>	&command-font	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="EXAMPLE,FIGURE">
+	<left-indent>	&left-indent.1	</>
+	<space-before>	if(eq(file(env(HOME)/.figsInsight),FILE),0,6)	</>
+	<space-after>	if(eq(file(env(HOME)/.figsInsight),FILE),0,6)	</>
+</style>
+
+<style name="EXAMPLE,VLINE">
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="EXTPROGRAM">
+	<icon-position>	Right	</>
+	<!--	<script>	ebt-launch cmd="attr(APP) attr(PARMS)"	</> -->
+	<icon-type>	extpgm	</>
+</style>
+
+<style name="EXTREF">
+	<font-weight>	Bold	</>
+</style>
+
+<style name="FIGURE">
+	<left-indent>	&left-indent.1	</>
+	<space-before>	if(eq(file(env(HOME)/.figsInsight),FILE),2,6)	</>
+	<space-after>	if(eq(file(env(HOME)/.figsInsight),FILE),2,6)	</>
+	<break-before>	True	</>
+</style>
+
+<style name="FIGURE,CAPTION">
+	<font-family>	&body.font-family	</>
+	<font-size>	&body.font-size	</>
+	<first-indent>	-=30	</>
+	<icon-position>	if(eq(file(var(fig_dir)/attr(FILE,lsibling(GRAPHIC)).hot),FILE),Right,Off)	</>
+	<break-before>	True	</>
+	<!--	<script>	ebt-if(contains(attr(FILE,lsibling(GRAPHIC)),.cgm),vector,raster) filename="attr(FILE,lsibling(GRAPHIC))" title="content(me())"	</> -->
+	<icon-type>	if(eq(file(var(fig_dir)/attr(FILE,lsibling(GRAPHIC)).hot),FILE),rasterhot,empty)	</>
+</style>
+
+<style name="FILENAME">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="FRONTMATTER">
+	<space-before>	&default.space-b4	</>
+	<break-before>	True	</>
+	<icon-type>	copyrt	</>
+</style>
+
+<style name="FTNOTE">
+	<font-size>	-=2	</>
+	<left-indent>	10	</>
+	<space-before>	5	</>
+	<space-after>	5	</>
+	<icon-position>	Right	</>
+	<break-before>	Line	</>
+	<break-after>	Line	</>
+	<script>	ebt-reveal stylesheet=fulltext.v	</>
+	<icon-type>	footnote	</>
+</style>
+
+<style name="FUNCTION">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="GENERALINFO">
+	<space-before>	&default.space-b4	</>
+</style>
+
+<style name="GLOSSARY">
+	<space-before>	&sec1.space-before	</>
+	<break-before>	True	</>
+</style>
+
+<style name="GLOSSARYDEF">
+	<space-after>	&gloss.space-after	</>
+	<break-before>	True	</>
+</style>
+
+<style name="GLOSSARYENTRY">
+	<font-weight>	Bold	</>
+	<first-indent>	&gloss.first-indent	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="GLOSSARYTERM">
+	<left-indent>	&gloss.left-indent	</>
+	<break-before>	True	</>
+</style>
+
+<style name="GRAPHIC">
+	<break-before>	True	</>
+	<break-after>	True	</>
+	<inline>	if(contains(attr(FILE),.cgm),vector,raster) filename="attr(FILE)"	</>
+	<text-before>if(contains(attr(FILE),.rgb),join('This figure (',var(fig_dir),'/',attr(FILE),') is an RGB image and can not be printed inline. Use Impressario to print it.'),'')</>
+</style>
+
+<style name="HANGBODY">
+	<break-before>	False	</>
+	<break-after>	False	</>
+</style>
+
+<style name="HANGBODY,BULLETLISTIND,BULLETIND">
+	<left-indent>	&hang.left-indent	</>
+	<break-before>	True	</>
+	<break-after>	False	</>
+	<text-before>·</>
+</style>
+
+<style name="HANGBODY,BULLETLISTIND,BULLETIND,#TEXT-BEFORE">
+	<font-family>	&bullet.font-family	</>
+	<font-size>	&bullet.font-size	</>
+	<foreground>	&bullet-color	</>
+</style>
+
+<style name="HANGBODY,CODE">
+	<font-family>	&command-font	</>
+	<left-indent>	&hang.left-indent	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="HANGBODY,EXAMPLE">
+	<font-family>	&command-font	</>
+	<left-indent>	&hang.left-indent	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="HANGBODY,ORDEREDLISTIND,LISTIND">
+	<left-indent>	&hang.left-indent	</>
+	<break-before>	True	</>
+	<break-after>	False	</>
+	<text-before>cnum(me()).</>
+</style>
+
+<style name="HANGBODY,PARAGRAPH">
+	<left-indent>	&hang.left-indent	</>
+	<line-spacing>	&body.line-space	</>
+	<break-before>	False	</>
+	<break-after>	True	</>
+</style>
+
+<style name="HANGBODY,TABLE,ROW,CELL">
+	<left-indent>	if(eq(cnum(),1),110,int(add(110,mult(1.30,attr(LEFT)))))	</>
+	<width>	int(mult(1.30,attr(WIDTH)))	</>
+	<column>	True	</>
+</style>
+
+<style name="HANGBODYIND,PARAGRAPH">
+	<left-indent>	&hang.left-indent	</>
+	<line-spacing>	&body.line-space	</>
+	<break-before>	False	</>
+	<break-after>	True	</>
+</style>
+
+<style name="HANGITEM">
+	<line-spacing>	&body.line-space	</>
+	<break-before>	True	</>
+	<break-after>	False	</>
+</style>
+
+<style name="HANGLIST">
+	<break-before>	False	</>
+	<break-after>	False	</>
+</style>
+
+<style name="HANGLISTIND">
+	<left-indent>	&bullet.left-indent	</>
+	<break-before>	True	</>
+	<break-after>	False	</>
+</style>
+
+<style name="HANGPAIR">
+	<break-before>	False	</>
+	<break-after>	False	</>
+</style>
+
+<style name="HANGPAIR,PARAGRAPH">
+	<break-before>	True	</>
+</style>
+
+<style name="HANGPAIRIND">
+	<break-after>	True	</>
+</style>
+
+<style name="HARDWARELABEL">
+	<font-family>	helvetica	</>
+	<font-weight>	Bold	</>
+</style>
+
+<style name="HEADER">
+	<space-before>	&default.space-b4	</>
+	<break-before>	True	</>
+</style>
+
+<style name="HELPTOPIC">
+	<hide>	Children	</>
+</style>
+
+<style name="HINT,#TEXT-BEFORE">
+	<font-weight>	Bold	</>
+	<foreground>	&note.foreground	</>
+</style>
+
+<style name="IDX">
+	<space-before>	6	</>
+	<space-after>	6	</>
+</style>
+
+<style name="IMAGE">
+	<icon-position>	Right	</>
+	<icon-type>	vector	</>
+</style>
+
+<style name="INDEXREF">
+	<left-indent>	&indexref.left-indent	</>
+	<break-before>	True	</>
+</style>
+
+<style name="INLINE">
+	<space-before>	&default.space-b4	</>
+	<icon-position>	Right	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+	<icon-type>	media	</>
+	<text-before>join('This figure (',var(fig_dir),'/',attr(PARM1),') is an INLINE object and can not be printed.')</>
+</style>
+
+<style name="INLINE,CAPTION">
+	<font-family>	&body.font-family	</>
+	<font-size>	&body.font-size	</>
+	<break-before>	True	</>
+</style>
+
+<style name="INLINEOBJECT">
+	<left-indent>	&left-indent.1	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="INTRODUCTION">
+	<space-before>	&sec1.space-before	</>
+	<break-before>	True	</>
+</style>
+
+<style name="ITALICS">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="KEYWORDS">
+	<break-after>	True	</>
+</style>
+
+<style name="LABEL">
+	<font-weight>	Bold	</>
+	<font-size>	&gloss.lbl.font-size	</>
+	<line-spacing>	&gloss.lbl.line-space	</>
+	<space-before>	&gloss.lbl.space-bef	</>
+</style>
+
+<style name="LIST,BULLETLISTIND,BULLETIND">
+	<left-indent>	&bullet.left-indent	</>
+	<vertical-offset>	0	</>
+	<space-after>	0	</>
+	<break-before>	True	</>
+	<break-after>	False	</>
+	<text-before>·</>
+</style>
+
+<style name="LIST,BULLETLISTIND,BULLETIND,#TEXT-BEFORE">
+	<font-family>	&bullet.font-family	</>
+	<font-size>	&bullet.font-size	</>
+	<character-set>	symbol	</>
+	<foreground>	&bullet-color	</>
+</style>
+
+<style name="LIST,CODE">
+	<font-family>	&command-font	</>
+	<left-indent>	&bullet.left-indent	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="LIST,EXAMPLE">
+	<font-family>	&command-font	</>
+	<left-indent>	&bullet.left-indent	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="LIST,PARAGRAPH">
+	<select>	BULLETPARA*FIRST*eq(1,cnum())	</>
+</style>
+
+<style name="LISTIND,CODE">
+	<font-family>	&command-font	</>
+	<left-indent>	125	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="LISTIND,PARAGRAPH">
+	<select>	BULLETPARA*FIRST*eq(1,cnum())	</>
+</style>
+
+<style name="MANUAL">
+	<font-family>	&body.font-family	</>
+	<font-size>	&body.font-size	</>
+	<foreground>	&default.foreground	</>
+	<left-indent>	&left-indent.1	</>
+	<right-indent>	&right-indent.1	</>
+	<line-spacing>	&body.line-space	</>
+	<break-before>	False	</>
+	<break-after>	True	</>
+	<column>	False	</>
+</style>
+
+<style name="MANUAL,FRONTMATTER">
+	<space-before>	10	</>
+	<icon-position>	Right	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+	<!--	<script>	ebt-link root=me() window=new stylesheet=frontmatter	</> -->
+	<icon-type>	copyrt	</>
+</style>
+
+<style name="MARGINTEXT">
+	<icon-position>	Left	</>
+	<hide>	Children	</>
+	<!--	<script>	ebt-reveal stylesheet=fulltext.v title="Margin Text" width="100"	</> -->
+	<icon-type>	margin	</>
+</style>
+
+<style name="MENUCHOICE">
+	<break-before>	False	</>
+	<break-after>	False	</>
+</style>
+
+<style name="MENUNAME">
+	<break-before>	False	</>
+	<break-after>	False	</>
+</style>
+
+<style name="NAMES">
+	<font-weight>	Medium	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="NEWLINE">
+	<break-before>	True	</>
+</style>
+
+<style name="NEWTERM">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="NONPRKEYS">
+	<font-family>	&command-font	</>
+	<font-weight>	Bold	</>
+</style>
+
+<style name="NORMAL_PARAGRAPH">
+	<space-before>	&default.space-b4	</>
+	<break-before>	True	</>
+</style>
+
+<style name="NOTE,#TEXT-BEFORE">
+	<font-weight>	Bold	</>
+	<foreground>	&note.foreground	</>
+</style>
+
+<style name="ORDEREDLIST">
+	<space-after>	5	</>
+	<break-before>	False	</>
+	<break-after>	False	</>
+</style>
+
+<style name="ORDEREDLIST,LIST">
+	<space-before>	&default.space-b4	</>
+	<break-before>	True	</>
+	<text-before>cnum(me()).</>
+</style>
+
+<style name="ORDEREDLISTIND,LISTIND">
+	<left-indent>	&bullet.left-indent	</>
+	<break-before>	True	</>
+	<text-before>cnum(me()).</>
+</style>
+
+<style name="ORDEREDLISTIND,LISTIND,CODE">
+	<font-family>	&command-font	</>
+	<left-indent>	66	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="PARAGRAPH">
+	<select>	if(eq(tag(ancestor()),CELL),CELL_PARAGRAPH,NORMAL_PARAGRAPH)	</>
+</style>
+
+<style name="PREFIX">
+	<font-family>	&table-font	</>
+	<font-weight>	Bold	</>
+	<font-size>	&body.font-size	</>
+</style>
+
+<style name="PROGRAMNAME">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="QANDA">
+	<space-before>	&default.space-b4	</>
+</style>
+
+<style name="ROW">
+	<left-indent>	&left-indent.1	</>
+	<!--	<space-before>	&table.space-before	</> -->
+	<break-before>	True	</>
+</style>
+
+<style name="SCREENDISPLAY">
+	<font-family>	&command-font	</>
+</style>
+
+<style name="SECTION1">
+	<break-before>	True	</>
+</style>
+
+<style name="SECTION2">
+	<break-before>	True	</>
+</style>
+
+<style name="SECTION3">
+	<break-before>	True	</>
+</style>
+
+<style name="SECTION4">
+	<break-before>	True	</>
+</style>
+
+<style name="SGIINDEX">
+	<break-before>	Section	</>
+	<break-after>	True	</>
+	<text-before>&index.text-b4 </>
+</style>
+
+<style name="SGIINDEX,#TEXT-BEFORE">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+</style>
+
+<style name="SHORTCUT,#TEXT-BEFORE">
+	<font-weight>	Bold	</>
+	<foreground>	&note.foreground	</>
+</style>
+
+<style name="SP">
+	<break-before>	False	</>
+	<break-after>	False	</>
+	<text-before>   </>
+</style>
+
+<style name="SPARES">
+	<break-before>	True	</>
+</style>
+
+<style name="SPARESBODY">
+	<space-before>	&default.space-b4	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="SPARESBODY,EXAMPLE">
+	<font-family>	&wp.font-family	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="SSB">
+	<break-before>	True	</>
+</style>
+
+<style name="SSBBODY">
+	<select>	SPARESBODY	</>
+</style>
+
+<style name="SSBBODY,EXAMPLE">
+	<font-family>	&wp.font-family	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="SSBBODY,PARAGRAPH">
+	<font-family>	&wp.font-family	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+	<justification>	Verbatim	</>
+	<break-before>	True	</>
+</style>
+
+<style name="SSLIST">
+	<break-before>	False	</>
+</style>
+
+<style name="SSLIST,LISTIND">
+	<left-indent>	+=40	</>
+	<first-indent>	-20	</>
+	<break-before>	True	</>
+	<break-after>	False	</>
+	<text-before>format(cnum(),letter).</>
+</style>
+
+<style name="SSLIST,LISTIND,PARAGRAPH">
+	<break-before>	False	</>
+	<break-after>	False	</>
+</style>
+
+<style name="SUBSCRIPT">
+	<vertical-offset>	-2	</>
+</style>
+
+<style name="SUPERSCRIPT">
+	<vertical-offset>	3	</>
+</style>
+
+<style name="SUPPORT">
+	<font-family>	&wp.font-family	</>
+	<font-size>	&wp.font-size	</>
+	<foreground>	&default.foreground	</>
+	<left-indent>	&left-indent.1	</>
+	<right-indent>	&right-indent.1	</>
+	<line-spacing>	&wp.line-spacing	</>
+	<break-before>	False	</>
+	<break-after>	True	</>
+	<column>	False	</>
+</style>
+
+<style name="SYM">
+	<font-family>	symbol	</>
+	<font-weight>	Medium	</>
+	<character-set>	symbol	</>
+</style>
+
+<style name="TABLE">
+	<font-family>	&table-font	</>
+	<font-size>	&body.font-size	</>
+	<line-spacing>	&body.line-space	</>
+	<space-before>	&default.space-b4	</>
+	<space-after>	&default.space-after	</>
+</style>
+
+<style name="TABLEFOOTNOTE">
+	<space-before>	3	</>
+	<break-before>	Line	</>
+	<break-after>	Line	</>
+	<script>	ebt-reveal stylesheet=fulltext.v	</>
+	<text-before>attr(LBL)</>
+</style>
+
+<style name="TABLEFOOTNOTE,#TEXT-BEFORE">
+	<font-size>	-=2	</>
+	<vertical-offset>	4	</>
+</style>
+
+<style name="TABLEHEADING">
+	<font-weight>	Bold	</>
+	<score>	Under	</>
+	<break-before>	True	</>
+</style>
+
+<style name="TABLEXREF">
+	<font-size>	-=2	</>
+	<vertical-offset>	4	</>
+	<!--	<script>	ebt-link target=idmatch(ID,attr(IDREF))	</> -->
+	<text-after> </>
+</style>
+
+<style name="TECHNICAL">
+	<font-weight>	Bold	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="TIP,#TEXT-BEFORE">
+	<font-weight>	Bold	</>
+	<foreground>	&note.foreground	</>
+</style>
+
+<style name="TRYTHIS">
+	<font-weight>	Bold	</>
+</style>
+
+<style name="USERINPUT">
+	<font-family>	&command-font	</>
+	<font-weight>	Bold	</>
+</style>
+
+<style name="VARIABLE">
+	<font-slant>	Italics	</>
+	<break-before>	False	</>
+	<break-after>	False	</>
+</style>
+
+<style name="VBLOCK">
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="VIDEO">
+	<icon-position>	Right	</>
+	<icon-type>	video	</>
+</style>
+
+<style name="WARNING,#TEXT-BEFORE">
+	<font-weight>	Bold	</>
+	<foreground>	&note.foreground	</>
+</style>
+
+<style name="XREF">
+	<font-weight>	Bold	</>
+	<select>	XREF,XREF_attr(TYPE)	</>
+</style>
+
+<style name="ZAPF">
+	<font-family>	itc zapf dingbats	</>
+	<character-set>	symbol	</>
+</style>
+
+
+
+</sheet>
