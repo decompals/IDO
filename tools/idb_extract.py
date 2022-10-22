@@ -38,7 +38,7 @@ def run(archive_fname, idb_fname):
 
     with open(archive_fname, "rb") as f:
         header = f.read(13)
-        assert header == b"im001V620P02\0" or header == b"im001V630P00\0", header
+        assert header in (b'im001V500P00\0', b"im001V620P02\0", b"im001V630P00\0"), header
         while True:
             size_bytes = f.read(2)
             if not size_bytes:
