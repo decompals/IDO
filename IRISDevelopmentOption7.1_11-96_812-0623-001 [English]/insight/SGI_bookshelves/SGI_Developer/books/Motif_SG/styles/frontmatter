@@ -1,0 +1,154 @@
+<!-- Version $Revision: 1.1 $ of the frontmatter revelatory stylesheet -->
+
+<!ENTITY	body.font-family	CDATA	"new century schoolbook"	>
+<!ENTITY	body.font-size	CDATA	"12"	>
+<!ENTITY	body.line-space	CDATA	"14"	>
+<!ENTITY	chp.title.font-size	CDATA	"18"	>
+<!ENTITY	chp.title.line-space	CDATA	"27"	>
+<!ENTITY	chp.title.space-b4	CDATA	"5"	>
+<!ENTITY	default.foreground	CDATA	"grey20"	>
+<!ENTITY	default.space-b4	CDATA	"6"	>
+<!ENTITY	doc.title.font-size	CDATA	"24"	>
+<!ENTITY	doc.title.line-space	CDATA	"36"	>
+<!ENTITY	left-indent.1	CDATA	"12"	>
+<!ENTITY	right-indent.1	CDATA	"10"	>
+<!ENTITY	title	CDATA	"black"	>
+<!ENTITY	title-font	CDATA	"new century schoolbook"	>
+<!ENTITY	title.left-indent	CDATA	"-6"	>
+
+<sheet >
+
+
+
+<?INSTED COMMENT: GROUP titles>
+
+<group name="titles">
+	<font-family>	&title-font	</>
+	<font-weight>	Bold	</>
+	<foreground>	&title	</>
+	<line-spacing>	&body.line-space	</>
+	<justification>	Left	</>
+	<break-before>	True	</>
+</group>
+
+<style name="SUBTITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+</style>
+
+<style name="TITLEPAGE,TITLE" group="titles">
+	<font-size>	&doc.title.font-size	</>
+	<line-spacing>	&doc.title.line-space	</>
+	<break-after>	True	</>
+</style>
+
+
+
+<?INSTED COMMENT: UNGROUPED STYLES FOLLOW>
+
+<style name="#QUERY">
+	<font-video>	Inverse	</>
+	<foreground>	red	</>
+</style>
+
+<style name="#TAGS">
+	<foreground>	purple	</>
+</style>
+
+<style name="APPENDIX">
+	<hide>	Children	</>
+</style>
+
+<style name="BOLD">
+	<font-weight>	Bold	</>
+</style>
+
+<style name="CHAPTER">
+	<hide>	Children	</>
+</style>
+
+<style name="CONTRIBUTORS">
+	<font-weight>	Bold	</>
+	<space-before>	&chp.title.space-b4	</>
+</style>
+
+<style name="COPYRIGHT">
+	<font-weight>	Bold	</>
+	<space-before>	&default.space-b4	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="CREDITSPAGE">
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="CREDITSPAGE,PARAGRAPH">
+	<break-after>	True	</>
+</style>
+
+<style name="DOCNUMBER">
+	<space-before>	&chp.title.space-b4	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="GLOSSARY">
+	<hide>	Children	</>
+</style>
+
+<style name="INTRODUCTION">
+	<hide>	Children	</>
+</style>
+
+<style name="ITALICS">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="NAMES">
+	<font-weight>	Medium	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="NEWLINE">
+	<break-before>	True	</>
+</style>
+
+<style name="SGIDOC">
+	<font-family>	&body.font-family	</>
+	<font-size>	&body.font-size	</>
+	<foreground>	&default.foreground	</>
+	<left-indent>	&left-indent.1	</>
+	<right-indent>	&right-indent.1	</>
+	<line-spacing>	&body.line-space	</>
+	<break-before>	False	</>
+	<break-after>	True	</>
+	<column>	False	</>
+</style>
+
+<style name="SGIINDEX">
+	<hide>	Children	</>
+</style>
+
+<style name="SYM">
+	<font-family>	symbol	</>
+	<font-weight>	Medium	</>
+	<character-set>	symbol	</>
+</style>
+
+<style name="TECHNICAL">
+	<font-weight>	Bold	</>
+	<space-before>	&default.space-b4	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="TITLEPAGE">
+	<break-before>	True	</>
+</style>
+
+
+
+</sheet>

@@ -1,0 +1,39 @@
+0;Debugger_UG;Main View;0;MainView;Debug.mainView
+0;Debugger_UG;Admin Menu;0;AdminMenu;Debug.mainSessionMenu
+0;Debugger_UG;Views Menu;0;ViewsMenu;Debug.viewsMenu
+0;Debugger_UG;Query Menu;0;QueryMenu;Debug.queryMenu
+0;Debugger_UG;Source Menu;0;SourceMenu;Debug.fileMenu
+0;Debugger_UG;Display Menu;0;DisplayMenu;Debug.displayMenu
+0;Debugger_UG;Traps Menu;0;TrapsMenu;Debug.trapMenu
+0;Debugger_UG;PC Menu;0;PC_Menu;Debug..pcMenu
+0;Debugger_UG;Perf Menu;0;PerfMenu;Debug.perfMenu
+0;ProDev_Perf;Performance Tasks;0;PerfTasks;Debug.perfTaskMenu
+0;ProDev_Perf;Custom Task;0;CustTask;Debug.perfTaskMenu.custom
+0;Debugger_UG;Fix+Continue Menu;0;Fix+ContinueMenu;Debug.interpreterMenu
+0;Debugger_UG;Execution View;0;ExecutionView;Debug.executionView
+0;Debugger_UG;Source View;0;SourceView;Debug.sourceViewDoc
+0;Debugger_UG;Array Browser;0;ArrayBrowser;Debug.arrayViz
+0;Debugger_UG;File Browser;0;FileBrowser;Debug.fileBrowser
+0;Debugger_UG;Structure Browser;0;StructureBrowser;Debug.dataBrowser
+0;Debugger_UG;Variable Browser;0;VariableBrowser;Debug.varBrowser
+0;Debugger_UG;Process Meter;0;ProcessMeter;Debug.ProcMeter
+0;Debugger_UG;Signal Panel;0;SignalPanel;Debug.signalPanel
+0;Debugger_UG;Syscall Panel;0;SyscallPanel;Debug.syscallPanel
+0;Debugger_UG;Trap Manager;0;TrapManager;Debug.trapMgr
+0;Debugger_UG;Call Stack View;0;CallStackView;Debug.callStack
+0;Debugger_UG;Expression View;0;ExpressionView;Debug.expressionView
+0;Debugger_UG;Fix+Continue Status Window;0;Fix+ContinueStatusWindow;Debug.intp_status_window
+0;Debugger_UG;Fix+Continue Message Window;0;Fix+ContinueMessageWindow;Debug.intp_message_window
+0;Debugger_UG;Fix+Continue Build Environment Window;0;Fix+ContinueBuildEnvironmentWindow;Debug.build_env_window
+0;Debugger_UG;Disassembly View;0;DisassemblyView;Debug.disView.disView
+0;Debugger_UG;Register View;0;RegisterView;Debug.registerView
+0;Debugger_UG;Memory View;0;MemoryView;Debug.memoryView
+0;Debugger_UG;Multiprocess View;0;MultiprocessView;Debug.mPView
+0;Debugger_UG;Task View;0;TaskView;Debug.taskView
+0;Debugger_UG;Exception Handling View;0;ExceptionView;Debug.exceptionView
+0;Debugger_UG;X/Motif Analyzer;0;XMotifAnalyzer;Debug.motif.adisplay.deck
+0;Debugger_UG;X/Motif Trace Examiner;0;TraceExaminer;Debug.motif.adisplay.deck.Trace
+0;Debugger_UG;X/Motif Pixmap Examiner;0;PixmapExaminer;Debug.motif.adisplay.deck.Pixmap
+0;Debugger_UG;X/Motif Breakpoints Examiner;0;BreakpointsExaminer;Debug.motif.adisplay.deck.Breakpoints
+0;Debugger_UG;X/Motif Tree Examiner;0;TreeExaminer;Debug.cvmotif.motif.motif.adisplay.deck.Tree
+0;Debugger_UG;X/Motif Widget Examiner;0;WidgetExaminer;Debug.motif.adisplay.deck.Widget

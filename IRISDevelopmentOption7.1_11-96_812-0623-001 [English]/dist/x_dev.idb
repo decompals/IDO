@@ -1,0 +1,1319 @@
+f 0755 root sys usr/bin/X11/bsdinst xc/config/util/bsdinst.sh sum(44828) size(1909) f(2354293404) cmpsize(1145) x_dev.sw.binaries
+f 0755 root sys usr/bin/X11/imake xc/config/imake/imake sum(59912) size(21412) needrqs f(1348392420) cmpsize(10535) x_dev.sw.binaries
+f 0755 root sys usr/bin/X11/lndir xc/config/util/lndir sum(23634) size(13220) needrqs f(3832749962) cmpsize(5089) x_dev.sw.binaries
+f 0755 root sys usr/bin/X11/makedepend xc/config/makedepend/makedepend sum(54970) size(37796) needrqs f(2933483324) cmpsize(19127) x_dev.sw.binaries
+f 0755 root sys usr/bin/X11/mkdirhier xc/config/util/mkdirhier.sh sum(31246) size(1029) f(173015468) cmpsize(699) x_dev.sw.binaries
+f 0755 root sys usr/bin/X11/xmkmf xc/config/util/xmkmf sum(3634) size(1321) f(1375966320) cmpsize(866) x_dev.sw.binaries
+f 0444 root sys usr/include/X11/Composite.h xc/lib/Xt/Composite.h sum(5438) size(3947) f(2400356837) cmpsize(2357) x_dev.sw.dev
+f 0444 root sys usr/include/X11/CompositeP.h xc/lib/Xt/CompositeP.h sum(3403) size(4896) f(2098859818) cmpsize(2764) x_dev.sw.dev
+f 0444 root sys usr/include/X11/ConstrainP.h xc/lib/Xt/ConstrainP.h sum(46818) size(4248) f(3439816479) cmpsize(2501) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Constraint.h xc/lib/Xt/Constraint.h sum(23359) size(2817) f(4154288553) cmpsize(1810) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Core.h xc/lib/Xt/Core.h sum(63542) size(2849) f(3499869559) cmpsize(1844) x_dev.sw.dev
+f 0444 root sys usr/include/X11/CoreP.h xc/lib/Xt/CoreP.h sum(62996) size(8820) f(2987869460) cmpsize(4474) x_dev.sw.dev
+f 0444 root sys usr/include/X11/DECkeysym.h xc/include/DECkeysym.h sum(145) size(3024) f(206166464) cmpsize(1917) x_dev.sw.dev
+f 0444 root sys usr/include/X11/ICE/ICE.h xc/lib/Xt/ICE.h sum(50840) size(2709) f(1462245551) cmpsize(1662) x_dev.sw.dev
+f 0444 root sys usr/include/X11/ICE/ICEconn.h xc/lib/Xt/ICEconn.h sum(63783) size(7586) f(2843566769) cmpsize(3989) x_dev.sw.dev
+f 0444 root sys usr/include/X11/ICE/ICElib.h xc/lib/Xt/ICElib.h sum(48820) size(11615) f(1532636459) cmpsize(4642) x_dev.sw.dev
+f 0444 root sys usr/include/X11/ICE/ICEmsg.h xc/lib/Xt/ICEmsg.h sum(1502) size(8372) f(2348697106) cmpsize(4003) x_dev.sw.dev
+f 0444 root sys usr/include/X11/ICE/ICEproto.h xc/lib/Xt/ICEproto.h sum(21063) size(4848) f(219006423) cmpsize(2518) x_dev.sw.dev
+f 0444 root sys usr/include/X11/ICE/ICEutil.h xc/lib/Xt/ICEutil.h sum(53803) size(3573) f(765665106) cmpsize(2070) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Intrinsic.h xc/lib/Xt/Intrinsic.h sum(59235) size(73885) f(1550414595) cmpsize(21309) x_dev.sw.dev
+f 0444 root sys usr/include/X11/IntrinsicP.h xc/lib/Xt/IntrinsicP.h sum(33997) size(10179) f(2590799857) cmpsize(5254) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Object.h xc/lib/Xt/Object.h sum(44360) size(2804) f(602349362) cmpsize(1811) x_dev.sw.dev
+f 0444 root sys usr/include/X11/ObjectP.h xc/lib/Xt/ObjectP.h sum(44726) size(7128) f(979395043) cmpsize(3467) x_dev.sw.dev
+f 0444 root sys usr/include/X11/PEX5/PEX.h xc/lib/PEX5/PEX.h sum(34594) size(46301) f(4049933698) cmpsize(13354) x_dev.sw.pex
+f 0444 root sys usr/include/X11/PEX5/PEXlib.h xc/lib/PEX5/PEXlib.h sum(12399) size(111167) f(351814885) cmpsize(27330) x_dev.sw.pex
+f 0444 root sys usr/include/X11/PEX5/PEXlibint.h xc/lib/PEX5/PEXlibint.h sum(48874) size(31939) f(2568853535) cmpsize(12895) x_dev.sw.pex
+f 0444 root sys usr/include/X11/PEX5/PEXproto.h xc/lib/PEX5/PEXproto.h sum(14775) size(58281) f(3867355935) cmpsize(17779) x_dev.sw.pex
+f 0444 root sys usr/include/X11/PEX5/PEXprotost.h xc/lib/PEX5/PEXprotost.h sum(6984) size(17173) f(3583772117) cmpsize(7508) x_dev.sw.pex
+f 0444 root sys usr/include/X11/RectObj.h xc/lib/Xt/RectObj.h sum(13400) size(2806) f(616037656) cmpsize(1802) x_dev.sw.dev
+f 0444 root sys usr/include/X11/RectObjP.h xc/lib/Xt/RectObjP.h sum(42864) size(6655) f(1115999769) cmpsize(3349) x_dev.sw.dev
+f 0444 root sys usr/include/X11/SGIScheme.h xc/lib/Xt/SGIScheme.h sum(46190) size(1507) f(892976389) cmpsize(800) x_dev.sw.dev
+f 0444 root sys usr/include/X11/SGIkeysym.h xc/include/SGIkeysym.h sum(16754) size(76) f(2736879402) cmpsize(0) x_dev.sw.dev
+f 0444 root sys usr/include/X11/SM/SM.h xc/lib/Xt/SM.h sum(55924) size(3124) f(1381496210) cmpsize(1890) x_dev.sw.dev
+f 0444 root sys usr/include/X11/SM/SMlib.h xc/lib/Xt/SMlib.h sum(12324) size(13401) f(2613168703) cmpsize(5255) x_dev.sw.dev
+f 0444 root sys usr/include/X11/SM/SMproto.h xc/lib/Xt/SMproto.h sum(16829) size(5032) f(1834289795) cmpsize(2426) x_dev.sw.dev
+f 0444 root sys usr/include/X11/SgiStrParse.h xc/lib/X11/SgiStrParse.h sum(22592) size(680) f(2199419930) cmpsize(464) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Shell.h xc/lib/Xt/Shell.h sum(34117) size(17679) f(3371696820) cmpsize(6367) x_dev.sw.dev
+f 0444 root sys usr/include/X11/ShellP.h xc/lib/Xt/ShellP.h sum(60055) size(12869) f(1651161658) cmpsize(5475) x_dev.sw.dev
+f 0444 root sys usr/include/X11/StringDefs.h xc/lib/Xt/StringDefs.h sum(33052) size(30760) f(326727601) cmpsize(9627) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Sunkeysym.h xc/include/Sunkeysym.h sum(61297) size(4233) f(1510214992) cmpsize(2506) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Vendor.h xc/lib/Xt/Vendor.h sum(23508) size(2979) f(689244574) cmpsize(1846) x_dev.sw.dev
+f 0444 root sys usr/include/X11/VendorP.h xc/lib/Xt/VendorP.h sum(20876) size(3793) f(1818674772) cmpsize(2254) x_dev.sw.dev
+f 0444 root sys usr/include/X11/X.h xc/include/X.h sum(31120) size(19772) f(3290537085) cmpsize(8717) x_dev.sw.dev
+f 0444 root sys usr/include/X11/X10.h xc/lib/oldX/X10.h sum(34251) size(3384) f(3429395349) cmpsize(2155) x_dev.sw.dev
+f 0444 root sys usr/include/X11/XKBlib.h xc/lib/X11/XKBlib.h sum(57402) size(26651) f(3072243867) cmpsize(9771) x_dev.sw.dev
+f 0444 root sys usr/include/X11/XShmTrans.h xc/lib/X11/XShmTrans.h sum(37025) size(4059) f(2802111745) cmpsize(2220) x_dev.sw.dev
+f 0444 root sys usr/include/X11/XWDFile.h xc/include/XWDFile.h sum(27112) size(4108) f(2859554640) cmpsize(2504) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xatom.h xc/include/Xatom.h sum(32864) size(2518) f(3571091002) cmpsize(1040) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xauth.h xc/lib/Xau/Xauth.h sum(56525) size(4293) f(1035014855) cmpsize(2464) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/AllWidgets.h xc/lib/Xaw/AllWidgets.h sum(60315) size(1561) f(707865923) cmpsize(1132) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/AsciiSink.h xc/lib/Xaw/AsciiSink.h sum(64523) size(3456) f(690104561) cmpsize(2048) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/AsciiSinkP.h xc/lib/Xaw/AsciiSinkP.h sum(42902) size(4129) f(2020845743) cmpsize(2327) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/AsciiSrc.h xc/lib/Xaw/AsciiSrc.h sum(56029) size(4522) f(1663623935) cmpsize(2657) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/AsciiSrcP.h xc/lib/Xaw/AsciiSrcP.h sum(6728) size(5693) f(1087848803) cmpsize(3230) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/AsciiText.h xc/lib/Xaw/AsciiText.h sum(28747) size(5508) f(3809263590) cmpsize(3131) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/AsciiTextP.h xc/lib/Xaw/AsciiTextP.h sum(28330) size(5246) f(1360918195) cmpsize(2752) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Box.h xc/lib/Xaw/Box.h sum(37867) size(3644) f(77346203) cmpsize(2249) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/BoxP.h xc/lib/Xaw/BoxP.h sum(50864) size(3780) f(884715640) cmpsize(2242) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Cardinals.h xc/lib/Xaw/Cardinals.h sum(48236) size(1727) f(219467679) cmpsize(1191) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Command.h xc/lib/Xaw/Command.h sum(41752) size(5063) f(2027093218) cmpsize(3074) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/CommandP.h xc/lib/Xaw/CommandP.h sum(17585) size(4511) f(1201662355) cmpsize(2570) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Dialog.h xc/lib/Xaw/Dialog.h sum(11252) size(3923) f(216912592) cmpsize(2426) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/DialogP.h xc/lib/Xaw/DialogP.h sum(54508) size(3724) f(239752049) cmpsize(2264) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Form.h xc/lib/Xaw/Form.h sum(4395) size(5644) f(607165212) cmpsize(3260) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/FormP.h xc/lib/Xaw/FormP.h sum(48648) size(5239) f(4114657181) cmpsize(3181) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Grip.h xc/lib/Xaw/Grip.h sum(10471) size(4117) f(4140901004) cmpsize(2503) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/GripP.h xc/lib/Xaw/GripP.h sum(14153) size(3650) f(1019909701) cmpsize(2130) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Label.h xc/lib/Xaw/Label.h sum(38480) size(4763) f(1679314019) cmpsize(2821) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/LabelP.h xc/lib/Xaw/LabelP.h sum(23583) size(4264) f(2156811483) cmpsize(2495) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/List.h xc/lib/Xaw/List.h sum(42288) size(7699) f(3625940856) cmpsize(4042) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/ListP.h xc/lib/Xaw/ListP.h sum(22940) size(4015) f(2081677453) cmpsize(2319) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/MenuButtoP.h xc/lib/Xaw/MenuButtoP.h sum(44523) size(3088) f(746800774) cmpsize(1820) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/MenuButton.h xc/lib/Xaw/MenuButton.h sum(63565) size(3306) f(1546547008) cmpsize(2073) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/MultiSink.h xc/lib/Xaw/MultiSink.h sum(59155) size(4774) f(3686212879) cmpsize(2779) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/MultiSinkP.h xc/lib/Xaw/MultiSinkP.h sum(62577) size(5633) f(638821148) cmpsize(3097) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/MultiSrc.h xc/lib/Xaw/MultiSrc.h sum(31200) size(4684) f(216482528) cmpsize(2887) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/MultiSrcP.h xc/lib/Xaw/MultiSrcP.h sum(1324) size(7163) f(851267428) cmpsize(3971) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Paned.h xc/lib/Xaw/Paned.h sum(63402) size(8892) f(3103613505) cmpsize(4558) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/PanedP.h xc/lib/Xaw/PanedP.h sum(35894) size(7769) f(4247788455) cmpsize(3997) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Panner.h xc/lib/Xaw/Panner.h sum(41741) size(3994) f(3337802703) cmpsize(2257) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/PannerP.h xc/lib/Xaw/PannerP.h sum(14580) size(4269) f(2494274794) cmpsize(2581) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Porthole.h xc/lib/Xaw/Porthole.h sum(43828) size(2421) f(435382540) cmpsize(1585) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/PortholeP.h xc/lib/Xaw/PortholeP.h sum(43613) size(2161) f(721070966) cmpsize(1462) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Repeater.h xc/lib/Xaw/Repeater.h sum(40541) size(2820) f(1855634368) cmpsize(1763) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/RepeaterP.h xc/lib/Xaw/RepeaterP.h sum(18425) size(2907) f(1498158440) cmpsize(1858) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Reports.h xc/lib/Xaw/Reports.h sum(8440) size(2341) f(1829224995) cmpsize(1583) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Scrollbar.h xc/lib/Xaw/Scrollbar.h sum(51392) size(5512) f(3777551615) cmpsize(3230) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/ScrollbarP.h xc/lib/Xaw/ScrollbarP.h sum(53867) size(4324) f(1668008402) cmpsize(2557) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Simple.h xc/lib/Xaw/Simple.h sum(17159) size(3974) f(4186236696) cmpsize(2389) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/SimpleMenP.h xc/lib/Xaw/SimpleMenP.h sum(17594) size(3415) f(286072452) cmpsize(2125) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/SimpleMenu.h xc/lib/Xaw/SimpleMenu.h sum(26462) size(5120) f(3825510846) cmpsize(2953) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/SimpleP.h xc/lib/Xaw/SimpleP.h sum(33456) size(3260) f(975558706) cmpsize(2073) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Sme.h xc/lib/Xaw/Sme.h sum(33865) size(2537) f(3375228579) cmpsize(1663) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/SmeBSB.h xc/lib/Xaw/SmeBSB.h sum(28646) size(3504) f(1813968049) cmpsize(2110) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/SmeBSBP.h xc/lib/Xaw/SmeBSBP.h sum(36225) size(3759) f(4191261928) cmpsize(2106) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/SmeLine.h xc/lib/Xaw/SmeLine.h sum(20033) size(2586) f(4225207421) cmpsize(1697) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/SmeLineP.h xc/lib/Xaw/SmeLineP.h sum(43549) size(3066) f(1222388810) cmpsize(1726) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/SmeP.h xc/lib/Xaw/SmeP.h sum(45771) size(3246) f(4141579876) cmpsize(1855) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/StripCharP.h xc/lib/Xaw/StripCharP.h sum(11602) size(4115) f(2036148981) cmpsize(2530) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/StripChart.h xc/lib/Xaw/StripChart.h sum(43010) size(4755) f(90271853) cmpsize(2840) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Template.c xc/lib/Xaw/Template.c sum(58551) size(3315) f(304693713) cmpsize(2060) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Template.h xc/lib/Xaw/Template.h sum(18805) size(2520) f(3882001698) cmpsize(1651) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/TemplateP.h xc/lib/Xaw/TemplateP.h sum(43233) size(2052) f(231283539) cmpsize(1393) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Text.h xc/lib/Xaw/Text.h sum(34777) size(8489) f(2214370825) cmpsize(4363) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/TextP.h xc/lib/Xaw/TextP.h sum(30625) size(9976) f(2696250065) cmpsize(5195) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/TextSink.h xc/lib/Xaw/TextSink.h sum(10543) size(9832) f(373726746) cmpsize(4645) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/TextSinkP.h xc/lib/Xaw/TextSinkP.h sum(13228) size(5332) f(2165855381) cmpsize(2851) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/TextSrc.h xc/lib/Xaw/TextSrc.h sum(9095) size(7838) f(2770769457) cmpsize(3943) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/TextSrcP.h xc/lib/Xaw/TextSrcP.h sum(62328) size(5634) f(3800340383) cmpsize(2972) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Toggle.h xc/lib/Xaw/Toggle.h sum(56267) size(5545) f(956507560) cmpsize(3071) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/ToggleP.h xc/lib/Xaw/ToggleP.h sum(10214) size(3218) f(3165669125) cmpsize(1915) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Tree.h xc/lib/Xaw/Tree.h sum(35955) size(4807) f(1850243072) cmpsize(2647) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/TreeP.h xc/lib/Xaw/TreeP.h sum(51178) size(4656) f(315025681) cmpsize(2827) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/VendorEP.h xc/lib/Xaw/VendorEP.h sum(47176) size(3168) f(2137564350) cmpsize(2051) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/Viewport.h xc/lib/Xaw/Viewport.h sum(46936) size(4280) f(3359055078) cmpsize(2665) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/ViewportP.h xc/lib/Xaw/ViewportP.h sum(13441) size(4149) f(3398054924) cmpsize(2494) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/XawImP.h xc/lib/Xaw/XawImP.h sum(45875) size(6110) f(24224144) cmpsize(3551) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xaw/XawInit.h xc/lib/Xaw/XawInit.h sum(5409) size(1456) f(3500829854) cmpsize(1076) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xcms.h xc/lib/X11/Xcms.h sum(51094) size(22557) f(3442023140) cmpsize(7849) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xdmcp.h xc/lib/Xdmcp/Xdmcp.h sum(53783) size(3962) f(2915643933) cmpsize(2286) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xfuncproto.h xc/include/Xfuncproto.h sum(57519) size(2881) f(1582115552) cmpsize(1730) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xfuncs.h xc/include/Xfuncs.h sum(25428) size(3192) f(521724450) cmpsize(2011) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xlib.h xc/lib/X11/Xlib.h sum(36691) size(108725) f(888277290) cmpsize(32167) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xlibint.h xc/lib/X11/Xlibint.h sum(52665) size(41945) f(2698921318) cmpsize(17900) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xlocale.h xc/lib/X11/Xlocale.h sum(13194) size(1953) f(3479304445) cmpsize(1382) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmd.h xc/include/Xmd.h sum(48603) size(6564) f(483582434) cmpsize(3743) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/Atoms.h xc/lib/Xmu/Atoms.h sum(38145) size(3922) f(1916062864) cmpsize(2221) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/CharSet.h xc/lib/Xmu/CharSet.h sum(12432) size(2026) f(649744069) cmpsize(1431) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/CloseHook.h xc/lib/Xmu/CloseHook.h sum(17952) size(2309) f(2002077077) cmpsize(1563) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/Converters.h xc/lib/Xmu/Converters.h sum(62481) size(7250) f(3349921161) cmpsize(3307) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/CurUtil.h xc/lib/Xmu/CurUtil.h sum(12791) size(1724) f(269102432) cmpsize(1256) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/CvtCache.h xc/lib/Xmu/CvtCache.h sum(4613) size(1910) f(1193826372) cmpsize(1387) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/DisplayQue.h xc/lib/Xmu/DisplayQue.h sum(1591) size(4921) f(2618222634) cmpsize(2648) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/Drawing.h xc/lib/Xmu/Drawing.h sum(6164) size(4421) f(3228554444) cmpsize(2378) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/Editres.h xc/lib/Xmu/Editres.h sum(35868) size(1447) f(2124864296) cmpsize(1062) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/EditresP.h xc/lib/Xmu/EditresP.h sum(37815) size(9016) f(1747134433) cmpsize(4825) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/Error.h xc/lib/Xmu/Error.h sum(56846) size(1896) f(2572062621) cmpsize(1369) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/ExtAgent.h xc/lib/Xmu/ExtAgent.h sum(31760) size(1584) f(1281377654) cmpsize(1160) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/Initer.h xc/lib/Xmu/Initer.h sum(35757) size(1985) f(2156142290) cmpsize(1418) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/Misc.h xc/lib/Xmu/Misc.h sum(6854) size(2842) f(2125092217) cmpsize(1832) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/StdCmap.h xc/lib/Xmu/StdCmap.h sum(3736) size(3068) f(3486139623) cmpsize(1879) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/StdSel.h xc/lib/Xmu/StdSel.h sum(37892) size(1942) f(856233347) cmpsize(1382) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/SysUtil.h xc/lib/Xmu/SysUtil.h sum(57113) size(1596) f(3995669747) cmpsize(1184) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/WidgetNode.h xc/lib/Xmu/WidgetNode.h sum(31821) size(3470) f(3866894912) cmpsize(2117) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/WinUtil.h xc/lib/Xmu/WinUtil.h sum(51878) size(2030) f(3492385486) cmpsize(1442) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/Xct.h xc/lib/Xmu/Xct.h sum(26871) size(6517) f(3680643055) cmpsize(3596) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xmu/Xmu.h xc/lib/Xmu/Xmu.h sum(31644) size(2110) f(2780060594) cmpsize(1480) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xos.h xc/include/Xos.h sum(19622) size(5348) f(2691659610) cmpsize(3046) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xosdefs.h xc/include/Xosdefs.h sum(21340) size(2806) f(2042070492) cmpsize(1743) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xpoll.h xc/include/Xpoll.h sum(37321) size(12342) f(1769747587) cmpsize(5465) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xproto.h xc/include/Xproto.h sum(65190) size(56451) f(4073460330) cmpsize(18590) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xprotostr.h xc/include/Xprotostr.h sum(46628) size(3008) f(1494058100) cmpsize(1924) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xresource.h xc/lib/X11/Xresource.h sum(55984) size(11757) f(3438357882) cmpsize(4955) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xthreads.h xc/include/Xthreads.h sum(9754) size(8538) f(4128328440) cmpsize(4138) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xutil.h xc/lib/X11/Xutil.h sum(45290) size(22002) f(326764678) cmpsize(9316) x_dev.sw.dev
+f 0444 root sys usr/include/X11/Xw32defs.h xc/include/Xw32defs.h sum(17058) size(1628) f(689670461) cmpsize(819) x_dev.sw.dev
+f 0444 root sys usr/include/X11/ap_keysym.h xc/include/ap_keysym.h sum(6329) size(2298) f(3789870568) cmpsize(1231) x_dev.sw.dev
+f 0444 root sys usr/include/X11/cursorfont.h xc/lib/X11/cursorfont.h sum(28585) size(3234) f(1308529073) cmpsize(1810) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/MITMisc.h xc/include/extensions/MITMisc.h sum(47613) size(2141) f(1781832826) cmpsize(1461) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/SGIMisc.h xc/include/extensions/SGIMisc.h sum(16178) size(3730) f(4116148699) cmpsize(2056) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/SGIStereo.h xc/include/extensions/SGIStereo.h sum(54948) size(2979) f(206030984) cmpsize(1832) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/SpeechProto.h xc/include/extensions/SpeechProto.h sum(31402) size(15622) f(1531609723) cmpsize(5213) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XI.h xc/include/extensions/XI.h sum(24339) size(8272) f(179184310) cmpsize(4079) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XIE.h xc/include/extensions/XIE.h sum(45203) size(10916) f(2229013092) cmpsize(5134) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XIEproto.h xc/include/extensions/XIEproto.h sum(43868) size(20130) f(2520527647) cmpsize(7084) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XIEprotost.h xc/include/extensions/XIEprotost.h sum(1636) size(28735) f(722555425) cmpsize(9895) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XInput.h xc/include/extensions/XInput.h sum(59048) size(32439) f(3594591170) cmpsize(11572) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XIproto.h xc/include/extensions/XIproto.h sum(23470) size(35115) f(522425080) cmpsize(10660) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XKB.h xc/include/extensions/XKB.h sum(13646) size(22248) f(189025282) cmpsize(9094) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XKBbells.h xc/lib/xkbfile/XKBbells.h sum(48350) size(4770) f(2672119772) cmpsize(2452) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XKBconfig.h xc/lib/xkbfile/XKBconfig.h sum(20913) size(7083) f(137096093) cmpsize(3613) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XKBfile.h xc/lib/xkbfile/XKBfile.h sum(42462) size(12446) f(614261147) cmpsize(4864) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XKBgeom.h xc/include/extensions/XKBgeom.h sum(44766) size(12694) f(1550575732) cmpsize(5158) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XKBproto.h xc/include/extensions/XKBproto.h sum(59481) size(30520) f(1690446068) cmpsize(9734) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XKBsrv.h xc/include/extensions/XKBsrv.h sum(44086) size(15150) f(472492848) cmpsize(6932) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XKBstr.h xc/include/extensions/XKBstr.h sum(11449) size(15314) f(3941603214) cmpsize(6676) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XKM.h xc/lib/xkbfile/XKM.h sum(14355) size(2732) f(117690650) cmpsize(1634) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XKMformat.h xc/lib/xkbfile/XKMformat.h sum(58764) size(6657) f(3235788187) cmpsize(3184) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XSGIvc.h xc/include/extensions/XSGIvc.h sum(55372) size(11256) f(2323605454) cmpsize(4310) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XSGIvcPlatformParamsP.h xc/include/extensions/XSGIvcPlatformParamsP.h sum(760) size(1695) f(3926341197) cmpsize(1121) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XSGIvcproto.h xc/include/extensions/XSGIvcproto.h sum(21811) size(21306) f(3977224784) cmpsize(6887) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XSGIvcstr.h xc/include/extensions/XSGIvcstr.h sum(19304) size(11407) f(1007504334) cmpsize(5099) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XScreenSaver.h xc/include/extensions/XScreenSaver.h sum(58568) size(1763) f(1919332055) cmpsize(988) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XShm.h xc/include/extensions/XShm.h sum(35727) size(4418) f(3406637421) cmpsize(2491) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XSpeech.h xc/include/extensions/XSpeech.h sum(27706) size(9659) f(3018711786) cmpsize(3604) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XSpeechProto.h xc/include/extensions/XSpeechProto.h sum(2718) size(4663) f(108125552) cmpsize(2188) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/XTest.h xc/include/extensions/XTest.h sum(21219) size(4406) f(185345603) cmpsize(2365) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/Xdbe.h xc/include/extensions/Xdbe.h sum(10424) size(4152) f(117649632) cmpsize(2381) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/Xdbeproto.h xc/include/extensions/Xdbeproto.h sum(14213) size(8811) f(1809770160) cmpsize(4063) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/Xext.h xc/include/extensions/Xext.h sum(54972) size(1848) f(3110535100) cmpsize(1337) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/Xsetmon.h xc/include/extensions/Xsetmon.h sum(63816) size(1052) f(2098372399) cmpsize(540) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/Xv.h xc/include/extensions/Xv.h sum(21456) size(2711) f(1513966038) cmpsize(1646) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/Xvlib.h xc/include/extensions/Xvlib.h sum(7289) size(8287) f(656209574) cmpsize(3428) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/Xvproto.h xc/include/extensions/Xvproto.h sum(43399) size(9379) f(531549506) cmpsize(3955) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/bits.h xc/include/extensions/xtrap/bits.h sum(47179) size(3256) f(3456850754) cmpsize(1945) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/extutil.h xc/include/extensions/extutil.h sum(20164) size(6228) f(1485603312) cmpsize(3391) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/multibuf.h xc/include/extensions/multibuf.h sum(17735) size(8293) f(2054659343) cmpsize(4120) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/readdisplay.h xc/include/extensions/readdisplay.h sum(12013) size(3533) f(1743057528) cmpsize(2012) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/readdisplaystr.h xc/include/extensions/readdisplaystr.h sum(14528) size(3119) f(2191916198) cmpsize(1917) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/sgiXnmbx.h xc/include/extensions/sgiXnmbx.h sum(60111) size(6525) f(3308328318) cmpsize(2708) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/sgiXnmbxProto.h xc/include/extensions/sgiXnmbxProto.h sum(26140) size(8761) f(3081696759) cmpsize(3328) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/sgistereostr.h xc/include/extensions/sgistereostr.h sum(14707) size(3240) f(436654915) cmpsize(1912) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/shape.h xc/include/extensions/shape.h sum(23208) size(5185) f(3389554762) cmpsize(2695) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/sync.h xc/include/extensions/sync.h sum(21297) size(14620) f(4198501880) cmpsize(6689) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/xemacros.h xc/include/extensions/xtrap/xemacros.h sum(23627) size(15004) f(4124864322) cmpsize(6149) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/xtestext1.h xc/include/extensions/xtestext1.h sum(34088) size(11253) f(3521758746) cmpsize(5284) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/xtrapddmi.h xc/include/extensions/xtrap/xtrapddmi.h sum(16848) size(4540) f(127116159) cmpsize(2729) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/xtrapdi.h xc/include/extensions/xtrap/xtrapdi.h sum(53698) size(19538) f(352582561) cmpsize(8748) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/xtraplib.h xc/include/extensions/xtrap/xtraplib.h sum(14650) size(5024) f(1205294024) cmpsize(2909) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/xtraplibp.h xc/include/extensions/xtrap/xtraplibp.h sum(29536) size(6401) f(847024368) cmpsize(3301) x_dev.sw.dev
+f 0444 root sys usr/include/X11/extensions/xtrapproto.h xc/include/extensions/xtrap/xtrapproto.h sum(65094) size(8369) f(2202023114) cmpsize(3829) x_dev.sw.dev
+f 0444 root sys usr/include/X11/fonts/FS.h xc/include/fonts/FS.h sum(26099) size(4310) f(3661421141) cmpsize(2648) x_dev.sw.dev
+f 0444 root sys usr/include/X11/fonts/FSlib.h xc/lib/FS/FSlib.h sum(53607) size(8097) f(1763911394) cmpsize(4333) x_dev.sw.dev
+f 0444 root sys usr/include/X11/fonts/FSproto.h xc/include/fonts/FSproto.h sum(24393) size(20694) f(2453456615) cmpsize(7760) x_dev.sw.dev
+f 0444 root sys usr/include/X11/fonts/fsmasks.h xc/include/fonts/fsmasks.h sum(34110) size(4196) f(278626834) cmpsize(2434) x_dev.sw.dev
+f 0444 root sys usr/include/X11/imComp.h xc/lib/X11/imComp.h sum(32206) size(4312) f(894198803) cmpsize(2404) x_dev.sw.dev
+f 0444 root sys usr/include/X11/imCompInt.h xc/lib/X11/imCompInt.h sum(50787) size(4472) f(1838474281) cmpsize(2666) x_dev.sw.dev
+f 0444 root sys usr/include/X11/keysym.h xc/include/keysym.h sum(30816) size(2693) f(1824166191) cmpsize(1732) x_dev.sw.dev
+f 0444 root sys usr/include/X11/keysymdef.h xc/include/keysymdef.h sum(23164) size(66227) f(1398115891) cmpsize(17601) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/Imake.cf xc/config/cf/Imake.cf sum(9999) size(8787) f(2194019070) cmpsize(3226) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/Imake.rules xc/config/cf/Imake.rules sum(15560) size(63266) f(3251039892) cmpsize(22121) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/Imake.tmpl xc/config/cf/Imake.tmpl sum(26164) size(27378) f(9857346) cmpsize(11387) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/Library.tmpl xc/config/cf/Library.tmpl sum(64214) size(9583) f(2462593359) cmpsize(4133) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/Project.tmpl xc/config/cf/Project.tmpl sum(41029) size(31892) f(1062956630) cmpsize(12002) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/host.def xc/config/cf/host.def sum(19164) size(101) f(3863586776) cmpsize(74) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/noop.rules xc/config/cf/noop.rules sum(10) size(1) f(10) cmpsize(0) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/sgi.cf xc/config/cf/sgi.cf sum(47399) size(13159) f(3227973242) cmpsize(6671) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/sgiIncludes.tmpl xc/config/cf/sgiIncludes.tmpl sum(40693) size(577) f(2513175954) cmpsize(404) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/sgiLib.rules xc/config/cf/sgiLib.rules sum(58535) size(4132) f(489801506) cmpsize(1990) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/sgiLib.tmpl xc/config/cf/sgiLib.tmpl sum(25194) size(2355) f(940253910) cmpsize(1270) x_dev.sw.dev
+f 0444 root sys usr/lib/X11/config/site.def xc/config/cf/site.def sum(64725) size(1944) f(2326293202) cmpsize(846) x_dev.sw.dev
+f 0644 root sys usr/lib/libFS.a xc/lib/FS/libFS.a sum(51234) size(112176) f(211345417) cmpsize(49023) x_dev.sw.dev
+l 0000 root sys usr/lib/libICE.a xc/lib/Xt symval(libXt.a) x_dev.sw.dev
+f 0644 root sys usr/lib/libPEX5.a xc/lib/PEX5/libPEX5.a sum(58731) size(478028) f(1434805613) cmpsize(251877) x_dev.sw.pex
+l 0000 root sys usr/lib/libSM.a xc/lib/Xt symval(libXt.a) x_dev.sw.dev
+f 0644 root sys usr/lib/libXTrap.a xc/lib/xtrap/libXTrap.a sum(39444) size(80880) f(1314812138) cmpsize(38627) x_dev.sw.dev
+f 0644 root sys usr/lib/libXau.a xc/lib/Xau/libXau.a sum(57946) size(23288) f(1974455077) cmpsize(9419) x_dev.sw.dev
+f 0644 root sys usr/lib/libXaw.a xc/lib/Xaw/libXaw.a sum(42049) size(662764) f(648418469) cmpsize(312862) x_dev.sw.dev
+f 0644 root sys usr/lib/libXdmcp.a xc/lib/Xdmcp/libXdmcp.a sum(65326) size(62460) f(4060855321) cmpsize(17778) x_dev.sw.dev
+f 0644 root sys usr/lib/libXext.a xc/lib/Xext/libXext.a sum(46283) size(185528) f(3336575092) cmpsize(81169) x_dev.sw.dev
+f 0644 root sys usr/lib/libXi.a xc/lib/Xi/libXi.a sum(33988) size(113188) f(1118138005) cmpsize(43173) x_dev.sw.dev
+f 0644 root sys usr/lib/libXmu.a xc/lib/Xmu/libXmu.a sum(1603) size(223036) f(2026197859) cmpsize(100891) x_dev.sw.dev
+f 0644 root sys usr/lib/libXnmbx.a xc/lib/nmbx/libXnmbx.a sum(25550) size(22132) f(2804998172) cmpsize(9568) x_dev.sw.dev
+f 0644 root sys usr/lib/libXsgivc.a xc/lib/Xvc/libXsgivc.a sum(10078) size(36396) f(2266547474) cmpsize(19944) x_dev.sw.dev
+f 0644 root sys usr/lib/libXt.a xc/lib/Xt/libXt.a sum(50331) size(1071396) f(3736237509) cmpsize(527505) x_dev.sw.dev
+f 0644 root sys usr/lib/libXtst.a xc/lib/Xtst/libXtst.a sum(17470) size(14028) f(333189330) cmpsize(7589) x_dev.sw.dev
+f 0644 root sys usr/lib/liboldX.a xc/lib/oldX/liboldX.a sum(21099) size(16428) f(1545161477) cmpsize(8387) x_dev.sw.dev
+f 0644 root sys usr/lib/libxkbfile.a xc/lib/xkbfile/libxkbfile.a sum(60496) size(216916) f(3005664854) cmpsize(112217) x_dev.sw.dev
+f 0644 root sys usr/lib32/libFS.a xc/libN32/FS/libFS.a sum(42193) size(142848) f(131788199) cmpsize(63195) x_dev.sw32.dev
+l 0000 root sys usr/lib32/libICE.a xc/libN32/Xt symval(libXt.a) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libPEX5.a xc/libN32/PEX5/libPEX5.a sum(11249) size(552732) f(2225278961) cmpsize(300730) x_dev.sw32.pex
+l 0000 root sys usr/lib32/libSM.a xc/libN32/Xt symval(libXt.a) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libXTrap.a xc/libN32/xtrap/libXTrap.a sum(6673) size(95960) f(475264318) cmpsize(46794) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libXau.a xc/libN32/Xau/libXau.a sum(30290) size(30732) f(1311768872) cmpsize(13089) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libXaw.a xc/libN32/Xaw/libXaw.a sum(31136) size(696956) f(2904297982) cmpsize(358167) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libXdmcp.a xc/libN32/Xdmcp/libXdmcp.a sum(26984) size(103068) f(3051669138) cmpsize(29218) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libXext.a xc/libN32/Xext/libXext.a sum(8135) size(214080) f(688047272) cmpsize(94897) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libXi.a xc/libN32/Xi/libXi.a sum(43949) size(148824) f(3860261039) cmpsize(57911) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libXmu.a xc/libN32/Xmu/libXmu.a sum(50460) size(266920) f(140504927) cmpsize(119781) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libXnmbx.a xc/libN32/nmbx/libXnmbx.a sum(58097) size(28112) f(2538648936) cmpsize(12676) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libXsgivc.a xc/libN32/Xvc/libXsgivc.a sum(56608) size(42896) f(4155538689) cmpsize(22881) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libXt.a xc/libN32/Xt/libXt.a sum(10263) size(1214656) f(1304520355) cmpsize(636597) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libXtst.a xc/libN32/Xtst/libXtst.a sum(46306) size(16464) f(2000241116) cmpsize(8894) x_dev.sw32.dev
+f 0644 root sys usr/lib32/liboldX.a xc/libN32/oldX/liboldX.a sum(17230) size(24260) f(3790512804) cmpsize(12218) x_dev.sw32.dev
+f 0644 root sys usr/lib32/libxkbfile.a xc/libN32/xkbfile/libxkbfile.a sum(54488) size(251424) f(2898939269) cmpsize(137641) x_dev.sw32.dev
+f 0644 root sys usr/lib64/libFS.a xc/lib64/FS/libFS.a sum(31863) size(184880) f(1467995783) cmpsize(67055) x_dev.sw64.dev
+l 0000 root sys usr/lib64/libICE.a xc/lib64/Xt symval(libXt.a) x_dev.sw64.dev
+l 0000 root sys usr/lib64/libSM.a xc/lib64/Xt symval(libXt.a) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libXTrap.a xc/lib64/xtrap/libXTrap.a sum(45154) size(124416) f(782960394) cmpsize(49785) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libXau.a xc/lib64/Xau/libXau.a sum(61011) size(40556) f(2188354557) cmpsize(13935) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libXaw.a xc/lib64/Xaw/libXaw.a sum(28605) size(921068) f(3947260169) cmpsize(380689) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libXdmcp.a xc/lib64/Xdmcp/libXdmcp.a sum(1760) size(134940) f(1462944859) cmpsize(31292) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libXext.a xc/lib64/Xext/libXext.a sum(11530) size(276096) f(3252890911) cmpsize(102017) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libXi.a xc/lib64/Xi/libXi.a sum(51812) size(189904) f(4253617200) cmpsize(62187) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libXmu.a xc/lib64/Xmu/libXmu.a sum(43417) size(347216) f(675473007) cmpsize(127506) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libXnmbx.a xc/lib64/nmbx/libXnmbx.a sum(39282) size(36320) f(1013408984) cmpsize(13541) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libXsgivc.a xc/lib64/Xvc/libXsgivc.a sum(17493) size(53488) f(280917574) cmpsize(24545) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libXt.a xc/lib64/Xt/libXt.a sum(17651) size(1573728) f(1296954479) cmpsize(683939) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libXtst.a xc/lib64/Xtst/libXtst.a sum(38249) size(21376) f(386366841) cmpsize(9742) x_dev.sw64.dev
+f 0644 root sys usr/lib64/liboldX.a xc/lib64/oldX/liboldX.a sum(43897) size(30780) f(1241881517) cmpsize(13198) x_dev.sw64.dev
+f 0644 root sys usr/lib64/libxkbfile.a xc/lib64/xkbfile/libxkbfile.a sum(48017) size(325624) f(3409034351) cmpsize(150765) x_dev.sw64.dev
+f 0444 root sys usr/relnotes/x_dev/TC sgi/relnotes/x_dev/TC sum(2529) size(122) f(3288669201) cmpsize(117) x_dev.man.relnotes
+f 0444 root sys usr/relnotes/x_dev/ch1.z sgi/relnotes/x_dev/ch1.z sum(43720) size(1829) f(596926334) cmpsize(0) x_dev.man.relnotes
+f 0444 root sys usr/relnotes/x_dev/ch2.z sgi/relnotes/x_dev/ch2.z sum(27538) size(3536) f(4172858860) cmpsize(3394) x_dev.man.relnotes
+f 0444 root sys usr/relnotes/x_dev/ch3.z sgi/relnotes/x_dev/ch3.z sum(18804) size(1829) f(4126317819) cmpsize(0) x_dev.man.relnotes
+f 0444 root sys usr/relnotes/x_dev/ch4.z sgi/relnotes/x_dev/ch4.z sum(50055) size(124) f(709495394) cmpsize(0) x_dev.man.relnotes
+f 0444 root sys usr/relnotes/x_dev/ch5.z sgi/relnotes/x_dev/ch5.z sum(29353) size(1178) f(865911616) cmpsize(0) x_dev.man.relnotes
+f 0444 root sys usr/share/catman/p_man/cat3/X11/AllPlanes.z xc/doc/man/X11/AllPlanes.nr.z sum(64947) size(6285) f(2780453563) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/BitmapBitOrder.z xc/doc/man/X11 symval(ImageByteOrder.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/BitmapPad.z xc/doc/man/X11 symval(ImageByteOrder.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/BitmapUnit.z xc/doc/man/X11 symval(ImageByteOrder.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/BlackPixel.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/BlackPixelOfScreen.z xc/doc/man/X11/BlkPScrn.nr.z sum(8771) size(3924) f(1641743471) cmpsize(3749) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/CellsOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/ClientWhitePointOfCCC.z xc/doc/man/X11 symval(DisplayOfCCC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/ConnectionNumber.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DefaultColormap.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DefaultColormapOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DefaultDepth.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DefaultDepthOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DefaultGC.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DefaultGCOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DefaultRootWindow.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DefaultScreen.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DefaultScreenOfDisplay.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DefaultVisual.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DefaultVisualOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DisplayCells.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DisplayHeight.z xc/doc/man/X11 symval(ImageByteOrder.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DisplayHeightMM.z xc/doc/man/X11 symval(ImageByteOrder.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/DisplayOfCCC.z xc/doc/man/X11/Dis3C.nr.z sum(4105) size(1379) f(3298469542) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DisplayOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DisplayPlanes.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DisplayString.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DisplayWidth.z xc/doc/man/X11 symval(ImageByteOrder.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DisplayWidthMM.z xc/doc/man/X11 symval(ImageByteOrder.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DoesBackingStore.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/DoesSaveUnders.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/EventMaskOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/HeightMMOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/HeightOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/ImageByteOrder.z xc/doc/man/X11/ImageOrd.nr.z sum(23006) size(2948) f(3311583051) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/IsCursorKey.z xc/doc/man/X11/IsCKey.nr.z sum(21201) size(1441) f(2908964930) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/IsFunctionKey.z xc/doc/man/X11 symval(IsCursorKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/IsKeypadKey.z xc/doc/man/X11 symval(IsCursorKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/IsMiscFunctionKey.z xc/doc/man/X11 symval(IsCursorKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/IsModiferKey.z xc/doc/man/X11 symval(IsCursorKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/IsPFKey.z xc/doc/man/X11 symval(IsCursorKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/IsPrivateKeypadKey.z xc/doc/man/X11 symval(IsCursorKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/LastKnownRequestProcessed.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/MaxCmapsOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/MinCmapsOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/NextRequest.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/PlanesOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/ProtocolRevision.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/ProtocolVersion.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/QLength.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/RootWindow.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/RootWindowOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/ScreenCount.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/ScreenNumberOfCCC.z xc/doc/man/X11 symval(DisplayOfCCC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/ScreenOfDisplay.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/ScreenWhitePointOfCCC.z xc/doc/man/X11 symval(DisplayOfCCC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/ServerVendor.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/VendorRelease.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/VisualOfCCC.z xc/doc/man/X11 symval(DisplayOfCCC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/WhitePixel.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/WhitePixelOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/WidthMMOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/WidthOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XActivateScreenSaver.z xc/doc/man/X11 symval(XSetScreenSaver.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XAddConnectionWatch.z xc/doc/man/X11/XIntConn.nr.z sum(38643) size(4231) f(3647147116) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XAddHost.z xc/doc/man/X11/XAddHost.nr.z sum(25482) size(4921) f(1266451309) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XAddHosts.z xc/doc/man/X11 symval(XAddHost.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XAddPixel.z xc/doc/man/X11 symval(XInitImage.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XAddToSaveSet.z xc/doc/man/X11 symval(XChangeSaveSet.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XAllocClassHint.z xc/doc/man/X11/XACHints.nr.z sum(13564) size(3497) f(1143146740) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XAllocColor.z xc/doc/man/X11/XAllColor.nr.z sum(57450) size(8677) f(2037292785) cmpsize(8492) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XAllocColorCells.z xc/doc/man/X11 symval(XAllocColor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XAllocColorPlanes.z xc/doc/man/X11 symval(XAllocColor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XAllocIconSize.z xc/doc/man/X11/XAIcSize.nr.z sum(3090) size(3302) f(55652765) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XAllocNamedColor.z xc/doc/man/X11 symval(XAllocColor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XAllocSizeHints.z xc/doc/man/X11/XASHints.nr.z sum(61965) size(9379) f(3171849523) cmpsize(9047) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XAllocStandardColormap.z xc/doc/man/X11/XASCmap.nr.z sum(22634) size(7282) f(4031613078) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XAllocWMHints.z xc/doc/man/X11/XAWMHints.nr.z sum(9477) size(6090) f(2740070954) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XAllowEvents.z xc/doc/man/X11/XAllEvnt.nr.z sum(58943) size(1575) f(144841348) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XAnyEvent.z xc/doc/man/X11/XAnyEvent.nr.z sum(52053) size(3414) f(1663381416) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XArc.z xc/doc/man/X11 symval(XDrawArc.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XAutoRepeatOff.z xc/doc/man/X11 symval(XChangeKeyboardControl.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XAutoRepeatOn.z xc/doc/man/X11 symval(XChangeKeyboardControl.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XBaseFontNameListOfFontSet.z xc/doc/man/X11 symval(XFontsOfFontSet.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XBell.z xc/doc/man/X11 symval(XChangeKeyboardControl.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XButtonEvent.z xc/doc/man/X11/XButEvent.nr.z sum(65385) size(5929) f(982993191) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XChangeActivePointerGrab.z xc/doc/man/X11 symval(XGrabPointer.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XChangeGC.z xc/doc/man/X11 symval(XCreateGC.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XChangeKeyboardControl.z xc/doc/man/X11/XCKCntrl.nr.z sum(44317) size(7729) f(3469177924) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XChangeKeyboardMapping.z xc/doc/man/X11/XCKMping.nr.z sum(2455) size(9060) f(3470783124) cmpsize(8834) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XChangePointerControl.z xc/doc/man/X11/XCPCntrl.nr.z sum(8164) size(3188) f(643324934) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XChangeProperty.z xc/doc/man/X11 symval(XGetWindowProperty.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XChangeSaveSet.z xc/doc/man/X11/XCSSet.nr.z sum(7911) size(2630) f(394217021) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XChangeWindowAttributes.z xc/doc/man/X11/XCWAttrib.nr.z sum(35908) size(7738) f(157243008) cmpsize(7613) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XChar2b.z xc/doc/man/X11 symval(XLoadFont.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCharStruct.z xc/doc/man/X11 symval(XLoadFont.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCheckIfEvent.z xc/doc/man/X11 symval(XIfEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCheckMaskEvent.z xc/doc/man/X11 symval(XNextEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCheckTypedEvent.z xc/doc/man/X11 symval(XNextEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCheckTypedWindowEvent.z xc/doc/man/X11 symval(XNextEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCheckWindowEvent.z xc/doc/man/X11 symval(XNextEvent.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCirculateEvent.z xc/doc/man/X11/XCirEvent.nr.z sum(9186) size(2599) f(543018936) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCirculateRequestEvent.z xc/doc/man/X11/XCirREven.nr.z sum(56917) size(2639) f(4239906438) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCirculateSubwindows.z xc/doc/man/X11 symval(XRaiseWindow.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCirculateSubwindowsDown.z xc/doc/man/X11 symval(XRaiseWindow.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCirculateSubwindowsUp.z xc/doc/man/X11 symval(XRaiseWindow.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XClassHint.z xc/doc/man/X11 symval(XAllocClassHint.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XClearArea.z xc/doc/man/X11/XClrArea.nr.z sum(27459) size(2924) f(3768786865) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XClearWindow.z xc/doc/man/X11 symval(XClearArea.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XClientMessageEvent.z xc/doc/man/X11/XCMEvent.nr.z sum(40307) size(2721) f(661786489) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XClipBox.z xc/doc/man/X11 symval(XPolygonRegion.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCloseDisplay.z xc/doc/man/X11 symval(XOpenDisplay.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCloseIM.z xc/doc/man/X11 symval(XOpenIM.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCloseOM.z xc/doc/man/X11 symval(XOpenOM.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XColor.z xc/doc/man/X11 symval(XCreateColormap.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XColormapEvent.z xc/doc/man/X11/XCmpEvent.nr.z sum(52715) size(2806) f(3980175734) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XConfigureEvent.z xc/doc/man/X11/XConEvent.nr.z sum(36714) size(3042) f(2980780024) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XConfigureRequestEvent.z xc/doc/man/X11/XConREven.nr.z sum(48948) size(2837) f(3404389502) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XConfigureWindow.z xc/doc/man/X11/XConfWin.nr.z sum(36692) size(7376) f(659766862) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XContextDependentDrawing.z xc/doc/man/X11 symval(XFontsOfFontSet.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XContextualDrawing.z xc/doc/man/X11 symval(XFontsOfFontSet.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XConvertCase.z xc/doc/man/X11 symval(XStringToKeysym.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XConvertSelection.z xc/doc/man/X11 symval(XSetSelectionOwner.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCopyArea.z xc/doc/man/X11/XCopyArea.nr.z sum(53904) size(4683) f(1825793304) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCopyColormapAndFree.z xc/doc/man/X11 symval(XCreateColormap.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCopyGC.z xc/doc/man/X11 symval(XCreateGC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCopyPlane.z xc/doc/man/X11 symval(XCopyArea.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCreateBitmapFromData.z xc/doc/man/X11 symval(XReadBitmapFile.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCreateColormap.z xc/doc/man/X11/XCreCmap.nr.z sum(22472) size(5946) f(3505363339) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCreateFontCursor.z xc/doc/man/X11/XCreFCur.nr.z sum(3889) size(5466) f(4283717033) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCreateFontSet.z xc/doc/man/X11/XCreFSet.nr.z sum(46634) size(7584) f(1283573749) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCreateGC.z xc/doc/man/X11/XCreGC.nr.z sum(4653) size(20871) f(1885922065) cmpsize(19958) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCreateGlyphCursor.z xc/doc/man/X11 symval(XCreateFontCursor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCreateIC.z xc/doc/man/X11/XCreIC.nr.z sum(47407) size(2237) f(3165054214) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCreateImage.z xc/doc/man/X11 symval(XInitImage.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCreateOC.z xc/doc/man/X11/XCreOC.nr.z sum(12780) size(2340) f(3055204671) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCreatePixmap.z xc/doc/man/X11/XCrePmap.nr.z sum(36629) size(2681) f(3994443758) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCreatePixmapCursor.z xc/doc/man/X11 symval(XCreateFontCursor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCreatePixmapFromBitmapData.z xc/doc/man/X11 symval(XReadBitmapFile.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCreateRegion.z xc/doc/man/X11/XCreReg.nr.z sum(16331) size(1181) f(3950337129) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XCreateSimpleWindow.z xc/doc/man/X11 symval(XCreateWindow.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCreateWindow.z xc/doc/man/X11/XCreWin.nr.z sum(46068) size(9155) f(4146576080) cmpsize(8977) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCreateWindowEvent.z xc/doc/man/X11/XCWEvent.nr.z sum(27794) size(2856) f(1214654409) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XCrossingEvent.z xc/doc/man/X11/XCroEvent.nr.z sum(50663) size(5110) f(4074092417) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDefaultString.z xc/doc/man/X11 symval(XmbTextListToTextProperty.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XDefineCursor.z xc/doc/man/X11/XDefCur.nr.z sum(44565) size(1591) f(2063157023) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDeleteContext.z xc/doc/man/X11 symval(XSaveContext.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDeleteModifiermapEntry.z xc/doc/man/X11 symval(XChangeKeyboardMapping.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDeleteProperty.z xc/doc/man/X11 symval(XGetWindowProperty.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDestroyIC.z xc/doc/man/X11 symval(XCreateIC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDestroyImage.z xc/doc/man/X11 symval(XInitImage.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDestroyOC.z xc/doc/man/X11 symval(XCreateOC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDestroyRegion.z xc/doc/man/X11 symval(XCreateRegion.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDestroySubwindows.z xc/doc/man/X11 symval(XDestroyWindow.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XDestroyWindow.z xc/doc/man/X11/XDesWin.nr.z sum(22925) size(2496) f(2999068345) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XDestroyWindowEvent.z xc/doc/man/X11/XDWEvent.nr.z sum(54139) size(2058) f(680046839) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDirectionalDependentDrawing.z xc/doc/man/X11 symval(XFontsOfFontSet.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDisableAccessControl.z xc/doc/man/X11 symval(XAddHost.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDisplayKeycodes.z xc/doc/man/X11 symval(XChangeKeyboardMapping.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDisplayMotionBufferSize.z xc/doc/man/X11 symval(XSendEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDisplayName.z xc/doc/man/X11 symval(XSetErrorHandler.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDisplayOfIM.z xc/doc/man/X11 symval(XOpenIM.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDisplayOfOM.z xc/doc/man/X11 symval(XOpenOM.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XDrawArc.z xc/doc/man/X11/XDrArc.nr.z sum(31950) size(5828) f(2322754583) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDrawArcs.z xc/doc/man/X11 symval(XDrawArc.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XDrawImageString.z xc/doc/man/X11/XDrIStr.nr.z sum(7590) size(2973) f(540633634) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDrawImageString16.z xc/doc/man/X11 symval(XDrawImageString.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XDrawLine.z xc/doc/man/X11/XDrLine.nr.z sum(1007) size(4627) f(3346488562) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDrawLines.z xc/doc/man/X11 symval(XDrawLine.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XDrawPoint.z xc/doc/man/X11/XDrPoint.nr.z sum(20159) size(2999) f(1119335392) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDrawPoints.z xc/doc/man/X11 symval(XDrawPoint.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XDrawRectangle.z xc/doc/man/X11/XDrRect.nr.z sum(46746) size(3131) f(1420451925) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDrawRectangles.z xc/doc/man/X11 symval(XDrawRectangle.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDrawSegments.z xc/doc/man/X11 symval(XDrawLine.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XDrawString.z xc/doc/man/X11/XDrString.nr.z sum(45977) size(2469) f(3017718209) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDrawString16.z xc/doc/man/X11 symval(XDrawString.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XDrawText.z xc/doc/man/X11/XDrText.nr.z sum(46891) size(4340) f(1499426971) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XDrawText16.z xc/doc/man/X11 symval(XDrawText.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XEmptyRegion.z xc/doc/man/X11/XERegion.nr.z sum(17226) size(1927) f(1577930329) cmpsize(1913) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XEnableAccessControl.z xc/doc/man/X11 symval(XAddHost.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XEqualRegion.z xc/doc/man/X11 symval(XEmptyRegion.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XErrorEvent.z xc/doc/man/X11/XErrEvent.nr.z sum(51040) size(1611) f(4066182461) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XEvent.z xc/doc/man/X11 symval(XAnyEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XEventsQueued.z xc/doc/man/X11 symval(XFlush.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XExposeEvent.z xc/doc/man/X11/XExpEvent.nr.z sum(59957) size(2670) f(2363355026) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XExtendedMaxRequestSize.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XExtentsOfFontSet.z xc/doc/man/X11/XEofFSet.nr.z sum(54180) size(1115) f(2961025037) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFetchBuffer.z xc/doc/man/X11 symval(XStoreBytes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFetchBytes.z xc/doc/man/X11 symval(XStoreBytes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFetchName.z xc/doc/man/X11 symval(XSetWMName.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFillArc.z xc/doc/man/X11 symval(XFillRectangle.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFillArcs.z xc/doc/man/X11 symval(XFillRectangle.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFillPolygon.z xc/doc/man/X11 symval(XFillRectangle.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XFillRectangle.z xc/doc/man/X11/XFillRect.nr.z sum(24153) size(6782) f(2359963938) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFillRectangles.z xc/doc/man/X11 symval(XFillRectangle.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XFilterEvent.z xc/doc/man/X11/XFEvent.nr.z sum(64811) size(1229) f(3607293261) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFindContext.z xc/doc/man/X11 symval(XSaveContext.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XFlush.z xc/doc/man/X11/XFlush.nr.z sum(26326) size(3147) f(2418465355) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XFocusChangeEvent.z xc/doc/man/X11/XFCEvent.nr.z sum(16068) size(3408) f(2737146203) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFontProp.z xc/doc/man/X11 symval(XLoadFont.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XFontSetExtents.z xc/doc/man/X11/XFSExt.nr.z sum(11373) size(1576) f(3907065608) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFontStruct.z xc/doc/man/X11 symval(XLoadFont.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XFontsOfFontSet.z xc/doc/man/X11/XFofFSet.nr.z sum(47884) size(4534) f(3304189653) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XForceScreenSaver.z xc/doc/man/X11 symval(XSetScreenSaver.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XFree.z xc/doc/man/X11/XFree.nr.z sum(10249) size(806) f(2894009159) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreeColormap.z xc/doc/man/X11 symval(XCreateColormap.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreeColors.z xc/doc/man/X11 symval(XAllocColor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreeCursor.z xc/doc/man/X11 symval(XRecolorCursor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreeFont.z xc/doc/man/X11 symval(XLoadFont.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreeFontInfo.z xc/doc/man/X11 symval(XListFonts.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreeFontNames.z xc/doc/man/X11 symval(XListFonts.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreeFontPath.z xc/doc/man/X11 symval(XSetFontPath.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreeFontSet.z xc/doc/man/X11 symval(XCreateFontSet.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreeGC.z xc/doc/man/X11 symval(XCreateGC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreeModifierMap.z xc/doc/man/X11 symval(XChangeKeyboardMapping.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreePixmap.z xc/doc/man/X11 symval(XCreatePixmap.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XFreeStringList.z xc/doc/man/X11 symval(XStringListToTextProperty.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGCValues.z xc/doc/man/X11 symval(XCreateGC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGContextFromGC.z xc/doc/man/X11 symval(XCreateGC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetAtomName.z xc/doc/man/X11 symval(XInternAtom.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetAtomNames.z xc/doc/man/X11 symval(XInternAtom.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetClassHint.z xc/doc/man/X11 symval(XAllocClassHint.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetCommand.z xc/doc/man/X11 symval(XSetCommand.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetErrorDatabaseText.z xc/doc/man/X11 symval(XSetErrorHandler.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetErrorText.z xc/doc/man/X11 symval(XSetErrorHandler.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetFontPath.z xc/doc/man/X11 symval(XSetFontPath.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetFontProperty.z xc/doc/man/X11 symval(XLoadFont.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetGCValues.z xc/doc/man/X11 symval(XCreateGC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetGeometry.z xc/doc/man/X11 symval(XGetWindowAttributes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetICValues.z xc/doc/man/X11 symval(XSetICValues.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetIMValues.z xc/doc/man/X11 symval(XOpenIM.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetIconName.z xc/doc/man/X11 symval(XSetWMIconName.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetIconSizes.z xc/doc/man/X11 symval(XAllocIconSize.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetImage.z xc/doc/man/X11 symval(XPutImage.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetInputFocus.z xc/doc/man/X11 symval(XSetInputFocus.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetKeyboardControl.z xc/doc/man/X11 symval(XChangeKeyboardControl.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetKeyboardMapping.z xc/doc/man/X11 symval(XChangeKeyboardMapping.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetModifierMapping.z xc/doc/man/X11 symval(XChangeKeyboardMapping.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetMotionEvents.z xc/doc/man/X11 symval(XSendEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetOCValues.z xc/doc/man/X11 symval(XCreateOC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetOMValues.z xc/doc/man/X11 symval(XOpenOM.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetPixel.z xc/doc/man/X11 symval(XInitImage.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetPointerControl.z xc/doc/man/X11 symval(XChangePointerControl.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetPointerMapping.z xc/doc/man/X11 symval(XSetPointerMapping.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetRGBColormaps.z xc/doc/man/X11 symval(XAllocStandardColormap.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetScreenSaver.z xc/doc/man/X11 symval(XSetScreenSaver.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetSelectionOwner.z xc/doc/man/X11 symval(XSetSelectionOwner.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetSubImage.z xc/doc/man/X11 symval(XPutImage.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetTextProperty.z xc/doc/man/X11 symval(XSetTextProperty.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetTransientForHint.z xc/doc/man/X11 symval(XSetTransientForHint.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XGetVisualInfo.z xc/doc/man/X11/XGetVInfo.nr.z sum(44543) size(3552) f(396201891) cmpsize(3509) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetWMClientMachine.z xc/doc/man/X11 symval(XSetWMClientMachine.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetWMColormapWindows.z xc/doc/man/X11 symval(XSetWMColormapWindows.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetWMHints.z xc/doc/man/X11 symval(XAllocWMHints.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetWMIconName.z xc/doc/man/X11 symval(XSetWMIconName.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetWMName.z xc/doc/man/X11 symval(XSetWMName.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetWMNormalHints.z xc/doc/man/X11 symval(XAllocSizeHints.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetWMProtocols.z xc/doc/man/X11 symval(XSetWMProtocols.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XGetWMSizeHints.z xc/doc/man/X11 symval(XAllocSizeHints.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XGetWindowAttributes.z xc/doc/man/X11/XGetWAttr.nr.z sum(9648) size(7248) f(50330001) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XGetWindowProperty.z xc/doc/man/X11/XGetWProp.nr.z sum(50771) size(10470) f(2692747550) cmpsize(10169) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XGrabButton.z xc/doc/man/X11/XGrButton.nr.z sum(32644) size(5083) f(1148056917) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XGrabKey.z xc/doc/man/X11/XGrKey.nr.z sum(33906) size(4515) f(3227188282) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XGrabKeyboard.z xc/doc/man/X11/XGrKeybrd.nr.z sum(41417) size(4659) f(3600909186) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XGrabPointer.z xc/doc/man/X11/XGrPntr.nr.z sum(52491) size(7074) f(3287472934) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XGrabServer.z xc/doc/man/X11/XGrServer.nr.z sum(57156) size(1088) f(3854464967) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XGraphicsExposeEvent.z xc/doc/man/X11/XGEEvent.nr.z sum(65191) size(3775) f(268280635) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XGravityEvent.z xc/doc/man/X11/XGEvent.nr.z sum(37063) size(2435) f(1973664727) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XHostAddress.z xc/doc/man/X11 symval(XAddHost.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XIMOfIC.z xc/doc/man/X11 symval(XCreateIC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XIconSize.z xc/doc/man/X11 symval(XAllocIconSize.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XIconifyWindow.z xc/doc/man/X11/XIcWin.nr.z sum(64890) size(3773) f(991859472) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XIfEvent.z xc/doc/man/X11/XIfEvent.nr.z sum(25297) size(2561) f(1966185301) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XInitImage.z xc/doc/man/X11/XCreImage.nr.z sum(64499) size(5826) f(2156643777) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XInitThreads.z xc/doc/man/X11/XThreads.nr.z sum(34702) size(2380) f(1023955769) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XInsertModifiermapEntry.z xc/doc/man/X11 symval(XChangeKeyboardMapping.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XInstallColormap.z xc/doc/man/X11/XInstCmap.nr.z sum(56576) size(3237) f(1840526335) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XInternAtom.z xc/doc/man/X11/XInternA.nr.z sum(20983) size(4234) f(4119159159) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XInternAtoms.z xc/doc/man/X11 symval(XInternAtom.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XInternalConnectionNumbers.z xc/doc/man/X11 symval(XAddConnectionWatch.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XIntersectRegion.z xc/doc/man/X11/XInterReg.nr.z sum(39916) size(2570) f(1764800950) cmpsize(2567) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XKeyEvent.z xc/doc/man/X11 symval(XButtonEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XKeyboardControl.z xc/doc/man/X11 symval(XChangeKeyboardControl.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XKeycodeToKeysym.z xc/doc/man/X11 symval(XStringToKeysym.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XKeymapEvent.z xc/doc/man/X11/XKMapEven.nr.z sum(22380) size(2446) f(2235701426) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XKeysymToKeycode.z xc/doc/man/X11 symval(XStringToKeysym.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XKeysymToString.z xc/doc/man/X11 symval(XStringToKeysym.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XKillClient.z xc/doc/man/X11 symval(XSetCloseDownMode.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XListDepths.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XListFonts.z xc/doc/man/X11/XListFont.nr.z sum(24003) size(4209) f(833492845) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XListFontsWithInfo.z xc/doc/man/X11 symval(XListFonts.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XListHosts.z xc/doc/man/X11 symval(XAddHost.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XListInstalledColormaps.z xc/doc/man/X11 symval(XInstallColormap.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XListPixmapFormats.z xc/doc/man/X11 symval(ImageByteOrder.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XListProperties.z xc/doc/man/X11 symval(XGetWindowProperty.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XLoadFont.z xc/doc/man/X11/XLoadFont.nr.z sum(37698) size(10156) f(3941464493) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XLoadQueryFont.z xc/doc/man/X11 symval(XLoadFont.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XLocaleOfFontSet.z xc/doc/man/X11 symval(XFontsOfFontSet.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XLocaleOfIM.z xc/doc/man/X11 symval(XOpenIM.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XLocaleOfOM.z xc/doc/man/X11 symval(XOpenOM.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XLockDisplay.z xc/doc/man/X11 symval(XInitThreads.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XLookupColor.z xc/doc/man/X11 symval(XQueryColor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XLookupKeysym.z xc/doc/man/X11/XLookKsym.nr.z sum(43033) size(4467) f(1084198883) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XLookupString.z xc/doc/man/X11 symval(XLookupKeysym.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XLowerWindow.z xc/doc/man/X11 symval(XRaiseWindow.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XMapEvent.z xc/doc/man/X11/XMEvent.nr.z sum(44795) size(3939) f(3749461625) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XMapRaised.z xc/doc/man/X11 symval(XMapWindow.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XMapRequestEvent.z xc/doc/man/X11/XMREvent.nr.z sum(39103) size(1918) f(3908579502) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XMapSubwindows.z xc/doc/man/X11 symval(XMapWindow.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XMapWindow.z xc/doc/man/X11/XMapWin.nr.z sum(14550) size(3424) f(3016607883) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XMappingEvent.z xc/doc/man/X11 symval(XMapEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XMaskEvent.z xc/doc/man/X11 symval(XNextEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XMatchVisualInfo.z xc/doc/man/X11 symval(XGetVisualInfo.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XMaxRequestSize.z xc/doc/man/X11 symval(AllPlanes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XModifierKeymap.z xc/doc/man/X11 symval(XChangeKeyboardMapping.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XMotionEvent.z xc/doc/man/X11 symval(XButtonEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XMoveResizeWindow.z xc/doc/man/X11 symval(XConfigureWindow.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XMoveWindow.z xc/doc/man/X11 symval(XConfigureWindow.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XNewModifiermap.z xc/doc/man/X11 symval(XChangeKeyboardMapping.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XNextEvent.z xc/doc/man/X11/XNEvent.nr.z sum(21441) size(5224) f(1437185775) cmpsize(4928) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XNoExposeEvent.z xc/doc/man/X11 symval(XGraphicsExposeEvent.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XNoOp.z xc/doc/man/X11/XNoOp.nr.z sum(21585) size(707) f(3248897570) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XOMOfOC.z xc/doc/man/X11 symval(XCreateOC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XOffsetRegion.z xc/doc/man/X11 symval(XIntersectRegion.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XOpenDisplay.z xc/doc/man/X11/XOpDsply.nr.z sum(29720) size(3068) f(3558590991) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XOpenIM.z xc/doc/man/X11/XOpenIM.nr.z sum(1183) size(4515) f(3839330681) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XOpenOM.z xc/doc/man/X11/XOpenOM.nr.z sum(1748) size(3184) f(2362679333) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XParseColor.z xc/doc/man/X11 symval(XQueryColor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XParseGeometry.z xc/doc/man/X11/XParGeom.nr.z sum(29916) size(4600) f(238295979) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XPeekEvent.z xc/doc/man/X11 symval(XNextEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XPeekIfEvent.z xc/doc/man/X11 symval(XIfEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XPending.z xc/doc/man/X11 symval(XFlush.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XPixmapFormatValues.z xc/doc/man/X11 symval(ImageByteOrder.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XPoint.z xc/doc/man/X11 symval(XDrawPoint.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XPointInRegion.z xc/doc/man/X11 symval(XEmptyRegion.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XPolygonRegion.z xc/doc/man/X11/XPolyReg.nr.z sum(19385) size(1290) f(3572696712) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XProcessInternalConnection.z xc/doc/man/X11 symval(XAddConnectionWatch.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XPropertyEvent.z xc/doc/man/X11/XPEvent.nr.z sum(57263) size(2988) f(290095567) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XPutBackEvent.z xc/doc/man/X11/XPutBEvnt.nr.z sum(25187) size(1070) f(1159737586) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XPutImage.z xc/doc/man/X11/XPutImage.nr.z sum(25890) size(7164) f(1365354141) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XPutPixel.z xc/doc/man/X11 symval(XInitImage.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XQueryBestCursor.z xc/doc/man/X11 symval(XRecolorCursor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XQueryBestSize.z xc/doc/man/X11/XQBSize.nr.z sum(13569) size(3869) f(3047072200) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XQueryBestStipple.z xc/doc/man/X11 symval(XQueryBestSize.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XQueryBestTile.z xc/doc/man/X11 symval(XQueryBestSize.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XQueryColor.z xc/doc/man/X11/XQColor.nr.z sum(12634) size(6074) f(3926804864) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XQueryColors.z xc/doc/man/X11 symval(XQueryColor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XQueryFont.z xc/doc/man/X11 symval(XLoadFont.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XQueryKeymap.z xc/doc/man/X11 symval(XChangeKeyboardControl.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XQueryPointer.z xc/doc/man/X11/XQPointer.nr.z sum(46512) size(2626) f(2865449600) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XQueryTextExtents.z xc/doc/man/X11 symval(XTextExtents.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XQueryTextExtents16.z xc/doc/man/X11 symval(XTextExtents.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XQueryTree.z xc/doc/man/X11/XQTree.nr.z sum(21247) size(1632) f(706800283) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XRaiseWindow.z xc/doc/man/X11/XRaiseWin.nr.z sum(10210) size(5629) f(3241375142) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XReadBitmapFile.z xc/doc/man/X11/XReadBF.nr.z sum(42037) size(6362) f(3971861838) cmpsize(6299) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XReadBitmapFileData.z xc/doc/man/X11 symval(XReadBitmapFile.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRebindKeySym.z xc/doc/man/X11 symval(XLookupKeysym.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XRecolorCursor.z xc/doc/man/X11/XRecCur.nr.z sum(6461) size(2901) f(2740428338) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XReconfigureWMWindow.z xc/doc/man/X11 symval(XIconifyWindow.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRectInRegion.z xc/doc/man/X11 symval(XEmptyRegion.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRectangle.z xc/doc/man/X11 symval(XDrawRectangle.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRefreshKeyboardMapping.z xc/doc/man/X11 symval(XLookupKeysym.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRegisterIMInstantiateCallback.z xc/doc/man/X11 symval(XOpenIM.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRemoveConnectionWatch.z xc/doc/man/X11 symval(XAddConnectionWatch.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRemoveFromSaveSet.z xc/doc/man/X11 symval(XChangeSaveSet.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRemoveHost.z xc/doc/man/X11 symval(XAddHost.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRemoveHosts.z xc/doc/man/X11 symval(XAddHost.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XReparentEvent.z xc/doc/man/X11/XREvent.nr.z sum(6288) size(2666) f(70214711) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XReparentWindow.z xc/doc/man/X11/XReparWin.nr.z sum(44823) size(2475) f(3621960525) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XResetScreenSaver.z xc/doc/man/X11 symval(XSetScreenSaver.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XResizeRequestEvent.z xc/doc/man/X11/XRREvent.nr.z sum(41176) size(2008) f(368426111) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XResizeWindow.z xc/doc/man/X11 symval(XConfigureWindow.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XResourceManagerString.z xc/doc/man/X11/XRMStr.nr.z sum(49536) size(1790) f(3788134030) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRestackWindows.z xc/doc/man/X11 symval(XRaiseWindow.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRotateBuffers.z xc/doc/man/X11 symval(XStoreBytes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XRotateWindowProperties.z xc/doc/man/X11 symval(XGetWindowProperty.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSaveContext.z xc/doc/man/X11/XSContext.nr.z sum(41289) size(2288) f(3919188363) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XScreenNumberOfScreen.z xc/doc/man/X11 symval(BlackPixelOfScreen.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XScreenResourceString.z xc/doc/man/X11 symval(XResourceManagerString.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSegment.z xc/doc/man/X11 symval(XDrawLine.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSelectInput.z xc/doc/man/X11/XSInput.nr.z sum(41784) size(2294) f(2972883802) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSelectionClearEvent.z xc/doc/man/X11/XSCEvent.nr.z sum(30203) size(2474) f(3905464678) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSelectionEvent.z xc/doc/man/X11/XSEvent.nr.z sum(7706) size(2626) f(105894988) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSelectionRequestEvent.z xc/doc/man/X11/XSREvent.nr.z sum(31685) size(2772) f(2329349914) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSendEvent.z xc/doc/man/X11/XSeEvent.nr.z sum(54156) size(4975) f(972360105) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetAccessControl.z xc/doc/man/X11 symval(XAddHost.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetAfterFunction.z xc/doc/man/X11 symval(XSynchronize.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetArcMode.z xc/doc/man/X11/XSeArcMod.nr.z sum(50039) size(2718) f(3751658975) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetBackground.z xc/doc/man/X11 symval(XSetState.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetClassHint.z xc/doc/man/X11 symval(XAllocClassHint.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetClipMask.z xc/doc/man/X11 symval(XSetClipOrigin.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetClipOrigin.z xc/doc/man/X11/XSeClipO.nr.z sum(48175) size(4437) f(3327370841) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetClipRectangles.z xc/doc/man/X11 symval(XSetClipOrigin.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetCloseDownMode.z xc/doc/man/X11/XSeClosDM.nr.z sum(46428) size(2611) f(2992316720) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetCommand.z xc/doc/man/X11/XSeCmd.nr.z sum(38390) size(2738) f(3395100221) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetDashes.z xc/doc/man/X11 symval(XSetLineAttributes.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetErrorHandler.z xc/doc/man/X11/XSeErrHan.nr.z sum(12270) size(4641) f(2789314136) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetFillRule.z xc/doc/man/X11 symval(XSetFillStyle.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetFillStyle.z xc/doc/man/X11/XSeFillS.nr.z sum(43904) size(2261) f(463219428) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetFont.z xc/doc/man/X11/XSeFont.nr.z sum(1592) size(1239) f(4280197652) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetFontPath.z xc/doc/man/X11/XSeFontP.nr.z sum(13198) size(2690) f(1705134486) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetForeground.z xc/doc/man/X11 symval(XSetState.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetFunction.z xc/doc/man/X11 symval(XSetState.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetGraphicsExposure.z xc/doc/man/X11 symval(XSetArcMode.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetICFocus.z xc/doc/man/X11/XSICFoc.nr.z sum(25632) size(1423) f(3098450235) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetICValues.z xc/doc/man/X11/XSICVals.nr.z sum(22033) size(2697) f(2648176304) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetIMValues.z xc/doc/man/X11 symval(XOpenIM.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetIOErrorHandler.z xc/doc/man/X11 symval(XSetErrorHandler.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetIconName.z xc/doc/man/X11 symval(XSetWMIconName.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetIconSizes.z xc/doc/man/X11 symval(XAllocIconSize.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetInputFocus.z xc/doc/man/X11/XSeInFoc.nr.z sum(43535) size(3620) f(3974713364) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetLineAttributes.z xc/doc/man/X11/XSeLAttr.nr.z sum(57312) size(4256) f(3806454678) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetLocaleModifiers.z xc/doc/man/X11 symval(XSupportsLocale.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetModifierMapping.z xc/doc/man/X11 symval(XChangeKeyboardMapping.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetOCValues.z xc/doc/man/X11 symval(XCreateOC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetOMValues.z xc/doc/man/X11 symval(XOpenOM.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetPlanemask.z xc/doc/man/X11 symval(XSetState.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetPointerMapping.z xc/doc/man/X11/XSePMap.nr.z sum(23318) size(2687) f(2309532092) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetRGBColormaps.z xc/doc/man/X11 symval(XAllocStandardColormap.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetRegion.z xc/doc/man/X11 symval(XCreateRegion.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetScreenSaver.z xc/doc/man/X11/XSeScSav.nr.z sum(42891) size(5658) f(1915763715) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetSelectionOwner.z xc/doc/man/X11/XSeSelOwn.nr.z sum(45155) size(3650) f(2980451497) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetState.z xc/doc/man/X11/XSeState.nr.z sum(13951) size(3026) f(2992825875) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetStipple.z xc/doc/man/X11 symval(XSetTile.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetSubwindowMode.z xc/doc/man/X11 symval(XSetArcMode.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetTSOrigin.z xc/doc/man/X11 symval(XSetTile.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetTextProperty.z xc/doc/man/X11/XSeTProp.nr.z sum(26100) size(3635) f(1288953995) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetTile.z xc/doc/man/X11/XSeTile.nr.z sum(47472) size(2564) f(3477743446) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetTransientForHint.z xc/doc/man/X11/XSeTFHint.nr.z sum(56445) size(2547) f(2257994922) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetWMClientMachine.z xc/doc/man/X11/XSeWMCMac.nr.z sum(24494) size(1805) f(4225762797) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetWMColormapWindows.z xc/doc/man/X11/XSeWMCWin.nr.z sum(54978) size(3454) f(1046477555) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetWMHints.z xc/doc/man/X11 symval(XAllocWMHints.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetWMIconName.z xc/doc/man/X11/XSeWMINam.nr.z sum(41065) size(3198) f(2789720024) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetWMName.z xc/doc/man/X11/XSeWMName.nr.z sum(49273) size(3374) f(4282588028) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetWMNormalHints.z xc/doc/man/X11 symval(XAllocSizeHints.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetWMProperties.z xc/doc/man/X11/XSeWMProp.nr.z sum(58102) size(7236) f(1013476578) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSetWMProtocols.z xc/doc/man/X11/XSeWMProt.nr.z sum(55536) size(3122) f(3850305964) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetWMSizeHints.z xc/doc/man/X11 symval(XAllocSizeHints.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetWindowAttributes.z xc/doc/man/X11 symval(XCreateWindow.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetWindowBackground.z xc/doc/man/X11 symval(XChangeWindowAttributes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetWindowBackgroundPixmap.z xc/doc/man/X11 symval(XChangeWindowAttributes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetWindowBorder.z xc/doc/man/X11 symval(XChangeWindowAttributes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetWindowBorderPixmap.z xc/doc/man/X11 symval(XChangeWindowAttributes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetWindowBorderWidth.z xc/doc/man/X11 symval(XConfigureWindow.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSetWindowColormap.z xc/doc/man/X11 symval(XChangeWindowAttributes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XShrinkRegion.z xc/doc/man/X11 symval(XIntersectRegion.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSizeHints.z xc/doc/man/X11 symval(XAllocSizeHints.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XStandardColormap.z xc/doc/man/X11 symval(XAllocStandardColormap.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XStoreBuffer.z xc/doc/man/X11 symval(XStoreBytes.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XStoreBytes.z xc/doc/man/X11/XStBytes.nr.z sum(30232) size(3284) f(1024731014) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XStoreColor.z xc/doc/man/X11 symval(XStoreColors.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XStoreColors.z xc/doc/man/X11/XStColors.nr.z sum(15080) size(4449) f(2304503922) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XStoreName.z xc/doc/man/X11 symval(XSetWMName.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XStoreNamedColor.z xc/doc/man/X11 symval(XStoreColors.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XStringListToTextProperty.z xc/doc/man/X11/XSLTTProp.nr.z sum(50923) size(3639) f(2214699945) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XStringToKeysym.z xc/doc/man/X11/XStTKsym.nr.z sum(49083) size(2834) f(2084582782) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSubImage.z xc/doc/man/X11 symval(XInitImage.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSubtractRegion.z xc/doc/man/X11 symval(XIntersectRegion.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSupportsLocale.z xc/doc/man/X11/XSupLoc.nr.z sum(55282) size(3235) f(2337195592) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XSync.z xc/doc/man/X11 symval(XFlush.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XSynchronize.z xc/doc/man/X11/XSync.nr.z sum(38907) size(1271) f(618555217) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XTextExtents.z xc/doc/man/X11/XTextExt.nr.z sum(34059) size(5519) f(1689385532) cmpsize(5377) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XTextExtents16.z xc/doc/man/X11 symval(XTextExtents.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XTextItem.z xc/doc/man/X11 symval(XDrawText.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XTextItem16.z xc/doc/man/X11 symval(XDrawText.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XTextProperty.z xc/doc/man/X11 symval(XStringListToTextProperty.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XTextPropertyToStringList.z xc/doc/man/X11 symval(XStringListToTextProperty.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XTextWidth.z xc/doc/man/X11/XTextWid.nr.z sum(10633) size(1109) f(3664732650) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XTextWidth16.z xc/doc/man/X11 symval(XTextWidth.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XTimeCoord.z xc/doc/man/X11 symval(XSendEvent.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XTranslateCoordinates.z xc/doc/man/X11/XTranWCo.nr.z sum(5439) size(1888) f(1971152158) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUndefineCursor.z xc/doc/man/X11 symval(XDefineCursor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUngrabButton.z xc/doc/man/X11 symval(XGrabButton.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUngrabKey.z xc/doc/man/X11 symval(XGrabKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUngrabKeyboard.z xc/doc/man/X11 symval(XGrabKeyboard.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUngrabPointer.z xc/doc/man/X11 symval(XGrabPointer.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUngrabServer.z xc/doc/man/X11 symval(XGrabServer.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUninstallColormap.z xc/doc/man/X11 symval(XInstallColormap.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUnionRectWithRegion.z xc/doc/man/X11 symval(XIntersectRegion.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUnionRegion.z xc/doc/man/X11 symval(XIntersectRegion.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUniqueContext.z xc/doc/man/X11 symval(XSaveContext.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUnloadFont.z xc/doc/man/X11 symval(XLoadFont.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUnlockDisplay.z xc/doc/man/X11 symval(XInitThreads.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XUnmapEvent.z xc/doc/man/X11/XUmapEven.nr.z sum(9189) size(2471) f(3368309041) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUnmapSubwindows.z xc/doc/man/X11 symval(XUnmapWindow.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XUnmapWindow.z xc/doc/man/X11/XUnmapWin.nr.z sum(59711) size(1893) f(2704751422) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUnregisterIMInstantiateCallback.z xc/doc/man/X11 symval(XOpenIM.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XUnsetICFocus.z xc/doc/man/X11 symval(XSetICFocus.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XVaCreateNestedList.z xc/doc/man/X11/XVCNList.nr.z sum(28927) size(1131) f(1103550366) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XVisibilityNotifyEvent.z xc/doc/man/X11/XVEvent.nr.z sum(61209) size(3213) f(2816756660) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XVisualIDFromVisual.z xc/doc/man/X11 symval(XGetVisualInfo.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XVisualInfo.z xc/doc/man/X11 symval(XGetVisualInfo.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XWMGeometry.z xc/doc/man/X11 symval(XParseGeometry.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XWMHints.z xc/doc/man/X11 symval(XAllocWMHints.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XWarpPointer.z xc/doc/man/X11/XWarpPntr.nr.z sum(14058) size(2419) f(2009788128) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XWindowAttributes.z xc/doc/man/X11 symval(XGetWindowAttributes.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XWindowChanges.z xc/doc/man/X11 symval(XConfigureWindow.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XWindowEvent.z xc/doc/man/X11 symval(XNextEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XWithdrawWindow.z xc/doc/man/X11 symval(XIconifyWindow.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XWriteBitmapFile.z xc/doc/man/X11 symval(XReadBitmapFile.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XXorRegion.z xc/doc/man/X11 symval(XIntersectRegion.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsAllocColor.z xc/doc/man/X11/XcmsAClr.nr.z sum(54825) size(3859) f(4289167271) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsAllocNamedColor.z xc/doc/man/X11 symval(XcmsAllocColor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsCCCofColormap.z xc/doc/man/X11/Xcms3CoC.nr.z sum(38768) size(1666) f(2635307246) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsCIELab.z xc/doc/man/X11 symval(XcmsColor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsCIELabQueryMaxC.z xc/doc/man/X11/XcmsLaQMC.nr.z sum(36763) size(3269) f(1776540890) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsCIELabQueryMaxL.z xc/doc/man/X11 symval(XcmsCIELabQueryMaxC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsCIELabQueryMaxLC.z xc/doc/man/X11 symval(XcmsCIELabQueryMaxC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsCIELabQueryMinL.z xc/doc/man/X11 symval(XcmsCIELabQueryMaxC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsCIELuv.z xc/doc/man/X11 symval(XcmsColor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsCIELuvQueryMaxC.z xc/doc/man/X11/XcmsLuQMC.nr.z sum(23083) size(3310) f(2243858643) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsCIELuvQueryMaxL.z xc/doc/man/X11 symval(XcmsCIELuvQueryMaxC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsCIELuvQueryMaxLC.z xc/doc/man/X11 symval(XcmsCIELuvQueryMaxC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsCIELuvQueryMinL.z xc/doc/man/X11 symval(XcmsCIELuvQueryMaxC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsCIEXYZ.z xc/doc/man/X11 symval(XcmsColor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsCIEuvY.z xc/doc/man/X11 symval(XcmsColor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsCIExyY.z xc/doc/man/X11 symval(XcmsColor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsColor.z xc/doc/man/X11/XcmsClr.nr.z sum(25165) size(2470) f(3858876709) cmpsize(2374) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsConvertColors.z xc/doc/man/X11/XcmsCClrs.nr.z sum(38330) size(2548) f(3323275394) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsCreateCCC.z xc/doc/man/X11/XcmsCre3C.nr.z sum(41784) size(2751) f(2796179706) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsDefaultCCC.z xc/doc/man/X11/XcmsD3C.nr.z sum(38361) size(1143) f(277147648) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsFreeCCC.z xc/doc/man/X11 symval(XcmsCreateCCC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsLookupColor.z xc/doc/man/X11 symval(XcmsQueryColor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsPad.z xc/doc/man/X11 symval(XcmsColor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsQueryBlack.z xc/doc/man/X11/XcmsQBlk.nr.z sum(16982) size(2721) f(1081518543) cmpsize(2614) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsQueryBlue.z xc/doc/man/X11 symval(XcmsQueryBlack.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsQueryColor.z xc/doc/man/X11/XcmsQClr.nr.z sum(23407) size(4593) f(572897132) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsQueryColors.z xc/doc/man/X11 symval(XcmsQueryColor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsQueryGreen.z xc/doc/man/X11 symval(XcmsQueryBlack.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsQueryRed.z xc/doc/man/X11 symval(XcmsQueryBlack.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsQueryWhite.z xc/doc/man/X11 symval(XcmsQueryBlack.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsRGB.z xc/doc/man/X11 symval(XcmsColor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsRGBi.z xc/doc/man/X11 symval(XcmsColor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsSetCCCOfColormap.z xc/doc/man/X11 symval(XcmsCCCofColormap.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsSetWhiteAdjustProc.z xc/doc/man/X11 symval(XcmsSetWhitePoint.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsSetWhitePoint.z xc/doc/man/X11/XcmsSWP.nr.z sum(10462) size(2262) f(2650950766) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsStoreColor.z xc/doc/man/X11/XcmsSClr.nr.z sum(45488) size(4706) f(3297740132) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsStoreColors.z xc/doc/man/X11 symval(XcmsStoreColor.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsTekHVC.z xc/doc/man/X11 symval(XcmsColor.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XcmsTekHVCQueryMaxC.z xc/doc/man/X11/XcmsTQMC.nr.z sum(12195) size(4416) f(3460155863) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsTekHVCQueryMaxV.z xc/doc/man/X11 symval(XcmsTekHVCQueryMaxC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsTekHVCQueryMaxVC.z xc/doc/man/X11 symval(XcmsTekHVCQueryMaxC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsTekHVCQueryMaxVSamples.z xc/doc/man/X11 symval(XcmsTekHVCQueryMaxC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XcmsTekHVCQueryMinV.z xc/doc/man/X11 symval(XcmsTekHVCQueryMaxC.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XmbDrawImageString.z xc/doc/man/X11/XmbDIStr.nr.z sum(30618) size(2287) f(3196365866) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XmbDrawString.z xc/doc/man/X11/XmbDStr.nr.z sum(26864) size(1991) f(1651375691) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XmbDrawText.z xc/doc/man/X11/XmbDTxt.nr.z sum(36808) size(2809) f(3265302878) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XmbLookupString.z xc/doc/man/X11/XmbLStr.nr.z sum(49223) size(5146) f(1487646096) cmpsize(5009) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XmbResetIC.z xc/doc/man/X11/XmbRIC.nr.z sum(55853) size(1290) f(3375772105) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XmbSetWMProperties.z xc/doc/man/X11 symval(XSetWMProperties.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XmbTextEscapement.z xc/doc/man/X11/XmbTEsc.nr.z sum(6640) size(1504) f(2299969464) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XmbTextExtents.z xc/doc/man/X11/XmbTExt.nr.z sum(20054) size(2909) f(647452214) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XmbTextListToTextProperty.z xc/doc/man/X11/XTLTTProp.nr.z sum(42461) size(7990) f(219445438) cmpsize(7890) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XmbTextPerCharExtents.z xc/doc/man/X11/XmbTPCEx.nr.z sum(6899) size(4580) f(1163698812) cmpsize(4546) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XmbTextPropertyToTextList.z xc/doc/man/X11 symval(XmbTextListToTextProperty.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmCombineDatabase.z xc/doc/man/X11 symval(XrmMergeDatabases.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmCombineFileDatabase.z xc/doc/man/X11 symval(XrmMergeDatabases.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmDestroyDatabase.z xc/doc/man/X11 symval(XrmGetFileDatabase.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XrmEnumerateDatabase.z xc/doc/man/X11/XEnumDB.nr.z sum(13021) size(2832) f(1087647787) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmGetDatabase.z xc/doc/man/X11 symval(XrmGetFileDatabase.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XrmGetFileDatabase.z xc/doc/man/X11/XGFDBase.nr.z sum(35935) size(6594) f(1555248722) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XrmGetResource.z xc/doc/man/X11/XGetRes.nr.z sum(29968) size(6795) f(1220332171) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmGetStringDatabase.z xc/doc/man/X11 symval(XrmGetFileDatabase.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XrmInitialize.z xc/doc/man/X11/XInitial.nr.z sum(31679) size(4311) f(1750139168) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmLocaleOfDatabase.z xc/doc/man/X11 symval(XrmGetFileDatabase.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XrmMergeDatabases.z xc/doc/man/X11/XMDBases.nr.z sum(19209) size(2748) f(1790986153) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmOptionDescRec.z xc/doc/man/X11 symval(XrmInitialize.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmOptionKind.z xc/doc/man/X11 symval(XrmInitialize.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmParseCommand.z xc/doc/man/X11 symval(XrmInitialize.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmPermStringToQuark.z xc/doc/man/X11 symval(XrmUniqueQuark.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmPutFileDatabase.z xc/doc/man/X11 symval(XrmGetFileDatabase.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmPutLineResource.z xc/doc/man/X11 symval(XrmPutResource.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XrmPutResource.z xc/doc/man/X11/XPutRes.nr.z sum(6722) size(4265) f(3651833416) cmpsize(4153) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmPutStringResource.z xc/doc/man/X11 symval(XrmPutResource.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmQGetResource.z xc/doc/man/X11 symval(XrmGetResource.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmQGetSearchList.z xc/doc/man/X11 symval(XrmGetResource.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmQGetSearchResource.z xc/doc/man/X11 symval(XrmGetResource.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmQPutResource.z xc/doc/man/X11 symval(XrmPutResource.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmQPutStringResource.z xc/doc/man/X11 symval(XrmPutResource.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmQuarkToString.z xc/doc/man/X11 symval(XrmUniqueQuark.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmSetDatabase.z xc/doc/man/X11 symval(XrmGetFileDatabase.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmStringToBindingQuarkList.z xc/doc/man/X11 symval(XrmUniqueQuark.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmStringToQuark.z xc/doc/man/X11 symval(XrmUniqueQuark.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmStringToQuarkList.z xc/doc/man/X11 symval(XrmUniqueQuark.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/X11/XrmUniqueQuark.z xc/doc/man/X11/XUQuark.nr.z sum(57519) size(5067) f(3670231424) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XrmValue.z xc/doc/man/X11 symval(XrmInitialize.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XwcDrawImageString.z xc/doc/man/X11 symval(XmbDrawImageString.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XwcDrawString.z xc/doc/man/X11 symval(XmbDrawString.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XwcDrawText.z xc/doc/man/X11 symval(XmbDrawText.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XwcFreeStringList.z xc/doc/man/X11 symval(XmbTextListToTextProperty.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XwcLookupString.z xc/doc/man/X11 symval(XmbLookupString.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XwcResetIC.z xc/doc/man/X11 symval(XmbResetIC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XwcTextEscapement.z xc/doc/man/X11 symval(XmbTextEscapement.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XwcTextExtents.z xc/doc/man/X11 symval(XmbTextExtents.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XwcTextListToTextProperty.z xc/doc/man/X11 symval(XmbTextListToTextProperty.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XwcTextPerCharExtents.z xc/doc/man/X11 symval(XmbTextPerCharExtents.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/X11/XwcTextPropertyToTextList.z xc/doc/man/X11 symval(XmbTextListToTextProperty.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xau/Xau.z xc/doc/man/Xau/Xau.nr.z sum(49020) size(5436) f(2160786013) cmpsize(5426) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/DBE.z xc/doc/man/Xext/dbe/DBE.nr.z sum(8254) size(11855) f(1940713133) cmpsize(11504) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XReadDisplay.z xc/doc/man/Xext symval(XReadDisplayQueryExtension.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XReadDisplayQueryExtension.z xc/doc/man/Xext/XReadDisp.nr.z sum(54211) size(3845) f(2730620231) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XReadDisplayQueryVersion.z xc/doc/man/Xext symval(XReadDisplayQueryExtension.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XSGIDeviceControl.z xc/doc/man/Xext/XSGIMisc/SGIMDevC.nr.z sum(49505) size(2098) f(2547192789) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XSGIDeviceQuery.z xc/doc/man/Xext/XSGIMisc symval(XSGIDeviceControl.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XSGIMiscQueryExtension.z xc/doc/man/Xext/XSGIMisc/SGIMQuEx.nr.z sum(31167) size(1100) f(3190768573) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XSGIQueryStereoMode.z xc/doc/man/Xext symval(XSGIStereoQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XSGISetStereoBuffer.z xc/doc/man/Xext symval(XSGIStereoQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XSGISetStereoMode.z xc/doc/man/Xext symval(XSGIStereoQueryExtension.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XSGIStereoQueryExtension.z xc/doc/man/Xext/XSGIStereo.nr.z sum(43769) size(4951) f(3451355941) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XSGIStereoQueryVersion.z xc/doc/man/Xext symval(XSGIStereoQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XShapeCombineMask.z xc/doc/man/Xext symval(XShapeQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XShapeCombineRectangles.z xc/doc/man/Xext symval(XShapeQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XShapeCombineRegion.z xc/doc/man/Xext symval(XShapeQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XShapeCombineShape.z xc/doc/man/Xext symval(XShapeQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XShapeGetRectangles.z xc/doc/man/Xext symval(XShapeQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XShapeInputSelected.z xc/doc/man/Xext symval(XShapeQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XShapeOffsetShape.z xc/doc/man/Xext symval(XShapeQueryExtension.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XShapeQueryExtension.z xc/doc/man/Xext/XShape.nr.z sum(20659) size(3269) f(1360985139) cmpsize(3206) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XShapeQueryExtents.z xc/doc/man/Xext symval(XShapeQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XShapeQueryVersion.z xc/doc/man/Xext symval(XShapeQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XShapeSelectInput.z xc/doc/man/Xext symval(XShapeQueryExtension.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XdbeAllocateBackBufferName.z xc/doc/man/Xext/dbe/XdbeAllo.nr.z sum(14203) size(1670) f(3701130040) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XdbeBeginIdiom.z xc/doc/man/Xext/dbe/XdbeBegi.nr.z sum(44594) size(879) f(172462721) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XdbeDeallocateBackBufferName.z xc/doc/man/Xext/dbe/XdbeDeal.nr.z sum(49921) size(1321) f(1097501687) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XdbeEndIdiom.z xc/doc/man/Xext/dbe/XdbeEndI.nr.z sum(21936) size(919) f(3985963724) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XdbeFreeVisualInfo.z xc/doc/man/Xext/dbe/XdbeFree.nr.z sum(21092) size(1148) f(2369614646) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XdbeGetBackBufferAttributes.z xc/doc/man/Xext/dbe/XdbeGetB.nr.z sum(30504) size(1375) f(3801166054) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XdbeGetVisualInfo.z xc/doc/man/Xext/dbe/XdbeGetV.nr.z sum(49118) size(2888) f(1483151135) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XdbeQueryExtension.z xc/doc/man/Xext/dbe/XdbeQuer.nr.z sum(41864) size(1458) f(130606502) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XdbeSwapBuffers.z xc/doc/man/Xext/dbe/XdbeSwap.nr.z sum(7606) size(2480) f(2845009107) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XmbufChangeBufferAttributes.z xc/doc/man/Xext symval(XmbufQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XmbufChangeWindowAttributes.z xc/doc/man/Xext symval(XmbufQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XmbufCreateBuffers.z xc/doc/man/Xext symval(XmbufQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XmbufCreateStereoWindow.z xc/doc/man/Xext symval(XmbufQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XmbufDestroyBuffers.z xc/doc/man/Xext symval(XmbufQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XmbufDisplayBuffers.z xc/doc/man/Xext symval(XmbufQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XmbufGetBufferAttributes.z xc/doc/man/Xext symval(XmbufQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XmbufGetScreenInfo.z xc/doc/man/Xext symval(XmbufQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XmbufGetVersion.z xc/doc/man/Xext symval(XmbufQueryExtension.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xext/XmbufGetWindowAttributes.z xc/doc/man/Xext symval(XmbufQueryExtension.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xext/XmbufQueryExtension.z xc/doc/man/Xext/Xmbuf.nr.z sum(29347) size(8945) f(943361390) cmpsize(8738) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XAllowDeviceEvents.z xc/doc/man/Xi/XAllDvEv.nr.z sum(16440) size(5255) f(336069033) cmpsize(5102) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XChangeDeviceDontPropagateList.z xc/doc/man/Xi/XChProp.nr.z sum(51020) size(3499) f(395172057) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XChangeDeviceKeyMapping.z xc/doc/man/Xi symval(XGetDeviceKeyMapping.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XChangeFeedbackControl.z xc/doc/man/Xi symval(XGetFeedbackControl.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XChangeKeyboardDevice.z xc/doc/man/Xi/XChgKbd.nr.z sum(65524) size(2589) f(840733057) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XChangePointerDevice.z xc/doc/man/Xi/XChgPtr.nr.z sum(44972) size(2765) f(3368813665) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XCloseDevice.z xc/doc/man/Xi symval(XOpenDevice.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XDeviceBell.z xc/doc/man/Xi/XDevBell.nr.z sum(54747) size(2503) f(3555377932) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XDeviceTimeCoord.z xc/doc/man/Xi symval(XGetDeviceMotionEvents.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XFreeDeviceList.z xc/doc/man/Xi symval(XListInputDevices.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XGetDeviceButtonMapping.z xc/doc/man/Xi symval(XSetDeviceButtonMapping.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XGetDeviceDontPropagateList.z xc/doc/man/Xi symval(XChangeDeviceDontPropagateList.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XGetDeviceFocus.z xc/doc/man/Xi symval(XSetDeviceFocus.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XGetDeviceKeyMapping.z xc/doc/man/Xi/XChKMap.nr.z sum(15864) size(5846) f(3701435958) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XGetDeviceModifierMapping.z xc/doc/man/Xi/XChMMap.nr.z sum(4192) size(5184) f(322957672) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XGetDeviceMotionEvents.z xc/doc/man/Xi/XGetDvMo.nr.z sum(64627) size(3785) f(322762318) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XGetFeedbackControl.z xc/doc/man/Xi/XChFCtl.nr.z sum(63865) size(8507) f(419999288) cmpsize(8062) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XGetSelectedExtensionEvents.z xc/doc/man/Xi symval(XSelectExtensionEvent.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XGrabDevice.z xc/doc/man/Xi/XGrabDev.nr.z sum(26230) size(6111) f(1994427700) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XGrabDeviceButton.z xc/doc/man/Xi/XGrDvBut.nr.z sum(54082) size(7274) f(106383008) cmpsize(7114) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XGrabDeviceKey.z xc/doc/man/Xi/XGrDvKey.nr.z sum(40483) size(6549) f(3482926268) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XListInputDevices.z xc/doc/man/Xi/XListDev.nr.z sum(4213) size(5984) f(3015532783) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XOpenDevice.z xc/doc/man/Xi/XOpenDev.nr.z sum(16653) size(4672) f(1236253767) cmpsize(4646) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XQueryDeviceState.z xc/doc/man/Xi/XQueryDv.nr.z sum(35344) size(2513) f(720641728) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XSelectExtensionEvent.z xc/doc/man/Xi/XSelExtEv.nr.z sum(35246) size(5146) f(3628994012) cmpsize(4955) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XSendExtensionEvent.z xc/doc/man/Xi/XSExEvnt.nr.z sum(47680) size(4314) f(794167918) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XSetDeviceButtonMapping.z xc/doc/man/Xi/XSeBMap.nr.z sum(15790) size(3506) f(1808473968) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XSetDeviceFocus.z xc/doc/man/Xi/XSeDvFoc.nr.z sum(1755) size(5526) f(936208077) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XSetDeviceMode.z xc/doc/man/Xi/XSetMode.nr.z sum(14198) size(1796) f(3803867067) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XSetDeviceModifierMapping.z xc/doc/man/Xi symval(XGetDeviceModifierMapping.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xi/XSetDeviceValuators.z xc/doc/man/Xi/XSetDVal.nr.z sum(31809) size(2572) f(2552249098) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XUngrabDevice.z xc/doc/man/Xi symval(XGrabDevice.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XUngrabDeviceButton.z xc/doc/man/Xi symval(XGrabDeviceButton.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xi/XUngrabDeviceKey.z xc/doc/man/Xi symval(XGrabDeviceKey.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xnmbx/sgiXnmbxEnableCapability.z xc/doc/man/Xnmbx/XEnableCap.nr.z sum(65037) size(1442) f(3148081320) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xnmbx/sgiXnmbxGetExtendedVisualInfo.z xc/doc/man/Xnmbx/XGetEVisInfo.nr.z sum(6042) size(6049) f(1078860516) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xnmbx/sgiXnmbxGetVersion.z xc/doc/man/Xnmbx/XGetVers.nr.z sum(38270) size(2193) f(3663084614) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xnmbx/sgiXnmbxGetVisualCapabilities.z xc/doc/man/Xnmbx symval(sgiXnmbxGetExtendedVisualInfo.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xnmbx/sgiXnmbxMatchExtendedVisualInfo.z xc/doc/man/Xnmbx symval(sgiXnmbxGetExtendedVisualInfo.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xnmbx/sgiXnmbxQueryExtension.z xc/doc/man/Xnmbx symval(sgiXnmbxGetVersion.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xnmbx/sgiXnmbxReleaseCapability.z xc/doc/man/Xnmbx symval(sgiXnmbxEnableCapability.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/MenuPopdown.z xc/doc/man/Xt symval(XtPopdown.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/MenuPopup.z xc/doc/man/Xt symval(XtPopup.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAddActions.z xc/doc/man/Xt/XtAddAct.nr.z sum(60870) size(913) f(1765359363) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAddCallback.z xc/doc/man/Xt/XtAddCbk.nr.z sum(20291) size(2622) f(2097904969) cmpsize(2591) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAddCallbacks.z xc/doc/man/Xt symval(XtAddCallback.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAddConverter.z xc/doc/man/Xt symval(XtAppAddConverter.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAddEventHandler.z xc/doc/man/Xt/XtAddEHand.nr.z sum(16236) size(4847) f(3677895130) cmpsize(4762) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAddExposureToRegion.z xc/doc/man/Xt/XtAddETReg.nr.z sum(14022) size(1296) f(3821419087) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAddGrab.z xc/doc/man/Xt/XtAddGrab.nr.z sum(3102) size(2467) f(1625798243) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAddInput.z xc/doc/man/Xt/XtAddIn.nr.z sum(32562) size(1599) f(1257176141) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAddRawEventHandler.z xc/doc/man/Xt symval(XtAddEventHandler.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAddTimeOut.z xc/doc/man/Xt symval(XtAddInput.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAddTimeout.z xc/doc/man/Xt symval(XtAddInput.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAllocGC.z xc/doc/man/Xt/XtAllocGC.nr.z sum(28191) size(2894) f(2076844813) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppAddActionHook.z xc/doc/man/Xt/XtActHook.nr.z sum(3790) size(1614) f(2881018004) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppAddActions.z xc/doc/man/Xt/XtAppAAct.nr.z sum(25424) size(1075) f(1845053333) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppAddBlockHook.z xc/doc/man/Xt/XtBlockH.nr.z sum(40272) size(1451) f(2662667038) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppAddConverter.z xc/doc/man/Xt/XtAppAC.nr.z sum(14249) size(2218) f(2880345497) cmpsize(2166) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppAddInput.z xc/doc/man/Xt/XtAppAI.nr.z sum(39535) size(2531) f(3827136251) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppAddSignal.z xc/doc/man/Xt/XtAppASig.nr.z sum(15344) size(2497) f(1171698430) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppAddTimeOut.z xc/doc/man/Xt/XtAppATO.nr.z sum(42335) size(1542) f(386644242) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppAddTimeout.z xc/doc/man/Xt symval(XtAppAddTimeOut.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppAddWorkProc.z xc/doc/man/Xt/XtAppAWP.nr.z sum(23311) size(1338) f(88037770) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppCreateShell.z xc/doc/man/Xt/XtAppCSh.nr.z sum(9538) size(2515) f(2391056947) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppError.z xc/doc/man/Xt/XtAppE.nr.z sum(18288) size(2028) f(3892778542) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppErrorMsg.z xc/doc/man/Xt/XtAppEM.nr.z sum(61827) size(2601) f(1426628070) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppGetErrorDatabase.z xc/doc/man/Xt/XtAppGEDB.nr.z sum(54540) size(2254) f(2724089855) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppGetErrorDatabaseText.z xc/doc/man/Xt symval(XtAppGetErrorDatabase.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppGetExitFlag.z xc/doc/man/Xt symval(XtAppSetExitFlag.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppGetSelectionTimeout.z xc/doc/man/Xt/XtAppGSTO.nr.z sum(38061) size(1492) f(1068811302) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppInitialize.z xc/doc/man/Xt/XtAppInit.nr.z sum(65101) size(3677) f(3214735719) cmpsize(3673) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppLock.z xc/doc/man/Xt/XtAppLock.nr.z sum(58154) size(930) f(1304452817) cmpsize(928) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppMainLoop.z xc/doc/man/Xt symval(XtAppNextEvent.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppNextEvent.z xc/doc/man/Xt/XtAppNEv.nr.z sum(55161) size(5038) f(2646696352) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppPeekEvent.z xc/doc/man/Xt symval(XtAppNextEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppPending.z xc/doc/man/Xt symval(XtAppNextEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppProcessEvent.z xc/doc/man/Xt symval(XtAppNextEvent.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppReleaseCacheRefs.z xc/doc/man/Xt/XtAppRCR.nr.z sum(16344) size(1190) f(1862410887) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppSetErrorHandler.z xc/doc/man/Xt symval(XtAppError.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppSetErrorMsgHandler.z xc/doc/man/Xt symval(XtAppErrorMsg.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppSetExitFlag.z xc/doc/man/Xt/XtAppSEF.nr.z sum(54190) size(1008) f(2412181230) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppSetFallbackResources.z xc/doc/man/Xt/XtAppSetFR.nr.z sum(44431) size(1989) f(2924120736) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppSetSelectionTimeout.z xc/doc/man/Xt symval(XtAppGetSelectionTimeout.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtAppSetTypeConverter.z xc/doc/man/Xt/XtAppSTC.nr.z sum(45319) size(2667) f(2815907014) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppSetWarningHandler.z xc/doc/man/Xt symval(XtAppError.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppSetWarningMsgHandler.z xc/doc/man/Xt symval(XtAppErrorMsg.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppUnlock.z xc/doc/man/Xt symval(XtAppLock.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppWarning.z xc/doc/man/Xt symval(XtAppError.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAppWarningMsg.z xc/doc/man/Xt symval(XtAppErrorMsg.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtAugmentTranslations.z xc/doc/man/Xt symval(XtParseTranslationTable.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtBuildEventMask.z xc/doc/man/Xt/XtBEMask.nr.z sum(55876) size(1149) f(2185303844) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtCallAcceptFocus.z xc/doc/man/Xt/XtCallAFoc.nr.z sum(27431) size(1081) f(2682762096) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtCallActionProc.z xc/doc/man/Xt/XtCallActP.nr.z sum(45576) size(1618) f(498663108) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtCallCallbackList.z xc/doc/man/Xt symval(XtCallCallbacks.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtCallCallbacks.z xc/doc/man/Xt/XtCallCbks.nr.z sum(56195) size(2286) f(2320515493) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtCallConverter.z xc/doc/man/Xt symval(XtConvertAndStore.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtCallbackExclusive.z xc/doc/man/Xt symval(XtPopup.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtCallbackNone.z xc/doc/man/Xt symval(XtPopup.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtCallbackNonexclusive.z xc/doc/man/Xt symval(XtPopup.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtCallbackPopdown.z xc/doc/man/Xt symval(XtPopdown.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtCalloc.z xc/doc/man/Xt symval(XtMalloc.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtCancelSelectionRequest.z xc/doc/man/Xt symval(XtCreateSelectionRequest.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtChangeManagedSet.z xc/doc/man/Xt symval(XtManageChildren.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtCheckSubclass.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtClass.z xc/doc/man/Xt/XtClass.nr.z sum(31105) size(3660) f(2303250570) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtCloseDisplay.z xc/doc/man/Xt symval(XtDisplayInitialize.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtConfigureWidget.z xc/doc/man/Xt/XtConfWid.nr.z sum(54316) size(2941) f(1343795766) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtConvert.z xc/doc/man/Xt/XtConvert.nr.z sum(28974) size(2386) f(3948943365) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtConvertAndStore.z xc/doc/man/Xt/XtConvSt.nr.z sum(14895) size(3628) f(3969876763) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtConvertCase.z xc/doc/man/Xt symval(XtSetKeyTranslator.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtCreateApplicationContext.z xc/doc/man/Xt/XtCreACon.nr.z sum(17703) size(1588) f(2961728955) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtCreateApplicationShell.z xc/doc/man/Xt/XtCreASh.nr.z sum(26120) size(1345) f(593009744) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtCreateManagedWidget.z xc/doc/man/Xt symval(XtCreateWidget.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtCreatePopupShell.z xc/doc/man/Xt/XtCrePSh.nr.z sum(12686) size(2286) f(799645276) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtCreateSelectionRequest.z xc/doc/man/Xt/XtCreateSR.nr.z sum(56706) size(3040) f(3425230142) cmpsize(3007) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtCreateWidget.z xc/doc/man/Xt/XtCreWid.nr.z sum(63082) size(6055) f(1246812484) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtCreateWindow.z xc/doc/man/Xt/XtCreWin.nr.z sum(23840) size(1910) f(339598901) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtDatabase.z xc/doc/man/Xt symval(XtDisplayInitialize.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtDestroyApplicationContext.z xc/doc/man/Xt symval(XtCreateApplicationContext.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtDestroyWidget.z xc/doc/man/Xt symval(XtCreateWidget.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtDirectConvert.z xc/doc/man/Xt symval(XtConvert.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtDisownSelection.z xc/doc/man/Xt symval(XtOwnSelection.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtDispatchEvent.z xc/doc/man/Xt symval(XtAppNextEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtDispatchEventToWidget.z xc/doc/man/Xt symval(XtInsertEventTypeHandler.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtDisplay.z xc/doc/man/Xt/XtDisplay.nr.z sum(413) size(1351) f(933229204) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtDisplayInitialize.z xc/doc/man/Xt/XtDisplayI.nr.z sum(2626) size(5254) f(2116760359) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtDisplayOfObject.z xc/doc/man/Xt symval(XtDisplay.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtDisplayStringConversionWarning.z xc/doc/man/Xt/XtDStrCW.nr.z sum(11866) size(1507) f(1585512614) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtDisplayToApplicationContext.z xc/doc/man/Xt/XtDisACon.nr.z sum(50945) size(1004) f(342288040) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtError.z xc/doc/man/Xt/XtErr.nr.z sum(36418) size(1375) f(1118174776) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtErrorMsg.z xc/doc/man/Xt/XtErrM.nr.z sum(29784) size(2214) f(1896255547) cmpsize(2214) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtFindFile.z xc/doc/man/Xt/XtFindF.nr.z sum(12559) size(2647) f(825650846) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtFree.z xc/doc/man/Xt symval(XtMalloc.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetActionKeysym.z xc/doc/man/Xt/XtGetActK.nr.z sum(48008) size(1548) f(1946031093) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetActionList.z xc/doc/man/Xt/XtGetActL.nr.z sum(31640) size(1461) f(178998587) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetApplicationNameAndClass.z xc/doc/man/Xt/XtGetANC.nr.z sum(1436) size(1395) f(72835284) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetApplicationResources.z xc/doc/man/Xt/XtGetAres.nr.z sum(57332) size(2545) f(3693481575) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetClassExtension.z xc/doc/man/Xt/XtGetClExt.nr.z sum(48136) size(1764) f(2901075900) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtGetConstraintResourceList.z xc/doc/man/Xt symval(XtGetResourceList.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetDisplays.z xc/doc/man/Xt/XtGetDisp.nr.z sum(4175) size(1106) f(2398036901) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetErrorDatabase.z xc/doc/man/Xt/XtGEDB.nr.z sum(4571) size(1557) f(1413409158) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtGetErrorDatabaseText.z xc/doc/man/Xt symval(XtGetErrorDatabase.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetGC.z xc/doc/man/Xt/XtGetGC.nr.z sum(7744) size(1492) f(1347345966) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetKeyboardFocusWidget.z xc/doc/man/Xt/XtGetKFoc.nr.z sum(32933) size(1162) f(3466718122) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetKeysymTable.z xc/doc/man/Xt/XtKeysym.nr.z sum(58841) size(1884) f(1751172408) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtGetMultiClickTime.z xc/doc/man/Xt symval(XtSetMultiClickTime.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetResourceList.z xc/doc/man/Xt/XtGetRList.nr.z sum(18483) size(2685) f(1269681981) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetSelectionParameters.z xc/doc/man/Xt/XtGetSP.nr.z sum(58044) size(2345) f(1547189366) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetSelectionRequest.z xc/doc/man/Xt/XtGetSR.nr.z sum(10875) size(1529) f(1030325791) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetSelectionTimeout.z xc/doc/man/Xt/XtGetSTO.nr.z sum(61287) size(1059) f(1168839557) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetSelectionValue.z xc/doc/man/Xt/XtGetSVal.nr.z sum(30460) size(2928) f(201689337) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetSelectionValueIncremental.z xc/doc/man/Xt/XtGetSValI.nr.z sum(58) size(3626) f(928458609) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtGetSelectionValues.z xc/doc/man/Xt symval(XtGetSelectionValue.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtGetSelectionValuesIncremental.z xc/doc/man/Xt symval(XtGetSelectionValueIncremental.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGetSubresources.z xc/doc/man/Xt/XtGetSres.nr.z sum(54258) size(2512) f(2498891821) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtGetSubvalues.z xc/doc/man/Xt symval(XtSetValues.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtGetValues.z xc/doc/man/Xt symval(XtSetValues.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtGrabButton.z xc/doc/man/Xt symval(XtGrabKey.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtGrabKey.z xc/doc/man/Xt/XtGrabKey.nr.z sum(10131) size(5605) f(1916546670) cmpsize(5383) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtGrabKeyboard.z xc/doc/man/Xt symval(XtGrabKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtGrabPointer.z xc/doc/man/Xt symval(XtGrabKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtHasCallbacks.z xc/doc/man/Xt symval(XtCallCallbacks.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtHooksOfDisplay.z xc/doc/man/Xt/XtHookOD.nr.z sum(7175) size(970) f(2613085791) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtInitialize.z xc/doc/man/Xt/XtInit.nr.z sum(23838) size(1855) f(2698193441) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtInitializeWidgetClass.z xc/doc/man/Xt/XtInitWC.nr.z sum(3790) size(1121) f(2936568243) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtInsertEventHandler.z xc/doc/man/Xt symval(XtAddEventHandler.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtInsertEventTypeHandler.z xc/doc/man/Xt/XtExtEvDis.nr.z sum(49618) size(6755) f(259383489) cmpsize(6567) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtInsertRawEventHandler.z xc/doc/man/Xt symval(XtAddEventHandler.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtInstallAccelerators.z xc/doc/man/Xt symval(XtParseAcceleratorTable.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtInstallAllAccelerators.z xc/doc/man/Xt symval(XtParseAcceleratorTable.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsApplicationShell.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsComposite.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsConstraint.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsManaged.z xc/doc/man/Xt symval(XtManageChildren.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsObject.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsOverrideShell.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsRealized.z xc/doc/man/Xt symval(XtRealizeWidget.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsRectObj.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsSensitive.z xc/doc/man/Xt symval(XtSetSensitive.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsShell.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsSubclass.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsTopLevelShell.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsTransientShell.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsVendorShell.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsWMShell.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtIsWidget.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtKeysymToKeycodeList.z xc/doc/man/Xt symval(XtGetKeysymTable.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtLastEventProcessed.z xc/doc/man/Xt/XtLastProc.nr.z sum(35952) size(1392) f(872856458) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtLastTimestampProcessed.z xc/doc/man/Xt symval(XtLastEventProcessed.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtMainLoop.z xc/doc/man/Xt symval(XtNextEvent.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtMakeGeometryRequest.z xc/doc/man/Xt/XtMakGReq.nr.z sum(32774) size(3620) f(1547350117) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtMakeResizeRequest.z xc/doc/man/Xt symval(XtMakeGeometryRequest.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtMalloc.z xc/doc/man/Xt/XtMalloc.nr.z sum(64241) size(2653) f(4141421391) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtManageChild.z xc/doc/man/Xt symval(XtManageChildren.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtManageChildren.z xc/doc/man/Xt/XtManChild.nr.z sum(45759) size(6977) f(457804702) cmpsize(6586) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtMapWidget.z xc/doc/man/Xt/XtMapWid.nr.z sum(64886) size(1477) f(3071431950) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtMergeArgLists.z xc/doc/man/Xt symval(XtSetArg.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtMoveWidget.z xc/doc/man/Xt symval(XtConfigureWidget.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtName.z xc/doc/man/Xt/XtName.nr.z sum(29440) size(675) f(664955147) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtNameToWidget.z xc/doc/man/Xt/XtNameTWid.nr.z sum(25011) size(2361) f(1459030890) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtNew.z xc/doc/man/Xt symval(XtMalloc.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtNewString.z xc/doc/man/Xt symval(XtMalloc.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtNextEvent.z xc/doc/man/Xt/XtNextEv.nr.z sum(62117) size(1686) f(400628907) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtNoticeSignal.z xc/doc/man/Xt symval(XtAppAddSignal.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtNumber.z xc/doc/man/Xt symval(XtOffset.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtOffset.z xc/doc/man/Xt/XtOffset.nr.z sum(62404) size(1617) f(1721488681) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtOffsetOf.z xc/doc/man/Xt symval(XtOffset.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtOpenApplication.z xc/doc/man/Xt/XtOpenApp.nr.z sum(329) size(3993) f(2661437340) cmpsize(3886) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtOpenDisplay.z xc/doc/man/Xt symval(XtDisplayInitialize.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtOverrideTranslations.z xc/doc/man/Xt symval(XtParseTranslationTable.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtOwnSelection.z xc/doc/man/Xt/XtOwnSel.nr.z sum(42148) size(3864) f(693103441) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtOwnSelectionIncremental.z xc/doc/man/Xt symval(XtOwnSelection.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtParent.z xc/doc/man/Xt/XtParent.nr.z sum(28835) size(709) f(2921409283) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtParseAcceleratorTable.z xc/doc/man/Xt/XtParATab.nr.z sum(59508) size(1970) f(3838277195) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtParseTranslationTable.z xc/doc/man/Xt/XtParTTab.nr.z sum(574) size(2563) f(3992322138) cmpsize(2507) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtPeekEvent.z xc/doc/man/Xt symval(XtNextEvent.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtPending.z xc/doc/man/Xt symval(XtNextEvent.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtPopdown.z xc/doc/man/Xt/XtPopdown.nr.z sum(37595) size(2653) f(294683700) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtPopup.z xc/doc/man/Xt/XtPopup.nr.z sum(37974) size(4942) f(990731064) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtPopupSpringLoaded.z xc/doc/man/Xt symval(XtPopup.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtProcessEvent.z xc/doc/man/Xt symval(XtNextEvent.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtProcessLock.z xc/doc/man/Xt/XtProcLock.nr.z sum(3392) size(739) f(617159216) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtProcessUnlock.z xc/doc/man/Xt symval(XtProcessLock.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtQueryGeometry.z xc/doc/man/Xt/XtQueryGeo.nr.z sum(6265) size(1637) f(1564686178) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtRealizeWidget.z xc/doc/man/Xt/XtRealize.nr.z sum(13814) size(2655) f(1555275391) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRealloc.z xc/doc/man/Xt symval(XtMalloc.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRegisterCaseConverter.z xc/doc/man/Xt symval(XtSetKeyTranslator.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtRegisterDrawable.z xc/doc/man/Xt/XtRegDraw.nr.z sum(1536) size(1731) f(2664192996) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRegisterExtensionSelector.z xc/doc/man/Xt symval(XtInsertEventTypeHandler.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtRegisterGrabAction.z xc/doc/man/Xt/XtRegGA.nr.z sum(217) size(1238) f(2673050498) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtReleaseGC.z xc/doc/man/Xt symval(XtGetGC.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtReleasePropertyAtom.z xc/doc/man/Xt symval(XtReservePropertyAtom.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveActionHook.z xc/doc/man/Xt symval(XtAppAddActionHook.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveAllCallbacks.z xc/doc/man/Xt symval(XtAddCallback.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveBlockHook.z xc/doc/man/Xt symval(XtAppAddBlockHook.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveCallback.z xc/doc/man/Xt symval(XtAddCallback.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveCallbacks.z xc/doc/man/Xt symval(XtAddCallback.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveEventHandler.z xc/doc/man/Xt symval(XtAddEventHandler.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveEventTypeHandler.z xc/doc/man/Xt symval(XtInsertEventTypeHandler.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveGrab.z xc/doc/man/Xt symval(XtAddGrab.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveInput.z xc/doc/man/Xt symval(XtAppAddInput.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveRawEventHandler.z xc/doc/man/Xt symval(XtAddEventHandler.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveSignal.z xc/doc/man/Xt symval(XtAppAddSignal.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveTimeOut.z xc/doc/man/Xt symval(XtAppAddTimeOut.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtRemoveWorkProc.z xc/doc/man/Xt symval(XtAppAddWorkProc.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtReservePropertyAtom.z xc/doc/man/Xt/XtResPA.nr.z sum(20369) size(1107) f(3083649090) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtResizeWidget.z xc/doc/man/Xt symval(XtConfigureWidget.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtResolvePathname.z xc/doc/man/Xt/XtResPath.nr.z sum(31308) size(5452) f(4098088902) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtScreen.z xc/doc/man/Xt symval(XtDisplay.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtScreenDatabase.z xc/doc/man/Xt symval(XtDisplayInitialize.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtScreenOfObject.z xc/doc/man/Xt symval(XtDisplay.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSendSelectionRequest.z xc/doc/man/Xt symval(XtCreateSelectionRequest.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtSessionGetToken.z xc/doc/man/Xt/XtSession.nr.z sum(31984) size(1157) f(214225990) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSessionReturnToken.z xc/doc/man/Xt symval(XtSessionGetToken.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtSetArg.z xc/doc/man/Xt/XtSetArg.nr.z sum(37889) size(2227) f(1373425169) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSetErrorHandler.z xc/doc/man/Xt symval(XtError.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSetErrorMsgHandler.z xc/doc/man/Xt symval(XtErrorMsg.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSetEventDispatcher.z xc/doc/man/Xt symval(XtInsertEventTypeHandler.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtSetKeyTranslator.z xc/doc/man/Xt/XtSetKTr.nr.z sum(48809) size(3201) f(839310687) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtSetKeyboardFocus.z xc/doc/man/Xt/XtSetKFoc.nr.z sum(61806) size(2283) f(2520936737) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtSetLanguageProc.z xc/doc/man/Xt/XtSetLangP.nr.z sum(39669) size(2617) f(2274452593) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSetMappedWhenManaged.z xc/doc/man/Xt symval(XtMapWidget.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtSetMultiClickTime.z xc/doc/man/Xt/XtClickT.nr.z sum(39884) size(1239) f(1517729164) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtSetSelectionParameters.z xc/doc/man/Xt/XtSetSP.nr.z sum(62647) size(2893) f(2469371672) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSetSelectionTimeout.z xc/doc/man/Xt symval(XtGetSelectionTimeout.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtSetSensitive.z xc/doc/man/Xt/XtSetSens.nr.z sum(56548) size(1738) f(963492474) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSetSubvalues.z xc/doc/man/Xt symval(XtSetValues.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSetTypeConverter.z xc/doc/man/Xt symval(XtAppSetTypeConverter.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtSetValues.z xc/doc/man/Xt/XtSetVal.nr.z sum(37632) size(5422) f(508371861) cmpsize(5366) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtSetWMColormapWindows.z xc/doc/man/Xt/XtSetWMC.nr.z sum(7797) size(1626) f(2006990469) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSetWarningHandler.z xc/doc/man/Xt symval(XtError.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSetWarningMsgHandler.z xc/doc/man/Xt symval(XtErrorMsg.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtStringConversionWarning.z xc/doc/man/Xt/XtStrCW.nr.z sum(36313) size(1318) f(132468727) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtSuperclass.z xc/doc/man/Xt symval(XtClass.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtToolkitInitialize.z xc/doc/man/Xt symval(XtCreateApplicationContext.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtToolkitThreadInitialize.z xc/doc/man/Xt/XtThreadI.nr.z sum(1488) size(1059) f(4236920344) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtTranslateCoordinates.z xc/doc/man/Xt/XtTransC.nr.z sum(64188) size(1157) f(2800378529) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtTranslateKeycode.z xc/doc/man/Xt symval(XtSetKeyTranslator.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtUngrabButton.z xc/doc/man/Xt symval(XtGrabKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtUngrabKey.z xc/doc/man/Xt symval(XtGrabKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtUngrabKeyboard.z xc/doc/man/Xt symval(XtGrabKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtUngrabPointer.z xc/doc/man/Xt symval(XtGrabKey.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtUninstallTranslations.z xc/doc/man/Xt symval(XtParseTranslationTable.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtUnmanageChild.z xc/doc/man/Xt symval(XtManageChildren.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtUnmanageChildren.z xc/doc/man/Xt symval(XtManageChildren.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtUnmapWidget.z xc/doc/man/Xt symval(XtMapWidget.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtUnrealizeWidget.z xc/doc/man/Xt symval(XtRealizeWidget.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtUnregisterDrawable.z xc/doc/man/Xt symval(XtRegisterDrawable.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtVaAppCreateShell.z xc/doc/man/Xt symval(XtAppCreateShell.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtVaAppInitialize.z xc/doc/man/Xt symval(XtAppInitialize.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xt/XtVaCreateArgsList.z xc/doc/man/Xt/XtVaCrArgL.nr.z sum(64227) size(1297) f(2455413710) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtVaCreateManagedWidget.z xc/doc/man/Xt symval(XtCreateWidget.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtVaCreatePopupShell.z xc/doc/man/Xt symval(XtCreatePopupShell.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtVaCreateWidget.z xc/doc/man/Xt symval(XtCreateWidget.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtVaGetApplicationResources.z xc/doc/man/Xt symval(XtGetApplicationResources.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtVaGetSubresources.z xc/doc/man/Xt symval(XtGetSubresources.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtVaGetValues.z xc/doc/man/Xt symval(XtSetValues.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtVaOpenApplication.z xc/doc/man/Xt symval(XtOpenApplication.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtVaSetValues.z xc/doc/man/Xt symval(XtSetValues.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtWarning.z xc/doc/man/Xt symval(XtError.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtWarningMsg.z xc/doc/man/Xt symval(XtErrorMsg.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtWidgetToApplicationContext.z xc/doc/man/Xt symval(XtCreateApplicationContext.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtWidgetToWindow.z xc/doc/man/Xt symval(XtNameToWidget.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtWindow.z xc/doc/man/Xt symval(XtDisplay.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xt/XtWindowOfObject.z xc/doc/man/Xt symval(XtDisplay.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvc.z xc/doc/man/Xvc/XSGIvc.nr.z sum(4095) size(5039) f(2336439853) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcDisableChannel.z xc/doc/man/Xvc symval(XSGIvcListVideoFormats.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcFreeVideoFormatInfo.z xc/doc/man/Xvc symval(XSGIvcListVideoFormats.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcListVideoFormatCombinations.z xc/doc/man/Xvc symval(XSGIvcListVideoFormats.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcListVideoFormats.z xc/doc/man/Xvc/XLstVdFt.nr.z sum(27867) size(19640) f(839438348) cmpsize(17258) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcListVideoFormatsInCombination.z xc/doc/man/Xvc symval(XSGIvcListVideoFormats.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcLoadVideoFormat.z xc/doc/man/Xvc symval(XSGIvcListVideoFormats.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcLoadVideoFormatCombination.z xc/doc/man/Xvc symval(XSGIvcListVideoFormats.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryChannelGammaMap.z xc/doc/man/Xvc symval(XSGIvcQueryGammaMap.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryChannelInfo.z xc/doc/man/Xvc/XQyChInf.nr.z sum(7563) size(8514) f(551919782) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryGammaColors.z xc/doc/man/Xvc symval(XSGIvcQueryGammaMap.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryGammaMap.z xc/doc/man/Xvc/XStGmClr.nr.z sum(29380) size(13474) f(2250563155) cmpsize(12020) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryMonitorName.z xc/doc/man/Xvc/XQyMtNam.nr.z sum(38724) size(1839) f(2139874490) cmpsize(0) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryOutputBlanking.z xc/doc/man/Xvc symval(XSGIvcSetOutputBlanking.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryOutputGain.z xc/doc/man/Xvc symval(XSGIvcSetOutputGain.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryOutputPedestal.z xc/doc/man/Xvc symval(XSGIvcSetOutputPedestal.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryOutputPhaseH.z xc/doc/man/Xvc symval(XSGIvcSetOutputPhaseH.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryOutputPhaseSCH.z xc/doc/man/Xvc symval(XSGIvcSetOutputPhaseSCH.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryOutputPhaseV.z xc/doc/man/Xvc symval(XSGIvcSetOutputPhaseV.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryOutputSync.z xc/doc/man/Xvc symval(XSGIvcSetOutputSync.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryPlatformParameter.z xc/doc/man/Xvc symval(XSGIvcSetPlatformParameter.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryScreenGammaMaps.z xc/doc/man/Xvc symval(XSGIvcQueryGammaMap.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryScreenInputSyncSource.z xc/doc/man/Xvc symval(XSGIvcSetScreenInputSyncSource.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryVersion.z xc/doc/man/Xvc/XQyVersn.nr.z sum(36180) size(1664) f(264649830) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcQueryVideoScreenInfo.z xc/doc/man/Xvc/XQyScInf.nr.z sum(8890) size(3140) f(2829694770) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcSelectInput.z xc/doc/man/Xvc/XSlctInp.nr.z sum(21398) size(9311) f(2918624756) cmpsize(8239) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcSetChannelGammaMap.z xc/doc/man/Xvc symval(XSGIvcQueryGammaMap.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcSetOutputBlanking.z xc/doc/man/Xvc/XSetBlnk.nr.z sum(15717) size(2764) f(832519647) cmpsize(2680) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcSetOutputGain.z xc/doc/man/Xvc/XSetGain.nr.z sum(52964) size(4795) f(3834757057) cmpsize(4492) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcSetOutputPedestal.z xc/doc/man/Xvc/XSetPdst.nr.z sum(44423) size(2553) f(2068283729) cmpsize(2447) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcSetOutputPhaseH.z xc/doc/man/Xvc/XSetPhH.nr.z sum(51851) size(3140) f(1830387298) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcSetOutputPhaseSCH.z xc/doc/man/Xvc/XSetPSCH.nr.z sum(58987) size(2898) f(3187768995) cmpsize(2888) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcSetOutputPhaseV.z xc/doc/man/Xvc/XSetPhV.nr.z sum(59589) size(2969) f(1640212103) cmpsize(2939) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcSetOutputSync.z xc/doc/man/Xvc/XSetSync.nr.z sum(7781) size(6966) f(3844432195) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcSetPlatformParameter.z xc/doc/man/Xvc/XSetPPrm.nr.z sum(36257) size(4987) f(2432943005) cmpsize(4811) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcSetScreenInputSyncSource.z xc/doc/man/Xvc/XSetScGn.nr.z sum(60311) size(7155) f(3381981758) cmpsize(6866) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcStoreGammaColors16.z xc/doc/man/Xvc symval(XSGIvcQueryGammaMap.z) x_dev.man.mandev
+l 0000 root sys usr/share/catman/p_man/cat3/Xvc/XSGIvcStoreGammaColors8.z xc/doc/man/Xvc symval(XSGIvcQueryGammaMap.z) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/chantab.z xc/doc/man/Xvc/chantab.nr.z sum(46703) size(2495) f(272374668) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/Xvc/moninfo.z xc/doc/man/Xvc/moninfo.nr.z sum(16135) size(8376) f(3937926931) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/p_man/cat3/pex/pex.z xc/programs/Xserver/sgipex/pex.nr.z sum(36947) size(1067) f(1567688329) cmpsize(0) x_dev.man.pex
+l 0000 root sys usr/share/catman/p_man/cat3/pex/pexlib.z xc/programs/Xserver/sgipex symval(pex.z) x_dev.man.pex
+f 0444 root sys usr/share/catman/u_man/cat1/X11/bsdinst.z xc/config/util/bsdinst.nr.z sum(62230) size(683) f(2117294456) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/u_man/cat1/X11/imake.z xc/config/imake/imake.nr.z sum(14571) size(8004) f(1812484645) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/u_man/cat1/X11/lndir.z xc/config/util/lndir.nr.z sum(21444) size(3030) f(2245420794) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/u_man/cat1/X11/makedepend.z xc/config/makedepend/mkdepend.nr.z sum(15875) size(8182) f(3868881119) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/u_man/cat1/X11/mkdirhier.z xc/config/util/mkdirhier.nr.z sum(36019) size(662) f(500038898) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/catman/u_man/cat1/X11/xmkmf.z xc/config/util/xmkmf.nr.z sum(42928) size(1518) f(4034469398) cmpsize(0) x_dev.man.mandev
+f 0444 root sys usr/share/src/X/input/clients/IEUtils.c sgi/examples/input/clients/IEUtils.c sum(25310) size(5081) f(4016245038) cmpsize(2026) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/clients/IEUtils.h sgi/examples/input/clients/IEUtils.h sum(43216) size(1767) f(2728036366) cmpsize(736) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/clients/Imakefile sgi/examples/input/clients/Imakefile.install sum(19751) size(952) f(2581154575) cmpsize(585) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/clients/README sgi/examples/input/clients/README sum(56019) size(1439) f(1004197485) cmpsize(883) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/clients/XList.c sgi/examples/input/clients/XList.c sum(49947) size(2624) f(1922022163) cmpsize(1367) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/clients/XSelInput.c sgi/examples/input/clients/XSelInput.c sum(15819) size(33643) f(2428455555) cmpsize(12041) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/clients/devctrl.c sgi/examples/input/clients/devctrl.c sum(4854) size(1898) f(3519882975) cmpsize(1156) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/clients/setptr.c sgi/examples/input/clients/setptr.c sum(40987) size(2162) f(2135262598) cmpsize(1286) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/Makefile sgi/examples/input/drivers/Makefile.install sum(58596) size(1286) f(812555708) cmpsize(861) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/README sgi/examples/input/drivers/README sum(37427) size(14860) f(2745793134) cmpsize(6464) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/XXX.c sgi/examples/input/drivers/XXX.c sum(36731) size(14740) f(2817452497) cmpsize(7022) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/dial.c sgi/examples/input/drivers/dial.c sum(64555) size(18747) f(722192697) cmpsize(8713) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/hitachi.c sgi/examples/input/drivers/hitachi.c sum(16011) size(26658) f(926635546) cmpsize(10348) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/idev.c sgi/examples/input/drivers/idev.c sum(62820) size(28304) f(693092412) cmpsize(12589) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/imp.c sgi/examples/input/drivers/imp.c sum(30859) size(20489) f(2318880518) cmpsize(10477) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/keyboard.c sgi/examples/input/drivers/keyboard.c sum(35921) size(15317) f(3552198733) cmpsize(8041) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/mouse.c sgi/examples/input/drivers/mouse.c sum(36064) size(9194) f(1134325078) cmpsize(4814) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/pckbd.c sgi/examples/input/drivers/pckbd.c sum(511) size(17666) f(926584929) cmpsize(9290) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/pcmouse.c sgi/examples/input/drivers/pcmouse.c sum(18982) size(9289) f(3328677295) cmpsize(4564) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sball.c sgi/examples/input/drivers/sball.c sum(64474) size(19987) f(2562313625) cmpsize(9755) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/XXX.h sgi/examples/input/drivers/sys/XXX.h sum(25694) size(1780) f(4158310973) cmpsize(1013) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/dial.h sgi/examples/input/drivers/sys/dial.h sum(61807) size(1529) f(891749910) cmpsize(938) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/hitachi.h sgi/examples/input/drivers/sys/hitachi.h sum(36943) size(3490) f(3502147345) cmpsize(1728) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/idev.h sgi/examples/input/drivers/sys/idev.h sum(53623) size(29441) f(4215204281) cmpsize(12666) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/imp.h sgi/examples/input/drivers/sys/imp.h sum(49740) size(1928) f(3860418033) cmpsize(1107) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/keybrd.h sgi/examples/input/drivers/sys/keybrd.h sum(16640) size(1555) f(3338613127) cmpsize(991) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/mouse.h sgi/examples/input/drivers/sys/mouse.h sum(34499) size(1558) f(2605792146) cmpsize(958) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/pckbd.h sgi/examples/input/drivers/sys/pckbd.h sum(57790) size(1561) f(1875872792) cmpsize(1008) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/pcmouse.h sgi/examples/input/drivers/sys/pcmouse.h sum(41798) size(1089) f(3495316277) cmpsize(638) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/sball.h sgi/examples/input/drivers/sys/sball.h sum(37888) size(1724) f(1141621043) cmpsize(1059) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/shmiq.h sgi/examples/input/drivers/sys/shmiq.h sum(24931) size(7087) f(2810019104) cmpsize(3872) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/sys/tablet.h sgi/examples/input/drivers/sys/tablet.h sum(61232) size(1268) f(1650032600) cmpsize(773) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/tablet.c sgi/examples/input/drivers/tablet.c sum(51888) size(9908) f(2353929202) cmpsize(4991) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/test/Makefile sgi/examples/input/drivers/test/Makefile.install sum(62926) size(467) f(513951705) cmpsize(331) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/test/README sgi/examples/input/drivers/test/README sum(48550) size(694) f(2685910249) cmpsize(474) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/test/inputtest.c sgi/examples/input/drivers/test/inputtest.c sum(8995) size(8380) f(2060518051) cmpsize(4346) x_dev.src.examples
+f 0444 root sys usr/share/src/X/input/drivers/test/inputtest.h sgi/examples/input/drivers/test/inputtest.h sum(14936) size(85) f(2869645422) cmpsize(81) x_dev.src.examples

@@ -1,0 +1,14 @@
+<MKLOG name='./books/DevDriver_PG/index' version='-1' date='Sat Mar  9 17:59:06 1996' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    17539, offset 20398, on   Sat Mar  9 17:59:10 1996.
+
+FLUSH    3: Element    31206, offset 6905, on   Sat Mar  9 17:59:14 1996.
+
+FLUSH    4: Element    46429, offset    1, on   Sat Mar  9 17:59:17 1996.
+
+MERGE vocab.dat :   4 files, Vocab size 10585 on                           .
+
+MERGE index.dat :   4 files, Vocab size 10585 on                           .
+
+DONE MAKING BOOK
+

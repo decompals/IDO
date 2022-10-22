@@ -1,0 +1,202 @@
+<!-- Version $Revision: 1.17 $ of the frontmatter revelatory stylesheet -->
+
+<!ENTITY	body.font-family	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,mincho,DEFAULT,new century schoolbook)"	>
+<!ENTITY	body.font-size	CDATA	"12"	>
+<!ENTITY	body.line-space	CDATA	"14"	>
+<!ENTITY	chp.title.font-size	CDATA	"18"	>
+<!ENTITY	chp.title.line-space	CDATA	"27"	>
+<!ENTITY	chp.title.space-b4	CDATA	"5"	>
+<!ENTITY	default.foreground	CDATA	"grey20"	>
+<!ENTITY	default.space-b4	CDATA	"6"	>
+<!ENTITY	doc.title.font-size	CDATA	"24"	>
+<!ENTITY	doc.title.line-space	CDATA	"36"	>
+<!ENTITY	left-indent.1	CDATA	"12"	>
+<!ENTITY	right-indent.1	CDATA	"10"	>
+<!ENTITY	title	CDATA	"black"	>
+<!ENTITY	title-font	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,gothic,DEFAULT,Helvetica)"	>
+<!ENTITY	title.left-indent	CDATA	"-6"	>
+<!ENTITY	font-slant.roman	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,*,DEFAULT,Roman)"	>
+<!ENTITY	font-slant.italics	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,*,DEFAULT,Italics)"	>
+<!ENTITY	font-weight.bold	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,Medium,DEFAULT,Bold)"	>
+<!ENTITY	font-weight.medium	CDATA	"switch(attr(LANG,ancestor(SGIDOC)),ja_JP.EUC,Medium,DEFAULT,Medium)"   >
+
+<sheet >
+
+
+
+<?INSTED COMMENT: GROUP titles>
+
+<group name="titles">
+	<font-family>	&title-font	</>
+	<font-weight>	&font-weight.bold	</>
+	<foreground>	&title	</>
+	<line-spacing>	&body.line-space	</>
+	<justification>	Left	</>
+	<break-before>	True	</>
+</group>
+
+<style name="SUBTITLE" group="titles">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+</style>
+
+<style name="TITLEPAGE,TITLE" group="titles">
+	<font-size>	&doc.title.font-size	</>
+	<line-spacing>	&doc.title.line-space	</>
+	<break-after>	True	</>
+</style>
+
+
+
+<?INSTED COMMENT: UNGROUPED STYLES FOLLOW>
+
+<style name="#QUERY">
+	<font-video>	Inverse	</>
+	<foreground>	red	</>
+</style>
+
+<style name="#ROOT">
+	<break-before>	Line	</>
+</style>
+
+<!-- Default settings for SDATA entities from our entity sets -->
+<style name="#SDATA">
+	<font-family>	attr(font)	</>
+	<font-weight>	&font-weight.medium	</>
+	<font-slant>	&font-slant.roman	</>
+	<character-set>	attr(charset)	</>
+	<break-before>	None	</>
+	<text-before>char(attr(code))</>
+</style>
+
+<style name="#TAGS">
+	<foreground>	purple	</>
+</style>
+
+<style name="APPENDIX">
+	<hide>	Children	</>
+</style>
+
+<style name="BOLD">
+	<font-weight>	&font-weight.bold	</>
+</style>
+
+<style name="CHAPTER">
+	<hide>	Children	</>
+</style>
+
+<style name="CONTRIBUTORS">
+	<font-family>	&title-font	</>
+	<font-weight>	&font-weight.bold	</>
+	<space-before>	&chp.title.space-b4	</>
+</style>
+
+<style name="COPYRIGHT">
+	<font-family>	&title-font	</>
+	<font-weight>	&font-weight.bold	</>
+	<space-before>	&default.space-b4	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="CREDITSPAGE">
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="CREDITSPAGE,PARAGRAPH">
+	<break-after>	True	</>
+</style>
+
+<style name="DOCNUMBER">
+	<space-before>	&chp.title.space-b4	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="FIGURE">
+	<left-indent>	&left-indent.1	</>
+	<space-before>	if(eq(file(env(HOME)/.figsInsight),FILE),2,6)	</>
+	<space-after>	if(eq(file(env(HOME)/.figsInsight),FILE),2,6)	</>
+	<break-before>	True	</>
+</style>
+
+<style name="GLOSSARY">
+	<hide>	Children	</>
+</style>
+
+<style name="GRAPHIC">
+	<icon-position>	Left	</>
+	<select>	if(eq(file(env(HOME)/.figsInsight),FILE),GRAPHIC_OUT,GRAPHIC_IN)	</>
+</style>
+
+<style name="GRAPHIC_IN">
+	<break-before>	True	</>
+	<script>	ebt-if(contains(attr(FILE),.cgm),vector,raster) filename="attr(FILE)"	</>
+	<inline>	if(contains(attr(FILE),.cgm),vector,raster) scale=if(isempty(attr(SCALE)),FALSE,attr(SCALE)) filename="attr(FILE)"	</>
+</style>
+
+<style name="GRAPHIC_OUT">
+	<foreground>		</>
+	<left-indent>	-=10	</>
+	<icon-position>	Left	</>
+	<script>	ebt-if(contains(attr(FILE),.cgm),vector,raster) filename="attr(FILE)" title="content(rsibling('CAPTION'))"	</>
+	<icon-type>	if(eq(file(var(fig_dir)/attr(FILE).hot),FILE),rasterhot,raster)	</>
+</style>
+
+<style name="INTRODUCTION">
+	<hide>	Children	</>
+</style>
+
+<style name="ITALICS">
+	<font-slant>	&font-slant.italics	</>
+</style>
+
+<style name="NAMES">
+	<font-family>	&body.font-family	</>
+	<font-weight>	&font-weight.medium	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="NEWLINE">
+	<break-before>	True	</>
+</style>
+
+<style name="SGIDOC">
+	<font-family>	&body.font-family	</>
+	<font-size>	&body.font-size	</>
+	<foreground>	&default.foreground	</>
+	<left-indent>	&left-indent.1	</>
+	<right-indent>	&right-indent.1	</>
+	<line-spacing>	&body.line-space	</>
+	<break-before>	False	</>
+	<break-after>	True	</>
+	<column>	False	</>
+</style>
+
+<style name="SGIINDEX">
+	<hide>	Children	</>
+</style>
+
+<style name="SYM">
+	<font-family>	symbol	</>
+	<font-weight>	Medium	</>
+	<character-set>	symbol	</>
+</style>
+
+<style name="TECHNICAL">
+	<font-family>	&title-font	</>
+	<font-weight>	&font-weight.bold	</>
+	<space-before>	&default.space-b4	</>
+	<break-before>	True	</>
+	<break-after>	True	</>
+</style>
+
+<style name="TITLEPAGE">
+	<break-before>	True	</>
+</style>
+
+
+
+</sheet>

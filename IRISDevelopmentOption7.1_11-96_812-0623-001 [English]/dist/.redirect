@@ -1,0 +1,13 @@
+# This distribution is only for installation on 6.2
+
+.      (TARGOS >= 1230000000 && TARGOS <= 1239999999) || \
+       (DISTOS >= 1230000000 && DISTOS <= 1239999999)
+
+? This version of the IDO (IRIS Developers Option) is for IRIX 6.2 only.\
+You appear to be running a different IRIX release.\
+\
+Please use the IDO CD that matches the IRIX release running\
+on your system.\
+\
+Or, if you are planning to upgrade to a new IRIX release, or\
+install IRIX for the first time, you should insert the IRIX CD first.

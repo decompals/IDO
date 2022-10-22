@@ -1,0 +1,61 @@
+1;ProDev_Perf;Performance Analyzer Main Window;0;PerfMain;Cvperf.overview
+0;ProDev_Perf;Performance Analyzer Main Window;0;PerfMain;Cvperf.Cvperfmw.menuBar.helpMenu
+0;ProDev_Perf;Performance Analyzer Admin Menu;0;PerfAdminMenu;Cvperf.Cvperfmw.menuBar.sessionMenu
+0;ProDev_Perf;Experiment Dialog;0;PerfAdminMenu;Cvperf.expDirHelp
+0;ProDev_Perf;Save As Text Dialog;0;PerfAdminMenu;Cvperf.saveText
+0;ProDev_Perf;Experiment Directory;0;ExperimentDirectory;Cvperf.perfConfigsDialog.perfConfigsDialogform.exptText
+0;ProDev_Perf;Experiment Directory;0;ExperimentDirectory;Cvperf.perfConfigsDialog.perfConfigsDialogform.exptLabel
+0;ProDev_Perf;Instrument Directory;0;InstrumentDirectory;Cvperf.perfConfigsDialog.perfConfigsDialogform.oldExptLabel
+0;ProDev_Perf;Instrument Directory;0;InstrumentDirectory;Cvperf.perfConfigsDialog.perfConfigsDialogform.oldExptText
+0;ProDev_Perf;Configuration Options;0;ConfigOptions;Cvperf.perfConfigsDialog.perfConfigsDialogform.trackExecdW
+0;ProDev_Perf;Configuration Options;0;ConfigOptions;Cvperf.perfConfigsDialog.perfConfigsDialogform.trackForkedW
+0;ProDev_Perf;Configuration Options;0;ConfigOptions;Cvperf.perfConfigsDialog.perfConfigsDialogform.autoLaunch
+0;ProDev_Perf;Task Field;0;TaskField;Cvperf.Cvperfmw.form.taskLabel
+0;ProDev_Perf;Task Field;0;TaskField;Cvperf.Cvperfmw.form.taskText
+0;ProDev_Perf;Function List;0;Cvperf.FunctionList;Cvperfmw.form.MwForm.Flist.functionListLabel
+0;ProDev_Perf;Function List;0;FunctionList;Cvperf.Cvperfmw.form.MwForm.Flist
+0;ProDev_Perf;Usage Chart;0;UsageChart;Cvperf.VkStripChart
+0;ProDev_Perf;Time Line;0;TimeLine;Cvperf.Cvperfmw.form.MwForm.timeLineForm
+0;ProDev_Perf;Config Menu;0;ConfigMenu;Cvperf.Cvperfmw.menuBar.configMenu
+0;ProDev_Perf;Data Display Options;0;ConfigMenu;Cvperf.profPrefHelp
+0;ProDev_Perf;Sort Options;0;ConfigMenu;Cvperf.rankBoxHelp
+0;ProDev_Perf;Views Menu;0;ViewsMenu;Cvperf.Cvperfmw.menuBar.viewsMenu
+0;ProDev_Perf;Executable Menu;0;ExecutableMenu;Cvperf.Cvperfmw.menuBar.executableMenu
+0;ProDev_Perf;Thread Menu;0;ThreadMenu;Cvperf.Cvperfmw.menuBar.threadMenu
+1;ProDev_Perf;Usage View Graphs;0;UsageViewGraphs;Cvperf.UsageView.overview
+0;ProDev_Perf;Usage View Graphs;0;UsageViewGraphs;Cvperf.VkStripChart
+1;ProDev_Perf;Process Meter;0;ProcessMeter;Debug.ProcMeter.overview
+0;ProDev_Perf;Process Meter;0;ProcessMeter;Debug.ProcMeter
+0;ProDev_Perf;Process Meter;0;ProcessMeter;Debug.VkStripChart
+0;ProDev_Perf;Usage View (Text);0;UsageViewNumerical;Cvperf.UsageViewT.overview
+1;ProDev_Perf;I/O View;0;I/OView;Cvperf.ioView.overview
+0;ProDev_Perf;I/O View;0;I/OView;Cvperf.ioView
+0;ProDev_Perf;I/O View;0;I/OView;Cvperf.IOChart
+1;ProDev_Perf;Call Graph View;0;CallGraphView;Cvperf.GraphView.overview
+0;ProDev_Perf;Call Graph View;0;CallGraphView;Cvperf.cvperf.GraphView
+0;ProDev_Perf;Call Graph View;0;CallGraphView;Cvperf.GraphView
+0;ProDev_Perf;Call Graph View;0;CallGraphView;Cvperf.PaGraph.GraphCommands
+0;ProDev_Perf;Call Graph Controls;0;CallGraphControls;Cvperf.GraphView.GraphViewForm.controlPanelForm
+0;ProDev_Perf;Call Graph Geometric Controls;0;Cvperf.CallGraphGeometricControls;PaGraph.GraphCommands
+1;ProDev_Perf;Malloc Views;0;MallocViews;Cvperf.LeakView.overview
+0;ProDev_Perf;Malloc Views;0;MallocViews;Cvperf.LeakView
+1;ProDev_Perf;Malloc Views;0;MallocViews;Cvperf.MallocView.overview
+0;ProDev_Perf;Malloc Views;0;MallocViews;Cvperf.MallocView
+1;ProDev_Perf;Malloc Views;0;MallocViews;Cvperf.MallocErrorView.overview
+0;ProDev_Perf;Malloc Views;0;MallocViews;Cvperf.MallocErrorView
+0;ProDev_Perf;Malloc Views;0;MallocViews;Cvperf.VkFSdoc
+1;ProDev_Perf;Heap View;0;HeapView;Cvperf.heapView.overview
+0;ProDev_Perf;Heap View;0;HeapView;Cvperf.heapView
+0;ProDev_Perf;Heap View;0;HeapView;Cvperf.HeapView
+1;ProDev_Perf;Call Stack;0;CallStack;Cvperf.callStack.overview
+0;ProDev_Perf;Call Stack;0;CallStack;Cvperf.callStack
+1;ProDev_Perf;WorkingSetView;0;Working Set View;Cvperf.TextUtilView.overview
+0;ProDev_Perf;WorkingSetView;0;Working Set View;Cvperf.TextUtilView
+0;ProDev_Perf;Working Set Display;0;WorkingSetDisplay;Cvperf.TextUtilView.paneWin.regionListDocBaseForm
+0;ProDev_Perf;Working Set ID;0;WorkingSetID;Cvperf.TextUtilView.paneWin.infoBaseForm
+0;ProDev_Perf;Page Display;0;PageDisplay;Cvperf.TextUtilView.paneWin.infoBaseForm.pswatchRC
+0;ProDev_Perf;Page Display;0;PageDisplay;Cvperf.TextUtilView.paneWin.infoBaseForm.scrolledForm
+0;ProDev_Perf;Working Set Function List;0;WkSetFunctionList;Cvperf.TextUtilView.paneWin.regionListDocBaseForm
+0;ProDev_Perf;Working Set File Menu;0;WkSetFileMenu;Cvperf.TextUtilView.menuBar.administrationMenu
+1;ProDev_Perf;Cord Analyzer;0;CordAnalyzer;Cvperf.cvcord.overview
+0;ProDev_Perf;Cord Analyzer;0;CordAnalyzer;Cvperf.cvcord

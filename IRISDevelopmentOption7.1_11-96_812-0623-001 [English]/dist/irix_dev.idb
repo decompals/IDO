@@ -1,0 +1,7 @@
+f 0644 root sys usr/share/src/irix/examples/mload/Makefile vince/6.2-mar09/work/irix/cmd/ml/lib/Makefile irix_dev.gifts.mload sum(30601) size(363) f(837937521) cmpsize(286)
+f 0644 root sys usr/share/src/irix/examples/mload/libmload.c vince/6.2-mar09/work/irix/cmd/ml/lib/libmload.c irix_dev.gifts.mload sum(7720) size(3243) f(4094029049) cmpsize(1728)
+f 0444 root sys usr/share/src/irix/examples/scsi/Makefile vince/6.2-mar09/work/irix/cmd/scsicontrol/Makefile.gifts irix_dev.gifts.scsi sum(42481) size(165) f(1267197547) cmpsize(155)
+f 0444 root sys usr/share/src/irix/examples/scsi/lib/src/Makefile vince/6.2-mar09/work/irix/lib/libds/src/Makefile irix_dev.gifts.scsi sum(41907) size(182) f(574132793) cmpsize(173)
+f 0444 root sys usr/share/src/irix/examples/scsi/lib/src/dslib.c vince/6.2-mar09/work/irix/lib/libds/src/dslib.c irix_dev.gifts.scsi sum(65071) size(16494) f(1292843959) cmpsize(8174)
+f 0444 root sys usr/share/src/irix/examples/scsi/lib/src/dstab.c vince/6.2-mar09/work/irix/lib/libds/src/dstab.c irix_dev.gifts.scsi sum(10225) size(6840) f(1909028988) cmpsize(3589)
+f 0444 root sys usr/share/src/irix/examples/scsi/scsicontrol.c vince/6.2-mar09/work/irix/cmd/scsicontrol/scsicontrol.c irix_dev.gifts.scsi sum(47002) size(18858) f(588913734) cmpsize(9493)

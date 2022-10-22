@@ -1,0 +1,14 @@
+<MKLOG name='./books/DMediaDev_PG/index' version='-1' date='Sat Mar  9 13:49:47 1996' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    15015, offset    1, on   Sat Mar  9 13:49:52 1996.
+
+FLUSH    3: Element    30975, offset 11854, on   Sat Mar  9 13:49:56 1996.
+
+FLUSH    4: Element    49980, offset    1, on   Sat Mar  9 13:49:59 1996.
+
+MERGE vocab.dat :   4 files, Vocab size 11249 on                           .
+
+MERGE index.dat :   4 files, Vocab size 11249 on                           .
+
+DONE MAKING BOOK
+

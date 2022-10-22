@@ -1,0 +1,1 @@
+<BOOK name="DevDriver_PG" edition="19960309" alias = "IRIX Device Driver Programming Guide" type = "sgi_developer" hide = "FALSE" version = "007-0911-060" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

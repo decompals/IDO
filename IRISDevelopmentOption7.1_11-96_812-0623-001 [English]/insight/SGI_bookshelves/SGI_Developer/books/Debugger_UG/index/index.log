@@ -1,0 +1,10 @@
+<MKLOG name='./books/Debugger_UG/index' version='-1' date='Mon Oct 14 11:54:43 1996' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    18708, offset    1, on   Mon Oct 14 11:54:53 1996.
+
+MERGE vocab.dat :   2 files, Vocab size  5381 on                           .
+
+MERGE index.dat :   2 files, Vocab size  5381 on                           .
+
+DONE MAKING BOOK
+

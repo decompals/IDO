@@ -1,0 +1,6 @@
+f 0444 root sys usr/lib32/mips3/libftn.so cmplrs/targn32/libftn/libftn.so patchSG0001630.ftn77_eoe_sw32.lib sum(32138) size(995500) nostrip needrqs needrqs needrqs f(1314264209) cmpsize(486765)
+f 0444 root sys usr/lib32/mips4/libftn.so cmplrs/tfpn32/libftn/libftn.so patchSG0001630.ftn77_eoe_sw32.lib sum(20622) size(1017524) nostrip needrqs needrqs needrqs f(2494868190) cmpsize(488789)
+f 0444 root sys usr/lib64/mips3/libftn.so cmplrs/targ64/libftn/libftn.so patchSG0001630.ftn77_eoe_sw64.lib sum(5628) size(1174728) nostrip needrqs needrqs needrqs f(3646580611) cmpsize(528681)
+f 0444 root sys usr/lib64/mips4/libftn.so cmplrs/tfp64/libftn/libftn.so patchSG0001630.ftn77_eoe_sw64.lib sum(20818) size(1150576) needrqs needrqs needrqs f(1657958267) cmpsize(499075)
+f 0444 root sys usr/relnotes/patchSG0001630/TC relnotes/patchSG0001630/TC patchSG0001630.ftn77_eoe_sw32.lib sum(20046) size(42) f(3422643610) cmpsize(0)
+f 0444 root sys usr/relnotes/patchSG0001630/ch1.z relnotes/patchSG0001630/ch1.z patchSG0001630.ftn77_eoe_sw32.lib sum(37078) size(2810) f(1246389019) cmpsize(0)

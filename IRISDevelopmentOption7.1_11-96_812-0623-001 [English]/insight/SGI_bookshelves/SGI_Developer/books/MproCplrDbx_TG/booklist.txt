@@ -1,0 +1,1 @@
+<BOOK name="MproCplrDbx_TG" edition="19961112" alias = "MIPSpro Compiling and Performance Tuning Guide" type = "sgi_developer" hide = "FALSE" version = "007-2360-006, 11/96" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

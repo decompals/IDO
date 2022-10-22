@@ -1,0 +1,1 @@
+<BOOK name="ProDev_Stat" edition="19961014" alias = "Developer Magic: Static Analyzer User's Guide" type = "sgi_developer" hide = "FALSE" version = "007-2580-002" sort = "002658" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

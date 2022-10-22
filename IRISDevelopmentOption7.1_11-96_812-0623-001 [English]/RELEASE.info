@@ -1,0 +1,38 @@
+Silicon Graphics Software Release 7.1 3370539
+This CD contains the following products:
+
+c_dev:  C, 7.1 on irix 6.2
+patchSG0001634:  Patch SG0001634: branch in branch delay slot in libfastm for 7.1 compilers on irix 6.2
+ProDev:  ProDev WorkShop 2.6 Tutorial
+sgitcl_dev:  SGI Tcl Development Environment, 1.1
+x_dev:  X11 Development Environment, 3.5 based on X11R6
+dvdr:  Device Driver, 4.0
+c_eoe:  Standard Execution Environment (C, 6.2)
+patchSG0001637:  Patch SG0001637: C++ Exception handling patch for 7.00 (and above) compilers on irix 6.2
+impactI2V_dev:  Developer Software for IMPACT Indigo2 Video
+patchSG0001630:  Patch SG0001630: Complex Arithmetic libftn patch for 7.1 compilers on irix 6.2
+cite:  CITE (Compiler Information Through Emacs) 1.0
+patchSG0001631:  Patch SG0001631: libblas incorrect results, for 7.1 compilers on irix 6.2
+dev:  Development System, 7.1 on irix 6.2
+patchSG0001632:  Patch SG0001632: libfpe patch for 7.1 compilers on irix 6.2
+WorkShop:  Developer Magic: WorkShop 2.6.4
+patchSG0001633:  Patch SG0001633: libm43 scalb function for 7.1 compilers on irix 6.2
+motif_dev:  IRIX IM Development Software, 6.2 (based on OSF/Motif 1.2.4)
+gl_dev:  Graphics Library Development System, 6.2
+inst_dev:  Software Packager, 1.3
+CaseVision:  CASEVision Environment, Version 2.6.4
+irix_dev:  IRIX Development Examples, 6.2
+dmedia_dev:  IRIS Digital Media Development Environment, 6.2
+motif_books:  OSF Motif developer books, 1.2.3
+WV_dev:  Web access library development environment, 1.0
+complib:  CHALLENGEComplib Execution Environment, 2.2
+compiler_eoe:  IRIX Standard Execution Environment, (Base Compiler, 7.1 on irix 6.2)
+license_dev:  License Development Environment 2.1
+x_books:  O'Reilly & Associates, Inc. developer books, X11R5
+patchSG0001569:  Patch SG0001569: All platform kernel rollup patch
+patchSG0001609:  Patch SG0001609: libmp for installation on IRIX 6.2 and 7.1 (and above) compilers
+ftn90_eoe:  Standard Execution Environment (Fortran 90, 6.2)
+ftn77_eoe:  Standard Execution Environment (Fortran 77, 6.2)
+SpeedShop:  Developer Magic: SpeedShop 1.1
+compiler_dev:  Base Compiler Development Environment, 7.1 on irix 6.2
+c++_eoe:  Standard Execution Environment (C++, 6.2)

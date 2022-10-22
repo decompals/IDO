@@ -1,0 +1,6 @@
+f 0444 root sys usr/lib/c++init_eh.o cmplrs/targ32_m2/c++runtime/c++init_eh.o patchSG0001637.c++_dev_sw.lib sum(14382) size(4156) f(105148805) cmpsize(2140)
+f 0444 root sys usr/lib/libCsup.so cmplrs/targ32_m2/c++runtime/libCsup.so patchSG0001637.c++_eoe_sw.lib sum(22662) size(100684) needrqs f(801414610) cmpsize(50381)
+f 0444 root sys usr/lib32/libCsup.so cmplrs/targn32_m3/c++runtime/libCsup.so patchSG0001637.c++_eoe_sw32.lib sum(29615) size(321572) needrqs f(3126031505) cmpsize(174181)
+f 0444 root sys usr/lib64/libCsup.so cmplrs/targ64_m3/c++runtime/libCsup.so patchSG0001637.c++_eoe_sw64.lib sum(64474) size(352640) needrqs f(1580850092) cmpsize(176923)
+f 0444 root sys usr/relnotes/patchSG0001637/TC relnotes/patchSG0001637/TC patchSG0001637.c++_dev_sw.lib sum(20074) size(42) f(469853595) cmpsize(0)
+f 0444 root sys usr/relnotes/patchSG0001637/ch1.z relnotes/patchSG0001637/ch1.z patchSG0001637.c++_dev_sw.lib sum(17265) size(3174) f(734027074) cmpsize(0)

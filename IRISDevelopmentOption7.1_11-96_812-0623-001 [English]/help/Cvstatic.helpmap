@@ -1,0 +1,159 @@
+0;ProDev_Stat;Fileset Editor;0;FilesetEditor;Cvstatic.filesetManager
+0;ProDev_Stat;Fileset Editor Direct Entry;0;FilesetEditorDirectEntry;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.scannerfiletextwidget
+0;ProDev_Stat;Fileset Editor Line Removal;0;FilesetEditorLineRemoval;Cvstatic.grid.right.buttonBox1.removeButton
+0;ProDev_Stat;Fileset Editor Directory List;0;FilesetEditorDirList;Cvstatic.grid.left.directorylistcontainerframe.directorylistcontainerform.directoryListSW.directoryList
+0;ProDev_Stat;Fileset Editor Browsing Directory;0;FilesetEditorBrowseDir;Cvstatic.grid.left.currentDirectoryWidget
+0;ProDev_Stat;Fileset Editor Language Filters;0;FilesetEditorLangFilters;
+0;ProDev_Stat;Fileset Editor Move Files;0;FilesetEditorMoveFiles;Cvstatic.grid.left.fileRadioBox.showAdaButton
+0;ProDev_Stat;Fileset Editor Move Files;0;FilesetEditorMoveFiles;Cvstatic.grid.left.fileRadioBox.showCButton
+0;ProDev_Stat;Fileset Editor Move Files;0;FilesetEditorMoveFiles;Cvstatic.grid.left.fileRadioBox.showCPlusButton
+0;ProDev_Stat;Fileset Editor Move Files;0;FilesetEditorMoveFiles;Cvstatic.grid.left.fileRadioBox.showFortranButton
+0;ProDev_Stat;Fileset Editor Transfer Filestitle;0;FilesetEditorXferFiles;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.button_container.movefiles
+0;ProDev_Stat;Fileset Editor Transfer Filestitle;0;FilesetEditorXferFiles;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.button_container.compilerToScannerBox.compilerToScanner
+0;ProDev_Stat;Fileset Editor Transfer Filestitle;0;FilesetEditorXferFiles;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.button_container.scannerToCompilerBox.scannerToCompiler
+0;ProDev_Stat;Fileset Editor Controls;0;FilesetEditorControls;Cvstatic.buttonBox.okButton
+0;ProDev_Stat;Fileset Editor Controls;0;FilesetEditorControls;Cvstatic.buttonBox.cancelButton
+0;ProDev_Stat;Scanner Mode;0;ScannerMode;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.scanner
+0;ProDev_Stat;Scanner Mode;0;ScannerMode;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.sFileslistcontainerframe.sFileslistcontainerform.scannerFileSetListSW.scannerFileSetList
+0;ProDev_Stat;Scanner Mode;0;ScannerMode;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.sFileslistcontainerframe.sFileslistcontainerform.scannerFileSetListSW.VertScrollBar
+0;ProDev_Stat;Scanner Mode;0;ScannerMode;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.sFileslistcontainerframe.sFileslistcontainerform.scannerFileSetListSW.HorScrollBar
+0;ProDev_Stat;Parser Mode;0;ParserMode;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.compiler
+0;ProDev_Stat;Parser Mode;0;ParserMode;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.cFileslistcontainerframe.cFileslistcontainerform.compilerFileSetListSW.compilerFileSetList
+0;ProDev_Stat;Parser Mode;0;ParserMode;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.cFileslistcontainerframe.cFileslistcontainerform.compilerFileSetListSW.HorScrollBar
+0;ProDev_Stat;Parser Mode;0;ParserMode;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.cFileslistcontainerframe.cFileslistcontainerform.compilerFileSetListSW.VertScrollBar
+0;ProDev_Stat;Parser Mode;0;ParserMode;Cvstatic.grid.right.FileSetContainer.compilerfilesetcontainer.compilerfiletextwidget
+0;ProDev_Stat;Fileset Editor Scan Options;0;FilesetEditorScanOptions;Cvstatic.scanning_manager
+0;ProDev_Stat;Fileset Editor Scan Options;0;FilesetEditorScanOptions;Cvstatic.scanning_manager.scanning_manager
+0;ProDev_Stat;Fileset Selection Browser;0;FilesetBrowser;Cvstatic.filesetBrowser.Items
+0;ProDev_Stat;Fileset Selection Browser;0;FilesetBrowser;Cvstatic.filesetBrowser
+0;ProDev_Stat;General Options Dialog Box;0;GenlOptions;Cvstatic.optionManager.optionManager
+0;ProDev_Stat;General Options Dialog Box;0;GenlOptions;Cvstatic.cvstatic.optionManager_popup
+0;ProDev_Stat;General Options Dialog Box;0;GenlOptions;Cvstatic.cvstatic.cvstatic.optionManager_popup.optionManager
+0;ProDev_Stat;General Options Dialog Box;0;GenlOptions;Cvstatic.optionManager.close
+0;ProDev_Stat;General Queries Submenu;0;GenlQueries;Cvstatic.general
+0;ProDev_Stat;General Queries Submenu;0;GenlQueries;Cvstatic.query_menu.general
+0;ProDev_Stat;Macro Queries Submenu;0;MacroQueries;Cvstatic.query_menu.macros
+0;ProDev_Stat;Macro Queries Submenu;0;MacroQueries;Cvstatic.macros
+0;ProDev_Stat;Variable Queries Submenu;0;VarQueries;Cvstatic.query_menu.variables
+0;ProDev_Stat;Variable Queries Submenu;0;VarQueries;Cvstatic.variables
+0;ProDev_Stat;Function Queries Submenu;0;FunctionQueries;Cvstatic.query_menu.functions
+0;ProDev_Stat;Function Queries Submenu;0;FunctionQueries;Cvstatic.functions
+0;ProDev_Stat;Files Queries Submenu;0;FilesQueries;Cvstatic.query_menu.files
+0;ProDev_Stat;Files Queries Submenu;0;FilesQueries;Cvstatic.query_menu.files
+0;ProDev_Stat;Class Queries Submenu;0;ClassQueries;Cvstatic.query_menu.classes
+0;ProDev_Stat;Class Queries Submenu;0;ClassQueries;Cvstatic.classes
+0;ProDev_Stat;Method Queries Submenu;0;MethodQueries;Cvstatic.query_menu.methods
+0;ProDev_Stat;Method Queries Submenu;0;MethodQueries;Cvstatic.methods
+0;ProDev_Stat;Common Blocks Queries Submenu;0;CommonBlocksQueries;Cvstatic.query_menu.commonBlocks
+0;ProDev_Stat;Common Blocks Queries Submenu;0;CommonBlocksQueries;Cvstatic.commonBlocks
+0;ProDev_Stat;Types Queries Submenu;0;TypesQueries;Cvstatic.query_menu.types
+0;ProDev_Stat;Types Queries Submenu;0;TypesQueries;Cvstatic.types
+0;ProDev_Stat;Directories Queries Submenu;0;DirectoriesQueries;Cvstatic.query_menu.directories
+0;ProDev_Stat;Directories Queries Submenu;0;DirectoriesQueries;Cvstatic.directories
+0;ProDev_Stat;Packages Queries Submenu;0;PackagesQueries;Cvstatic.query_menu.packages
+0;ProDev_Stat;Packages Queries Submenu;0;PackagesQueries;Cvstatic.packages
+0;ProDev_Stat;Tagged Types Queries Submenu;0;TaggedTypesQueries;Cvstatic.query_menu.taggedtypes
+0;ProDev_Stat;Tagged Types Queries Submenu;0;TaggedTypesQueries;Cvstatic.taggedtypes
+0;ProDev_Stat;Task Types Queries Submenu;0;TaskTypesQueries;Cvstatic.query_menu.tasktypes
+0;ProDev_Stat;Task Types Queries Submenu;0;TaskTypesQueries;Cvstatic.tasktypes
+0;ProDev_Stat;History Menu;0;HistoryMenu;Cvstatic.Cvstatic.menuBar.query_history
+0;ProDev_Stat;Saving Queries;0;SaveQuery;Cvstatic.saveQueryFileBrowser
+0;ProDev_Stat;Saving Queries;0;SaveQuery;Cvstatic.saveQueryFileBrowser_popup
+0;ProDev_Stat;Text View;0;TextView;Cvstatic.cvstatic
+0;ProDev_Stat;Text View;0;TextView;Cvstatic.views_menu.text_view
+0;ProDev_Stat;Text View;0;TextView;Cvstatic.pane.view_manager.text_view
+0;ProDev_Stat;Call Tree View;0;CallTreeView;Cvstatic.cvstatic.cvstatic.cvstatic.pane.view_manager.call_tree_view
+0;ProDev_Stat;Call Tree View;0;CallTreeView;Cvstatic.pane.view_manager.call_tree_view
+0;ProDev_Stat;Call Tree View;0;CallTreeView;Cvstatic.cvstatic.cvstatic.pane.view_manager.call_tree_view.call_tree_view
+0;ProDev_Stat;Graph Control Panel;0;GraphControlPanel;Cvstatic.call_tree_view.GraphCommands
+0;ProDev_Stat;View Options Menu;0;ViewOptionsMenu;Cvstatic.call_tree_view.workArea.optionMenu.OptionButton
+0;ProDev_Stat;Class Tree View;0;ClassTreeView;Cvstatic.views_menu.class_tree_view
+0;ProDev_Stat;Class Tree View;0;ClassTreeView;Cvstatic.pane.view_manager.class_tree_view
+0;ProDev_Stat;Class Tree View;0;ClassTreeView;Cvstatic.cvstatic.cvstatic.pane.view_manager.class_tree_view.class_tree_view
+0;ProDev_Stat;Class Tree View;0;ClassTreeView;Cvstatic.class_tree_view
+0;ProDev_Stat;Graph Control Panel;0;GraphControlPanel;Cvstatic.class_tree_view.GraphCommands
+0;ProDev_Stat;View Options Menu;0;ViewOptionsMenu;Cvstatic.class_tree_view.workArea.optionMenu.OptionButton
+0;ProDev_Stat;File Dependency View;0;FileDependencyView;Cvstatic.cvstatic.cvstatic.cvstatic.pane.view_manager.file_dependency_view
+0;ProDev_Stat;File Dependency View;0;FileDependencyView;Cvstatic.pane.view_manager.file_dependency_view
+0;ProDev_Stat;File Dependency View;0;FileDependencyView;Cvstatic.cvstatic.cvstatic.pane.view_manager.file_dependency_view.file_dependency_view
+0;ProDev_Stat;File Dependency View;0;FileDependencyView;Cvstatic.file_dependency_view
+0;ProDev_Stat;Graph Control Panel;0;GraphControlPanel;Cvstatic.file_dependency_view.GraphCommands
+0;ProDev_Stat;View Options Menu;0;ViewOptionsMenu;Cvstatic.file_dependency_view.workArea.optionMenu.OptionButton
+0;ProDev_Stat;Results Filter;0;ResultsFilter;Cvstatic.scopemanager_help
+0;ProDev_Stat;Results Filter;0;ResultsFilter;Cvstatic.scopeDialog
+0;ProDev_Stat;Results Filter;0;ResultsFilter;Cvstatic.cvstatic.scopeDialog_popup
+0;ProDev_Stat;Results Filter;0;ResultsFilter;Cvstatic.scopeDialog.bottom.help
+0;ProDev_Stat;Setting Results Filters;0;ScopeFilters;Cvstatic.scopeDialog.left.namelabel
+0;ProDev_Stat;Setting Results Filters;0;ScopeFilters;Cvstatic.scopeDialog.left.text
+0;ProDev_Stat;Setting Results Filters;0;ScopeFilters;Cvstatic.scopeDialog.left.functionlabel
+0;ProDev_Stat;Setting Results Filters;0;ScopeFilters;Cvstatic.scopeDialog.left.filelabel
+0;ProDev_Stat;Setting Results Filters;0;ScopeFilters;Cvstatic.scopeDialog.left.dirlabel
+0;ProDev_Stat;Setting Results Filters;0;ScopeFilters;Cvstatic.scopeDialog.left.sourcelabel
+0;ProDev_Stat;Setting Results Filters;0;ScopeFilters;Cvstatic.scopeDialog.left.headerlabel
+0;ProDev_Stat;Setting Results Filters;0;ScopeFilters;Cvstatic.scopeDialog.left.definedlabel
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.nameRadioBox.include
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.nameRadioBox.exclude
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.functionRadioBox.include
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.functionRadioBox.exclude
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.fileRadioBox.include
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.fileRadioBox.exclude
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.dirRadioBox.include
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.dirRadioBox.exclude
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.sourceRadioBox.include
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.sourceRadioBox.exclude
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.headerRadioBox.includeAlso
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.headerRadioBox.include
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.headerRadioBox.exclude
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.definedRadioBox.includeAlso
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.definedRadioBox.include
+0;ProDev_Stat;Header Files and External Functions Filters;0;HeaderFilesandExternalFunctionsFilters;Cvstatic.scopeDialog.left.definedRadioBox.exclude
+0;ProDev_Stat;Results Filter Controls;0;ResultsFilterControls;Cvstatic.scopeDialog.bottom.closeButton
+0;ProDev_Stat;Results Filter Controls;0;ResultsFilterControls;Cvstatic.scopeDialog.bottom.applyButton
+0;ProDev_Stat;Results Filter Controls;0;ResultsFilterControls;Cvstatic.scopeDialog.bottom.clearButton
+1;ProDev_Stat;Browsing Choices Window;0;BrowsingChoicesWindow;Cvstatic.class_list_window.overview
+0;ProDev_Stat;Browsing Choices Window;0;BrowsingChoicesWindow;Cvstatic.class_list_window
+0;ProDev_Stat;Browsing Choices Window;0;BrowsingChoicesWindow;Cvstatic.class_list_window.menuBar
+1;ProDev_Stat;Browser View Window;0;BrowserViewWindow;Cvstatic.class_graph_view.overview
+0;ProDev_Stat;Browser View Window;0;BrowserViewWindow;Cvstatic.cvstatic.class_graph_window
+0;ProDev_Stat;Browser View Window;0;BrowserViewWindow;Cvstatic.class_view
+0;ProDev_Stat;Browser View Window;0;BrowserViewWindow;Cvstatic.cvstatic.class_graph_window
+0;ProDev_Stat;Current Subject Field;0;CurrentSubjectField;Cvstatic.class_view.class_view.class_view_status.class_status_rc2
+0;ProDev_Stat;Show in Static Analyzer Toggle;0;ShowinStaticAnalyzerToggle;Cvstatic.class_view.class_view.class_view_status.class_status_rc.class_cvs_label
+0;ProDev_Stat;Show in Static Analyzer Toggle;0;ShowinStaticAnalyzerToggle;Cvstatic.class_view.class_view.class_view_status.class_status_rc.class_cvs_switch
+0;ProDev_Stat;Last Query Button;0;LastQueryButton;Cvstatic.class_view.class_view.class_view_status.class_status_rc.class_redo_query
+0;ProDev_Stat;Browser View Query Identification Area;0;BrowserViewQueryIdentificationArea;Cvstatic.class_view.class_view.class_view_status.message_form.result_label
+0;ProDev_Stat;Browser View List Areas;0;BrowserListAreas;Cvstatic.class_view.class_view.class_view.class_details.class_details_outlineSW
+0;ProDev_Stat;Browser View List Areas;0;BrowserListAreas;Cvstatic.class_view.class_view.class_view.class_relations.class_relations_outlineSW
+0;ProDev_Stat;Browser View Admin Menu;0;BrowserAdminMenu;Cvstatic.Cvstatic.class_view.menuBar.class_view_admin_menu
+0;ProDev_Stat;Browser View Admin Menu;0;BrowserAdminMenu;Cvstatic.class_view_admin_menu
+0;ProDev_Stat;Browser Views Menu;0;BrowserViewsMen;Cvstatic.class_view.menuBar.class_view_views_menu
+0;ProDev_Stat;Browser Views Menu;0;BrowserViewsMen;Cvstatic.class_view_views_menu
+0;ProDev_Stat;Browser History Menu;0;BrowserHistoryMenu;Cvstatic.class_view.menuBar.class_view_history_menu
+0;ProDev_Stat;Browser History Menu;0;BrowserHistoryMenu;Cvstatic.class_view_history_menu
+0;ProDev_Stat;Browser Main Queries Menu;0;BrowserMainQueriesMenu;Cvstatic.class_view.menuBar.class_view_query_menu
+0;ProDev_Stat;Browser View Preference Menu;0;BrowserPreferenceMenu;Cvstatic.class_view.menuBar.class_view_pref_menu
+0;ProDev_Stat;Browser View Preference Menu;0;BrowserPreferenceMenu;Cvstatic.class_view_pref_menu
+0;ProDev_Stat;Data Members Popup Menus;0;DataMembersPopupMenus;Cvstatic.cvstatic..data popup
+0;ProDev_Stat;Methods Popup Menus;0;MethodsPopupMenus;Cvstatic.cvstatic..method popup
+0;ProDev_Stat;Class Popup Menus;0;ClassPopupMenus;Cvstatic.cvstatic..this popup
+0;ProDev_Stat;Class Popup Menus;0;ClassPopupMenus;Cvstatic.cvstatic..derived popup
+0;ProDev_Stat;Class Popup Menus;0;ClassPopupMenus;Cvstatic.cvstatic..uses popup
+0;ProDev_Stat;Class Popup Menus;0;ClassPopupMenus;Cvstatic.cvstatic..usedBy popup
+0;ProDev_Stat;Class Popup Menus;0;ClassPopupMenus;Cvstatic.cvstatic..friendFunc popup
+0;ProDev_Stat;Class Popup Menus;0;ClassPopupMenus;Cvstatic.cvstatic..friend popup
+0;ProDev_Stat;Class Popup Menus;0;ClassPopupMenus;Cvstatic.cvstatic..friendOf popup
+1;ProDev_Stat;Graph Views Window;0;GraphViewsWindow;Cvstatic.class_graph_window.overview
+0;ProDev_Stat;Graph Views Window;0;GraphViewsWindow;Cvstatic.class_graph_window
+0;ProDev_Stat;Graph Views Window;0;GraphViewsWindow;Cvstatic.cvstatic.class_graph_window
+0;ProDev_Stat;Graph Views Window;0;GraphViewsWindow;Cvstatic.class_graph_view
+0;ProDev_Stat;Graph Views Window;0;GraphViewsWindow;Cvstatic.class_graph_view.GraphCommands.optionMenu.OptionButton
+0;ProDev_Stat;Graph Views Admin Menu;0;GraphViewsAdminMenu;Cvstatic.class_graph_window.menuBar.class_graph_admin_menu
+0;ProDev_Stat;Graph Views Admin Menu;0;GraphViewsAdminMenu;Cvstatic.class_graph_admin_menu
+0;ProDev_Stat;Graph Views Window Views Menu;0;GraphViewsWindowViewsMenu;Cvstatic.class_graph_window.menuBar.class_graph_views_menu
+0;ProDev_Stat;Graph Views Window Views Menu;0;GraphViewsWindowViewsMenu;Cvstatic.class_graph_views_menu
+1;ProDev_Stat;Call Graph Window;0;CallGraphWindow;Cvstatic.call_graph_window.overview
+0;ProDev_Stat;Call Graph Window;0;CallGraphWindow;Cvstatic.cvstatic.call_graph_window
+0;ProDev_Stat;Call Graph Window;0;CallGraphWindow;Cvstatic.call_graph_window
+0;ProDev_Stat;Call Graph Controls;0;CallGraphControls;Cvstatic.call_graph_view.GraphCommands
+0;ProDev_Stat;Call Graph Admin Menu;0;CallGraphAdminMenu;Cvstatic.call_graph_window.menuBar.call_graph_admin_menu
+0;ProDev_Stat;Call Graph Admin Menu;0;CallGraphAdminMenu;Cvstatic.call_graph_admin_menu
