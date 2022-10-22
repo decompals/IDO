@@ -1,0 +1,321 @@
+<!-- Version $Revision: 1.2 $ of the TOC stylesheet -->
+
+<!ENTITY	add.left-indent	CDATA	"+=20"	>
+<!ENTITY	body.font-size	CDATA	"12"	>
+<!ENTITY	body.line-space	CDATA	"14"	>
+<!ENTITY	doc.title.font-size	CDATA	"14"	>
+<!ENTITY	doc.title.line-space	CDATA	"21"	>
+<!ENTITY	left-indent.1	CDATA	"4"	>
+<!ENTITY	title-font	CDATA	"new century schoolbook"	>
+<!ENTITY	title.foreground	CDATA	"black"	>
+<!ENTITY	title.space-before	CDATA	"4"	>
+
+<sheet >
+
+
+
+<?INSTED COMMENT: GROUP #ROOT>
+
+<group name="#ROOT">
+	<left-indent>	&left-indent.1	</>
+</group>
+
+
+
+<?INSTED COMMENT: GROUP title>
+
+<group name="title">
+	<font-family>	&title-font	</>
+	<font-weight>	Medium	</>
+	<font-slant>	Roman	</>
+	<font-size>	&body.font-size	</>
+	<foreground>	&title.foreground	</>
+	<line-spacing>	&body.line-space	</>
+	<justification>	Left	</>
+	<break-before>	True	</>
+</group>
+
+<style name="APPENDIX,SECT1,SECT2,SECT3,TITLE" group="title">
+	<space-before>	&title.space-before	</>
+	<text-before>format(cnum(parent(APPENDIX)),LETTER).cnum(parent(SECT1)).cnum(parent(SECT2)).cnum(parent(SECT3))  </>
+</style>
+
+<style name="APPENDIX,SECT1,SECT2,TITLE" group="title">
+	<left-indent>	120	</>
+	<first-indent>	-45	</>
+	<space-before>	&title.space-before	</>
+	<text-before>format(cnum(parent(APPENDIX)),LETTER).cnum(parent(SECT1)).cnum(parent(SECT2))  </>
+</style>
+
+<style name="APPENDIX,SECT1,TITLE" group="title">
+	<left-indent>	90	</>
+	<first-indent>	-30	</>
+	<space-before>	&title.space-before	</>
+	<text-before>format(cnum(parent(APPENDIX)),LETTER).cnum(parent(SECT1))  </>
+</style>
+
+<style name="APPENDIX,TITLE" group="title">
+	<first-indent>	if(isempty(attr(NUMBER,ancestor(APPENDIX))),,-=80)	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(NUMBER,ancestor(APPENDIX))),'',Appendix attr(NUMBER,ancestor(APPENDIX))\   )</>
+</style>
+
+<style name="CHAPTER,TITLE" group="title">
+	<first-indent>	if(isempty(attr(NUMBER,ancestor(CHAPTER))),,-70)	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(NUMBER,ancestor(CHAPTER))),'',Chapter attr(NUMBER,ancestor(CHAPTER))\   )</>
+</style>
+
+<style name="GLOSSARY,SECT1,TITLE" group="title">
+	<first-indent>	+=60	</>
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(NUMBER,ancestor(SECT1))),'',join(attr(NUMBER,ancestor(SECT1)),'   '))</>
+</style>
+
+<style name="GLOSSARY,TITLE" group="title">
+	<font-weight>	Bold	</>
+	<space-before>	&title.space-before	</>
+	<title-tag>	glossaryentry,glossaryterm	</>
+</style>
+
+<style name="GLOSSARYENTRY" group="title">
+	<left-indent>	+=20	</>
+	<space-before>	&title.space-before	</>
+	<title-tag>	glossaryterm	</>
+</style>
+
+<style name="PREFACE,SECT1,SECT2,TITLE" group="title">
+	<space-before>	&title.space-before	</>
+</style>
+
+<style name="PREFACE,SECT1,TITLE" group="title">
+	<space-before>	&title.space-before	</>
+	<text-before>if(isempty(attr(NUMBER,ancestor(SECT1))),'',join(attr(NUMBER,ancestor(SECT1)),'   '))</>
+</style>
+
+<style name="PREFACE,TITLE" group="title">
+	<font-weight>	Bold	</>
+	<space-before>	&title.space-before	</>
+</style>
+
+<style name="SECT1,TITLE" group="title">
+	<left-indent>	90	</>
+	<first-indent>	-30	</>
+	<space-before>	&title.space-before	</>
+	<text-before>cnum(ancestor(CHAPTER)).cnum(parent(SECT1))   </>
+</style>
+
+<style name="SECT2,TITLE" group="title">
+	<left-indent>	120	</>
+	<first-indent>	-45	</>
+	<space-before>	&title.space-before	</>
+	<text-before>cnum(ancestor(CHAPTER)).cnum(parent(SECT1)).cnum(parent(SECT2))    </>
+</style>
+
+<style name="SECT3,TITLE" group="title">
+	<left-indent>	140	</>
+	<first-indent>	-45	</>
+	<space-before>	&title.space-before	</>
+	<text-before>cnum(ancestor(CHAPTER)).cnum(ancestor(SECT1)).cnum(parent(SECT2)).cnum(parent(SECT3))  </>
+</style>
+
+<style name="SECT4,TITLE" group="title">
+	<left-indent>	190	</>
+	<first-indent>	-60	</>
+	<space-before>	&title.space-before	</>
+	<text-before>cnum(ancestor(CHAPTER)).cnum(ancestor(SECT1)).cnum(parent(SECT2)).cnum(parent(SECT3)).cnum(parent(SECT4))  </>
+</style>
+
+<style name="SPARES,TITLE" group="title">
+</style>
+
+<style name="SSB,TITLE" group="title">
+</style>
+
+<style name="TITLEPAGE,TITLE" group="title">
+	<font-weight>	Bold	</>
+	<font-size>	&doc.title.font-size	</>
+	<line-spacing>	&doc.title.line-space	</>
+	<space-before>	&title.space-before	</>
+</style>
+
+<style name="WHITEPAPER,TITLE" group="title">
+</style>
+
+
+
+<?INSTED COMMENT: UNGROUPED STYLES FOLLOW>
+
+<style name="#TAGS">
+	<foreground>	purple	</>
+</style>
+
+<!-- Style"#toc-annot" is reserved, and defines the appearance of the
+     bookmarks, word frequencies, location markers, etc. in left margin.
+-->
+<style name="#TOC-ANNOT">
+	<font-family>	annotation	</>
+	<font-weight>	Bold	</>
+	<font-size>	12	</>
+	<character-set>	fontspecific	</>
+	<foreground>	magenta	</>
+</style>
+
+<style name="APPENDIX">
+	<left-indent>	if(isempty(attr(NUMBER)),+=20,+=100)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="APPENDIX,SECT1">
+	<left-indent>	if(isempty(attr(NUMBER)),-=60,-=25)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="APPENDIX,SECT1,SECT2">
+	<left-indent>	if(isempty(attr(NUMBER)),+=20,+=35)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="APPENDIX,SECT1,SECT2,SECT3">
+	<left-indent>	if(isempty(attr(NUMBER)),+=20,-=25)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="BOOKTITLE,TITLE">
+	<font-family>	new century schoolbook	</>
+	<font-weight>	Bold	</>
+	<font-size>	&doc.title.font-size	</>
+	<line-spacing>	&doc.title.line-space	</>
+	<space-before>	&title.space-before	</>
+</style>
+
+<style name="BUTTON">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="CHAPTER">
+	<left-indent>	if(isempty(attr(NUMBER)),+=20,+=90)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="COMMAND">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="DOCBOOK">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	DOCINFO,BOOKTITLE	</>
+</style>
+
+<style name="DOCINFO">
+	<font-weight>	Bold	</>
+	<font-size>	&doc.title.font-size	</>
+	<line-spacing>	&doc.title.line-space	</>
+	<space-before>	&title.space-before	</>
+</style>
+
+<style name="EMPHASIS">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="FILENAME">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="GLOSSARY">
+	<left-indent>	+=20	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="GLOSSARY,SECT1">
+	<left-indent>	if(isempty(attr(NUMBER)),-=45,-=20)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="GLOSSARYTERM">
+	<left-indent>	+=20	</>
+	<break-before>	True	</>
+</style>
+
+<style name="GLOSSARYTERM,EMPHASIS">
+</style>
+
+<style name="ITALICS">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="PREFACE">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="PREFACE,SECT1">
+	<left-indent>	+=20	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="PROGRAMNAME">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="SECT1">
+	<left-indent>	if(isempty(attr(NUMBER)),-=45,-=20)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SECT2">
+	<left-indent>	if(isempty(attr(NUMBER)),+=20,+=30)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SECT3">
+	<left-indent>	if(isempty(attr(NUMBER)),+=20,-=15)	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SECT4">
+	<left-indent>	+=20	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SPARES">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SSB">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	TITLE	</>
+</style>
+
+<style name="SUBTITLE">
+	<font-family>	new century schoolbook	</>
+	<break-before>	True	</>
+</style>
+
+<style name="SUPPORT">
+	<title-tag>	TITLEPAGE,TITLE	</>
+</style>
+
+<style name="SYM">
+	<font-family>	symbol	</>
+	<font-weight>	Medium	</>
+	<character-set>	symbol	</>
+</style>
+
+<style name="TITLE,#TEXT-BEFORE">
+	<font-weight>	Bold	</>
+</style>
+
+<style name="VARIABLE">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="WHITEPAPER">
+	<left-indent>	&add.left-indent	</>
+	<title-tag>	TITLE	</>
+</style>
+
+
+
+</sheet>

@@ -1,0 +1,159 @@
+<!-- Version $Revision: 1.10 $ of the back of the book index stylesheet -->
+
+<!ENTITY	body.font-family	CDATA	"new century schoolbook"	>
+<!ENTITY	body.font-size	CDATA	"12"	>
+<!ENTITY	body.line-space	CDATA	"14"	>
+<!ENTITY	chp.title.font-size	CDATA	"18"	>
+<!ENTITY	chp.title.line-space	CDATA	"27"	>
+<!ENTITY	entry1.left-indent	CDATA	"+=20"	>
+<!ENTITY	entryTitle.font-size	CDATA	"14"	>
+<!ENTITY	entryTitle.line-space	CDATA	"16"	>
+<!ENTITY	hot-link.color	CDATA	"#000078"	>
+<!ENTITY	index.left-indent	CDATA	"+=20"	>
+<!ENTITY	index.space-after	CDATA	"5"	>
+<!ENTITY	index.space-before	CDATA	"5"	>
+<!ENTITY	indexref.left-indent	CDATA	"+=40"	>
+<!ENTITY	left-indent.1	CDATA	"0"	>
+<!ENTITY	right-indent.1	CDATA	"10"	>
+
+<sheet >
+
+
+
+<?INSTED COMMENT: UNGROUPED STYLES FOLLOW>
+
+<style name="#TAGS">
+	<font-weight>	Bold	</>
+</style>
+
+<style name="APPENDIX">
+	<hide>	All	</>
+</style>
+
+<style name="BUTTON">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="CHAPTER">
+	<hide>	All	</>
+</style>
+
+<style name="COMMAND">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="EMPHASIS">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="ENTRY1">
+	<space-after>	&index.space-after	</>
+	<break-before>	True	</>
+</style>
+
+<style name="ENTRY1,INDEXTERM">
+	<font-size>	&entryTitle.font-size	</>
+	<left-indent>	&entry1.left-indent	</>
+	<line-spacing>	&entryTitle.line-space	</>
+</style>
+
+<style name="ENTRY2">
+	<select>	ENTRY2*FIRST*eq(1,cnum())	</>
+</style>
+
+<style name="ENTRY2*FIRST*FALSE">
+	<font-size>	&entryTitle.font-size	</>
+	<left-indent>	&index.left-indent	</>
+	<line-spacing>	&entryTitle.line-space	</>
+	<space-before>	&index.space-before	</>
+	<break-before>	True	</>
+</style>
+
+<style name="ENTRY2*FIRST*TRUE">
+	<font-size>	&entryTitle.font-size	</>
+	<left-indent>	&index.left-indent	</>
+	<line-spacing>	&entryTitle.line-space	</>
+	<break-before>	True	</>
+</style>
+
+<style name="ENTRY2,INDEXTERM">
+	<left-indent>	&index.left-indent	</>
+</style>
+
+<style name="ENTRY3">
+	<select>	ENTRY3*FIRST*eq(1,cnum())	</>
+</style>
+
+<style name="ENTRY3*FIRST*FALSE">
+	<font-size>	&entryTitle.font-size	</>
+	<left-indent>	&index.left-indent	</>
+	<line-spacing>	&entryTitle.line-space	</>
+	<space-before>	&index.space-before	</>
+	<break-before>	True	</>
+</style>
+
+<style name="ENTRY3*FIRST*TRUE">
+	<font-size>	&entryTitle.font-size	</>
+	<left-indent>	&index.left-indent	</>
+	<line-spacing>	&entryTitle.line-space	</>
+	<break-before>	True	</>
+</style>
+
+<style name="FILENAME">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="FRONTMATTER">
+	<hide>	All	</>
+</style>
+
+<style name="INDEXREF">
+	<font-weight>	Bold	</>
+	<font-size>	&body.font-size	</>
+	<foreground>	&hot-link.color	</>
+	<left-indent>	&indexref.left-indent	</>
+	<line-spacing>	&body.line-space	</>
+	<break-before>	True	</>
+	<script>	ebt-link tname="ID" tvalue=@(IDREF)	</>
+</style>
+
+<style name="INTRODUCTION">
+	<hide>	All	</>
+</style>
+
+<style name="ITALICS">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="PROGRAMNAME">
+	<font-slant>	Italics	</>
+</style>
+
+<style name="SGIDOC">
+	<font-family>	&body.font-family	</>
+	<font-size>	&body.font-size	</>
+	<left-indent>	&left-indent.1	</>
+	<right-indent>	&right-indent.1	</>
+	<line-spacing>	&body.line-space	</>
+	<break-before>	False	</>
+	<break-after>	True	</>
+</style>
+
+<style name="SGIINDEX">
+	<break-before>	True	</>
+	<break-after>	True	</>
+	<text-before>Index </>
+</style>
+
+<style name="SGIINDEX,#TEXT-BEFORE">
+	<font-size>	&chp.title.font-size	</>
+	<line-spacing>	&chp.title.line-space	</>
+</style>
+
+<style name="VARIABLE">
+	<font-slant>	Italics	</>
+</style>
+
+
+
+</sheet>

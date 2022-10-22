@@ -1,0 +1,16 @@
+<MKLOG name='/usr/share/Insight/library/SGI_bookshelves/SGI_Developer/libidx/freqs' version='-1' date='Sat Aug 28 21:48:34 1993' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element        4, offset   15, on   Sat Aug 28 21:48:46 1993.
+
+FLUSH    3: Element        9, offset    2, on   Sat Aug 28 21:48:58 1993.
+
+FLUSH    4: Element       12, offset   10, on   Sat Aug 28 21:49:09 1993.
+
+FLUSH    5: Element       13, offset    1, on   Sat Aug 28 21:49:17 1993.
+
+MERGE vocab.dat :   5 files, Vocab size 19563 on                           .
+
+MERGE index.dat :   5 files, Vocab size 19563 on                           .
+
+DONE MAKING BOOK
+

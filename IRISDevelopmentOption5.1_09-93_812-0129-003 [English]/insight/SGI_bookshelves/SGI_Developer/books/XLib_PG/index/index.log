@@ -1,0 +1,10 @@
+<MKLOG name='./books/XLib_PG/index' version='-1' date='Sat Aug 28 15:52:21 1993' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    55937, offset 14951, on   Sat Aug 28 15:53:03 1993.
+
+MERGE vocab.dat :   2 files, Vocab size 15026 on                           .
+
+MERGE index.dat :   2 files, Vocab size 15026 on                           .
+
+DONE MAKING BOOK
+

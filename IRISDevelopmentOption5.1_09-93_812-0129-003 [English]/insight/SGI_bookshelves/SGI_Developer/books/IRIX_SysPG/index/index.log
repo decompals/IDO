@@ -1,0 +1,8 @@
+<MKLOG name='./books/IRIX_SysPG/index' version='-1' date='Mon Aug 23 20:01:33 1993' serial='-1' count='-1' user=''>
+
+MERGE vocab.dat :   1 files, Vocab size  8666 on                           .
+
+MERGE index.dat :   1 files, Vocab size  8666 on                           .
+
+DONE MAKING BOOK
+

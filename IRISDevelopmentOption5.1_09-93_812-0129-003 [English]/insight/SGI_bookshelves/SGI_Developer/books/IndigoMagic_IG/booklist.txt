@@ -1,0 +1,2 @@
+<book name="IndigoMagic_IG" alias="Indigo Magic Desktop Integration Guide" type="sgi_developer" version="007-2006-050, 8/93" srchtags="TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples">
+
