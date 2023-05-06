@@ -1,0 +1,304 @@
+.\" **
+.\" **
+.\" **  (c) Copyright 1992 by Silicon Graphics
+.\" **      All Rights Reserved.
+.\" **
+.\" **
+.\" **
+.TH SgSpringBox 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\fBSgSpringBox\fP \*O\(em The SgSpringBox widget class
+.iX "SgSpringBox"
+.iX "widget class" "SgSpringBox"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sgm/SgSpringBox.h>
+.iE
+.sE
+.SH DESCRIPTION
+SgSpringBox is a container widget with no input semantics of its own. It
+arranges its children in a single row or column based on a set of spring
+constraints assigned to each child. The SgSpringBox widget allows layouts
+similar to those supported by the XmForm widget, but are usually easier to
+set up. It is also possible to create some layouts that cannot be achieved
+with the XmForm widget. For example, centering a column of widgets is very
+easy to do with the SgSpringBox widget, but nearly impossible using the
+XmForm.
+.P
+Each child of an SgSpringBox widget has 6 constraints associated with it.
+First, each child has a "springyness" in both the vertical and horizontal
+direction that determines how much the child may be resized in each
+direction.
+.P
+The resources XmNverticalSpring and XmNhorizontalSpring control the degree
+of "springyness" in each child. A value of zero means the child cannot be
+resized in that direction. For non-zero values, the values are compared to
+the values of other springs in the overall system to determine the
+proportional effects of any resizing. The default value of both resources
+is zero.
+.P
+Each child also has a spring between its left, right, top, and bottom sides
+and whatever boundary it is adjacent to. By default, the value of each of
+these springs is 50. A value of zero means that the SgSpringBox widget
+cannot add additional space adjacent to that part of a widget. Larger
+values are considered in relation to all other spring values in the
+system.
+.P
+The behavior of the widget is best seen by example. The following code
+places two widget in a single column. With the default resource settings,
+this results in both chidlren being centered in the parent, one above the
+other.
+.sp
+.Ex
+void createCenteredWidgets(Widget parent)
+ {
+     Arg args[2];
+     Widget springbox, child1, child2;
+
+     XtSetArg(args[0], XmNorientation, XmVERTICAL);
+     springbox   = SgCreateSpringBox( parent, "column", args, 1 );
+
+     child1 =  XmCreatePushButton ( box, "child1", NULL, 0 );
+     child2 =  XmCreatePushButton ( box, "child2", NULL, 0 );
+
+     XtManageChild(child1);
+     XtManageChild(child2);
+     XtManageChild(springbox);
+ }
+.Ee
+.sp
+.P
+This example creates two widgets in a horizontal row. As the row is
+resized, the widget gravitates to the left and right sides of the row. The
+leftmost child also hangs from the top of its parent, while the rightmost
+widget gravitates to the bottom of its parent.
+.sp
+.Ex
+void createCenteredWidgets(Widget parent)
+{
+   Arg args[5];
+   int n;
+   Widget springbox, child1, child2;
+
+   n = 0;
+   XtSetArg(args[n], XmNorientation, XmCOLUMN);n++
+   springbox   = SgCreateSpringBox( parent, "column", args, 1 );
+
+   n = 0;
+   XtSetArg(args[n], XmNrightSpring,  0);n++   
+   XtSetArg(args[n], XmNleftSpring,   100);n++   
+   XtSetArg(args[n], XmNbottomSpring,   0);n++   
+   XtSetArg(args[n], XmNtopSpring,    100);n++   
+   child1 =  XmCreatePushButton ( box, "child1", args, n);
+
+   n = 0;
+   XtSetArg(args[n], XmNrightSpring,  100);n++   
+   XtSetArg(args[n], XmNleftSpring,     0);n++   
+   XtSetArg(args[n], XmNbottomSpring, 100);n++   
+   XtSetArg(args[n], XmNtopSpring,      0);n++   
+   child2 =  XmCreatePushButton ( box, "child2", args, n);
+
+   XtManageChild(child1);
+   XtManageChild(child2);
+   XtManageChild(springbox);
+}
+.Ee
+.P
+Following are some important considerations in using a SgSpringBox:
+.IP
+Unmapping a child has no effect on the SgSpringBox except that the child is
+not mapped.
+.SH "Classes"
+SgSpringBox inherits behavior and resources from \fBCore\fP,
+\fBComposite\fP, \fBConstraint\fP,
+\fBXmManager\fP, and \fBXmBulletinBoard\fP classes.
+.PP 
+The class pointer is \fBSgSpringBoxWidgetClass\fP.
+.PP 
+The class name is \fBSgSpringBox\fP.
+.SH "New Resources"
+The following table defines a set of widget resources used by the
+programmer to specify data.  The programmer can also set the resource
+values for the inherited classes to set attributes for this widget.  To
+reference a resource by name or by class in a .Xdefaults file, remove the
+\fBXmN\fP or \fBXmC\fP prefix and use the remaining letters.  To specify
+one of the defined values for a resource in a .Xdefaults file, remove the
+\fBXm\fP prefix and use the remaining letters (in
+.ne 10
+either lowercase or uppercase, but include any underscores between words).
+The codes in the access column indicate if the given resource can be set at
+creation time (C), set by using \fBXtSetValues\fP (S), retrieved by using
+\fBXtGetValues\fP (G), or is not applicable (N/A).
+.P 
+.TS 
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+SgSpringBox Resource Set
+Name	Class	Type	Default	Access
+_
+XmNorientation	XmCOrientation	int	XmHORIZONTAL	CG
+.TE
+.P 
+.TS 
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+SgSpringBox Constraint Resource Set
+Name	Class	Type	Default	Access
+_
+XmNleftSpring	XmCSpring	int	50	CSG
+XmNrightSpring	XmCSpring	int	50	CSG
+XmNtopSpring	XmCSpring	int	50	CSG
+XmNbottomSpring	XmCSpring	int	50	CSG
+XmNverticalSpring	XmCSpring	int	0	CSG
+XmNhorizontalSpring	XmCSpring	int	0	CSG
+.TE
+.P
+.SS "\fBXmNleftSpring\fP" 
+.IP
+Determines the stretchability of the space
+adjacent to the left side of the widget. The larger the value, the more
+this space can be resized relative to other "springs" contained in the
+SgSpringBox widget.
+.SS "\fBXmNrightSpring\fP"
+Determines the stretchability of the space adjacent to the right side of
+the widget. The larger the value, the more this space can be resized
+relative to other "springs" contained in the SgSpringBox widget.
+.SS "\fBXmNtopSpring\*0"
+Determines the stretchability of the space adjacent to the top side of the
+widget. The larger the value, the more this space can be resized relative
+to other "springs" contained in the SgSpringBox widget.
+.SS "\fBXmNbottomSpring\fP"
+Determines the stretchability of the space adjacent to the bottom side of
+the widget. The larger the value, the more this space can be resized
+relative to other "springs" contained in the SgSpringBox widget.
+.SS "\fBXmNverticalSpring\fP"
+Determines the stretchability of the widget in the vertical direction.  The
+larger the value, the more this space can be resized relative to other
+"springs" contained in the  SgSpringBox widget.
+.SS "\fBXmNhorizontalSpring\fP"
+Determines the stretchability of the widget in the horizontal direction.
+The larger the value, the more this space can be resized relative to other
+"springs" contained in the  SgSpringBox widget.
+.SH "Inherited Resources"
+SgSpringBox inherits behavior and resources from the following
+superclasses.  For a complete description of each resource, refer to the
+man page for that superclass.
+.P 
+.TS 
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmBulletinBoard Resource Set
+Name	Class	Type	Default	Access
+_
+XmNallowOverlap	XmCAllowOverlap	Boolean	True	CSG
+XmNautoUnmanage	XmCAutoUnmanage	Boolean	True	CG
+XmNbuttonFontList	XmCButtonFontList	XmFontList	dynamic	CSG
+XmNcancelButton	XmCWidget	Widget	NULL	SG
+XmNdefaultButton	XmCWidget	Widget	NULL	SG
+XmNdefaultPosition	XmCDefaultPosition	Boolean	True	CSG
+XmNdialogStyle	XmCDialogStyle	unsigned char	dynamic	CSG
+XmNdialogTitle	XmCDialogTitle	XmString	NULL	CSG
+XmNfocusCallback	XmCCallback	XtCallbackList	NULL	C
+XmNlabelFontList	XmCLabelFontList	XmFontList	dynamic	CSG
+XmNmapCallback	XmCCallback	XtCallbackList	NULL	C
+XmNmarginHeight	XmCMarginHeight	Dimension	0	CSG
+XmNmarginWidth	XmCMarginWidth	Dimension	0 	CSG
+XmNnoResize	XmCNoResize	Boolean	False	CSG
+XmNresizePolicy	XmCResizePolicy	unsigned char	XmRESIZE_ANY	CSG
+XmNshadowType	XmCShadowType	unsigned char	XmSHADOW_OUT	CSG
+XmNtextFontList	XmCTextFontList	XmFontList	dynamic	CSG
+XmNtextTranslations	XmCTranslations	XtTranslations	NULL	C
+XmNunmapCallback	XmCCallback	XtCallbackList	NULL	C
+
+.TE
+.P 
+.TS 
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmManager Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNinitialFocus	XmCInitialFocus	Widget	dynamic	CSG
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmTAB_GROUP	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	dynamic	CSG
+XmNstringDirection	XmCStringDirection	XmStringDirection	dynamic	CG
+XmNtopShadowColor	XmCBackgroundTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	True	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	Pointer	NULL	CSG
+
+.TE
+.P 
+.TS 
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Composite Resource Set
+Name	Class	Type	Default	Access
+_
+XmNchildren	XmCReadOnly	WidgetList	NULL	G
+XmNinsertPosition	XmCInsertPosition	XtOrderProc	NULL	CSG
+XmNnumChildren	XmCReadOnly	Cardinal	0	G
+
+.TE
+.P 
+.TS 
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtAccelerators	dynamic	N/A
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderColor	XmCBorderColor	Pixel	XtDefaultForeground	CSG
+XmNborderPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNcolormap	XmCColormap	Colormap	dynamic	CG
+XmNdepth	XmCDepth	int	dynamic	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Screen *	dynamic	CG
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	dynamic	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+
+.TE
+.SS "Translations"
+qSgSpringBox inherits translations from XmBulletinBoard.
+.SH RELATED INFORMATION
+.na
+\fBComposite(3X)\fP, \fBConstraint(3X)\fP, \fBCore(3X)\fP,
+\fBXmBulletinBoard(3X)\fP,
+\fBSgCreateGrid\fP, \fBSgCreateGridDialog(3X)\fP, and
+\fBXmManager(3X)\fP.
+.ad

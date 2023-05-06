@@ -1,0 +1,83 @@
+
+        -------------------------------------------------------------
+        Explanation of the contents of ~4Dgifts/examples/glpg subtree 
+        -------------------------------------------------------------
+
+
+    ~4Dgifts/examples/glpg contains 16 subdirectories that contain the 
+    on-line source copy versions of the hard-copy listings found in the
+    chapters of the  "Graphics Library Programming Guide", Version 2.0,
+    (GLPG) itself:
+    
+
+    ch01:  Introduction  
+             1 program, that clears the graphics window to color GREEN.
+
+    ch02:  Drawing
+             16 programs demonstrating subroutines that draw many of
+             the basic geometric figures: points, lines, polygons,
+             rectangles, circles, arcs, and meshes.
+
+    ch03:  Characters and Fonts
+             3 programs demonstrating ways to display textual information.
+             (These programs do not demonstrate usage of the font manager
+             that is described in the 4Sight Users guide.)
+
+    ch04:  Display and Color Modes
+             11 programs covering using the colormap as well as straight
+             RGB color, smooth shading, defining a gammaramp, multimap
+             mode, and blinking colors.
+
+    ch05:  Input
+	     1 program that demostrates the proper use of polling and
+	     queuing.
+
+    ch06:  Animation
+             1 program that implements doublebuffering which is the method
+             used to create graphics that appear to change smoothly.
+
+    ch07:  Coordinate Transformations
+             5 programs demonstrating ways to manipulate geometric
+             figures and viewpoints in 3-D space in very general ways.
+
+    ch08:  Hidden Surface Removal    
+             2 programs that demonstrate ways to perform hidden surface
+             removal using zbuffering.  
+
+    ch09:  Lighting
+	     1 simple program that demostrates use of the GL lighting 
+	     routines.
+
+    ch10:  Pixels
+	     1 simple program using rectcopy to implement zoom.
+
+    ch11:  Drawing Modes
+	     3 programs: 2 implementing writemasks, and 1 showing how
+	     to implement a multiple-color cursor.
+
+    ch12:  Picking and Selecting
+	     2 programs:  1 demonstrating picking and 1 program showing
+	     the use of gselect.
+
+    ch13:  Depth-Cueing
+	     1 program implementing depth cueing.
+
+    ch14:  Curves and Surfaces
+	     4 programs: 3 demonstrating curves, and 1 showing an 
+	     implementation of a patch.
+
+    ch15:  Smooth Lines, Smooth Points, and Alpha Blending
+	     10 programs: 1 using the accumulation buffer for anti-aliasing,
+	     1 demonstrating using blendfunction to implement alphablending,
+	     1 showing yer basic, GL line-drawing program *without* anti-
+	     aliasing, 1 color-map and 1 RGB line-drawing anti-aliasing 
+	     program, 1 color-map and 1 RGB point-drawing anti-aliasing 
+	     program, and 3 RGB polygon programs showing progressively more 
+	     complex examples of doing polygon anti-aliasing.
+
+    ch17:  Feedback
+	     1 program demonstrating the use of feedback.
+
+    ch18:  Textures
+	     1 program demonstrating the use of textures implementing a 
+	     brick pattern mapped onto a planar surface.

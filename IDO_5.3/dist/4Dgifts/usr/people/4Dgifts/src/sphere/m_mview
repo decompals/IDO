@@ -1,0 +1,5 @@
+Molecular Modeling: Atoms
+	( /usr/demos/bin/mview  -P -I /usr/demos/data/atom -n advil -b 0xff101000 & )
+	.popup. Manual
+	wsh -c /usr/demos/bin/manwsh 6 mview
+

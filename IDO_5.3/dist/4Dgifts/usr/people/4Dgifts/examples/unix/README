@@ -1,0 +1,220 @@
+
+     ------------------------------------------------------------------
+     README for ~4Dgifts/examples/unix programming source code examples
+     ------------------------------------------------------------------
+
+
+      This directory contains some fundamental examples of UNIX system 
+    programming demonstrating various operations regarding processes.
+    Included are examples that spawn children, communicate between two 
+    different processes via IPC, pipes, signal handling, semaphores and
+    shared memory.  (If you are not already familiar with them, check
+    out the INTRO(2) (system calls and error numbers) and INTRO(3) 
+    (subroutines and libraries) man page sections for a very informative
+    overview of the functions implemented here.)
+
+
+                                CONTENTS:
+
+   * irix    [DIR]   contains IRIX specific programs either exclusively 
+		     mips-based or contain SGI dependent system calls;
+
+   * child.c:        fork a child, then kill it 
+     REFS:           INTRO(2), SIGNAL(2), FORK(2), KILL(2)
+  
+   * child_win.c:    fork a child, then kill it using GL windows.
+     REFS:           INTRO(2), SIGNAL(2), FORK(2), KILL(2)
+  
+   * curse1.c:       demonstrates switching between block and noblock 
+                     reading mode.
+     REFS:           CURSES(3X)
+
+   * curse2.c:       imitates a "vi"-like text-cursor movement capability
+                     of the similar set of keyboard keys vi employs.
+     REFS:           CURSES(3X)
+
+   * ipc1/2.c:       send messages via Inter-Process Communication (IPC)
+     REFS:           INTRO(2), MSGCTL(2), MSGGET(2), MSGOP(2), SIGNAL(2)
+  
+   * pipe2way.c:     implements bi-directional pipes between a parent and
+                     its child.
+     REFS:           PIPE(2), FOPEN(3S), DUP(2), EXECL(2), GETENV(3C), 
+                     TIME(1), CTIME(3C), PERROR(3C)
+
+   * pipe.c:         demonstrates use of unnamed pipes.
+     REFS:           PIPE(2), FORK(2), WAIT(2), READ(2), WRITE(2)
+  
+   * pipe_name.c:    illustrates use of named pipes 
+     REFS:           UNLINK(2), MKNOD(2), FORK(2), OPEN(2), WAIT(2), 
+		     READ(2), WRITE(2)
+
+   * plpcent.c:      displays current state of Centronics parallel port
+                     on Personal IRIS's.
+     REFS:           PLP(7), IOCTL(2), OPEN(2), PERROR(3C)
+   
+   * rawnoblock.c:   reads a tty device using "raw" (one-character-at-a-
+                     time) non-blocking, reads.
+     REFS:           TERMIO(7), OPEN(2), ALARM(2), SIGNAL(2), IOCTL(2),
+                     GETOPT(3C), READ(2), WRITE(2)
+
+   * rawselect.c:    reads a tty device using "raw" canonical 
+                     input-disabled reads.  
+     REFS:           TERMIO(7), SELECT(2), SIGNAL(2), ALARM(2), IOCTL(2),
+                     READ(2), WRITE(2)
+
+   * sem_op1/2.c:    program set explores semaphore operations.  
+     REFS:           INTRO(2), SEMGET(2), SEMOP(2), SEMCTL(2), SIGNAL(2)
+  
+   * shmem1/2.c:     program set illustrates use of shared memory.
+     REFS:           INTRO(2), SHMGET(2), SHMOP(2), SHMCTL(2), SIGNAL(2) 
+                     [shmem2 only:  STRING(3C)]
+
+
+
+
+                                *********
+                                 DETAILS:
+				*********
+
+ * child:       Fork a child and then kill it .  This programs forks a child
+                then after sleeping sends it 2 signals, the second of which 
+                kills it.
+   References:  INTRO(2), SIGNAL(2), FORK(2), KILL(2)
+ 
+ 
+ 
+ 
+ * child_win:   Fork a child (which is another window), and then kill it.  
+                This programs forks a child, then after sleeping, sends it 
+                2 signals, the second of which kills it.
+   References:  INTRO(2), SIGNAL(2), FORK(2), KILL(2)
+  
+ 
+ 
+ 
+ * curses1:     Demostrates switching between block and noblock reading 
+                mode via the keyboard.  The following keys are employed:
+                     F1:  go into blocked read mode
+                     F2:  enter non blocked mode
+                      Q:  quit program (cleans up regardless of current
+                          I/O state)
+   References:  CURSES(3X)
+ 
+ 
+ 
+ 
+ * curses2:     Imitates a "vi"-like text-cursor movement capability in 
+		terms of the 'H', 'J', 'K', 'L', as well as the 
+		UP/DOWN/LEFT/RIGHT -ARROWKEY KEYBOARD keys.  pressing 
+		the Q key quits the program.
+   References:  CURSES(3X)
+
+
+
+
+ * ipc1/2:      This set of programs demonstrates sending messages via 
+                Inter-Process Communication (IPC).  ipc1 sends messages 
+                with a type (first integer in the sent data) of 1, while 
+                ipc2 sends a type 2 message.   ipc1 catches signals and 
+                calls cleanup to remove the message queue from the system.
+                If it didn't, the queue would stay in the system.  ipc2 
+                catches signals and calls cleanup to remove the message 
+                queue from the system. 
+                To run, execute ipc2 in the background 1st and then run 
+                ipc1 (i.e. "ipc2 &; ipc1").
+   References:  INTRO(2), MSGCTL(2), MSGGET(2), MSGOP(2), SIGNAL(2)
+    
+ 
+ 
+ 
+ * nscript:     Example of implementing bi-directional pipes between a 
+                parent process and its child.  nscript is similiar to the 
+                SCRIPT(1) program found on most UNIX-based systems.
+   References:  PIPE(2), FOPEN(3S), DUP(2), EXECL(2), GETENV(3C), TIME(1),
+                CTIME(3C), PERROR(3C)
+                
+ 
+ 
+ 
+ * pipe:        Demonstrates use of unnamed pipes.
+   References:  PIPE(2), FORK(2), WAIT(2), READ(2), WRITE(2)
+ 
+ 
+    
+ 
+ * pipe_name:   Program to illustrate named pipes
+   References:  UNLINK(2), MKNOD(2), FORK(2), OPEN(2), WAIT(2), READ(2),
+		WRITE(2)
+ 
+ 
+ 
+ 
+ * plpcent:     Displays the current state of the Centronics parallel port
+                on the Personal Iris.  The types of parallel port states 
+                are described in the PLP(7) man page.
+   References:  OPEN(2), PERROR(3C), IOCTL(2), SLEEP(2), PLP(7)
+ 
+ 
+ 
+ 
+ * rawnoblock:  Demostrates how to read a tty device using "raw" (one-
+                character-at-a-time), non-blocking reads (see the setraw()
+                routine for all termio flags which are set for raw i/o 
+                reads).  This example initializes itself by invoking the 
+                OPEN(2) system call to open the controlling tty (i.e. your
+                keyboard) and a user-supplied serial port number, (i.e. 
+                "-d2" for serial port /dev/ttyd2). Both devices are opened
+                with the O_NDELAY set, (i.e. hence the non-blocking).  The
+                program will run until an interrupt is recieved or an 
+                alarm is sent.  By default an alarm is sent in 20 seconds 
+                after the program is started.
+   References:  TERMIO(7), OPEN(2), ALARM(2), SIGNAL(2), IOCTL(2),
+                GETOPT(3C), READ(2), WRITE(2)
+ 
+ 
+ 
+ 
+ * rawselect:   Demostrates how to read a tty device using "raw" (one-
+                character-at-a-time) canonical input-disabled reads.  See 
+                the routine setraw() for all the termio flags which are 
+                set for raw i/o reads.  This program also shows how to set
+                and use the SELECT(2) system call.  This is useful so one 
+                can select among several possible tty ports.  In particular,
+                this program starts by saving the current set and then 
+                setting up the new termio parameters for stdin.  Then 
+                initialization of the SELECT(2) attributes by setting the 
+                read timeouts to 2 seconds is performed.  As part of the 
+                final initialization sequence, the program sets an alarm
+                for 20 seconds and calls SIGNAL(2) to call the user 
+                function "cleanup" when the first alarm or interrupt is 
+                sent to this program/process.
+   References:  TERMIO(7), SELECT(2), SIGNAL(2), ALARM(2), IOCTL(2),
+                READ(2), WRITE(2)
+ 
+ 
+ 
+ 
+ * sem_op1/2:   This set of programs illustrates a simple implementation of
+                semaphore operations.  To demonstrate, first execute sem_op1
+                (in the background --i.e. "sem_op1 &"--or from another 
+                window/shell), and then execute sem_op2.
+   References:  INTRO(2), SEMGET(2), SEMOP(2), SEMCTL(2), SIGNAL(2)
+ 
+ 
+ 
+ 
+ * shmem1/2:    This set of programs demonstrates creating and then 
+                sending/receiving data to/from a shared memory segment.  
+                shmem1 reads from the shared memory segment and prints its 
+                contents to the shell window shmem1 was executed from.  
+                shmem2 writes its data to the shared memory segment.  To 
+                run, execute shmem1 first (in the background ("shmem1 &")
+                or from another shell/window), then run shmem2.  To exit, 
+                hit Ctrl-C for shmem2, then bring shmem1 back into the 
+                foreground (fg) and hit Ctrl-C for it as well.  Notice the 
+                use of signal(SIGINT, bye) below to catch the Ctrl-C and 
+                then exit after performing system cleanup by de-allocating
+                the shared memory segment.
+   References:  INTRO(2), SIGNAL(2), SHMGET(2), SHMOP(2), SHMCTL(2) 
+                [shmem2 only:  STRING(3C)]
+		

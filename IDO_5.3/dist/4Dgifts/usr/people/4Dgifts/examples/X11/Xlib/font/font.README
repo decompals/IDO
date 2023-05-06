@@ -1,0 +1,100 @@
+
+      --------------------------------------------------------------
+      README for ~4Dgifts/examples/X11/Xlib/font source code example
+      --------------------------------------------------------------
+
+
+
+    Introduction:
+
+	Font.c is meant to be the fourth in a series of beginning X
+	Windows programs.  None of the examples in this directory use
+	widgets, but instead use Xlib functionality.  This program
+	takes the information presented in placewin.c and expands 
+	upon it by allowing you to create a window in a set place 
+	that contains a text string.
+
+
+
+    Fundamental building blocks:
+	
+	The include files in font.c have a new addition to the ones
+	listed in placewin.  The new include file is string.h, which
+	enables us to pass a font string to the window.  Also new in
+	this program is the changing of the win variable, formerly a
+	local variable in main, to be a global variable.
+
+
+
+    Local declarations in main():
+
+	We have two new variables declared in main, which are
+	*font_info, and gc.  *font_info is of type XFontStruct,
+	and we will be assigning properties of our chosen font
+	to it later in the program.  gc is of type GC, or graphics
+	context.  Many of the X font calls require the passage
+	of a graphics context, so even though we are not using
+	graphics per se in this program, we still need to declare
+	a gc.
+
+
+
+    Loading the font:
+ 
+	After creating a window, we want to check on the fonts 
+	and set up the information about the font so we can use it.
+	In load_my_font (line 80) we set our chosen font type to
+	"olglyph-19", using the variable *fontname.  Then we use
+	XLoadQueryFont to see if olglyph is available on the machine
+	it will be running on.  If olglyph is available, XLoadQueryFont
+	will go ahead and load up font_info with the appropriate font
+	information.  
+
+	If olglyph-19 is not available, we want our program to be a
+	polite program, and it informs the user that the font is not
+	there, and it will use 9x15 font instead (a common enough font
+	so it shouldn't cause any trouble).  At that point, we load
+	up font_info with information on 9x15 by using XLoadQueryFont.
+
+
+
+    Creating the Graphics Context:
+
+	Now that we have our font, we have to worry about setting
+	up the graphics context with that font information.  In
+	get_GC (line 97) we go through that procedure. 
+
+	We have two new variables to use with the GC calls, valuemask
+	and values.  XCreateGC requires these variable, but since we will 
+	not be using valuemask or values in this program, we set valuemask 
+	to 0, and leave values empty.  XCreateGC will then pass to gc
+	a new graphics context.
+
+	Now that we've created the graphics context, we can use XSetFont
+	to set the font, and we also use XSetForeground to make certain
+	that the font will appear in black in our window.
+
+
+
+    Drawing the text:
+
+	After setting up the font information correctly, we can go ahead
+	and set the window properties and map the window.  After mapping,
+	we then use draw_text (line 113) to actually write out the string.
+	*string1 contains the string we want to write, and len1 will be
+	set to the length of that string as calculated by strlen.  XDrawString
+	will then take the string itself and it's length to draw the string
+	in the window.
+	
+
+
+    Exiting the program:
+
+        To quit this window/end this program you will need to select "Quit"
+        from the menu, or kill it via the lightning bolt, or hitting Ctrl-C in
+        the shell window you invoked the program from in the first place.  Any
+        of these methods will still result in your shell appearing to be hung.
+        Hitting Ctrl-C should return your shell prompt to you.
+
+        This method of exiting the program will change in queue.c, where
+        we examine how to use the queue to politely exit a program.

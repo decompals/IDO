@@ -1,0 +1,52 @@
+
+      ------------------------------------------------------------------
+      README for ~4Dgifts/examples/X11/Xlib/colorwin source code example
+      ------------------------------------------------------------------
+
+
+    Introduction:
+
+	Colorwin.c is meant to be the third in a series of beginning
+	X Windows programs.  None of the examples in this directory
+	use widgets, but instead use Xlib functionality.  This program
+	takes the information from placewin.c and expands upon it by
+	bringing up a window in a certain color.
+
+
+
+    Local declarations in main():
+
+	New in this program are the variables gc, valuemask, values, cmap, and 
+	greenish.
+
+	gc is the graphics context that we will be using, which will help
+        us get the correct color we want.  Valuemask is needed for our
+	call to create the graphics context, and for now we will leave
+	it set to 0.  Values will likewise be used to send to GC, although
+	we will not set it.  Cmap will be accepting the value of the 
+	default colormap that the current window manager is using.  Greenish
+	will be used to take the correct values of the color we are looking
+	for.
+
+
+
+    Choosing the colormap:
+
+  	Since we are not creating our own colormap, we will be using the
+	same one that our current window manager is using.  To do this,
+	we call DefaultColormap (line 42) and return that value to the 
+	variable cmap.
+
+
+
+    Selecting the color:
+
+	Now we want to take our colormap, and use XParseColor (line 45) to 
+	look up the RGB values for our selected color, which is "yellow green",
+	and place those values into our variable greenish.  Once we have
+	greenish loaded with the right RGB values, we can then use 
+	XAllocColor (line 46) to search through our colormap for the RGB 
+	values in greenish, or failing a match, to come up with the closest 
+	color to the values in greenish.  Once we have the closest match, we
+     	then use XSetWindowBackground to the pixel values in greenish.
+	Now when the window is drawn, the background will be yellowish green.

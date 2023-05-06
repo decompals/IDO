@@ -1,0 +1,59 @@
+
+	   BRIEF DESCRIPTION OF FILES IN ~4Dgifts/examples/video:
+
+
+cgmode.c:
+
+	Interactive program for moving among the various video modes.
+	Handles all the various modes for the video including the CG2
+	genlocking configurations.
+
+	Help menus are there. It is highly recommended that you are
+	familiar with the document "Using the Composite Video/Genlock 
+	Board" and/or the man pages on the various gl calls - "getvideo()",
+	"setvideo()", etc.  (Document #007-5350-020)
+
+	IMPORTANT: 
+
+		The escape key (Esc) will always take you back to 
+		60Hz, non-interlaced, non-genlocked video.
+
+
+
+The following programs take the video subsystem directly to the mode 
+described. Again, familiarity with the video options is highly recommended.
+
+
+cg0.c: 
+	set the graphics control register to RS170,genlocked and
+	set the cg2 to mode 0, lock to incoming composite video
+	color overlay active
+
+cg1.c:
+	set the graphcs control register to RS170, genlocked
+	set the cg2 to mode 1, lock to composite sync or composite monochrome
+
+cg2.c:
+	set the graphics control register to RS 170, genlock
+	set the cg2 to mode 2, standalone master
+
+cg3.c:
+	set the graphics control register to RS170, genlock
+	set the cg2 to mode 3, lock to incoming composite video
+
+de3.c:
+	set the graphics control register to RS170, RGB output, sync on green
+	do not set the cg2 ( a 0x7 can be sent to the cg2 to turn it off)
+
+cg0.c:
+	set the graphics control register to RS170,genlocked and
+	set the cg2 to mode 0, lock to incoming composite video
+	color overlay active
+
+
+The following program is a diagnostic for checking the basic
+functionality of the registers and boards.
+
+video.c:
+ 	diag program for testing the CG2 and DE3 registers (video overlay)
+ 	in various Standalone video modes as well as Genlock vido modes.

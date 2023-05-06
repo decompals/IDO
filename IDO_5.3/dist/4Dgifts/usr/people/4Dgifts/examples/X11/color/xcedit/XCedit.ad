@@ -1,0 +1,23 @@
+XCedit*geometry: =330x130
+XCedit*XmMenuShell*fontList: -adobe-helvetica-bold-r-normal--*-80-*-*-*-*-iso*-*
+
+XCedit*sliderpanel.x: 			10
+XCedit*sliderpanel.y: 			10
+
+XCedit*XmLabel.foreground:		black
+XCedit*XmLabel.borderWidth:		1
+XCedit*XmLabel.x:			100
+XCedit*XmLabel.y:			13
+XCedit*XmLabel.height:			100
+XCedit*XmLabel.width:			200
+
+XCedit*menu.orientation:		vertical
+XCedit*sliderpanel.orientation:		horizontal
+
+XCedit*XmScale*orientation:		vertical
+XCedit*XmScale*processingDirection: 	max_on_top
+
+XCedit*red*background:			red
+XCedit*green*background:		green
+XCedit*blue*background:			blue
+*

@@ -1,0 +1,651 @@
+.TH GlxDraw 3X "" "" "" ""
+.SH NAME
+\fBGlxDraw, GlxMDraw \*O\(em GL drawing widgets.\fP
+.iX "GlxDraw" "GlxMDraw"
+.iX "widget class" "GL" "Draw"
+.sp 1
+.SH SYNOPSIS
+\fB#include <Sgm/GlxDraw.h>\fP
+.br
+\fBwidget = XtCreateWidget(widget, glxDrawWidgetClass, ...);\fP
+.br
+\fBld ... -lSgm -l<anywidgetlibrary> -lXt -lgl -lX11 ...\fP
+.sp
+\fB#include <Sgm/GlxMDraw.h>\fP
+.br
+\fBwidget = XtCreateWidget(widget, glxMDrawWidgetClass, ...);\fP
+.br
+\fBld ... -lSgm -lXm -lXt -lgl -lX11 ...\fP
+.sp 1
+.SH DESCRIPTION
+\fBGlxDraw\fP and \fBGlxMDraw\fP are widgets suitable for GL drawing.  They
+provide a window with the appropriate visual and colormaps needed for
+GL, based on supplied parameters.  GlxDraw and GlxMdraw also provides
+callbacks for redraw, resize, input, and initialization.
+.PP
+GlxDraw is not a part of any widget set, but depends only on Xt.
+GlxDraw can be used with any widget set.  GlxMDraw is identical to
+GlxDraw except that it is a subclass of the Motif\(Tm widget
+class XmPrimitive and
+has resources and defaults suitable for use with Motif.  For example,
+GlxMDraw provides the default Motif background and foreground colors
+for resources, and deals better with keyboard traversal.  Although the
+GlxDraw widget can be used in a Motif program, it is recommended that
+GlxMDraw be used instead.
+.PP
+Since both GlxDraw and GlxMDraw widgets behave almost identically, the
+remainder of this manual page will refer only to GlxDraw, except when
+the behaviors differ.  Unless explicitly stated, all statements
+about GlxDraw also apply to GlxMDraw.
+.PP
+To create a GlxDraw, the application must first set up a
+\fBGLXconfig\fP structure as described in \fBGLXgetconfig(3G)\fP.  The
+\fBGLXconfig\fP structure describes the desired GL configuration of
+the window being created, including information such as single or
+double buffering, RGB vs.  color index mode, use of the overlay
+planes, etc.  The \fBGLXconfig\fP parameter must be passed in as the
+\fBglxConfig\fP resource when creating the widget.  When created, the widget
+will automatically choose the appropriate visual and colormap, as well
+as returning the in the \fBglxConfig\fP resource the actual GL configuration
+chosen.
+.PP
+Creating the widget does not actually create the window until it is
+realized, and consequently, the application should not perform any GL
+to the window immediately after creation.  Instead the application
+must wait until after it has realized the window.  Alternatively, the
+\fBginit\fP callback may be used to indicate when the window has been
+created.  Upon receiving this callback, the application can perform
+all GL initialization for the window, and can subsequently perform
+other GL operations on it.  The initialization is discussed in more
+detail below.
+.PP
+The widget will create additional windows for overlays, underlays, or
+popup planes if required, and if underlying support is available.  The
+remainder of this manual page will use the term \fBauxiliary
+windows\fP to refer to these additional windows.  The main window in
+the normal planes will be referred to as the \fBnormal window\fP.
+.PP
+If an application contains more than one GL window, it must use the
+\fBGLXwinset(3G)\fP call before doing any GL operations to a window.  This will
+select the appropriate window for the operation.  There are two common
+situations where there is more than one GL window.  One is where more
+than on GlxDraw widget is used in a program.  The other is where
+auxiliary windows are used.
+.PP
+Normally, the call to \fBGLXwinset\fP would be the first function
+called in each callback.  Callbacks in this case include not only
+callbacks provided by the widget itself, but any other callback that
+leads to GL activity such as a timeout or a workproc.  The call to
+\fBGLXwinset\fP should be of the form
+.br
+      GLXwinset(display, call_data->window);
+.br
+Using the window passed in the call_data has two purposes over using
+XtWindow(3X) to obtain the window.  First, it is more efficient, since
+it avoids the function call.  Second, if auxiliary windows are used,
+it obtains the correct window if this is an expose callback.  For
+other callbacks it may be necessary to use \fBXtGetValues(3X)\fP to obtain
+the values of \fBGlxNoverlayWindow\fP, \fBGlxNunderlayWindow\fP, or
+\fBGlxNpopupWindow\fP to
+determine the proper parameter to \fBGLXwinset\fP when using auxiliary
+windows.
+.ne 5
+.SS "GlxDraw Classes"
+GlxDraw inherits behavior and resources from the \fBCore\fP class.
+.br
+The class pointer is \fBglxDrawClass\fP.
+.br
+The class name is \fBGlxDraw\fP.
+.PP
+.ne 5
+.SS "GlxMDraw Classes"
+GlxMDraw inherits behavior and resources from the
+\fBXmPrimitive\fP and \fBCore\fP classes.
+.br
+The class pointer is \fBglxMDrawClass\fP.
+.br
+The class name is \fBGlxMDraw\fP.
+.sp 1
+.SS "New Resources"
+The following table defines a set of widget resources used by the programmer
+to specify data.  The programmer can also set the resource values for the 
+inherited classes to set attributes for this widget.  To reference a
+resource by name or by class in a .Xdefaults file, remove the \fBGlxN\fP or
+\fBGlxC\fP prefix and use the remaining letters.
+The codes in the access column indicate if the given resource can be
+set at creation time (\fBC\fP),
+set by using \fBXtSetValues\fP (\fBS\fP), 
+retrieved by using \fBXtGetValues\fP (\fBG\fP), or is not applicable (\fBN/A\fP).
+.sp 1
+.ne 9
+.TS
+center allbox;
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Name	Class	Type	Default	Access
+_
+GlxNexposeCallback	GlxCCallback	XtCallbackList	NULL	C
+GlxNginitCallback	GlxCCallback	XtCallbackList	NULL	C
+GlxNglxConfig	GlxCGlxConfig	GLXconfig*	{{0,0,0}}	CG
+GlxNinputCallback	GlxCCallback	XtCallbackList	NULL	C
+GlxNoverlayColormap	GlxCColormap	Colormap	dynamic	CG
+GlxNoverlayDepth	GlxCDepth	int	dynamic	G
+GlxNoverlayExposeCallback	GlxCCallback	XtCallbackList	NULL	C
+GlxNoverlayVisual	GlxCVisual	XVisualInfo*	dynamic	G
+GlxNoverlayWindow	GlxCWindow	Window	dynamic	G
+GlxNresizeCallback	GlxCCallback	XtCallbackList	NULL	C
+GlxNoverrideColormap	GlxCOverrideColormap	Boolean	TRUE	CG
+GlxNpopupColormap	GlxCColormap	Colormap	dynamic	CG
+GlxNpopupDepth	GlxCDepth	int	dynamic	G
+GlxNpopupExposeCallback	GlxCCallback	XtCallbackList	NULL	C
+GlxNpopupVisual	GlxCVisual	XVisualInfo*	dynamic	G
+GlxNpopupWindow	GlxCWindow	Window	dynamic	G
+GlxNunderlayColormap	GlxCColormap	Colormap	dynamic	CG
+GlxNunderlayExposeCallback	GlxCCallback	XtCallbackList	NULL	C
+GlxNunderlayDepth	GlxCDepth	int	dynamic	G
+GlxNunderlayVisual	GlxCVisual	XVisualInfo*	dynamic	G
+GlxNunderlayWindow	GlxCWindow	Window	dynamic	G
+GlxNuseOverlay	GlxCUseOverlay	Boolean	FALSE	CG
+GlxNusePopup	GlxCUsePopup	Boolean	FALSE	CG
+GlxNuseUnderlay	GlxCUseUndrlay	Boolean	FALSE	CG
+GlxNvisual	GlxCVisual	XVisualInfo*	Dynamic	G
+.TE
+.sp 1
+.IP "\fBGlxNexposeCallback\fP"
+Specifies the list of callbacks that is
+called when the widget receives an exposure event.
+The callback reason is \fBGlxCR_EXPOSE\fP.
+The callback structure also includes the exposure event.  The
+application will generally want to redraw the scene.
+.IP "\fBGlxNginitCallback\fP"
+Specifies the list of callbacks that is
+called when the widget is first realized.  Since no GL operations can
+be done before the widget is realized, this callback can be used to
+perform any appropriate GL initialization.
+The callback reason is \fBGlxCR_GINIT\fP.
+.IP "\fBGlxNglxConfig\fP"
+On widget creation, specifies the GL configuration information that is
+to be passed to \fBGLXgetconfig(3G)\fP.  The default is an empty
+configuration structure, providing the
+same default as \fBGLXgetconfig\fP
+After the widget is created, the actual configuration chosen can be
+obtained by doing an \fBXtGetValues(3Xt)\fP on this resource.  The
+passed in configuration structure may be freed after the widget is created.
+.IP "\fBGlxNinputCallback\fP"
+Specifies the list of callbacks that is
+called when the widget receives a keyboard
+or mouse event.  By default, the input callback is called on each key
+press and key release, on each mouse button press and release, and
+whenever the mouse is moved while a button is pressed.  However this
+can be changed by providing a different translation table.  
+The callback structure also includes the input event.
+The callback reason is \fBGlxCR_INPUT\fP.
+.IP ""
+The input callback is provided as a programming convenience, as it
+provides a convenient way to catch all input events.  However, a more
+modular program can often be obtained by providing specific actions and
+translations in the application rather than using a single catch all
+callback.  Use of explicit translations can also provide for more
+customizability. 
+.IP "\fBGlxNoverlayColormap\fP"
+Specifies the colormap to use in the overlay planes.  It
+is only meaningful if overlay planes were selected in the
+configuration.  If the colormap is not provided when the widget is
+created, the colormap returned by \fBGLXgetconfig(3X)\fP will be used.
+If a colormap is provided, it is the application programmer's
+responsible for guaranteeing that the colormap is compatible with the
+depths of the overlay planes.  Note that unlike the normal window, it
+is not necessary to specify an additional resource stating whether the
+colormap should be used; it will always be used if provided.
+.IP "\fBGlxNoverlayDepth\fP"
+Returns the depth of the overlay.  It is only meaningful
+if the overlays are in use.
+.IP "\fBGlxNoverlayExposeCallback\fP"
+Specifies the list of callbacks that is
+called when the overlay receives an exposure event.
+The callback reason is \fBGlxCR_EXPOSE\fP.
+The callback structure also includes the exposure event.  The
+application will generally want to redraw the overlay.
+.IP "\fBGlxNoverlayVisual\fP"
+Returns the visual for the overlay.  It is only meaningful
+if the overlays are in use.
+.IP "\fBGlxNoverlayWindow\fP"
+Returns the window that is used for the overlay.  It is only meaningful
+if the overlays are in use.
+.IP "\fBGlxNoverrideColormap\fP"
+If TRUE, specifies that the colormap returned by \fBGLXgetconfig\fP should
+be installed by the widget.  In this case, the \fBXtNcolormap\fP Core
+resource will be overridden when the widget is created.  After
+creating the widget, the \fBXtNcolormap\fP resource is set to the new
+colormap.  This is the default case.
+If \fBGlxNoverrideColormap\fP is FALSE, the colormap specified in the
+\fBXtNcolormap\fP Core resource will be used.   When setting this
+resource to FALSE, the
+programmer is responsible for making sure that the
+colormap is consistent with the request parameters to
+\fBGLXgetconfig\fP such as the depth.  Specifying an inconsistent
+colormap will result in an X Bad Match error.  This resource only has
+an effect if set at widget creation time.
+.IP "\fBGlxNpopupColormap\fP"
+Similar to \fBGlxNoverlayColormap\fP, but for the popup planes.
+.IP "\fBGlxNpopupDepth\fP"
+Similar to \fBGlxNoverlayDepth\fP, but for the popup planes.
+.IP "\fBGlxNpopupExposeCallback\fP"
+Similar to \fBGlxNoverlayCallback\fP, but for the popup planes.
+.IP "\fBGlxNpopupVisual\fP"
+Similar to \fBGlxNoverlayVisual\fP, but for the popup planes.
+.IP "\fBGlxNpopupWindow\fP"
+Similar to \fBGlxNoverlayWindow\fP, but for the popup planes.
+.IP "\fBGlxNresizeCallback\fP"
+Specifies the list of callbacks that is
+called when the GlxDraw is resized.
+The callback reason is \fBGlxCR_RESIZE\fP.
+The application may wish to call \fBviewport(3G)\fP using the supplied
+width and height parameters, and then redraw the scene.
+.IP "\fBGlxNunderlayColormap\fP"
+Similar to \fBGlxNoverlayColormap\fP, but for the underlay planes.
+Note that underlay support is not currently provided in GLX.
+.IP "\fBGlxNunderlayDepth\fP"
+Similar to \fBGlxNoverlayDepth\fP, but for the underlay planes.
+Note that underlay support is not currently provided in GLX.
+.IP "\fBGlxNunderlayExposeCallback\fP"
+Similar to \fBGlxNoverlayCallback\fP, but for the underlay planes.
+Note that underlay support is not currently provided in GLX.
+.IP "\fBGlxNunderlayVisual\fP"
+Similar to \fBGlxNoverlayVisual\fP, but for the underlay planes.
+Note that underlay support is not currently provided in GLX.
+.IP "\fBGlxNunderlayWindow\fP"
+Similar to \fBGlxNoverlayWindow\fP, but for the underlay planes.
+Note that underlay support is not currently provided in GLX.
+.IP "\fBGlxNuseOverlay\fP"
+To use the overlays this must be set to TRUE when creating the widget.
+.IP "\fBGlxNusePopup\fP"
+To use the popup planes this must be set to TRUE when creating the widget.
+.IP "\fBGlxNuseUnderlay\fP"
+To use the underlays this must be set to TRUE when creating the widget.
+Note that underlay support is not currently provided in GLX.
+.IP "\fBGlxNvisual\fP"
+Specifies the normal window's visual.  It is always computed when the widget
+is created, and cannot be specified by the application.
+.sp 1
+.SS "Inherited Resources"
+Both GlxDraw and GlxMDraw inherit behavior and resources from the core
+superclass.  For a complete description of each resource, refer to the
+man page for that superclass.  Motif programmers may use \fBXm\fP
+prefixes instead of \fBXt\fP prefixes where appropriate.
+.sp 1
+.ne 24
+.in 0
+.TS
+center allbox;
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Name	Class	Type	Default	Access
+_
+XtNaccelerators	XtCAccelerators	XtAccelerators	dynamic	CSG
+XtNancestorSensitive	XtCSensitive	Boolean	dynamic	G
+XtNbackground	XtCBackground	Pixel	dynamic	CSG
+XtNbackgroundPixmap	XtCPixmap	Pixmap	unspecified	CSG
+XtNborderColor	XtCBorderColor	Pixel	XtDefaultForeground	CSG
+XtNborderPixmap	XtCPixmap	Pixmap	unspecified	CSG
+XtNborderWidth	XtCBorderWidth	Dimension	0	CSG
+XtNcolormap	XtCColormap	Colormap	dynamic	CG
+XtNdepth	XtCDepth	int	dynamic	G
+XtNdestroyCallback	XtCCallback	XtCallbackList	NULL	C
+XtNheight	XtCHeight	Dimension	dynamic	CSG
+XtNinitialResourcesPersistent	XtCInitialResourcesPersistent	Boolean	True	C
+XtNmappedWhenManaged	XtCMappedWhenManaged	Boolean	True	CSG
+XtNscreen	XtCScreen	Screen *	dynamic	CG
+XtNsensitive	XtCSensitive	Boolean	True	CSG
+XtNtranslations	XtCTranslations	XtTranslations	dynamic	CSG
+XtNwidth	XtCWidth	Dimension	dynamic	CSG
+XtNx	XtCPosition	Position	0	CSG
+XtNy	XtCPosition	Position	0	CSG
+.TE
+.PP
+A few of the resources above behave somewhat differently in the GL
+widget.  \fBXtNdepth\fP is calculated when
+the visual is created; the depth cannot be specified explicitly except
+indirectly through the \fBGlxNglxConfig\fP resource.  If
+\fBGlxNoverrideColormap\fP is TRUE, than the
+default for \fBGlxNcolormap\fP is to calculate it dynamically based on the
+\fBGlxNglxConfig\fP parameter.
+.ne 18
+.PP
+In addition, the Motif version GlxMDraw also inherits from XmPrimitive.
+.in 0
+.TS
+center allbox;
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightOnEnter	XmCHighlightOnEnter	Boolean	False	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNhighlightThickness	XmCHighlightThickness	Dimension	0	G
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmNONE	G
+XmNshadowThickness	XmCShadowThickness	Dimension	0	G
+XmNtopShadowColor	XmCTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	False	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	Pointer	NULL	CSG
+.TE
+.in
+.PP
+The resources \fBXmNhighlightThickness\fP and \fBXmNshadowThickness\fP are
+unsupported and may not be changed.
+.sp 1
+.SS "Callback Information"
+A pointer to the following structure is passed to each callback:
+.sp 1
+.ne 6
+.nf
+.ta .25i 1.1i
+\fBtypedef struct\fP
+{
+	\fBint\fP	\fIreason\fP;
+	\fBXEvent\fP	\fI* event\fP;
+	\fBWindow\fP	\fIwindow\fP;
+	\fBint\fP	\fIbuffer\fP;
+	\fBDimension\fP	\fIwidth, height\fP;
+} \fBGlxDrawCallbackStruct\fP;
+.fi
+.sp 1
+.IP "\fIreason\fP" .75i
+Indicates why the callback was invoked.  Appropriate values are
+stated in the above resource descriptions.  For Motif programmers, the
+values \fBGlxCR_EXPOSE\fP, \fBGlxCR_RESIZE\fP, and \fBGlxCR_INPUT\fP
+are equal to \fBXmCR_EXPOSE\fP, \fBXmCR_RESIZE\fP, and
+\fBXmCR_INPUT\fP respectively.  \fBGlxCR_GINIT\fP does not have a
+Motif equivalent.
+.IP "\fIevent\fP" .75i
+Points to the \fBXEvent\fP that triggered the callback.
+This is NULL for \fBGlxNginitCallback and \fBGlxNresizeCallback\fP.
+.IP "\fIwindow\fP" .75i
+Is set to the appropriate window.
+Generally, this is the normal window.  However, for the auxiliary
+expose callbacks, this is the appropriate auxiliary window.
+.IP "\fIbuffer\fP" .75i
+Is the buffer type of \fBwindow\fP (as described in GLXgetconfig(3G)).
+It is one of \fBGLX_NORMAL\fP, \fBGLX_OVERLAY\fP, \fBGLX_UNDERLAY\fP,
+and \fBGLX_POPUP\fP.
+.IP "\fIwidth\fP and \fIheight\fP" .75i
+Are set to the width and height of the window.
+.br
+.ne 10
+.sp 1 \"Adds space before the SS
+.SS "Translations"
+GlxDraw has the translations listed below.
+\fB
+.nf
+.ta 1.5i
+.ne 5
+<KeyDown>:	glxInput()
+<KeyUp>:	glxInput()
+<BtnDown>:	glxInput()
+<BtnUp>:	glxInput()
+<BtnMotion>:	glxInput()
+.fi
+.PP
+GlxMDraw has the following additional translation:
+\fB
+.nf
+.ta 1.5i
+<Key>osfHelp:	PrimitiveHelp()
+.fi
+.PP
+An application wishing to catch other events than these defaults can
+do so by installing a different translation table.
+\fP
+.sp 1 \"Adds space before the SS
+.SS "Action Routines"
+The GlxDraw has the following action routine:
+.IP "\fBglxInput()\fP:"
+Called whenever one of the above translations specifies that input has
+occurred.  Its sole purpose is to call the input callback.
+.sp 1
+.SH INITIALIZATION 	
+.PP
+When the widget is initially created (e.g. through
+\fBXtCreateWidget(3X)\fP) the associated window is not actually
+created.  Instead, window creation is delayed until the widget is
+realized.  However, \fBGLXgetconfig(3G)\fP is called immediately, so
+information based on its results is available.
+.PP
+Between the time the widget is created and it is realized,
+the following apply:
+.TP
+\(bu
+No GL operations can be done to the window
+.TP
+\(bu
+No resize callbacks are generated.
+.TP
+\(bu
+Neither the normal window nor the auxiliary windows are available.
+.PP
+When the widget is realized, the following actions take place:
+.PP
+.TP
+\(bu
+The normal window and any auxiliary windows are created.
+.TP
+\(bu
+\fBGLXlink(3G)\fP is called.  An application using the GlxDraw widget
+should never need to call \fBGLXlink(3G)\fP.  (Similarly it should
+never need to call \fBGLXunlink(3G)\fP as that is called when the
+widget is destroyed.)
+.TP
+\(bu
+\fBGLXwinset(3G)\fP is called on the normal window.  If an application
+has only one GL window, it need never call \fBGLXwinset(3G)\fP. 
+.TP
+\(bu
+The \fBginit\fP callback is called.  The user may use this callback to
+perform any needed GL initialization to the window.
+.PP
+The GlxDraw widget will generally use a different colormap
+than the X based portion of the application.  The colormap may need
+to be installed using \fBXSetWMColormapWindows(3X11)\fP.  (Auxiliary
+windows will also need their colormaps installed, as describe in the
+next section.)
+.sp 1
+.SH "OVERLAYS, UNDERLAYS, and POPUP PLANES"
+.PP
+To include auxiliary windows, the following steps must be taken:
+.TP
+\(bu
+Verify that there is support for the appropriate type of auxiliary
+window.  Not all hardware supports overlays.  Currently, the
+underlying GLX does not support underlays.
+.TP
+\(bu
+Set the \fBGlxNuseOverlay\fP, \fBGlxNuseUnderlay\fP, or
+\fBGlxNusePopup\fP resources as appropriate to TRUE.
+.TP
+\(bu
+Set the appropriate entries in the \fBGlxNconfig\fP parameter as
+described in \fBGLXgetconfig(3G)\fP.
+.TP
+\(bu
+Create the widget as normal.
+.TP
+\(bu
+Make sure that the auxiliary colormap is installed along with the
+GlxDraw colormap using \fBXSetWMColormapWindows(3X11)\fP.  (Note that
+the call to \fBXSetWMColormapWindows(3X11)\fP will usually
+specify three windows in this case:  the overlay window, the GlxDraw
+window, and the top level window.)
+.TP
+\(bu
+Provide an expose callback routine for each auxiliary used, by setting
+\fBGlxNoverlayExposeCallback\fP, \fBGlxNunderlayExposeCallback\fP, or
+\fBGlxNpopupExposeCallback\fP.
+.TP
+\(bu
+Before drawing to an auxiliary window, do a \fBGLXwinset(3G)\fP to
+that window.  The window ID can be obtained from the callback if the
+drawing is in response to an expose, or by querying the
+\fBGlxNoverlayWindow\fP, \fBGlxNunderlayWindow\fP or
+\fBGlxNpopupWindow\fP resources.
+.sp 1
+.SH NOTES
+.PP
+When using the input callback to receive keyboard input, the keycode
+in the event must be converted to a KeySym.  Use
+\fBXLookupKeysym(3X)\fP or \fBXLookupString(3X)\fP to do the
+conversion.  Keyboard input can also be dealt using translations, in
+which case no such conversion is required.
+.PP
+GL programs will typically draw their backgrounds by using
+\fBclear(3G)\fP, \fBgclear(3G)\fP, or some similar routine in a
+specified color.  Thus, the XtNbackground resource will have no direct
+effect.  To get a matching background in GL, first use XtGetValues on
+the XtNbackground resource to find the background color and use that
+color explicitly.  However, be aware that the background pixel was set
+relative to the parent's colormap, not the GlxDraw widget's colormap.
+Motif programs may also choose to make use of the
+XtNforeground resource in a similar manner.
+.PP
+GL functions such as \fBgetsize(3G)\fP and \fBgetorigin(3G)\fP require
+round trips to the server and are thus slow.  It is quicker to use
+XtGetValues to obtain the XtNx, XtNy, XtNheight, and XtNwidth values
+directly from the widget.
+.PP
+To work properly over the network using the Distributed Graphics
+Library (DGL), applications may need to
+call \fBgflush(3G)\fP after drawing using GL.  The end of each callback and
+action routine is a good place to include the call.  Alternatively, if
+there is a common drawing routine used by all callbacks and actions,
+the \fBgflush(3G)\fP call may be placed at the end of that routine.
+.PP
+Providing a user colormap is handled slightly differently for normal
+and for auxiliary windows.  For normal windows, the colormap is a
+standard Core resource for which a default already exists.
+Consequently, the default colormap will be overridden by the result of
+\fBGLXgetconfig(3G)\fP unless \fBGlxNoverrideColormap\fP resource is
+set to FALSE.  For auxiliary windows, there is no preexisting default
+colormap, so if a user provided colormap is provided, it will always
+be used.
+.PP
+Motif programmers should keep in mind that OSF uses virtual
+bindings and replaces some of the key bindings.  As a common example,
+if the ESC key is to be used to exit the program (as it often is in GL
+programs), the translation should specify <key>osfCancel instead of
+<key>Escape.
+.PP
+Motif programmers may also create a GlxMDraw widget with the Motif
+style \fBGlxCreateMDraw(3X)\fP.
+.sp 1
+.ne 10
+.SH EXAMPLE
+Here are some code fragments that create a GlxDraw widget, and manage
+the appropriate callbacks.
+.sp
+.nf
+\f(CW
+   #include <Sgm/GlxDraw.h>
+   . . .
+   /* The following configuration should match your hardware needs as */
+   /* Described in GLXgetconfig(3X)                                   */
+   GLXconfig db_rgb_desc[] = {
+      { GLX_NORMAL,	GLX_RGB,	TRUE },
+      { GLX_NORMAL,	GLX_DOUBLE,	TRUE },
+      { 0, 0, 0 }
+   };
+
+   main()
+   {
+       Arg args[10];
+       int n;
+
+       Widget parent;	/* The parent of the gl widget */
+       Widget glw;	/* The glxDraw widget          */
+       . . .
+       n = 0;
+       XtSetArg(args[n], GlxNglxConfig, db_rgb_desc); n++;
+       glw = XtCreateManagedWidget("glx", glxDrawWidgetClass,
+				   parent, args, n);
+       XtAddCallback(glw, GlxNexposeCallback, exposeCB, 0);
+       XtAddCallback(glw, GlxNresizeCallback, resizeCB, 0);
+       XtAddCallback(glw, GlxNginitCallback, ginitCB, 0);
+       /* Also add input callback if need be */
+       . . .
+   }
+
+   static void
+   exposeCB(w, client_data, call_data)
+       Widget w;
+       caddr_t client_data;
+       GlxDrawCallbackStruct *call_data;
+   {
+       GLXwinset(display, call_data->window);
+       /* redraw the display */
+   }
+
+   static void
+   resizeCB(w, client_data, call_data)
+       Widget w;
+       caddr_t client_data;
+       GlxDrawCallbackStruct *call_data;
+   {
+       GLXwinset(display, call_data->window);
+       viewport(0, (Screencoord) call_data->width-1,
+		0, (Screencoord) call_data->height-1);
+       /* redraw the display */
+   }
+
+   static void
+   ginitCB(w, client_data, call_data)
+       Widget w;
+       caddr_t client_data;
+       GlxDrawCallbackStruct *call_data;
+   {
+       GLXwinset(display, call_data->window);
+       /* Perform any necessary graphics initialization.*/
+   }
+\fP
+.fi
+.P
+The Motif program need only differ by including
+\fBGlxMDraw.h\fP instead of \fBGlxDraw.h\fP and by creating a widget of type
+\fBGlxMDrawWidgetClass\fP instead of \fBGlxDrawWidgetClass\fP.  As an
+alternative, the Motif program could use \fBGlxCreateMDraw(3X)\fP instead.
+.sp 1
+.SH WARNINGS
+.PP
+The GlxDraw should be used only for GL drawing.  Using X drawing to a
+GlxDraw is unsupported.
+.PP
+All color resources (e.g \fBXtNbackground\fP) specify pixels in the
+GlxDraw's parent's colormap.  Since GL does not directly make use of these
+resources, this won't normally be a problem.  However, if a program
+wishes to query such a color (for example, to make a matching
+background in the GlxDraw widget), it should use the parent's colormap.
+.PP
+Colormaps should be installed using \fBXSetWMColormapWindows(3X11)\fP.
+This requests that the window manager install the appropriate
+colormaps every time the pointer enters the window.  Colormaps should
+not be installed with \fBXInstallColormap(3X11)\fP.
+.PP
+If a GlxDraw widget is created as a child of an already realized
+widget, the GlxDraw widget will be created immediately, without giving
+the user an opportunity to add the \fBginit\fP callback.  In such a
+case, initialization should be done immediately after creating the
+widget rather than by using the callback.
+.PP
+If the non-Motif GlxDraw widget is used in a Motif program and
+keyboard traversal is attempted, the behavior is undefined if the user
+traverses into the GlxDraw widget.
+.SH RELATED INFORMATION
+\fBGLXgetconfig(3G)\fP, \fBGLXwinset(3G)\fP,
+\fBGlxCreateMDraw(3X)\fP,
+\fBCore(3X)\fP, \fBXmPrimitive(3X)\fP, \fBVirtualBindings(3X)\fP,
+\fBGflush(3G)\fP, \fBXSetWMColormapWindows(3X11)\fP
+and the "IRIS NeWS to X Transition Guide"

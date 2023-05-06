@@ -1,0 +1,110 @@
+
+          ---------------------------------------------------
+          README for ~4Dgifts/iristools/abekas/_panel program
+          ---------------------------------------------------
+
+
+*****************************************************************
+* V E R S I O N   2 . 0 . 1					*
+*****************************************************************
+
+Abekas A60 Control Panel
+Copyright 1990 	Rhonda Graphics, Inc.
+		2235 W. Alice
+		Phoenix, AZ 85021
+		602-371-8880
+
+
+Acp creates an Abekas keyboard on your SGI 4D.  The keyboard functions
+in the same manner as the actual Abekas keyboard.  In addition, some
+functions of the A60 menus are provided in pop-up menus.
+
+Acp consists of the files:
+	drive.c - main & user interaction
+	button.c - nifty "3D buttons"
+	a60comm.c - ethernet communication to the A60
+	a60.h - definitions
+	Makefile - the makefile
+
+Acp works by establishing an ethernet connection to your a60.  The name acp
+uses to establish the connection is "a60".  This name must be in your 
+workstation's "/etc/hosts" file, as the name or alias for the a60.
+
+To operate the keyboard simply press any mouse button over the desired key.
+See your A60 operations manual for further details on key functions.
+The following keys do not work:
+	menu
+	record
+	trim
+	enter
+	field
+The record, trim, and field keys will be working in a later release.
+The menu and enter keys don't seem to have a purpose in this keyboard.
+(Acp has no effect on the A60 menu monitor.)
+
+The Mousepad.
+This is the area to the right of the keyboard where the trackball on the
+real keyboard is.  This area allows you access to play/stop/rewind functions
+without having to look back at the workstation to position the mouse.
+When the mouse is over this area:
+			"PLAY" pad	"JOG" pad
+	left button	reverse		jog + 1
+	middle button	stop
+		stop	right button	play
+		jog - 1
+If you continue to hold the button down, the function will repeat.
+
+
+Menus.
+A pop-up menu appears when the right button is pressed over the gray
+background.
+	enable/disable - performs this function on the real keyboard.
+	frame mode - A60 displays frames
+	field mode - A60 displays fields
+	601 input #1 - video in comes from source #1
+	601 input #2 - video in comes from source #2
+	clearsegs - remove all defined segments from the segment list.
+	record lockout - protects or unprotects the segment defined by
+		the current in and out values.
+	patterns - writes test patterns into the A60 framestore. Note that
+		the pattern is not put on the disk.
+	makemap - remake the color palette (after it has been destroyed
+		by model or preview).
+	trigger - set the timecode trigger.
+	exit
+
+Acp opens an ethernet connection when run, so it will be unsuccessful if
+another connection (rlogin) is already open.  If acp is closed (or "stowed")
+the connection is closed, then reopened when the icon is reopened.
+
+
+
+*****************************************************************
+* IMPORTANT NOTE ABOUT THE FRAME NUMBER DISPLAY			*
+*****************************************************************
+
+The display of the current disk location in the top right hand corner
+is a new feature.  However, it is possible for this display to be
+incorrect!
+
+	a) any play,jog, or goto by someone using the normal control panel
+	   will not be reflected on the workstation!
+	b) due to a mysterious bug, the display will sometimes be
+	   one frame off after using the jog button several times in
+	   a row.  I would love to hear from anyone who can solve this
+	   problem.  A kludge in the code has reduced the frequency that
+	   this pops up.
+
+To make sure that the display is correct, press stop (or the middle button
+over the play/jog pad).  This will cause the correct frame number to be
+displayed.
+
+
+
+*****************************************************************
+* ACP Icon							*
+*****************************************************************
+
+An icon is provided for when the program is "stowed".  The file "acp.icon"
+must be copied to "/usr/NeWS/icons".
+

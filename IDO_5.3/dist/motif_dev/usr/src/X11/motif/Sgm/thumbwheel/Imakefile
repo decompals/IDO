@@ -1,0 +1,24 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.7 $ $Date: 1993/11/09 02:37:52 $
+
+       DEPXMLIB = $(ROOT)/usr/lib/libXm.so
+          XMLIB = -L$(ROOT)/usr/lib -lXm
+
+       INCLUDES = -I.
+LOCAL_LIBRARIES = SgmClientLibs
+          SRCS1 = thumbwheel.c
+          OBJS1 = thumbwheel.o
+       PROGRAMS = thumbwheel
+          FILES = Imakefile Thumbwheel thumbwheel.c
+
+NormalLibraryObjectRule()
+
+MComplexProgramTarget_1(thumbwheel,$(LOCAL_LIBRARIES),NullParameter)
+
+InstallMultiple($(FILES), $(MDEMOSRCDIR))

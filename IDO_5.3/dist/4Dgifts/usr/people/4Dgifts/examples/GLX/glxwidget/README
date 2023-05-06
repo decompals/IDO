@@ -1,0 +1,35 @@
+
+        --------------------------------------------------------------
+        Explanation of the contents of ~4Dgifts/examples/GLX/glxwidget
+        --------------------------------------------------------------
+
+     The widget directory contains the GlxDraw and GlxMDraw widget for 
+     drawing GL inside of an Xt based program.  GlxDraw is widget set 
+     independent, while GlxMDraw is specifically set up for Motif 
+     users.
+     
+     The subtree directory structure is as follows:
+     
+     	widget contains the widget code itself.
+     
+     	demos contains various demos.
+     
+     Although the widget directory contains the source to the widget,
+     it is not necessary to build it in order to build the demos, as
+     they link directly against the Xirisw library.  The widget code
+     is provided only for reference.
+     
+     The README file in the demos directory describes what the various 
+     programs included here demonstrate.  The original programs in 
+     ~4Dgifts/examples/grafix/{scrn_rotate, zrgb, zcmapmenu, zrgbmenu}
+     were used to show the difference as to how they would look if there
+     implemented athena widgets (azrgbinput.c), or motif widgets (mscrn*, 
+     mzcmapmenu.c, mzrgb*).  The others are new.
+ 
+     Be sure to study the README.TransG-chp5, an on-line, "ascii-
+     viewable" copy of chapter 5 of the "IRIX 4D1-4.0 Transition Guide, 
+     Programming Environment".  It was felt a copy of this chapter 
+     focusing on GL rendering applications implementing GL Widgets was 
+     important to include here to achieve the widest possible 
+     accessibility by programmers.
+    

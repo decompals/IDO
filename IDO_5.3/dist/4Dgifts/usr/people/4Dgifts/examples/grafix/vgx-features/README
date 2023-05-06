@@ -1,0 +1,33 @@
+
+
+
+              -------------------------------------------------
+              Explanation of the contents of the VGX directory.
+              -------------------------------------------------
+
+     This subtree is populated with various new routines that are 
+     available only on machins with the VGX feature set. These features 
+     include texture mapping, motion blurring, arbitrary clip planes, 
+     and new light features.
+
+     "acbuf" contains examples of using the accumulation buffer for such
+     affects as motion blurring (using both box and geometric filtering
+     methods), and scene antialiasing.
+
+     "clip" contains code that differentiates between objects moving
+     through static arbitrary clipping planes and arbitrary clipping planes 
+     moving through static objects. Also demonstrated is how to clip
+     out a concave shapped object through a multiple pass technique.
+
+     "light" has enhancements of code from the graphics programming
+     guide that demonstrates spotlights, lighting models which light
+     both sides, and an interactive program which demonstrates 
+     attenuation, including the new square attenuation factor.
+
+     "stencil" includes examples that demonstrate using the stencil
+     planes as a way of exercising a "superior z-buffer test".
+
+     "texture" has code which demonstrates reading in an SGI image
+     file to use as a texture, allows the system to generate texture
+     coordinates to simulate contouring, "wrapping paper", or to
+     simulate reflecting surfaces, and adding textures to a nurbs surface.

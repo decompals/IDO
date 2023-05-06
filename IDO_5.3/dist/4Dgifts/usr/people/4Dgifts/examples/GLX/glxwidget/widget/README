@@ -1,0 +1,22 @@
+
+
+     ---------------------------------------------------------------------
+     Explanation of the contents of ~4Dgifts/examples/GLX/glxwidget/widget
+     ---------------------------------------------------------------------
+
+     This directory contains the GlxDraw and GlxMDraw widget for drawing GL
+     inside of an Xt based program.  GlxDraw is widget set independent,
+     while GlxMDraw is specifically set up for Motif users.  Both
+     widgets are based on the same source file (GlxDraw.c) and the
+     differences are controlled by #ifdef __GLX_MOTIF.
+     
+     The purpose of this directory is for users interested in
+     examining the source of these widgets, or who wish to modify
+     their behavior.  However, users should normally link against the
+     version of this widget included in the Xirisw library.
+
+     These files are for informational purposes and can demonstrate how
+     to write your own mixed-mode GL-based widgets.  However SGI does not
+     guarantee that this source code absolutely matches the GLxDraw
+     widget that is shipped as part of the system.
+

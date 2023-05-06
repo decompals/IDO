@@ -1,0 +1,107 @@
+
+     --------------------------------------------------------------------
+     Explanation of the contents of ~4Dgifts/examples/GLX/glxwidget/demos
+     --------------------------------------------------------------------
+
+
+    This directory includes several demos of mixed mode programming using
+    the GlxDraw and GlxMDraw widgets.  All programs make heavy use of
+    default resources.  The resources are set both as fallback
+    resources within the program, as well as being provided in the
+    app_defaults file 4DgiftsGlx.  Normally, this file should be
+    installed in /usr/lib/X11/app_defaults/4Dgifts, although the
+    presence of fallback resources will allow the programs to run
+    correctly without so installing them.
+
+    Note that the demos do all set their class to 4DgiftsGlx.  In a
+    normal X program, the class name is usually the program name with
+    an upper case initial.  However for demos, it simplifies things to
+    share a single class name and defaults file.
+    
+    Most of the demos are based on existing demos provided in 4Dgifts (in
+    the directory /usr/people/4Dgifts/examples/grafix).
+    
+    Some of the programs use the routine WidgetBackgroundToGlRgb included
+    in the file wbkgtoglrgb.c.  This function will extract the background
+    color of a widget and returns an RGB value suitable for use in
+    czclear.  This is used to give the gl widget the same background as
+    the reset of the program.  The similar routine WidgetBackgroundToGlC3
+    in the file wbkgtoglc3i.c converts the background to a format
+    suitable for c3i.
+
+    The function installColormap in the file installcmap.c will
+    install the GlxDraw widget's colormap on the top level window,
+    so the window manager knows that it must install the appropriate
+    colormap.  The function installColormapWithOverlay in the file
+    installcmapov.c is similar except that it also installs colormaps
+    for auxiliary windows (e.g. overlay and popup).
+
+    The function CopyGlColormap in the file copycmap.c will create a
+    new colormap for the GlxDraw widget, cloning specified colors out
+    of the X colormap.  It is used by the mscrn_rotate demos.
+
+    The following are the demos provided.
+    
+    mscrn_rotate
+        A variation on scrn_rotate from 4Dgifts, this program allows
+        rotation and translation of a cube.  The program puts a Motif
+        frame around the GL window, and uses translations to handle input.
+        The program operates much slower than the corresponding GL
+        program, as it only performs one action per keyboard event, thus
+        limiting the speed to the keyboard repeat rate.
+    
+    mscrn_rotate_wp
+        The same program as above, except that workprocs are used to
+        achieve performance comparable to GL.
+    
+    mscrn_rotate_btn
+        This version uses Motif arrow buttons rather than using the
+        keyboard.  It also has the quit key on a menu instead of using
+        ESC.
+    
+    mscrn_rotate_scale
+        This version uses scrollbars to control the cube.
+    
+    mzrgbinput
+        A variation on the zrgb program from 4Dgifts, this program
+        allows rotation allows rotation of 3 intersecting RGB polygons
+        through the use of the mouse.  Mouse events and the ESC key for
+        exit are handled through the input callback.  The GL window is
+        inside a motif frame within a motif form.
+    
+    azrgbinput
+        The same as mzrgbinput except that it uses an Athena form and the
+        generic GlxDraw widget instead of using Motif widgets.
+    
+    mzrgbtrans
+        Like mzrgbinput, except that it uses translations instead of the
+        input callback to get mouse events and the ESC key.
+    
+    mzrgbmenu
+        Like zrgbmenu from 4Dgifts, this program includes a menu that
+        allows manual or automatic rotation mode.  The menu is on a Motif
+        menu bar.
+    
+    mzcmapmenu
+        Like zcmapmenu from 4Dgifts, this program uses a colormap instead
+        of RGB.    
+    
+    network
+        This program draws a network using GL.  A motif scrollbar controls
+        the speed of data around the network.  (This demo is not
+        based on a current 4Dgifts GL demo).
+     
+    netuil
+	This is the same as network, except that it is implemented
+	using uil.  The GlxMDraw widget is treated as a user defined
+	widget.  There are two auxiliary files that go with this.
+	netuil.uil is the uil file for this program.  glxuil.uil is a
+	description of the GlxMDraw widget.  It is included by
+	netuil.uil, and can be included in any other uil file that
+	needs to use the GlxMDraw widget
+
+   overlay
+       A variation on overlay_cursor in 4Dgifts it draws a house in
+       the overlay planes (or popup if necessary) and places a car
+       behind the house.  The car can be moved with the pointer.
+  

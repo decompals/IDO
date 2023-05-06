@@ -1,0 +1,6 @@
+
+If cube.c is compiled with -DUSE_XINPUT, the resulting program will
+use the GL for drawing, but will get its events directly from X.
+
+(Specifically, with USE_XINPUT, the X input extension is used for
+reading spaceball events.)

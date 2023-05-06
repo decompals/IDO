@@ -1,0 +1,4 @@
+! resources for the File Selection Box Demo
+! use this for the Buffed File Selection Box
+fsb*sgiMode: true
+fsb*useEnhancedFSB: true

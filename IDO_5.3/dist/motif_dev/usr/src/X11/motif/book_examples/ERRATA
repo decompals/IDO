@@ -1,0 +1,138 @@
+The following are various minor changes and problems that have been found
+in the accompanying code or the first printing of the book. Code changes
+have already been incorporated in the code and will be fixed in later
+printings of the text.
+
+Feb 2,1990
+
+** Makefile
+
+On some systems the library may need to be built with the "clq" or other
+options to ar rather than the "ruv" options specified in the makefile
+
+** Appendix B
+
+Several widget resource listings specify NULL as the default for resources
+such as XmNokLabelString, XmNhelpLabelString, etc. These get defaulted at
+run time to "OK", "Help", etc.
+
+** Pg 199.
+
+#include <Xw/Xw.h> is unnecessary and should be removed or changed to Xm/Xm.h
+
+
+** pg 240
+
+strdup() isn't available on all systems. To be safe, replace
+
+      else
+        buf = strdup(text);
+
+with
+
+    else {
+      buf = (char *) XtMalloc(strlen(text) +1);
+      strcpy(buf, text);
+    }
+
+
+** Pg 318.
+
+The event handler must be registered using ButtonPressMask instead of
+ButtonPress.
+
+** pg. 322.
+
+The request_selection function should be registered as a callback, not an
+event handler. The correct line is:
+
+ XtAddCallback(request, XmNactivateCallback,
+               request_selection, selection);
+
+Also, on the next line, the event handler must be registered using
+ButtonPressMask instead of ButtonPress.
+
+
+** Chapter 12. 
+
+The Dial example has some confused mis-use of GC's. The following changes
+should be made:
+
+** Pg 353-354
+
+Replace all XCreateGC() calls in Initialize() with XtGetGC()
+
+** Pg. 355 
+
+Accordingly, change all calls to XFreeGC() in Destroy() to XtReleaseGC():
+
+static void Destroy (w)
+     XsDialWidget w;
+{
+  XtReleaseGC (w, w->dial.indicator_GC);
+  XtReleaseGC (w, w->dial.dial_GC);
+  XtReleaseGC (w, w->dial.inverse_GC);
+  XtRemoveAllCallbacks (w, XtNselectCallback,
+                         w->dial.select);
+}
+
+
+** Pg 357.
+
+Add the following text before the last sentence, first paragraph
+
+"However, in this example, the graphics contexts have been created using
+XtGetGC(), which creates GCs that may be shared by others.  Therefore we
+must not alter the GC in any way, or at least we must undo any changes
+immediately. For this example we will take the easy way out and simply not
+use the information in the region argument, redrawing the entire face of
+the dial instead."
+
+** Finally,
+
+Eliminate the calls to XSetRegion() in the Redisplay() method.
+
+** pg 376
+
+The heading of section 13.2.2 should say "Public" not "Private"
+
+** pg 382: 
+
+The first field of the XtWidgetGeometry structure is request_mode, not
+mask. The structure also has a border_width member.
+
+** Pg. 382.
+
+Second to the last sentence, last full paragraph should read:
+
+"If the changes are unacceptable, or if the child's current geometry is
+identical to the child's preferred geometry, the method should return
+XtGeometryNo."
+
+** Pg 383.
+
+The comparison on the last two lines of code is incorrect in the book. It
+should be
+
+if(preferred->width <= request->width &&  
+            preferred->height <= request->height){
+
+similarly, in the same routine, the logic should be
+
+if(request->request_mode & CWWidth){
+      if(preferred->width <= request->width){
+         	preferred->width = request->width;
+         return (XtGeometryYes);
+
+and 
+
+if(request->request_mode & CWHeight){
+      if(preferred->height <= request->height){
+         	preferred->height = request->height;
+         	return (XtGeometryYes);
+
+
+
+
+
+

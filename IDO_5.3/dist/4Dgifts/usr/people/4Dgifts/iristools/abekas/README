@@ -1,0 +1,138 @@
+
+            ----------------------------------------------------
+            Explanation of the ~4Dgifts/iristools/abekas subtree
+            ----------------------------------------------------
+
+
+                               Abekas Tools
+
+                           Abekas Video Systems
+                                   1991
+
+
+
+PLEASE NOTE:
+As with all gifts in the 4Dgifts subtree, software in the abekas subtree is
+free.  Software is provided with the intent to help you learn by example.
+Furthermore, all software is for use only on Silicon Graphics platforms only.
+While we welcome your feedback, ideas and requests (please contact ABEKAS
+directly (Abekas Techincal Support's fown number is 415/599-4061) with any 
+feedback you may have--they are the sole creators of this subtree) IT IS 
+ESSENTIAL TO UNDERSTAND THAT THESE GIFTS ARE UNSUPPORTED BY SILICON GRAPHICS 
+OR ABEKAS VIDEO SYSTEMS.  Therefore, any use of these goodies is done so at 
+the users risk.  Though efforts are made to provide working examples, no 
+guarantee (express or implied) is given for the performance of the software 
+or suitability for a particular purpose.
+
+We wish to thank Rhonda Graphics Inc. of Phoenix AZ for the inclusion of their
+acp (Abekas Control Panel) code.  In addition, thanks to Paul Meyer of NASA for
+his scripts.
+
+Feel free to cut and paste from the software provided.  Tools included in these
+directories may be useful as is or at least give an example for creating your
+own.
+
+ Makefile - This will build all the tools in this directory.  Just type "make".
+
+ README - This file.
+
+ _panel - A directory containing a control panel from Rhonda Graphics Inc.
+
+ _rs232 - A directory containing some basic functions for RS-232 control of an
+          A60 or A64 from an SGI platform.
+
+ _scripts - A directory containing some useful shell scripts.
+
+ scsi.doc - This file contains in depth help on scsi connections to/from Abekas
+            A60/A64 disk recorders from SGI platforms.
+
+Most of the software herein is provided as separate tools.  It shouldn't be too
+difficult to merge them together.  Note that 'toyuv' deals with frames but
+'engoop' and 'scwrite' deal with fields so somewhere you need to split the
+frame up.
+
+Many of the programs contain constant #defines at the top for the differences 
+between 625 and 525 line systems. For 525 line systems you need to add a line
+that says #define LINES_525
+
+ abklib.c - This file is a collection of functions used with yuv.c.  
+
+ degoop.c - Usage: degoop <field> infile outfile                      
+                           field is the intended dest field on the A60
+                        eg field 100 is a f1 (as an rcp file spec f50.yuv)
+                           field 101 is a f2 (as an rcp file spec f50+.yuv)
+
+    Takes a YUV field in Abekas tape (SCSI) format and strips line numbers and
+    syncs for a clean YUV field.                                         
+
+ engoop.c - Usage: engoop <field> infile outfile                      
+                           field is the intended dest field on the A60
+                        eg field 100 is a f1 (as an rcp file spec f50.yuv)
+                           field 101 is a f2 (as an rcp file spec f50+.yuv)
+
+    Takes a YUV file and adds the formatting necessary for transfer to the A60
+    through the SCSI port or to tape.  Ethernet transfers use only the active
+    portion of the display, SCSI format requires line syncs (like CCIR 601
+    digital video) and line number information to be added to the data stream.
+    The program has to know whether the field is a field 1 or a field 2. The
+    next parameter is therefore the destination field number on the disk
+    (numbered from 0).  On 525 line systems field 0 on the disk is a field 1
+    and contains the even lines.  For 625 it contains the odd lines.
+
+ mycp.c - Usage: mycp file.yuv A60_frame frames
+
+    Quick lash up to test homebrew rcp using sockets.  'r' commands protocol is
+    reverse engineered by watching what real systems do.  Socket stuff comes
+    from the IPC Primer "Networking on the Sun Workstation".  Don't expect this
+    to connect to a real Unix shell or login service.  They are more security
+    conscious and require you to be bound to a privileged port on the local
+    machine.                                         
+
+ scread.c - Usage: scread
+
+    This program reads one field at a time from an A60 on the SCSI port.  The
+    syncs and line numbers included in the SCSI transfer must be stripped
+    separately.  Degoop may be used for this function.
+
+ readlabel.c - Usage: readlabel
+
+    This example reads the first block of the A60.           
+
+ ready.c - Usage: ready
+
+    This example determines if a SCSI device is ready.       
+
+ rgb2yuv.c - Usage: rgb2yuv
+
+    This program converts an RGB file to an Abekas YUV file.  The syncs and line
+    numbers needed for SCSI transfer must be added separately.  Engoop is used
+    for this function.  (NOTE: This program is useful for speeding up Ethernet
+    transfers since the internal A60 RGB->YUV conversion is slower than running
+    this program on an Iris.)
+
+ scscan.c - Usage: scscan
+
+    This proggy dumps Abekas SCSI format decoding syncs and line #'s 
+
+ status.c - Usage: status
+
+    This program demonstrates how to read the A60 status by reading a single
+    block from block 0 through via SCSI.
+
+ scwrite.c - Usage: scwrite
+
+    This program writes one field at a time to a specified location on the A60
+    on the SCSI port.  The syncs and line numbers needed for SCSI transfer must
+    be added separately.  Engoop may be used for this function.
+
+ yuv.c - Usage: yuv
+
+    This program puts an Abekas YUV frame in a window on the Iris screen.  The
+    YUV file must be free of the syncs and line numbers found in SCSI transfers.
+    Engoop may be used for this function.
+
+ yuv2rgb.c - Usage: yuv2rgb
+
+    This program converts an Abekas YUV file to an RGB file.  If syncs and line
+    numbers needed for SCSI transfer are in the YUV file, they must be stripped
+    off before using yuv2rgb.  Degoop may used for this function.

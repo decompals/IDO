@@ -1,0 +1,530 @@
+
+  The following is an on-line, "ascii-viewable" version of chapter 5 of the
+  "IRIX 4D1-4.0 Transition Guide, Programming Environment".  It is included
+  here in the interest of making this information be as widely accessible
+  as possible since mixed model programming offers some of the greatest
+  challenges to programmers in the IRIX 4.0 software release.
+ 
+
+
+                                 Chapter  5
+
+                                 GL Widgets
+
+
+     There are two ways to create mixed model programs using X and the GL.
+     Programs written in X without the benefit of the X toolkit or a 
+     widget set such as Motif are written in the manner described in the 
+     previous chapter.  Developers interested in mixing the GL with Xt,
+     Motif, or Athena widgets can use the GlxDraw widget provided with 
+     IRIX release 4D1-4.0.  The GlxDraw widget is really two widgets 
+     designed to simplify mixed model programming for use with Motif or 
+     any other widget set.
+
+     Using Xt and Motif in a mixed model program provides several 
+     advantages over using native X.  Use of the toolkit hides many of the 
+     complexities of X programming and of mixed model programming in 
+     particular.  Xt also provides several useful features to a mixed 
+     model programmer for handling input and dealing with animation.  User 
+     Interface Language (UIL) is supported as a user defined widget with 
+     the GL widgets.
+
+     Mixed model programs can have a Motif control panel that controls GL 
+     graphics.  Mixed model programs can also allow you to write the same 
+     program in pure X and in mixed model for different platforms.  If all 
+     controls are implemented in Motif, you can separate graphics code 
+     from X code and make separate X and GL versions.  
+
+     The main area that this section details is the new GlxDraw widget for
+     embedding GL in an Xt or Motif program.  This section also discusses 
+     overlays and some Xt features that are useful in mixed model 
+     programming.
+
+
+
+                          5.1  The GlxDraw Widget
+
+     This section refers frequently to Motif.  Many mixed model 
+     programmers are likely to use Motif.  However, all of the features 
+     discussed here are are either within the widget itself or are based 
+     on the X toolkit, and should thus work with a widget set other than 
+     Motif.
+
+     The examples shown in this section use Xt and Motif.  Although 
+     knowledge of Xt and Motif is not required to read this section, 
+     understanding the details of the examples does require some Xt and 
+     Motif knowledge.  This section is not intended to be a tutorial on Xt 
+     and Motif;  instead it is intended to point out areas of the toolkits
+     that are of special interest to mixed model programmers.  For more 
+     information on the appropriate features of Xt and Motif consult the 
+     OSF/Motif series and O'Reilly Vol. 4, "X Toolkit Intrinsics, 
+     Programming Manual" and Vol. 5, "X Toolkit Intrinsics, Reference 
+     Manual".
+
+     The GlxDraw widget is designed to simplify mixed model programming 
+     when using the Xt toolkit.  The GlxDraw widget looks and feels like a 
+     normal widget, but sets up a configuration for GL drawing, as well as
+     providing resources and callbacks that are useful to the GL 
+     programmer.  The GlxDraw widget also provides support for overlays.
+
+
+
+                  5.2  The Two Widgets: Generic and Motif
+
+     There are actually two GlxDraw widgets.  The widget known as GlxDraw
+     is a generic widget, suitable with any widget set based on the Xt 
+     intrinsics.  There is also a version known as GlxMDraw (note the M) 
+     that is specifically meant to be used with Motif programs.  The major 
+     difference is that it is a subclass of the Motif XmPrimitive rather 
+     than being a subclass of the Xt Core widget, and thus has various 
+     Motif defaults such as background color.  It also is able to 
+     understand Motif traversal, although by default traversal is turned 
+     off for this widget.  Finally, the Motif version has a Motif style 
+     creation function, GlxCreateMDraw, in addition to being able to 
+     create the widget directly through Xt.  In all other respects, the 
+     two widgets are identical.  The remainder of this section refers to 
+     the GlxDraw widget, but unless otherwise specified, everything stated 
+     refers to both.
+
+
+
+                   5.3  An Example Program Using GlXDraw 
+
+     The following is a sample set of code that uses the GlxDraw widget.
+     The individual features are discussed following the example.
+
+
+#include <X11/Xirisw/GlxDraw.h>
+  . . .
+/* The following configuration should match your hardware needs */
+/* as described in GLXgetconfig */
+GLXconfig glxConfig [] = {
+     { GLX_NORMAL, GLX_DOUBLE, TRUE },
+     { GLX_NORMAL, GLX_RGB, TRUE },
+     { GLX_NORMAL, GLX_ZSIZE, GLX_NOCONFIG },
+     { 0, 0, 0 }
+};
+
+main()
+{
+    Arg args[10];
+    int n;
+
+    Widget parent;   /* The parent of the gl widget */
+    Widget glw;      /* The glxDraw widget          */
+      . . .
+      /* Create the widget */
+    n = 0;
+    XtSetArg(args[n], GlxNglxConfig, glxConfig); n++;
+    glw = XtCreateManagedWidget("glx", glxDrawWidgetClass,
+                                  parent, args, n);
+      /* Add any needed callbacks */
+    XtAddCallback(glw, GlxNexposeCallback, exposeCB, 0);
+    XtAddCallback(glw, GlxNresizeCallback, resizeCB, 0);
+    XtAddCallback(glw, GlxNginitCallback, ginitCB, 0);
+      /* Also add input callback if needed */
+      . . .
+      /* Install the colormap */
+    XtRealizeWidget(toplevel);
+    installColormap(toplevel, glw);
+}
+
+  /* The expose callback */
+static void
+exposeCB(w, client_data, call_data)
+Widget w;
+caddr_t client_data;
+GlxDrawCallbackStruct *call_data;
+{
+    GLXwinset(display, call_data->window);
+    draw_scene();  /* User provided routine to redraw */
+    glflush();
+}
+
+  /* The resize callback */
+static void
+resizeCB(w, client_data, call_data)
+Widget w;
+caddr_t client_data;
+GlxDrawCallbackStruct *call_data;
+{
+    GLXwinset(display, call_data->window);
+    viewport(0, (Screencoord) call_data->width-1,
+             0, (Screencoord) call_data->height-1);
+    draw_scene();
+}
+
+  /* The initialize callback */
+static void
+ginitCB(w, client_data, call_data)
+Widget w;
+caddr_t client_data;
+GlxDrawCallbackStruct *call_data;
+{
+    GLXwinset(display, call_data->window);
+  /* Perform any necessary graphics initialization.*/
+}
+
+  /* Install widget colormap */
+installColormap(toplevel, glw)
+Widget toplevel, glw;
+{
+    Window windows[2];
+
+    windows[0] = XtWindow(glw);
+    windows[1] = XtWindow(toplevel);
+    XSetWMColormapWindows(XtDisplay(toplevel), XtWindow(toplevel), windows, 2);
+}
+
+
+
+                        5.4  Developing with GlxDraw
+
+     The steps to writing a mixed model program include the following:
+
+       1.  Include the appropriate header file.
+       2.  Declare the GlxConfig resource describing GL requirements.
+       3.  Create the widget hierarchy normally.
+       4.  When creating the GlxDraw widget, include the GlxConfig resource.
+       5.  Add callbacks and provide callback routines.
+       6.  Write the GL handling code.
+       7.  Handle input events.
+       8.  Link with the IRIS Widget Library.
+
+
+
+                            5.4.1  Header Files
+
+     The header file to use depends on whether the Motif or the generic 
+     version of the program is included.  For the Motif version:
+
+                 #include <X11/Xirisw/GlxMDraw.h>
+
+     For the Generic version:
+
+                 #include <X11/Xirisw/GlxDraw.h>
+
+
+
+                        5.4.2  Linking with GlxDraw
+
+     When using the GL widgets, link with -lXirisw.  Here is a Motif 
+     example:
+
+       ld -o progname prog.o -lXirisw -lXm -lXt -lX11 -lPW -lsun -lmalloc
+
+     In the example, progname is the name of your program.
+
+
+
+                   5.4.3  Declaring the GlxConfig Resource
+
+     The GlxConfig resource describes GL requirements such as single or 
+     double buffering, RGB or color index mode, Z-buffering, overlays, and 
+     so on.  This parameter is passed directly into the low level 
+     GLXgetconfig routine, and the details are described in the discussion 
+     of low level mixed model programming in the previous chapter.  The 
+     following example, reproduced from the program above, requests double 
+     buffered RGB mode with Z-buffering.
+
+        GLXconfig glxConfig [] = {
+                { GLX_NORMAL, GLX_DOUBLE, TRUE },
+                { GLX_NORMAL, GLX_RGB,    TRUE },
+                { GLX_NORMAL, GLX_ZSIZE,  GLX_NOCONFIG },
+                { 0, 0, 0 }
+        };
+
+
+
+                         5.4.4  Creating the Widget
+     
+     The GlxDraw widget should be created just like any other widget as 
+     part of the widget hierarchy.  Motif users may often wish to create 
+     it as the child of a frame, as it provides no decoration of its own.
+     In Motif, there are two ways to create the widget.  Either the Motif 
+     style convenience function can be used:
+
+       GlxCreateMDraw(parent,name,arglist,argcount);
+
+     or the widget can be created directly using Xt creation functions as 
+     in:
+
+       XtCreateWidget(name,glxMDrawWidgetClass,parent,arglist,argcount);
+
+     The generic version of the widget can only be created using an Xt 
+     Creation function as in:
+
+       XtCreateWidget(name,glxDrawWidgetClass,parent,arglist,argcount);
+
+     The code in the sample program above created a generic GlxDraw 
+     widget using the Xt creation function.  This code fragment creates a 
+     Motif style widget using the convenience function:
+
+main(argc, argv)
+int argc;
+char *argv[];
+{
+    Arg args[20];
+    int n;
+    Widget parent, glw;
+
+        . . .
+    n = 0;
+    XtSetArg(args[n], GlxNglxConfig, glxConfig); 
+    n++;
+    glw = GlxCreateMDraw(frame, "glwidget", args, n);
+    XtManageChild (glw);
+        . . .
+}
+
+
+
+                              5.4.5  Callbacks
+
+     Xt handles events through a callback mechanism, whereby the user 
+     provides functions to be called when certain events occur.  Each 
+     widget provides its own set of callbacks.  The GlxDraw widget 
+     provides the following callbacks:
+
+
+     Callback                          Description
+
+      ginit           This callback is called when the window is created.
+      expose          This callback is called whenever the window needs 
+                      redrawing, for example if an overlapping window is 
+                      removed.
+      resize          This callback is called whenever the window is 
+                      resized.
+      input           This callback is called for keyboard and mouse input.
+      overlayExpose   This callback is called whenever the overlay window 
+                      needs redrawing.  There are similar callbacks for 
+                      underlays and popups.
+
+                        Table 5-1  GlxDraw Callbacks
+
+
+     The callbacks should be added with XtAddCallback after creating the 
+     widget.  For example:
+
+       XtAddCallback(glw, GlxNexposeCallback, exposeCB, 0);
+       XtAddCallback(glw, GlxNresizeCallback, resizeCB, 0);
+       XtAddCallback(glw, GlxNginitCallback, initCB, 0);
+
+     The first line states that when the widget glw receives an expose 
+     callback, the user provided routine exposeCB should be called, with 
+     a parameter of 0.
+
+     An expose callback might appear as follows:
+
+static void
+exposeCB(w, client_data, call_data)
+Widget w;
+caddr_t client_data;
+GlxDrawCallbackStruct *call_data;
+{
+    GLXwinset(display, call_data->window);
+    draw_scene();
+    gflush();
+}
+
+     The first parameter, w, is the widget.  The second parameter, 
+     client_data, was passed in by the user when adding the callback.  The 
+     third parameter, call_data, is provided by the widget itself.  For the 
+     GlxDraw widget, this includes the reason for the callback, the window,
+     and the window's with and height.
+
+     The first thing that the callback does is call GLXwinset.  Unlike X, 
+     where a window is passed to all drawing routines, GL maintains the 
+     concept of a current window.  GLXwinset tells GL to do all subsequent 
+     operations to the window specified.  Every callback should call 
+     GLXwinset before doing anything else, as it does not know which 
+     window was previously written to by GL.  However, if there is only 
+     one GL window in an application, GLXwinset is unnecessary.  The widget 
+     makes one call to GLXwinset when it is created, all subsequent GL 
+     operations will always go to that window.
+
+     After doing the GLXwinset (if needed), the application should do 
+     whatever is necessary to redraw the image.
+     
+     The call to gflush flushes the queue if the application is running 
+     over the network.  The call to gflush can be either in the callback or
+     in draw_scene.
+
+     A resize callback is very similar:
+
+static void
+resizeCB(w, client_data, call_data)
+Widget w;
+caddr_t client_data;
+GlxDrawCallbackStruct *call_data;
+{
+    GLXwinset(display, call_data->window);
+    viewport(0, (Screencoord) call_data->width-1,
+             0, (Screencoord) call_data->height-1);
+    draw_scene();
+    gflush();
+}
+
+     The main addition here is the call to viewport.  This tells GL to 
+     resize the viewport to the same size as the window.
+
+     The ginit callback is needed because Xt doesn't create windows 
+     immediately.  Instead, it waits until the widget is realized (usually
+     by a call to XtRealizeWidget).  No GL can be done to a window until 
+     it is realized.  The application can either perform its GL 
+     initialization after realizing the widget, or can use the ginit 
+     callback to perform this function.
+
+     The following should not be done within the ginit callback:
+
+       1.  Do not call winopen.  The widget has already created the window.
+           winopen is not allowed in mixed model programming.  
+       2.  Do not call gconfig.  This is not allowed or needed in mixed 
+           model.  GL configuration is set up through the GlxConfig 
+           resource.
+       3.  Do not draw the window.  After the window is created, it will 
+           get an expose callback (unless it is hidden).  Drawing the 
+           window during initialization is unnecessary.
+
+
+
+                           5.4.6  Handling Input
+
+     As with all other events, input in Xt is event driven.  There are two
+     ways of handling input with the GlxDraw widget.  The input callback 
+     provides a callback for keyboard and mouse events.  Xt also provide 
+     mechanisms known as actions and translations that map keyboard input 
+     into user provided routines.
+
+     By default, the input callback is called with every key press and 
+     release, with every mouse button press and release, and whenever the
+     mouse is moved while a mouse button is presses.  You can change this 
+     by providing a different translation table, although the default 
+     setting should be suitable for many GL applications.  The callback is
+     passed an X event, which it should interpret, and perform the 
+     appropriate action.  It is up to you to interpret the event, for 
+     example to convert an X keycode into a key symbol, and to decide what 
+     to do with it.
+
+     Actions and translations provide a mechanism for binding a key or 
+     mouse event to a function call.  For example, the user could set 
+     things up so that when the <Esc> key is pressed, exit is called, when
+     mouse button 1 is pressed, a rotation occurs, and when <f> is pressed,
+     the program zooms in.  The following translations show how this might 
+     be done:
+
+        program*glwidget*translations:      #override \n\
+                <Btn1Down>:              start_rotate()   \n\
+                <Btn1Up>:                stop_rotate()    \n\
+                <Btn1Motion>:            rotate()         \n\
+                <Key>f:                  zoom_in()        \n\
+                <Key>b:                  zoom_out()       \n\
+                <KeyUp>osfCancel:        quit()
+
+     Although the syntax takes a little getting used to, the effect is
+     clear.  When button 1 is pressed, start_rotate is called.  When it is
+     released, stop_rotate is called.  Moving the mouse with the button 1 
+     causes the actual rotation.  Similarly, the <f> and <b> keys cause 
+     zooming in and out.  The last entry is a little cryptic.  It actually
+     says that when the <Esc> key is pressed, quit should be called.  
+     However, OSF has implemented a concept called virtual bindings, that 
+     allow the same programs to work on programs with different keyboards 
+     that may be missing various keys.  One effect of this, is that if a 
+     key has a virtual binding, the virtual binding name must be specified
+     in the translation.  Thus osfCancel must be specified instead of 
+     <Esc>.  If the above translation is to be used with a non-Motif 
+     program, it should say <KeyUp>Escape.
+
+     The translation is only half of what it takes to set up this binding.
+     Although the translation table above has what looks like function 
+     names, they are actually action names.  The program must create an 
+     action table to bind the action names to actual functions in the 
+     program.  For more information on setting up actions and translations,
+     see the OSF/Motif Programmer's Guide, Section 14.6, "Keyboard 
+     Bindings" and O'Reilly, Vol. 4. 
+
+     Both the input callback and the translations have their own 
+     advantages.  The input callback is usually somewhat simpler to write,
+     especially the first time, since it can be written in a rather ad-hoc
+     manner.  Also with the input callback all input is handled by a 
+     single routine that can maintain private state.
+
+     Translations on the other hand can produce more modular programs, 
+     since for each action they have one function.  Also, with 
+     translations, the system does the keyboard parsing rather than having 
+     to do it in the code.  Finally, the use of translations allows the 
+     users to customize the bindings, for example, they could set things 
+     up to type 'q' instead of <Esc>.
+
+     Regardless of which method is used, there is one easy pitfall to watch
+     out for when parsing mouse events, namely that X and GL have different
+     notions of the Y direction.  With X, positive Y is down, and with GL 
+     it is up.  It is easy to write an application where the program tries 
+     to track the mouse, only to find the object moving in the wrong 
+     direction vertically.
+
+
+
+                  5.5  Animation: Timeouts and Workprocs
+
+     In GL, animation is usually handled by a continuous loop.  Since Xt 
+     is event driven, this won't work in an Xt program.  Instead, Xt 
+     provides two mechanisms, timeouts and workprocs, that are useful in 
+     animation.  A timeout is called every N milliseconds.  It is useful 
+     for constant speed animation, as long as the processor can keep up. 
+     A workproc is called whenever the process has nothing else to do.  It
+     provides the highest speed animation that the processor can handle, 
+     but the speed varies depending on load.  One advantage of workprocs 
+     is that user actions such as menu postings have a higher priority than
+     the workproc, so the menus will pop up immediately.  Note that 
+     although the workproc has the lowest priority in the process, it still
+     must compete with other processes. 
+
+
+
+                               5.6  Overlays
+
+     The GlxDraw widget provides support for overlays, underlays and 
+     popups.  Because the overlay is intricately tied to the normal 
+     window, it is implemented as a separate window within the same widget.
+
+     To create an overlay add the appropriate entries to the GlxConfig 
+     resource, and set the useOverlay resource to TRUE.  The widget will 
+     create the overlay window.  The widget will automatically generate 
+     overlayExpose callbacks when necessary.  To draw to the overlay at 
+     other times, the window ID can be obtained by querying the overlay 
+     Window resource.  Rather than using drawmode as in a pure GL program, 
+     the appropriate window should be selected with GLXwinset.
+
+
+
+                              5.7  Colormaps
+
+     Mixed model programs often use two colormaps.  The GlxDraw widget is 
+     in one colormap, and the remainder of the program is in the default 
+     X colormap.  The program must ensure that the appropriate colormaps 
+     get installed.  Even if the GL part of the program is running in RGB 
+     mode, the RGB colormap must still be installed.  (While some machines 
+     implement RGB mode in hardware, other machines have an RGB colormap.)
+
+     The function XSetWMColormapWindows will tell the window manager to 
+     install the appropriate colormaps whenever the pointer enters the 
+     application.  The function installColormap shown in the above example 
+     illustrates how you can do this.  It must be called after the widget 
+     is realized.
+
+     Since there are two colormaps that must both be installed for the 
+     application to look right, there is a possibility of a conflict.  If 
+     conflicting colorcells are used by the X and the GL portions of the 
+     application, one of them may not show the correct colors.  (If you are
+     using installColormap, the GL colors have priority over the X colors.)
+     This will only be a problem if both X and GL are using color index 
+     mode.  If either one is using RGB, there will not be a conflict. 
+
+     If the X portion of the program is only using colors below 32, while
+     the GL uses the default colors in the colormap, there will not be a 
+     conflict.  Alternatively, the program can allocate a different 
+     colormap for the GL to use, and only use high colors out of that, 
+     allowing X to use additional colors.  This is illustrated in the demo 
+     /usr/people/4Dgifts/examples/GLX/glxwidget/demos/mzcmapmenu.c. 
+

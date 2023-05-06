@@ -1,0 +1,40 @@
+XCOMM (c) Copyright 1989, 1990, 1991, 1992, 1993, 1994 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM Motif Release 1.2.4
+
+#ifdef SGIArchitecture /* Quickstart Fix for SGI */
+       DEPXMLIB = $(ROOT)$(SHLIBDIR)/libXm.so
+          XMLIB = -L$(ROOT)$(SHLIBDIR) -lXm
+       DEPMRMLIB = $(ROOT)$(SHLIBDIR)/libMrm.so
+          MRMLIB = -L$(ROOT)$(SHLIBDIR) -lMrm
+#endif /* SGIArchitecture */
+
+        DEPLIBS = MrmClientDepLibs
+LOCAL_LIBRARIES = MrmClientLibs
+
+SRCS = helloint.c
+OBJS = helloint.o
+
+MSimpleUilTarget(helloint)
+MSimpleUidTarget(french/uid/l_strings)
+MSimpleUidTarget(english/uid/l_strings)
+MSimpleUidTarget(hebrew/uid/l_strings)
+MSimpleUidTarget(japan/uid/l_strings)
+
+install::
+	$(RM) $(UIDDIR)/l_strings.uid
+
+InstallNonExecFile(french/uid/l_strings.uid,$(UIDDIR)/french/uid)
+InstallNonExecFile(english/uid/l_strings.uid,$(UIDDIR)/english/uid)
+InstallNonExecFile(japan/uid/l_strings.uid,$(UIDDIR)/japan/uid)
+InstallNonExecFile(hebrew/uid/l_strings.uid,$(UIDDIR)/hebrew/uid)
+
+DependTarget()
+#ifdef SGIArchitecture
+FILES = Imakefile *.c *.uil README bdf//**/*.bdf \
+	english/uid//**/*.uil french/uid//**/*.uil \
+	hebrew/uid//**/*.uil  japan/uid//**/*.uil
+
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

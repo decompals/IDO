@@ -1,0 +1,42 @@
+
+                              README for dglfax 
+			      -----------------
+
+     There is a very swank program called DGLFAX(1) which is useful for
+     sending an electronic fax (a piece of your workstation's screen) 
+     from your screen to a remote host system.  The account on the remote 
+     host must be equivalent--accessible directly by/to you--or have no 
+     password.
+
+     We have included the source to this program in the 4Dgifts account
+     under ~4Dgifts/src/dglfax so that you have a genuine utilitarian
+     source example demonstrating DGL usage in a qualified way.
+
+     To enable this program to run, you will need to configure your two 
+     systems--the local and the remote machines--by performing the 
+     following steps on each as root user:  (for more info, refer to 
+     section 6.2.1, "DGL Service", in the "Using the GL/DGL Interfaces" 
+     part of the "4Sight Programmer's Guide".)
+
+
+
+     1. check the entry (near the bottom) for "sgi-dgl" in /etc/services
+        and uncomment this if it is (i.e. has a leading "#" character).
+	NOTE: if running YP for the services data-base, then you want to
+	      change the services data-base on the yp-master.
+
+     2. check the entry for "sgi-dgl" in /usr/etc/inetd.conf and uncomment
+	it if if is (i.e. has a leading "#" character).
+
+     3. Now execute the following command line to force inetd to reread its
+	configuration file.
+
+            killall 1 inetd
+
+     You can verify that inetd is listening by running
+
+	    /usr/etc/netstat -a 
+
+     and look for a line containing "*.sgi.dgl".  If this entry is active
+     you should be all ready to proceed with dglfax across the appropriate
+     systems. 

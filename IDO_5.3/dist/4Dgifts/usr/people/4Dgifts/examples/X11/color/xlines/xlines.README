@@ -1,0 +1,16 @@
+
+README for ~4Dgifts/examples/X11/color/xlines
+
+/*
+ *		xlines.c
+ *
+ *    'xlines.c' is an example of mixing Motif widgets and menus, and Xlib
+ *  drawing ability.  A simple popup menu has been attached to the Right
+ *  mouse button, which contains options for how many lines are drawn, and
+ *  a quit button for easy exit.  The rest of the program merely draws 
+ *  colored lines into a pixmap so that when the window receives an expose
+ *  type event, it copies the pixmap to the screen.  The lines that are
+ *  drawn are randomly generated.
+ *
+ */
+

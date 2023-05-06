@@ -1,0 +1,233 @@
+
+    ---------------------------------------------------------------------
+    README for ~4Dgifts/examples/network source example Programs for IRIX
+    ---------------------------------------------------------------------
+
+
+       The programs in this directory demonstrate how to use 4.3BSD 
+     Internet and UNIX domain sockets on IRIX.  See Chapter 3 in the
+     "Network Communications Guide" for details on writing network 
+     programs.
+
+
+     1-A. ttcp
+     1-B. accept, chat, connect, select
+     1-C. mcast
+     1-D. tcpmuxclient, tcpmuxserver
+     2-A. udgramread, udgramsend
+     2-B. ustreamread, ustreamwrite
+     3-B. ecrv, esnd
+     4-A. whois
+
+     1]. Programs using Internet domain sockets with TCP/IP and UDP/IP:
+
+         Internet sockets can be used for communication between programs 
+         on the same machine and on different machines.
+
+
+         A) ttcp: TCP/UDP test program/benchmark 
+
+            This public domain program makes a connection on port 5001 
+            and then transfers fabricated buffers or data copied from 
+            stdin.  See the code for information on the other options.
+
+            Usage (TCP):
+                host1%        ttcp -s -r
+                host2%        ttcp -s -t host1
+
+
+         B) accept, chat, connect, select
+
+            The accept, connect and select programs send text from one 
+            host to the other.  First run 'accept' on host 1, then run
+            'connect host1' on host 2 to make a connection.  Once the 
+            connection is established, everything you type to the 
+            'connect' program will appear on the accept side.  To
+            terminate the session, type EOF (ctrl-d) to the 'connect' 
+            program.  This will also cause the 'accept' program to 
+            terminate.
+
+            For example:
+
+                host1% accept
+
+                ...
+
+                <meanwhile at host 2>
+                host2% connect host1
+                here is a message
+                sending <here is a message\n>
+
+                ...
+
+                <back at host 1, the user should see>
+                here is a message
+
+
+            The 'select' program is another version of the 'accept' 
+            program that accepts repeated connections from the 'connect'
+            program.  Try the same sequence shown above, using 'select'
+            in place of 'accept'.  Note that typing EOF (ctrl-d) on the 
+            connect side does not terminate the 'select' program on the 
+            receiving side.  Invoke 'connect host1' again and messages 
+            typed on host2 will be echoed by 'select' on host1.  Type 
+            your interrupt character (typically ctrl-c) to terminate 
+            'select' on host1.
+
+
+            'chat' is like 'accept' and 'connect' except that it sends
+            text in both directions. Text typed on on host is displayed 
+            on the other and vice-versa.  First run 'chat' on host 1, 
+            then run 'chat host1' on host 2 to make a connection.  Once 
+            the connection is established, everything you type on one 
+            host will appear on the other host.  To terminate the 
+            session, type EOF (ctrl-d) to the 'char' program.  This will
+            also cause the remote 'chat' program to terminate.
+
+
+         C) mcast: UDP multicast program
+
+            Shows how to send and receive UDP multicast datagrams from 
+            1 host to several receiving hosts.
+
+                Usage:
+                on sender:           % mcast send
+                on receivers:        % mcast
+
+
+         D) tcpmuxclient, tcpmuxserver: TCPMUX client and server
+
+            Sample programs showing how to write clients and servers with
+            TCPMUX, the TCP service multiplexor. TCPMUX is described in
+            inetd(1M) and the Network Communications guide.
+
+            The server is invoked by inetd when the client connects to 
+            the TCPMUX port and requests the service.  As root, modify 
+            the following line to reflect where tcpmuxserver lives and 
+            add it to /usr/etc/inetd.conf:
+
+tcpmux/current_time stream tcp nowait guest /usr/tmp/tcpmuxserver curtime
+
+            Then tell inetd to reread the inetd.conf file:
+                /etc/killall -HUP inetd
+
+            Then run tcpmuxclient with the name of the host with the 
+            entry in inetd.conf to print the time returned by 
+            tcpmuxserver. For example,
+                % tcpmuxclient localhost
+            if on the same machine.
+
+
+
+     2]. Programs using UNIX domain sockets:
+
+         UNIX domain sockets are for communication between programs on the
+         same machine only.
+
+         A) udgramread, udgramsend: Transfers data using datagram sockets.
+            Usage:
+
+              % udgramread &
+              % udgramsend udsocket
+
+            (Run them in different windows to see the output clearly.)
+
+         B) ustreamread, ustreamwrite: Transfers data using stream sockets.
+            Usage:
+
+              % ustreamread &
+              % ustreamwrite socket
+              % rm socket        # see comment in the code
+
+
+
+     3]. Programs using SNOOP(7P) to send and receive packets:
+
+         The following examples will *not* work correctly on IRIX software
+	 which is *older* than 3.3.
+
+         A) ercv, esnd
+
+            "ecrv" receives and filters ethernet packets using SNOOP(7P).  
+	    A number of options can be included when running "ercv".  By 
+	    default, the SNOOP(7P) filter looks for a match in the Ethernet 
+	    Type/Length field.  SNOOP(7P) will pass any packets which have
+	    a Type/Length field set to 0xfeed.  "esnd" sends packets using
+	    SNOOP(7P).  By default, this program sends out packets with 
+	    the Ethernet Type/Length field set to 0xfeed. 
+
+            Both programs expect the sending machine to be specified on the
+	    command line. The machine name is stated either by giving the
+	    machine's ethernet address in dot notation, or by hostname.
+	    In order for hostname lookups to succeed, you must have the
+	    /etc/ethers file built with the machines intended for, or if
+	    using NIS, your NIS Master must have the map file "ethers"
+	    updated to include the machines intended. See ETHERS(3Y) and
+	    ETHERS(4).
+
+	    As an example, if the machine called "slug" is going to send
+	    a SNOOP(7p) packet via "esnd" and machine "bait" is going to
+	    recieve the SNOOP(7P) packet using "ercv". Then, 
+
+	    Type this first on machine "bait", -v for verbose
+
+	        ecrv -v x.x.x.x.x.x	# where you need "slug's" enet address. 
+
+	    On machine "slug" type:
+
+	        esnd -v x.x.x.x.x.x	# type "slug's" enet address. 
+
+
+	    If you have a valid entry in the /etc/ethers or an NIS map for
+	    ethers, where the "ethers" file must have at a mininum:
+
+	        x.x.x.x.x.x	slug
+
+
+	    Then, you could do the above commands as:
+
+	    Type this first on machine "bait", -v for verbose
+
+	        ecrv -v slug
+
+	    On machine "slug" type:
+
+	        esnd -v slug
+
+
+
+     4]. whois - Internet user name directory service
+
+	 This program is useful only for sites connected to the Internet.
+
+         Usage:   whois [ -h server ] name
+
+         'whois help' produces a helpful message similar to the following:
+
+           Please enter a name or a  handle  (``ident"),  such  as
+         "Smith"  or  "SRI-NIC".   Starting  with a period forces a
+         name-only search;  starting  with  exclamation  point  forces
+         handle-only.  Examples:
+
+             Smith              [looks for name or handle SMITH    ]
+            !SRI-NIC            [looks for handle SRI-NIC only     ]
+            .Smith, John        [looks for name JOHN SMITH only    ]
+
+         Adding "..." to the argument will match anything from that point, 
+         e.g. "ZU..." will match ZUL, ZUM, etc.
+
+           To have the ENTIRE membership list of a group or organization, 
+         if you are asking about a group or org, shown with the record, 
+         use an asterisk character '*' directly preceding the given 
+	 argument.  [CAUTION: If there are a lot of members this will 
+	 take a long time!]  You may of course use exclamation point and 
+	 asterisk, or a period and asterisk together.  Be sure to add 
+	 quotes around names that use '*' and csh(1) users should precede ! by
+	 a \ to avoid the special meaning.
+
+           Use the -h option to specify the hostname or IP address of a 
+	 whois server.  The default is "nic.ddn.mil".
+
+	 The program source and the information above are from 4.3BSD-Tahoe.
+         See also:  RFC 812:  Nicname/Whois
+

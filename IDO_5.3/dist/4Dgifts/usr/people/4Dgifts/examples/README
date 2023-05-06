@@ -1,0 +1,86 @@
+
+              ------------------------------------------------
+              Explanation of the contents of ~4Dgifts/examples 
+              ------------------------------------------------
+
+
+     This subtree is populated with various GL implementations as well as
+     some X, fontmanager, network, UNIX and video examples.
+
+
+     "Fortran" contains GL programs and an implementation of shared memory
+     all written in Fortran.
+
+     "X11" contains clients, widgets, and toolkits subtrees.  The clients
+     subtree provides basic "pure" X programming examples (including only
+     Xlib/Xt libraries), as well as some X-GL "combo" programs.
+
+     "devices" contains Dial and Buttons, digitizer (tablet) C code, a
+     printer test program, as well as a subdir of generic SCSI driver 
+     programs, and a subdir containing sample source for StereoView;
+
+     "fontmanager" illustrates some basic examples of how to use the 
+     IRIS Font Library.  For more info on this, refer to Chapter 4, 
+     "Using the IRIS Font Library" in the "Graphics Library Windowing
+     and Font Library Programming Guide".
+
+     "glpg" contains all on-line versions of all the source code examples
+     contained in the "Graphics Library Programming Guide", Version 2.0.
+     They are ordered by chapter number in subdirectories under glpg. 
+
+     "grafix" contains modified, on-line examples from the old IRIS USER's 
+     GUIDE, Volume 1, plus some extra programs including:  creating an 
+     object file in the spin format;  implementing multiple cursors;  use 
+     of the overlay bitplanes;  another picking example;  a single-line 
+     textport;  a program which illustrates a technique for rotating an 
+     object about a fixed set of axes,  as well as how backface removal 
+     can be computed in software;  and 3 zbuffer programs both in RGB as 
+     well as color-map mode.
+
+     "hllapi"--there used to be a directory by this name which contained
+     example source for people involved in ibm-link procedures.  Now it
+     lives on the 3270  software option tape and the on-line examples are
+     loaded into two directories:  /usr/3270/example/{CASE1, CASE2}.
+
+     "intl" contains examples of internationalization, particularly how
+     to support code sets other than ASCII.
+
+     "light" contains on-line versions of the four examples from chapter 9
+     on Lighting in the "Graphics Library Programming Guide" (GLPG),  
+     Version 1.0, & 1.1.  NOTE:  These examples are no longer included in 
+     the GLPG, Version 2.0.
+
+     "nurbs" has C, Fortran, and Pascal examples illustrating 
+     implementation of the new addition of Silicon Graphics' GL interface 
+     for the display of trimmed Non-Uniform Rational B-Splines (NURBS) 
+     surfaces.
+
+     "network" has some sample network programs using Internet (TCP/UDP) 
+     and UNIX domain sockets, as discussed in Chapter 3 of the Network 
+     Communications Guide.  This directory was "tcp" in previous releases.
+
+     "pl1" demonstrates GL programing examples rewritten in the pl1
+     language.
+
+     "skywriter" includes an example demonstrating the newest addition to 
+     the 4D family line of IRIS machines.
+
+     "trackball" provides a virtual trackball implementation in C with 
+     event-queue handling, and user-interface routines.
+
+     "unix" contains UNIX system programming code in C including programs 
+     that spawn children, communicate between two different processes via 
+     IPC, pipes, signal handling and shared memory.   Also included are 
+     IRIX specific programs either exclusively mips-based or contain SGI
+     dependent system calls;
+
+     "vgx" contains 5 sudirectories of various new programs demonstrating 
+     the new GL routines available only on machines with VGX capability. 
+     SkyWriter machines have the full feature set as well. Indigo machines
+     have most of the VGX feature set available.  These include texture 
+     mapping, motion blurring, arbitrary clip planes, new light features, 
+     and a program using the stencil planes.
+
+     "video" provides an initial set of demonstration programs for setting
+     up/moving among the various video modes.
+

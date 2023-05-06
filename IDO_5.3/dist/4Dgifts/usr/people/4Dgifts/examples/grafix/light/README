@@ -1,0 +1,52 @@
+
+
+		   --------------------------------------
+                   README for light programming examples.
+		   --------------------------------------
+
+
+  These programs  used  to live in the [GT] "Graphics Library User's Guide"
+  and showed up once more in the "Graphics Library Programming Guide", 
+  (GLPG) Version 1.0, but for reasons too complicated to explain here, they
+  no longer exist in the GLPG, Version 2.0.   This does not mean they are
+  any less useful or appropriate for inclusion here in the 4Dgifts subtree.
+
+  NOTE:  the minimum hardware congfiguration required for these programs to
+	 run correctly is 24 color bitplanes and a Z-buffer is needed for
+	 the two cylinder programs.
+
+
+
+  cylinder1.c:  illustrates how to use the Graphics Library to perform 
+	        lighting for a cylinder
+
+  cylinder2.c:  displays two intersecting cylinders, using a different 
+		surface material for each cylinder.  In addition, each
+                cylinder is lit with two light sources.
+
+
+  localatten.c: draws a flat green plate at z = 0; -1.0 <= x, y <= 1.0.
+                The eye is 6 units above, looking down.  A light bounces
+		up and down in the range 0.1 <= z <= 1.5, and x = y = 0.
+		The lighting model attenuates intensity with  distance,
+		so the center of the plate gets brighter as the light 
+		moves closer.  The character string printed at the lower
+		left of the plate shows the height of the light.  
+		Note that the color is set after the cmov() command--the
+		cmov() actually sends a vertex through the transformation,
+		and it will set the current color.  If you move the 
+		cpack() command just above the cmov() command, the 
+		character string will be lighted and will appear in 
+		varying shades of green.  
+
+  platelocal.c: draws a flat plate with a simple local light.  If the 
+                line at the top of the file is left in, the light is 
+		fixed, and the plate moves.  Thus the bright spot on the
+		plate will appear to move around (on the plate).  
+		Sometimes, the plate gets in front of the light, and 
+		almost disappears, since only the back is lit.  It does
+		not quite disappear, since there is a small ambient 
+		component for the default material.
+                If the top line is deleted, the light is effectively 
+		attached to the moving plate, so the lighted portion of 
+		the plate moves with the plate.

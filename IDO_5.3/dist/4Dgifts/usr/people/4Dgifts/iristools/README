@@ -1,0 +1,43 @@
+
+    Contents:
+
+	abekas   - device-specific tools for Abekas digital video
+        images   - some images that can be "ipaste"d to the screen 
+        imgtools - a collection of tools for dealing with images
+        include  - files defining various data structures
+        libgutil - a utility library
+        libimage - a library for reading and writing images
+        tools    - a collection of tools that use the window manager
+
+    You probably should put iristools/imgtools and iristools/tools
+    in your path to make it easier to get at these goodies. . .
+    in c-shell you will type something like:
+
+    % set path=( /usr/people/4Dgifts/iristools/imgtools \
+                /usr/people/4Dgifts/iristools/tools $path)
+
+    Do a make in this directory, /usr/people/4Dgifts/iristools, 
+    and wait for it to finish.  This will make libimage.a and 
+    libgutil.a, a bunch of image processing tools, and a collection
+    of general purpose screen tools.  However, all the executables
+    that will be built in imgtools and tools will consume quite a 
+    bit of diskspace.  Some of these exectuables--most all of those
+    programs inside tools--already have been built and live in /usr/sbin.
+
+    NOTEs:  YOUR UID MUST BE SET TO 4Dgifts (or guest depending on which 
+            line comes first in /etc/passwd).  This is essential because 
+            of the need for the shell to recognize that ~4Dgifts/bin is 
+            in its path so it can find ~4Dgifts/bin/ranlib when it goes
+            to make a symbol definition file in the archives being built 
+            for the two libraries libimage.a and libgutil.a.  ~/bin/ranlib
+            is a script to enable these libraries to be built on 2000/3000
+            as well as 4D machines.  The idea here is that the iristools
+            subtree was designed to able to be copied in its entirety from
+            a 4D to a 2000/3000 machine, and be compiled/run on this 
+            family of machine as well.
+
+
+                Good Luck !!
+
+
+                        Paul 'n dave

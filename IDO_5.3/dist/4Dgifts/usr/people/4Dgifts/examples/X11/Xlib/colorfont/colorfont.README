@@ -1,0 +1,37 @@
+
+      -------------------------------------------------------------------
+      README for ~4Dgifts/examples/X11/Xlib/colorfont source code example
+      -------------------------------------------------------------------
+
+	Introduction:
+
+        Colorfont.c is meant to be the fifth in a series of beginning X
+        Windows programs.  None of the examples in this directory use
+        widgets, but instead use Xlib functionality.  This program
+        takes the information presented in font.c and expands
+        upon it by allowing you to create a window in a set place
+        that contains a text string in different colors.
+
+    Setting colors:
+
+	This program is essentially the same program as font.c, except
+	we cheat a little.  Since we will be using a colored font, we
+	will want a dark background so the font will show up better.
+	With that in mind, in XCreateSimpleWindow (line 51) we change
+	the last argument to use BlackPixel for the background color
+	of our window.
+
+	To set the colors of our font, we go down to XSetForeground
+	(line 108) and pass it the value of 248.  This value is actually
+	in index into the current colormap, and will cause the foreground
+	color to match whatever color is currently in index 248.  On
+	my machine, that color is hot pink; your mileage may vary.  
+
+	For this reason, setting colors in this fashion may work 
+	well on your machine, and may be a quick and dirty way to 
+	set up colors, but it is not recommended if you will be porting
+	your code to other platforms.  Different platforms may well
+	have that color index set to different values, so you may not
+	neccessarily get what you want with this scheme.  For a better,
+	portable way to set colors, see colorwin.c.
+

@@ -1,0 +1,205 @@
+###############################################################################
+#                                                                             #
+#             4Dgifts customized chest RESOURCE DESCRIPTION FILE              #
+#                                                                             #
+#    This file contains the specifications for the toolchest utility menu     #
+#    characteristics.  This file is read by the TOOLCHEST(1X) program         #
+#    upon its invocation (called in the ~4Dgifts/.xsession file).  The        #
+#    default display of four menu buttons--"Systems", "Windows", "Tools",     #
+#    and "Demos"--are overridden by the existence of this local file          #
+#    version and its own definitions--"Hosts", "Wsh", "Programs", "System",   #
+#    "Demos", and "Windows".  The syntax used below is relatively self-       #
+#    explanatory.  Consult the TOOLCHEST(1X) man page for a complete the      #
+#    description of the parameters which can be explicity set.                #
+#                                                                             #
+###############################################################################
+
+
+#
+# menu pane descriptions
+#
+
+# Root Menu Description
+menu ToolChest
+{
+    "Hosts"		f.menu hosts
+    "XWsh"		f.menu xwsh
+    "Programs"		f.menu programs
+    "System"		f.menu system
+    "Demos"		f.menu demos
+    "Windows"		f.menu windows
+}
+
+menu demos
+{
+    "Demos"		f.title
+    "GL Demos"          f.menu gldemos
+    "X Demos"           f.menu xdemos
+    "PostScript Demos"  f.menu postscriptdemos
+}
+
+menu gldemos
+{
+    "Gl Demos"		f.title
+    no-label		f.separator
+    "ButtonFly"         f.checkexpr "test -x /usr/demos/bin/redirect -a -x /usr/demos/buttonfly" "/usr/demos/bin/redirect /usr/demos/buttonfly"
+    no-label		f.separator
+    "Cube"              f.checkexpr "test -x /usr/demos/bin/redirect -a -x /usr/demos/bin/cube" "/usr/demos/bin/redirect /usr/demos/bin/cube"
+    "Flight"            f.checkexpr "test -x /usr/demos/bin/redirect -a -x /usr/demos/bin/flight" "/usr/demos/bin/redirect /usr/demos/bin/flight"
+    "Insect"            f.checkexpr "test -x /usr/demos/bin/redirect -a -x /usr/demos/bin/insect" "/usr/demos/bin/redirect /usr/demos/bin/insect"
+    "Arena"             f.checkexpr "test -x /usr/demos/bin/redirect -a -x /usr/demos/bin/arena" "/usr/demos/bin/redirect /usr/demos/bin/arena"
+    "Curve"             f.checkexpr "test -x /usr/demos/bin/redirect -a -x /usr/demos/bin/curve" "/usr/demos/bin/redirect /usr/demos/bin/curve"
+    "Mandelbrot Set"    f.checkexpr "test -x /usr/demos/bin/redirect -a -x /usr/demos/bin/dragon" "/usr/demos/bin/redirect /usr/demos/bin/dragon"
+    "Light"             f.checkexpr "test -x /usr/demos/bin/redirect -a -x /usr/demos/bin/light" "/usr/demos/bin/redirect /usr/demos/bin/light"
+    no-label            f.separator
+    "Flip Logo"         f.checkexpr "test -x /usr/demos/bin/redirect -a -x /usr/demos/bin/flip -a -r /usr/demos/data/models/logo.bin" "/usr/demos/bin/redirect /usr/demos/bin/flip /usr/demos/data/models/logo.bin"
+    "Jello"             f.checkexpr "test -x /usr/demos/bin/redirect -a -x /usr/demos/bin/jello" "/usr/demos/bin/redirect /usr/demos/bin/jello"
+}
+
+
+menu xdemos
+{
+    "X Demos"		f.title
+    no-label		f.separator
+    "xclock"		f.checkexec "/usr/bin/X11/xclock -geom 300x300 -update 1 -display :0"
+    no-label		f.separator
+    "xeyes"		f.checkexec "xeyes &"
+    "xlogo"		f.checkexec "xlogo &"
+    "flying icosahedron" f.checkexec "/usr/bin/X11/ico -display :0"
+    no-label		f.separator
+    "xman"		f.checkexec "xman &"
+    "xload"		f.checkexec "xload -bg black -fg red &"
+    "xbiff"		f.checkexec "/usr/bin/X11/xbiff -display :0"
+}
+
+
+Menu postscriptdemos
+{
+    "PostScript Demos"  f.title
+    no-label		f.separator
+    "Lines"             f.checkexec "/usr/bin/X11/lines"
+    "Colors"            f.checkexec "/usr/bin/X11/colorcube"
+    "Scale Text"        f.checkexec "/usr/bin/X11/scaletext"
+    no-label            f.separator
+    "PostScript Clock"  f.checkexec "/usr/bin/X11/xdpsclock"
+    "Spin Text"         f.checkexec "/usr/bin/X11/akt -name 'Spin Text'"
+    "PostScript Interpreter" f.checkexpr "test -x /usr/sbin/winterm -a -x /usr/bin/X11/dpsexec" "/usr/sbin/winterm -n 'PostScript Interpreter' -c /usr/bin/X11/dpsexec"
+    no-label            f.separator
+    "PostScript Draw"   f.checkexec "/usr/bin/X11/draw"
+    "Wonderland"        f.checkexec "/usr/bin/X11/wonderland"
+    "Scratch Pad"       f.checkexec "/usr/bin/X11/scratchpad"
+    "Texteroids"        f.checkexec "/usr/bin/X11/texteroids 'SGI Inc.'"
+    "Fontview"          f.checkexec "/usr/bin/X11/fontview"
+    no-label            f.separator
+    "PostScript Previewer" f.checkexec "/usr/bin/X11/xpsview"
+}
+
+
+menu system
+{
+    "System"		f.title
+    "Transfer Manager"	f.exec "/usr/sbin/transfermanager"
+    "Print Manager"	f.exec "/usr/lib/vadmin/printers"
+    no-label		f.separator
+    "System Manager"	f.exec "/usr/sbin/vadmin -x75.0 -y640.0"
+    "Confidence Tests"	f.exec "/usr/sbin/vadmin -x500 -y640 -s -t\"Confidence Tests\" -d/usr/sbin/vadmin.tools/confidence.hlp -f\"/usr/lib/filetype/confidence.ctr\" /usr/sbin/vadmin.tools"
+    "System Shutdown"	f.exec "/usr/sbin/systemdown"
+}
+
+
+menu programs
+{
+    "Programs"		f.title
+    "Console"		f.exec "xwsh -fg \#0 -bg \#adadad -bold \#0000ff -cursorfg \#00ff00 -name console -geometry 80x24+470-75 -fn 7x13"
+    "mailbox"		f.exec "mailbox -S your-name -s 86 &"
+    "snapshot"		f.exec "snapshot -b"
+    "showmap"		f.exec "showmap"
+    "makemap"		f.exec "makemap"
+    "cedit"		f.exec "cedit"
+    "snoop"             f.exec "/usr/demos/bin/snoop"
+    "calendar"          f.exec "/usr/sbin/ical &"
+    "Reference Fields"  f.menu ReferenceFields
+    no-label		f.separator
+    "xclipboard"        f.exec "/usr/bin/X11/xclipboard &"
+    "xclock"            f.exec "/usr/bin/X11/xclock &"
+    "X Query"           f.menu XQuery
+    no-label		f.separator
+    "System Monitor"	f.exec "gr_osview -a"
+    "Clocks"		f.menu clocks
+    no-label		f.separator
+
+}
+
+menu clocks
+{
+    "Clocks"				f.title
+    "Square Clock"		f.exec "/usr/sbin/clock &"
+    "Analog Clock"		f.exec "xclock &"
+    "Round Clock"		f.exec "oclock -bg black -fg red &"
+    "Digital Clock"		f.exec "xclock -digital &"
+}
+
+
+Menu ReferenceFields
+{
+    "camera alignment grid (grid)"	f.exec "/usr/sbin/grid"
+    "color bars (colorbars)"		f.exec "/usr/sbin/colorbars"
+    "gamma calibration field (gamcal)"	f.exec "/usr/sbin/gamcal"
+}
+
+Menu XQuery
+{
+    "display info (xdpyinfo)"   f.exec "xwsh -geometry 80x24+110+427 -name 'X Query: Display Info' -hold -e /usr/bin/X11/xdpyinfo"
+
+    "window info (xwininfo)"    f.exec "xwsh -geometry 80x24+110+427 -name 'X Query: Window Info' -hold -e /usr/bin/X11/xwininfo"
+    "properties (xprop)"        f.exec "xwsh -geometry 80x24+110+427 -name 'X Query: Properties' -hold -e /usr/bin/X11/xprop"
+    "font names (xfontsel)"     f.exec "/usr/bin/X11/xfontsel"
+}
+
+menu windows
+{
+    "Windows"		f.title
+    "Window Roots"	f.menu roots
+}
+
+
+menu roots
+{
+    "Window Roots"      f.title	
+    "Default Root"	f.exec  "xsetroot -solid sgilightblue"
+    "lightblue Root"    f.exec  "xsetroot -solid sgibackgroundblue"
+    "Cross-weave Root"	f.exec  "xsetroot -def"
+    "Escher-Knot Root"	f.exec  "xsetroot -bitmap /usr/include/X11/bitmaps/escherknot -fg SGITeal -bg sgilightgray"
+    "Wingdogs Root"	f.exec  "xsetroot -bitmap /usr/include/X11/bitmaps/wingdogs -fg SGITeal -bg sgilightgray"
+    "Mensetmanuw Root"	f.exec  "xsetroot -bitmap /usr/include/X11/bitmaps/mensetmanus -fg SGITeal -bg sgilightgray"
+    "Woman Root"	f.exec  "xsetroot -bitmap /usr/include/X11/bitmaps/woman -fg SGITeal -bg sgilightgray"
+}
+
+menu xwsh
+{
+    "146x200 small"	f.exec  "xwsh -geometry 146x200 -fn \'-misc-fixed-medium-r-*-*-8-60-100-100-*\'"
+    "66x132 small"	f.exec  "xwsh -geometry 132x66 -fn \'-misc-fixed-medium-r-*-*-*-100-75-75-*\'"
+    "66 line small"	f.exec  "xwsh -geometry 80x66 -max 80x66 -fn \'-*-screen-medium-r-*-*-11-110-72-72-*\'"
+    "40 line small"	f.exec  "xwsh -geometry 80x40 -max 80x66 -fn \'-*-screen-medium-r-*-*-11-110-72-72-*\'"
+    "24 line small"	f.exec  "xwsh -geometry 80x24 -max 80x66 -fn \'-*-screen-medium-r-*-*-11-110-72-72-*\'"
+    no-label		f.separator
+    "BIG 40"            f.exec  "xwsh -geometry 80x40 -fn 12x24"
+    no-label		f.separator
+    "40x132"		f.exec  "xwsh -geometry 132x40 -max 132x66 -fn Screen.8"
+    "66x132"     	f.exec  "xwsh -geometry 132x66 -max 132x66 -fn Screen.10"
+    "66 line"    	f.exec  "xwsh -geometry 80x66 -max 80x66"
+    "50 line"    	f.exec  "xwsh -geometry 80x50 -max 80x66"
+    "40 line"    	f.exec  "xwsh -geometry 80x40 -max 80x66"
+    "24 line"    	f.exec  "xwsh -geometry 80x24 -max 80x66"
+}
+
+menu hosts
+{
+    "xwsh: machinename"   f.exec "xwsh -e rlogin machinename &"
+    "xwsh: guest@mach"    f.exec "xwsh -e rlogin mach -l guest &"
+    "xwsh: root@machname" f.exec "xwsh -e rlogin machname -l root &"
+    "xwsh: user@mach"     f.exec "xwsh -max 80x66 -e rlogin mach -l user &"
+    no-label		f.separator
+    "xterm: 4Dgifts@nsa" f.exec "xterm -e nsa -l 4Dgifts &"
+    "xterm: machname"    f.exec "xterm -e machname &"
+}

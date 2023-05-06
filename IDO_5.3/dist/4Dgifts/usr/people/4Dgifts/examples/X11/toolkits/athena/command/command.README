@@ -1,0 +1,14 @@
+
+      ------------------------------------------------------------------
+      README for ~4Dgifts/examples/X11/toolkits/athena/command/command.c
+      ------------------------------------------------------------------
+
+      This command widget is a rectangular button that contains a text 
+      or pixmal label.  When the pointer cursor is on the button, the 
+      button border is highlited to indicate that the button is 
+      available for selection.  Then, when a pointer button is pressed 
+      and released the button is selected, and the application's 
+      callback routine is invoked.
+
+      command.c demonstrates the use of command widget.  When the button 
+      is pushed, the widget will call function Push.

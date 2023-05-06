@@ -1,0 +1,14 @@
+<MKLOG name='./books/Motif_RM/index' version='-1' date='Thu Nov  3 19:32:05 1994' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    46552, offset 1683, on   Thu Nov  3 19:32:19 1994.
+
+FLUSH    3: Element    93155, offset 9865, on   Thu Nov  3 19:32:32 1994.
+
+FLUSH    4: Element   142486, offset    3, on   Thu Nov  3 19:32:46 1994.
+
+MERGE vocab.dat :   4 files, Vocab size  6618 on                           .
+
+MERGE index.dat :   4 files, Vocab size  6618 on                           .
+
+DONE MAKING BOOK
+

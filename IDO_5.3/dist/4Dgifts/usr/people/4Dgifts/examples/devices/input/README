@@ -1,0 +1,317 @@
+
+      -----------------------------------------------------------------
+      README for ~4Dgifts/examples/devices/input streams modules source
+      -----------------------------------------------------------------
+
+
+
+                                  OVERVIEW
+
+         The streams modules convert a device-specific data-stream
+         into a device-independent format that the X server reads.
+         This is exactly what the old device daemons used to do.  
+         The only difference is that they are "in-line" (i.e. now 
+         there's no need to do context switching, etc.--everything 
+         happens in streams).
+
+
+                         
+
+
+                         INPUT DEVICES IN IRIX 5.3
+
+     First, a discussion of the way input devices work under IRIX 5.3.
+
+    The X server reads fixed format events directly from a shared memory
+    queue in the kernel.   Each input device has a streams module
+    in the kernel that formats device specific data into the structure
+    which the X server uses and passes the result up to a multiplexor
+    stream head which timestamps each event and adds it to the queue.
+    The stream head also moves the cursor if the event is of type 
+    QE_PTR_EVENT and the device is allowed to change the cursor.
+
+
+                             +-------------+
+                             |   X Server  |
+                             +-------------+
+                                    |
+                        Shared Memory Input Queue
+             All events (going up) are of type struct shmqevent
+                  All events (going up) are time stamped
+                                    |
+                  Server issues generic input device ioctls 
+                            (defined in idev.h)
+                   which are passed down to the appropriate 
+                                device module
+                                    |
+                              +-----------+
+                              |   shmiq   |
+                              +-----------+
+                              /     |      \
+                             /      |       \
+                         Streams Message Buffers
+                  All events are of type struct shmevent
+                     Events are not timestamped yet
+                          /         |          \
+                   +--------+    +-------+   +---------+
+                   |  mouse |    | sball |   | <other> |
+                   +--------+    +-------+   +---------+
+                      /             |             \
+              mouse specific    spaceball      data stream
+                data stream    specific data  specific to other device
+                     /            stream            \
+          +------------------+      |        +--------------------+
+          | /dev/input/mouse |      |        | /dev/input/<other> |
+          +------------------+      |        +--------------------+
+                         +----------------------+
+                         | /dev/input/spaceball |
+                         +----------------------+
+
+
+    The shmiq assigns device minor numbers and a unique index to each newly 
+    opened streams module.   Each module must remember both values and store 
+    them in each message to validate the message to shmiq.  The shmiq will 
+    not deliver a message with an incorrect index or devminor in its 
+    shmiqlinkid.   
+    
+    Don't worry too much about this -- helper functions in idev.c take care 
+    of most of the interactions with the stream head for you.
+    
+    To the server, all devices look alike.   They respond to ioctls defined
+    in idev.h and generate messages in shmqevent format.   A shmqevent
+    is defined in shmiq.h as follows:
+    
+    struct shmqdata {
+            unsigned char device;
+            unsigned char type;
+            unsigned char which;
+            unsigned char flags;
+	    union {
+		long int pos ;		/* big event data */
+		short ptraxis[2] ;	/* event data for PTR events */
+	    } un;
+    };
+    
+    struct shmiqlinkid {
+            short int devminor;
+            short int index;
+    };
+    struct shmqevent {
+            union {
+                long int time;
+                struct shmiqlinkid id;
+            } un;
+            struct shmqdata data;
+    };
+    
+
+    For each event, the device specific module fills in:
+         un.devminor = the devminor assigned to the device by shmiq
+         un.index    = the index assigned to the device by shmiq
+         data.device = the index assigned to the device by shmiq
+                       (again, identifies the device to the server -- 
+                        shmiq clobbers the un.* values with a timestamp)
+         data.type   = the type of the event.  The only event types 
+                       currently defined are:
+                       QE_BTN_EVENT -- button changed state
+                       QE_VAL_EVENT -- valuator moved
+		       QE_PTR_EVENT -- one (or more) valuators which are
+					controlling the cursor moved.
+         data.which  = the index (0 based) of the button or valuator
+                       which changed state.
+         data.flags  = For events of type QE_BTN_EVENT:
+                           QE_BTN_DOWN is set if the button was pressed
+                           0 if the button was released
+                       For events of type QE_VAL_EVENT:
+                           QE_MORE_EVENTS is set if more valuator events 
+                               follow this event.   For example, the 
+                               spaceball can generate up to six events at 
+                               a time.  All events save the last have the 
+                               QE_MORE_EVENTS bit set in data.flags.
+                           QE_RESPONSE is set if the event was generated 
+                               in response to a request by the X server 
+                               -- i.e.  an IDEV_SETVALUATORS or 
+                               IDEV_CHANGEVALUATORS ioctl.
+                           QE_CLAMPED is set if the device generated an 
+                               event outside the range set for the device 
+                               by the X server.   The event should be 
+                               clamped to the specified range and the 
+                               QE_CLAMPED event bit set.   
+			For events of type QE_PTR_EVENT:
+			   QE_GEN_PTR_X -- this event reports a value for
+				the X axis.
+			   QE_GEN_PTR_Y -- this event reports a value for
+				the Y axis.
+			   QE_X_CLAMPED -- the X value in this event was
+				clamped.
+			   QE_Y_CLAMPED -- the Y value in this event was
+				clamped.
+         un.data.pos  = For events of type QE_VAL_EVENT, the un.data.pos 
+                            field contains the new valuator value.
+                        For events of type QE_BTN_EVENT, the contents of 
+                            the un.data.pos field are undefined.
+	 un.data.ptraxis = For events of type QE_PTR_EVENT, un.data.ptraxis[0]
+			    contains an X value (if the QE_GEN_PTR_X flag
+			    is set) and the un.data.ptraxis[1] field contains
+			    a value for Y (if the QE_GEN_PTR_Y flag is set).
+    
+    The file idev.c in the io directory contains helper functions 
+    which greatly simplify the process of adding support for an input
+    device.    If you set up your data structures correctly (using XXX.c
+    as a template), the functions in idev.c handle shmiq M_PROTO
+    events, format and forward events and deal with most device trivia.
+    You should be able to modify XXX.[ch] (mostly using global replace 
+    and deleting inappropriate functions) and then write 2-4 functions:
+    You must write:
+        an open function which initializes the data structures that 
+	    idev.c expects.  Do not write modify the device in the open
+	    function.
+        an intr function which accepts strings of bytes from the devices
+            and calls idev functions to generate events when appropriate.
+	    You should call idevGenPtrEvent(s) and idevGenBtnEvent(s) (see
+	    idev.h) to generate the actualy events.   These functions will
+	    handle the various modes and generate appropriate event types 
+	    for you.
+    You might need to write:
+	an init_device function which changes line settings and writes any
+	    initialization information to the device.
+	an other_control function which supports device-specific configurations
+	    which are not handled by another ioctl from idev.h.
+    
+    The X server assumes all device events are absolute device 
+    coordinates.  The shmiq uses QE_PTR_EVENTS events to control the 
+    cursor -- passing relative coordinates up to shmiq may cause bizarre 
+    cursor tracking.  You should generate absolute values whenever 
+    possible.
+
+    
+                   SUPPORTING A NEW DEVICE IN IRIX 5.3
+    
+        The files io/XXX.c and sys/XXX.h provide a template for a device
+    module implementation.   Copy these files and modify them as 
+    appropriate for your device.   The generic device interface defines 
+    a number of ioctls for each device -- your device need not support 
+    inappropriate ioctls (e.g. the keyboard doesn't support any ioctls 
+    which query or change valuator state or characteristics).  
+    
+        You should not initialize the device at open time -- the serial
+    line settings may be incorrect when the device is opened.   The X 
+    server might open the device many times to get information without
+    ever actually using the device.  Before it actually uses the device 
+    for the first time, it calls IDEVINITDEVICE.  If you need to set up 
+    your device, do so when IDEVINITDEVICE is called.   Your module should
+    discard any data read from the device before INITDEVICE is called.
+    
+    
+                        About IDEVGETDEVICEDESC
+    
+    All devices must support the IDEVGETDEVICEDESC ioctl.   If the
+    hasKeymap field is 1 in the returned structure, the X server will
+    generate KeyPress and KeyRelease events.    If hasKeymap is 0,
+    the X server generates ButtonPress and ButtonRelease.
+    
+    Normally, the server tries to open each file in /dev/input and uses a 
+    module with the name of the file (e.g. it opens /dev/input/mouse and 
+    I_PUSHes the "mouse" module).   If the file name contains a dash, the 
+    server uses the device name before the dash as the module name, and 
+    the first 16 characters after the dash as an option string.  Before
+    initializing a device (with IDEVINITDEVICE), the X server issues
+    an IDEVOTHERCONTROL ioctl (see below) with the name "/nameopt/" and value
+    of the characters after the '-' in the device name.
+    For example, the X server opens /dev/input/sball-dials, I_PUSHes 
+    the "sball" module, issues an IDEVOTHERCONTROL ioctl with 
+    name="/nameopt/" and value="dials," queries the device and finally 
+    issues an IDEVINITDEVICEIOCTL and reads events from the device.
+    If your device can be configured several ways, look for a "/nameopt/"
+    option to modify the device characteristics.   The X server passes
+    the option before querying the device so you can completely change
+    the characteristics of your device invisibly (to the X server).
+    
+
+                       USING A DEVICE IN IRIX 5.3
+
+    Use the X input extension to control devices in IRIX 5.3.   All
+    devices supported by the GL in IRIX releases before 5.3 will 
+    continue to work (using qdevice), but there is no straightforware 
+    way to add new devices to the GL at present.
+    
+    If you need device controls that the input extension does not 
+    provide, you can use the IDEVOTHERCONTROL ioctl.  This ioctl takes
+    an idevOtherControl structure which has a name (up to IDEV_CTRL_NAME_LEN
+    characters) and a value (up to IDEV_CTRL_DATA_LEN).   The IDEVOTHERCONTROL
+    option returns the contents of the idevOtherControl to the X server so
+    you can return information by changing the structure in place.
+    To issue an IDEVOTHERCONTROL from an X client, use the XSGIDeviceControl
+    function:
+	Bool XSGIDeviceControl( dpy, devID, name, value )
+	Display *dpy;
+	int	 devID;
+	char	 *name;
+	char	 *value;
+    If "name" is not one of the controls used by the server itself, the
+    creates an idevOtherControl structure, fills it in with the name and 
+    value from the request (truncating as necessary) and issues the 
+    IDEVOTHERCONTROL ioctl to the device.  The example spaceball driver 
+    supports a few other controls -- look in sball.c for examples.
+
+    You should use a prefix for your device controls as the X server uses some
+    non-prefixed controls.
+
+    If you need to query the device for information that isn't available 
+    through the X input extension, you can use the IDEVOTHERQUERY ioctl.
+    To issue an IDEVOTHERQUERY ioctl from an X client, use the XSGIDeviceQuery
+    function:
+	Bool XSGIDeviceQuery( dpy, devID, name, rtrn )
+	Display *dpy;
+	int	 devID;
+	char	 *name;
+	char	 *value; /* OUT */
+    If "name" is not one of the queries used by the X server, the server
+    creates an idevOtherQuery structure and issues an IDEVOTHERQUERY 
+    to the device module.   If the ioctl succeeds, the server returns
+    24 bytes of data from the device module to the client.
+
+    If the server or device module answers a query, XSGIDeviceQuery returns
+    TRUE and rtrn contains 24 bytes of data.   If neither the server nor
+    the device module recognize the query, XSGIDeviceQuery returns FALSE
+    and the contents of rtrn are undefined.
+    
+
+                ADDING A NEW DEVICE MODULE TO THE SYSTEM
+
+    Here's what you have to do to add a device module to an IRIX 5.3 
+    system:
+    
+    Compile your streams module as shown by the Makefile in the io
+    subdirectory.  Add the resulting .o file to /var/sysgen/boot.
+    
+    Copy /var/sysgen/master.d/dial to /var/sysgen/master.d/<device>
+    where <device> is the name of your device.   Edit your new file in 
+    master.d and change all occurences of "dial" or "DIAL" to the name 
+    of your device.
+    
+    Edit /var/sysgen/system/gfx.sm, and add the line "USE: <device>"
+    (the name of your device should be the name of the file you added 
+    to master.d).
+
+    If the 'd' and 'R' flags are specified in the master.d file, the 
+    driver is a dynamically loadable module. It will be auto-registered
+    at system boot and only loaded into the kernel if the device is
+    opened. The driver can also be dynamically loaded and unloaded by
+    hand, using the lboot and ml commands. See mload(4), ml(1m) and
+    lboot(1m) for more information about dynamically loadable kernel
+    modules.
+    
+    If the module is not dynamically loadable, you need to rebuild a
+    kernel using autoconfig(1M) and reboot using the new kernel.
+    
+    Link the serial device to which your device is connected to 
+    /dev/input/<device> (<device> is the name of your device, again).
+    
+    When you reboot, the X server should find and use your device.
+    Consult the documentation for the Input Extension to the X Window 
+    System for the details of using an X extension device.
+    
+    The test directory contains (minimal) user-level streams simulation
+    so you can debug your device module without re-linking your kernel.
+    See test/README for details.

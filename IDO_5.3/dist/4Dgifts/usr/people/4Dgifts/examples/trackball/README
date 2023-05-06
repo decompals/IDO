@@ -1,0 +1,40 @@
+
+
+                 README for Virtual Trackball Implementation
+
+
+
+
+   This directory contains 4 components, all of which are useful and
+   (hopefully) re-usable:
+
+    1) Routines to calculate a 'virtual trackball' (trackball.[ch],vect.[ch])
+    2) Event-queue handling routines               (event.[ch])
+    3) A user-interface implemented using (1,2)    (ui.[ch])
+    4) A simple example program that uses (1,2,3)  (example.[ch])
+
+
+   To run:  Just type 'make', then 'example'.
+
+   Instructions for the example program:
+
+       MIDDLEMOUSE               does rotations, 
+       LEFTMOUSE                 does x/y translation (pan), 
+       MIDDLEMOUSE AND LEFTMOUSE does z translation (zoom).  
+       RIGHTMOUSE                has a pop-up menu with a couple of controls.
+
+   If you have a SpaceBall hooked up to your system and have the
+   SpaceBall library installed (/usr/lib/libspaceball.a) you can
+   compile this example to use either the mouse or the SpaceBall to
+   move the object.  See the comments in the Makefile for instructions
+   on how to modify it to add the SpaceBall support.
+
+   See the files 'ui.h', 'trackball.h' and 'event.h' for programming details.
+   Basically,
+     event.[ch] defines an elegant method of dealing with the input queue; 
+     trackball.[ch] defines the math needed to implement a virtual trackball;
+     ui.[ch] implements a specific user interface using the trackball and 
+	   event handler; 
+     example.c pulls all three together in a simple example program.
+
+                --  Gavin Bell (gavin@sgi.com) 1988

@@ -1,0 +1,66 @@
+                           Abekas and SGI SCSI
+
+                           Abekas Video Systems
+                           Simon Carter - 1991
+
+
+Notes for SGI to Abekas SCSI connection ----------------------------------------
+
+The A60 SCSI port can be connected to the SGI 4D series. At the Iris end you 
+need IRIX 3.2 or better and you need the /dev/scsi device drivers (see DS(7M) 
+in the IRIX manuals).
+
+Cabling
+
+This may sound obvious but make sure the SCSI cable is wired correctly 
+(home-made Centronics to 50 way connectors often end up wrong if you 
+follow the pin numbering on the Centronics connector) The Crimp-on 
+insulation displacement versions of the Centronics style connector are the 
+most foolproof.
+
+The other cable issue is length, make sure the SCSI cable is as short as 
+possible, if the IRIS hangs up as soon as you plug it into the A60 it could
+either be a cable fault or an addressing conflict.
+
+The SCSI link seems to work OK with the Bus terminated at the A60 end so 
+you don't need to touch the terminating resistors on the A60 computer card.
+
+SCSI Address
+
+In this example the Abekas is configured as SCSI ID 5 so as not to conflict 
+with existing SGI SCSI devices. The program then calls dsopen() on 
+"/dev/scsi/sc0d5l0".
+
+To set ID 5 and ensure that SCSI resets from the Iris work the DIP switch on 
+the A60 computer board at location 15C has to be set as follows:
+
+        1    2    3    4    5    6    7    8
+       on   off  on   off  off  off  off  on
+
+Note that switch 7 should be off otherwise resetting the A60 it will also assert
+the SCSI reset line and upset the Iris.
+
+Iris Setup
+
+Before using the programs you will have to change the protection on the SCSI 
+device.
+chmod 666 /dev/scsi/sc0d5l0
+and make sure the ds device driver is included in your kernel, with the 
+standard distribution you have to uncomment the line that says INCLUDE ds 
+in /usr/sysgen/system and then rebuild the kernel.
+
+Testing ------------------------------------------------------------------------
+
+The easiest way to test the scsi conversion is to read two fields off the A60 
+over Ethernet in YUV format then convert to SCSI format and write them 
+back. 
+
+rcp a60:f99 field1           # read the first field of frame 99
+rcp a60:f99+ field2          # read the second field
+
+engoop 0 field1 99.f1        # convert to SCSI format
+engoop 1 field2 99.f2
+
+write 99.f1 30               # write to disk field 30 (frame 15 field 1)
+write 99.f2 31
+

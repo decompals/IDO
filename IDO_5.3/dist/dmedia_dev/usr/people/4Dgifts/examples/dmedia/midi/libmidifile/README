@@ -1,0 +1,8 @@
+
+This directory contains a simple and not terribly complete MIDI file
+library as an example for the MIDI library.  The program "playfile.c++"
+in examples/dmedia/midi/player uses this library, and is known to work 
+within its limits.  Any bug reports may or may not get fixed, but submissions
+will often be welcome.
+
+

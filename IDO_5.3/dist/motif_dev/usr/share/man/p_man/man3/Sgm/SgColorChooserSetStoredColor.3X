@@ -1,0 +1,63 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1993 by Silicon Graphocs, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **
+.TH SgColorChooserSetStoredColor 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgColorChooserSetStoredColor \*O\(em A ColorChooser function that sets the color of the ColorChooser's stored color swatch
+.iX "SgColorChooserSetStoredColor"
+.iX "ColorChooser functions" "SgColorChooserSetStoredColor"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sgm/ColorC.h>
+.sp \n(PDu
+void SgColorChooserSetStoredColor (\*Vwidget, red, green, blue\*L)
+.ta .5i 1.7i
+	Widget	\*Vwidget\*L;
+	short	\*Vred\*L;
+	short	\*Vgreen\*L;
+	short	\*Vblue\*L;
+.wH .fi
+.ne 10
+.iE
+.sE
+.SH DESCRIPTION
+\*LSgColorChooserSetStoredColor\*O sets the color of the ColorChooser's
+stored color swatch component.
+This gives the developers access to set the ColorChooser reference color.
+
+Calling SgColorChooserSetStoredColor and SgColorChooserSetCurrentColor
+with the same color value is equivalent to calling SgColorChooserSetColor.
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the ColorChooser widget ID.
+.LI "\*Vred\*O"
+Specifies the red color component in an RGB color space.
+.LI "\*Vgreen\*O"
+Specifies the green color component in an RGB color space.
+.LI "\*Vblue\*O"
+Specifies the blue color component in an RGB color space.
+.LE 
+.PP 
+For a complete definition of ColorChooser widget and its associated 
+resources, see
+\*LSgColorChooser(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LSgColorChooser(3X)\*O.
+\*LSgCreateColorChooser(3X)\*O,
+\*LSgCreateColorChooserDialog(3X)\*O,
+\*LSgColorChooserSetColor(3X)\*O,
+\*LSgColorChooserGetColor(3X)\*O,
+\*LSgColorChooserSetCurrentColor(3X)\*O.
+.ad
+
+

@@ -1,0 +1,29 @@
+This directory contains example programs that demonstrate how to 
+use the IndigoVideo library.
+
+File		Topics covered
+----		--------------
+burstcapt.c	burst capture of frames, GL display
+chromamap.c	chroma key map
+contcapt.c	continuous frame capture, GL display
+oneframe.c	one frame capture, GL display
+rgbgrab.c	live video input, one frame capture, GL display
+simplegl.c	live video input in GL window, GL video event handling
+simpleinput.c	live video input in GL window
+sizeinput.c	live video input in GL window, GL event handling
+svtomovie.c	burst capture of frames, movie file creation
+vbounce.c	live video input in GL window
+vclock.c	live video input in underlay, GL graphics
+vgrab.c		one frame capture, live video input, GL display,
+		SGI image file creation
+vmirror.c	continuous frame capture, GL display, simple image manipulation
+vnurbtex.c	continuous frame capture, GL display, simple image manipulation
+vout.c		live video output
+voverlay.c	live video input in overlay, GL graphics
+vpaste.c	SGI image file to video output
+xevents.c	live video input in X11 window, X11 video event handling
+xrgbgrab.c	live video input in X11 window, one frame capture, X11 display
+
+
+The following programs are shipped as executables in /usr/demos/bin:
+vbounce, vclock, vmirror

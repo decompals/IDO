@@ -1,0 +1,56 @@
+
+     ---------------------------------------------
+     README for ~4Dgifts/examples/X11/color/xcedit
+     ---------------------------------------------
+
+Xcedit is a sample program to show how to write color X/Motif program
+using read/write cell in a Default Colormap.  See other Motif programs
+on how to do toolkit initialization.  This program shows how to 
+allocate a writable color cell from Default Colormap.
+
+Initializaton:
+
+After initializing the toolkit, it creates form widget as the container
+widget to hold all other widgets for this application.  Then it creates
+RowColumn widget to manage the 3 scale widgets (each for red, green, 
+and blue components).  Label widget is used to show the color and values
+of red, green, and blue.
+
+The program uses Xlib macro DefaultColormap to get the default color map.
+It then allocates 1 cell to be used.  We need to allocate this so that
+we can write to it.  Once it gets the cell, it then queries the values
+of red, green, and blue components of that cell.  It will show them on the
+label.  It also sets, the background color of the label widget to that
+pixel value (color cell).
+
+Callback:
+
+The slider_moved callback changes the color components of the pixel.  The
+changes is reflected on the label background color.  It also changes the
+string shown.
+
+Menu:
+
+To quit pressed the right mouse button and select quit.
+
+Resource file:
+
+XCedit.ad must be copied to /usr/lib/X11/app-defaults/XCedit.  This
+program relies heavily on this resource file.  In other words, it is
+highly customizable by the user.  If you don't want to change the
+system wide /usr/lib/X11/app-defaults directory, just copy the contents
+of this file to your ~/.Xdefaults file.
+
+To run:
+
+% su
+% mv XCedit.ad /usr/lib/X11/app-defaults/XCedit
+% exit
+% xmkmf
+% make
+% xcedit &
+
+
+Ivan M. Hajadi, Silicon Graphics, Inc., 11-Mar-91
+
+

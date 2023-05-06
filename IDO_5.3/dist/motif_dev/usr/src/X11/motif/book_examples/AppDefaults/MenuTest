@@ -1,0 +1,6 @@
+!
+! MenuTest: Really the wrong name according to class name conventions
+!
+
+menu*geometry:  =200x100
+menu2*geometry:  =200x100

@@ -1,0 +1,24 @@
+!ifdef __sgi /* fixed font is too big */
+Dialog*defaultFontList: 9x15
+!endif __sgi
+
+Dialog*button.labelString:    Push Me
+
+Dialog*button1*labelString:   Name:
+Dialog*button2*labelString:   Phone:
+Dialog*button3*labelString:   Address:
+!
+! Specify positions for each widget.
+!
+Dialog*XmText*x:        120
+Dialog*field1*y:         10
+Dialog*field2*y:         40
+Dialog*field3*y:         70
+Dialog*XmPushButton.x:   10
+Dialog*button1*y:        10
+Dialog*button2*y:        40
+Dialog*button3*y:        70
+Dialog*help*x:           10
+Dialog*help*y:          200
+Dialog*done*x:           10
+Dialog*done*y:          100

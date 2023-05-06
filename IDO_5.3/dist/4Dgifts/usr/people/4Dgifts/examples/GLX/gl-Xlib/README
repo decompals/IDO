@@ -1,0 +1,110 @@
+
+        ------------------------------------------------------------
+        Explanation of the contents of ~4Dgifts/examples/GLX/gl-Xlib
+        ------------------------------------------------------------
+
+
+    This directory contains mixed model programs which combine SGI's GL 
+    with Xlib--the "stone knives and bearskins" layer of X functionality.
+    In the big scheme of things, the new functionality being demonstrated 
+    here is going to be *the* way to go for all those wanting to be able
+    to continue to use the ever newer GL features that will be introduced 
+    only into the mixed model environment, not into the sustained
+    compatibility GL.
+
+    In each program here, the "magic" happening is that an X window is 
+    created via XCreateWindow(3X11) and then GL drawing is enabled to be
+    directed into this X created window.  WINOPEN(3G) is never called. 
+    In this way, programmers are enabled full access to the features 
+    provided by the native window system.  Such access was never able to
+    be provided in the simple framework of mex, the GL's first window 
+    system interface.
+
+    What follows is a brief description of the files contained in this
+    subdir.  Be sure to study the README.mixedmodel and README.TransG-chp4
+    files:  the former provides an extrememly helpful breakdown of how
+    mex emulation stops with IRIX 4.0 and why this was necessary, and what 
+    the mixed model programming paradigm really boils down to, while the 
+    latter is an on-line, "ascii-viewable" copy of chapter 4 of the "IRIX 
+    4D1-4.0 Transition Guide, Programming Environment".  It was felt a 
+    copy of this chapter focusing on GL rendering in Xlib-based 
+    applications was important to include here to achieve the widest 
+    possible accessibility by programmers.
+
+
+     mix      ->  (mix.c, glxhelper.c, glxhelper.h)
+                  mix opens up a top-level X window and then creates four
+                  GL windows as children of the X window.  Each of the GL
+                  windows runs a different display mode (cmap-singlebuffer,
+                  cmap-doublebuffer, rgb-singlebuffer, rgb-doublebuffer).
+                  All the standard GL drawing stuff happens in mix.c,
+                  while glxhelper.c contains the necessary magic to
+                  create an X window suitable for GL drawing to take place
+                  within.  glxhelper.h contains the list of drawing modes
+                  mix implements.  There is nothing "fixed in concrete" 
+                  about the elements that make up this list.
+
+
+
+     mix2     ->  (mix2c, glxh2.c, glxh2.h)
+                  an extension of mix, mix2 opens up a top-level X window 
+                  and then creates six GL windows as children of the X window.
+		  Each of the GL windows runs a different display mode 
+		  (cmap-singlebuffer, cmap-doublebuffer, rgb-singlebuffer, 
+		  rgb-doublebuffer, zbuffer-rgb-doublebuffer, and overlay[or 
+		  popup]-cmap-doublebuffer).  All the standard GL drawing 
+		  stuff happens in mix2.c, while glxh2.c contains the 
+		  necessary utility functions to create an X window suitable 
+		  for GL drawing to take place within.  glxh2.h contains the 
+		  function prototype for 2 functions in glxh2.c that return
+		  info and create the GL windows within their X parent.
+
+                  
+
+     mixexamp ->  (mixexamp.c)
+		  this program hails from section 4.4, Mixed Model Example, of 
+		  the "IRIX 4D1-4.0 Transition Guide, Programming Environment".
+		  It provides a simple example that demonstrates the use of
+		  double-buffered RGB and overlays.  If the given machine 
+		  mixexamp is run on does not have overlays, then the popup
+		  planes are employed using the GLX_POPUP buffer request.
+		  Determining whether or not overlays exist is done, as in
+		  mix2, by testing:
+		  
+			if (getgdesc(GD_BITS_OVER_SNG_CMODE) < 2)
+
+		  If the above test is true, we know there are no overlay
+		  bitplanes on the current machine and program accordingly
+		  using the popup planes instead.
+
+
+
+
+     keyboard ->  (keyboard.c)
+     mouse    ->  (mouse.c)
+                  both of these programs are the source code for the 
+                  confidence tests by the same name (installed with
+                  the visual administration tools) that are accessed
+                  through the "System" Toolchest "Confidence Tests"
+                  menu item.  Larger code examples to be sure, but
+                  very useful for a more extensive example set of
+                  actual implementations of mixed model programming.
+
+
+
+     swirl    ->  (swirl.c, line.c swirl.h)
+                  a standby vector swirl which randomly picks 2-D 
+                  vertices, and uses GL line drawing to create a series 
+		  of lines with 8 different RGB colors in an X window.  
+		  These lines are continuously rotated while their 
+		  lengths are altered within the X window.  
+
+                  swirl provides the following 3 options:
+
+                  swirl -h            print the usage message; then exit
+                  swirl -sleep num    suspend drawing a line for number 
+                                      of milliseconds.  The default is 
+				      50ms.
+                  swirl -batch num    set number of lines per batch.  The 
+				      default is 64.   The total number of 
+				      lines is equal to (batch num + 1)*2.

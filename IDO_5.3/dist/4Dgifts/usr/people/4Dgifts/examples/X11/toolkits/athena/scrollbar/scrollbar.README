@@ -1,0 +1,17 @@
+
+     ----------------------------------------------------------------------
+     README for ~4Dgifts/examples/X11/toolkits/athena/scrollbar/scrollbar.c
+     ----------------------------------------------------------------------
+
+        Scrollbar widget is a rectangular area that contains a slide
+        region and a thumb (slide bar).  A scrollbar can be used
+        alone, as a valuator, or it can be used within a composite
+        widget.  A scrollbar can be aligned either vertically or
+        horizontally (set in resource file).
+
+
+        Scrollbar.c demonstrates the use of scrollbar widget.  When the 
+	thumb is smoothly scrolled, Jump is called, and when the thumb
+	is moved incrementally, or by clicking on the slider itself, 
+	Scroll is called.  Both function print the position of the thumb
+	relative to the top/left corner of the scrollbar.

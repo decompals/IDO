@@ -1,0 +1,15 @@
+
+    	  ----------------------------------------------------------
+    	  README for ~4Dgifts/examples/X11/toolkits/athena/box/box.c
+  	  ----------------------------------------------------------
+
+
+     The Box widget provides geometry management of arbitrary widgets in
+     a box of a specified dimension.  The children are rearranged when
+     resizing events occur either on the Box or when children are added
+     or deleted.  The Box widget always attempts to pack its children as
+     closely as possible within the geometry allowed by its parent.
+
+     box.c demonstrates a box widget that manages three command widgets.
+     The command widgets will be rearranged when the box dimension 
+     changes.

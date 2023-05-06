@@ -1,0 +1,72 @@
+
+     ---------------------------------------------------------------------
+     README for ~4Dgifts/examples/Fortran source code programming examples
+     ---------------------------------------------------------------------
+
+
+
+      Most of the programs currently residing in ~4Dgifts/examples/FORTRAN
+    originate from eariler incarnations of the old (3000) IRIS GRAPHICS 
+    PROGRAMMING MANUAL, Volume I. 
+
+        backface.f      curvesegs.f       joinedcrvsegs.f    square.f
+        box.f           depthcube.f       picking.f          surfpatch.f
+        crash.f         drawing.f         shadedpoly.f       text.f
+
+      These programs are not optimal examples in that they use the old-style
+    drawing commands such as move, draw, poly, etc., instead of the new,
+    more efficient drawing commands such as bgn/end -poly, -line, v, etc.
+    In time these programs will be re-written or replaced with more up-to-
+    date examples.  
+      
+    The brief note at the top of each program in this directory explains
+    what it does or demostrates.
+
+    At present, the new subdirs/programs consist of: 
+                
+                                                          
+   -->  defpat   [DIR]    contains 2 programs, editpat32 and showpat32,
+                          which implement a DEFPATTERN(3G) 32X32 editor and
+                          viewer respectively.
+
+   -->  globe    [DIR]    displays a user-manipulatable globe using a 
+                          converted earth-centered world coord data base.
+
+   -->  quick    [DIR]    demonstrates a FORTRAN grafix quick plotting pkg.
+
+   -->  shmemf77 [DIR]    demonstrates using shared memory via FORTRAN 77.
+
+   -->  light.f           [finally!] illustrates GL lighting in Fortran.
+
+   -->  skeleton.f        provides an approach for catching and processing
+                          input from the GL event queue *without* eating up
+                          excessive CPU cycles in polling loops.  useful as
+                          a template for converting programs unnecessarily
+                          reliant upon qtest() or getbutton().
+
+   -->  zrgb.c            demostrates zbuffered intersecting RGB polygons
+			  which can be manually rotated with the LEFTMOUSE.
+   
+   -->  zrgbmenu.c        demostrates zbuffered intersecting RGB polygons
+			  which can be manually rotated with the LEFTMOUSE,
+			  as well as being able to switch to automatic or
+			  animation mode via a pop-up menu and having the
+			  rotations run themselves.
+   
+   -->  zcmapmenu.c       demostrates zbuffered intersecting color-map
+			  polygons which can be manually rotated with the 
+			  LEFTMOUSE, as well as being able to switch to 
+			  automatic or animation mode via a pop-up menu 
+			  and having the rotations run themselves.
+			  This version also includes usage of the device
+			  WINQUIT which allows one to catch the "Quit" 
+			  signal whether it is sent via the "Quit" menu
+			  item from the NeWS window border menu, or by
+			  "boinking" on the lightning bolt button on the
+			  left side of the window's title bar with the 
+			  LEFTMOUSE.  This can be very useful when it is
+			  essential to be able to clean-up things before
+			  exiting (like restoring the portion of the color-
+			  map used by this program to its original values).
+			  see the README.zcmapmenu file for more details on
+			  and information about this programming example.

@@ -1,0 +1,11 @@
+
+#include <gl/fgl.h>
+
+	parameter (LARGE=1000)
+	real points(2,LARGE)
+	real x(LARGE),y(LARGE)
+        parameter (NUMGD=10)
+	integer gid 
+	character*40  caxis(3)
+	common xmin,xmid,xmax,ymin,ymid,ymax,fudge
+

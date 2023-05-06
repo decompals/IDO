@@ -1,0 +1,25 @@
+XCOMM (c) Copyright 1989, 1990, 1991, 1992, 1993 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM Motif Release 1.2.3
+
+#ifdef SGIArchitecture /* Quickstart Fix for SGI */
+       DEPXMLIB = $(ROOT)$(SHLIBDIR)/libXm.so
+          XMLIB = -L$(ROOT)$(SHLIBDIR) -lXm
+       DEPMRMLIB = $(ROOT)$(SHLIBDIR)/libMrm.so
+          MRMLIB = -L$(ROOT)$(SHLIBDIR) -lMrm
+#endif /* SGIArchitecture */
+
+        DEPLIBS = MrmClientDepLibs
+LOCAL_LIBRARIES = MrmClientLibs
+
+SRCS = cutpaste.c
+OBJS = cutpaste.o
+
+MSimpleUilTarget(cutpaste)
+
+DependTarget()
+#ifdef SGIArchitecture
+FILES = Imakefile *.c *.uil README
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

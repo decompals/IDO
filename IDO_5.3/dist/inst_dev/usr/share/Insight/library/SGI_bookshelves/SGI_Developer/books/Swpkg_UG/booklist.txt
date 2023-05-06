@@ -1,0 +1,1 @@
+<BOOK name="Swpkg_UG" edition="19941109" alias = "Software Packager User's Guide" type = "sgi_developer" hide = "FALSE" version = "007-2503-001" sort = "010075" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

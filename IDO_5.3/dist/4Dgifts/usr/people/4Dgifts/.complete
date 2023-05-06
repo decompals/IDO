@@ -1,0 +1,188 @@
+#
+#	Example file for tcsh programmable completion
+#
+# From the man page:
+#
+# 33. PROGRAMMABLE COMPLETION
+#
+#   The new complete and uncomplete builtins can change the
+#   behavior of the listing and file-completion in tcsh. For
+#   example some commands like cd, pushd, popd , mkdir(1),
+#   rmdir(1) accept only directories as arguments.  Normally
+#   tcsh when asked to list or complete an argument for those
+#   commands takes into account all the files and not only
+#   directories. This behavior can be changed by telling tcsh
+#   that these commands only expect directory arguments:
+#
+#   > complete cd 'n/*/d/'
+#
+#   The above command tells tcsh to complete any following word
+#   with a directory.  Now when you hit TAB for completion, tcsh
+#   will only attempt to complete directory names.  Similarly,
+#   ^D will only list directories.
+#
+#   The syntax for the complete and uncomplete builtins is:
+#
+#	complete [<command-pattern> [<completion-argument>]]
+#	uncomplete <command-pattern>
+#
+#   Completion arguments are matched in turn from left to write
+#   and the first sucessful match is returned.  There are three
+#   different completion arguments, modelled after the sed(1)
+#   substitute command and they are of the form:
+#
+#       <command>/<match-pattern>/<complete-action>/[<suffix>|/]
+#
+#   The five commands available are:
+#
+#	p    This specifies position-dependent completion. The
+#	     matching pattern is a numeric range.
+#
+#	n,N  This command specifies next-word completions. The
+#	     matching pattern in this case is a shell pattern that
+#	     must match the previous word on the command line (n),
+#	     or the word before that (N).
+#
+#	c,C  The last completion command completes the current word.
+#	     The matching pattern in this case must match the prefix
+#	     of the current word.  While `c' discards the matched
+#	     prefix, `C' keeps it and applies the completion using it.
+#
+#	C	Complete completions
+#	S	Complete signals
+#	a	Complete aliases
+#	b	Complete binding
+#	c	Complete command
+#	d	Complete directory
+#	e	Complete environment variable
+#	f	Complete file or path component
+#	j	Complete jobs
+#	l	Complete limits
+#	n	Complete nothing
+#	p:path	Complete files using the supplied pathname prefix
+#	s	Complete shell variable
+#	t	Complete non directory `text' filename
+#	v	Complete any variable
+#	u	Complete username
+#	x:'txt'	Explain (i.e. print the text)
+#	$var	Complete using words from variable
+#	(...)	Complete using words from list
+#	`cmd`	Use output from the command to provide the completion list
+#
+# See man tcsh for more specifics.
+
+if ($?tcsh) then
+    if ($tcsh != 1) then
+   	set rev=$tcsh:r
+	set rel=$rev:e
+	set pat=$tcsh:e
+	set rev=$rev:r
+    endif
+    if ($rev > 5 && $rel > 1) then
+	set complete=1
+    endif
+    unset rev rel pat
+endif
+
+if ($?complete) then
+    # customize this for your own frequently-used hosts
+    set hosts=( babylon bonnie gate-orange godzilla lone orange trident )
+
+    set noglob
+
+    complete -comp*	'p/0/(compress)/'	# favoritism
+
+    complete alias	p/1/a/			# only aliases match
+    complete unalias	n/*/a/
+
+    complete guest	p/1/\$hosts/		# complete from list in $hosts
+    complete rcp	c/*:/f/ C@[./]*@f@ c/*@/\$hosts/ n/*/\$hosts/:
+    complete rlogin	c/*@/\$hosts/ p/1/\$hosts/ n/-l/u/
+    complete rsh	p/1/\$hosts/ p/2/c/
+
+    complete cd		p/1/d/			# Only directories match 
+    complete chdir	p/1/d/
+    complete pushd	p/1/d/
+    complete popd	p/1/d/
+    complete pu		p/1/d/
+    complete po		p/1/d/
+    complete mkdir	n/*/d/
+    complete rmdir	p/1/d/
+    complete mount	p/1/f/ p/2/d/
+    complete umount	p/1/d/
+
+    complete man	p/1/c/			# only commands match
+    complete exec	p/1/c/
+    complete time	p/1/c/
+    complete which	p/1/c/
+    complete where	p/1/c/
+    complete xargs	p/1/c/
+
+    complete set	c/*=/f/ n/*/s/=		# only variables match
+    complete unset	n/*/s/
+    complete setenv	p/1/e/
+    complete unsetenv	n/*/e/
+
+    complete complete	p/1/C/		# completions
+    complete uncomplete	p/1/C/
+
+    complete finger	n/*/u/			# Only usernames match
+    complete Mail	n/*/u/
+    complete mail	c@=@p:$HOME/Mail/@ n/-f/f/ n/*/u/
+    complete elm	c@=@p:$HOME/Mail/@ n/-f/f/ n/*/u/
+    complete efn	n@*@p:$HOME/News/@
+
+    complete kill	c/-/S/ c/%/j/		# jobs patterns
+    complete %*		c/%/j/
+    complete fg		c/%/j/
+    complete bg		c/%/j/
+    complete stop	c/%/j/
+
+    complete xdvi	n/*/f:*.dvi/		# Only files that match *.dvi
+    complete cc		c/-I/d/ c/-L/d/ 'c/-/(o c g O L I D U)/' n/*/f:*.[coa]/
+    complete latex	n/*/f:*.tex/
+    complete tex	n/*/f:*.tex/
+    complete nm		n/*/f:*.[oa]/
+    complete rm		n/*/f:^*.[cCh]/		# Protect precious files
+    complete zcat	n/*/f:*.Z/
+    complete uncompress n/*/f:*.Z/
+    complete compress	n/*/f:^*.Z/
+
+    complete make	c/*=/f/
+    complete smake	c/*=/f/
+
+    complete arc	p/2/f:*.arc/
+    complete lharc	p/2/f:*.lzh/
+    complete unzip	p/1/f:*.{ZIP,zip,exe}/ p/2/f:*.{ZIP,zip,exe}/ \
+			'n/*/`sh -c "unzip -lqq $:2 | cut -c28-"`/'
+    complete zoo	'c/-/(add extract test print list update freshen \
+			      comment)/' 'p/2/f:*.zoo/' 'n/*/`zoo lfq $:2`/'
+
+    complete vi		'n/-t/`egrep ^$:2 tags | cut -f1`/' n/*/f:^*.[aou]/
+
+    complete ipaste	'C:*faces/:f:' 'p:1:(/usr/lib/faces):/'
+
+    complete find	n/-name/f/ n/-user/u/ n/-exec/c/ n/-ok/c/ n/-cpio/f/ \
+			n/-*newer/f/ 'c/-/(name perm type links user group \
+			size inum atime mtime ctime exec ok print cpio newer \
+			anewer cnewer depth prune mount local follow)/' n/*/d/
+
+    complete ppmforge	'c/-/(clouds dimension glaciers height hour ice \
+			inclination mesh night power saturation seed stars \
+			tilt width xsize ysize)/'
+
+    complete xv		'c/-/(help display geometry fixed expand aspect \
+			perfect owncmap ninstall quick24 slow24 best24 root \
+			rmode quit clear)/'
+
+    complete xlock	'n/-mode/(blank rotor pyro flame hop image life pop \
+			qix swarm random)/' 'c/+/(remote mono nolock \
+			allowroot enablesaver besaver allowaccess echokeys \
+			usefirst)/' 'c/-/(display mode delay batchcount \
+			colorcount nice timeout saturation font fg bg name \
+			password info validate invalid resources remote mono \
+			nolock allowroot enablesaver besaver blankthresh \
+			allowaccess echokeys usefirst v)/'
+
+    unset noglob complete
+endif

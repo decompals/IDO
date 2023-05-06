@@ -1,0 +1,23 @@
+ENHANCED XmFileSelectionBox DEMO
+
+This demo brings up an XmFileSelectionBox or XmFileSelectionDialog.
+To get the XmFileSelectionBox
+	% fsb
+
+To get the XmFileSelectionDialog
+	% fsb 1
+
+To build the demo (assuming you have sufficient permission):
+% mmkmf
+% make Makefile
+% make
+
+To get the enhanced XmFileSelectionBox, make sure you have the 
+Fsb defaults file in a place visible to your XUSERFILESEARCHPATH (or
+equivalent.)  The Fsb defaults file should look like this:
+
+! resources for the File Selection Box Demo
+! use this for the Buffed File Selection Box
+fsb*sgiMode: true
+! use this for the enhanced File Selection Box
+fsb*useEnhancedFSB: true

@@ -1,0 +1,251 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!                                                                             !
+!                   4Dgifts customized ~/.Xdefaults file                      !
+!                                                                             !
+!  DESCRIPTION                                                                !
+!                                                                             !
+!      This file contains resource settings for the 4Dgifts used-id           !
+!      environment which will customize all X applications at startup         !
+!      time.  The scope of such customizations also include resources         !
+!      for the 4Dwm and mwm window managers.  The format of resource          !
+!      files  is defined in Xlib - C Language X Interface.                    !
+!                                                                             !
+!       The format of resource specification is:                              !
+!                                                                             !
+!   ResourceLine  =Comment|ResourceSpec                                       !
+!   Comment	  ="!" string | <empty line>                                  !
+!   ResourceSpec  =WhiteSpace ResourceName WhiteSpace ":" WhiteSpace value    !
+!   ResourceName  =[Binding] ComponentName {Binding ComponentName }           !
+!   Binding       ="."|"*"                                                    !
+!   WhiteSpace    ={" "|"\t"}                                                 !
+!   ComponentName ={"A"-"Z"|"a"-"z"|"0"-"9"|"_"|"-"}                          !
+!   value         =string                                                     !
+!   string        ={<any character not including "\n">                        !
+!                                                                             !
+!   where { } holds zero or more occurences of the enclosed elements.         !
+!   If the last char of a line is \ the line is assumed to be                 !
+!   continued on the next line.                                               !
+!                                                                             !
+!   Arbitrary octets can be included in strings.  \000 includes               !
+!   the NULL character.  \nnn includes a character with the octal             !
+!   value of nnn.  New lines can be represented as "\n".                      !
+!                                                                             !
+! Or perhaps in a less formal (non) grammar                                   !
+!                                                                             !
+!       <prog>|<class>*<resource>:  <value>                                   !
+!                                                                             !
+!       where:                                                                !
+!                                                                             !
+!             <prog>         program name  (X or GL)                          !
+!             <class>        instance name of program                         !
+!             <resource>     resource name                                    !
+!             <value>        value assigned to resource                       !
+!                                                                             !
+!  REFERENCES                                                                 !
+!                                                                             !
+!      For a full description of resource settings (there's a LOT more),      !
+!      see the 4Dwm(1X) and mwm(1X) man pages, as well the two books,         !
+!      "OSF/Motif Programmer's Guide" (especially Part II, Motif Window       !
+!      Manager, Chapter 5, Managing Menus, Mouse Buttons, and Keyboard        !
+!      Bindings), and O'Reilly, Vol. 3, "X Window System User's Guide."       !
+
+!	
+!                                                                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!  Caution watch for comments that expose things that look
+!  like comments to the 'c' preprocessor.
+!
+!  Comment out any line to use the "default" values
+!  specified by the file in /usr/lib/X11/app-defaults/.
+!                    What if * wildcard was used here ^
+!
+!
+!  Define some customizations for xwsh
+!
+xwsh*background:		#00466a
+xwsh*foreground:		grey80
+xwsh*cursorTextColor:		white
+xwsh*cursorPageColor:		red
+xwsh*barPointerShape:		spider
+!
+!
+XWsh*clientDecoration: 		+minimize +maximize +menu +border
+XWsh*autoFork:			on
+XWsh*selectionTextColor:	white
+XWsh*selectionPageColor:	163
+XWsh*geometry:			80x24
+XWsh*barWidth:			10
+XWsh*font:			-*-lucidatypewriter-medium-r-normal-*-14-140-*
+XWsh*OverFirst:			true
+
+
+
+!  Set certain application resources explicitly
+
+xfontsel*background:		gray80
+xfontsel*foreground:		gray30
+xfontsel*font:			-*-times-bold-r-*-*-17-*
+
+xfd*background:			gray80
+xfd*foreground:			gray30
+xfd*font:			-*-times-bold-r-*-*-17-*
+
+xterm*VT100*geometry:		80x25
+xterm*font:			-*-lucidatypewriter-*-*-*-*-14-140-*
+xterm*pointerColor:		red
+xterm*loginShell:		on
+xterm*scrollBar:		on
+xterm*name:			snake
+xterm*saveLines:		500
+
+Xman*manualBrowser.Geometry:	840x768
+xman*bothShown:			true
+xman*topBox:			false
+xman*background:		gray80
+xman*foreground:		black
+xman*font:			term.14
+
+
+
+
+!              4Dwm settings
+
+
+
+!  These resources apply to icon management
+4Dwm*iconPlacement:		top left
+4DWm*iconDecoration:		image label
+4Dwm*iconImageMaximum:		49x10
+4Dwm*icon*fontList:		-*-courier-bold-r-normal-*-12-*
+4Dwm*iconPlacementMargin:	2
+4Dwm*useIconBox:		False
+4Dwm*iconbox*clientDecoration:	+border
+! define the icon tiling area with the following 4 boundary edges:
+4DWm*SG_iconPlacementLeftMargin:	2
+4DWm*SG_iconPlacementRightMargin:	400
+4DWm*SG_iconPlacementBottomMargin:	2
+4DWm*SG_iconPlacementTopMargin:		26
+
+
+!  Set the foreground color (which is the text) for the client window 
+!  title bar that currently has the input focus.
+4Dwm*activeForeground:		gold
+
+!  Set the background color (the title bar itself which is "behind the 
+!  text") for the client window title bar that currently has the input 
+!  focus.
+4Dwm*activeBackground:		deepskyblue4
+
+!  Set the foreground (text) color for menus
+4Dwm*menu*foreground:		navy
+
+!  Set the background (frame) color for menus
+4Dwm*menu*background:		grey80
+
+!  Set the foreground and background (text and frame) color for anybody 
+!  who wasn't defined above (e.g. client window frames, dialogs, icons).
+4Dwm*foreground:		black
+4Dwm*background:		lightcyan4
+
+!  The following resources define what the 4Dwm frames will look like 
+!  for specific clients.  The values explicitly listed specify various 
+!  elements of the window manager frame.
+!  Specifying a "+" means "add this element", while no other frame 
+!  elements are drawn;  "-" means "subract this element" but otherwise 
+!  leave other elements untouched;  "none" means paint no window manager 
+!  frame at all.
+4Dwm*xterm*clientDecoration:	+resize +minimize
+4Dwm*xeyes*clientDecoration:	+title
+4Dwm*xbiff*clientDecoration:	+border
+4Dwm*xload*clientDecoration:	+border
+4Dwm*xclock*clientDecoration:	none
+4Dwm*Xman*clientDecoration:	-menu -maximize
+4Dwm*gr_osview*clientDecoration:	none
+
+! make clients able to be placed beyond the confines of the screen proper
+! (see the Toolchest -geom option in the ~/4Dgifts/.xsession file).
+4DWm*positionOnScreen:		false
+
+!  These define key, button and window menu specifications for 4Dwm.
+!  The values given to these resources must be defined in $HOME/.4Dwmrc
+4Dwm*keyBindings:		myKeyBindings
+4Dwm*buttonBindings:		myButtonBindings
+4Dwm*windowMenu:		4DwmWindowMenu
+
+
+
+
+! 4Dwm/mwm settings
+
+! set the mailbox to have a border
+*mailbox*clientDecoration:	+border
+
+! make all apps not explicitly defined above have the following 
+! client decoration resources turned on.
+*clientDecoration: 		+resizeh +border +minimize +maximize +menu
+
+! make xclock not have any decorations
+*xclock*clientDecoration: 	none
+
+! paint ipaste images without any border (use Meta or rightShift-RightControl
+! -RIGHTMOUSE to get 4Dwm menu).
+*ipaste*clientDecoration:	none
+
+
+
+
+!  The following resources define some aspects of window manager behaviour:
+
+!  The following makes the entire window be drawn when you move it.  To 
+!  use the traditional "only move an outline of the window", comment out 
+!  next line.
+4Dwm*moveOpaque:		true
+
+!  Uncomment this one if you want windows to auto-raise with focus.
+!4Dwm*focusAutoRaise:		true
+
+!  Make the text that appears in the title bar of a window be centered.
+!  SG_titlePadding specifies in pixels how much distance to pad above 
+!  and below the text in the title bar (default is 3).
+4Dwm*SG_titleLeft:		false
+4Dwm*SG_titlePadding:		0
+
+!  Window focus follows the pointer.  The other possible value for this 
+!  resource is "explicit".  "pointer" means the keyboard focus policy is
+!  to have the keyboard focus set to the client window that currently 
+!  contains the pointer (the pointer could also be in the client window 
+!  decoration).  "explicit" means the keyboard focus is set to a client 
+!  window when the user presses button 1 (LEFTMOUSE) with the pointer on 
+!  the client window or any part of the associated client decoration.  
+4Dwm*keyboardFocusPolicy:	pointer
+
+!  Define a new default font to be used by 4Dwm for menus and title bars.
+!Dwm*title*fontList:		-*-palatino-bold-r-*-*-14-*
+!Dwm*menu*fontList:		-*-palatino-medium-r-*-*-14-*
+
+!  WARNING!  this makes the window manager NOT ask you to confirm if you 
+!  wanna really (kill and then) restart 4Dwm.
+4Dwm*showFeedback:		-restart
+
+!  Don't allow clients to continue to draw while move operations are in 
+!  process--setting freezeOnConfig to true makes window outlines not
+!  flash during configuration operations.
+4Dwm*freezeOnConfig:		true
+
+!  Change the width of window borders (note:  these are different from 
+!  resize borders--dialogs have borders but they're not *resize* borders).
+!  (The default is 5.)
+4DWm*frameBorderWidth:		2
+
+!  Change width of *resize* borders--clients have these by default.
+!  (The default here is 10.)
+4Dwm*resizeBorderWidth:		2
+
+!  User can interactively place and/or resize new windows.
+4Dwm*interactivePlacement:	true
+
+
+!
+!  END OF 4Dgifts/.Xdefaults 4Dwm RESOURCE SETTINGS FILE
+!

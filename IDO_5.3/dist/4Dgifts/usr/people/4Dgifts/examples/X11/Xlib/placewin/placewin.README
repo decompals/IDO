@@ -1,0 +1,57 @@
+
+    ------------------------------------------------------------------
+    README for ~4Dgifts/examples/X11/Xlib/placewin source code example
+    ------------------------------------------------------------------
+
+
+    Introduction:
+
+	Placewin.c is meant to be the second in a series of beginning
+	X Windows programs.  None of the examples in this directory
+	use qidgest, but instead use Xlib functionality.  This program
+	takes the information presented in basicwin.c and expands upon
+	it by allowing you to specify where the window should come up.
+
+
+
+   Fundamental building blocks:
+
+	The include files and variables "display" and "screen" are 
+	referenced in basicwin.doc.
+
+
+
+   Local declarations in main():
+
+	New in this program are declarations for x and y, as 
+	well as width and height.  All four declarations will be
+	used in XCreateSimpleWindow to set the size and location
+	of the window when it is created.
+
+
+
+   Setting sizehints:
+
+	We use sizehints (line 54) to tell our window manager that
+	we would like the user to specify the position of the window
+	when it comes up (USPosition).  Once we've made the window
+	manager aware of the fact that the user wants to set a position,
+	we then need to set both sizehints.x and sizehints.y to the
+	same value as x and y in order for the window manager to 
+	retreive the correct information.
+
+	Now when we set the standard properties, the sizehints should
+	cause the window to come up in the expected area of the screen.
+
+
+
+    Exiting the program:
+
+	To quit this window/end this program you will need to select "Quit"
+	from the menu, or kill it via the lightning bolt, or hitting Ctrl-C in
+	the shell window you invoked the program from in the first place.  Any
+	of these methods will still result in your shell appearing to be hung.
+	Hitting Ctrl-C should return your shell prompt to you.
+
+	This method of exiting the program will change in queue.c, where
+	we examine how to use the queue to politely exit a program.

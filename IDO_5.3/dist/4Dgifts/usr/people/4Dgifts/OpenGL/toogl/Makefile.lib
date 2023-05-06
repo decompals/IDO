@@ -1,0 +1,15 @@
+
+include $(ROOT)/usr/include/make/commondefs
+
+OPTIMIZER= -O2
+
+default: libirisgl.a
+
+include $(COMMONRULES)
+
+CFILES = irisgl_light.c
+
+TARGETS = libirisgl.a
+
+libirisgl.a: $(OBJECTS)
+	ar -rv libirisgl.a $(OBJECTS)

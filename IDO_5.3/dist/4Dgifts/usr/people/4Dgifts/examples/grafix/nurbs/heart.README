@@ -1,0 +1,45 @@
+
+        ------------------------------------------------------------
+        README for ~4Dgifts/examples/nurbs/heart source code example 
+        ------------------------------------------------------------
+
+
+     Files:  heart.c
+  
+  
+     This program demonstrates the use of a NuRBS surface to display a 
+     heart.  The NuRBS surface uses a non-uniform knot sequence and the 
+     rational component of a NuRBS.
+  
+  
+     The following "input access" mechanisms are available:
+    
+     * MIDDLEMOUSE will change to orientation of the heart.
+  
+       The position of the cursor controls the rotation of the heart
+  	 when the MIDDLEMOUSE is down:
+  
+       * moving the mouse horizontally across the screen (getvaluator is
+         used so it is not necessary to only have the mouse be in the 
+         heart window for this to work) rotates the heart about the y 
+         axis;
+  
+       * moving the mouse vertically across the screen rotates the 
+         heart about the x axis.
+  
+     The heart is a biquadratic surface with 39 control points--thirteen
+     in the S direction and three in the T direction.  The heart shape 
+     is made from the 13 control points in S by introducing a non-uniform
+     knot sequence in S.  The multiple knot in the middle of the sequence
+     reduces the continuity of the curve, making a corner on the control 
+     point at the center of the two "bumps" of the heart.  The knot 
+     sequence in T simply forms a quadratic Bezier curve, which goes 
+     through its endpoints, and since the control points are colinear for
+     a given S value, the curve is "flat" in T.
+  
+     The control points are all given in rational form (wx, wy, wz, w),
+     because this form is necessary to describe a conic section exactly.  
+     The "bumps" of the curve closely approximate circles.
+  
+  
+                             Jill Huchital - February, 1991

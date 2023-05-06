@@ -1,0 +1,71 @@
+#!/bin/sh
+
+# This script is to generate a Makefile, from an Imakefile,  on an installed
+# system.  This script is like xmkmf except that it forces options needed
+# for Motif Makefile's.  Once the Makefile is made, "make Makefile" and
+# "make Makefiles" perpetuate the options.
+
+#
+# Determine which release we are running on.  The Imake config files need this.
+#
+    RELEASEDEFS=$ROOT/usr/include/make/releasedefs
+    if [ -f $RELEASEDEFS ]; then
+	eval `grep RELEASE_MAJOR $RELEASEDEFS`
+	eval `grep RELEASE_MINOR $RELEASEDEFS`
+	eval `grep RELEASE_MAINT $RELEASEDEFS`
+	VERSION=" -DOSMajorVersion=$RELEASE_MAJOR -DOSMinorVersion=$RELEASE_MINOR -DOSPatchVersion=$RELEASE_MAINT"
+    elif [ -f /usr/lib/libc.so ]; then
+	VERSION=" -DOSMajorVersion=5 -DOSMinorVersion=0 -DOSPatchVersion=0"
+    elif [ -f /usr/lib/libc_s.a ]; then
+	VERSION=" -DOSMajorVersion=4 -DOSMinorVersion=0 -DOSPatchVersion=0"
+    else
+	echo \
+"mmkmf: I give up!  Cannot figure out what level software you are running!"
+	exit 1
+    fi
+
+#
+# generate a Motif Makefile from an Imakefile from outside the X sources.
+# 
+
+    if [ -f Makefile ]; then 
+	(set -x; rm -f Makefile.bak; mv Makefile Makefile.bak)
+    fi
+
+    # Test for getabi capability and handle appropiately
+
+    GETABI=`which getabi | grep -v not`
+    if test "X$GETABI" != "X"; then
+      ARGS="`getabi size remove $*`"
+      case "$?" in
+	1) BITS="-DBuild64bit=0" ;;	# 32 bits
+	4) BITS="-DBuild64bit=1" ;;	# 64 bits
+	*) BITS="-DBuild64bit=0" ;;	# default -- should never happen
+      esac
+    else
+      # We have no getabi.  Do getabi by hand and look for -64 or -32
+      # in argument list.  Since getabi isn't available in 5.2 or 
+      # earlier sysmtes we can assume that the default action is to 
+      # built 32 bit software
+
+      # Default is to build 33 bit
+      BITS="-DBuild64bit=0"
+
+      # Search for -32 or -64 for explicit bit setting and strip these
+      # from the argument list
+
+      ARGS=""
+
+      for ii in $* ; do
+        case "$ii" in
+	  -64) BITS="-DBuild64bit=1" ;; # Set  64 and clobber arg
+	  -32) BITS="-DBuild64bit=0" ;; # Set !64 and clobber arg
+	    *) ARGS="$ARGS $ii" ;;      # Default is to pass args through
+        esac
+      done
+      # ARGS now contains everything except -32 & -64 args from $*
+    fi
+
+    set -x
+    $TOOLROOT/usr/bin/X11/imake -I$ROOT/usr/lib/X11/config -DBuildMotif=1 \
+	$BITS -DUseInstalled -DUseInstalledMotif $VERSION $ARGS

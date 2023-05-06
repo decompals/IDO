@@ -1,0 +1,49 @@
+
+
+        ---------------------------------------------------------
+        README for ~4Dgifts/examples/devices/devscsi example code
+        ---------------------------------------------------------
+
+
+        Currently there are two generic SCSI device example programs:
+
+  
+   1. iisc - a simple program that uses the /dev/scsi generic scsi
+      driver to send .im8 bitmap images to the Apple LaserWriter II SC
+      over the SCSI bus.
+   
+   2. inquire - a very simple program that uses the /dev/scsi generic scsi
+      driver that returns inquiry information about the devices on
+      the command line.
+   
+   NOTE1: iisc and inquiry require that you have the 'ds' driver in your
+	kernel.  This driver is not normally included on some hardware.
+
+	If /usr/sysgen/system file contains a "USE: ds" line
+	the driver is included.
+
+	If /usr/sysgen/system file has a line "*INCLUDE: ds" the driver
+	is not included and the comment character '*' should be 
+	removed.
+
+	Edit the /usr/sysgen/system file and uncomment the line
+
+		*INCLUDE: ds
+
+	to look like.
+
+		INCLUDE: ds
+
+	Then relinking the kernel by invoking "autoconfig".  	
+	"/etc/autoconfig is a link to /etc/init.d/autoconfig  
+	a shell script with correctly invokes "lboot".
+
+	It is also possible to check a kernel for symbols 
+	involved in this driver:
+
+	nm /unix | egrep "dsinit|dsopen|dsclose"
+
+
+   NOTE2: always keep a system note book of changes to kernel
+   configuration files.
+

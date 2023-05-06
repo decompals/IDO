@@ -1,0 +1,19 @@
+This is the root directory for the MIDI library example programs.
+
+
+libmidifile - a simple-minded standard MIDI file class library,
+	written in C++.  
+
+mfp - a MIDI file player that uses libmidifile.  It uses Motif
+	and ViewKit, and is written in C++.  
+
+player - contains example code using libmidifile that does not 
+	use Motif, but is written in C++.
+
+simple - some simple example programs written in C that illustrate
+	basic principles of the MIDI library.
+
+midifiles - a collection of Standard MIDI files obtained from
+	the 'net.  No guarantees on quality.
+
+

@@ -1,0 +1,59 @@
+!  please note:  these two files--~4Dgifts/{.Xdefaults_1280,.Xdefaults_1024}--
+!  are taken directly from the demos account which is (obviously) where they 
+!  were written to go.  it was decided to keep explicit copies in ~4Dgifts for 
+!  those users who don't load the demos subsystems.  while the applications 
+!  are all other than those built under 4Dgifts, it is felt that the 
+!  existence/structure of these resolution/size/screen-specific files as yet
+!  another "example" is useful and informative.
+!
+buttonfly.gl*size:		+500 +500 pixels
+buttonfly.gl*origin:		680 380 pixels
+bounce.gl*size:			+736 +628 pixels
+bounce.gl*origin:		+60 +52 pixels
+boing.gl*size:			+603 +656 pixels
+boing.gl*origin:		+234 +65 pixels
+cube.gl*origin:			+369 +268 pixels
+cube.gl*size:			+350 +350 pixels
+curve.gl*origin:		+369 +268 pixels
+curve.gl*size:			+255 +256 pixels
+demograph.gl*size:		+256 +256
+demograph.gl*origin:		+369 +268 pixels
+dragon.gl*origin:		+55 +380 pixels
+dragon.gl*size:			+526 +484 pixels
+flip.gl*origin:			+17 +11 pixels
+flip.gl*size:			+1234 +959 pixels
+powerflip.gl*origin:		17 11 pixels
+powerflip.gl*size:		1234 959 pixels
+gview.gl*size:			+774 +588 pixels
+gview.gl*origin:		123 107 pixels
+house.gl*size:			1009 600 pixels
+house.gl*origin:		27 23 pixels
+ideas.gl*size:			+632 +339 pixels
+ideas.gl*origin:		13 177 pixels
+ipaint.gl*size:			+1190 +980 pixels
+ipaint.gl*origin:		18 11 pixels
+jello.gl*size:			+805 +702 pixels
+jello.gl*origin:		163 71 pixels
+lathe.gl.size:			644 833 pixels
+light.gl.size:			644 833 pixels
+logo.gl*size:			+805 +702 pixels
+logo.gl*origin:			163 71 pixels
+mike.gl*size:			+662 +623 pixels
+mike.gl*origin:			231 110 pixels
+newave.gl*size:			+805 +702 pixels
+newave.gl*origin:		163 71 pixels
+newton.gl*size:			+805 +702 pixels
+newton.gl*origin:		163 71 pixels
+revolve.gl.revolve*size:	+805 +702 pixels
+revolve.gl.revolve*origin:	20 200 pixels
+revolve.gl.revolve2*size:	+805 +702 pixels
+revolve.gl.revolve2*origin:	540 200 pixels
+robot.gl*origin:		163 71 pixels
+rotimg.gl*origin:		163 71 pixels
+rotimg.gl*size:			+805 +702 pixels
+rotflat.gl*origin:		163 71 pixels
+rotflat.gl*size:		+805 +702 pixels
+solidview.gl*origin:		168 79 pixels
+solidview.gl*size:		+812 +693 pixels
+wave.gl*origin:			14 292 pixels
+wave.gl*size:			+632 +261 pixels

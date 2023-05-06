@@ -1,0 +1,54 @@
+
+         --------------------------------------------------------------
+         README for ~4Dgifts/examples/nurbs/sgiflag source code example 
+         --------------------------------------------------------------
+
+
+   Files:  sgiflag.c, sgiflag.h, logopoints.h
+
+
+   This program demonstrates the use of a trimmed NuRBS surface to display 
+   a waving flag with an SGI logo cut from its center.
+
+
+   The following "input access" mechanisms are available:
+  
+   * LEFTMOUSE will toggle trimming mode, that is, whether or not the SGI 
+     logo is trimmed from the flag.  
+
+   * MIDDLEMOUSE will toggle the display mode, switching between filled 
+     and hollow polygons.  
+
+     The position of the cursor controls the rotation of the flag:
+
+     * moving the mouse horizontally across the screen (gatvaluator is used
+       so it is not necessary to only have the mouse be in the sgiflag 
+       window for this to work) rotates the flag along it's "bottom" edge.
+
+     * moving the mouse vertically across the screen rotates the flag along
+       its "rightmost" side.
+
+
+   The flag is a simple bicubic bezier surface with sixteen control points,
+   four in the S direction and four in the T direction.  It waves by
+   oscillating (along a sine wave) the z value for each set of four control
+   points with the same S value.
+
+
+   The logo is trimmed from the surface using a combination of piecewise
+   linear and nurbs trimming curves. The data for the logo (contained in
+   logopoints.h) describes only one-third of the logo, centered at the
+   origin. The entire logo is created by scaling, rotating and translating
+   the initial data points.
+
+
+   Since the trimming curve is made up of several pieces, care must be
+   taken to insure that the endpoints of successive pieces match closely,
+   and that the trimming curves do not instersect each other.
+
+
+   The code is thoroughly documented, and discusses the algorithms used in
+   more detail.
+
+
+                           Howard Look -  December, 1990

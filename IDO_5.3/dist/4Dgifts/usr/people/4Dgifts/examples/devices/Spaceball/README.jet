@@ -1,0 +1,18 @@
+1. How spaceball movement affects jet.
+
+    When you press down on Spaceball, the jet moves down the screen.
+    When you lift up on Spaceball, the jet moves up the screen.
+
+    When you push away from you on Spaceball, the jet moves further away.
+    Pull, and it comes closer.
+
+    Push left or right and the jet goes in that direction.
+
+    If you twist the Spaceball, the jet will twist the same direction.
+
+2. If you loose the image press the button built into the front of the
+   ball, the "pick" button.
+
+3. Press Spaceball key #7 for a listing of key functions.
+
+4. To quit move the cursor into the window and press ESC.

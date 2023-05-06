@@ -1,0 +1,28 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.1 $ $Date: 1993/09/27 01:25:10 $
+
+       INCLUDES = -I.
+LOCAL_LIBRARIES = SgtClientLibs
+          SRCS1 = pb.c simpleTest.c test.c
+          OBJS1 = pb.o simpleTest.o test.o
+       PROGRAMS = pb simpleTest test
+          FILES = Imakefile README pb.c simpleTest.c test.c
+
+NormalLibraryObjectRule()
+
+MSimpleProgramTarget(pb)
+MSimpleProgramTarget(simpleTest)
+MSimpleProgramTarget(test)
+
+InstallMultiple($(FILES), $(MDEMOSRCDIR))
+
+
+# Temporary, until things settle out and the test prog is moved to its demo dir.
+#pb simpleTest test: $$@.c libSgt_d.a
+#	cc -o $@ -g $@.c -I. ./libXm.so -lXmu libSgt_d.a -lXt -lX11 -lPW

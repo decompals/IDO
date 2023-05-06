@@ -1,0 +1,109 @@
+
+    -------------------------------------------------------------------
+    README for ~4Dgifts/examples/X11/Xlib/simplewin source code example 
+    -------------------------------------------------------------------
+    
+ 
+    
+    Introduction:
+    
+      Simplewin.c is meant to be a starting place for those just 
+    beginning with X Windows programming.  None of the examples in this 
+    directory use widgets, but instead use Xlib functionality.  This 
+    program is perhaps the simplest X Window program that can be written.
+
+
+
+    Fundamental building blocks:
+    
+      First of all we have the include files.  An X program requires at
+    a minimum inclusion of the Xlib.h and Xutil.h header files (both live
+    in /usr/include/X11).  Inclusion of stdio.h is also necessary if you 
+    intend to use the "NULL" constant.
+    
+      Next, we declare the variables "display" and "screen" as globals.  
+    Since these values are referenced in nearly every single X call in 
+    this program, it seemed to be easier to make them globals than to 
+    keep re-declaring them.
+    
+
+
+    Local declarations in main():
+
+      Both "win" and "rootwin" are used to determine the child window id 
+    and parent window id, respectively.   Their values are determined by 
+    the output of functions we will examine later.
+    
+      "window_name" and "icon_name" are used later when we set properties 
+    for the window, but we go ahead and initialize them now.  However, 
+    "display_name" is initially set to NULL so we can establish whether 
+    the X server is running when we use it in the XOpenDisplay call (see 
+    line 32).  XOpenDisplay() will first look for a coded "display_name", 
+    and if it can't find one, will then examine the environment variable 
+    "DISPLAY" to see if it is defined.  If "DISPLAY" is not defined, the 
+    user needs to realize that all is not kosher to correctly execute her 
+    program, and we should tell her so before exiting.
+    
+
+
+    Getting the default screen number:
+
+      Next (line 41) we assign "screen" the returned value of 
+    DefaultScreen(), the macro which returns the default screen number
+    referenced above with "display" in the XOpenDisplay() routine.  
+    Typically, the returned value is 0 (for displaying the window on the
+    local machine).
+
+
+
+    Establishing the root (parent) and display (child) windows:
+    
+      Then (line 47) we assign "rootwin" the returned value of the 
+    RootWindow() macro.  This macro returns the root (parent) window ID
+    which is needed to correctly call XCreateSimpleWindow(), the next 
+    routine.  In its turn, XCreateSimpleWindow() returns the ID of the 
+    window it has created in the current display, which is a child of the 
+    root window specified.  This child window has an upper-left corner 
+    [which should be] located at coordinates 100,100, is 200 pixels tall 
+    and 150 pixels wide, has a border width of 5, and a border color of
+    black with a white background inside the window.
+
+
+
+    Setting the essential window properties:
+    
+      At his point (line 53), we take the window id returned by 
+    XCreateSimpleWindow() and set some standard properties, such as the 
+    window name, icon name, any icon pixmaps, arguments, and hints for 
+    sizes that the window may have.  In this particular case, 
+    even though we have defined the window to be of a certain size, we are
+    not working with size hints.  This means the window manager may decide 
+    on its own discretion whether or not to obey the size info we have 
+    given it during its creation.  [***Maybe we could add an extra sentence
+    here explicitly defining what "hints" or "size hints" are/means/does.***]
+    
+
+
+    Map (make visible) the window:
+
+      XMapWindow() will now make the window "eligible for display";  that 
+    is, we are now ready to display it, but it may need more coaxing to
+    actually show up on our graphics console screen.  To this end, we employ 
+    XFlush(), which flushes the output buffer.  There are three ways to 
+    flush this buffer:  by calling XFlush(), by using XSync(), or to check
+    the contents (if any) of the event queue.  We won't be using the event 
+    queue until later on, so at this point we can simply call XFlush() to 
+    see the window we have so meticulously created here.
+    
+
+
+    Exiting the program:
+
+      To quit this window/end this program you will need to select "Quit" 
+    from the menu, or kill it via the lightning bolt, or hitting Ctrl-C in
+    the shell window you invoked the program from in the first place.  Any 
+    of these methods will still result in your shell appearing to be hung.  
+    Hitting Ctrl-C should return your shell prompt to you.
+
+    This method of exiting the program will change in queue.c, where
+    we examine how to use the queue to politely exit a program.

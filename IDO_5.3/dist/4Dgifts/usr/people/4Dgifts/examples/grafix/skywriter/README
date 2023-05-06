@@ -1,0 +1,107 @@
+		--------------- Skyfly -------------------
+
+         ----------------------------------------------------------
+         README for ~4Dgifts/examples/skywriter source code example
+         ----------------------------------------------------------
+
+	This is the README file for code found in 4Dgifts/examples/skywriter.
+The example program in this directory is called 'skyfly' and is a 
+fly-through over randomly generated terrain. After 'make', skyfly
+is ready to run provided 2 images, terrain.bw and clouds.bw, are in
+the current directory or in /usr/demos/data/textures. Both images must be in
+.bw(black & white) format* and must be sized 256x256 and 128x128 for
+terrain.bw and clouds.bw respectively.  If you have skyfly installed as
+a demo, these texture files should be in /usr/demos/data/textures.
+14,104c8
+*See example code in /usr/people/4Dgifts/iristools/imgtools and Appendix H 
+of the User's Guide, "Using the Image Library" for details.
+
+	Skyfly only runs on SkyWriter systems. 4 processors are preferred but
+2 will suffice with loss of performance. Look in skyfly.c 
+for a list of program options.
+
+	Skyfly's primary function is to provide an example of a 
+visual simulation application written for SkyWriter. Note that the 
+programming model presented is just one of many possible alternatives
+and it may or may not be right for your particular application. 
+
+Specifically, skyfly addresses:
+
+	- multi-process configuration and synchronization of simulation, 
+	  culling, and drawing processes
+
+	- use of shared memory
+
+	- getting the most out of the GL with emphasis on texturing and
+	  anti-aliasing
+
+	- memory management and coding to improve cpu/cache performance
+
+	- using X for reading mouse and keyboard.
+
+
+	The most relevant code resides in skyfly.h, skyfly.c, and perfdraw.c.
+skyfly.h defines the important data structures used throughout the code.
+skyfly.c deals with all multi-process and shared memory issues as well as
+the most important data structures. This is the file which 
+application developers should view as a template.  perfdraw.c is a subset
+of a rendering library developed by Sharon Fischler which uses a special
+'perfobj' structure and drawing functions to optimize any rendering loop.
+Look for perfdraw definitions in skyfly.h. 
+
+	fly.c contains the fly interface and code to control the paper
+airplanes. database.c deals with the initialization of the database
+which in this case consists of terrain and paper airplanes. These two
+modules should be replaced by the application developer and consequently
+are minimally commented.
+
+		---------------- Design Notes --------------------
+
+	While most design notes will be found in the source code, some
+deserve attention here. In Cyclops and dual-channel mode, skyfly runs
+as 5 processes: one sim, and 2 cull/draw pairs. The choice of a single
+simulation process results in an odd number of processes and a certain
+amount of asymmetry in the design. We chose to use a single sim because
+it centralizes control of the application, avoids synchronization 
+problems, and is easier to understand. Other applications may benefit
+from a simulation process per pipe.
+
+	Currently, the maximum number of processors on a SkyWriter system
+is 4. Since we have 5 processes(and one shouldn't forget the window
+server and others), there may be processor-contention problems. An alternative 
+is to have a single cull process but whether or not this is preferable
+is highly dependent on your particular application. A good way to 
+analyze the situation is to estimate how long your sim/cull processes take
+relative to your expected drawing time. Then draw a timing diagram
+like the ones in skyfly.c and see how much processor time is left over
+to do other tasks. 
+
+	Most importantly, the best way to get the most out of your
+SkyWriter application is the feedback cycle:
+
+			 bottleneck
+		profile  -------->  fix bottleneck
+		   ^			|
+		   |			|
+		    --------------------
+
+Unfortunately, the details of profiling are beyond the scope of this
+document.
+
+	    ------------------ Performance ---------------------
+
+	The performance goals met by skyfly for a 4 processor, 32MB system 
+are given below. Hertz rates are steady-state, NOT peak:
+
+				Window Size
+Mode		640x512(1/4screen)	1280x1024(full screen)
+-----		------------------	----------------------
+Cyclops			60hz			30hz
+Dual-channel	     30hz/30hz		       20hz/20hz
+Single-channel		30hz			20hz
+
+
+Authors:
+	John Rohlf
+	Ben "No Vampires" Garlick
+---

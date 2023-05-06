@@ -1,0 +1,52 @@
+
+      ---------------------------------------------------------------
+      README for ~4Dgifts/examples/X11/Xlib/queue source code example
+      ---------------------------------------------------------------
+
+
+    Introduction:
+	Queuue.c is meant to be the seventh in a series of beginning X 
+	Windows programs.  None of the examples in this directory
+        use widgets, but instead use Xlib functionality.  This program
+        takes the information presented in font.c and expands upon
+        it by allowing you to use the queue to kill the window on  any
+	keypress.
+
+
+
+   Local declarations in main():
+
+	New in this program are report and valuemask.  Report will be 
+	used to tell us which event has just occurred, while valuemask 
+	will be pretty much ignored.  We need valuemask to use when we 
+	work with graphics contexts, but we won't be using it here.  
+
+
+
+   Selecting the input types:
+	
+	We need to tell the window manager what types of events we're
+	interested in, so we use XSelectInput (line 70) to state that
+	we are interested in exposures, key presses, (mouse) button
+	presses, or any kind of circulation (pushing or popping) or
+	destruction events.
+
+
+
+   Examining the queue:
+
+	Instead of using a while (1) loop through infinity, we replace
+	it (line 82) with a loop that will use XNextEvent to grab the
+	next event it sees, then pass the resulting event (in report)
+	through a series of checks.  If the event is of type Configure
+	Notify, it actually means that something has happened that is
+	of type StructureNotifyMask.  That is, ConfigureNotify events
+	tells us that the window has changed sizes, position, stacking
+	order, etc.  We are interested in events type ConfigureNotify
+	because we will probably need to redraw the window for one 
+	reason or another.  In this case, we get the new size and re-
+	draw our text.
+
+	If instead the event is a ButtonPress or a KeyPress, we use 
+	XCloseDisplay to close the window gracefully.  Any other events 
+	are ignored.  

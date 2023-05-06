@@ -1,0 +1,30 @@
+! This file contains the definitions for the resources for a GlxMDraw
+! widget.  The widget can be treated as a user defined widget.
+
+value
+   GlxNglxConfig	: argument ( 'glxConfig',	 any);
+   GlxNoverrideColormap	: argument ( 'overrideColormap', boolean);
+   GlxNvisual		: argument ( 'visual',		 any);
+   GlxNoverlayColormap	: argument ( 'overlayColormap',	 any);
+   GlxNoverlayDepth	: argument ( 'overlayDepth',	 integer);
+   GlxNoverlayVisual	: argument ( 'overlayVisual',	 any);
+   GlxNoverlayWindow	: argument ( 'overlayWindow',	 any);
+   GlxNunderlayColormap	: argument ( 'underlayColormap', any);
+   GlxNunderlayDepth	: argument ( 'underlayDepth',	 integer);
+   GlxNunderlayVisual	: argument ( 'underlayVisual',	 any);
+   GlxNunderlayWindow	: argument ( 'underlayWindow',	 any);
+   GlxNpopupColormap	: argument ( 'popupColormap',	 any);
+   GlxNpopupDepth	: argument ( 'popupDepth',	 integer);
+   GlxNpopupVisual	: argument ( 'popupVisual',	 any);
+   GlxNpopupWindow	: argument ( 'popupWindow',	 any);
+
+value
+   GlxNexposeCallback	: reason   ( 'exposeCallback');
+   GlxNginitCallback	: reason   ( 'ginitCallback');
+   GlxNinputCallback	: reason   ( 'inputCallback');
+   GlxNresizeCallback	: reason   ( 'resizeCallback');
+   GlxNoverlayExposeCallback	   : reason ( 'overlayExposeCallback');
+   GlxNunderlayExposeCallback	   : reason ( 'underlayExposeCallback');
+   GlxNpopupExposeCallback	   : reason ( 'popupExposeCallback');
+
+procedure GlxCreateMDraw();

@@ -1,0 +1,19 @@
+
+
+        --------------------------------------------------------------
+        README for ~4Dgifts/examples/Fortran/globe source code example
+        --------------------------------------------------------------
+
+    globe displays a user-manipulatable globe using a converted earth-
+    centered world coordinate data base.
+
+    Manipulating the globe is done via the following sequences when the
+    mouse cursor is within the boundaries of the globe window:
+
+    ONEKEY:  moving the mouse horizontally will translate the globe 
+	     towards or away from the viewers eye. 
+
+    TWOKEY:  moving the mouse will translate the globe in the direction
+	     the mouse moves.
+
+    THREEKEY:  moving the mouse will rotate the globe.  

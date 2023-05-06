@@ -1,0 +1,9 @@
+
+        --------------------------------------------------------------
+        README for ~4Dgifts/examples/X11/toolkits source code examples
+        --------------------------------------------------------------
+
+        This directory contains athena and motif programming examples 
+        which implement X11 graphics capabilities.  These programs are 
+        designed and commented to aid beginning X Windows programmers.
+

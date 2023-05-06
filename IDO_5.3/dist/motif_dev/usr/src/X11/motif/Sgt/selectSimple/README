@@ -1,0 +1,186 @@
+
+
+This directory contains test programs exhibiting a new convenience API to
+the X11 selection mechanism.  This is still work in progress, so:
+
+	* the exact API could change.
+	* please send us your reactions to it as is.
+
+pb -- puts up a single pushbutton that does simple text IPC.
+
+simpleTest -- just like "test", except only does text
+
+test -- shows convenience routines for all standard data types.  One program
+	to use to demo some non-text IPC is xmag.
+
+NOTE: by product release, there will bed convenience routines for
+      SGI-specified data types as well.
+
+
+
+
+			SIMPLE XT SELECTION API
+
+These calls are simpler, but less flexible, than the standard libXt
+calls themselves.  For one thing, the application must decide when it
+takes ownerhip of the selection what type of data is wants to supply.
+The library will then supply that type, plus any of the standard
+derived targets (e.g. HOSTNAME).
+
+If these simple calls meet your needs, use them.
+
+
+================================================================================
+
+The following calls are independent of the data type or selection type being
+used:
+
+An application loses the selection whenver another aplication claims it.
+The simple data transfer calls do not allow an application to specify the
+callback routine telling that this has happened.  This call is used to do
+so.  If proc is NULL, no callback will be made.
+
+	void SgtSetLoseSelectionCallback(
+		Widget               w, 
+		Atom                 selection,
+		XtLoseSelectionProc  proc)
+
+This entry allows an application to voluntarily relinquish ownership of the
+selection.
+
+	Boolean SgtUnpostSimple(
+		Widget               w, 
+		Atom                 selection)
+
+
+================================================================================
+
+For each data type supported by simple calls, there are two entry points.
+These may be used when you know ahead of time precisely what type of data
+you wish to supply or obtain.
+
+To request data of type Xxxx:
+
+	SgtGetSimpleXxxx(
+		Widget         widget,
+		Atom           selection,
+		unsigned long *lengthP,
+		Xtpointer     *dataP)
+
+To both assert ownership of the selection, and make available data of
+type Xxxx:
+
+	SgtPostSimpleXxxx(
+		Widget         widget,
+		Atom           selection,
+		unsigned long  length,
+		Xtpointer      data)
+
+NOTE: "data" must point to storage that will still be valid when some
+      other application calls for the data.  Normally, this requires
+      static (not stack) storage.
+
+
+Convenience routine pairs exist for all of the normal X11 data types.
+Corresponding routines will be added for SGI data types.  The routines
+that currently exist are for:
+	Background,
+	Bitmap,
+	CharacterPosition,
+	Class,
+	ClientWindow,
+	Colormap,
+	ColumnNumber,
+	CompoundText,
+	Delete,
+	Drawable,
+	FileName,
+	Foreground,
+	Hostname,
+	IPAddress,
+	Length,
+	LineNumber,
+	ListLength,
+	Module,
+	Name,
+	ODIF,
+	OwnerOs,
+	Pixmap,
+	Procedure,
+	ProcessInteger,
+	ProcessString,
+	String,
+	Targets,
+	TaskInteger,
+	TaskString,
+	Text,
+	Timestamp,
+	User
+
+
+================================================================================
+
+If you wish to use a type of data that is not supported by the pre-defined
+calls above, or if you need to decide on the data type at runtime, the
+following two entry points are available.
+
+To request data:
+
+	SgtGetSimple(
+		Widget         widget,
+		Atom           selection,
+		unsigned long *lengthP,
+		Xtpointer     *dataP,
+		Atom           target,
+		Atom           type)
+
+To both assert ownership of the selection, and make available data:
+
+	SgtPostSimple(
+		Widget         widget,
+		Atom           selection,
+		unsigned long  length,
+		Xtpointer      data,
+		Atom           target,
+		Atom           type,
+		int            format)
+
+NOTE: "data" must point to storage that will still be valid when some
+      other application calls for the data.  Normally, this requires
+      static (not stack) storage.
+
+Examples:
+
+	SgtGetSimpleBitmap (widget, selection, lengthP, dataP)
+
+	      matches
+
+	SgtGetSimple (widget, delection, lengthP, dataP,
+		      XmInternAtom("BITMAP"), XmInternAtom("PIXMAP"));
+
+
+	SgtPostSimpleBitmap (widget, selection, length, data)
+
+	      matches
+
+	SgtGetSimple (widget, delection, length, data,
+		      XmInternAtom("BITMAP"), XmInternAtom("PIXMAP"), 32);
+
+
+================================================================================
+
+The following calls are still experimental.  They seem convenient and/or
+helpful.  They may change, or even be totally deleted, in a future release.
+
+/*
+ * Entries to set the debug levels.
+ * This is mainly to help debug user programs.
+ */
+void SgtSetSimpleSelectDebug(int level)
+void SgtSetSimpleSelectLibDebug(int level)
+
+/*
+ * Switch the widget's background and foreground.
+ * This can be useful for indicating simple selections.
+ */
+void SgtSwitchBackground(Widget w)

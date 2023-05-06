@@ -1,0 +1,29 @@
+
+       --------------------------------------------------------------
+       README for ~4Dgifts/examples/X11/Xlib/draw source code example
+       --------------------------------------------------------------
+
+
+
+    Introduction:
+
+    Draw.c is the last in the series of beginning X Windows programs.
+    It takes the examples provided in the rest of the directory and
+    ties them all together to make a small window with graphics in it.
+
+
+
+    Local declarations in main():
+
+    The declarations in main remain unchanged from the declarations in
+    leftmouse.c
+
+
+
+    Drawing figures:
+
+    This is essentially the only difference from leftmouse.c.  In draw_stuff
+    (line 177), we define a set of points for both of the pumpkin's eyes,
+    then draw the other objects such as the moon and the ground by 
+    accessing standard graphics calls such as XFillArc and XFillRectangle.
+

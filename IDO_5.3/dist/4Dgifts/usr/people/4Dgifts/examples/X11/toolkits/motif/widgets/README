@@ -1,0 +1,49 @@
+
+             ---------------------------------------------------
+             README for ~4Dgifts/examples/toolkits/motif/widgets
+             ---------------------------------------------------
+
+      This directory contains example programs that introduce many of
+      the basic Motif widgets and programming techniques.
+
+
+     1) label.c  --  an example of using the XmLabel widget
+
+        This program illustrates how to create and use a label widget.
+        In addition, it introduces the notion of XmStrings, the Motif
+        version of a character string.  This program is extensively
+        commented to be used as a reference for the other programs.
+
+
+     2) push_button.c  --  an example of an XmPushButton widget
+
+        This program illustrates using a push button, and introduces
+        the concept of callback.
+
+     3) scroll_bar.c  --  an example of an XmScrollBar widget
+
+        This program demonstrates a Motif scrollbar, and expands on 
+        the use of callbacks as introduced in push_button.c
+
+     4) text.c  --  an example of an XmText widget
+
+        This program introduces a text editor widget, as well as 
+        making use of callbacks, and setting resources inside a 
+        program.
+
+     5) list.c  --  an example of an XmList widget
+
+        This program illustrates a list widget.  This widget is 
+        capable of providing a list of objects (strings) that the 
+        user can select from.  In addition, this program again uses 
+        callbacks and XmStrings.
+
+     6) start.c  --  a basic framework for a Motif type program
+
+        "start.c" provides a simple starting point for a motif 
+        program.  It demonstrates the bare minimum required for a 
+        working program.  
+        NOTE: "start.c" will not function without adding some widget 
+               as a child of the toplevel, or setting some resources 
+               to make both the height and width of the toplevel 
+               widget to be non-zero.

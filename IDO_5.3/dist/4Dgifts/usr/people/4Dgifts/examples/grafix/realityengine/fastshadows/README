@@ -1,0 +1,32 @@
+README for shad - ($Revision: 1.2 $)
+
+shad demonstrates the real-time shadow casting capability of the
+IRIS-4D RealityEngine (RE).
+
+A man page for using shad exists.  See shad(6).
+
+Shadows have been done before with the Iris GL.  Examples of
+shadows cast onto flat surfaces are found in jello, insect, and flight.
+
+The RE uses a technique based on shadow maps, which allow casting shadows
+onto curved surfaces and self-shadowing.
+A good reference for this is "Rendering Antialiased Shadows with Depth Maps"
+by Reeves, Salesin and Cook from the 1987 SIGGRAPH Proceedings.
+Also, some of the mathematical basis for why it works is described in
+"Fast Shadows and Lighting Effects Using Texture Mapping" by Segal, Korobkin,
+van Widenfelt, Foran and Haeberli from 1992 SIGGRAPH Proceedings.
+
+The Iris GL support for shadows includes:
+
+- new arguments to texdef
+    - TX_I_16
+    - TX_BILINEAR_LEQUAL, TX_BILINEAR_GEQUAL
+
+- new argument to tevdef
+    - TV_ALPHA
+
+- new GL call
+    - displacepolygon(float scalefactor)
+
+
+-rolf (rolf@sgi.com, 415-390-3669)

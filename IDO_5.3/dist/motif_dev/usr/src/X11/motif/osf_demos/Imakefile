@@ -1,0 +1,23 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.2 $ $Date: 1992/07/17 12:13:51 $
+#define IHaveSubdirs
+#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+
+SUBDIRS = motifshell periodic clipboard \
+	motifanim motifburger hellomotif \
+	helloint dogs xmtravel xmpiano \
+	xmsamplers motifgif uilsymdump view textedit DragAndDrop
+
+MakeSubdirs($(SUBDIRS))
+DependSubdirs($(SUBDIRS))
+MakeLintLibSubdirs($(SUBDIRS))
+#ifdef SGIArchitecture
+FILES = Imakefile
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

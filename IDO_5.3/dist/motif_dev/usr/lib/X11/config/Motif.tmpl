@@ -1,0 +1,1021 @@
+/* 
+ *  @OSF_COPYRIGHT@
+ *  COPYRIGHT NOTICE
+ *  Copyright (c) 1990, 1991, 1992, 1993 Open Software Foundation, Inc.
+ *  ALL RIGHTS RESERVED (MOTIF). See the file named COPYRIGHT.MOTIF for
+ *  the full copyright text.
+*/ 
+/* 
+ * HISTORY
+ * $Log: Motif.tmpl,v $
+# Revision 1.3  1994/06/08  22:57:29  blean
+# Fixes for X11R6, 64-bit, Motif 2.0 snap 3 config files build
+#
+ * Revision 1.5.330.10  1994/05/18  13:51:48  yak
+ * 	More changes to support message catalog building. CR 9203
+ * 	[1994/05/18  13:51:25  yak]
+ *
+ * Revision 1.5.330.9  1994/05/17  16:32:07  yak
+ * 	Added switch to enable/disable message catalog building. CR 9203
+ * 	[1994/05/17  14:56:23  yak]
+ * 
+ * Revision 1.5.330.8  1994/04/07  17:11:02  yak
+ * 	Replaced the order of TESTUILCOMLIB and TESTUILCOMLIB
+ * 	in 'TestUilClientLibs'. Part of CR 6742.
+ * 	[1994/04/07  17:10:39  yak]
+ * 
+ * Revision 1.5.330.7  1994/03/29  00:07:26  yak
+ * 	Added support for CPLUSPLUSLIBS. CR 7714
+ * 	[1994/03/29  00:06:48  yak]
+ * 
+ * Revision 1.5.330.6  1994/03/24  19:41:37  yak
+ * 	Started using libCommonUil. To fix the problem with referencing Mrm in Sun's shared libs. CR 6742
+ * 	[1994/03/24  19:41:06  yak]
+ * 
+ * Revision 1.5.330.5  1994/03/23  18:29:58  deblois
+ * 	Removed libWsm from the build.
+ * 	[1994/03/23  18:29:30  deblois]
+ * 
+ * Revision 1.5.330.4  1994/03/22  18:53:10  yak
+ * 	Replaced 'NoXpm' with 'UseLocalXpm'.
+ * 	Made the aprropriate changes.
+ * 	[1994/03/22  18:52:48  yak]
+ * 
+ * Revision 1.5.330.3  1994/03/18  23:06:57  yak
+ * 	Rewrote the previous change in the manner more
+ * 	consistent with other parts of Motif. CR 8130.
+ * 	[1994/03/01  20:49:53  yak]
+ * 
+ * Revision 1.5.330.2  1994/02/28  23:01:09  yak
+ * 	Fixes from Motif1.2.4. Rev. 1.5.331.2, ancestor 1.5.28.1, file Motif.tmpl.
+ * 	Added setting XMDEFINES according to 'XmDefines'.
+ * 	CR 8130.
+ * 	[1994/02/28  23:00:38  yak]
+ * 
+ * Revision 1.5.330.1  1994/01/28  22:17:47  yak
+ * 	Removed all the references to TESTMALLOCLIB and TESTMALFNS,
+ * 	because ./tests/General/lib/Malloc is defuncted.
+ * 	[1994/01/28  22:17:26  yak]
+ * 
+ * Revision 1.5.26.3  1993/10/20  20:14:34  yak
+ * 	Fixed spelling in MkDirHier. CR 6610.
+ * 	[1993/10/20  20:11:35  yak]
+ * 
+ * Revision 1.5.26.2  1993/09/27  19:24:12  yak
+ * 	Removed -DMOTIF1_2 from TestDefines. It's not used
+ * 	in Motif 2.0. CR 6418.
+ * 	[1993/09/27  19:23:45  yak]
+ * 
+ * Revision 1.5.14.31  1993/07/27  15:47:33  yak
+ * 	Added set up for CPLUSPLUSLINKCOM.
+ * 	[1993/07/27  15:40:25  yak]
+ * 
+ * Revision 1.5.14.30  1993/07/22  18:12:36  yak
+ * 	Expended copyright marker
+ * 	[1993/07/22  18:09:06  yak]
+ * 
+ * Revision 1.5.14.29  1993/07/14  21:36:57  yak
+ * 	Removed all the references to TESTTEXTSRC.
+ * 	The libText.a is no longer included in Test*Libs.
+ * 	[1993/07/14  21:22:03  yak]
+ * 
+ * Revision 1.5.14.28  1993/07/09  23:25:32  qauser
+ * 	Moved libText.a on the link line to before libCommon.a to make
+ * 	automation work correctly on HP.
+ * 	[1993/07/09  23:25:14  qauser]
+ * 
+ * Revision 1.5.14.27  1993/07/08  20:36:01  msr
+ * 	Included ./tests/Toolkit/Text/lib under TestClientLib and
+ * 	TestUilClientLib.
+ * 	[1993/07/08  20:35:45  msr]
+ * 
+ * Revision 1.5.14.26  1993/06/04  14:13:20  yak
+ * 	Added setting up DEPXMLIB.
+ * 	[1993/06/04  14:13:00  yak]
+ * 
+ * Revision 1.5.14.25  1993/06/02  23:04:13  msr
+ * 	Fixes from Motif1.2.3. Rev. 1.5.26.2, ancestor 1.5.22.12, file Motif.tmpl.
+ * 	[1993/06/02  23:03:51  msr]
+ * 
+ * Revision 1.5.14.24  1993/05/14  14:41:26  msr
+ * 	Fixes from Motif1.2.3. Rev. 1.5.25.2, ancestor 1.5.22.11, file Motif.tmpl.
+ * 	[1993/05/14  14:41:06  msr]
+ * 
+ * Revision 1.5.14.23  1993/05/10  21:31:20  deblois
+ * 	Moved wsm protocol library to ./src/lib/Wsm/libWsm.a.
+ * 	[1993/05/10  21:30:57  deblois]
+ * 
+ * Revision 1.5.14.22  1993/04/27  20:05:32  yak
+ * 	Added references to wsm library: clients/wsm/libProto.a
+ * 	[1993/04/27  20:02:54  yak]
+ * 
+ * 	dded wsm/libProto.a reference.
+ * 	[1993/04/27  19:46:32  yak]
+ * 
+ * Revision 1.5.14.21  1993/03/16  19:41:19  dbrooks
+ * 	Remove spurious space in SharedLibReferences(TESTCOMLIB...)
+ * 	Fixes from Motif1.2.3. Rev. 1.5.23.2, ancestor 1.5.22.8, file Motif.tmpl.
+ * 	[1993/03/16  19:40:59  dbrooks]
+ * 
+ * Revision 1.5.14.20  1993/03/12  19:42:01  yak
+ * 	Fixes from Motif1.2.3. Rev. 1.5.23.2, ancestor 1.5.22.7, file Motif.tmpl.
+ * 	Added redefinition of MKDIRHEIR.
+ * 	[1993/03/12  19:41:38  yak]
+ * 
+ * Revision 1.5.14.19  1993/03/11  22:01:13  yak
+ * 	Replaced PUREXMLIB with XMLIBONLY.
+ * 	Cleanup in a few places.
+ * 	[1993/03/11  22:00:48  yak]
+ * 
+ * Revision 1.5.14.18  1993/03/04  16:00:13  yak
+ * 	Added XPM_LIBS to the BuildClient{Libs,DepLibs}.
+ * 	Fixed typo in previous submission.
+ * 	[1993/03/04  15:59:37  yak]
+ * 
+ * Revision 1.5.14.17  1993/03/03  21:32:09  yak
+ * 	Added support for the use of Xpm library
+ * 	[1993/03/03  21:27:14  yak]
+ * 
+ * Revision 1.5.14.16  1993/03/02  19:10:13  rec
+ * 	Fixes from Motif1.2.3. Rev. 1.5.23.2, ancestor 1.5.22.6, file Motif.tmpl.
+ * 	[1993/03/02  19:09:57  rec]
+ * 
+ * Revision 1.5.14.15  1993/03/01  18:54:26  rec
+ * 	Fixes from Motif1.2.3. Rev. 1.5.23.2, ancestor 1.5.22.5, file Motif.tmpl.
+ * 
+ * 	Added stanzas to support building automated tests using shared libraries.
+ * 	CR 5570
+ * 	[1993/03/01  18:53:56  rec]
+ * 
+ * Revision 1.5.14.14  1993/02/25  19:21:16  dbrooks
+ * 	Missing paren in expansion of SharedLibReferences (CR5563).
+ * 	Fixes from Motif1.2.3. Rev. 1.5.23.2, ancestor 1.5.22.4, file Motif.tmpl.
+ * 	[1993/02/25  19:20:56  dbrooks]
+ * 
+ * Revision 1.5.14.13  1993/02/25  19:07:46  yak
+ * 	Minor clean up
+ * 	[1993/02/25  19:06:48  yak]
+ * 
+ * 	Fixed comment leader in comments
+ * 	[1993/02/25  19:00:45  yak]
+ * 
+ * Revision 1.5.14.12  1993/02/23  19:49:35  dbrooks
+ * 	Correct TOP_INCLUDES (see CR4905).  CR5491.
+ * 	Fixes from Motif1.2.3. Rev. 1.5.23.2, ancestor 1.5.22.2, file Motif.tmpl.
+ * 	[1993/02/23  19:49:05  dbrooks]
+ * 
+ * Revision 1.5.14.11  1993/02/08  21:41:52  yak
+ * 	Removed old SCCSID line.
+ * 	[1993/02/08  21:39:21  yak]
+ * 
+ * Revision 1.5.14.10  1993/01/08  20:00:26  yak
+ * 	Replaced PP with PlusPlus in the variables names..
+ * 	[1993/01/08  20:00:03  yak]
+ * 
+ * Revision 1.5.14.9  1992/12/10  18:33:44  dbrooks
+ * 	Fixes from Motif1.2.2. Rev. 1.5.19.2, ancestor 1.5.10.5, file Motif.tmpl.
+ * 	Add a definition of UIL_INCLUDES (CR 5326).
+ * 	[1992/12/10  18:33:23  dbrooks]
+ * 
+ * Revision 1.5.14.8  1992/12/02  18:57:25  yak
+ * 	Fixed bug in setting CPLUSPLUSCOM and CPLUSPLUSINCLUDES.
+ * 	[1992/12/02  18:57:04  yak]
+ * 
+ * Revision 1.5.14.7  1992/11/23  19:49:03  dbrooks
+ * 	Fixes from Motif1.2.2. Rev. 1.5.19.2, ancestor 1.5.10.4, file Motif.tmpl.
+ * 	Define and use library generator functions.
+ * 	[1992/11/23  19:48:04  dbrooks]
+ * 
+ * Revision 1.5.14.6  1992/11/19  23:41:33  yak
+ * 	Fixes from Motif1.2.2. Rev. 1.5.19.2, ancestor , file ./config/Motif.tmpl.
+ * 	Set up for shared libraries.
+ * 	[1992/11/19  23:41:10  yak]
+ * 
+ * Revision 1.5.14.5  1992/11/02  20:07:48  yak
+ * 	Removed $(CCOPTIONS) from the CPLUSPLUSFLAGS.
+ * 	[1992/11/02  20:07:24  yak]
+ * 
+ * Revision 1.5.14.4  1992/10/29  23:54:46  yak
+ * 	Added setup for SUFFIXES: .o .c .cc .C
+ * 	for C++.
+ * 	[1992/10/29  23:54:26  yak]
+ * 
+ * Revision 1.5.14.3  1992/10/28  19:07:39  moryak
+ * 	Replaced several tabs with spaces.
+ * 	[1992/10/28  19:07:20  moryak]
+ * 
+ * Revision 1.5.14.2  1992/10/20  16:31:44  yak
+ * 	Added set up for C++.
+ * 	[1992/10/20  16:31:20  yak]
+ * 
+ * Revision 1.5.10.3  92/09/16  20:32:30  msr
+ * 	Moved PURIFYLIBS to the beginning of link line
+ * 	[1992/09/16  20:27:08  msr]
+ * 
+ * Revision 1.5.10.2  1992/09/16  17:31:14  msr
+ * 	Added support to use Purify
+ * 	[1992/09/16  17:29:18  msr]
+ * 
+ * Revision 1.5.5.8  1992/08/06  15:59:48  dbrooks
+ * 	Fixed typo in TOP_INCLUDES setting: missing newline.  Note
+ * 	the log message for 1.5.5.7 is wrong: should read "Redefined
+ * 	TOP_INCLUDES and IMAKE_CMD for UseInstalled (CR 4905)."
+ * 	[1992/08/06  15:57:21  dbrooks]
+ * 
+ * Revision 1.5.5.7  1992/07/31  16:55:24  yak
+ * 	Removed EXTRA_LIBRARIES and added LDOPTIONS
+ * 	in the CC line in MSimpleProgramTarget rule.
+ * 	Fix from David Brooks.
+ * 	[1992/07/31  16:54:36  yak]
+ * 
+ * Revision 1.5.5.6  1992/07/10  21:05:38  msr
+ * 	Introduced a command definition (CATCMD) needed for generating target map
+ * 	files while building with Vista
+ * 	[1992/07/10  21:02:36  msr]
+ * 
+ * Revision 1.5.5.5  1992/07/06  21:01:06  dbrooks
+ * 	CR 4780: provided imake variable UilFlags as a hook
+ * 	for defining make variable UILFLAGS.
+ * 	[1992/07/06  20:51:29  dbrooks]
+ * 
+ * Revision 1.5.5.4  1992/07/06  19:41:33  msr
+ * 	Introduced some changes needed for using Vista
+ * 	[1992/07/06  19:41:11  msr]
+ * 
+ * Revision 1.5.5.3  1992/07/02  14:56:47  msr
+ * 	Removed INCLUDE_AUTOMATION define and included NO_AUTOMATION if AUTOMATION not
+ * 	defined
+ * 	[1992/07/02  14:56:23  msr]
+ * 
+ * Revision 1.5.5.2  1992/06/03  18:23:20  msr
+ * 	Moved AUTOUTILLIB after AUTOSCRIPTLIB on the link line
+ * 	[1992/06/03  18:04:43  msr]
+ * 
+ * 	Added AUTOUTILLIB
+ * 	[1992/06/02  20:00:45  msr]
+ * 
+ * Revision 1.5.2.4  1992/05/21  16:46:44  yak
+ * 	Added NO_AUTOMATION
+ * 	[1992/05/21  15:25:58  yak]
+ * 
+ * Revision 1.5.2.3  1992/04/10  21:02:42  tomm
+ * 	Added Rules to delete *.Dat and *.Scr files. These files
+ * 	are used in running manual and automated tests.
+ * 	[1992/04/10  19:39:30  tomm]
+ * 
+ * Revision 1.5.2.2  1992/04/03  15:45:56  dbrooks
+ * 	Use MotifDefines.  Define NormalLibxxx macros.  Define
+ * 	BuildClientLibs and BuildClientDeplibs (see explanation).
+ * 	Define UidDir and UIDDIR.
+ * 	[1992/04/03  15:45:16  dbrooks]
+ * 
+ * Revision 1.5  1992/03/13  16:49:56  devsrc
+ * 	Converted to ODE
+ * 
+ * $EndLog$
+*/ 
+XCOMM   $RCSfile: Motif.tmpl,v $ $Revision: 1.3 $ $Date: 1994/06/08 22:57:29 $
+
+/* Include AFTER Project.tmpl */
+
+#ifdef SGIArchitecture
+#  include <Motif.tmpl.sgi>
+#endif /* SGIArchitecture */
+
+/* Redefining MKDIRHIER if necessary                  */
+/* It should go away if the definition of MKDIRHIER   */
+/* is protected by #ifndef in Project.tmpl            */
+
+#ifdef MkDirHier
+     MKDIRHIER        = MkDirHier
+#endif
+
+#ifdef AUTOMATION
+#ifndef Automation
+#define Automation 	YES
+#endif
+#else
+#define NO_AUTOMATION
+#endif
+
+#ifdef USE_VISTACC
+#ifndef UseVista
+#define UseVista
+#endif
+#ifndef CATCMD
+#define CATCMD cat
+#endif
+#endif
+
+#ifdef USE_PURIFY
+#ifndef UsePurify
+#define UsePurify
+#endif
+#endif
+
+#ifdef DEBUG_GEOMETRY
+#ifndef DebugGeometry
+#define DebugGeometry YES
+#endif
+#endif
+
+/*  Don't collide with the X installed flag */
+
+#ifndef _MUse
+#ifdef UseInstalledMotif
+#define _MUse(a,b) a
+#else
+#define _MUse(a,b) b
+#endif
+#endif
+
+#ifndef _MUseCat
+#if __STDC__ && !defined(UnixCpp)
+#ifdef UseInstalledMotif
+#define _MUseCat(a,b,c) a##c
+#else
+#define _MUseCat(a,b,c) b##c
+#endif
+#else
+#ifdef UseInstalledMotif
+#define _MUseCat(a,b,c) a/**/c
+#else
+#define _MUseCat(a,b,c) b/**/c
+#endif
+#endif
+#endif
+
+/* As default Motif is in X tree */
+#ifndef MTop
+#define MTop $(TOP)
+#endif
+
+/* Change this to point to your X tree */
+#ifndef XTop
+#define XTop $(TOP)
+#endif
+
+#ifndef MotifDefines
+#define MotifDefines /**/
+#endif
+
+#ifndef XmDefines
+#define XmDefines  /**/
+#endif
+
+#ifndef LibraryDefines
+#define LibraryDefines StandardDefines MotifDefines MessageCatalogDefines
+#endif
+
+/* To compile without SHAPE extension, set this to -DNO_SHAPE */
+#ifndef MwmDefines
+#define MwmDefines /**/
+#endif
+
+#ifndef UilFlags
+#define UilFlags /**/
+#endif
+
+#ifndef TestDefines
+#define TestDefines -DX11R5
+#endif
+
+#ifndef AutoDefines
+#if Automation
+#define AutoDefines -DAUTOMATION
+#else
+#define AutoDefines /**/
+#endif
+#endif
+
+#ifndef AutoIncludes
+#if Automation
+#define AutoIncludes -I$(AUTOSCRIPTSRC)
+#else
+#define AutoIncludes /**/
+#endif
+#endif
+
+#ifdef UsePurify
+#define PurifyFilesToClean *.pure_linkinfo *.pure_hardlink
+#else
+#define PurifyFilesToClean
+#endif
+#if Automation
+#define TestExtraFilesToClean *.Dat *.Scr PurifyFilesToClean
+#else 
+#define TestExtraFilesToClean *.Dat PurifyFilesToClean
+#endif 
+
+#ifndef UsrIncDir
+#define UsrIncDir IncRoot
+#endif
+
+#ifndef XBuildIncRoot
+#define XBuildIncRoot $(XTOP)
+#endif
+
+/* Place to install .uid files */
+#ifndef UidDir
+#define UidDir $(LIBDIR)/uid
+#endif
+
+#ifndef XmExtraLibraries
+#define XmExtraLibraries /**/
+#endif
+
+#ifndef YaccFlags
+#define YaccFlags /**/
+#endif
+
+#ifndef SharedLibXm
+#define SharedLibXm HasSharedLibraries
+#endif
+#ifndef SharedLibMrm
+#define SharedLibMrm HasSharedLibraries
+#endif
+#ifndef SharedLibUil
+#define SharedLibUil HasSharedLibraries
+#endif
+#ifndef SharedLibACommon
+#define SharedLibACommon HasSharedLibraries
+#endif
+#ifndef SharedLibScript
+#define SharedLibScript HasSharedLibraries
+#endif
+#ifndef SharedLibUtil
+#define SharedLibUtil HasSharedLibraries
+#endif
+#ifndef SharedLibCreate
+#define SharedLibCreate HasSharedLibraries
+#endif
+#ifndef SharedLibVisual
+#define SharedLibVisual HasSharedLibraries
+#endif
+#ifndef SharedLibSynth
+#define SharedLibSynth HasSharedLibraries
+#endif
+#ifndef SharedLibMCommon
+#define SharedLibMCommon HasSharedLibraries
+#endif
+
+#ifndef NormalLibXm
+#define NormalLibXm (!SharedLibXm | ForceNormalLib)
+#endif
+#ifndef NormalLibMrm
+#define NormalLibMrm (!SharedLibMrm | ForceNormalLib)
+#endif
+#ifndef NormalLibUil
+#define NormalLibUil (!SharedLibUil | ForceNormalLib)
+#endif
+#ifndef NormalLibACommon
+#define NormalLibACommon (!SharedLibACommon | ForceNormalLib)
+#endif
+#ifndef NormalLibScript
+#define NormalLibScript (!SharedLibScript | ForceNormalLib)
+#endif
+#ifndef NormalLibUtil
+#define NormalLibUtil (!SharedLibUtil | ForceNormalLib)
+#endif
+#ifndef NormalLibCreate
+#define NormalLibCreate (!SharedLibCreate | ForceNormalLib)
+#endif
+#ifndef NormalLibVisual
+#define NormalLibVisual (!SharedLibVisual | ForceNormalLib)
+#endif
+#ifndef NormalLibSynth
+#define NormalLibSynth (!SharedLibSynth | ForceNormalLib)
+#endif
+#ifndef NormalLibMCommon
+#define NormalLibMCommon (!SharedLibMCommon | ForceNormalLib)
+#endif
+
+#ifndef SGIArchitecture /* OSF original */
+#ifndef SharedXmRev
+#define SharedXmRev 1.2
+#endif
+#ifndef SharedMrmRev
+#define SharedMrmRev 1.2
+#endif
+#ifndef SharedUilRev
+#define SharedUilRev 1.2
+#endif
+#else /* SGI changes -- fix shared library version numbers */
+#ifndef SharedXmRev
+#define SharedXmRev .1
+#endif
+#ifndef SharedMrmRev
+#define SharedMrmRev .1
+#endif
+#ifndef SharedUilRev
+#define SharedUilRev .1
+#endif
+#endif /* SGIArchitecture */
+#ifndef SharedACommonRev
+#define SharedACommonRev 1.2
+#endif
+#ifndef SharedScriptRev
+#define SharedScriptRev 1.2
+#endif
+#ifndef SharedUtilRev
+#define SharedUtilRev 1.2
+#endif
+#ifndef SharedCreateRev
+#define SharedCreateRev 1.2
+#endif
+#ifndef SharedVisualRev
+#define SharedVisualRev 1.2
+#endif
+#ifndef SharedSynthRev
+#define SharedSynthRev 1.2
+#endif
+#ifndef SharedMCommonRev
+#define SharedMCommonRev 1.2
+#endif
+
+#if HasSharedLibraries
+          SOXMREV = SharedXmRev
+         SOMRMREV = SharedMrmRev
+         SOUILREV = SharedUilRev
+     SOACOMMONREV = SharedACommonRev
+      SOSCRIPTREV = SharedScriptRev
+        SOUTILREV = SharedUtilRev
+      SOCREATEREV = SharedCreateRev
+      SOVISUALREV = SharedVisualRev
+       SOSYNTHREV = SharedSynthRev
+     SOMCOMMONREV = SharedMCommonRev
+#endif
+
+#ifndef SGIArchitecture /* OSF original */
+#ifndef XmClientLibs
+#define XmClientLibs $(XMLIB) $(XTOOLLIB) $(XLIB) $(XMEXTRA_LIBS)
+#endif
+#ifndef XmClientDepLibs
+#define XmClientDepLibs $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXLIB)
+#endif
+
+#ifndef MrmClientLibs 
+#define MrmClientLibs $(MRESOURCELIB) $(XMLIB) $(XTOOLLIB) $(XLIB) $(XMEXTRA_LIBS)
+#endif
+#ifndef MrmClientDepLibs
+#define MrmClientDepLibs $(DEPMRESOURCELIB) $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXLIB)
+#endif
+#else /* SGI change -- use XONLYLIB, so we don't get unwanted libXext */
+#ifndef XmClientLibs
+#define XmClientLibs $(XMLIB) $(XTOOLLIB) $(XONLYLIB) $(XMEXTRA_LIBS)
+#endif
+#ifndef XmClientDepLibs
+#define XmClientDepLibs $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXONLYLIB) $(DEPXMEXTRA_LIBS)
+#endif
+#ifndef MrmClientLibs 
+#define MrmClientLibs $(MRESOURCELIB) $(XMLIB) $(XTOOLLIB) $(XONLYLIB) $(XMEXTRA_LIBS)
+#endif
+#ifndef MrmClientDepLibs
+#define MrmClientDepLibs $(DEPMRESOURCELIB) $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXONLYLIB)
+#endif
+#endif /* SGIArchitecture */
+
+/*
+ * BuildClientLibs should be set to a version of MrmClientLibs that can be
+ * used to build uil and wmldbcreate.  On the initial build, MrmClientLibs
+ * may refer to shared libraries that may not be usable, since some systems
+ * require a separate install step.  The default is to use ".a" files
+ * initially, or the standard libraries if UseInstalledMotif is YES.
+ */
+#ifndef BuildClientLibs
+#ifdef UseInstalledMotif
+#define BuildClientLibs MrmClientLibs
+#else
+#define BuildClientLibs $(MRESOURCESRC)/libMrm.a $(MWIDGETSRC)/libXm.a $(XPM_LIBS) $(XTOOLLIB) $(XLIB) $(XMEXTRA_LIBS)
+#undef NormalLibXm
+#undef NormalLibMrm
+#define NormalLibXm YES
+#define NormalLibMrm YES
+#endif
+#endif
+#ifndef BuildClientDepLibs
+#ifdef UseInstalledMotif
+#define BuildClientDepLibs MrmClientDepLibs
+#else
+#define BuildClientDepLibs $(MRESOURCESRC)/libMrm.a $(MWIDGETSRC)/libXm.a $(XPM_LIBS) $(DEPXTOOLLIB) $(DEPXLIB)
+#endif
+#endif
+
+#ifndef SGIArchitecture /* OSF original */
+#ifndef UilClientLibs
+#define UilClientLibs $(UILLIB) $(MRESOURCELIB) $(XMLIB) $(XTOOLLIB) $(XLIB) $(XMEXTRA_LIBS)
+#endif
+#ifndef UilClientDepLibs
+#define UilClientDepLibs $(DEPUILLIB) $(DEPMRESOURCELIB) $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXLIB)
+#endif
+#else /* SGi changes */
+#ifndef UilClientLibs
+#define UilClientLibs $(UILLIB) $(MRESOURCELIB) $(XMLIB) $(XTOOLLIB) $(XLIBONLY) $(XMEXTRA_LIBS)
+#endif
+#ifndef UilClientDepLibs
+#define UilClientDepLibs $(DEPUILLIB) $(DEPMRESOURCELIB) $(DEPXMLIB) $(DEPXTOOLLIBONLY) $(DEPXLIB)
+#endif
+#endif /* SGIArchitecture */
+
+#ifndef TestClientLibs
+#define TestClientLibs $(PURIFYLIBS) $(TESTCOMLIB) \
+		$(AUTOSCRIPTLIB) $(AUTOUTILLIB) \
+		$(AUTOCREATELIB) $(AUTOVISUALLIB) $(AUTOSYNTHLIB) \
+	$(XMLIB) $(TESTGEOLIB) $(XTOOLLIB) $(XLIB) \
+	$(AUTOEXTRALIBS) $(XMEXTRA_LIBS)
+#endif
+#ifndef TestUilClientLibs
+#define TestUilClientLibs $(PURIFYLIBS) $(TESTUILCOMLIB) $(TESTCOMLIB) \
+		$(AUTOSCRIPTLIB) $(AUTOUTILLIB) \
+		$(AUTOCREATELIB) $(AUTOVISUALLIB) $(AUTOSYNTHLIB) \
+	$(UILLIB) $(MRESOURCELIB) $(XMLIB) $(TESTGEOLIB) \
+	$(XTOOLLIB) $(XLIB) $(AUTOEXTRALIBS) $(XMEXTRA_LIBS)
+#endif
+#ifndef TestClientDepLibs
+#define TestClientDepLibs XmClientDepLibs
+#endif
+#ifndef TestUilClientDepLibs
+#define TestUilClientDepLibs UilClientDepLibs
+#endif
+
+/* For separate Motif and X trees */
+
+              XTOP = XTop
+              MTOP = MTop
+     XBUILDINCROOT = XBuildIncRoot        /* base of X build loc */
+      XBUILDINCDIR = $(XBUILDINCROOT)/X11
+#if defined(UseInstalled) && !defined(UseInstalledMotif)
+          IRULESRC = $(CONFIGSRC)
+         IMAKE_CMD = $(IMAKE) -DUseInstalled -I$(NEWTOP)$(IRULESRC) $(IMAKE_DEFINES)
+#endif
+
+
+/* Redefine X locations */
+
+         CLIENTSRC = $(XTOP)/clients
+           DEMOSRC = $(XTOP)/demos
+            LIBSRC = $(XTOP)/lib
+           FONTSRC = $(XTOP)/fonts
+        INCLUDESRC = $(XTOP)/X11
+         SERVERSRC = $(XTOP)/server
+           UTILSRC = $(XTOP)/util
+        EXAMPLESRC = $(XTOP)/examples
+            DOCSRC = $(XTOP)/doc
+            RGBSRC = $(XTOP)/rgb
+      EXTENSIONSRC = $(XTOP)/extensions
+
+#ifdef UseInstalledMotif
+#if AlternateIncRoot
+      TOP_INCLUDES = -I$(INCROOT)		/* All installed; alt. root */
+#endif
+      UIL_INCLUDES = -I$(USRINCDIR)/uil
+#else
+#ifdef UseInstalled
+#if AlternateIncRoot
+      TOP_INCLUDES = -I$(MINCLUDESRC) -I$(INCROOT) /* X installed; alt. root */
+#else
+      TOP_INCLUDES = -I$(MINCLUDESRC)		/* X installed; std. root */
+#endif
+#else
+      TOP_INCLUDES = -I$(MINCLUDESRC) -I$(XTOP)	/* X and Motif source */
+#endif
+      UIL_INCLUDES = -I$(UILSRC)
+#endif
+
+/* XPM usage	*/
+/* XPM_DEFINES and XPM_INCLUDES are used in SpecialObjectRule for
+ * ImageCashe.c. XPM_LIBS are included in XMLIB
+*/
+#ifdef UseLocalXpm
+     XPM_DEFINES 	= -DUSE_LOCAL_XPM
+     XPM_INCLUDES 	= 
+     XPM_LIBS		=
+#else
+     XPM_DEFINES = 
+#ifdef XpmTop
+     XPM_TOP = XpmTop
+#else
+     XPM_TOP = $(XTOP)
+#endif
+#ifdef XpmIncludes
+     XPM_INCLUDES	= XpmIncludes
+#else
+     XPM_INCLUDES	= -I$(XPM_TOP)/include/X11
+#endif
+#ifdef XpmLibs
+     XPM_LIBS		= XpmLibs
+#else
+     XPM_LIBS		= $(XPM_TOP)/lib/libXpm.a
+#endif
+#endif		/* For UseXpm	*/
+
+/* Message catalog usage */
+#ifndef UseMessageCatalog
+#define BuildMessageCatalog NO /* The default should be later changed to YES */
+#define MessageCatalogDefines -DNO_MESSAGE_CATALOG
+#else
+#define BuildMessageCatalog YES 
+#define MessageCatalogDefines 	/**/
+#endif	/* For UseMessageCatalog */
+        
+      USRINCDIR = UsrIncDir
+         UIDDIR = UidDir
+        TESTSRC = $(MTOP)/tests
+        TESTLIB = $(TESTSRC)/lib
+  GENERALSRCLIB = $(TESTSRC)/General/lib
+  GENERALSRCBIN = $(TESTSRC)/General/bin
+   MANUALSRCLIB = $(TESTSRC)/Manual/lib
+   MANUALSRCBIN = $(TESTSRC)/Manual/bin
+     AUTOSRCLIB = $(TESTSRC)/Auto/lib
+     AUTOSRCBIN = $(TESTSRC)/Auto/bin
+       COMMONPP = $(GENERALSRCBIN)/Commonpp
+         GENRUN = $(GENERALSRCBIN)/Genrun
+         MANRUN = $(GENERALSRCBIN)/Manrun
+#ifdef DebugLib
+  TESTMALLOCSRC = $(GENERALSRCLIB)/Malloc
+#endif
+#ifdef DebugGeometry
+     TESTGEOSRC = $(TESTLIB)/Geometry
+#endif
+#ifdef Automation
+     TESTCOMSRC = $(AUTOSRCLIB)/Common
+  AUTOSCRIPTSRC = $(AUTOSRCLIB)/Script
+   AUTOSYNTHSRC = $(AUTOSRCLIB)/Synth
+  AUTOCREATESRC = $(AUTOSRCLIB)/Create
+  AUTOVISUALSRC = $(AUTOSRCLIB)/Visual
+    AUTOUTILSRC = $(AUTOSRCLIB)/Util
+  AUTOEXTRALIBS = -ll -ly -lm
+#else
+     TESTCOMSRC = $(MANUALSRCLIB)/Common
+#endif
+
+/* MTOOLKITSRC  should be removed */
+    MTOOLKITSRC = $(TOOLKITSRC)
+    MINCLUDESRC = $(MTOP)/X11
+        MLIBSRC = $(MTOP)/lib
+     MCLIENTSRC = $(MTOP)/clients
+       MDEMOSRC = $(MTOP)/demos
+     MWIDGETSRC = $(MLIBSRC)/Xm
+   MRESOURCESRC = $(MLIBSRC)/Mrm
+         UILSRC = $(MCLIENTSRC)/uil
+
+            UIL = _MUse(uil,$(UILSRC)/uil)
+         DEPUIL = _MUseCat($(BINDIR),$(UILSRC),/uil)
+
+   XMEXTRA_LIBS = XmExtraLibraries
+
+#ifndef UnsharedLibReferences
+#define UnsharedLibReferences(varname,libname,libsource) \
+Concat(DEP,varname) = _LibUseCat($(USRLIBDIR)/lib,libsource/lib,libname.a) @@\
+varname = LoaderLibPrefix _LibUse(Concat(-l,libname),$(Concat(DEP,varname)))
+#endif
+#ifndef SharedLibReferences
+#define SharedLibReferences(varname,libname,libsource,rev) \
+Concat(DEP,varname) = /**/                                            @@\
+varname = LoaderLibPrefix _LibUse(/**/,Concat(-L,libsource)) Concat(-l,libname)
+#endif
+
+#undef _LibUse
+#undef _LibUseCat
+#define _LibUse _MUse
+#define _LibUseCat _MUseCat
+
+#ifndef SGIArchitecture /* OSF original */
+#if SharedLibXm
+SharedLibReferences(XMLIBONLY,Xm,$(MWIDGETSRC),$(SOXMREV))
+#else
+UnsharedLibReferences(XMLIBONLY,Xm,$(MWIDGETSRC))
+#endif
+   XMLIB = $(XMLIBONLY) $(XPM_LIBS)
+   DEPXMLIB = $(DEPXMLIBONLY) $(XPM_LIBS)
+#else /* SGI changes */
+#if SharedLibXm
+SharedLibReferences(XMONLY,Xm,$(MWIDGETSRC),SOXMREV,SharedXmRev)
+#else
+UnsharedLibReferences(XMONLY,Xm,$(MWIDGETSRC))
+#endif
+   XMLIB = $(XMONLYLIB) $(XPM_LIBS)
+   DEPXMLIB = $(DEPXMONLYLIB) $(XPM_LIBS)
+# endif /* SGIArchitecture */
+
+#ifndef SGIArchitecture /* OSF original */
+#if SharedLibMrm
+SharedLibReferences(MRESOURCELIB,Mrm,$(MRESOURCESRC),$(SOMRMREV))
+#else
+UnsharedLibReferences(MRESOURCELIB,Mrm,$(MRESOURCESRC))
+#endif
+#else /* SGI changes */
+#if SharedLibMrm
+SharedLibReferences(MRESOURCE,Mrm,$(MRESOURCESRC),SOMRMREV,SharedMrmRev)
+#else
+UnsharedLibReferences(MRESOURCE,Mrm,$(MRESOURCESRC))
+#endif
+#endif /* SGIArchitecture */
+
+#ifndef SGIArchitecture /* OSF original */
+#if SharedLibUil
+SharedLibReferences(UILLIB,Uil,$(UILSRC),$(SOUILREV))
+#else
+UnsharedLibReferences(UILLIB,Uil,$(UILSRC))
+#endif
+# else /* SGI changes */
+#if SharedLibUil
+SharedLibReferences(UIL,Uil,$(UILSRC),SOUILREV,SharedUilRev)
+#else
+UnsharedLibReferences(UIL,Uil,$(UILSRC))
+#endif
+# endif /* SGIArchitecture */
+
+#ifdef DebugGeometry
+UnsharedLibReferences(TESTGEOLIB,XtGeo,$(TESTGEOSRC))
+#endif
+
+#if Automation
+
+#ifndef SGIArchitecture /* OSF original */
+#if SharedLibACommon
+SharedLibReferences(TESTCOMLIB,Common,$(TESTCOMSRC),$(SOACOMMONREV))
+#else
+UnsharedLibReferences(TESTCOMLIB,Common,$(TESTCOMSRC))
+#endif
+#else /* SGI changes */
+#if SharedLibACommon
+SharedLibReferences(TESTCOM,Common,$(TESTCOMSRC),SOACOMMONREV,SharedACommonRev)
+#else
+UnsharedLibReferences(TESTCOM,Common,$(TESTCOMSRC))
+#endif
+#endif /* SGIArchitecture */
+
+TESTUILCOMLIB = $(TESTCOMSRC)/libCommonUil.a
+
+#ifndef SGIArchitecture /* OSF original */
+#if SharedLibScript
+SharedLibReferences(AUTOSCRIPTLIB,Script,$(AUTOSCRIPTSRC),$(SOSCRIPTREV))
+#else
+UnsharedLibReferences(AUTOSCRIPTLIB,Script,$(AUTOSCRIPTSRC))
+#endif
+#else /* SGI changes */
+#if SharedLibScript
+SharedLibReferences(AUTOSCRIPT,Script,$(AUTOSCRIPTSRC),SOSCRIPTREV,SharedScriptRev)
+#else
+UnsharedLibReferences(AUTOSCRIPT,Script,$(AUTOSCRIPTSRC))
+#endif
+# endif /* SGIArchitecture */
+
+#ifndef SGIArchitecture /* OSF original */
+#if SharedLibSynth
+SharedLibReferences(AUTOSYNTHLIB,Synth,$(AUTOSYNTHSRC),$(SOSYNTHREV))
+#else
+UnsharedLibReferences(AUTOSYNTHLIB,Synth,$(AUTOSYNTHSRC))
+#endif
+#else /* SGI changes */
+#if SharedLibSynth
+SharedLibReferences(AUTOSYNTH,Synth,$(AUTOSYNTHSRC),SOSYNTHREV,SharedSynthRev)
+#else
+UnsharedLibReferences(AUTOSYNTH,Synth,$(AUTOSYNTHSRC))
+#endif
+#endif /* SGIArchitecture */
+
+#ifndef SGIArchitecture /* OSF original */
+#if SharedLibCreate
+SharedLibReferences(AUTOCREATELIB,Create,$(AUTOCREATESRC),$(SOCREATEREV))
+#else
+UnsharedLibReferences(AUTOCREATELIB,Create,$(AUTOCREATESRC))
+#endif
+#else /* SGI changes */
+#if SharedLibCreate
+SharedLibReferences(AUTOCREATE,Create,$(AUTOCREATESRC),SOCREATEREV,SharedCreateRev)
+#else
+UnsharedLibReferences(AUTOCREATE,Create,$(AUTOCREATESRC))
+#endif
+#endif /* SGIArchitecture */
+
+# ifndef SGIArchitecture /* OSF original */
+#if SharedLibVisual
+SharedLibReferences(AUTOVISUALLIB,Visual,$(AUTOVISUALSRC),$(SOVISUALREV))
+#else
+UnsharedLibReferences(AUTOVISUALLIB,Visual,$(AUTOVISUALSRC))
+#endif
+#else /* SGI changes */
+#if SharedLibVisual
+SharedLibReferences(AUTOVISUAL,Visual,$(AUTOVISUALSRC),SOVISUALREV,SharedVisualRev)
+#else
+UnsharedLibReferences(AUTOVISUAL,Visual,$(AUTOVISUALSRC))
+#endif
+#endif /* SGIArchitecture */
+
+#ifndef SGIArchitecture /* OSF original */
+#if SharedLibUtil
+SharedLibReferences(AUTOUTILLIB,Util,$(AUTOUTILSRC),$(SOUTILREV))
+#else
+UnsharedLibReferences(AUTOUTILLIB,Util,$(AUTOUTILSRC))
+#endif
+#else /* SGI changes */
+#if SharedLibUtil
+SharedLibReferences(AUTOUTIL,Util,$(AUTOUTILSRC),SOUTILREV,SharedUtilRev)
+#else
+UnsharedLibReferences(AUTOUTIL,Util,$(AUTOUTILSRC))
+#endif
+#endif /* SGIArchitecture */
+
+#else   /* Manual */
+
+#ifndef SGIArchitecture /* OSF original */
+#if SharedLibMCommon
+SharedLibReferences(TESTCOMLIB,Common,$(TESTCOMSRC),$(SOMCOMMONREV))
+#else
+UnsharedLibReferences(TESTCOMLIB,Common,$(TESTCOMSRC))
+#endif
+# else /* SGI changes */
+#if SharedLibMCommon
+SharedLibReferences(TESTCOM,Common,$(TESTCOMSRC),SOMCOMMONREV,SharedMCommonRev)
+#else
+UnsharedLibReferences(TESTCOM,Common,$(TESTCOMSRC))
+#endif
+# endif /* SGIArchitecture */
+TESTUILCOMLIB = $(TESTCOMSRC)/libCommonUil.a
+
+#endif  /* Automation */
+
+
+
+#ifdef UsePurify
+     PURIFYLIBS = $(PURIFYHOME)/purify_stubs.a
+#endif
+  LINTMRESOURCE = $(MRESOURCESRC)/libMrm.a
+LINTXMWIDGETLIB = $(MWIDGETSRC)/llib-l/Xm.ln
+     LINTXMTOOL = $(MTOOLKITSRC)/llib-lXt.ln
+     LINTUILLIB = $(UILSRC)/llib-lUil.ln
+
+      YACCFLAGS = YaccFlags
+       UILFLAGS = UilFlags
+
+         RM_CMD = $(RM) FilesToClean ExtraFilesToClean TestExtraFilesToClean
+
+    STD_DEFINES = StandardDefines MotifDefines MessageCatalogDefines
+
+#if NeedDefaultDepLibs
+/*
+ */
+#if HasSharedLibraries || UseInstalled
+        DEPLIBS = $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXLIB)
+#else
+        DEPLIBS = $(LOCAL_LIBRARIES)
+#endif
+        DEPLIBS1 = $(DEPLIBS)
+        DEPLIBS2 = $(DEPLIBS)
+        DEPLIBS3 = $(DEPLIBS)
+#endif /* NeedDefaultDepLibs */
+
+/* Set up for C++ */
+#ifdef BuildPlusPlus
+#ifdef MakeSuffixes
+.SUFFIXES: $(MakeSuffixes)
+#else
+.SUFFIXES: .o .c .cc .C
+#endif
+#ifndef CPlusPlusCom
+#ifdef HasGPlusPlus
+        CPLUSPLUSCOM = g++
+#else
+        CPLUSPLUSCOM = CC
+#endif	/* HasGPlusPlus */
+#else
+        CPLUSPLUSCOM = CPlusPlusCom
+#endif	/* CPlusPlusCom */
+
+#ifndef CPlusPlusLinkCom
+        CPLUSPLUSLINKCOM = $(CPLUSPLUSCOM)
+#else
+        CPLUSPLUSLINKCOM = CPlusPlusLinkCom
+#endif
+/*
+ * Setting CPLUSPLUSFLAGS (includes and defines).
+*/
+
+#ifndef StdCPlusPlusIncludes
+        STD_CPLUSPLUS_INCLUDES = $(STD_INCLUDES)
+#else
+        STD_CPLUSPLUS_INCLUDES = StdCPlusPlusIncludes
+#endif
+      ALLCPLUSPLUSINCLUDES = \
+	$(INCLUDES) $(EXTRA_INCLUDES) $(TOP_INCLUDES) \
+	$(STD_CPLUSPLUS_INCLUDES)
+#ifndef StdCPlusPlusDefines
+        STD_CPLUSPLUS_DEFINES = $(STD_DEFINES)
+#else
+        STD_CPLUSPLUS_DEFINES = StdCPlusPlusDefines
+#endif
+       ALLCPLUSPLUSDEFINES = \
+	$(ALLCPLUSPLUSINCLUDES) $(STD_CPLUSPLUS_DEFINES) $(EXTRA_DEFINES) \
+	$(PROTO_DEFINES) $(DEFINES)
+       CPLUSPLUSFLAGS = $(CDEBUGFLAGS) $(ALLCPLUSPLUSDEFINES)
+
+/* CPLUSPLUS Libraries	*/
+#ifndef CPlusPlusLibs
+       CPLUSPLUSLIBS = /**/
+#else
+       CPLUSPLUSLIBS = CPlusPlusLibs
+#endif
+
+#endif	/* BuildPlusPlus */

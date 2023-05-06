@@ -1,0 +1,45 @@
+
+
+			MOTIF SOURCE DIRECTORY NOTES
+
+Each sub-directory contains demonstration software, and has in it a
+README file that:
+
+	* tells about the software under that directory
+	* tells how to build and run that software
+	
+The sub-directories are:
+
+	 * book_examples -- the source to the example programs from the book
+		The X Window System
+		Programming and Applications with Xt
+		OSF/Motif Edition
+
+	 * osf_demos -- the official OSF/Motif demonstration program sources
+
+	 * overlay_demos -- versions of the official OSF/Motif demonstration
+			program sources, modified to show how to use
+			overlay and popup planes.
+
+	* Sgm -- demo software corresponding to libSgm
+
+/usr/src/X11/motif also contains two files:
+
+	* README -- this file
+
+	* mmkmf (Motif make Makefile) -- a symbolic link to
+		/usr/bin/X11/mmkmf.  The symlink is just forf backwards
+		compatibility.
+
+		"mmkmf" is a script to ease making an initial
+	 	Makefile from an Imakefile.  This is used to build the
+		demonstration programs; it is also generally useful.
+		
+		To use mmkmf in your own source tree:
+
+			* Set up your Imakefile(s)
+			* cd to the top directory in your source tree
+			* give the command "mmkmf"
+			
+		This will make your initial Makefile.  Then the command "Make
+		Makefiles will make any other Makefiles in your source tree.

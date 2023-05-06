@@ -1,0 +1,34 @@
+
+
+		  README for Accumulation Buffer examples
+
+
+
+	The "acbuf" directory shows a few simple uses of the 
+	accumulation buffer. The programs require a VGX to run on.
+	VGX machines that do not have a hardware accumulation buffer
+	will perform these functions rather slowly. If you need to
+	use the accumulation buffer, it is highly recommended to 
+	get the hardware.
+
+	"boxblur" demonstrates motion blurring using a box filter
+	technique. With this method, each frame has the same weight
+	as any other. After a given number of frames have been 
+	rendered it is necessary to back track and remove old frames
+	from the accumulation buffer. The effect is the same as in
+	stroboscopic photographs.
+
+	"geomblur" demonstrates motion blurring using a geometric
+	filter. In this program, each old frame diminishes in its
+	contribution to the blurring. To see this, open the window and 
+	watch the vapors follow the torus, then press the LEFTMOUSE 
+	button and watch the "vapor trail" catch up to the object. 
+
+	"scene" demonstrates how to use the accumulation buffer to 
+	antialias things drawn with a perspective projection. This
+	requires multiple passes with a slight perturbation of the
+	objects onto the pixels. To run this one, press the LEFTMOUSE
+	to see how the object looks with without antialiasing. Release
+	the mouse button and it will become antialiased again. Rotations
+	are based upon the verticle position of the mouse on the 
+	screen.

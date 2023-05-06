@@ -1,0 +1,22 @@
+DEMOSRCDIR = $(USRSRCDIR)/overlay_demos
+
+CDEBUGFLAGS=-DOVERLAY_DEMO
+#define IHaveSubdirs
+#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+
+SUBDIRS = lib dogs hellomotif motifburger periodic xmsamplers
+
+
+MakeSubdirs($(SUBDIRS))
+DependSubdirs($(SUBDIRS))
+MakeLintLibSubdirs($(SUBDIRS))
+
+#ifdef SGIArchitecture
+
+MKDIRHIERTAG = MkDirCmdIdbTag="$(INSTDEMODIRFLAGS)"
+install::
+	$(MKDIRHIER) $(DEMOSRCDIR)
+
+FILES = Imakefile README
+InstallMultipleFlags( $(FILES), $(DEMOSRCDIR), $(INSTDEMOFLAGS) )
+#endif

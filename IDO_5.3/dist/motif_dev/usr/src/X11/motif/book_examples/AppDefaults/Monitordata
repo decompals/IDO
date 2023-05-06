@@ -1,0 +1,10 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Monitordata: Resource File for Monitordata
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Monitordata*orientation:                     horizontal
+Monitordata*panel*RowColumn.orientation:     vertical
+Monitordata*XmScrollbar*orientation:         horizontal
+Monitordata*speed*label*labelString:         Speed:
+Monitordata*direction*label*labelString:     Direction:
+Monitordata*altitude*label*labelString:      Altitude:
+

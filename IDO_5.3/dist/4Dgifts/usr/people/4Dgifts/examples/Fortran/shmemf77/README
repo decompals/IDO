@@ -1,0 +1,29 @@
+
+       -----------------------------------------------------------------
+       README for ~4Dgifts/examples/Fortran/shmemf77 source code example
+       -----------------------------------------------------------------
+
+    shmem demonstrates using shared memory via FORTRAN 77. The main program
+    (shmem.f) begins by allocating and attaching a shared memory segment by 
+    calling a C function "shmget" (in shmget.c, which in turn calls the
+    system call SHMGET(2)), followed by forking a child process.
+    
+    The parent process writes out three real numbers and one character 
+    string starting at the base address of the shared memory segment. The 
+    shared memory segment is "casted" into a C stucture the fields of which
+    are the same size as that of the corresponding FORTRAN 77 record fields.
+    The parent process continues on by invoking WAIT(2).  When control
+    returns from the WAIT(2) call, the parent process calls "shmfree" to 
+    detach the memory segment--remember detaching and removing shared 
+    memory segments are too different/separate operations.  To remove the 
+    shared memory segment requires calling SHMCTL(2) with the shared memory
+    segment id that was returned by the call to SHMGET(2) in the "shmget" 
+    FORTRAN to C function.
+    
+    This example program does not remove the shared memory segment, it only
+    detaches it.  By detaching the shared memory, one can re-attach the 
+    shared memory seqment again by calling SHMGET(2) with the same key.
+
+    The child process begins by sleeping for one second (see SLEEP(1)),
+    followed by calling a FORTRAN 77 sub-program, readsmem(), which reads 
+    the values placed into the record/structure by the FORTRAN 77 parent.

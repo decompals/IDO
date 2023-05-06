@@ -1,0 +1,106 @@
+#! /bin/csh -f
+# GRAB: Frame grabbing script for use with Abekas A60 digital video frame
+#         storage unit.
+# Written by Paul J. Meyer Nov. 23 1990
+# The purpose of this shell script is to grab frames from an Abekas A60
+# unit.  It accesses the data as either yuv or rgb files and will place
+# the data in a file named with a user entered prefix and a postfix # which 
+# is identical to frame # on the Abekas.
+# Modified 3/8/91 for video fields and for .key (luminance) images
+# Present usage message to user if no parameters are specified.
+#    Note: Will always return both fields
+
+if ( $#argv < 1 ) then
+    echo "Usage: grab Outputfileprefix (f)Beginframe (Endframe) (mode)"
+    echo " "
+    echo "        -- Beginframe may be prefixed with an f to get fields"
+    echo "        -- Endframe defaults to Beginframe"
+    echo "        -- mode defaults to yuv mode (use rgb for rgb mode,"
+    echo "                                       use key for luminance)"
+    echo " "
+    exit 0
+endif
+
+set videodev = "a60:"    # host from which data is coming (from /etc/hosts)
+set prefix = $1          #file name prefix
+# Determine if user wants video fields (search for an f)
+# Also set the beginning frame to extract from Abekas unit.
+
+set alpha = `expr "$2" : '\(.\)'`    # extract one character
+if ( $alpha == "f" ) then
+    set field = "f"
+    set begin = `expr "ff$2" : '.*f\(.*\)'` # Hey, Don't ask me, but it
+                                            # magically removes the 
+                                            # leading f character.
+
+else
+    set field = ""
+    set begin = $2    # beginning frame number on Abekas
+endif
+
+# determine ending frame number, shift positional parameters
+# appropriately to pick up file mode (rgb, yuv, key).
+
+set alpha = `expr "$3" : '\(.\)'` # extract one character
+
+if (`expr "$alpha" \>= '0'` && `expr "$alpha" \<= '9'` ) then
+    set end = $3
+    shift;shift;shift
+else
+    set end = $begin     # Ending frame was not specified, do just one frame.
+	shift;shift
+endif
+
+set alpha = `expr "$1" : '\(.\)'`           # extract on character
+if ( $alpha == "" || $alpha == "y" ) then   # check for null string
+                                            # or y to do yuv mode file
+    set mode = ""        # no extension, do yuv format file (faster mode)
+else if ( $alpha == "r" ) then
+    set mode = ".rgb"    # add.rgb extension to get rgb mode file from Abekas 
+else
+
+
+    set mode = ".key"    # add .key extension to get luminance data
+endif
+
+set count = $begin       # counter variable
+
+while ( $count <= $end )  # test whether we have done all the frames
+
+    # Pad the output file name extension with zeros where necessary
+
+    if ( `expr "$count" : '.*'` == 3 ) then
+        set post = $count
+    else if ( `expr "$count" : '.*'` == 2 ) then
+        set post = `echo "0$count"`
+    else if ( `expr "$count" : '.*'` == 1 ) then
+        set post = `echo "00$count"`
+    endif
+
+# Determine whether or not to do fields
+
+    set plus = ""
+    if ( $field == "f" ) then
+        # generate input and output filenames, note that the minus
+        # indicates the 1st field
+
+        set infile = $videodev$field$count$mode
+        set outfile = $prefix.f$post-
+
+        rcp $infile $outfile    # go and get the data
+
+        set plus = "+"    # setup for second video field
+        echo -n "."        # indicate something is happening
+    endif
+    
+   set infile = $videodev$field$count$plus$mode  # generate input filename
+   set outfile = $prefix.$field$post$plus        # generate output filename
+
+        rcp $infile $outfile            # go and get the data
+
+        echo -n "."                      # indicate something is happening
+        set count = `expr $count + 1`    # bump counter up by 1
+end
+
+echo " "
+exit 0

@@ -1,0 +1,110 @@
+1;SwpkgHelp;Overview;0;Overview;Swpkg.swpkg.overview
+2;SwpkgHelp;Tutorial;0;tutorial;Swpkg.swpkg
+2;SwpkgHelp;Setup;1;tutorial.setup;Swpkg.swpkg
+2;SwpkgHelp;Running swpkg;1;tutorial.running;Swpkg.swpkg
+2;SwpkgHelp;Creating a Product Hierarchy;1;tutorial.hierarchy;Swpkg.swpkg
+2;SwpkgHelp;Tagging Files;1;tutorial.tagging;Swpkg.swpkg
+2;SwpkgHelp;Setting Permissions and Destinations;1;tutorial.permissions;Swpkg.swpkg
+2;SwpkgHelp;Setting Attributes;1;tutorial.attributes;Swpkg.swpkg
+2;SwpkgHelp;Building Products;1;tutorial.building;Swpkg.swpkg
+2;SwpkgHelp;Installing Products;1;tutorial.installing;Swpkg.swpkg
+
+0;SwpkgHelp;Using swpkg Menus;0;menu.bar;Swpkg.swpkg.menuBar
+0;SwpkgHelp;The File Menu;1;menu.bar.file;Swpkg.swpkg.menuBar.File
+0;SwpkgHelp;The View Menu;1;menu.bar.view;Swpkg.swpkg.menuBar.View
+0;SwpkgHelp;The Help Menu;1;menu.bar.help;Swpkg.swpkg.menuBar.helpMenu
+
+0;SwpkgHelp;Using the Worksheet Selection Tabs;0;worksheet.selection.tabs;Swpkg.swpkg.view.tabPanel.tabArea
+
+0;SwpkgHelp;Using the Message Area;0;message.log;Swpkg.swpkg.view.viewPanedWindow.messageForm.scrolledWindow.messageText
+
+2;SwpkgHelp;Creating a Product Hierarchy;0;create.product.hier.worksheet;Swpkg.swpkg
+2;SwpkgHelp;The Basic Steps;1;create.product.hier.worksheet;Swpkg.swpkg
+2;SwpkgHelp;Structuring a Hierarchy;1;spec.graph;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.specBody
+0;SwpkgHelp;Selecting Nodes;2;spec.graph.nodes;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.specBody.SpecGraph.form.graph.graphSW
+0;SwpkgHelp;The Spec File Path Label;2;spec.graph.pathname;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.specBody.SpecGraph.label
+0;SwpkgHelp;Adding and Deleting Nodes;2;spec.graph.add.delete;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.specBody.SpecGraph.springBox
+0;SwpkgHelp;Product Hierarchy Graph Display Controls;2;spec.graph.controls;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.specBody.SpecGraph.form.graph.GraphCommands
+2;SwpkgHelp;Entering Product Specifications;1;spec.productsheet;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.productForm.productGrid
+0;SwpkgHelp;Setting the Product Name;2;spec.detail.productname;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.productForm.productGrid.nameGrid.productNameLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.productForm.productGrid.nameGrid.productNameTextField
+0;SwpkgHelp;Setting the Product Description;2;spec.detail.productid;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.productForm.productGrid.idGrid.productIdLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.productForm.productGrid.idGrid.productIdTextField
+2;SwpkgHelp;Entering Image Specifications;1;spec.imagesheet;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.imageForm.imageGrid
+0;SwpkgHelp;Naming the Image;2;spec.detail.imagename;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.imageForm.imageGrid.nameGrid1.imageNameTextField;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.imageForm.imageGrid.nameGrid1.imageNameLabel
+0;SwpkgHelp;Changing the Image Description;2;spec.detail.imageid;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.imageForm.imageGrid.idGrid1.imageIdLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.imageForm.imageGrid.idGrid1.imageIdTextField
+0;SwpkgHelp;Changing the Image Version Number;2;spec.detail.imageversion;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.imageForm.imageGrid.versionGrid.versionLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.imageForm.imageGrid.versionGrid.versionTextField
+0;SwpkgHelp;Changing the Image Installation Order;2;spec.detail.imageorder;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.imageForm.imageGrid.orderGrid
+2;SwpkgHelp;Entering Subsystem Specifications;1;spec.subsyssheet;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.subsysForm.subsysGrid.nameGrid2
+0;SwpkgHelp;Naming the Subsystem;2;spec.detail.subsysname;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.subsysForm.subsysGrid.nameGrid2.subsysNameLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.subsysForm.subsysGrid.nameGrid2.subsysNameTextField
+0;SwpkgHelp;Changing the Subsystem Description;2;spec.detail.subsysid;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.subsysForm.subsysGrid.idGrid2.subsysIdLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.subsysForm.subsysGrid.idGrid2.subsysIdTextField
+0;SwpkgHelp;Setting Basic Subsystem Installation Options;2;spec.detail.installoptions;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.subsysForm.subsysGrid.flagsGrid
+0;SwpkgHelp;Setting Installation Rules;2;spec.detail.rulesText;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.subsysForm.subsysGrid.panedWindow.rulesGrid
+0;SwpkgHelp;Editing Mapping Expressions Directly;1;spec.detail.mappingTextField;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.frame.form.subsysForm.subsysGrid.panedWindow.mappingGrid
+0;SwpkgHelp;The Assign Arrow Button;1;spec.graph.apply;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightForm.SpecDetail.applySpringBox.applyArrowButton
+
+2;SwpkgHelp;Tagging Files;0;tag.files.worksheet;Swpkg.swpkg
+2;SwpkgHelp;Selecting Product Files;1;file.browser;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.addBody.FileListAdd.selectionGrid
+0;SwpkgHelp;Setting the Browsing Directory;2;file.browser.dirfield;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.addBody.FileListAdd.directoryLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.addBody.FileListAdd.directoryTextField
+0;SwpkgHelp;Selecting Files From the File List;2;file.browser.filelist;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.addBody.FileListAdd.scrolledWindow.filesList;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.addBody.FileListAdd.scrolledWindow.VertScrollBar
+0;SwpkgHelp;Selecting Files Using Filters;2;file.browser.filter;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.addBody.FileListAdd.selectionGrid.selectionTextField;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.addBody.FileListAdd.selectionGrid.selectionLabel
+0;SwpkgHelp;Selecting Files With the All and None Buttons;2;file.browser.all.none;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.addBody.FileListAdd.selectionGrid.allPushButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.addBody.FileListAdd.selectionGrid.nonePushButton
+0;SwpkgHelp;Adding Selected Files;2;file.browser.addarrow;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.addBody.FileListAdd.arrowSpringBox.arrowButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.addBody.FileListAdd.arrowSpringBox.arrowLabel
+2;SwpkgHelp;Accessing Your IDB File;1;idbfile.list;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList.springBox;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList
+0;SwpkgHelp;IDB File Path Label;2;idbfile.list.label;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList.label
+0;SwpkgHelp;Adding Files to the IDB File List;2;idbfile.list.adding.files;Swpkg.swpkg
+0;SwpkgHelp;Selecting Files From the IDB File List;2;idbfile.list.list;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList.scrolledWindow.fileList;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList.scrolledWindow.VertScrollBar;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList.scrolledWindow.HorScrollBar
+0;SwpkgHelp;Selecting Files Using Filters;2;idbfile.list.filter;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList.selectionGrid.selectionTextField;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList.selectionGrid.selectionLabel
+0;SwpkgHelp;Selecting Files Using the All and None Buttons;2;idbfile.list.all.none;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList.selectionGrid.allPushButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList.selectionGrid.nonePushButton
+0;SwpkgHelp;Deleting Files From the IDB File List;2;idbfile.list.delete;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList.springBox.removePushButton
+0;SwpkgHelp;Undoing Operations;2;idbfile.list.undo;Swpkg.swpkg.view.viewPanedWindow.viewForm.rightFrame.FileList.springBox.undoPushButton
+2;SwpkgHelp;Selecting Tags;1;tag.browser;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.tagsBody.FileListTags.label;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.tagsBody.FileListTags
+0;SwpkgHelp;Selecting Tags from the Tags List;2;tag.browser.tagslist;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.tagsBody.FileListTags.scrolledWindow.tagsList;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.tagsBody.FileListTags.scrolledWindow.VertScrollBar
+0;SwpkgHelp;Editing the Tags List;2;tag.browser.text.field;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.tagsBody.FileListTags.selectionTextField;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.tagsBody.FileListTags.buttonSpringBox.addPushButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.tagsBody.FileListTags.buttonSpringBox.deletePushButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.tagsBody.FileListTags.buttonSpringBox.replacePushButton
+0;SwpkgHelp;Assigning Tags to Files;2;tag.browser.assignarrow;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.filesBody.tagsBody.FileListTags.arrowSpringBox.arrowButton
+
+2;SwpkgHelp;Editing Permissions and Destinations;0;perms.dests.worksheet;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.upperGrid
+2;SwpkgHelp;The Basic Steps;1;perms.dests.worksheet;Swpkg.swpkg
+2;SwpkgHelp;Setting Source and Destination Roots;1;root.spec.sheet;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.upperGrid.frame.rootGrid
+0;SwpkgHelp;Setting a Source Tree Root;2;file.perms.sourceroot;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.upperGrid.frame.rootGrid.sourceRootTextField;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.upperGrid.frame.rootGrid.sourceRootLabel
+0;SwpkgHelp;Setting a Destination Tree Root;2;file.perms.destroot;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.upperGrid.frame.rootGrid.destRootLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.upperGrid.frame.rootGrid.destRootTextField
+0;SwpkgHelp;Applying the Specified Tree Roots;2;file.perms.rootspec.applyarrow;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.upperGrid.applySpringBox.applyArrowButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.upperGrid.applySpringBox.applyLabel
+2;SwpkgHelp;Setting Permissions and Destinations;1;file.perms.dests.sheet;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.permsGrid
+0;SwpkgHelp;Specifying the Mode;2;file.perms.mode;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.permsGrid.modeLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.permsGrid.modeTextField;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.permsGrid.modeLabel1
+0;SwpkgHelp;Specifying the Owner;2;file.perms.owner;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.permsGrid.ownerLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.permsGrid.ownerTextField;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.permsGrid.ownerLabel1
+0;SwpkgHelp;Specifying the Group;2;file.perms.group;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.permsGrid.groupTextField;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.permsGrid.groupLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.permsGrid.groupLabel1
+0;SwpkgHelp;Setting the Destination Directory;2;file.perms.destdir;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.destGrid.destDirLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.destGrid.destDirTextField
+0;SwpkgHelp;Setting the Destination Filename;2;file.perms.destfile;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.destGrid.destFileTextField;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.permsDestFrame.permsDestGrid.destGrid.destFileLabel
+0;SwpkgHelp;Assigning the Specified Permissions and Destinations;2;file.perms.dests.sheet.assignarrow;Swpkg;swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.lowerGrid.assignSpringBox.assignArrowButton
+2;SwpkgHelp;Resetting All Text Fields to the Default Values;1;file.perms.reset;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.permsBody.FileListPerms.resetSpringBox.resetPushButton
+
+2;SwpkgHelp;Adding Attributes;0;add.attributes.worksheet;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs
+2;SwpkgHelp;Selecting Installation Attributes;1;attrs.sheet.software;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.softAttrsLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.VertScrollBar
+0;SwpkgHelp;The Config Attribute;2;file.attrs.config;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsConfigGrid.attrsConfigToggleButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsConfigGrid.attrsConfigOptionMenu.OptionButton
+0;SwpkgHelp;The Shadow Attribute;2;file.attrs.shadow;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsShadowGrid.attrsShadowToggleButton
+0;SwpkgHelp;The Preop, Postop, and Exitop Attributes;2;file.attrs.ops;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsPreOpGrid.attrsPreOpToggleButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsPreOpGrid.attrsPreOpText;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsPostOpGrid.attrsPostOpToggleButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsPostOpGrid.attrsPostOpText;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsExitOpGrid.attrsExitOpToggleButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsExitOpGrid.attrsExitOpText
+0;SwpkgHelp;The noshare Attribute;2;file.attrs.noshare;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsNoShareGrid.attrsNoShareToggleButton
+0;SwpkgHelp;The nostrip Attribute;2;file.attrs.nostrip;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsNoStripGrid.attrsNoStripToggleButton
+0;SwpkgHelp;Specifying Hardware Restrictions: The mach Attribute;2;file.attrs.mach;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.hardAttrsLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.hardWarnLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsMachGrid.attrsMachRowColumn.attrsCpuLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsMachGrid.attrsMachRowColumn.attrsCpuSpringBox.r3kPushButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsMachGrid.attrsMachRowColumn.attrsCpuSpringBox.r4kPushButton;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsMachGrid.attrsMachRowColumn.attrsCpuBoardRowColumn;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsMachGrid.attrsMachRowColumn.attrsGfxBoardLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsMachGrid.attrsMachRowColumn.attrsGfxBoardRowColumn;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsMachGrid.attrsMachRowColumn.attrsSubgrLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.scrolledWindow.ScrolledWindowClipWindow.rowColumn.attrsMachGrid.attrsMachRowColumn.attrsSubgrRowColumn
+2;SwpkgHelp;Clearing the Attributes Specification Sheet;1;file.attrs.clear;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.attrsSpringBox.attrsClearPushButton
+2;SwpkgHelp;Assigning the Selected Attributes;1;file.attrs.assignarrow;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.attrsBody.FileListAttrs.attrsSpringBox1.attrsAssignArrowButton
+
+2;SwpkgHelp;Building a Product;0;build.product.worksheet;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody
+2;SwpkgHelp;The Basic Steps;1;build.product.worksheet;Swpkg.swpkg
+0;SwpkgHelp;The Spec File Path Label;1;generate.spec.file;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.label
+2;SwpkgHelp;Setting Tree Roots and the Distribution Directory;1;generate.spec.roots.and.dir;Swpkg.swpkg
+0;SwpkgHelp;Setting a Source Tree Root;2;generate.source.root;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.sourceRootGrid.sourceRootLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.sourceRootGrid.sourceRootTextField
+0;SwpkgHelp;Setting a Destination Tree Root;2;generate.dest.root;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.destRootGrid.destRootLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.destRootGrid.destRootTextField
+0;SwpkgHelp;Setting the Distribution Directory;2;generate.dist.dir;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.distDirGrid.distDirLabel;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.distDirGrid.distDirTextField
+2;SwpkgHelp;Selecting Build Options;1;build.options;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.rowColumn
+0;SwpkgHelp;The Verbose Build Option;2;generate.verbose.toggle;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.rowColumn.verboseToggleButton
+0;SwpkgHelp;The Maint Build Option;2;generate.maint.toggle;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.rowColumn.maintToggleButton
+0;SwpkgHelp;The No Compress Build Option;2;generate.nocompress.toggle;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.rowColumn.noCompressToggleButton
+0;SwpkgHelp;The No Strip Build Option;2;generate.nostrip.toggle;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.rowColumn.noStripToggleButton
+2;SwpkgHelp;Running a Test Build;1;generate.dry.run;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.buttonGrid.dryrunPushButton
+2;SwpkgHelp;Building the Product;1;generate.build.all;Swpkg.swpkg.view.viewPanedWindow.viewForm.leftForm.generateBody.Generate.buttonGrid.allPushButton
+
+2;SwpkgHelp;After Building;0;after.building;Swpkg.swpkg
+2;SwpkgHelp;Making Changes;1;changing.builds;Swpkg.swpkg
+2;SwpkgHelp;Combining Products;1;combining.products;Swpkg.swpkg
+2;SwpkgHelp;Dividing Products;1;dividing.products;Swpkg.swpkg
+
+3;SwpkgHelp;Keys and Shortcuts;0;keys.and.shortcuts;Swpkg.swpkg

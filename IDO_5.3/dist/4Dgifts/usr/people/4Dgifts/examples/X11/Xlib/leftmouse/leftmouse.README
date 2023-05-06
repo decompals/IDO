@@ -1,0 +1,29 @@
+
+     -------------------------------------------------------------------
+     README for ~4Dgifts/examples/X11/Xlib/leftmouse source code example
+     -------------------------------------------------------------------
+
+
+
+    Introduction:
+
+    Leftmouse.c is meant to be the ninth in a series of beginning X Windows
+    programs.  None of the examples in this directory use widgets, but
+    instead use Xlib functionality.  This program takes the information
+    presented in mouse.c and expands upon it by allowing you to specify
+    only the left mouse button to kill the program.
+
+
+
+    Local declarations in main():
+
+    There are no new declarations in main.
+
+
+
+    Selecting only the left mouse button:
+
+    The only difference between this program and mouse.c is the use of
+    the button field to report (line 94), which is what will tell us which
+    button on the mouse the user has pressed.  Only if the button is 
+    number 1, that is, the left mouse, will the program exit.

@@ -1,0 +1,31 @@
+This directory contains example programs which use the X
+input extension.   The file "IEUtils.c" contains some utility
+functions which make it a little easier to use the input
+extension.  Feel free to use them.
+
+To build the programs in this directory, use the command:
+% xmkmf
+To create a Makefile and then just:
+% make
+
+The make should complete without errors and produce the following
+programs:
+    setptr -- Usage: setptr <device_name>
+	      Changes the core X pointer device to a named extension device.
+    setkbd -- Usage: setkbd <device_name>
+	      Changes the core X keyboard device to a named extension device.
+   devctrl -- Usage: devctrl <device_name> <control> <value> [+]
+	      Issues an SGI Device control.   Appends a CR to the request
+	      if '+' is specified.
+  devquery -- Usage: devquery <device_name> <query>
+	      Queries a device for the value named by <query>.  Prints
+	      the returned to stdout and exits with status 0 if successful.
+	      If neither the server nor the device recognize the query,
+	      devquery exits with status -1.
+     xlist -- Usage: xlist
+	      Prints a description of all of the devices connected to the X
+	      server (including core devices).
+ xselinput -- Usage: xselinput [options]
+              Opens all extension devices and reads events of types specified
+	      on the command line.  Run xselinput without options for a list
+	      of options with brief descriptions.

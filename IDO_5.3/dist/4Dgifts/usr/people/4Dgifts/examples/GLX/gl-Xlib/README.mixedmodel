@@ -1,0 +1,163 @@
+
+
+                   Mixed Model Programming in IRIX 4.0
+
+                                 X + GL
+
+
+
+    Overview
+
+    "Mixed model programming" is the phrase used to describe a new style 
+    of programs which have access to the Silicon Graphics GL.  Previously, 
+    the only acesss to the window system for a programmer on the SGI 
+    machine was through an emulation library, built to look like MEX, the 
+    original SGI window system.  The MEX interface is straghtforward and 
+    concise (unlike X).  The problem was that programmers wanted full 
+    access to the features provided by the native window system, access 
+    that would be difficult to provide in the simple framework of the MEX 
+    function call interface.
+
+    Rather that continuing to extend the MEX interface, the decision was 
+    made in IRIX 4.0 to draw the line.  MEX emulation stops here.  No 
+    extensions or enhancements to the window system related portions of 
+    the traditional GL were made.  Instead, calls which enable programs 
+    written to the native window system to draw using GL were added.  Thus 
+    the name "mixed model" came to describe these programs which are 
+    essentially X programs, but can do GL drawing.
+
+    It is important to understand the difference between a mixed model 
+    program, and a multi-client program.  Under previous releases of IRIX 
+    it was possible for a single program to open some windows with the GL, 
+    and open some windows with X, and draw into each kind of window with 
+    the appropriate library.  This is not mixed model programming, this is
+    one program being both an X and a GL client.  This is still possible 
+    under IRIX 4.0.
+
+
+
+
+    Capabilities of a Mixed Model Program
+
+    A mixed model program allows full access to the capabilties of X by 
+    completely removing the GL from any feature which is controlled by 
+    the X server.  Thus the areas of colormaps, input, device control, 
+    cursors, and window manipulation, all of which have MEX style calls, 
+    must be done through X in a mixed model program.  This way the 
+    programmer is in complete control of all the areas of functionality.  
+    The problem is the increased control also means increased 
+    responsibility.  Hence a mixed model program is more complex than a 
+    simple MEX program.  This problem is addressed in X by the use of 
+    toolkits, and a mixed model X toolkit widget helps alleviate these 
+    difficulties for most programmers (see the ../glxwidget/widget 
+    directory which contains the GlxDraw and GlxMDraw widget for drawing 
+    GL inside of an Xt based program, and the ../glxwidget/demos dir for 
+    example programs that implement these 2 widgets).
+
+
+    All of the GL routines which access window system-controlled features
+    are illegal to call from within a mixed model window.  Not all of 
+    these routines report errors, so here is a list of the routines which 
+    mixed model programs cannot call.
+  
+      window depth:  gconfig, singlebuffer, doublebuffer, RGBmode, cmode
+      display mode:  drawmode, overlay, underlay, acsize
+      colormaps   :  mapcolor, getmcolor, getcmmode, multimap, getmap,
+                     onemap, setmap, cyclemap, blink
+      input       :  qdevice, qread, qtest, qreset, unqdevice, noise, tie,     
+                     getvaluator, getbutton
+      device ctrl :  qcontrol, qenter, setvaluator
+      cursors     :  setcursor, defcursor, getcursor, curstype, RGBcursor,
+                     attachcursor, curorigin
+      popup menus :  newpup, addtopup, defpup, dopup, freepup
+      icon manip  :  iconsize, icontitle
+      window manip:  winopen, wintitle, minsize, maxsize, keepaspect, 
+                     prefsize, prefposition, stepunit, fudge, noport, 
+                     noborder, foreground, winconstraints, winposition, 
+                     winmove, winpush, winpop, winget, winset, screenspace
+  
+    The following routines will work, but execute much slower for mixed 
+    model windows.  This information should be obtained from the window 
+    system if at all possible.  Avoid these routines:
+  
+      window shape:  getsize, getorigin, reshapeviewport, getviewport
+
+
+    Just like all GL programs in IRIX 4.0, mixed model programs are 
+    network transparent.  That is, by simply setting the environment 
+    variable DISPLAY, the same binary can be made to image locally, or 
+    remotely on a machine supporting the SGI DGL.
+
+
+
+
+    Structure of a Mixed Model Application
+
+    Mixed Model programming is a relatively simple way to add GL to an X 
+   program.  It is not a good way to add a little X to a GL program. 
+    This is because a mixed model program is an X program, and must use X 
+    for all window system-related services.  A program which is using the 
+    GL for its window services must first be converted to use X.
+    
+    Under X, overlay drawing is managed by the window system.  In order 
+    to function in an environment where there might be X windows sitting 
+    in the overlay planes, it is necessary for mixed model programs to 
+    create a window in the overlay planes if they intend to do overlay 
+    drawing.  The GL call drawmode() is illegal.  Instead, the mixed model 
+    program simply creates and then draws into a separate overlay window.
+    
+    Also new to mixed model programming is the elimination of the GL call
+    gconfig().  In mixed model programs, you must "pre-configure" your 
+    windows, rather then configuring them on the fly as the traditional 
+    GL does.
+    
+    There are only four new function calls in the GL related to mixed 
+    model programming.  Two are used to create a window and prepare it 
+    for GL drawing (GLXgetconfig and GLXlink), one to begin drawing in 
+    a window (GLXwinset), and one to "un-hook" a window from the GL 
+    (GLXunlink).
+    
+    
+
+    
+    Initialization
+    
+    The GL cannot draw into any X window.  The window must be created with
+    the appropriate visual.  There is no way through the X interface for a
+    mixed model programmer to know which of the many visuals he should 
+    choose.  The routine GLXgetconfig() is used to give the programmer the 
+    appropriate visual, as well as providing a replacement for the function
+    lost through the elimination of gconfig.
+    
+    GLXgetconfig() takes an array describing the type of GL drawing that 
+    will take place.  It determines what is possible on the current 
+    hardware, returns a new structure with the exact description of what 
+    will be allowed as well as the information needed to create an X 
+    window suitable for GL drawing.
+    
+    Once all the windows are created, the GL must be notified that these 
+    windows will be used for GL drawing.  The call GLXlink() does this.
+    
+
+    
+    
+    Drawing
+    
+    Once a window is "link"ed, all that is needed before GL drawing can 
+    happen is to call GLXwinset(). This call must, like the MEX winset(), 
+    indicate that all subsequent GL drawing commands will happen in the 
+    window passed to GLXwinset().  You can switch quickly between several 
+    windows by simply calling GLXwinset() for each window.
+    
+    
+    
+
+    Cleanup
+    
+    A small amount of memory is allocated when a window is "link"ed.  For 
+    completeness, the routine GLXunlink() is provided to allow the GL to 
+    clean up the resources connected with GL rendering for a window. 
+    Typically this would only be called if a program knew that it would 
+    not be doing any GL drawing for a long time.
+    
+    

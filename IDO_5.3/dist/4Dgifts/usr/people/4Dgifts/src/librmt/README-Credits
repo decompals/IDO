@@ -1,0 +1,9 @@
+	This library is based on a posting by Arnold Robbins
+	to comp.sources.unix.  At this time (Mar. 1992) the original
+	may be retrieved from:
+		ftp.uu.net:~ftp/usenet/comp.sources/unix/volume15/rmtlib
+
+	See "man rmtops" for further information on the authors.
+
+	This library is used by the standard SGI commands tar,
+	cpio, bru, mt, and possibly others.

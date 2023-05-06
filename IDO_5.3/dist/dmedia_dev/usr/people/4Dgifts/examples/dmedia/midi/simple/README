@@ -1,0 +1,8 @@
+Some simple MIDI examples.
+
+scale.c  - plays a scale in a specified mode
+thru.c - simple MIDI thru program that illustrates the
+	 use of select to multiplex between multiple 
+	 MIDI input ports.
+
+

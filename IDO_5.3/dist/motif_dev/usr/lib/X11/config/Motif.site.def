@@ -1,0 +1,37 @@
+/* OSF uses the real site.def -- SGI needs to keep it separate */
+
+/* X11R6 C++ stuff
+ *
+ * We avoid OSF's C++ stuff, because as of the 2.0 snap we have they
+ * have not yet allowed for X11R6.
+ *
+ * HasCplusplus		Declares the system has a C++ compiler.  On some
+ *			systems, you may also have to set additional variables
+ *			to say what C++ compiler you have.
+ */
+#ifndef HasCplusplus
+#define HasCplusplus YES
+#endif
+
+#ifndef CplusplusCmd
+#define CplusplusCmd $(TOOLROOT)/usr/bin/CC
+#endif
+
+#ifndef LibraryCplusplusCmd
+#define LibraryCplusplusCmd $(TOOLROOT)/usr/bin/CC
+#endif
+
+/* override MIT's ".cxx" convention */
+#ifndef CCsuf
+#define CCsuf c++
+#endif
+
+/*
+ * libXpm comes only with ViewKit -- if that is installed, undefine UseLocalXpm.
+ *
+ * If UseLocalXpm is not defined, then Makefiles will depend on
+ * usr/lib/libXpm.a being present and the XPM macros will be defined.
+ */
+#ifndef UseLocalXpm
+#define UseLocalXpm
+#endif

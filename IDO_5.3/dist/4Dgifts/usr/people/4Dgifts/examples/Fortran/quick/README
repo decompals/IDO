@@ -1,0 +1,115 @@
+
+--------------------------------------------------------------
+README for ~4Dgifts/examples/Fortran/quick source code example
+--------------------------------------------------------------
+
+		    version 1.0 03/10/90
+
+
+   A quick plotting package demonstrating FORTRAN grafix.
+
+
+The purpose of this quick plotting package is two-fold:
+ 
+   - give a new user a useful two dimensional display of their 
+             data in the transition period from the traditional 
+             terminal--mainframe scientific workplace to the 
+             workstation distributed computing environment. 
+
+   - give a complete, simple, FORTRAN-based application in 
+             graphics to be used as an example.
+
+
+
+To run this program, type "make", and, when complete:
+
+% quick < test.data
+
+
+Each subroutine can be expanded upon and used as a templete 
+for use in other graphics programs.  The main graphics loop 
+is the place to start.
+
+New graphics library v commands (in this case, the v2f formats
+2 dimensions, floating point representation) are used in 
+contrast to the more traditional move and draw as these take 
+greater performance advantage of Silicon Graphics architecture.
+
+Common problems with ORDER of commands can be avoided by 
+following the pattern set in setwin.f which configures a 
+window and ties the graphics options to that window.
+
+The graphics identifier GID of the window is passed to allow
+for expansion to multiple windows.
+
+Recommended modifications:
+
+first
+change colors of background, title, labels
+change length of above
+change number and color of grid lines
+change thickness of graph 
+
+next
+add multiple windows: multiple dependent functions 
+add dynamic data sets
+
+
+A showcase full screen slide show file is included with
+more details.  This includes three slides.  Use the "Page Up" 
+and "Page Down" buttons on the keyboard.
+
+To run this:  % showcase quick.slide.show
+
+
+The source of create.f is included to provide data for testing.
+
+Data sets included: cos,sin,test,untitled.
+
+Any Comments:
+
+lynn@sgi.com
+Lynn Lewis
+Systems Engineer
+900 Winderley Place, Suite 130
+Maitland, Fl 32751
+
+
+
+************************************************************
+
+FLOW_CHART
+
+************************************************************
+
+quick
+
+        readat(points,n,caxis)
+        setwin(gid,points,n,caxis)
+                compute(points,n)
+                        minmax(x,n,xmin,xmax)
+                        minmax(y,n,xmin,xmax)
+                setcol
+
+        mainlo(gid,points,n,caxis)
+                drawsc(points,n,caxis)
+                        grid(caxis)
+        setclo(gid)
+
+
+
+**********************************************************
+
+common
+
+**********************************************************
+#include <gl/fgl.h>
+
+        parameter (LARGE=1000)
+        real points(2,LARGE)
+        parameter (NUMGD=10)
+        integer gid
+        character*40  caxis(3)
+        common xmin,xmid,xmax,ymin,ymid,ymax,fudge
+
+

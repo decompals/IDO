@@ -1,0 +1,47 @@
+
+         -------------------------------------------------------
+         README for ~4Dgifts/examples/nurbs source code examples
+         -------------------------------------------------------
+
+
+    nurbs, fnurbs, pnurbs: 
+
+      This directory contains 3 different language versions of a simple 
+    program that uses Non-Uniform Rational B-Spline (NURBS) surfaces:  in
+    C, (nurbs.c -> nurbs), in Fortran (nurbs.f -> fnurbs), and in Pascal 
+    (nurbs.p -> pnurbs).  The program continuously rotates a single NURBS
+    surface.  Optionally, this surface may be trimmed by a single 
+    circular trim curve.  To trim the surface, press and release the 
+    LEFTMOUSE button.  To reverse this action, press the LEFTMOUSE button 
+    again.  Pressing the Escape key will cause the program to quit.
+
+  
+    model:
+ 
+      model is included to aquaint the user with the trimmed NURBS surface
+    rendering utilities in the GL.  Refer to the README.model file for 
+    more details about this example.
+
+
+    sgiflag:
+
+      demonstrates using a trimmed NURBS surface to display a waving flag 
+    with an SGI logo cut from its center.  README.sgiflag has more info.
+
+
+    heart:
+
+      demonstrates using both a non-uniform knot sequence and the rational
+    component of NURBS.
+
+
+    Makefile NOTE:  Because this directory contains Fortran and Pascal
+		    language code, as well as C, the decision was made
+		    to ship the Makefile with the "default" target only
+		    set to automatically make the C code example 
+		    programs--nurbs and model.  If you have the Fortran
+		    and/or the Pascal option loaded, you will have to 
+		    manually edit the Makefile and include "fnurbs" 
+		    and/or "pnurbs" in the default target rule if you 
+		    wish to have these programs built automatically as 
+		    well as the C code examples.

@@ -1,0 +1,39 @@
+
+   -------------------------------------------------------------------------
+   README for ~4Dgifts/examples/Fortran/defpat/editpat32 source code example
+   -------------------------------------------------------------------------
+
+
+     editpat32 implements a DEFPATTERN(3G) 32X32 editor.
+
+       The program can be started with an empty or previously defined 32X32
+     pattern input file or an already existant file and a new output 
+     filename.  This program has its own popup menu--accessible via 
+     RIGHTMOUSE--allowing you to quit or save the pattern output to a file.
+
+       An example 32X32 pattern file is included:
+
+             example.pattern
+
+       To invoke the program with the above file execute:
+
+             editpat32 example.pattern
+
+       To save the above example file to another filename execute:
+
+             editpat32 example.pattern example.sav
+
+       NOTE:  if you do not explicitly specify an output filename, and
+	      execute the save option from the popup menu, the input file
+	      you invoked the program with will be overwritten with the
+	      new pattern you have created or modified.
+
+       LEFTMOUSE toggles the color ("on" to "off" or vice versa) of 
+     whichever pixel the mouse is currently on top of.
+
+       Besides showing how to make DEFPATTERN(3G) designs, the program 
+     shows how to build popup menus, display lists, use MAPW2(3G), and 
+     implement picking mode on user-stated orthographic projects.  Also
+     basic file I/O and usage of getarg/iargc is demonstrated.  This 
+     program can be easily ported to older SGI machines of the 3000/2000 
+     family.

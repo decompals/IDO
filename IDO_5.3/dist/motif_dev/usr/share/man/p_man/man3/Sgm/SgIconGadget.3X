@@ -1,0 +1,233 @@
+'\"! tbl | mmdoc
+'\"macro stdmacro
+.\" **
+.\" **
+.\" **  (c) Copyright 1990 by Silicon Graphics
+.\" **      All Rights Reserved.
+.\" **
+.\" **
+.\" **
+.TH SgIconGadget 3X "" "" "" ""
+.SH NAME
+\fBSgIconGadget \*O\(em the Icon widget class.\fP
+.iX "SgIconGadget"
+.iX "widget class" "SgIconGadget"
+.sp 1
+.SH SYNOPSIS
+\fB#include <Xm/IconG.h>\fP
+.sp 1
+.SH DESCRIPTION
+SgIconGadget is an instantiable gadget that displays a labeled pixmap.  The
+SgIconGadget widget does not accept any button or key input, and the help
+callback is the only callback defined.  SgIconGadget also receives enter
+and leave events. The SgIconGadget is unique in that it can be displayed in
+colors other than that provided by its parent, a restriction that limits
+the usefulness of gadgets in many situation.
+.PP
+SgIconGadget can contain both text and a pixmap.  SgIconGadget text is a
+compound string.  Refer to the \fIOSF/ Motif Programmer's Guide\fP for more
+information on compound strings.  The text can be multidirectional,
+multiline, and/or multifont.  When a SgIconGadget is insensitive, its text
+is stippled, or the user-supplied insensitive pixmap is displayed.
+.PP
+.sp 1
+.SS "Classes"
+SgIconGadget inherits behavior and resources from 
+\fBXmGadget\fP.
+.PP
+The class pointer is \fBSgIconGadgetClass\fP.
+.PP
+The class name is \fBSgIconGadget\fP.
+.sp 1
+.SS "New Resources"
+The following table defines a set of widget resources used by the
+programmer to specify data.  The programmer can also set the resource
+values for the inherited classes to set attributes for this widget.  To
+reference a resource by name or by class in a .Xdefaults file, remove the
+\fBXmN\fP or \fBXmC\fP prefix and use the remaining letters.  To specify
+one of the defined values for a resource in a .Xdefaults file, remove the
+\fBXm\fP prefix and use the remaining letters (in either lowercase or
+uppercase, but include any underscores between words).  The codes in the
+access column indicate if the given resource can be set at creation time
+(\fBC\fP), set by using \fBXtSetValues\fP (\fBS\fP), retrieved by using
+\fBXtGetValues\fP (\fBG\fP), or is not applicable (\fBN/A\fP).
+.sp 1
+.TS
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+SgIconGadget Resource Set
+Name	Class	Type	Default	Access
+_
+XmNfontList	XmCFontList	XmFontList	NULL	CSG
+XmNlabelInsensitivePixmap	XmCSgIconGadgetInsensitivePixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNlabelPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNlabelString	XmCXmString	XmString	NULL	CSG
+XmNmarginBottom	XmCMarginBottom	Dimension	0	CSG
+XmNmarginHeight	XmCMarginHeight	Dimension	2	CSG
+XmNmarginLeft	XmCMarginLeft	Dimension	0	CSG
+XmNmarginRight	XmCMarginRight	Dimension	0	CSG
+XmNmarginTop	XmCMarginTop	Dimension	0	CSG
+XmNmarginWidth	XmCMarginWidth	Dimension	2	CSG
+XmNspacing	XmCSpacing	Dimension	10	CSG
+XmNrecomputeSize	XmCRecomputeSize	Boolean	True	CSG
+XmNstringDirection	XmCStringDirection	XmStringDirection
+XmNtopShadowColor	XmCTopShadow	Pixel	dynamic	CSG
+XmNbottomShadowColor	XmCBottomShadow	Pixel	dynamic	CSG
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNiconPlacement	XmCIconPlacement	XmRIconPlacement	icon_right	csg
+XmNpixmapWidth	XmCWidth	Dimension	16	CSG
+XmNpixmapHeight	XmCHeight	Dimension	16	CSG
+XmNshadowType	XmCShadowType	XmRShadowType	XmSHADOW_ETCHED_IN	csg
+.TE
+.sp 1
+.IP "\fBXmNfontList\fP"
+Specifies the font of the text used in the widget.  If this value is NULL
+at initialization, it is initialized by looking up the parent hierarchy of
+the widget for an ancestor that is a subclass of the XmBulletinBoard,
+VendorShell, or XmMenuShell widget class.  If such an ancestor is found,
+the font list is initialized to the appropriate default font list of the
+ancestor widget (XmNdefaultFontList for VendorShell and XmMenuShell,
+XmNlabelFontList or XmNbuttonFontList for XmBulletinBoard).  Refer to
+\fBXmFontListCreate(3X)\fP for more information on the creation and
+structure of a font list.
+.IP "\fBXmNlabelInsensitivePixmap\fP"
+Specifies a pixmap used as the button face if \fBXmNlabelType\fP is
+\fBXmPIXMAP\fP and the button is insensitive.
+.IP "\fBXmNlabelPixmap \fP"
+Specifies the optional pixmap displayed.  \fBXmPIXMAP\fP.
+.IP "\fBXmNlabelString\fP"
+Specifies the compound string displayed.  Refer to \fBXmStringCreate(3X)\fP
+or \fBXmStringCreateLtoR(3X)\fP for more information on the creation and
+structure of compound strings.
+.IP "\fBXmNmarginBottom\fP"
+Specifies the amount of spacing that is to be left after the bottom margin
+(\fBXmNmarginHeight\fP) of the widget, before the label is drawn.  
+.IP "\fBXmNmarginHeight\fP"
+Specifies the amount of blank space between the bottom edge of the top
+shadow and the label, and the top edge of the bottom shadow and the label.
+.IP "\fBXmNmarginLeft\fP"
+Specifies the amount of spacing that is to be left after the left margin
+(\fBXmNmarginWidth\fP) of the widget before the label is drawn.  This may
+be modified by SgIconGadget's subclasses.  
+.IP "\fBXmNmarginRight\fP"
+Specifies the amount of spacing that is to be left after the right margin
+(\fBXmNmarginWidth\fP) of the widget before the label is drawn.
+.IP "\fBXmNmarginTop\fP"
+Specifies the amount of spacing that is to be left after the top margin
+(\fBXmNmarginHeight\fP) of the widget before the label is drawn.
+.IP "\fBXmNmarginWidth\fP"
+Specifies the amount of blank space between the right edge of the left
+shadow and the label, and the left edge of the right shadow and the label.
+.IP "\fBXmNspacing\fP"
+Specifies the amount of blank space between the  label and the pixmap.
+.IP "\fBXmNrecomputeSize\fP"
+Specifies a Boolean value that indicates whether the widget attempts to be
+big enough to contain the label.  If True, an \fBXtSetValues\fP with a new
+label string or pixmap, margins, font, or label type causes the widget to
+shrink or expand to exactly fit the new label string or pixmap.  If False,
+the widget never attempts to change size on its own.
+.IP "\fBXmNstringDirection\fP"
+Specifies the direction in which the string is to be drawn.  The 
+following are the values:
+.rS
+.IP \(bu 3
+\fBXmSTRING_DIRECTION_L_TO_R\fP \(em left to right 
+.IP \(bu 3
+\fBXmSTRING_DIRECTION_R_TO_L\fP \(em right to left
+.rE
+.P
+The value of this resource is determined at creation time.  If the widget's
+parent is a manager, this value is inherited from the widget's parent,
+otherwise it is set to XmSTRING_DIRECTION_L_TO_R.
+.sp 1
+.SS "Inherited Resources"
+SgIconGadget inherits behavior and resources from the following   
+superclasses.  For a complete description of each resource, refer to the
+man page for that superclass.
+.sp 1
+.TS
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmPrimitive Resource Set
+Name	Class	Type	Default	Access
+_
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCForeground	Pixel	Black	CSG
+XmNhighlightOnEnter	XmCHighlightOnEnter	Boolean	False	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNhighlightThickness	XmCHighlightThickness	Dimension	2	CSG
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmNONE	G
+XmNtraversalOn	XmCTraversalOn	Boolean	False	CSG
+XmNunitType	XmCUnitType	unsigned char	XmPIXELS	CSG
+XmNuserData	XmCUserData	caddr_t	NULL	CSG
+.TE
+.sp 1
+.TS
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set 
+Name	Class	Type	Default	Access
+_
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNcolormap	XmCColormap	Colormap	XtCopyFromParent	CG
+XmNdepth	XmCDepth	int	XtCopyFromParent	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	CG
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Pointer	XtCopyScreen	CG
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	NULL	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.sp 1
+.SS "Callback Information"
+The following structure is returned with each callback:
+.sp 1
+.nf
+.ta .25i 1.50i
+\fBtypedef struct\fP
+{
+	\fBint\fP	\fIreason\fP;
+	\fBXEvent	\fI* event\fP;
+} \fBXmAnyCallbackStruct\fP;
+.fi
+.fi
+.sp 1
+.IP "\fIreason\fP" .75i
+Indicates why the callback was invoked.  For this callback, \fIreason\fP is
+set to \fBXmCR_HELP\fP.
+.IP "\fIevent\fP" .75i
+Points to the \fBXEvent\fP that triggered the callback.
+.sp 1 \"Adds space before the SS
+.SS "Translations"
+SgIconGadget includes translations from Primitive.  The SgIconGadget
+translations are listed below.  These translations may not directly
+correspond to a translation table.  \fB
+.nf
+.ta 1.5i
+.sp .5
+KHelp:	Help()
+.fi
+.SS "Action Routines"
+The SgIconGadget action routines are described below:
+.IP "\fBHelp()\fP:"
+Calls the callbacks for \fBXmNHelpCallback\fP if any exist.  If there are
+no help callbacks for this widget, this action calls the help callbacks for
+the nearest ancestor that has them.
+\fP
+.SH RELATED INFORMATION
+\fBCore(3X)\fP, \fBSgCreateIconGadget(3X)\fP,
+\fBXmFontListCreate(3X)\fP,
+\fBXmStringCreate(3X)\fP,
+\fBXmStringCreateLtoR(3X)\fP
+and \fBXmGadget(3X)\fP.

@@ -1,0 +1,152 @@
+!
+! File Colorc.uil 
+!
+! Written by: Ofer Ben-Shachar, March 1993
+!
+module WidgetName
+    version = 'v1.0'
+    names = case_sensitive
+
+procedure CloseCallback;
+procedure PopupColorCCallback;
+
+object main_form : XmForm {
+	controls{
+		XmLabel     text_label;
+		XmText      text;
+		XmLabel     text_field_label;
+		XmTextField text_field;
+		XmSeparator sep;
+		XmForm      buttons_form;
+	};
+	arguments {
+	XmNmarginWidth = 5;
+	XmNmarginHeight = 5;
+	XmNhorizontalSpacing = 5;
+	XmNverticalSpacing = 5;
+	XmNautoUnmanage = false;
+	};
+};
+
+object text_label : XmLabel {
+	arguments {
+	XmNtopAttachment = XmATTACH_FORM;
+	XmNleftAttachment = XmATTACH_FORM;
+	XmNlabelString = "Text Widget:";
+	XmNtopOffset = 10;
+	};
+};
+
+object text : XmText {
+	arguments {
+	XmNtopAttachment = XmATTACH_WIDGET;
+	XmNtopWidget = XmLabel text_label;
+	XmNleftAttachment = XmATTACH_FORM;
+	XmNrightAttachment = XmATTACH_FORM;
+	XmNwidth = 400;
+!	XmNbackground = yellow;
+!	XmNforeground = black;
+	};
+};
+
+object text_field_label : XmLabel {
+	arguments {
+	XmNleftAttachment = XmATTACH_FORM;
+	XmNtopAttachment = XmATTACH_WIDGET;
+	XmNtopWidget = XmText text;
+	XmNlabelString = "Selected Color:";
+	XmNtopOffset = 10;
+	};
+};
+
+object text_field : XmTextField {
+	arguments {
+	XmNleftAttachment = XmATTACH_FORM;
+	XmNrightAttachment = XmATTACH_FORM;
+	XmNtopAttachment = XmATTACH_WIDGET;
+	XmNtopWidget = XmLabel text_field_label;
+	XmNbottomAttachment = XmATTACH_WIDGET;
+	XmNbottomWidget = XmSeparator sep;
+	XmNbottomOffset = 60;
+	XmNwidth = 295;
+!	XmNbackground = grey;
+!	XmNforeground = red;
+      };
+};
+
+object sep : XmSeparator {
+	arguments {
+	XmNbottomAttachment = XmATTACH_WIDGET;
+	XmNbottomWidget = XmForm buttons_form;
+	XmNleftAttachment = XmATTACH_FORM;
+	XmNrightAttachment = XmATTACH_FORM;
+	XmNheight = 8;
+	XmNsensitive = false;
+	XmNseparatorType = XmSHADOW_ETCHED_IN;
+	};
+};
+
+object buttons_form : XmForm {
+	controls{
+		XmPushButton paste_button;
+		XmPushButton close_button;
+		XmPushButton help_button;
+	};
+	arguments {
+	XmNmarginWidth = 5;
+	XmNmarginHeight = 5;
+	XmNhorizontalSpacing = 10;
+	XmNleftAttachment = XmATTACH_FORM;
+	XmNrightAttachment = XmATTACH_FORM;
+	XmNbottomAttachment = XmATTACH_FORM;
+	XmNheight = 50;
+	XmNshadowType = XmSHADOW_IN;
+	XmNshadowThickness = 2;
+	};
+};
+
+object paste_button : XmPushButton {
+	arguments {
+	XmNleftAttachment = XmATTACH_FORM;
+	XmNbottomAttachment = XmATTACH_FORM;
+	XmNtopAttachment = XmATTACH_FORM;
+!	XmNwidth = 70;
+	XmNlabelString = "Color Chooser";
+!	XmNrecomputeSize = false;
+	};
+  callbacks {
+    XmNactivateCallback = procedures { 
+      PopupColorCCallback();
+    };
+  };
+};
+
+object close_button : XmPushButton {
+  arguments {
+    XmNbottomAttachment = XmATTACH_FORM;
+    XmNtopAttachment = XmATTACH_FORM;
+    XmNrightAttachment = XmATTACH_WIDGET;
+    XmNrightWidget = XmPushButton help_button;
+    XmNwidth = 70;
+    XmNlabelString = "Close";
+    XmNrecomputeSize = false;
+  };
+  callbacks {
+    XmNactivateCallback = procedures { 
+      CloseCallback();
+    };
+  };
+};
+object help_button : XmPushButton {
+	arguments {
+	XmNbottomAttachment = XmATTACH_FORM;
+	XmNtopAttachment = XmATTACH_FORM;
+	XmNrightAttachment = XmATTACH_FORM;
+	XmNwidth = 70;
+	XmNlabelString = "Help";
+	XmNrecomputeSize = false;
+	};
+};
+
+
+end module;

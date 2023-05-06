@@ -1,0 +1,24 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.2 $ $Date: 1994/03/26 02:33:09 $
+
+       DEPXMLIB = $(ROOT)/usr/lib/libXm.so
+          XMLIB = -L$(ROOT)/usr/lib -lXm
+
+       INCLUDES = -I.
+LOCAL_LIBRARIES = SgmClientLibs
+          SRCS1 = dropPocket.c
+          OBJS1 = dropPocket.o
+       PROGRAMS = dropPocket
+          FILES = Imakefile dropPocket.c
+
+NormalLibraryObjectRule()
+
+MComplexProgramTarget_1(dropPocket,$(LOCAL_LIBRARIES),NullParameter)
+
+InstallMultiple($(FILES), $(MDEMOSRCDIR))

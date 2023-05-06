@@ -1,0 +1,51 @@
+
+
+      -----------------------------------------------------------------
+      Explanation of ~4Dgifts/examples/vgx/texture for texturing on VGX
+      -----------------------------------------------------------------
+
+
+    These programs demonstrate just a few of the uses for texture mapping.
+    The features demonstrated in this directory are reflecting an image
+    from an object, contouring in one or two directions, linear mapping
+    in one or two directions, lighting with textures, adding textures
+    to a nurbs surface. All of the programs use the utility "longimagedata"
+    to read in an SGI format image to use as a texture. Texturing
+    is available only on machines with the VGX feature set. Use getgdesc()
+    to test for texture cpability.
+
+
+    "envmap" is the latest addition to this directory of examples.  It
+    demonstrates a progression of drawing quality:  two versions of a 
+    cylinder can be rendered using wireframe, flat lighting, texture
+    mapping and reflections.  In this program, reflection (or environment)
+    mapping is done using texture mapping.  The TEXGEN(3G) man page is 
+    essential reading for understanding how this function is a lynchpin 
+    of the implementation of texture mapping on SGI VGX machines.
+
+    "nurbtext" is an enhancement of the program found in ~4Dgifts/examples
+    /nurbs. "nurbtex" takes advantage of the "longimagedata" subroutine
+    to read in a texture. To make this useful to a nurbssurface, VGX
+    has an optional nurbssurface "type" that may be specified. By specify-
+    ing type as " N_T2D" the surface is a texture surface which is mapped
+    to a possitional data surface. Other enhancements to this nurbs
+    program include specifying nurbs polygon fill properties, trimming
+    with nurbscurves, piecewise linear curves, and curves comprised
+    of both types. Fill properties are specified via menu selections. 
+    Trimming is done by pressing the LEFTMOUSE button.
+
+    "reflection" uses texgen(TG_SPHEREMAP) to simulate reflections from
+    a chrome surface. Pressing the "g" key will give a deep gold illusion.
+    Pressing the "a" key will also invoke alpha blending.
+
+    "texture" lets the graphics library assign coordinates automatically.
+    All features of this program, except axis of rotation, are done through
+    menu selection. The user can choose which of two textures to display,
+    whether to blend or not, select lighting, and how to map textures to
+    the surface. Selecting LINEAR mapping in both directions gives the
+    wrapping paper effect while CONTOUR in one or more direction gives
+    a motion through a field effect. There is a known bug that interferes
+    with selecting in the S direction. It will contour, however the direction
+    oif the specified plane is incorrect. A bug report is filed. Axis
+    about which to rotate are selected by pressing the "x", "y", and "z"
+    keys.

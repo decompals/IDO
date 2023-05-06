@@ -1,0 +1,37 @@
+readltc: longitudinal timecode parser
+-------------------------------------
+
+LTC (longitudinal time code) is a scheme for encoding SMPTE time code 
+information in an audio signal. LTC is the format used to stripe 
+SMPTE timecode onto an audio tape or onto a longitudinal audio track on 
+a video tape. 
+
+"readltc" reads and decodes a sampled LTC signal stored in 
+a 16-bit mono AIFF-C input file.  To run the example, type 
+"readltc smpte.aifc". The program will display approximately 30 sec of time 
+code information encoded in the sample file "smpte.aifc" (16-bit mono 
+22050 kHz AIFF-C file).
+
+"readltc" doesn't require audio hardware. It would be a straightforward 
+exercise to modify this program so that it uses the Audio Library 
+to read a live audio input signal.
+
+These timecode fields are displayed in the output from "readltc":
+
+	forward/reverse:
+		indicates direction of tape movement
+
+	hours : minutes : seconds : frames
+
+	ug:	user group bits 
+
+                There are 8 user groups in an LTC time-
+                code, each 4 bits long. User group bits are displayed
+                in the order ug0 ... ug7.
+
+	df:	drop flag bit value
+
+	cf:	color lock flag bit value
+
+	ua:    	unassigned bits from positions 27, 43, 58, 59 in the
+                80-bit LTC timecode word

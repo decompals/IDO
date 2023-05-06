@@ -1,0 +1,50 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmScaleSetValue 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmScaleSetValue \*O\(em A Scale function that sets a slider value
+.iX "XmScaleSetValue"
+.iX "Scale functions" "XmScaleSetValue"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/Scale.h>
+.sp \n(PDu
+void XmScaleSetValue (\*Vwidget, value\*L)
+.ta .5i 1.5i
+	Widget	\*Vwidget\*L;
+	int	\*Vvalue\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmScaleSetValue\*O sets the slider \*Vvalue\*O within the
+Scale widget.
+.VL 1i 
+.LI "\*Vwidget\*O"
+Specifies the Scale widget ID.
+.LI "\*Vvalue\*O"
+Specifies the slider position along the scale.
+This sets the \*LXmNvalue\*O resource.
+.LE 
+.PP 
+For a complete definition of Scale and its associated resources, see
+\*LXmScale(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LXmScale(3X)\*O.
+.ad

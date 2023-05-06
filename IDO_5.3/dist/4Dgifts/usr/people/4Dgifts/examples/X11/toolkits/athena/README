@@ -1,0 +1,25 @@
+  
+              ------------------------------------------------
+              README for ~4Dgifts/examples/X11/toolkits/athena
+              ------------------------------------------------
+  
+          The Athena widget set is a library package layered on top
+          of the Intrinsics and Xlib.  This layer extends the basic
+          abstractions provided by X and provides the next layer of
+          functionality primarily by supplying a cohesive set of 
+          sample widgets.
+
+          This subtree contains very simple examples on how to
+          program the widgets.  See the corresponding README files
+          for each directory to get a more detail explanation for 
+          each widget.
+  
+          The widgets in all subdirectories rely on application
+          default resource file Demo.add.  You must copy this file
+          to /usr/lib/X11/app-defaults/Demo.  If you don't want
+          to change the /usr/lib/X11/app-defaults/ directory,
+          then fold the content of this file into yer ~/.Xdefaults
+          file.
+
+          To compile all the examples, simply type "make" here.
+

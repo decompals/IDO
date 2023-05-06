@@ -1,0 +1,100 @@
+
+                            Graphics Desktop Tools
+                                 For The IRIS
+
+                             Paul Haeberli - 1990
+
+
+
+        
+ blanktime - usage: blanktime nframes
+    set the number of frames before the screen blanks.  When nframes is set
+    to 0 the screen will never blank.
+
+
+ cedit - usage: cedit
+    A simple color editor. Use the left mouse button to pick the color on 
+    the screen to edit, then move the sliders to change the color.
+
+
+ clock - usage: clock
+    A simple desk clock.
+
+
+ colorbars - usage: colorbars
+   A colorbar generator based on "Illumination and Color in Compute 
+   Generated Imagery" by Roy Hall.
+
+
+ cycol - usage: cycol
+   Display a pallete of colors.  A new palette may be selected by pointing 
+   with the mouse and clicking the left mouse button.
+
+
+ dynadraw - usage: dynadraw
+   Use a simple dynamics model to create caligraphic strokes.  
+
+
+ gamcal - usage: gamcal
+   See if the gamma correction value is correct by comparing the intensity 
+   of full on, full off horizontal lines to a region of 50 percent grey.
+
+
+ gamma - usage: gamma gammavalue
+   Get or set the gamma value stored in ~/.gamma.
+
+
+
+ grid - usage: grid 
+   Draw a 10 by 10 grid. This is useful for aligning a camera to the display.
+
+
+ ical - usage: ical
+   A very simple desk calendar.  Use the left and middle mouse mouse buttons 
+   to go forward and backward in time.
+
+
+ interp - usage: interp
+   Interpolate between colors.  
+
+
+ mag - usage: mag
+   Magnify pixels on the screen by some factor.  You can use mag <factor> to 
+   magnify by higher powers.
+
+
+ makemap - usage: makemap [-min | -normal | -full] [-xoverwrite | -perm]
+   Reload the colormap with the default lookup table values.  Nowadays, GL
+   programs share a common X colormap.  "makemap" causes a NEW X colormap to 
+   be created, and possibly initializes some colors in that colormap.  The 
+   GL colormap is an X colormap which is distinct from the default root 
+   colormap.
+
+
+ mousemon - usage: mousemon
+   Monitor the buttons of the mouse.  This is useful for demos sometimes.
+
+
+ palette - usage: palette
+   Display a pallete of colors.  A new palette may be selected by pointing 
+   with the mouse and clicking the left mouse button.
+
+
+ showmap - usage: showmap
+   Display the color map.
+
+
+ textcolors - usage: textcolors text page reverse cursor
+   Set the color indexes used for the textport.
+
+
+ vis - usage: vis file [-f] [-w widthstep]
+   Copy the bytes of a file to the screen - this will only work right on a 
+   system with at least 12 bit planes.  Try looking at excecutables, 
+   libraries, textfiles.
+
+
+ weave - usage: weave
+   A weaving simulator for IRIS workstations.  This simulates a loom and the 
+   pattern created with different settings of the headles and various 
+   treadling patterns.

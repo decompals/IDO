@@ -1,0 +1,28 @@
+
+     ----------------------------------------------------------------
+     README for ~4Dgifts/examples/X11/toolkits/athena/dialog/dialog.c
+     ----------------------------------------------------------------
+
+    The Dialog widget implements a commonly used interaction semantic to
+    prompt for auxiliary input from a user.  The typical Dialog widget
+    contains three areas.  The first line contains a description of the
+    function of the Dialog widget, for example, the string "Filename:".
+    The second line contains an area into which the user types input.  The
+    third line can contain buttons that let the user confirm or cancel the
+    Dialog input.
+
+
+    Dialog.c demonstrates a dialog that has a message header, input text
+    field, and one button.  When the button is pushed, the program will
+    print the contents of the input text field to stdio.
+
+    After initializing the toolkit, the program sets some resources that
+    will be used by dialog widget.  The message header is called 'label'
+    resource, and the character buffer is called 'value' resource.
+
+    A button is added to the dialog widget.  Function Push is used as 
+    button callback, and dialog widget is passed as client_data argument
+    to Push.
+
+    XawDialogGetValueString is used to retrieve the value of 'value' 
+    resource of the dialog.

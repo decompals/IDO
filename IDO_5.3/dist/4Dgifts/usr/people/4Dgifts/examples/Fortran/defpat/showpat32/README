@@ -1,0 +1,20 @@
+
+   -------------------------------------------------------------------------
+   README for ~4Dgifts/examples/Fortran/defpat/showpat32 source code example
+   -------------------------------------------------------------------------
+
+
+    showpat32 is a program which displays a 32X32 pixel size bitmap pattern
+    using the DEFPATTERN(3G) GL function.  This program can display 32X32 
+    bitmap patterns created by editpat32.
+
+    An example of a 32X32 pattern file is the file:
+
+             example.pattern
+
+    To invoke showpat32 with the above file execute:
+
+             showpat32 example.pattern
+
+    Any bitmap pattern made using editpat32 can be used as an input file
+    argument to showpat32

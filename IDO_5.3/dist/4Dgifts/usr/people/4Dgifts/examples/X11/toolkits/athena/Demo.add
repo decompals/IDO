@@ -1,0 +1,30 @@
+!
+! Demo resource file
+!
+! copy to /usr/lib/X11/app-defaults directory
+! and name it Demo
+!
+!   Ivan M. Hajadi, Silicon Graphics Inc., 18-Dec-90
+!
+
+! label demo
+*pointerColor:                  yellow
+
+! command demo
+*Command.highlightThickness:    2
+
+! scrollbar demo
+
+! vertical/horizontal scrollbar
+!*scrollbar.orientation:        vertical
+*scrollbar.orientation:         horizontal
+*scrollbar.background:          blue
+*scrollbar.foreground:          cyan
+
+! list demo
+*list.verticalList:             True
+
+! box demo
+*button1.label:                 Button 1
+*button2.label:                 Button 2
+*button3.label:                 Button 3

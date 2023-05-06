@@ -1,0 +1,18 @@
+
+            -----------------------------------------------------
+            README for ~4Dgifts/examples/X11 source code examples
+            -----------------------------------------------------
+
+       This directory contains examples that illustrate certain 
+     implementations of X programming.  
+
+       Xlib		Examples using low level Xlib C library.
+
+       toolkits		Examples using Xt Intrinsics toolkit
+			library.  There are two kind of widget 
+			sets that Silicon Graphics provides.
+			The MIT Athena widget set examples are
+			in athena directory, and the OSF/Motif 
+			widget set examples are in motif directory.
+
+       color		Examples on how to program color X applications.

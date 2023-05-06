@@ -1,0 +1,46 @@
+
+         ----------------------------------------------------------
+         README for ~4Dgifts/examples/X11/Xlib source code examples
+         ----------------------------------------------------------
+
+      This directory contains 10 X Windows programming examples which 
+      implement X11 graphics capabilities.  These programs are designed 
+      and commented in such a way as to aid beginning X Windows 
+      programmers.
+
+      These programs are set up in such a fashion as to introduce 
+      concepts by building on the previous program.  Each program comes 
+      complete with a program.README file explaining in more detail what
+      has changed since the previous program, and why certain functions
+      are being called.  The .README files will also state which 
+      previous-in-complexity program is being built upon and its place 
+      in the sequence.
+
+      All of the programs in this subtree include a queuing construct 
+      that will kill the program by pressing any key.  Later programs 
+      like "mouse" and "draw" require pressing a mouse button rather than 
+      a keyboard button.
+
+
+
+      #1:  simplewin       Creates a window.  Nothing fancy.
+
+      #2:  placewin        Brings up window in a specified position.
+
+      #3:  colorwin        Brings up a window by using colors.
+
+      #4:  font            Shows how to access fonts and display fonts.
+
+      #5:  colorfont       Shows how to apply colors to fonts.
+
+      #6:  cursor          Shows how to alter the appearance of the cursor.
+
+      #7:  queue           Explains queuing concepts.
+
+      #8:  mouse           Explains limiting queue events to mice events. 
+
+      #9:  leftmouse       Refines queueing down to the leftmouse.
+
+      #10: draw            Uses all the previous examples to create
+                           one simple graphics program.
+     

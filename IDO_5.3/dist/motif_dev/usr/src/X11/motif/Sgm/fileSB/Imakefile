@@ -1,0 +1,24 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.8 $ $Date: 1993/11/09 02:36:26 $
+
+       DEPXMLIB = $(ROOT)/usr/lib/libXm.so
+          XMLIB = -L$(ROOT)/usr/lib -lXm
+
+       INCLUDES = -I.
+LOCAL_LIBRARIES = SgmClientLibs
+          SRCS1 = fsb.c
+          OBJS1 = fsb.o
+       PROGRAMS = fsb
+          FILES = README Fsb Imakefile fsb.c
+
+NormalLibraryObjectRule()
+
+MComplexProgramTarget_1(fsb,$(LOCAL_LIBRARIES),NullParameter)
+
+InstallMultiple($(FILES), $(MDEMOSRCDIR))

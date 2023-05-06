@@ -1,0 +1,32 @@
+
+
+            ----------------------------------------------------
+            Explanation of the contents of ~4Dgifts/examples/GLX
+            ----------------------------------------------------
+
+
+     This subtree is populated with various GL-X mixed model examples
+     for your edification, and to provide the kind of example templates
+     for which there is no better substitute when it comes to learning
+     about a new way of programming something.
+
+
+
+     "glxwdiget" contains an implementation of the GlxDraw and GlxMDraw
+     widget for drawing GL inside of an Xt based program is the "widget"
+     subdir.  GlxDraw is widget set independent, while GlxMDraw is 
+     specifically set up for Motif users.  There is also a "demos" 
+     subdir which contains various demos showing off implementations of
+     mixed model programming using the GlxDraw and GlxMDraw widgets.  
+     Some of the programs are revisited versions of GL C graphics 
+     examples taken from ~4Dgifts/examples/grafix.  Others are new.
+
+
+
+     "gl-Xlib" contains mixed model programs which combine SGI's GL with
+     Xlib, the lowest layer of X functionality for creating and 
+     manipulating windows.  In each of the programs included here, the 
+     "magic" happening is that an X window is created and then GL drawing
+     is enabled to be directed into this X-created window.  WINOPEN(3G)
+     is never called.  Thus programmers are now enabled full access to
+     the features provided by the native window system.

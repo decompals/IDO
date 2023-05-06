@@ -1,0 +1,73 @@
+
+        -------------------------------------------------------------
+        README for ~4Dgifts/examples/fontmanager source code examples
+        -------------------------------------------------------------
+
+    This directory contains the source code for 13 C programs, a UNIX makefile 
+    needed to compile and link these C programs, and this README file.  The
+    main purpose of these programs is to show you how to use the IRIS Font 
+    Library.
+
+    To compile and link all 13 programs, enter the command:
+
+        make
+
+    on a UNIX prompt.
+
+    To compile and link a particular program, specify the name of that
+    program on the "make" command line.  For example, to compile and
+    link the program "basic," enter the command:
+
+        make basic
+
+    To run a linked program, enter the name of that program.  If you see
+    a usage message that refers to:
+
+        fontname
+        size
+
+    you need to specify the name of a font family, followed by a point size.
+
+    To get a list of valid font family names, execute the program:
+  
+        enum_families 
+
+    Typical point sizes are 8, 10, 12, 14, 18, and 24.
+
+
+   basic.c:          prints a string using the specified font in the closest
+		     size available to the "size" specified.
+
+   enum_families.c:  enumerates by name all the fonts currently available on 
+                     the IRIS machine this program is executed on.
+
+   fineclip.c:       prints characters using the fine clipping feature.
+ 
+   fntinfo.c:        get overall font information and print it out.
+
+   glyphinfo.c:      print out all glyph information (x/y -size, -origin, 
+		     etc.) pertaining to the specified font.
+
+   leading.c:        shows the leading (spacing between lines) of a given 
+		     font.
+
+   matched.c:        draws a string using the printer matching set available
+		     via the fmprintermatch function.
+
+   mult_rotate.c:    writes a "moving" string cummulatively rotated 15 
+		     degrees times the number of iterations.
+
+   rosetta.c:        draws base lines and rotated text forming a "rosetta"
+		     symbol.
+
+   rotate.c:         prints a rotated string using fmrotatepagematrix by a 
+		     specified number of degrees.
+
+   showclip.c:       fine clipping example demonstrating manually calculating
+		     the clipping region's bounds.
+
+   showfont.c:       print all the characters in a specified font associating
+                     each with its ASCII numeric index.
+
+   speedtest.c:      benchmark test indicating time it takes to write out the
+		     string in the font specified.

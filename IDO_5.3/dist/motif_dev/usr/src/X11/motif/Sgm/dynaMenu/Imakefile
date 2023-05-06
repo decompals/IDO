@@ -1,0 +1,24 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.1 $ $Date: 1994/03/26 02:50:06 $
+
+       DEPXMLIB = $(ROOT)/usr/lib/libXm.so
+          XMLIB = -L$(ROOT)/usr/lib -lXm
+
+       INCLUDES = -I.
+LOCAL_LIBRARIES = SgmClientLibs
+          SRCS1 = dynaMenu.c
+          OBJS1 = dynaMenu.o
+       PROGRAMS = dynaMenu
+          FILES = Imakefile dynaMenu.c
+
+NormalLibraryObjectRule()
+
+MComplexProgramTarget_1(dynaMenu,$(LOCAL_LIBRARIES),NullParameter)
+
+InstallMultiple($(FILES), $(MDEMOSRCDIR))

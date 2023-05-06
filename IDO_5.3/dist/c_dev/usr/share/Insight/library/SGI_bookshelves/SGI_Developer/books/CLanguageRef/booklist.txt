@@ -1,0 +1,1 @@
+<BOOK name="CLanguageRef" edition="19941103" alias = "C Language Reference Manual" type = "sgi_developer" hide = "FALSE" version = "007-0701-080, 9/94" sort = "000210" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

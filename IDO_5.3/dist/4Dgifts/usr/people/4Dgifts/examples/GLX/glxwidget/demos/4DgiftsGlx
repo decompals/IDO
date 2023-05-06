@@ -1,0 +1,107 @@
+mscrn_rotate*geometry: =400x400
+mscrn_rotate*frame*shadowType: SHADOW_IN
+mscrn_rotate*glwidget*translations: #override \n\
+        <Key>osfCancel: quit()          \n\
+        <Key>f:         translate(z 20) \n\
+        <Key>KP_1:      translate(z 20) \n\
+        <Key>b:         translate(z -20) \n\
+        <Key>KP_3:      translate(z -20) \n\
+        <Key>KP_2:      rotate(x -100)  \n\
+        <Key>KP_4:      rotate(y 100)   \n\
+        <Key>KP_6:      rotate(y -100)  \n\
+        <Key>KP_7:      rotate(z 100)   \n\
+        <Key>KP_8:      rotate(x 100)   \n\
+        <Key>KP_9:      rotate(z -100)  \n\
+        <Key>KP_5:      reset()
+        
+mscrn_rotate_wp*geometry: =400x400
+mscrn_rotate_wp*frame*shadowType: SHADOW_IN
+mscrn_rotate_wp*glwidget*translations: #override \n\
+        <Key>osfCancel: quit()          \n\
+        <KeyUp>:        done()          \n\
+        <Key>f:         translate(z 20) \n\
+        <Key>KP_1:      translate(z 20) \n\
+        <Key>b:         translate(z -20) \n\
+        <Key>KP_3:      translate(z -20) \n\
+        <Key>KP_2:      rotate(x -100)  \n\
+        <Key>KP_4:      rotate(y 100)   \n\
+        <Key>KP_6:      rotate(y -100)  \n\
+        <Key>KP_7:      rotate(z 100)   \n\
+        <Key>KP_8:      rotate(x 100)   \n\
+        <Key>KP_9:      rotate(z -100)  \n\
+        <Key>KP_5:      reset()
+        
+mscrn_rotate_btn*frame*shadowType: SHADOW_IN
+mscrn_rotate_btn*glwidget*width: 600
+mscrn_rotate_btn*glwidget*height: 600
+mscrn_rotate_btn*controlPanel*numColumns: 2
+mscrn_rotate_btn*controlPanel.orientation: HORIZONTAL
+mscrn_rotate_btn*controlPanel.packing: PACK_COLUMN
+mscrn_rotate_btn*controlPanel.spacing: 20
+mscrn_rotate_btn*controlPanel.isAligned: TRUE
+mscrn_rotate_btn*controlPanel.entryAlignment: ALIGNMENT_END
+mscrn_rotate_btn*controlPanel.translate.labelString: translate:
+mscrn_rotate_btn*controlPanel.rotate.labelString: rotate:
+
+mscrn_rotate_scale*frame*shadowType: SHADOW_IN
+mscrn_rotate_scale*glwidget*width: 600
+mscrn_rotate_scale*glwidget*height: 600
+mscrn_rotate_scale*XmScale*orientation: HORIZONTAL
+mscrn_rotate_scale*XmScale*scaleWidth: 250
+mscrn_rotate_scale*controlPanel*numColumns: 2
+mscrn_rotate_scale*controlPanel.orientation: HORIZONTAL
+mscrn_rotate_scale*controlPanel.spacing: 20
+mscrn_rotate_scale*controlPanel.XmRowColumn.isAligned: TRUE
+mscrn_rotate_scale*controlPanel.XmRowColumn.entryAlignment: ALIGNMENT_CENTER
+mscrn_rotate_scale*controlPanel.translate.label.labelString: translate
+mscrn_rotate_scale*controlPanel.rotate.label.labelString: rotate
+mscrn_rotate_scale*controlPanel.XmRowColumn.x.titleString: x
+mscrn_rotate_scale*controlPanel.XmRowColumn.y.titleString: y
+mscrn_rotate_scale*controlPanel.XmRowColumn.z.titleString: z
+mscrn_rotate_scale*controlPanel.translate.x.value: -50
+mscrn_rotate_scale*controlPanel.translate.x.minimum: -450
+mscrn_rotate_scale*controlPanel.translate.x.maximum: 350
+mscrn_rotate_scale*controlPanel.translate.x.scaleMultiple: 250
+mscrn_rotate_scale*controlPanel.translate.y.value: -50
+mscrn_rotate_scale*controlPanel.translate.y.minimum: -450
+mscrn_rotate_scale*controlPanel.translate.y.maximum: 350
+mscrn_rotate_scale*controlPanel.translate.z.value: -400
+mscrn_rotate_scale*controlPanel.translate.z.minimum: -2000
+mscrn_rotate_scale*controlPanel.translate.z.maximum: -50
+mscrn_rotate_scale*controlPanel.rotate.XmScale.value: 0
+mscrn_rotate_scale*controlPanel.rotate.XmScale.minimum: -3600
+mscrn_rotate_scale*controlPanel.rotate.XmScale.maximum: 3600
+
+mzrgbinput*frame*shadowType: SHADOW_IN
+mzrgbinput*glwidget*width: 600
+mzrgbinput*glwidget*height: 600
+
+azrgbinput*glwidget*width: 600
+azrgbinput*glwidget*height: 600
+
+mzrgbtrans*frame*shadowType: SHADOW_IN
+mzrgbtrans*glwidget*width: 600
+mzrgbtrans*glwidget*height: 600
+mzrgbtrans*glwidget*translations:     #override \n\
+     <KeyUp>osfCancel:  quit() \n\
+     <Btn1Down>:        arm() \n\
+     <Btn1Up>:          disarm() \n\
+     <Btn1Motion>:      move() \n
+
+mzrgbmenu*frame*shadowType: SHADOW_IN
+mzrgbmenu*glwidget*width: 600
+mzrgbmenu*glwidget*height: 600
+mzrgbmenu*glwidget*translations:     #override \n\
+     <KeyUp>osfCancel:  quit() \n\
+     <Btn1Down>:        arm() \n\
+     <Btn1Up>:          disarm() \n\
+     <Btn1Motion>:      move() \n
+
+mzcmapmenu*frame*shadowType: SHADOW_IN
+mzcmapmenu*glwidget*width: 600
+mzcmapmenu*glwidget*height: 600
+mzcmapmenu*glwidget*translations:     #override \n\
+     <KeyUp>osfCancel:  quit() \n\
+     <Btn1Down>:        arm() \n\
+     <Btn1Up>:          disarm() \n\
+     <Btn1Motion>:      move() \n

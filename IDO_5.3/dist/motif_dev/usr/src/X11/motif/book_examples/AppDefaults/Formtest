@@ -1,0 +1,34 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Formtest: class resource file for formedit
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! In the book, width is not set.  In real life, it needs to be, or else the
+! application isn't wide enough to show the full title.
+Formtest*form*width:		  150
+!
+! Make all children resizable and specify
+! all attachments as attach_position
+!
+Formtest*resizable:               TRUE
+Formtest*topAttachment:           attach_position
+Formtest*bottomAttachment:        attach_position
+Formtest*leftAttachment:          attach_position
+Formtest*rightAttachment:         attach_position
+!
+! Set up the buttons to stretch across the entire form
+! and each occupy 30 % of the height.
+!
+Formtest*button1.leftPosition:     1
+Formtest*button1.rightPosition:   99
+Formtest*button1.topPosition:      1
+Formtest*button1.bottomPosition:  31
+
+Formtest*button2.leftPosition:    1
+Formtest*button2.rightPosition:   99
+Formtest*button2.topPosition:     35
+Formtest*button2.bottomPosition:  65
+
+Formtest*button3.leftPosition:     1
+Formtest*button3.rightPosition:   99
+Formtest*button3.topPosition:     69
+Formtest*button3.bottomPosition:  99

@@ -1,0 +1,16 @@
+
+	-----------------------------------------------------------
+	README for ~4Dgifts/examples/X11/color source code examples
+	-----------------------------------------------------------
+
+     This directory contains X Window Motif programming examples which
+     illustrate how to use X Window Color capabilities.  These programs
+     are designed and commented in such a way as to aid beginning X 
+     Window programmers.  To see examples using Motif toolkit, see
+     ~4Dgifts/examples/X11/toolkits/motif directory.
+
+
+       xcedit		Allocates one read/write color cell from 
+			default X colormap.
+
+       xlines		Creates it's own virtual color map.

@@ -1,0 +1,14 @@
+
+This file is both a place holder for the install and a README.
+
+If ~4Dgifts/examples/Fortran/defpat/editpat32 is currently
+empty.  This is because only the giftsbasic subsystem is
+currently loaded.  4Dgifts has grown to the point where it
+must be split.
+
+                       **** - ****
+
+To get the remaining components of this subtree load the
+giftsfull subsystem.  Refer to the ~4Dgifts/README.subsys
+file for a complete run-down on these two subsystems.
+

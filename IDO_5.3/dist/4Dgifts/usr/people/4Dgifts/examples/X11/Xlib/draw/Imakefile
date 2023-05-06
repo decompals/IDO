@@ -1,0 +1,15 @@
+DEPLIBS = $(DEPXLIB)
+LOCAL_LIBRARIES = $(XLIB)
+
+SimpleProgramTarget(draw)
+
+
+# We have an artificial difference between
+# clean and clobber here.  In the X world
+# clean is the same as our local use of clobber.  
+# The below makes X's imake generated files act much the
+# same as make/smake files which include commondefs
+# elsewhere in 4Dgifts.
+clobber:
+	make clean
+

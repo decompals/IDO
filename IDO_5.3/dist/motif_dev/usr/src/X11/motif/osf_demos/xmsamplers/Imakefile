@@ -1,0 +1,71 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992, 1993 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2.3
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.5 $ $Date: 1994/05/29 01:52:56 $
+
+#ifndef SGIArchitecture /* OSF original */
+        DEPLIBS = XmClientDepLibs
+LOCAL_LIBRARIES = XmClientLibs
+#else /* SGI changes */
+   /*
+    * OSF assumes that DEPEXTENSIONLIB and EXTENSIONLIB are included in
+    * XmClientDepLibs.  That causes ld warnings at SGI, so we have taken
+    * them out.  Hence we need to explicitly put them back where needed,
+    * such as here.
+    */
+        DEPLIBS = XmClientDepLibs $(DEPEXTENSIONLIB)
+LOCAL_LIBRARIES = XmClientLibs $(EXTENSIONLIB)
+#endif /* SGIArchitectgure */
+
+SRCS=	\
+	xmdialogs.c \
+	xmeditor.c \
+	xmfonts.c \
+	xmlist.c \
+	xmter.c \
+	xmform.c \
+	xmforc.c \
+	xmmap.c \
+	xmgetres.c \
+	xmapdef.c \
+	xmmore.c \
+	xmprotocol.c
+
+MSimpleProgramTarget(xmdialogs)
+MSimpleProgramTarget(xmeditor)
+MSimpleProgramTarget(xmfonts)
+MSimpleProgramTarget(xmlist)
+MSimpleProgramTarget(xmprotocol)
+MSimpleProgramTarget(xmter)
+MSimpleProgramTarget(xmform)
+MSimpleProgramTarget(xmforc)
+MSimpleProgramTarget(xmmap)
+MSimpleProgramTarget(xmgetres)
+MSimpleProgramTarget(xmapdef)
+MSimpleProgramTarget(xmmore)
+
+
+InstallProgram(xmdialogs,$(BINDIR))
+InstallProgram(xmeditor,$(BINDIR))
+InstallProgram(xmfonts,$(BINDIR))
+InstallProgram(xmlist,$(BINDIR))
+InstallProgram(xmprotocol,$(BINDIR))
+InstallProgram(xmter,$(BINDIR))
+InstallProgram(xmform,$(BINDIR))
+InstallProgram(xmforc,$(BINDIR))
+InstallProgram(xmmap,$(BINDIR))
+InstallProgram(xmgetres,$(BINDIR))
+InstallProgram(xmapdef,$(BINDIR))
+InstallProgram(xmmore,$(BINDIR))
+
+InstallAppDefaults(XMdemos)
+
+DependTarget()
+#ifdef SGIArchitecture
+FILES = Imakefile README *.c *.xbm
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* SGIArchitecture */

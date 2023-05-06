@@ -1,0 +1,38 @@
+
+          -----------------------------------------------------------
+          README for ~4Dgifts/iristools/abekas/_rs232 coding segments
+          -----------------------------------------------------------
+
+
+                              Abekas RS-232
+
+                           Abekas Video Systems
+                            Simon Carter - 1991
+
+
+The two .c files contain routines which form the basis of an RS-232 serial
+control interface for the A60 or A64 from an SGI 4D.  As there is no 'main()',
+the files are not standalone and a Makefile is not included.
+
+BUGS: For reasons which I haven't yet investigated the current response is
+      always for the previous command. (Presumably read doesn't wait for very
+      long before returning.)     - a sleep might fix it!
+
+
+a60_rep.c -
+          This file contains the reply function which will parse a reponse
+          packet from an A60 or A64, most respones are skipped.  The normal
+          length is a response is four bytes, execptions are noted.  The A60
+          generally supports a subset of the A64 commands and responses.
+          Conditional compilation is used to resolve irreconcilable differences.
+
+responses.h -
+            This is the header file for a60_rep.c.  It contains definitions
+            required for parsing the responses from an A60 or A64.
+
+serial.c -
+         This file contains functions for opening, formatting, sending, and
+         receiving data to/from the A60 or A64.  Also included are a few
+         pre-built machine commands; stop, play freeze, etc..  More may be
+         created from data found in the A60 External Protocol Manual 74-M053-00.
+

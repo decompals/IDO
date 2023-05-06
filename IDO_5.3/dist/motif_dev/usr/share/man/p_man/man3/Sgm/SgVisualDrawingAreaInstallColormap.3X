@@ -1,0 +1,51 @@
+.TH SgVisualDrawingAreaInstallColormap 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgVisualDrawingAreaInstallColormap \*O\(em Install a colormap for the VisualDrawingArea widget
+.iX "SgVisualDrawingAreaInstallColormap"
+.iX "VisualDrawingArea" "Visual Drawing Area"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sgm/VisualDrawingA.h>
+.sp \n(PDu
+void SgVisualDrawingAreaInstallColormap (\*Vwidget\*L)
+.ta .5i 1.5i
+	Widget	\*Vwidget\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LSgVisualDrawingAreaInstallColormap\*O installs the colormap of an
+\*LSgVisualDrawingArea\*O widget.  Normally it does this by adding the
+widget's window to the WM_COLORMAP_WINDOWS property on the shell
+containing the widget.  This causes the window manager to install the
+colormap whenever the shell has focus.  (However, if the shell is marked
+override_redirect, the widget calls \*LXInstallColormap(1X)\*O
+directly in addition changing WM_COLORMAP_WINDOWS.  Some window
+managers will reject such a change).
+.P
+There is no need to call \*LSgVisualDrawingAreaInstallColormap\*O if the
+\*LSgNinstallColormap\*O is set, as this resource will automatically
+set the WM_COLORMAP_WINDOWS property.  This call is intended for
+providing more explicit control.
+.P
+To uninstall the colormap, call \*LSgVisualDrawingAreaUninstallColormap(3X)\*O.
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the widget whose colormap is to be installed.
+.LE 
+.PP 
+For a complete definition of VisualDrawingArea and its associated
+resources, see
+\*LSgVisualDrawingArea(3X)\*O.
+.SH RETURN VALUE
+Returns the VisualDrawingArea widget ID.
+.SH RELATED INFORMATION
+.na
+\*LSgVisualDrawingArea(3X)\*O, \*LSgVisualDrawingAreaInstallColormap(3X)\*O .
+.ad

@@ -1,0 +1,14 @@
+The code in this directory makes it possible to test
+device streams modules without linking them into the
+kernel.   To use this test code, place the code to your
+streams module in ../io and add your module to the list
+of modules in Makefile.   Modify inputtest.c (as described
+in comments in the file) to use your device and run:
+     % make
+in this directory.   Next, link the tty device to which your
+device is connected to /dev/input/<name> where <name> is the
+name of your streams module.  Now simply run:
+     % inputtest <name>
+where name is the name of your streams module.    inputtest
+should print messages whenever a valuator or button on your
+device changes.

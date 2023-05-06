@@ -1,0 +1,29 @@
+
+      ---------------------------------------------------------------
+      README for ~4Dgifts/examples/X11/Xlib/mouse source code example
+      ---------------------------------------------------------------
+
+
+
+    Introduction:
+  
+    Mouse.c is meant to be the eighth in a series of beginning X Windows
+    programs.  None of the examples in this directory use widgets, but
+    instead use Xlib functionality.  This program takes the information 
+    presented in queue.c and expands upon it by allowing you to specify 
+    only mouse buttons rather than the whole keyboard.
+
+
+
+    Local declarations in main():
+
+    There are no new declarations in main.
+
+
+
+    Selecting only the mouse:
+
+    We are able to specify only the mouse button inputs by limiting our
+    selection of events in XSelectInput to ButtonPressMask (line 71).
+    This allows us to remove the test for KeyPress that was formerly in
+    the switch statement (line 84).

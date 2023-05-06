@@ -1,0 +1,11 @@
+XCOMM (c) Copyright 1989, 1990, 1991, 1992, 1993 OPEN SOFTWARE FOUNDATION, INC.  
+XCOMM ALL RIGHTS RESERVED  
+XCOMM 
+XCOMM Motif Release 1.2.3
+
+MSimpleUidLocaleTarget(fileview,german)
+
+#ifdef SGIArchitecture
+FILES = Imakefile *.uil
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

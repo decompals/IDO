@@ -1,0 +1,72 @@
+
+             README for StereoView Example set of Source Code
+            **************************************************
+
+    This directory contains source for the following programming examples:
+
+    libstereo.a : contains a set of support routines for programming stereo
+                  --built from onoffstereo.c, stereopersp.c, stereowin.c,
+                  and stereo.h
+          backg : creates a simple stereo background
+           grid : draws a simple stereo diagnostic program grid (viewed w/a
+                  closed left eye, a red grid and the word "RIGHT" is 
+                  visible, viewed w/a closed right eye, a blue grid and the
+                  word "LEFT" is visible)
+    nestedcubes : a simple stereo application
+ on/off -stereo : simple routines for turning on and off stereo mode.
+
+    To compile--as 4Dgifts user--type 'make' in this directory.  If you 
+    are doing this for the first time, make will first build libstereo.a 
+    from onoffstereo.c, stereopersp.c, stereowin.c, and, stereo.h.
+
+
+       If you want to see:           Then execute the command(s):
+      ------------------------       ----------------------------
+      if stereo works properly       grid
+      a fullscreen application       nestedcubes
+      a windowed application         backg; sleep 2; nestedcubes -w
+      a normal display               offstereo
+
+
+         -------------------------------------------------------
+         | You will need IRIX 3.3 or later to run these demos. |
+         -------------------------------------------------------
+
+
+
+ Here's a short description of what is involved in stereo-izing an application:
+    
+    1) Your application must turn on stereo by issuing a 
+        setmonitor(STR_RECT) command.  You should check to see if 
+        STR_RECT mode is supported by issuing a getgdesc(GD_STEREO)
+        command.  You should also constrain the mouse to the lower 
+        half of the screen using a setvaluator() command.  (All 
+        three of the above-mentioned calls come from the Graphics 
+        Library (GL)--consult 3G-section (GL Reference Manual) man 
+        pages.)  A routine called stereo_on() in libstereo.a does 
+        all of this for you; see the code in onoffstereo.c, and the 
+        comments in stereo.h.
+    
+    2) You must decide if the application should take over the 
+        entire screen, or if it should run in (user-resizeable) 
+        windows.  If it takes over the entire screen, you should 
+        set up two viewports (one for each eye) in the upper and 
+        lower halves of the screen.  If it should run in a window,
+        you will have to open two windows, one in the upper and 
+        one in the lower half of the screen.  If it runs in 
+        windows, you will also probably want to put up an 
+        appropriate background to cover up all of the regular, 
+        non-stereo windows;  see the code in backg for an example.  
+        See the code in nestedcubes for an example application, 
+        and see stereo.h for some simple support routines for 
+        doing stereo in windows.
+    
+    3) A stereo application must draw its scene twice, once for the
+        left-eye view, and once for the right-eye view.  The 
+        'stereopersp' command in libstereo.a can be very useful for 
+        generating correct perspective stereo images.  For more 
+        information, see the Summer 1989 issue of the "Iris 
+        Universe," (pp. 16-18, 20-22) which has a very informative
+        article by Thant Tessman about stereo projections.  Again, 
+        see the code in nestedcubes for an example using 
+        stereopersp().

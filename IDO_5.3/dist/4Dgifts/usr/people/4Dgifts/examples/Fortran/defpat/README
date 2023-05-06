@@ -1,0 +1,13 @@
+
+ ----------------------------------------------------------------------------
+ README for ~4Dgifts/examples/Fortran/defpat source code programming examples
+ ----------------------------------------------------------------------------
+
+
+      This subtree contains 2 programs--each in its own directory--called
+    editpat32 and showpat32 which implement a 32X32 pixel pattern editor 
+    and viewer respectively.  Both of these programs revolve around the
+    DEFPATTERN(3G) GL call which defines patterns.  The size of such 
+    patterns is not limited to 32X32--they can also be square areas of
+    16 or 64 bit patterns as well as 32.  The choice here is arbitrary.
+

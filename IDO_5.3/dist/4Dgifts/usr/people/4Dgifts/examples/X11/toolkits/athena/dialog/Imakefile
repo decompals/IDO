@@ -1,0 +1,32 @@
+#ifdef BandAidCompiler
+#include BandAidCompiler
+#endif
+
+# If you want to run a debugger on these programs, remove the -s from 
+# EXTRA_LOAD_FLAGS and make CDEBUGFLAGS be -g
+
+SHELL	= /bin/sh
+
+PROG             = dialog
+OBJS             = dialog.o
+SRCS             = dialog.c
+
+INCLUDES         = -I/usr/include/X11
+
+LOCAL_LIBRARIES = $(XAWLIB) $(XTOOLLIB) $(XMULIB) $(EXTENSIONLIB) $(XLIB)
+
+EXTRA_LOAD_FLAGS = -s
+CDEBUGFLAGS	 = -O
+
+AllTarget($(PROG))
+ComplexProgramTarget($(PROG))
+
+# We have an artificial difference between
+# clean and clobber here.  In the X world
+# clean is the same as our local use of clobber.  
+# The below makes X's imake generated files act much the
+# same as make/smake files which include commondefs
+# elsewhere in 4Dgifts.
+clobber:
+	make clean
+

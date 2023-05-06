@@ -1,0 +1,71 @@
+# /bin/csh
+# PUT: Frame storage script for use with Abekas A60 digital video frame
+#        storage unit.
+# Written by Paul J. Meyer Nov. 23 1990
+# The purpose of this shell script is to store frames on an Abekas A60
+# unit.  It accesses the data as either yuv or rgb files and will place
+# the data in a file on the Abekas, the file frame location is identical
+# to the input file extension.
+# Currently only handles frames, does not handle video fields
+
+# Present usage message to user if no parameters are specified.
+if  ( $#argv < 1 ) then
+    echo -n "Usage:  put Inputfileprefix Beginframe Endframe"
+    echo " (Beginoutputframe) (rgb)"
+    echo " "
+    echo "        -- Beginoutputframe defaults to Beginframe"
+    echo "        -- rgb defaults to yuv mode (non-numeric sets rgb mode)"
+    echo " "    
+    exit 0
+endif
+
+set videodev ="a60:"  # host where we are storing data (from /etc/hosts)
+set prefix = $1       # file name prefix
+set begin = $2        # beginning input frame number
+set end = $3          # ending inputframe number
+
+# determine whether user entered a beginning output frame number,
+# shift positional parameters appropriately to pick up file mode (rgb, yuv).
+
+set alpha =  `expr "$4" : '\(.\)'` # extract one character
+
+if ( `expr "$alpha" \>= '0'` && `expr "$alpha" \<='9'` ) then
+    set abekout = $4     # Output frame was specified
+    shift;shift;shift;shift
+else
+    set abekout = $begin   # Output frame was not specified, do just one.
+	shift;shift;shift
+endif
+
+if ( $1 != "" ) then     # check for non-null string to do rgb mode file
+   set yuv = ".rgb"      # add .rgb extension to put rgb mode file on Abekas
+else
+   set yuv = ""          # no extension, do yuv format file (faster mode)
+endif
+
+set count = $begin       # counter variable
+
+while ( $count <= $end ) # test whether we have done all the frames
+
+# Pad the output file name extension with zeros where necessary
+#    if ( `expr "$count" : '.*'` == 3 ) then
+#      set post = $count
+#    else if  ( `expr "$count : '.*'` == 2 ) then
+#      set post = `echo "0$count"`
+#    else if  ( `expr "$count : '.*'` == 1 ) then
+#      set post = `echo "00$count"`
+#    endif
+
+set infile = $prefix.$post             # generate input filename
+
+set outfile = $videodev$abekout$yuv     # generate output filename
+
+rcp $infile $outfile                   # store the data on the video device
+
+echo -n "."                            # indicate that something is happening
+set count = `expr $count + 1`           # bump counter up by 1
+    set abekout = `expr $abekout + 1`  # bump output frame counter by 1
+end
+
+echo " "
+exit 0

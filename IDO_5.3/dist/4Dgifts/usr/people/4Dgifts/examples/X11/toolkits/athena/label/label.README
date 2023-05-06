@@ -1,0 +1,15 @@
+
+     --------------------------------------------------------------
+     README for ~4Dgifts/examples/X11/toolkits/athena/label/label.c
+     --------------------------------------------------------------
+
+      Label widget is a noneditable text string or pixmap that is 
+      displayed within a window.  The string is limited to one line
+      and can be aligned to the left, right, or center of its
+      window.  A Label can neither be selected nor directly edited 
+      by the user.
+
+
+      Label.c demonstrates the use of label widget.  To change the
+      text string, call label with -label option followed by a text
+      string.

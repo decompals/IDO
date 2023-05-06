@@ -1,0 +1,31 @@
+
+		         README for Stencil examples
+
+
+
+	"hollowcube-vgx" demonstrates an implementation of the section
+	of the article "The Hidden Charms of the Z-Buffer", from the
+	"IRIS Universe", Issue Number Eleven, that discusses "Outlined
+	Polygons and Hidden Lines."  This program uses hollow polygons
+	to draw an outlined cube.  Pressing MIDDLEMOUSE removes the 
+	hidden lines (by filling the cube's faces with background color).
+
+
+	"cap" is a very swank program written by Mr. GL himself, Kurt 
+	Akeley.   This is an experiment with capping alogrithms the 
+	results of which are marvelously illustrated by enabling any one
+	of the 6 arbitrary clipping planes (via the RIGHTMOUSE menu item)
+	and then enabling and disabling the capping menu selection to
+	view the difference.  The menu items (using RIGHTMOUSE) are
+	farily self-explanatory.  Where indicated, the character in 
+	parenthesis following a given item will produce the same results
+	when pressed as explicitly selecting that menu item will do.
+
+	NOTE:  this program also understands the demo model files in
+   	       /usr/demos/data/models, however the only one that is built 
+	       of proper polygonal surfaces--such surfaces separate space
+	       into inside and outside volumes--is martini.bin.  
+	       Regretably, the others are sadly lacking.  To see the 
+	       martini, execute 
+
+        	< 102 ratmandu /vgx/stencil> cap martini.bin

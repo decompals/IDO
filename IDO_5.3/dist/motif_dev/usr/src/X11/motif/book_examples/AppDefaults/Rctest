@@ -1,0 +1,23 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Rctest: Class Resources for rctest.c
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Specify labels for all buttons.
+!
+*Rctest*button1.labelString:    Button One
+*Rctest*button2.labelString:    Button Two
+*Rctest*button3.labelString:    Button Three
+*Rctest*button4.labelString:    Button Four
+*Rctest*button5.labelString:    Button Five
+*Rctest*button6.labelString:    Button Six With a Long Label
+!
+! Request buttons in 3 rows, by setting orientation to
+! horizontal and requesting 3 columns (minor-dimension)
+!
+*Rctest*orientation:         horizontal
+*Rctest*rowcol*numColumns:   3
+*Rctest*rowcol*packing:      pack_column
+
+!
+!*Rctest*rowcol*packing:     pack_tight
+!

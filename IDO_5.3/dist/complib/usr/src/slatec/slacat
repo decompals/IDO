@@ -1,0 +1,528 @@
+  259
+    8    2    1   A
+    4    3    2   A03
+    0    0    3   A03D
+    6    5    4   A04
+    0    0    5   A04A
+    0    7    6   A06
+    0    0    7   A06B
+   43    9    8   C
+   10    0    9   C01
+   11    0   11   C02
+   14   12   12   C03
+    0   13   13   C03A
+    0    0   14   C03A02
+   18   15   15   C04
+   16    0   16   C04A
+   17    0   17   C04B
+    0    0   18   C04C
+   19    0   19   C05
+   25   20   20   C07
+   21    0   21   C07A
+   22    0   22   C07B
+   23    0   23   C07C
+   24    0   24   C07E
+    0    0   25   C07F
+   28   26   26   C08
+   27    0   27   C08A
+    0    0   29   C08C
+   29    0   30   C09
+   40   30   31   C10
+   34   31   32   C10A
+   32    0   33   C10A01
+   33    0   34   C10A03
+    0    0   35   C10A04
+   38   35   36   C10B
+   36    0   37   C10B01
+   37    0   38   C10B03
+    0    0   39   C10B04
+   39    0   40   C10D
+    0    0   41   C10F
+   41    0   42   C11
+   42    0   43   C14
+    0    0   44   C19
+  135   44   45   D
+   60   45   46   D01
+   55   46   47   D01A
+   47    0   48   D01A02
+   50   48   49   D01A03
+   49    0   50   D01A03A
+    0    0   51   D01A03B
+   51    0   52   D01A04
+   52    0   53   D01A05
+   53    0   54   D01A06
+   54    0   55   D01A07
+    0    0   56   D01A08
+    0   56   57   D01B
+   57    0   58   D01B04
+   58    0   59   D01B06
+   59    0   60   D01B09
+    0    0   61   D01B10
+   86   61   62   D02
+   67   62   64   D02A
+   63    0   65   D02A01
+   65   64   66   D02A02
+    0    0   67   D02A02A
+   66    0   68   D02A03
+    0    0   69   D02A04
+   74   68   70   D02B
+   71   69   71   D02B01
+   70    0   72   D02B01A
+    0    0   73   D02B01B
+   73   72   74   D02B02
+    0    0   75   D02B02A
+    0    0   76   D02B04
+   79   75   77   D02C
+   76    0   78   D02C01
+   78   77   79   D02C02
+    0    0   80   D02C02A
+    0    0   81   D02C03
+   85   80   82   D02D
+   83   81   83   D02D01
+   82    0   84   D02D01A
+    0    0   85   D02D01B
+    0   84   86   D02D02
+    0    0   87   D02D02A
+    0    0   88   D02E
+  105   87   89   D03
+   91   88   90   D03A
+   89    0   91   D03A01
+   90    0   92   D03A02
+    0    0   93   D03A03
+   96   92   94   D03B
+   95   93   95   D03B01
+   94    0   96   D03B01A
+    0    0   97   D03B01B
+    0    0   98   D03B02
+  100   97   99   D03C
+   98    0  100   D03C01
+   99    0  101   D03C02
+    0    0  102   D03C03
+    0  101  103   D03D
+  104  102  104   D03D01
+  103    0  105   D03D01A
+    0    0  106   D03D01B
+    0    0  107   D03D02
+  130  106  108   D04
+  113  107  109   D04A
+  108    0  110   D04A01
+  109    0  111   D04A02
+  110    0  112   D04A03
+  111    0  113   D04A04
+  112    0  114   D04A05
+    0    0  115   D04A06
+  116  114  116   D04B
+  115    0  117   D04B01
+    0    0  118   D04B02
+    0  117  119   D04C
+  124  118  120   D04C01
+  119    0  121   D04C01A
+  123  120  122   D04C01B
+  121    0  123   D04C01B01
+  122    0  124   D04C01B02
+    0    0  125   D04C01B03
+    0    0  126   D04C01C
+  128  125  127   D04C02
+  126    0  128   D04C02A
+  127    0  129   D04C02B
+    0    0  130   D04C02C
+  129    0  131   D04C03
+    0    0  132   D04C04
+  131    0  133   D05
+  132    0  134   D06
+  134  133  135   D07
+    0    0  136   D07B
+    0    0  137   D09
+  140  136  139   E
+  139  137  140   E01
+  138    0  141   E01A
+    0    0  142   E01B
+    0    0  143   E03
+  150  141  145   F
+  147  142  146   F01
+  146  143  147   F01A
+    0  144  148   F01A01
+  145    0  149   F01A01A
+    0    0  150   F01A01B
+    0    0  151   F01B
+  149  148  152   F02
+    0    0  153   F02A
+    0    0  154   F03
+  160  151  155   G
+  158  152  156   G02
+  154  153  157   G02A
+    0    0  158   G02A02
+  155    0  159   G02E
+    0  156  160   G02H
+  157    0  161   G02H01
+    0    0  162   G02H02
+    0  159  163   G04
+    0    0  164   G04C
+  182  161  165   H
+  162    0  166   H01
+    0  163  167   H02
+    0  164  168   H02A
+  170  165  169   H02A01
+  168  166  170   H02A01A
+  167    0  171   H02A01A01
+    0    0  172   H02A01A02
+    0  169  173   H02A01B
+    0    0  174   H02A01B02
+  174  171  175   H02A02
+    0  172  178   H02A02A
+  173    0  179   H02A02A01
+    0    0  180   H02A02A02
+  178  175  181   H02A03
+    0  176  182   H02A03A
+  177    0  183   H02A03A01
+    0    0  184   H02A03A02
+    0  179  185   H02A04
+    0  180  186   H02A04A
+  181    0  187   H02A04A01
+    0    0  188   H02A04A02
+  200  183  189   I
+  191  184  190   I01
+  189  185  191   I01A
+  188  186  192   I01A01
+  187    0  193   I01A01A
+    0    0  194   I01A01B
+    0    0  195   I01A02
+    0  190  196   I01B
+    0    0  197   I01B01
+    0  192  198   I02
+    0  193  199   I02B
+  198  194  200   I02B01
+    0  195  201   I02B01A
+  197  196  202   I02B01A01
+    0    0  203   I02B01A01A
+    0    0  205   I02B01A02
+    0  199  206   I02B04
+    0    0  207   I02B04B
+  207  201  208   J
+  206  202  209   J01
+    0  203  210   J01A
+  204    0  211   J01A01
+  205    0  212   J01A02
+    0    0  213   J01A03
+    0    0  214   J04
+  222  208  215   K
+  221  209  216   K01
+  216  210  217   K01A
+  214  211  218   K01A01
+    0  212  219   K01A01A
+  213    0  220   K01A01A01
+    0    0  221   K01A01A02
+    0  215  222   K01A02
+    0    0  223   K01A02A
+    0  217  224   K01B
+    0  218  225   K01B01
+    0  219  226   K01B01A
+  220    0  227   K01B01A01
+    0    0  228   K01B01A02
+    0    0  229   K06
+  237  223  231   L
+  227  224  232   L05
+    0  225  233   L05A
+    0  226  234   L05A01
+    0    0  235   L05A01E
+  231  228  236   L06
+    0  229  237   L06A
+  230    0  238   L06A14
+    0    0  239   L06A21
+  234  232  240   L07
+    0  233  241   L07A
+    0    0  242   L07A03
+    0  235  243   L08
+    0  236  244   L08A
+    0    0  245   L08A03
+  251  238  246   N
+  239    0  247   N01
+  240    0  248   N03
+  250  241  249   N06
+    0  242  250   N06A
+  246  243  251   N06A01
+  244    0  252   N06A01A
+  245    0  253   N06A01B
+    0    0  254   N06A01C
+    0  247  255   N06A02
+  248    0  256   N06A02A
+  249    0  257   N06A02B
+    0    0  258   N06A02C
+    0    0  259   N08
+  258  252  260   R
+  253    0  261   R01
+  254    0  262   R02
+    0  255  263   R03
+  256    0  264   R03A
+  257    0  265   R03B
+    0    0  266   R03C
+    0    0  267   Z
+            268
+ Arithmetic, error analysis
+ Real
+ Extended range
+ Complex
+ Single precision
+ Change of representation
+ Base conversion
+ Elementary and special functions (search also class L5)
+ Integer-valued functions (e.g., floor, ceiling, factorial, binomial
+ coefficient)
+ Powers, roots, reciprocals
+ Polynomials
+ Orthogonal
+ Chebyshev, Legendre
+ Elementary transcendental functions
+ Trigonometric, inverse trigonometric
+ Exponential, logarithmic
+ Hyperbolic, inverse hyperbolic
+ Exponential and logarithmic integrals
+ Gamma
+ Gamma, log gamma, reciprocal gamma
+ Beta, log beta
+ Psi function
+ Incomplete gamma
+ Incomplete beta
+ Error functions
+ Error functions, their inverses, integrals, including the normal
+ distribution function
+ Dawson's integral
+ Legendre functions
+ Bessel functions
+ J, Y, H-(1), H-(2)
+ Real argument, integer order
+ Real argument, real order
+ Complex argument, real order
+ I, K
+ Real argument, integer order
+ Real argument, real order
+ Complex argument, real order
+ Airy and Scorer functions
+ Integrals of Bessel functions
+ Confluent hypergeometric functions
+ Elliptic integrals
+ Other special functions
+ Linear Algebra
+ Elementary vector and matrix operations
+ Elementary vector operations
+ Minimum and maximum components
+ Norm
+ L-1 (sum of magnitudes)
+ L-2 (Euclidean norm)
+ Dot product (inner product)
+ Copy or exchange (swap)
+ Multiplication by scalar
+ Triad (a*x+y for vectors x,y and scalar a)
+ Elementary rotation (Givens transformation)
+ Elementary matrix operations
+ Multiplication by vector
+ Multiplication
+ Storage mode conversion
+ Elementary rotation (Givens transformation)
+ Solution of systems of linear equations (including inversion, LU and
+ related decompositions)
+ Real nonsymmetric matrices
+ General
+ Banded
+ Tridiagonal
+ Triangular
+ Sparse
+ Real symmetric matrices
+ General
+ Indefinite
+ Positive definite
+ Positive definite banded
+ Tridiagonal
+ Sparse
+ Complex non-Hermitian matrices
+ General
+ Banded
+ Tridiagonal
+ Triangular
+ Complex Hermitian matrices
+ General
+ Indefinite
+ Positive definite
+ Positive definite banded
+ Tridiagonal
+ Associated operations (e.g., matrix reorderings)
+ Determinants
+ Real nonsymmetric matrices
+ General
+ Banded
+ Triangular
+ Real symmetric matrices
+ General
+ Indefinite
+ Positive definite
+ Positive definite banded
+ Complex non-Hermitian matrices
+ General
+ Banded
+ Triangular
+ Complex Hermitian matrices
+ General
+ Indefinite
+ Positive definite
+ Positive definite banded
+ Eigenvalues, eigenvectors
+ Ordinary eigenvalue problems (Ax = (lambda) * x)
+ Real symmetric
+ Real nonsymmetric
+ Complex Hermitian
+ Complex non-Hermitian
+ Tridiagonal
+ Banded
+ Generalized eigenvalue problems (e.g., Ax = (lambda)*Bx)
+ Real symmetric
+ Real general
+ Associated operations
+ Transform problem
+ Balance matrix
+ Reduce to compact form
+ Tridiagonal
+ Hessenberg
+ Other
+ Standardize problem
+ Compute eigenvalues of matrix in compact form
+ Tridiagonal
+ Hessenberg
+ Other
+ Form eigenvectors from eigenvalues
+ Back transform eigenvectors
+ QR decomposition, Gram-Schmidt orthogonalization
+ Singular value decomposition
+ Update matrix decompositions
+ Cholesky
+ Overdetermined or underdetermined systems of equations, singular systems,
+ pseudo-inverses (search also classes D5, D6, K1a, L8a)
+ Interpolation
+ Univariate data (curve fitting)
+ Polynomial splines (piecewise polynomials)
+ Polynomials
+ Service routines (e.g., grid generation, evaluation of fitted functions)
+ (search also class N5)
+ Solution of nonlinear equations
+ Single equation
+ Smooth
+ Polynomial
+ Real coefficients
+ Complex coefficients
+ General (no smoothness assumed)
+ System of equations
+ Smooth
+ Service routines (e.g., check user-supplied derivatives)
+ Optimization (search also classes K, L8)
+ Constrained
+ Linear programming
+ Sparse matrix of constraints
+ Quadratic programming
+ General nonlinear programming
+ Simple bounds
+ Linear equality or inequality constraints
+ Service routines
+ Check user-supplied derivatives
+ Differentiation, integration
+ Numerical differentiation
+ Quadrature (numerical evaluation of definite integrals)
+ One-dimensional integrals
+ Finite interval (general integrand)
+ Integrand available via user-defined procedure
+ Automatic (user need only specify required accuracy)
+ Nonautomatic
+ Integrand available only on grid
+ Nonautomatic
+ Finite interval (specific or special type integrand including weight
+ functions, oscillating and singular integrands, principal value
+ integrals, splines, etc.)
+ Integrand available via user-defined procedure
+ Automatic (user need only specify required accuracy)
+ Nonautomatic
+ Semi-infinite interval (including e**(-x) weight function)
+ Integrand available via user-defined procedure
+ Automatic (user need only specify required accuracy)
+ Nonautomatic
+ Infinite interval (including e**(-x**2)) weight function)
+ Integrand available via user-defined procedure
+ Automatic (user need only specify required accuracy)
+ Nonautomatic
+ Differential and integral equations
+ Ordinary differential equations
+ Initial value problems
+ General, nonstiff or mildly stiff
+ One-step methods (e.g., Runge-Kutta)
+ Multistep methods (e.g., Adams' predictor-corrector)
+ Stiff and mixed algebraic-differential equations
+ Multipoint boundary value problems
+ Linear
+ Partial differential equations
+ Elliptic boundary value problems
+ Linear
+ Second order
+ Poisson (Laplace) or Helmholz equation
+ Rectangular domain (or topologically rectangular in the coordinate
+ system)
+ Other separable problems
+ Service routines
+ Solution of discretized elliptic equations
+ Integral transforms
+ Fast Fourier transforms (search class L10 for time series analysis)
+ One-dimensional
+ Real
+ Complex
+ Trigonometric (sine, cosine)
+ Hilbert transforms
+ Approximation (search also class L8)
+ Least squares (L-2) approximation
+ Linear least squares (search also classes D5, D6, D9)
+ Unconstrained
+ Univariate data (curve fitting)
+ Polynomial splines (piecewise polynomials)
+ Polynomials
+ Constrained
+ Linear constraints
+ Nonlinear least squares
+ Unconstrained
+ Smooth functions
+ User provides no derivatives
+ User provides first derivatives
+ Service routines (e.g., mesh generation, evaluation of fitted functions)
+ (search also class N5)
+ Statistics, probability
+ Function evaluation (search also class C)
+ Univariate
+ Cumulative distribution functions, probability density functions
+ Error function, exponential, extreme value
+ Pseudo-random number generation
+ Univariate
+ Negative binomial, normal
+ Uniform
+ Experimental design, including analysis of variance
+ Univariate
+ Analysis of covariance
+ Regression (search also classes G, K)
+ Linear least squares (L-2) (search also classes D5, D6, D9)
+ Piecewise polynomial (i.e. multiphase or spline)
+ Data handling (search also class L2)
+ Input, output
+ Character manipulation
+ Sorting
+ Internal
+ Passive (i.e. construct pointer array, rank)
+ Integer
+ Real
+ Character
+ Active
+ Integer
+ Real
+ Character
+ Permuting
+ Service routines
+ Machine-dependent constants
+ Error checking (e.g., check monotonicity)
+ Error handling
+ Set criteria for fatal errors
+ Set unit number for error messages
+ Other utility programs
+ Other
+                                                                                

@@ -1,0 +1,54 @@
+
+   -----------------------------------------------------------------------
+   README for ~4Dgifts/examples/unix/irix programming source code examples
+   -----------------------------------------------------------------------
+
+      This subdirectory of UNIX contains IRIX specific programs that are
+    either exclusively mips-based, or include SGI dependent system calls
+    that do not exist on other Operating Systems.  Currently 3 programs
+    live here:
+
+                                 CONTENTS:
+
+      freevmem:  shows system's free & total physical memory (via SYSMP(2)),
+                 and the total free swap space (via SYSMIPS(2)).
+
+      gettrim:   enables user to get or send the IRIX clock timetrim value.
+
+      sproc:     shows how to SPROC(2) a "share group" process.
+
+
+
+                                 DETAILS:
+
+ * freevmem:  Displays a snapshot of the system's free and total physical 
+              (main) memory by calling SYSMP(2).  Also displays total and 
+              free swap space by calling SYSMIPS(2).  All values printed 
+              are in bytes.
+
+ * gettrim:   Allows a user to get or send the IRIX clock timetrim value.
+              This program will NOT work correctly for IRIX releases 
+              *OLDER* than or previous to 3.3.  timetrim is a trimming 
+              value equivalent to the number of nanoseconds per second to 
+              trim on the IRIX software clock.  The timetrim value is a 
+              signed number--a negative value trims down the software 
+              clock, and a positive value trims up the software clock.  To
+              tune the software clock, you can pass a value to gettrim.  
+              For example:
+
+                        gettrim -n -480000
+
+              will trim 480,000 nanoseconds per second off the software 
+              clock.  One must be superuser to set a new timetrim value 
+              when using the gettrim program.  See TIMED(1M) for additional
+              information.
+
+ * sproc:     Demonstrates how to SPROC(2) a "share group" process.  The 
+              program forks a "share group" process.  The share group 
+              process shows that global variables are shared, as well as 
+              file descriptors, but automatic varibles are not.  The child 
+              process then opens a file and writes a message.  After the 
+              message is written the child unblocks the parent and goes to
+              sleep.  The parent then examines the contents of the varibles
+              and reads the message from the opened file. The parent then 
+              sleeps until the child sends a signal.

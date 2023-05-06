@@ -1,0 +1,10 @@
+!
+! Getpixel: Simply put up a window (a Core widget)
+!
+
+!
+! The Core widget doesn't specify a geometry
+!
+
+*geometry:   =100x100
+

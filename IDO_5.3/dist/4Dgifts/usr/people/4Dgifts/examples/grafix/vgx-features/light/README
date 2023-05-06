@@ -1,0 +1,40 @@
+
+
+		README for new lighting features on VGX
+
+
+   The VGX supports three new lighting features of interest. They
+   are currently not available on other platforms. These features
+   include spotlights, lighting for both sides of the materail, and
+   a squared factor for calulating light attenuation.
+
+   "attenuation" is a user interactive program for seeing the relation-
+   ship between light, position, constant attenuation, linear attenuation, 
+   and sqared attenuation. As the light bounces up and down, the user
+   may alter the attenuation parameters through the use of the number
+   pad. Keys 1 and 2 alter constant attenuation, 4 and 5 change linear
+   attenuation, and finally 7 and 8 may be used to see the effects of
+   the squared term. The UPARROWKEY and DOWNARROWKEY will change the
+   number of polygons used to draw the plate. All variable parameters
+   are displayed in the graphics window beneath the plate. "attenuation"
+   is an enhancement of ~4Dgifts/examples/light/localatten.c
+
+   "spotlight" is another user interactive program to investigate
+   spotlights with. Spotlights should be used in conjunction with number
+   of polygons in an object along with attenuation factors to achieve
+   the desired results. "spotlight" alters attenuation factors just
+   as in "attenuation" with the added ability to change the spot light
+   direction through the use of the "x", "y", and "z" keys in conjunction
+   with the UPARROWKEY and DOWNARROWKEY. Hold down either up or down 
+   arrow key and then press one of the direction keys. The user may
+   also alter the cone angle as well as fall off rate for the light
+   similarly by pressing the "c" key for cone angle or "f" key for fall
+   off rate.
+
+   "twoside" is a direct variation off cyclinder1.c found in ~4Dgifts/
+   examples/light. It has been enhanced to include lighting of both
+   front facing and back facing sides. Starting the program will demon-
+   strate two-sided lighting with a different materials  for the outside
+   of the cylinder and the inside of the cylinder. Pressing the LEFTMOUSE
+   button will show the default back facing material, which is the
+   currently bound front facing material.

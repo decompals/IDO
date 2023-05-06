@@ -1,0 +1,10 @@
+
+  	      -----------------------------------------------
+   	      README for ~4Dgifts/examples/X11/toolkits/motif
+              -----------------------------------------------
+
+	The Motif widget set is a library package layered on top
+	of the Intrinsics and Xlib.  This layer extends the basic
+	abstractions provided by X and provides the next layer of
+	functionality primarily by supplying a cohesive set of 
+	sample widgets......

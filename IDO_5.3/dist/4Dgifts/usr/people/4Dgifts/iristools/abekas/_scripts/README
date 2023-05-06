@@ -1,0 +1,20 @@
+
+          -----------------------------------------------------------
+          README for ~4Dgifts/iristools/abekas/_scripts video scripts
+          -----------------------------------------------------------
+
+
+                              Abekas Scripts
+
+                           Abekas Video Systems
+
+
+     Here are two files are shell scripts for grabbing and putting field(s) 
+     or frame(s) from and to the Abekas A60 disk recorder via ethernet.
+
+      grab -
+	  This file is the script for grabbing from the A60 via ethernet.
+
+      put -
+	  This file is the script for putting to the A60 via ethernet.
+

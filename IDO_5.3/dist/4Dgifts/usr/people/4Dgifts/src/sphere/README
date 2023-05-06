@@ -1,0 +1,34 @@
+
+
+************************* README for Sphere Directory **************************
+
+
+    The sphere library provides a sphere rendering 
+	    utility with internal data management
+	    that provides an immediate-mode-style interface, while
+	    maintainig an internal cache of sphere data.
+    The compiled library, libsphere.a, is in /usr/lib and the
+    header file, sphere.h, is in /usr/include.
+
+    In this directory we have placed the source code for the molecule demo,
+    mview.  This is to give a realistic example of using the different
+    functions of the sphere library.
+
+	    source files: mview.c mview.h menu.c 
+			  light.c light.h fileio.c filio.h
+
+	    to run: mview -n molecule
+		molecule = file where the
+			file.bonds is in the directory /usr/demos/data/atom
+			or in the current directory.
+		-I dir
+			specifies an additional directory
+			to have molecule files.
+
+		-?
+			prints a usage statement
+
+	    m_mview is a buttonfly file of command lines so you can
+		also run /usr/demos/buttonfly m_mview
+
+

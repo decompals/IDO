@@ -1,0 +1,31 @@
+#
+# X Resource Application Defaults File for
+# Mfp (MIDI File Player)
+#
+
+*sgiMode:			True
+*useSchemes:  			all
+*scheme: 			Base
+*useEnhancedFSB:    		True
+
+*mfp*form.horizontalSpacing:	8
+*mfp*form.verticalSpacing:	4
+
+*mfp*filenameLabel.labelString:	File: 
+*mfp*play.labelString:		Play
+*mfp*stop.labelString:		Stop
+*mfp*songPosSlider.titleString:	% Song Position
+*mfp*speedSlider.titleString:	% Speed
+*mfp*speedSlider.scaleWidth:	206
+
+*mfp*rewind.arrowDirection:	ARROW_LEFT
+*mfp*forward.arrowDirection:	ARROW_RIGHT
+
+# text box values
+*mfp*textBox.rows:		3
+*mfp*textBox.columns:		40
+*mfp*textBox.editable: 		False
+*mfp*textBox.editMode: 		MULTI_LINE_EDIT
+*mfp*textBox.wordWrap: 		True
+*mfp*textBox.scrollHorizontal: 	False
+*mfp*textBox.scrollLeftSide: 	True

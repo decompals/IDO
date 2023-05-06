@@ -1,0 +1,25 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.5 $ $Date: 1993/11/09 02:35:27 $
+
+       DEPXMLIB = $(ROOT)/usr/lib/libXm.so
+          XMLIB = -L$(ROOT)/usr/lib -lXm
+
+       INCLUDES = -I.
+        DEPLIBS = SgmClientDepLibs MrmClientDepLibs
+LOCAL_LIBRARIES = SgmClientLibs MrmClientLibs -lgl -lm
+          SRCS1 = colorc.c
+          OBJS1 = colorc.o
+       PROGRAMS = colorc
+          FILES = Imakefile  colorc.c colorc.uil
+
+NormalLibraryObjectRule()
+/* DEBUG MComplexProgramTarget_1(main,$(LOCAL_LIBRARIES),NullParameter) */
+MSimpleUilTarget(colorc)
+
+InstallMultiple($(FILES), $(MDEMOSRCDIR))

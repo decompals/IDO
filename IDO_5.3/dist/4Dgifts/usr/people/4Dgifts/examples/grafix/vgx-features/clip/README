@@ -1,0 +1,14 @@
+
+
+
+	     README Arbitrary clipping planes examples for VGX
+
+
+    This directory contains an example of user defined clipping planes. 
+    This feature is currently available on VGX systems only. Note 
+    the difference in approach to static clipping planes as opposed
+    to dynamic clipping planes. The position of the plane is determined
+    at definition time rather than at bind time. Code that requires
+    a moving plane must redefine the plane within the loop that is
+    manipulation the transformation stack.
+

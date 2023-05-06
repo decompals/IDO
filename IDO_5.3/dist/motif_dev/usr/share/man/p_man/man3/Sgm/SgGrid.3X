@@ -1,0 +1,513 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1993 by Slicon Graphics Corporation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **
+.TH SgGrid 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\fBSgGrid\fP\(emThe SgGrid widget class
+.iX "SgGrid"
+.iX "widget class" "SgGrid"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sgm/Grid.h>
+.iE
+.sE
+.SH DESCRIPTION
+SgGrid is a container widget with no input semantics of its own. It
+arranges its children in a two dimensional grid of arbitrary size. Each row
+and column of this grid may be separately designated as having a fixed
+size or as having some degree of stretchability.  In addition, each child
+may be resizable in either or both directions, or forced to a fixed size.
+If a child is a fixed size, and smaller than the cell that contains it, the
+childs position within the cell is determined by an XmNgravity resource.
+.PP
+.P
+Following are some important considerations in using an SgGrid widget:
+.IP
+.sp
+The position of each child must be set using the XmNrow and XmNcolumn
+resources. If no position is specified, the child will be placed in an
+unspecified free cell.
+.IP
+.sp
+The resizability of each row and column must be set using convenience
+functions SgGridSetRowResize and SgGridSetColumnResize. The default is for
+all rows and columns to be resizable. All widgets are resized according to
+their relative natural size.
+.IP
+.sp
+Unmapping a child has no effect on the SgGrid except that the child is not
+mapped.
+.sp
+.SH EXAMPLES
+The following example creates a grid of four buttons that all size (and
+resize) equally to fill one quarter of their parent.
+.sp
+.Ex
+createGrid(Widget parent)
+{
+   int n;
+   Arg args[10];
+   Widget grid, child1, child2, child3, child4;
+
+   n = 0;
+   XtSetArg(args[n], XmNnumRows,    2); n++;
+   XtSetArg(args[n], XmNnumColumns, 2); n++;
+   grid = SgCreateGrid( parent, "grid", args, n );
+
+   child1 = XtVaCreateManagedWidget( "child1", 
+                             xmPushButtonWidgetClass, grid,
+                             XmNrow,    0,
+                             XmNcolumn, 0,
+                             NULL );
+   child2 = XtVaCreateManagedWidget( "child2",
+                             xmPushButtonWidgetClass, grid,
+                             XmNrow,    0,
+                             XmNcolumn, 1,
+                             NULL );
+   child3 = XtVaCreateManagedWidget( "child3", 
+                             xmPushButtonWidgetClass, grid,
+                             XmNrow,    1,
+                             XmNcolumn, 0,
+                             NULL );
+   child4 = XtVaCreateManagedWidget( "child4", 
+                             xmPushButtonWidgetClass, grid,
+                             XmNrow,    1,
+                             XmNcolumn, 1,
+                             NULL );
+   XtManageChild(grid);
+}
+
+.Ee
+.P
+The following example creates four buttons. The top row has a fixed
+vertical size, while the bottom row is resizable. The left column has a
+fixed size, but the right column can be resized. The button in the lower
+right can be resized, but the others cannot. The button in the lower left
+cell, which can be resized vertically, floats in the middle of its cell.
+The button in the upper right stays to the left of its cell.
+.sp
+.Ex
+createGrid(Widget parent)
+{
+   int n;
+   Arg args[10];
+   Widget grid, chidl1, child2, child3, child4;
+
+   n = 0;
+   XtSetArg(args[n], XmNnumRows,    2); n++;
+   XtSetArg(args[n], XmNnumColumns, 2); n++;
+   grid = SgCreateGrid( parent, "grid", args, n );
+
+   SgGridSetColumnResizability(grid, 0, 0);
+   SgGridSetRowResizability(grid, 0, 0);
+
+
+   child1 = XtVaCreateManagedWidget( "child1", 
+                             xmPushButtonWidgetClass, grid,
+                             XmNrow,    0,
+                             XmNcolumn, 0,
+                             NULL );
+   child2 = XtVaCreateManagedWidget( "child2", 
+                             xmPushButtonWidgetClass, grid,
+                             XmNrow,    0,
+                             XmNcolumn, 1,
+                             XmNresizeHorizontal, FALSE,
+                             XmNgravity,          WestGravity,
+                             NULL );
+   child3 = XtVaCreateManagedWidget( "child3", 
+                             xmPushButtonWidgetClass, grid,
+                             XmNrow,    1,
+                             XmNcolumn, 0,
+                             XmNresizeVertical, FALSE,
+                             XmNgravity,        CenterGravity,
+                             NULL );
+   child4 = XtVaCreateManagedWidget( "child4", 
+                             xmPushButtonWidgetClass, grid,
+                             XmNrow,    1,
+                             XmNcolumn, 1,
+                             NULL );
+   XtManageChild(grid);
+}
+
+.Ee
+.P
+This creates an initial layout like the following. The "*"'s are the
+boundaries of each cell in the grid, while the "-"'s are the sides of the
+button widgets.
+.Ex
+********************************
+.br
+* -------------*---------------*
+.br
+* |           |*|             |*
+.br
+* | Button1   |*|   Button2   |*
+.br
+* |           |*|             |*
+.br
+* |-----------|*--------------|*
+.br
+* ******************************
+.br
+* |-----------|*--------------|*
+.br
+* |           |*|             |*
+.br
+* |  Button3  |*|  Button4    |*
+.br
+* |           |*|             |*
+.br
+* -------------*---------------*
+.br
+********************************
+.br
+.Ee
+.P
+When resized to be larger, this window will appear as follows:
+.Ex
+.br
+******************************************
+.br
+*--------------*---------------          *
+.br
+*|            |*|             |          *
+.br
+*|   Button1  |*|   Button2   |          *
+.br
+*|            |*|             |          *
+.br
+*|------------|*--------------|          *
+.br
+******************************************
+.br
+*             |*------------------------|*
+.br
+*             |*|                       |*
+.br
+*             |*|                       |*
+.br
+*             |*|                       |*
+.br
+*|------------|*|                       |*
+.br
+*|            |*|                       |*
+.br
+*|  Button3   |*|    Button4            |*
+.br
+*|            |*|                       |*
+.br
+*|------------|*|                       |*
+.br
+*             |*|                       |*
+.br
+*             |*|                       |*
+.br
+*             |*|                       |*
+.br
+*              *-------------------------*
+.br
+******************************************
+.br
+.Ee
+.SS "Classes"
+SgGrid inherits behavior and resources from \fBCore\fP,
+\fBComposite\fP, \fBConstraint\fP,
+\fBXmManager\fP, and \fBXmBulletinBoard\fP classes.
+.PP
+The class pointer is \fBsgGridWidgetClass\fP.
+.PP
+The class name is \fBSgGrid\fP.
+.SS "New Resources"
+The following table defines a set of widget resources used by the
+programmer to specify data.  The programmer can also set the resource
+values for the inherited classes to set attributes for this widget.  To
+reference a resource by name or by class in a .Xdefaults file, remove the
+\fBXmN\fP or \fBXmC\fP prefix and use the remaining letters.  To specify
+one of the defined values for a resource in a .Xdefaults file, remove the
+\fBXm\fP prefix and use the remaining letters (in
+.ne 10
+either lowercase or uppercase, but include any underscores between words).
+The codes in the access column indicate if the given resource can be set at
+creation time (C), set by using \fBXtSetValues\fP (S), retrieved by using
+\fBXtGetValues\fP (G), or is not applicable (N/A).
+.P
+.TS
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+SgGrid Resource Set
+Name	Class	Type	Default	Access
+_
+XmNnumRows	XmCNumRows	int	1	CG
+XmNnumColumns	XmCNumColumns	int	1	CG
+XmNshowGrid	XmCShowGrid	Boolean	FALSE	CSG
+XmNautoLayout	XmCAutoLayout	Boolean	TRUE	CSG
+XmNdefaultSpacing	XmCDefaultSpacing	Dimension	4	CSG
+.TE
+.SS "\fBXmNnumRows\fP" 
+.IP
+Specifies the number of rows in the grid. This resource must be specified
+at widget creation time. The default is 1.
+
+.SS "\fBXmNnumColumns\fP" 
+.IP
+Specifies the number of columns in the grid. This resource must be
+specified at widget creation time. The default is 1.
+
+.SS "\fBXmNshowGrid\fP" 
+.IP
+When TRUE, the SgGrid widget visibly displays the boundaries of each cell
+in the grid. This can be useful for debugging resize specifications. The
+default is FALSE.
+
+.SS "\fBXmNautoLayout\fP" 
+.IP
+When TRUE (the default), all rows or columns that have a non-zero
+resizability are sized according to the desired natural size of the widgets
+in that row or column. If this resource is FALSE, all widgets in resizable
+rows or columns are sized according to a relative resizability factor (see
+SgGridSetRowResizability and SgGridSetColumnResizability, below). By
+default, this factor is "1" for all widgets, leading to an equal sizing
+strategy.
+
+.SS "\fBXmNdefaultLayout\fP" 
+.IP
+Specifies a default spacing between rows and columns. This value can be
+overriden on a per row/column basis using SgGridSetColumnMargin or
+SgGridSetRowMargin.
+.P
+.wH .in 0
+.TS
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+SgGrid Constraint Resource Set
+Name	Class	Type	Default	Access
+_
+XmNgravity	XmCGravity	int	NorthWestGravity	CSG
+XmNresizeVertical	XmCResizeVertical	Boolean	TRUE	CSG
+XmNresizeHorizontal	XmCResizeHorizontal	Boolean	TRUE	CSG
+XmNrow	XmCRow	int	dynamic	CSG
+XmNcolumn	XmCColumn	int	dynamic	CSG
+.TE
+.wH .in
+
+.SS "\fBXmNgravity\fP" 
+.IP
+If a child widget is not resizable, and is smaller than the cell that
+contains it, the child's gravity controls its position within the cell.
+Gravity may be any of the gravity values defined by Xlib except
+StaticGravity and ForgetGravity.  The default is NorthWestGravity; Note
+that gravity has no effect is both verticalResize and horizontalResize are
+TRUE.
+
+.SS "\fBXmNresizeVertica\fP" 
+.IP
+If TRUE, the child will be resized to fill the cell containing it in the
+vertical direction. The default is TRUE;
+
+.SS "\fBXmNresizeHorizontal\*0" 
+.IP
+If TRUE, the child will be resized to fill the cell containing it in the
+horizontal direction. The default is TRUE;
+
+.SS "\fBXmNrow\fP"  
+.IP
+Determines the row of the grid in which the child is placed. If no row is
+specified, the child will be placed in a cell randomly selected from those
+not currently occupied.
+
+.SS "\fBXmNcolumn\fP"  
+.IP
+Determines the column of the grid in which the child is placed. If no row
+is specified, the child will be placed in a cell randomly selected from
+those not currently occupied.
+
+.SH "Grid Functions"
+.sp
+
+.SS "\fBSgGridSetRowResizability(widget, row, factor )\fP"
+.br
+         \fBWidget widget ;\fP
+.br
+         \fBint row;\fP
+.br
+         \fBint factor;\fP
+.br
+.sp
+Set the degree to which the specified row can be resized. The default is a
+value of 1 for all rows, which means that all rows will be equally
+resizable, if the value of XmNautoLayout is false. Setting this value to 0
+establishes the specified row as not resizable, regardless of the setting
+of XmNautoLayout. Other values are taken relative to all other rows. For
+example, if an SgGrid widget has three rows, whose resize factors are set
+to 100, 100, and 200, the first and second rows will occupy 1/4 (computed
+as: 100/(100+100+200)) of the space, while the the third row will occupy
+one half of the available space.
+.sp
+
+.SS "\fBSgGridSetColumnResizability( widget, col, factor )\fP"
+.br
+         \fBWidget widget ;\fP
+.br
+         \fBint col;\fP
+.br
+         \fBint factor;\fP
+.br
+.sp
+This function sets the resizability of individual columns, and works in a
+similar fashion as SgGridSetRowResizability.
+.sp
+
+.SS "\fBSgGridSetRowMargin(widget, row, margin )\fP"
+.br
+         \fBWidget widget ;\fP
+.br
+         \fBint row;\fP
+.br
+         \fBDimension  margin;\fP
+.br
+.sp
+Set the margin height of the specified row. Each row and column can have a
+margin between it's edge and the widgets the row or column contains. The
+margin is added to both sides of each row or column, so adding a 1 pixel
+marign grows the relevant dimension of the affected row or column by 2
+pixels.
+.sp
+
+.SS  "\fBSgGridSetColumnMargin( widget, col, margin )\fP"
+.IP
+.br
+         \fBWidget widget ;\fP
+.br
+         \fBint col;\fP
+.br
+         \fBDimension  margin;\fP
+.br
+.sp
+Set the margin width of the specified column.
+.sp
+.SH "Inherited Resources"
+SgGrid inherits behavior and resources from the following superclasses.
+For a complete description of each resource, refer to the man page for that
+superclass.
+.P
+.TS
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmBulletinBoard Resource Set
+Name	Class	Type	Default	Access
+_
+XmNallowOverlap	XmCAllowOverlap	Boolean	True	CSG
+XmNautoUnmanage	XmCAutoUnmanage	Boolean	True	CG
+XmNbuttonFontList	XmCButtonFontList	XmFontList	dynamic	CSG
+XmNcancelButton	XmCWidget	Widget	NULL	SG
+XmNdefaultButton	XmCWidget	Widget	NULL	SG
+XmNdefaultPosition	XmCDefaultPosition	Boolean	True	CSG
+XmNdialogStyle	XmCDialogStyle	unsigned char	dynamic	CSG
+XmNdialogTitle	XmCDialogTitle	XmString	NULL	CSG
+XmNfocusCallback	XmCCallback	XtCallbackList	NULL	C
+XmNlabelFontList	XmCLabelFontList	XmFontList	dynamic	CSG
+XmNmapCallback	XmCCallback	XtCallbackList	NULL	C
+XmNmarginHeight	XmCMarginHeight	Dimension	0	CSG
+XmNmarginWidth	XmCMarginWidth	Dimension	0 	CSG
+XmNnoResize	XmCNoResize	Boolean	False	CSG
+.wH .tH
+XmNresizePolicy	XmCResizePolicy	unsigned char	XmRESIZE_ANY	CSG
+XmNshadowType	XmCShadowType	unsigned char	XmSHADOW_OUT	CSG
+XmNtextFontList	XmCTextFontList	XmFontList	dynamic	CSG
+XmNtextTranslations	XmCTranslations	XtTranslations	NULL	C
+XmNunmapCallback	XmCCallback	XtCallbackList	NULL	C
+.TE
+.P
+.TS
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmManager Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNinitialFocus	XmCInitialFocus	Widget	dynamic	CSG
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmTAB_GROUP	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	dynamic	CSG
+XmNstringDirection	XmCStringDirection	XmStringDirection	dynamic	CG
+XmNtopShadowColor	XmCBackgroundTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	True	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	Pointer	NULL	CSG
+.TE
+.P
+.TS
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Composite Resource Set
+Name	Class	Type	Default	Access
+_
+XmNchildren	XmCReadOnly	WidgetList	NULL	G
+XmNinsertPosition	XmCInsertPosition	XtOrderProc	NULL	CSG
+XmNnumChildren	XmCReadOnly	Cardinal	0	G
+.TE
+.P
+.wH .in 0
+.TS
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtAccelerators	dynamic	N/A
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderColor	XmCBorderColor	Pixel	XtDefaultForeground	CSG
+XmNborderPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNcolormap	XmCColormap	Colormap	dynamic	CG
+XmNdepth	XmCDepth	int	dynamic	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Screen *	dynamic	CG
+.wH .tH
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	dynamic	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.wH .in
+.SS "Translations"
+SgGrid inherits translations from XmBulletinBoard.
+.SH RELATED INFORMATION
+.na
+\fBComposite(3X)\fP, \fBConstraint(3X)\fP, \fBCore(3X)\fP,
+\fBXmBulletinBoard(3X)\fP,
+\fBSgCreateGrid\fP, \fBSgCreateGridDialog(3X)\fP, and
+\fBXmManager(3X)\fP.
+.ad

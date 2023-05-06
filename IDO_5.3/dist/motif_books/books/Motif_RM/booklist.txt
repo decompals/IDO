@@ -1,0 +1,1 @@
+<BOOK name="Motif_RM" edition="19941103" alias = "OSF/Motif Programmer's Reference (Open Sofware Foundation)" type = "generic" hide = "FALSE" version = "862-0006-002, 8/93" sort = "008830" srchres = "FALSE" srchtags = "" group = "OTHER" >

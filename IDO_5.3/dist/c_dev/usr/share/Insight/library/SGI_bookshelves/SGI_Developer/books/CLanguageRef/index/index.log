@@ -1,0 +1,8 @@
+<MKLOG name='./books/CLanguageRef/index' version='-1' date='Thu Nov  3 19:39:17 1994' serial='-1' count='-1' user=''>
+
+MERGE vocab.dat :   1 files, Vocab size  4835 on                           .
+
+MERGE index.dat :   1 files, Vocab size  4835 on                           .
+
+DONE MAKING BOOK
+

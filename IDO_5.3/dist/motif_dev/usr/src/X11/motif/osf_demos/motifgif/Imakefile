@@ -1,0 +1,44 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992, 1993 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2.3
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.6 $ $Date: 1993/10/23 21:10:22 $
+
+       DEPLIBS1 = XmClientDepLibs
+       DEPLIBS2 = XmClientDepLibs
+LOCAL_LIBRARIES = XmClientLibs
+
+SRCS1 =	motifgif.c
+SRCS2 =	pict.c xgifload.c image.c
+
+OBJS1 = motifgif.o
+OBJS2 = pict.o xgifload.o image.o
+
+PROGRAMS = motifgif pict
+
+MComplexProgramTarget_1(motifgif,$(LOCAL_LIBRARIES),NullParameter)
+MComplexProgramTarget_2(pict,$(LOCAL_LIBRARIES),NullParameter)
+#ifdef SGIArchitecture
+FILES = Imakefile README *.c *.h challenger.gif.enc toucan.gif.enc
+GIF_FILES = challenger.gif toucan.gif
+UUDECODE = uudecode
+install all::	$(FILES) $(GIF_FILES)
+clean::
+	$(RM) $(GIF_FILES)
+InstallMultiple($(FILES), MDEMOSRCDIR)
+
+/*
+ * This next rule is for a bug in smake which doesn't recognize perfectly
+ * good single suffix rules (e.g. the ".enc" rule).
+ *
+ * Remove this rule if-and-when smake is fixed.
+ */
+challenger.gif toucan.gif: $$@.enc
+	@echo "ERROR: This rule is to cover up an smake bug.  Remove when smake fixed"
+	-$(RM) $@
+	$(UUDECODE) $@.enc
+
+#endif /* SGIArchitecture */

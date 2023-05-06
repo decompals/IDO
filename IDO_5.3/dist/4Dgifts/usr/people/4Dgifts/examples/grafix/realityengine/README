@@ -1,0 +1,45 @@
+
+
+            ----------------------------------------------
+            Explanation of ~4Dgifts/examples/realityengine
+            ----------------------------------------------
+
+
+    The programs in this directory illustrate a few of the new features
+    now available with the Reality Engine. Features shown include
+    stereo on a "per window basis", 3Dtextures, detail textrues,
+    sharpening textures, and projected textures.
+
+    "projtex" demonstrates the Reality Engine's capability of
+     processing projective (homogenous) texture coordinates.
+     Shown is the simulation of a spotlight and a pinhole
+     slide projector, represented as 2D texture maps, illuminating
+     arbitrary surfaces in a texture mapped scene. The user
+     may select between projecting the spotlight or the slide
+     texture maps. In addition, the user may elect to draw
+     the geometry of the "virtual texture camera" to further
+     illustrate the concepts.
+
+    "3Danim" defines a 3D texture which is a sequence of images.
+    The "animation" is then performed by rendering a polygon 
+    whose "r" coordinate varies through the texture cube.
+
+    "detail" allows the user to see the relationship between
+    the various parameters involved in a detail texture. The
+    M,N values, the spline values and the magnification filters
+    may all be changed by clicking on the values on the screen.
+
+    "sharp" shows how the various magnification types affect the
+    final "sharpened" image. The user may choose to sharpen just
+    the color components of the texture, the alpha values, or both.
+    The texture toggles between a tree image and a black and white 
+    grid.
+
+    "stereo" shows how to render stereo images on a per window 
+    basis. To perform this, the Video Output Format must be
+    changed to 960x680_108s. To do this, use the setmon command.
+    It will be necessary to stop and restart the X server. Please
+    see the man page for setmon.
+
+    "simp_projtex" and "simp_shadows" are simpler examples
+    of the "projtex" and "fastshadows/shad" demos.

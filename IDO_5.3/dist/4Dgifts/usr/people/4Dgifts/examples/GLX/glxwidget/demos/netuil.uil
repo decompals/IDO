@@ -1,0 +1,119 @@
+! The uil file that goes with the netuil program.  It uses a user
+! defined widget for the GlxMDraw widget.  The actual widget
+! definitions are in glxuil.uil
+
+
+module netuil
+    version = 'v1.1'
+    names = case_sensitive
+
+include file 'glxuil.uil' ;
+
+identifier
+    glx_config;
+
+procedure
+    quit();
+    set_inc();
+    draw_scene();
+    do_resize();
+    init_window();
+
+value
+    k_form_width	: 700 ;
+    k_form_height	: 700 ;
+    k_default_offset	: 30 ;
+    k_small_offset	: 10 ;
+
+object
+    form : XmForm {
+	arguments {
+	    XmNwidth = k_form_width ;
+	    XmNheight = k_form_height ;
+	} ;
+	controls {
+	    XmPushButton quit_button;
+	    XmScrollBar slider;
+	    XmFrame frame;
+	} ;
+    } ;
+
+object
+    quit_button : XmPushButton{
+	arguments {
+	    XmNlabelString = 'Quit';
+	    XmNtopAttachment = XmATTACH_FORM;
+	    XmNleftAttachment = XmATTACH_FORM;
+	    XmNtopOffset = k_small_offset;
+	    XmNleftOffset = k_default_offset;
+	} ;
+	callbacks {
+	    XmNactivateCallback = procedure quit();
+	};
+
+    } ;
+
+object
+    slider: XmScrollBar {
+	arguments {
+	    XmNwidth = 20;
+	    XmNbottomAttachment = XmATTACH_FORM;
+	    XmNtopAttachment = XmATTACH_WIDGET;
+	    XmNrightAttachment = XmATTACH_FORM;
+	    XmNrightOffset = k_default_offset;
+	    XmNtopOffset = k_small_offset;
+	    XmNtopWidget = quit_button;
+	    XmNbottomOffset = k_small_offset;
+	    XmNminimum = 0;
+	    XmNmaximum = 500;
+	    XmNvalue = 60;
+	    XmNsliderSize = 25;
+	    XmNincrement = 10;
+	    XmNpageIncrement = 50;
+	} ;
+	callbacks {
+	    XmNdecrementCallback = procedure set_inc();
+	    XmNincrementCallback = procedure set_inc();
+	    XmNpageDecrementCallback = procedure set_inc();
+	    XmNpageIncrementCallback = procedure set_inc();
+	    XmNdragCallback = procedure set_inc();
+	};
+    } ;
+
+object
+    frame : XmFrame {
+	arguments {
+	    XmNbottomAttachment = XmATTACH_FORM;
+	    XmNtopAttachment = XmATTACH_WIDGET;
+	    XmNleftAttachment = XmATTACH_FORM;
+	    XmNleftOffset = k_default_offset;
+	    XmNtopOffset = k_small_offset;
+	    XmNtopWidget = quit_button;
+	    XmNbottomOffset = k_small_offset;
+	    XmNrightAttachment = XmATTACH_WIDGET;
+	    XmNrightOffset = k_default_offset;
+	    XmNrightWidget = slider;
+	    XmNshadowType = XmSHADOW_IN;
+	} ;
+	controls {
+	    user_defined glw ;
+	} ;
+    } ;
+
+object
+    glw : user_defined procedure GlxCreateMDraw {
+	arguments {
+	    GlxNglxConfig = glx_config;
+	} ;
+	callbacks {
+	    GlxNexposeCallback = procedure draw_scene();
+	    GlxNresizeCallback = procedure do_resize();
+	    GlxNginitCallback = procedure init_window();
+	};
+    };
+
+end module;
+
+
+
+

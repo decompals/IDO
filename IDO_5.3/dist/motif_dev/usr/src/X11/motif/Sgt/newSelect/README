@@ -1,0 +1,160 @@
+
+INTRODUCTION
+
+The enhanced selection mechanism supports automatic data
+conversion in selection (Cut & Paste) operations.  The basic scenario
+is: two applications, each operating with a different data format,
+would like to transfer data via XtSelection.  If App A understands
+data format A, and App B only understands data format B, they will not
+succeed in exchanging data via normal XtSelection.  However, if a
+translator exists from format A to format B or from format B to format
+A, enhanced selection can automatically apply the translator to
+convert the data into the required format.
+
+The enhanced Selection library (libSgt) can call one or more
+converters on either the source or destination side of the selection.
+The API for using the enhanced selection library is the same as Xt,
+with additional calls for registring converters.  Since the API is
+equivalent to the Xt API, it works with existing unmodified Xt-based
+selection apps.  Currently, converters must generally be registered on
+a per-app basis.  Eventually, the library will have a standard set of
+converters pre-registered for all apps.
+
+
+THE REQUIREMENTS
+
+The requirements for using the enhanced selection are:
+	* Xt-based selection application, which is ICCM compliant.  
+	  For example, see the demo cSelect.c.  Other examples include
+	  X-clients such as xmag and xclipboard.  For references on
+	  selection, see:
+	* Link with libSgt, by including -lSgt BEFORE -lXt on the the link line.
+	* Also the application resource
+	  SgNenhanceSelection must be set to true if converters are to be
+	  invoked.  If SgNenhanceSelection is false, the normal Xt Selection
+	  mechanism will apply.
+
+For more information on XtSelection see:
+	* Man pages for XtOwnSelection, XtGetSelectionValue
+	* O'Reilly Vol 4, X Toolkit Intrinsics, Chap 11.
+	* Young, X Window System, Programming and Applications with Xt
+		Chap 11.
+	* Assente & Swick, The X toolkit.
+
+
+THE ENHANCEMENTS
+
+To do automatic conversion of data types, you must provide a
+converter, and register the converter.  The converter may be a
+function in the application or it may be a separate program which
+reads data from STDIN and (after some conversion) writes the data to
+STDOUT. 
+
+The conversion will take place in either the source or the
+destination.  It is likely that the source and destination are not in
+the same process, so data should be prepared in a process-independent
+manner. I.e. a flat data structure without pointers/references.
+
+
+Registering a converter is done with the functions in SgtSelect.h:
+
+--------------------------  SgtSelect.h --------------------------------------
+  
+typedef void (*SgtRegisterDsoProc)( Display * );   /* display */
+  
+typedef Boolean (*SgtTypeConverter)(Display  *,    /* display */
+				    XrmValue *,    /* args   */
+				    Cardinal *,    /* num args */
+				    XrmValue *,    /* from */
+				    XrmValue *);   /* to */
+  
+  
+/* Modeled after XtAppAddConverter and XtSetTypeConverter */
+  void 
+    SgtAddConverterFunc(Display            * d,
+			String             from_type, 
+			String             to_type,
+			SgtTypeConverter   converter,
+			XtConvertArgList   convert_args,  /* currently not used */
+			Cardinal           num_args);     /* currently not used */
+  
+  
+/* 
+ * SgAddConverterProg
+ *
+ * Register new converter program.
+ * A routine unique to the Sg selection API, not based an existing Xt function.
+ */ 
+  void 
+    SgtAddConverterProg(Display * d,
+			String  from_type, 
+			String  to_type,
+			char    **argv,
+			String  converter_prog );
+  
+  
+  
+/* 
+ * SgtAddConverterDso
+ *
+ * Register new converter Dso.
+ * A routine unique to the Sg selection API, not based an existing Xt function.
+ */ 
+  void 
+    SgAddConverterDso(Display * d,
+		      String  dso_name );
+  
+
+
+
+A Converter function must match the SgtTypeConverter prototype.  It is
+then registered by calling SgtAddConverterFunc( ).   The source and
+destination type of the data is provided when registering a function.
+Currently, the argument lists of the converter functions are not used.
+
+Registering a converter program is similar.  For example:
+
+    SgtAddConverterProg(XtDisplay( someWidget ),
+			"SourceType"
+			"DestType"
+			NULL,
+			"/bin/cat" );
+
+A set of arguments can be provided which the converter will be called
+with whenever it is invoked.  For example, you might provide "-s" to
+"/bin/cat".
+
+
+Building a registering a DSO containing one or more converter
+functions is not too complex:
+ 1. Create a DSO containing the converter functions which match the
+SgtTypeConverter prototype.
+
+ 2. Add a function which registers the converter functions in the DSO.
+This function will call SgAddConverterFunc for each converter in the
+DSO.  This function should be called registerInitProc, which is in SgtSelect.h:
+#define REGISTER_DSO_INIT_PROC "registerInitProc"
+
+ 3. Use "C" Linkage for the registration function, so its name is not
+mangled by C++.
+
+ 4. Create the DSO by using ld -shared -all, with whatever other
+options are required.
+
+ 5. Register the DSO by calling SgAddConverterDso();
+
+
+
+
+THE CSELECT DEMO PROGRAM
+
+The demo in this directory demonstrates simple use of the conversion
+facilities.  By starting up two separate cSelect processes, one may
+cut and paste between the cSelect windows.  Setting the A or B button
+chooses the type of data to export.  A converter from type A to B is
+registered, so one should be able to Cut type A in one instance of
+cSelect and Paste to type B in another.  To invoke the demo with
+conversion use:
+
+cSelect -xrm "*enhanceSelection: true"
+

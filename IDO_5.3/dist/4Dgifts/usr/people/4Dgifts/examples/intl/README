@@ -1,0 +1,42 @@
+
+   -----------------------------------------------------------------------
+   README for ~4Dgifts/examples/intl source code programming examples in C 
+   -----------------------------------------------------------------------
+
+
+       These files provide an example of displaying non-English language
+   text using the new GL commands deflfont, lcharstr and lstrwidth.
+   They are installed as part of the full gifts package.  
+
+       The files consist of:
+
+		jisraster.c  jistools.c   pcftogl.c	hpcf.h
+
+
+  -->  jisraster.c       A program adapted from
+			 4Dgifts/examples/glpg/ch03/rasterchars2.c,
+			 except this one displays labels in Japanese
+			 Kanji characters.
+
+  -->  jistools.c        A tool for displaying a string encoded in
+			 Japanese Industrial Standard (JIS) encoding.
+			 This is not a separate executable, only a
+			 support module for jisraster.c.
+
+  -->  pcftogl.c         A tool for loading a .pcf file into
+			 structures which the GL can understand.
+			 This is not a separate executable, only a
+			 support module for jisraster.c.
+
+  -->  hpcf.h		 Public interface and documentation
+			 for utilities in pcftogl.c.
+
+
+       In order to compile and run the 'jisraster' program, you must 
+   have the X development system (gl_x_dev.sw) installed as well as the 
+   X Asian fonts option (eoe2.sw.Xasianfonts), and the basic X fonts 
+   (eoe2.sw.Xfonts).
+
+       If the only file in this directory is the 'README' file, and you 
+   wish to see this demo, you must install dev.sw.giftsfull.
+

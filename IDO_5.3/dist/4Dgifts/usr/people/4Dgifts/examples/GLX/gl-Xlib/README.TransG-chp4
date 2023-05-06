@@ -1,0 +1,444 @@
+
+  The following is an on-line, "ascii-viewable" version of chapter 4 of the
+  "IRIX 4D1-4.0 Transition Guide, Programming Environment".  It is included
+  here in the interest of making this information be as widely accessible
+  as possible since mixed model programming offers some of the greatest
+  challenges to programmers in the IRIX 4.0 software release.
+ 
+
+
+                                  Chapter 4
+
+                        GL Rendering in X Applications
+
+
+     Most X and Motif applications are limited to 2D graphics.  On the 
+     IRIS-4D Series workstation running IRIX release 4D1-4.0, 
+     applications that require 3D can use the GL to add one or more 3D 
+     rendering windows to an X application.  For example, you can 
+     manipulate a 3D GL image using a Motif control panel.  For the 
+     purposes of this document, use of one or more GL windows in an X 
+     application, mixing X and the GL, is called "mixed model 
+     programming."
+
+     This chapter and the one that follows provide a discussion of 
+     approaches to mixed model programming using X, Xt, Motif, and the 
+     GL.  This chapter details the capabilities, structure, and 
+     function calls behind the use of interactive X and GL windows in 
+     a single application, or mixed model program.  The material in 
+     this chapter is directly applicable to programming with Xlib and
+     the GL.  
+
+     Most mixed model developers will want to take advantage of the 
+     user interface tools provided by Xt with GL rendering.  To 
+     facilitate development, IRIX release 4D1-4.0 includes widgets 
+     designed to simplify mixed model programming with Xt and Motif. 
+     If you are interested in using Motif or another widget set with 
+     the GL widgets, the information in this chapter is useful, but 
+     many details are not directly applicable.
+
+
+                        4.1  Mixed Model Programming
+
+     Mixed model programming is the phrase used to describe a new 
+     style of  programs that have access to the Graphics Library.  It
+     is important to understand the difference between a mixed model 
+     program, and a multi-client program.  Under previous releases of 
+     IRIX it was possible for a single program to open some windows 
+     with the GL, and open some windows with X, and draw into each 
+     kind of window with the appropriate library.  This is one program 
+     that is both an X and a GL client, not a mixed model program.  
+     Multi-client programs do not offer interaction between X and GL 
+     windows.  In a mixed model program, you can, for example, control 
+     the activity in a GL window using an X window, such as a Motif 
+     control panel.  Under IRIX 4D1-4.0 you can develop both kinds of 
+     programs. 
+
+     You can find examples of many aspects of mixed model programming 
+     in the 4Dgifts area.  Examples are in the directories below 
+     /usr/people/4Dgifts/examples/GLX.
+
+     The routines documented here for mixed model programming are 
+     subject to change when the next version of the Graphics Library 
+     is released.  The changes will not have a major impact on your 
+     application, but you may have to rewrite a few lines of code.
+
+
+                4.1.1  Capabilities of a Mixed Model Program 
+
+     A mixed model program allows full access to the capabilities of X
+     by completely removing the GL from any feature governed by the X 
+     server.  X provides the programmer with direct control of all the 
+     areas governed by the X server.  This direct control also means 
+     increased responsibility.  The addition of direct control over X 
+     features makes mixed model programs more complex than pure GL 
+     programs.  This problem is addressed in X by the use of toolkits, 
+     and mixed model X toolkit widgets, discussed in the next section, 
+     help alleviate these difficulties for most mixed model programmers. 
+
+     Just like GL programs in IRIX 4D1-4.0, mixed model programs are 
+     network transparent.  That is, by simply setting the environment 
+     variable DISPLAY, the same binary can be made to image locally,
+     or remotely on a machine supporting the network transparent GL.  
+     Also like GL programs, be sure to call gflush to ensure transfer 
+     of buffered graphics data across the network.  You may need to 
+     put gflush at the end of all callbacks and actions.
+
+
+                 4.1.2  Structure of a Mixed Model Application 
+
+     Mixed model programming is a relatively simple way to add GL to 
+     an X program.  It is not good to add a little X to a GL program.
+     This is because a mixed model program is an X program, and must 
+     use X for all window system related services.  A program which 
+     is using the GL for its window services must first be converted 
+     to use X. 
+
+     X input events form a superset of the GL event set, and more 
+     information for each event is available.  Data required in 
+     multi-window, multi-screen, or multi-system applications is 
+     available.  To provide for smoother porting from system to system
+     as well as for easier integration of X and GL in a single 
+     application, you will benefit from separating event handling 
+     loops from the rest of your program. 
+
+     Under X, overlay drawing is managed by the window system.  In 
+     order to function in an environment where there might be X 
+     windows in the overlay planes, it is necessary for mixed model 
+     programs to explicitly create a window in the overlay planes for 
+     overlay drawing.  The GL call drawmode is illegal;  instead the 
+     mixed model program calls GLXwinset to select either the normal 
+     window or the overlay window as its drawing surface. 
+
+     Also new to mixed model programming is the elimination of the GL
+     call gconfig.  In mixed model programs, you must configure your 
+     windows *before* you can render in them, rather than configuring 
+     them on the fly as the traditional GL does. 
+
+     There are four new function calls in the GL related to mixed 
+     model programming.  Two are used to create a window and prepare
+     it for GL drawing, one to begin drawing in a window, and one to 
+     free the resources allocated for the GL window. 
+
+
+                           4.1.3  Initialization 
+
+     The GL can draw only into appropriate X windows.  The window must 
+     be created with the appropriate X visual.  There is no way 
+     through the X interface for a mixed model programmer to know 
+     which of the many visuals is appropriate for a GL window.  The 
+     routine GLXgetconfig provides the appropriate visual, as well as 
+     replacing the functionality lost through the elimination of the 
+     GL call, gconfig. 
+
+     GLXgetconfig takes an array describing the type of GL drawing 
+     that will take place.  It determines what is possible on the 
+     current hardware and returns a new structure with the exact 
+     description of what will be allowed, as well as the information 
+     needed to create an X window suitable for GL drawing. 
+
+     Once all the windows are created, the GL must be notified that 
+     these windows will be used for GL drawing.  The call GLXlink does
+     this. 
+
+
+                           4.1.3  X in GL Canvas
+
+     Once the GL has been bound to a window, X rendering in that 
+     window yields undefined results.  Subwindows may exist or be 
+     created, in which rendering works as usual.
+
+
+                             4.1.4  Drawing 
+
+     Once you select a window for GL rendering using GLXlink, you can 
+     direct GL drawing commands to the window with the call GLXwinset.
+     This call, like winset, indicates that all subsequent GL drawing 
+     commands will happen in the window passed to GLXwinset.  You can 
+     switch quickly between several windows by calling GLXwinset for 
+     each window. 
+
+
+                             4.1.5  Cleanup 
+
+     A small amount of memory is allocated when a window is selected
+     for GL rendering.  For completeness, the routine GLXunlink is
+     provided to allow the GL to clean up the resources connected with 
+     GL rendering for a window.  If you destroy a window with 
+     XDestroyWindow(3X11), you should call GLXunlink afterwards.
+     Typically this is called only if a program will not do any GL 
+     drawing for a long time. 
+
+
+                              4.1.6  Colormaps
+
+     For the programmer doing color index drawing, the most difficult
+     tasks will involve the management and installation of colormaps.  
+     It is almost certain that the GL program will not be using the 
+     default colormap of the X server, and so any mixed model program 
+     which intends to use color index windows will have to use 
+     XSetWMColormapWindows(3X11) to make sure its colormaps are 
+     installed.  Once this happens, there may be significant colormap 
+     flashing as the pointer is moved into the GL window unless great 
+     care is taken in constructing the colormap used in that window.  
+     One technique would be to copy the lower 256 entries from the GL 
+     colormap into the new colormap, thus reducing the likelihood of 
+     flashing. 
+
+
+                     4.2  Graphics Library Compatibility
+
+     Most GL code that follows the features documented in the Graphics
+     Library Programmer's Guide can be used in mixed model programs.  
+     In particular, the same drawing routines can be used in any GL 
+     program in IRIX 4D1-4.0.  
+
+     Some GL functions are not compatible with mixed model programming.
+     Areas managed by the X server are accessed in mixed model 
+     programs through X, not the GL.  The areas of colormaps (e.g., 
+     mapcolor, multimap), input (e.g., qdevice, getvaluator), device 
+     control (e.g., qcontrol, setvaluator), cursors (e.g., setcursor, 
+     defcursor), and window manipulation (e.g., winopen, wintitle) must 
+     be done through X in a mixed model program.  
+
+     In mixed model programs window depth and display mode are window 
+     attributes defined when the window is created, and cannot be 
+     changed.  This means that the GL calls gconfig and drawmode are 
+     also not supported in mixed model programs.  To change these 
+     attributes, you must create a new window.
+
+
+                          4.3  Mixed Model Calls
+
+     There are four new mixed model calls, GLXgetconfig, GLXlink, 
+     GLXwinset, and GLXunlink.  The brief descriptions in this section
+     are provided for background in reading this chapter.  For 
+     detailed information on these calls, see the GLXgetconfig(3G), 
+     GLXlink(3G), GLXwinset(3G), and GLXunlink(3G), manual pages.
+
+
+                           4.3.1  GLXgetconfig
+
+     GLXgetconfig describes the GL window's needs and returns what is 
+     available.  Window characteristics provided by GLXgetconfig 
+     include single or double buffering, RGB or color index mode, 
+     overlay/underlay/popup windows, stencil, Z-buffering, and 
+     accumulation buffering.  In mixed model programming, GLXgetconfig 
+     performs a function similar to winopen ;in the GL   
+
+
+                             4.3.2  GLXlink
+
+     Once you create a window, use GLXlink to communicate to the GL 
+     that you intend to render into it.  GLXlink is similar to gconfig
+     in the GL.
+
+
+                            4.3.3  GLXwinset
+
+     GLXwinset indicates which window subsequent GL drawing commands 
+     will affect.  GLXwinset also selects the appropriate drawmode for 
+     the window.  GLXwinset is similar to winset and drawmode in the
+     GL.
+
+
+                            4.3.4  GLXunlink
+
+     GLXunlink frees up the system resources allocated by GLXlink when 
+     the process exits.  If you call XDestroyWindow(3X11), you should 
+     call GLXunlink afterwards.  GLXunlink is similar to winclose in
+     the GL.
+
+
+/*                       4.4  Mixed Model Example
+ * mixexamp.c:
+ *
+ *   This section provides an example of a mixed model program that 
+ *   uses double buffered RGB and overlays (or popups if no overlays 
+ *   are present), based on Xlib.
+ *
+ *       To compile:    cc -o mixexamp mixexamp.c -lgl_s -lX11_s
+ *
+ */
+
+/* Include X headers files first */
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+#include <gl/glws.h>
+
+/* X Display */
+Display* D;
+
+/* To use for X screen */
+int S;
+
+struct {
+    short	vertex[2];
+    short	color[3];
+} stamp[4] = {
+	{ { 0, 0 }, { 255,   0,   0 } },
+	{ { 0, 1 }, {   0, 255,   0 } },
+	{ { 1, 1 }, {   0,   0, 255 } },
+	{ { 1, 0 }, { 255, 255,   0 } }
+};
+
+/* Declare the data structure for the GL rendering configuration needed */
+GLXconfig rgb_ov[] = {
+	{ GLX_NORMAL,	GLX_RGB,	True} ,
+	{ GLX_OVERLAY,	GLX_BUFSIZE,	2} ,
+	{ 0,		0,		0}
+};
+/* use this one if we find we're on a machine that does not have overlays */
+GLXconfig rgb_pup[] = {
+	{ GLX_NORMAL,	GLX_RGB,	True} ,
+	{ GLX_POPUP,	GLX_BUFSIZE,	2} ,
+	{ 0,		0,		0}
+};
+
+unsigned long
+extract_value(int buffer, int mode, GLXconfig *conf)
+{
+    int	i;
+    for (i = 0; conf[i].buffer; i++)
+	if (conf[i].buffer == buffer && conf[i].mode == mode)
+	    return conf[i].arg;
+    return 0;
+}
+
+/* Extract X visual information */
+XVisualInfo*
+extract_visual(int buffer, GLXconfig *conf)
+{
+    XVisualInfo	template, *v;
+    int n;
+
+    template.screen = S;
+    template.visualid = extract_value(buffer, GLX_VISUAL, conf);
+    return XGetVisualInfo (D, VisualScreenMask|VisualIDMask, &template, &n);
+}
+
+/* Fill the configuration structure with the appropriately */
+/* created window */
+void
+set_window(int buffer, Window W, GLXconfig *conf)
+{
+    int	i;
+
+    for (i = 0; conf[i].buffer; i++)
+	if (conf[i].buffer == buffer && conf[i].mode == GLX_WINDOW)
+	    conf[i].arg = W;
+}
+
+
+main(argc, argv)
+int argc;
+char *argv[];
+{
+    GLXconfig			*conf;
+    XVisualInfo*		v;
+    XSetWindowAttributes	attr;
+    Window			W, ovW, wins[2];
+    int				i;
+    int				OverlayPlanes;
+
+
+    /* Follow the DISPLAY environment variable */
+    D = XOpenDisplay(0);
+    S = DefaultScreen(D);
+
+    if (getgdesc(GD_BITS_OVER_SNG_CMODE) < 2) {/* test for overlay planes */
+        if ((conf = GLXgetconfig(D, S, rgb_pup)) == 0) {
+    	    printf("getconfig failed\n");
+	    exit(1);
+        }
+        OverlayPlanes = FALSE;
+    } else {
+        if ((conf = GLXgetconfig(D, S, rgb_ov)) == 0) {
+    	    printf("getconfig failed\n");
+	    exit(1);
+        }
+        OverlayPlanes = TRUE;
+    }
+	/* Turn off verbose Xlib error messages */
+    XSetErrorHandler(0);
+
+	/* Create main plane window */
+    v = extract_visual(GLX_NORMAL, conf);
+    attr.colormap = extract_value(GLX_NORMAL, GLX_COLORMAP, conf);
+    attr.border_pixel = 0;
+    W = XCreateWindow(D, RootWindow(D, S), 0, 0, 400, 400, 0,
+			v->depth, InputOutput, v->visual,
+			CWBorderPixel|CWColormap, &attr);
+    XStoreName(D, W, "DBL-Bufr'd, Overlay/Popup Mix Model Window");
+    set_window(GLX_NORMAL, W, conf);
+
+	/* Create overlay window, or popup if no overlay on this machine */
+    if (OverlayPlanes) {
+        v = extract_visual(GLX_OVERLAY, conf);
+	attr.colormap = extract_value(GLX_OVERLAY, GLX_COLORMAP, conf);
+	ovW = XCreateWindow(D, W, 0, 0, 400, 400, 0,
+			    v->depth, InputOutput, v->visual,
+			    CWBorderPixel|CWColormap, &attr);
+	set_window(GLX_OVERLAY, ovW, conf);
+    } else {
+        v = extract_visual(GLX_POPUP, conf);
+	attr.colormap = extract_value(GLX_POPUP, GLX_COLORMAP, conf);
+	ovW = XCreateWindow(D, W, 0, 0, 400, 400, 0,
+			    v->depth, InputOutput, v->visual,
+			    CWBorderPixel|CWColormap, &attr);
+	set_window(GLX_POPUP, ovW, conf);
+    }
+
+	/* Bind the GL to the created windows */
+    if (GLXlink(D, conf) < 0) {
+	printf("Bind failed\n");
+	exit(1);
+    }
+
+    wins[0] = W;
+    wins[1] = ovW;
+    XSetWMColormapWindows(D, W, wins, 2);
+    XSelectInput(D, W, KeyPressMask|ExposureMask);
+    XMapWindow(D, W);
+    XSelectInput(D, ovW, ExposureMask);
+    XMapWindow(D, ovW);
+	
+    for (;;) {
+	XEvent	e;
+
+	XNextEvent(D, &e);
+	switch (e.xany.type) {
+	    case Expose: {
+		short v[2];
+		/* Draw in main planes */
+		if (GLXwinset(D, W) < 0) {
+		    printf("winset failed\n");
+		    exit(1);
+		}
+		reshapeviewport();
+		ortho2(0, 1, 0, 1);
+		bgnpolygon();
+		for (i = 0; i < 4; i++) {
+		    c3s(stamp[i].color);
+		    v2s(stamp[i].vertex);
+		}
+		endpolygon();
+		/* draw in overlays */
+		if (GLXwinset(D, ovW) < 0) {
+		    printf("winset failed\n");
+		    exit(1);
+		}
+		color(0);
+		rectf(0.0, 0.0, 1.0, 1.0);
+		color(1);
+		rectf(.2, .2, .8, .8);
+		color(0);
+		rectf(.4, .4, .6, .6);
+		break;
+	    }
+/* Die on any keystroke */
+	case KeyPress:
+	    exit(0);
+	}
+    }
+}

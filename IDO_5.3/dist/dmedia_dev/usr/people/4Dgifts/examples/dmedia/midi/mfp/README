@@ -1,0 +1,9 @@
+This directory contains a sample MIDI file player, written in 
+Viewkit.  It requires C++, Viewkit and Motif development systems
+to compile and use.
+
+Before using it, copy the resource file Mfp to /usr/lib/X11/app-defaults.
+
+This program is intended as an example of how to use the MIDI library,
+and some of its more subtle quirks. 
+

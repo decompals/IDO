@@ -1,0 +1,130 @@
+
+   -------------------------------------------------------------------------
+   README for ~4Dgifts/examples/grafix source code programming examples in C 
+   -------------------------------------------------------------------------
+
+
+       The majority of examples in this directory originate from earlier 
+     incarnations of the old IRIS (3000) GRAPHICS PROGRAMMING MANUAL, 
+     Volume I: 
+
+          backface.c      db.c            pick1.c         tpbig.c
+          boxcirc.c       depthcue.c      popup.c         trans.c
+          doily.c         popup.h         vlsi.c	  curved.c
+          draw.c          popuputils.c    worms.c         curve1.c
+          iobounce.c      select1.c       zbuffer1.c      curve2.c
+          paint.c         spiral.c        zoing.c         curve3.c
+          patch1.c        text.c
+        
+       They have, however, been modified to illustrate their usage in the
+     window manager environment where functions like:
+
+           ginit();
+
+     are replaced by code fragments that look something like:
+
+           long gid;
+
+           prefposition(xorg, xorg+xsize-1, yorg, yorg+ysize-1);
+           gid = winopen("descriptive text");
+           prefsize(xsize, ysize);
+           winconstraints();
+
+       All programs in this directory can be exited by pressing the escape
+     (Esc) key.
+
+
+       At present, "new" programs included consist of: 
+     
+                
+   3dcursor.c      multpl_cursors.c    prompt_ginit.c         world2scrn.c
+   grin.c          prompt.c            scrn_rotate.c          zcmapmenu.c
+   hollowcube.c    overlay.c           shadeclip.c            zrgb.c
+   mapw.c          overlay_cursor.c    skeleton.c	      zrgbmenu.c
+   maketorus.c     pick2.c	       {upat.c, upat-main.c}  
+
+
+  -->  3dcursor.c        implements a 3-dimensional cursor using MAPW(3G).
+
+  -->  grin.c            a hardware-specific "GRaphical INventory" program
+
+  -->  hollowcube.c      implementation of the techniques discussed in "The
+			 Hidden Charms of Z-Buffer" article for Issue Eleven
+			 of the "IRIS Universe" magazine.  NOTE:  this prog
+			 does NOT work on PERSONAL IRIS MACHINES.
+
+  -->  maketorus.c       example program for creating an object file in the
+                         spin format (only pertinent on GTs, GTXs, & PIs).
+
+  -->  mapw.c            uses MAPW(3G) to calculate a line in 3-space (world
+			 coords.) given a 2-D screen space point.
+
+  -->  multpl_cursors.c  defines three different cursors and switches be-
+                         tween them by pressing ONEKEY, TWOKEY, AND THREEKEY.
+                                                         
+  -->  overlay.c         uses two overlay bitplanes along w/a bouncing ball.
+                                                         
+  -->  overlay_cursor.c  draws a "house" in the overlay bitplanes and moves a
+                         car via LEFTMOUSE which is hidden behind the "house".
+                         also draws the cursor as a blue fly.
+
+  -->  pick2.c           another example of use of the GL function picking,
+                         this time including the window attribute prefsize
+                         as well as use of strings to demonstrate how picking
+                         strings entails zeroing in on the very small origin
+                         at the bottom left corner of the string.
+
+  -->  prompt.c          implements a very rudimentary one-line, no scrolling
+                         "textport" interface using winopen.
+                         
+  -->  prompt_ginit.c    implements a very rudimentary one-line, no scrolling
+                         "textport" interface using ginit.
+                         
+  -->  scrn_rotate.c     demonstrates both a technique for rotating an object 
+                         about a fixed set of (screen) axes (x, y, and z), as
+                         well as a way of doing backface elimination in 
+                         software.
+  
+  -->  shadeclip.c       this shades a "diamond-shaped" rectangle and moves
+                         it back and forth over the left clipping plane to
+                         demonstrate that clipping smooth-shaded polygons
+                         does indeed work.
+
+  -->  skeleton.c        provides an approach for catching and processing
+                         input from the GL event queue *without* eating up 
+                         excessive CPU cycles in polling loops.  useful as 
+                         a template for converting programs unnecessarily 
+                         reliant upon qtest() or getbutton().
+
+  -->  upat.c,           this set implements an alternative approach to 
+       upat-main.c       LOOKAT(3G) where, instead of viewing the scene 
+			 with the default up-axis being Y, the user can
+			 easily specify the up-axis in any direction desired.
+
+  -->  world2scrn.c      takes coordinates in 3-space and translates them
+                         into screen (mouse) coordinates.
+  
+  -->  zrgb.c            demostrates zbuffered intersecting RGB polygons
+                         which can be manually rotated with the LEFTMOUSE.
+  
+  -->  zrgbmenu.c        demostrates zbuffered intersecting RGB polygons
+                         which can be manually rotated with the LEFTMOUSE,
+                         as well as being able to switch to automatic or
+                         animation mode via a pop-up menu and having the
+                         rotations run themselves.
+  
+  -->  zcmapmenu.c       demostrates zbuffered intersecting color-map
+                         polygons which can be manually rotated with the 
+                         LEFTMOUSE, as well as being able to switch to 
+                         automatic or animation mode via a pop-up menu 
+                         and having the rotations run themselves.
+                         This version also includes usage of the device
+                         WINQUIT which allows one to catch the "Quit" 
+                         signal whether it is sent via the "Quit" menu
+                         item from the NeWS window border menu, or by
+                         "boinking" on the lightning bolt button on the
+                         left side of the window's title bar with the 
+                         LEFTMOUSE.  This can be very useful when it is
+                         essential to be able to clean-up things before
+                         exiting (like restoring the portion of the color-
+                         map used by this program to its original values).

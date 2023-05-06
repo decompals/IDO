@@ -1,0 +1,15 @@
+
+  	------------------------------------------------------------
+    	README for ~4Dgifts/examples/X11/toolkits/athena/list/list.c
+  	------------------------------------------------------------
+
+
+    The List widget is a rectangle that contains a list of strings formatted
+    into rows and columns.  When one of the strings is selected, it is 
+    highlighted, and an application callback routine is invoked.
+
+
+    List.c demonstrates a list widget which displays a list of strings
+    specified in the command line argument.  (list `ls` will list all the
+    files in current directory)
+
