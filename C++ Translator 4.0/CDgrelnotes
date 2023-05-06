@@ -1,0 +1,23 @@
+#!/bin/sh
+
+dirname()
+{
+ans=`/usr/bin/expr \
+        "${1:-.}/" : '\(/\)/*[^/]*//*$' `
+if [ -n "$ans" ];then
+        echo $ans
+else
+        ans=`/usr/bin/expr \
+                "${1:-.}/" : '\(.*[^/]\)//*[^/][^/]*//*$' `
+        if [ -n "$ans" ];then
+                echo $ans
+        else
+                echo "."
+        fi
+fi
+exit 0
+}
+
+SRCDIR=`dirname $0`/relnotes/
+
+grelnotes -xrm "Grelnotes*relnotesPath: $SRCDIR"
