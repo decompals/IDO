@@ -1,0 +1,73 @@
+This directory contains example programs that use ViewKit. Look at each
+sub-directory for details on the demos. 
+
+The directories are:
+
+Basic
+======
+
+Simple programs that demo the core functionality of the viewkit.
+
+Preferences
+===========
+
+Demo programs for the preference panel facilities.
+
+Communication
+=============
+
+Demo programs for the ViewKit tooltalk support
+
+Icons
+=======
+
+Some demos of how to create icons using XPM and the viewkit support.
+
+Process
+========
+
+Demos of various classes that support subprocesses.
+
+ComponentDemos
+==============
+
+Demos of some ViewKit components.
+
+Components
+==========
+
+Demos of custom components
+
+Utilities
+==========
+
+Demos of various viewkit utility functions and classes.
+ 
+Dialogs
+========
+
+Some examples ofm how to use the viewkit dialog manager facilities.
+
+Menus
+=====
+
+Demo programs that use the ViewKit menu package.
+
+ProgrammersGuide
+============
+
+Source to the examples described in the ViewKit Programmer's Guide.
+
+
+Applications
+============
+
+Some larger ViewKit demos
+
+
+
+
+
+
+
+

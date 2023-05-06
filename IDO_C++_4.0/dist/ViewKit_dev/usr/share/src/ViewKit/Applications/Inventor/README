@@ -1,0 +1,14 @@
+This directory builds IvClock, a ViewKit implementation of
+the Inventor clock sample program from Inventor 2.0.
+
+VkInventorApp is a very simple subclass of VkApp which initializes
+Inventor at creation time.
+
+Clock is a ViewKit component which models the scene using Inventor.
+The modeling source and datafile was taken from the Inventor demo
+installed as:
+
+  /usr/share/src/Inventor/samples/clock/ivclock.c++
+
+from the inventor_dev.src.sample subsystem.
+

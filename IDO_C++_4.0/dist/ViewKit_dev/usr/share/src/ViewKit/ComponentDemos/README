@@ -1,0 +1,53 @@
+This directory contains demos of some of the pre-existing viewkit
+components. The examples are:
+
+
+graph
+=========
+
+A simple program that builds and displays a graph from a description
+read from stdin. The input is expected to consist of lines of the
+form:
+
+parent child parentLabel childLabel
+
+names should be unique, but labels do not need to be. For example, one
+could input:
+
+1 2 one two
+1 3 one three
+3 4 three four
+
+checkbox
+=========
+
+Displays a simple checkbox, demoing the VkCheckBox component.
+
+complete
+=========
+
+Demonstrates the VkCompletionField used to complete a file name. Run as:
+
+complete <directory>
+
+resizer
+=========
+
+Demonstrates the VkResizer component, whcih allows users to
+iteractively resize a widget.
+
+modified
+=========
+
+Demonstrates the VkModified component used with a text field. Modiying
+the contents of the text field displays a "dog-ear" in the upper right
+corner. Clicking on this dog-ear reverts the text field to its former
+value.
+
+outliner
+=========
+
+Demos the Vkoutline component, which presents a hierarchical browser.
+
+
+

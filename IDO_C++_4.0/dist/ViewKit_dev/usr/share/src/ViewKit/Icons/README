@@ -1,0 +1,4 @@
+This directroy contains demos of the ViewKit support for XPM pixmaps.
+
+xpmtest demos the VkCreateXPMPixmap function.
+

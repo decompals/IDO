@@ -1,0 +1,17 @@
+This directory builds Rotate, a sample application that uses GLX to do
+GL rendering in an X window.
+
+VkGLX is a ViewKit component which creates a GlxMDraw widget for GL
+rendering.  Virtual methods provide hooks for the application for
+graphics initialization (ginit), exposure of the component (expose),
+resize of the component (resize), and keyboard/pointer events (input).
+
+Box is a subclass of VkGLX which draws a 3D box and rotates it when
+the user presses one of the three mouse buttons.
+
+The GL source to draw the box and rotate it were taken from the
+GlxMDraw widget demo installed as:
+
+  /usr/people/4Dgifts/examples/GLX/glxwidget/demos/mscrn_rotate.c
+
+from the 4Dgifts/src/basicw subsystem.

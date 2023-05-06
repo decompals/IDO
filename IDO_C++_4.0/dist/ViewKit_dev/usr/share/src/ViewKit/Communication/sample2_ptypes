@@ -1,0 +1,11 @@
+/* sample2_ptypes - ptype definitions for sample2 example */
+#include "sample2_opnums.h"
+
+ptype SAMPLE2
+{
+ start "/usr/share/src/ViewKit/Communication/sample2_service";
+ handle:
+    session sample2_value(in int send, out int receive)
+                       => start opnum=SAMPLE2_VALUE;
+};
+

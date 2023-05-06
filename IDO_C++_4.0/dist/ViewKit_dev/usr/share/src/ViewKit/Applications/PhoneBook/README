@@ -1,0 +1,28 @@
+This directory creates PhoneBook, a full-fledged application that
+keeps track of names, phone numbers, and addresses.
+
+There is an app-defaults file, PhoneBook.ad, that must be installed
+as /usr/lib/X11/app-defaults/PhoneBook in order for proper execution.
+
+PhoneBook uses these ViewKit classes:
+
+  VkApp
+  VkComponent
+  VkFileSelectionDialog
+  VkHelp
+  VkMenu
+  VkMenuBar
+  VkPopupMenu
+  VkPrefDialog
+  VkPrefGroup
+  VkPrefText
+  VkPrefToggle
+  VkQuestionDialog
+  VkResource
+  VkSimpleWindow
+  VkSubMenu
+  VkTabPanel
+  VkWarningDialog
+  VkWindow
+
+Examine the source files for more detailed comments.

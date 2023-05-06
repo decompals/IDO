@@ -1,0 +1,76 @@
+*useSchemes:				all
+*baseScheme:				Base
+*defaultScheme:				Lascaux
+*keyboardFocusPolicy:			pointer
+
+*phoneBook.Title:			Phone Book
+*phoneBook.iconName:			Phone
+*entryDialog.dialogTitle:		Phone Book: Edit Entry
+*newDialog.dialogTitle:			Phone Book: New Entry
+*prefDialog.dialogTitle:		Phone Book: Preferences
+*helpDialog.Title:			Phone Book: Help
+*helpDialog.iconName:			PhoneHelp
+
+*defaultFilename:			~/.phone
+
+*fileMenu.labelString:			File
+*fileMenu.mnemonic:			F
+*newMenuItem.labelString:		New Entry...
+*newMenuItem.mnemonic:			N
+*prefMenuItem.labelString:		Preferences...
+*prefMenuItem.mnemonic:			P
+*loadMenuItem.labelString:		Load...
+*loadMenuItem.mnemonic:			L
+*saveMenuItem.labelString:		Save
+*saveMenuItem.mnemonic:			S
+*saveAsMenuItem.labelString:		Save As...
+*saveAsMenuItem.mnemonic:		a
+*printMenuItem.labelString:		Print To File...
+*printMenuItem.mnemonic:		r
+*quitMenuItem.labelString:		Exit
+*quitMenuItem.mnemonic:			E
+
+*entryPopup.labelString:		Entry
+*editEntryItem.labelString:		Edit...
+*deleteEntryItem.labelString:		Delete
+
+*info*scroll.bottomOffset:		-2
+*info*scroll.scrollingPolicy:		XmAUTOMATIC
+*info*scroll.width:			500
+*info*scroll.height:			300
+*info*entries.resizeWidth:		False
+*info*entries.marginWidth:		15
+*info*entries.marginHeight:		15
+*info*entries.spacing:			5
+*info*entry.marginWidth:		0
+*info*entry.marginHeight:		0
+*info*entry.spacing:			0
+
+*entry*name.alignment:			XmALIGNMENT_BEGINNING
+*entry*phone.alignment:			XmALIGNMENT_END
+*entry*addr.alignment:			XmALIGNMENT_BEGINNING
+*entry*addr.leftOffset:			15
+*entry*comment.alignment:		XmALIGNMENT_BEGINNING
+*entry*comment.leftOffset:		15
+
+*entryDialog*nameLabel.labelString:	Name: 
+*entryDialog*phoneLabel.labelString:	Phone Number: 
+*entryDialog*addrLabel.labelString:	Address: 
+*entryDialog*commentLabel.labelString:	Comment: 
+*newDialog*nameLabel.labelString:	Name: 
+*newDialog*phoneLabel.labelString:	Phone Number: 
+*newDialog*addrLabel.labelString:	Address: 
+*newDialog*commentLabel.labelString:	Comment: 
+
+*prefDialog*preferencesLabel.labelString:	Global Preferences
+*prefDialog*filenameLabel.labelString:		Database Filename:
+*prefDialog*showAddrLabel.labelString:		Display Address: 
+*prefDialog*showCommentLabel.labelString:	Display Comment: 
+*prefDialog*itemSpacingLabel.labelString:	Item Spacing (pixels): 
+*prefDialog*printWidthLabel.labelString:	Print To File Width (chars): 
+
+*helpDialog*helpText.rows:			10
+*helpDialog*helpText.columns:			60
+*helpDialog*helpText.editMode:			XmMULTI_LINE_EDIT
+*helpDialog*helpText.scrollBarDisplayPolicy:	XmSTATIC
+*helpDialog*helpText.editable:			False

@@ -1,0 +1,10 @@
+<MKLOG name='./books/CC_ProdRM/index' version='-1' date='Thu Nov  3 19:38:13 1994' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    20663, offset    1, on   Thu Nov  3 19:38:20 1994.
+
+MERGE vocab.dat :   2 files, Vocab size  6203 on                           .
+
+MERGE index.dat :   2 files, Vocab size  6203 on                           .
+
+DONE MAKING BOOK
+

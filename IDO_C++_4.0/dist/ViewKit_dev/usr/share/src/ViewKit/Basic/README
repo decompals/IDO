@@ -1,0 +1,62 @@
+This directory contains small programs that demonstrate some basic
+features of the the ViewKit, displaying windows, handling command line
+options, interacting with the window manager, and so on. The examples
+are:
+
+generic
+=======
+
+The simplest possible ViewKit application. Just displays an empty
+window. 
+
+generic2
+=========
+
+Extends the generic example by adding a menu pane to the window.
+
+hello
+======
+
+The basic "hello world" program, viewkit style. This example
+demonstrates subclassing from VkSimpleWindow.
+
+
+callback
+=========
+
+Demonstrates how to use Xt-style callbacks with ViewKit and C++.
+
+
+cmdline
+========
+
+Show how to use the Xt-style command-line argument mechanism to set a
+resource from the command line.
+
+
+cmdline2
+==========
+
+Extends the above example by retrieving the value of a resource and
+placing it in a class data member.
+
+busy
+=====
+
+Demonstrates the use of the "busy()" and "notBusy()" functions.
+
+stopwatch
+==========
+
+A simple "stopwatch" program that demonstrates a more complex widget
+tree in a ViewKit window. This example also show some other viewkit
+facilties, including the VkPeriodic class, which provides a simple
+interface to XtAppAddTimeout, and also uses the XmGrid widget. This
+example also uses a viewkit-style C++ member function callback to
+interface with the timer.
+
+
+
+
+
+

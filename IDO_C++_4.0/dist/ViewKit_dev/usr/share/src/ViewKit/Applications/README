@@ -1,0 +1,13 @@
+This directory contains ViewKit-built examples of applications, rather
+than examples geared to specific components or features as in the
+other directories.
+
+GLX contains the source to Rotate, a simple application that uses GLX
+to do GL rendering in an X window.
+
+Inventor contains the source to IvClock, a ViewKit implementation of
+the Inventor clock sample program.  This application requires the
+Inventor development libraries.
+
+PhoneBook is a full-fledged application that keeps track of names,
+phone numbers, and addresses.

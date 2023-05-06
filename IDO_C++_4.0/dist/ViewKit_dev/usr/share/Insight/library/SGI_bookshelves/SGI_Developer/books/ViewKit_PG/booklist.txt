@@ -1,0 +1,1 @@
+<BOOK name="ViewKit_PG" edition="19941103" alias = "IRIS ViewKit Programmer's Guide" type = "sgi_developer" hide = "FALSE" version = "007-2124-002, 11/94" sort = "005951" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >

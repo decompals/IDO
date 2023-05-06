@@ -1,0 +1,26 @@
+This directory contains examples that demonstrate the ViewKit support
+for tooltalk messages between applications. The examples are:
+
+sample1
+=======
+
+This simple program displays two scale widgets.  The user can select a
+value on the one labeled sender. A button can be used to broadcast a
+"notice" of the new value. The program also recieves such notices and
+updates the "reciever" slider accordinly. You can run multiple
+instances of the program, and all will send and recieve notices.
+
+
+sample2_client, sample2_service
+=================================
+
+These two program work together to simulate an application that
+requests a service of another. Sample2_client appears the same as
+sample1, but sends a request to sample2_service. The program
+sample2_service increments the value in the request and sends back a
+reply to the client, which then updates it's recieved slider.
+
+NOTE: You must have the tooltalk library libtt.a to compile these
+examples.
+
+

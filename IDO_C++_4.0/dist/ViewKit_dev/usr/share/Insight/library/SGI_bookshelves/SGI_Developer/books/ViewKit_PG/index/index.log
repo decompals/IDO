@@ -1,0 +1,10 @@
+<MKLOG name='./books/ViewKit_PG/index' version='-1' date='Thu Nov  3 20:42:32 1994' serial='-1' count='-1' user=''>
+
+FLUSH    2: Element    16071, offset 26837, on   Thu Nov  3 20:42:39 1994.
+
+MERGE vocab.dat :   2 files, Vocab size  7726 on                           .
+
+MERGE index.dat :   2 files, Vocab size  7726 on                           .
+
+DONE MAKING BOOK
+

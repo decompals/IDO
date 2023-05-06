@@ -1,0 +1,1 @@
+<BOOK name="CC_PG" edition="19941103" alias = "C++ Programmer's Guide" type = "sgi_developer" hide = "FALSE" version = "007-0704-070" sort = "999" srchres = "FALSE" srchtags = "TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples" group = "SGIDOC" >
