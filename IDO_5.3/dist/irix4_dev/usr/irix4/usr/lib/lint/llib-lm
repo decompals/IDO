@@ -1,0 +1,89 @@
+/* --------------------------------------------------- */
+/* | Copyright (c) 1986 MIPS Computer Systems, Inc.  | */
+/* | All Rights Reserved.                            | */
+/* --------------------------------------------------- */
+/* $Header: /src_trees/lonestar/att/usr/src/v2.20/lint/RCS/llib-lm.brl,v 7.1 1991/07/18 19:37:57 wsj Exp $ */
+
+/*LINTLIBRARY*/
+#include <math.h>
+
+/* BESSEL(3M) */
+double	j0(x) double x; { return (x); }
+double	j1(x) double x; { return (x); }
+double	jn(n, x) double x; { return (x); }
+double	y0(x) double x; { return (x); }
+double	y1(x) double x; { return (x); }
+double	yn(n, x) double x; { return (x); }
+/* ERF(3M) */
+double	erf(x) double x; { return (x); }
+double	erfc(x) double x; { return (x); }
+/* EXP(3M) */
+double	exp(x) double x; { return (x); }
+double	log(x) double x; { return (x); }
+double	log10(x) double x; { return (x); }
+double	pow(x, y) double x, y; { return (x); }
+double	sqrt(x) double x; { return (x); }
+/* FLOOR(3M) */
+double	floor(x) double x; { return (x); }
+double	ceil(x) double x; { return (x); }
+double	fmod(x, y) double x, y; { return (x); }
+double	fabs(x) double x; { return (x); }
+/* GAMMA(3M) */
+double	gamma(x) double x; { return (x); }
+int	signgam;
+/* HYPOT(3M) */
+double	hypot(x, y) double x, y; { return (x); }
+/* MATHERR(3M) */
+int	matherr(p) struct exception *p; { return (0); }
+/* SINH(3M) */
+double	sinh(x) double x; { return (x); }
+double	cosh(x) double x; { return (x); }
+double	tanh(x) double x; { return (x); }
+/* TRIG(3M) */
+double	sin(x) double x; { return (x); }
+double	cos(x) double x; { return (x); }
+double	tan(x) double x; { return (x); }
+double	asin(x) double x; { return (x); }
+double	acos(x) double x; { return (x); }
+double	atan(x) double x; { return (x); }
+double	atan2(x, y) double x, y; { return (x); }
+
+double acosh(double x) { return x; }
+double asinh(double x) { return x; }
+double atanh(double x) { return x; }
+double cabs(struct __cabs_s y) {return y.a; }
+double cbrt(double a) { return a; }
+float fcbrt(float a) { return a; }
+double copysign(double a, double b) { return a + b ; }
+
+float fcopysign(float a, float b) { return a+b; }
+double drem(double a, double b) { return a + b ; }
+float fdrem(float a, float b) 	{return a + b; } 
+double expm1(double a) 		{ return a ; }
+float facos(float a) 		{ return a; }
+float fasin(float a) 		{ return a; }
+float fatan(float a) 		{ return a; }
+float fatan2(float a,float b) 	{ return a + b; }
+float fcabs(struct  __fcabs_s y) { return y.a; }
+float fceil(float a) 		{ return a; }
+float fcos(float a) 		{ return a; }
+float fcosh(float a) 		{ return a; }
+float fexp(float a)		{ return a; }
+float fexpm1(float a) 		{ return a; }
+float ffloor(float a)		{ return a; }
+float fhypot(float a, float b)  { return a + b; }
+int   finite(double a)		{ return a; }
+float flog(float a)		{ return a; }
+float flog10(float a)		{ return a; }
+float flog1p(float a)		{ return a; }
+float fsin(float a)		{ return a; }
+float fsinh(float a)		{ return a; }
+float fsqrt(float a)		{ return a; }
+float ftan(float a)		{ return a; }
+float ftanh(float a)		{ return a; }
+float ftrunc(float x) 		{ return x; }
+double trunc(double x) 		{ return x; }
+double log1p(double a) 		{ return a; }
+double logb(double a)		{ return a; }
+double scalb(double d, int i)   { return d + i; }
+

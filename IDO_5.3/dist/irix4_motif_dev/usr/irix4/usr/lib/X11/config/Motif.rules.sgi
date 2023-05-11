@@ -1,0 +1,352 @@
+/******************************************************************************
+*******************************************************************************
+**
+**  This part of this file contains SGI additions to the OSF rules.
+**  It is separated out to make future integrations esier.
+**  
+*******************************************************************************
+******************************************************************************/
+
+
+/* rules for installing manual pages */
+#ifndef MLibInstallManPage
+#  define MLibInstallManPage (pages)					@@\
+	for FILE in pages						@@\
+	    do								@@\
+		$(INSTALL) -F $(MAN3DIR) -idb "motif.man.dev" $$FILE	@@\
+	    done;
+#endif
+
+
+/*
+ * MRelinkSubdirs - generate rules to recursively make relink
+ */
+#ifndef MRelinkSubdirs
+#  define MRelinkSubdirs(dirs) \
+NamedTargetSubdirs(relink,dirs,"relinking", /**/,relink)
+#endif /* MRelinkSubdirs */
+
+
+/*
+ *  DemoInstall -- rule to do an SGI installation of the files in a demo
+ *  directory.  This expects:
+ *	* $(FILES) to contain the list to install.
+ *	* dir is the demo directory to be made, and have the files
+ *	  installed into.
+ */
+#ifndef InstallDemoSrc
+#  define InstallDemoSrc(dir)						@@\
+MKDIRHIERTAG = MkDirCmdIdbTag="$(INSTDEMODIRFLAGS)"			@@\
+install::								@@\
+	$(MKDIRHIER) $(DEMOSRCDIR)/dir					@@\
+InstallMultipleFlags( $(FILES), $(DEMOSRCDIR)/dir, $(INSTDEMOFLAGS) )
+#endif /* InstallDemoSrc */
+
+
+/******************************************************************************
+*******************************************************************************
+**
+**  This part of this file contains SGI changes to the OSF rules.
+**  It is separated out to make future integrations esier.
+**
+**  NOTE: ANY TIME THE OSF RULES IN "Motif.rules" CHANGE, WE MUST VERIFY
+**	  THAT THE FOLLOWING REMAIN CORRECT!
+**  
+*******************************************************************************
+******************************************************************************/
+
+
+	/**********************************************************************/
+	/**
+	/**  This is unchanged from OSF, except that we have added a
+	/**  'relink' target
+	/**
+	/**********************************************************************/
+
+#undef	MSimpleProgramTarget
+#define MSimpleProgramTarget(program)				   	@@\
+									@@\
+install all:: program							   	@@\
+									@@\
+program: program.o $(DEPS) $(DEPLIBS)					@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ program.o $(LDOPTIONS) $(DEPS) $(LOCAL_LIBRARIES) $(LDLIBS) $(SYSLIBS) $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+clean::								 	@@\
+	$(RM) program						   	@@\
+	$(RM) program.o							@@\
+									@@\
+relink::								@@\
+	RemoveTargetProgram(program)					@@\
+	$(MAKE) program
+
+
+	/**********************************************************************/
+	/**
+	/**  This is unchanged from OSF, except that we have added a
+	/**  'relink' target
+	/**
+	/**********************************************************************/
+
+#undef	MSimpleUilTarget
+#define MSimpleUilTarget(program)				   	@@\
+									@@\
+install all:: program							   	@@\
+									@@\
+program: program.o program.uid $(DEPS) $(DEPLIBS)			@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ program.o $(LDOPTIONS) $(DEPS) $(LOCAL_LIBRARIES) $(LDLIBS) $(SYSLIBS) $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+program.uid: program.uil						@@\
+	$(RM) $@							@@\
+	$(UIL) -o $@ program.uil  -I$(UILSRC)			   	@@\
+									@@\
+									@@\
+clean::								 	@@\
+	$(RM) program						   	@@\
+	$(RM) program.uid						@@\
+	$(RM) program.o							@@\
+									@@\
+relink::								@@\
+	RemoveTargetProgram(program)					@@\
+	$(MAKE) program
+
+
+	/**********************************************************************/
+	/**
+	/**  The ComplexProgramTarget_{4,5,6,7,8,9,10} really should have
+	/**  'program' depend on $(DEPLIBS4) etc -- as MIT did in the _1,
+	/**  _2, and _3 rules.
+	/**
+	/**********************************************************************/
+
+#undef	ComplexProgramTarget_4
+#define	ComplexProgramTarget_4(program,locallib,syslib)			@@\
+program: $(OBJS4) $(DEPLIBS4)						@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ $(LDOPTIONS) $(OBJS4) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+InstallProgram(program,$(BINDIR))					@@\
+InstallManPage(program,$(MANDIR))
+
+#undef	ComplexProgramTarget_5
+#define	ComplexProgramTarget_5(program,locallib,syslib)			@@\
+program: $(OBJS5) $(DEPLIBS5)						@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ $(LDOPTIONS) $(OBJS5) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+InstallProgram(program,$(BINDIR))					@@\
+InstallManPage(program,$(MANDIR))
+
+#undef	ComplexProgramTarget_6
+#define	ComplexProgramTarget_6(program,locallib,syslib)			@@\
+program: $(OBJS6) $(DEPLIBS6)						@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ $(LDOPTIONS) $(OBJS6) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+InstallProgram(program,$(BINDIR))					@@\
+InstallManPage(program,$(MANDIR))
+
+#undef	ComplexProgramTarget_7
+#define	ComplexProgramTarget_7(program,locallib,syslib)			@@\
+program: $(OBJS7) $(DEPLIBS7)						@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ $(LDOPTIONS) $(OBJS7) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+InstallProgram(program,$(BINDIR))					@@\
+InstallManPage(program,$(MANDIR))
+
+#undef	ComplexProgramTarget_8
+#define	ComplexProgramTarget_8(program,locallib,syslib)			@@\
+program: $(OBJS8) $(DEPLIBS8)						@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ $(LDOPTIONS) $(OBJS8) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+InstallProgram(program,$(BINDIR))					@@\
+InstallManPage(program,$(MANDIR))
+
+#undef	ComplexProgramTarget_9
+#define	ComplexProgramTarget_9(program,locallib,syslib)			@@\
+program: $(OBJS9) $(DEPLIBS9)						@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ $(LDOPTIONS) $(OBJS9) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+InstallProgram(program,$(BINDIR))					@@\
+InstallManPage(program,$(MANDIR))
+
+#undef	ComplexProgramTarget_10
+#define	ComplexProgramTarget_10(program,locallib,syslib)			@@\
+program: $(OBJS10) $(DEPLIBS10)						@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ $(LDOPTIONS) $(OBJS10) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+InstallProgram(program,$(BINDIR))					@@\
+InstallManPage(program,$(MANDIR))
+
+
+/******************************************************************************
+*******************************************************************************
+**
+**  This part of this file contains SGI changes and addtions to the MIT rules.
+**  It is separated out to make future integrations esier.
+**
+**  NOTE: ANY TIME THE MIT RULES IN "Imake.rules" CHANGE, WE MUST VERIFY
+**	  THAT THE FOLLOWING REMAIN CORRECT!
+**  
+*******************************************************************************
+******************************************************************************/
+
+
+/*
+ * This should be exactly like ComplexProgramTarget_1 (in Imake.rules)
+ * except for the name and the install rule.
+ */
+#ifndef ComplexProgramTarget_1A
+#define	ComplexProgramTarget_1A(program,locallib,syslib)		@@\
+            OBJS = $(OBJS1) $(OBJS2) $(OBJS3)				@@\
+            SRCS = $(SRCS1) $(SRCS2) $(SRCS3)				@@\
+									@@\
+AllTarget($(PROGRAMS))							@@\
+									@@\
+program: $(OBJS1) $(DEPLIBS1)						@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ $(LDOPTIONS) $(OBJS1) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+/*InstallProgram(program,$(BINDIR))*/					@@\
+InstallProgramWithFlags(program,$(BINDIR),$(INSTBINFLAGS))		@@\
+InstallManPage(program,$(MANDIR))					@@\
+									@@\
+SaberProgramTarget(program,$(SRCS1),$(OBJS1),locallib,syslib)		@@\
+									@@\
+DependTarget()								@@\
+LintTarget()								@@\
+									@@\
+clean::									@@\
+	$(RM) $(PROGRAMS)
+#endif /* ComplexProgramTarget_1A */
+
+
+/*
+ * This should be exactly like ComplexProgramTarget_1 (in Imake.rules)
+ * except for the name and deleting the install rule.
+ *
+ * ComplexDemoProgramTarget_1 - generate rules for compiling and linking the
+ * program specified by $(OBJS1) and $(SRCS1), installing the program and its
+ * man page, and generating dependencies for it and any programs described
+ * by $(SRCS2) and $(SRCS3).  It should be used to build the primary 
+ * program in Imakefiles that describe multiple programs.
+ */
+#ifndef ComplexDemoProgramTarget_1
+#define	ComplexDemoProgramTarget_1(program,locallib,syslib)			@@\
+            OBJS = $(OBJS1) $(OBJS2) $(OBJS3)				@@\
+            SRCS = $(SRCS1) $(SRCS2) $(SRCS3)				@@\
+									@@\
+AllTarget($(PROGRAMS))							@@\
+									@@\
+program: $(OBJS1) $(DEPLIBS1)						@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ $(LDOPTIONS) $(OBJS1) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+SaberProgramTarget(program,$(SRCS1),$(OBJS1),locallib,syslib)		@@\
+									@@\
+DependTarget()								@@\
+LintTarget()								@@\
+									@@\
+clean::									@@\
+	$(RM) $(PROGRAMS)
+#endif /* ComplexDemoProgramTarget_1 */
+
+
+/*
+ * This should be exactly like ComplexProgramTarget_2 (in Imake.rules)
+ * except for the name and deleting the install rule.
+ *
+ * ComplexDemoProgramTarget_2 - generate rules for compiling and linking the
+ * program specified by $(OBJS2) and $(SRCS2) and installing the program and
+ * man page.  It should be used to build the second program in Imakefiles 
+ * describing more than one program.
+ */
+#ifndef ComplexDemoProgramTarget_2
+#define	ComplexDemoProgramTarget_2(program,locallib,syslib)		@@\
+program: $(OBJS2) $(DEPLIBS2)						@@\
+	RemoveTargetProgram($@)						@@\
+	$(CC) -o $@ $(LDOPTIONS) $(OBJS2) locallib $(LDLIBS) syslib $(EXTRA_LOAD_FLAGS) @@\
+									@@\
+SaberProgramTarget(program,$(SRCS2),$(OBJS2),locallib,syslib)
+#endif /* ComplexDemoProgramTarget_2 */
+
+/* ========================================================================== */
+
+/*
+ * MOTIF RULES TO HANDLE SHARED LIBRARIES.  THESE RULES ARE ADAPTED FROM
+ * THE ONES FROM sgi.cf.
+ *
+ * We have added a rule to build a shared objects.  We use the standard X11
+ * rules for building the debuggable and standard objects.
+ *
+ * We take use .do and .to as extensions for the "data object" and
+ * "text object" files, respectively.
+ */
+
+
+/*
+ * MSharedLibraryObjectRules - generate make rules to build shared object files.
+ */
+#ifndef MSharedLibraryObjectRules
+#define MSharedLibraryObjectRules()					@@\
+.SUFFIXES: .do .to							@@\
+clean::									@@\
+	$(RM) *.to *.do							@@\
+									@@\
+.c.do:									@@\
+	$(RM) $@ \							@@\
+	&& $(CC) -G 0 -c -o $@ $(SHAREDCODEDEF) $(SHLIBDEF) \		@@\
+		-DMAKE_DATA_SHLIB $(CFLAGS) $*.c			@@\
+									@@\
+.s.do:									@@\
+	as -o $@ $*.s							@@\
+									@@\
+.c.to:									@@\
+	$(RM) $@ \							@@\
+	&& $(CC) -G 0 -c -o $@ $(SHAREDCODEDEF) $(SHLIBDEF) \		@@\
+		-DMAKE_TEXT_SHLIB $(CFLAGS) $*.c
+#endif /* MSharedLibraryObjectRules */
+
+
+/* MSharedLibraryObjectRule -- like the sgi.cf SharedLibraryObjectRule */
+#ifndef MSharedLibraryObjectRule
+#define MSharedLibraryObjectRule()					@@\
+MSharedLibraryObjectRules()						@@\
+NormalLibraryObjectRule()
+#endif /* MSharedLibraryObjectRule */
+
+
+/*
+ * MSharedAndDebuggedLibraryObjectRule - generate make rules to build shared,
+ * debuggable, and "normal" object files.
+ */
+#ifndef MSharedAndDebuggedLibraryObjectRule
+#define MSharedAndDebuggedLibraryObjectRule()				@@\
+MSharedLibraryObjectRules()						@@\
+DebuggedLibraryObjectRule()
+#endif /* MSharedAndDebuggedLibraryObjectRule */
+
+
+/*
+ * MNormalSharedLibraryTarget - generate rules to create a shared library;
+ * build it into a different name so that the we don't hose people by having
+ * the library gone for long periods.
+ */
+#ifndef MNormalSharedLibraryTarget
+#define MNormalSharedLibraryTarget(libname,rev,solist,usolist)		@@\
+AllTarget(lib/**/libname/**/_s)						@@\
+									@@\
+lib/**/libname/**/_s: usolist solist lib/**/libname/**/.spec		@@\
+	$(RM) $@ $@.a \							@@\
+	&& mkshlib -s lib/**/libname/**/.spec -t $@ -h $@.a \		@@\
+	&& if [ "usolist" ]; then ar rs $@.a usolist; fi		@@\
+									@@\
+clean::									@@\
+	$(RM) lib/**/libname/**/_s lib/**/libname/**/_s.a
+#endif /* MNormalSharedLibraryTarget */
+

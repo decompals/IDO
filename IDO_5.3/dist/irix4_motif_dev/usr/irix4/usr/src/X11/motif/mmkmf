@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#
+# generate a Makefile from an Imakefile from outside the X sources.
+# 
+
+if [ -f Makefile ]; then 
+    echo mv Makefile Makefile.bak
+    mv Makefile Makefile.bak
+fi
+
+CMD='imake -DBuildMotif=1 -DUseInstalled -I/usr/lib/X11/config $*'
+echo "$CMD"; eval $CMD

@@ -1,0 +1,55 @@
+
+/*
+ * This "all" target is because we generate other targets below, and need
+ * to ensure that "all" remains first.
+ */
+all::
+
+               SHELL = /bin/sh
+
+#ifdef DefaultCCOptions
+# undef DefaultCCOptions
+#endif
+#define DefaultCCOptions -float -cckr CCPreprocessorFlags
+           CCOPTIONS = DefaultCCOptions
+       PROTO_DEFINES = -D_NO_PROTO
+
+            MOTIFTOP = /usr/src/X11/motif
+
+            DEPXMLIB = $(USRLIBDIR)/libXm_s.a
+               XMLIB = -lXm_s
+     LINTXMWIDGETLIB = $(USRLIBDIR)/llib-lXm.ln
+
+     DEPMRESOURCELIB = $(USRLIBDIR)/libMrm.a
+        MRESOURCELIB = -lMrm
+       LINTMRESOURCE = $(USRLIBDIR)/llib-lMrm.ln
+
+           DEPUILLIB = $(USRLIBDIR)/libUil.a
+              UILLIB = -lUil
+          LINTUILLIB = $(USRLIBDIR)/llib-lUil.ln
+                 UIL = $(BINDIR)/uil
+              UILSRC = $(INCROOT)/uil
+
+        DEPXMTOOLLIB = $(USRLIBDIR)/libXt_s.a
+           XMTOOLLIB = -lXt_s
+          LINTXMTOOL = $(USRLIBDIR)/llib-lXt.ln
+
+             SYSLIBS = -lPW
+       SYS_LIBRARIES = -lXext -lXt_s -lX11_s
+/*
+ * We redefine IMAKE_CMD here to avoid interfering with IMAKE_DEFINES
+ */
+           IMAKE_CMD = $(IMAKE) -DBuildMotif=1 -DUseInstalled -I$(IRULESRC) $(IMAKE_DEFINES)
+
+
+/*
+ * Allow for the fact that site.def assumes man pages are in with executables.
+ * For IRIX/Motif, this is not true.
+ */
+
+.DEFAULT:
+	 @case $@ in \
+	    *.man | depend | tags) ;; \
+	    *) echo "\nMaking "$@" is not supported in `pwd`" ;; \
+	    esac
+
