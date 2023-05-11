@@ -1,0 +1,58 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmStringCreateSimple 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmStringCreateSimple\*O\(emA compound string function that creates a compound string in the language environment of a widget
+.iX "XmStringCreateSimple"
+.iX "compound string functions" "XmStringCreateSimple"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/Xm.h>
+.sp \n(PDu
+XmString XmStringCreateSimple (\*Vtext\*L)
+.ta .5i 1.25i
+	char	\*V* text\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmStringCreateSimple\*O creates a compound
+string with two components: text and a character set.
+It derives the character set from the current language environment.
+.PP 
+The routine attempts to derive a character set from the value of the
+LANG environment variable.
+If this does not result in a valid character set, the routine uses a
+vendor-specific default.
+If the vendor has not specified a different value, this default is
+ISO8859-1.
+.PP
+NOTE:  This routine is obsolete and exists for compatibility with previous
+releases.  It has been replaced by \*LXmStringCreateLocalized\*O.
+.VL .75i 
+.LI "\*Vtext\*O"
+Specifies a null-terminated string to be used as the text component of
+the compound string.
+.LE 
+.SH RETURN VALUE
+Returns a new compound string.
+.SH RELATED INFORMATION
+.na
+\*LXmStringCreate(3X)\*O and
+\*LXmStringCreateLocalized(3X)\*O.
+.ad

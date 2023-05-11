@@ -1,0 +1,8 @@
+<MKLOG name='./books/Motif_RM/index' version='-1' date='Mon Aug 23 17:03:01 1993' serial='-1' count='-1' user=''>
+
+MERGE vocab.dat :   1 files, Vocab size  6683 on                           .
+
+MERGE index.dat :   1 files, Vocab size  6683 on                           .
+
+DONE MAKING BOOK
+

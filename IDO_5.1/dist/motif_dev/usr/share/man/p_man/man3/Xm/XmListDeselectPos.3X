@@ -1,0 +1,49 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **
+.TH XmListDeselectPos 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmListDeselectPos\*O\(emA List function that deselects an item at a specified position in the list
+.iX "XmListDeselectPos"
+.iX "List functions" "XmListDeselectPos"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/List.h>
+.sp \n(PDu
+void XmListDeselectPos (\*Vwidget, position\*L)
+.ta .5i 1.5i
+	Widget	\*Vwidget\*L;
+	int	\*Vposition\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmListDeselectPos\*O unhighlights the item at the specified position
+and deletes it from the list of selected items.
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the ID of the List widget
+.LI "\*Vposition\*O"
+Specifies the position of the item to be deselected.
+A value of 1 indicates that the first item in the list is deselected; a
+value of 2 indicates that the second item is deselected; and so on.
+A value of 0 indicates that the last item in the list is deselected.
+.LE 
+.PP 
+For a complete definition of List and its associated resources, see
+\*LXmList(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LXmList(3X)\*O.
+.ad

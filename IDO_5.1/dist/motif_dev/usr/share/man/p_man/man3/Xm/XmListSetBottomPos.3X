@@ -1,0 +1,52 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **
+.TH XmListSetBottomPos 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmListSetBottomPos\*O\(emA List function that makes a specified item the last visible item in the list
+.iX "XmListSetBottomPos"
+.iX "List functions" "XmListSetBottomPos"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/List.h>
+.sp \n(PDu
+void XmListSetBottomPos (\*Vwidget, position\*L)
+.ta .5i 1.5i
+	Widget	\*Vwidget\*L;
+	int	\*Vposition\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmListSetBottomPos\*O makes the item at the specified position the
+last visible item in the List.
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the ID of the List widget.
+.LI "\*Vposition\*O"
+Specifies the position of the item to be made the last visible item in
+the list.
+A value of 1 indicates that the first item in the list is the last
+visible item; a value of 2 indicates that the second item is the last
+visible item; and so on.
+A value of 0 indicates that the last item in the list is the last
+visible item.
+.LE 
+.PP 
+For a complete definition of List and its associated resources, see
+\*LXmList(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LXmList(3X)\*O.
+.ad

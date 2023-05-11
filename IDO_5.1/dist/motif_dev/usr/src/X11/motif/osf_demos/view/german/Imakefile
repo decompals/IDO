@@ -1,0 +1,19 @@
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM Motif Release 1.2
+
+#define IHaveSubdirs
+#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+
+SUBDIRS = uid
+
+MakeSubdirs($(SUBDIRS))
+DependSubdirs($(SUBDIRS))
+
+
+
+#ifdef SGIArchitecture
+FILES = Fileview Imakefile
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

@@ -1,0 +1,260 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **
+.TH XmDrawingArea 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmDrawingArea\*O\(emThe DrawingArea widget class
+.iX "XmDrawingArea"
+.iX "widget class" "DrawingArea"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/DrawingA.h>
+.iE
+.sE
+.SH DESCRIPTION
+DrawingArea is an empty widget that is easily adaptable
+to a variety of purposes.
+It does no drawing and defines no behavior except for invoking
+callbacks.
+Callbacks notify the application when graphics need to be drawn
+(exposure events or widget resize) and when the widget receives input from
+the keyboard or mouse.
+.PP 
+Applications are responsible for defining appearance and behavior as needed
+in response to DrawingArea callbacks.
+.PP 
+DrawingArea is also a composite widget and subclass of
+\*LXmManager\*O that supports
+minimal geometry management for multiple widget or gadget children.
+.SS "Classes"
+DrawingArea inherits behavior and resources from the \*LCore\*O,
+\*LComposite\*O, \*LConstraint\*O, and \*LXmManager\*O classes.
+.PP 
+.ne 3
+The class pointer is \*LxmDrawingAreaWidgetClass\*O.
+.PP 
+The class name is \*LXmDrawingArea\*O.
+.SS "New Resources"
+The following table defines a set of widget resources used by the programmer
+to specify data.  The programmer can also set the resource values for the
+inherited classes to set attributes for this widget.  To reference a
+resource by name or by class in a .Xdefaults file, remove the \*LXmN\*O or
+\*LXmC\*O prefix and use the remaining letters.  To specify one of the defined
+values for a resource in a .Xdefaults file, remove the \*LXm\*O prefix and use
+the remaining letters (in either lowercase or uppercase, but include any
+underscores between words).
+The codes in the access column indicate if the given resource can be
+set at creation time (C),
+set by using \*LXtSetValues\*O (S),
+retrieved by using \*LXtGetValues\*O (G), or is not applicable (N/A).
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmDrawingArea Resource Set
+Name	Class	Type	Default	Access
+_
+XmNexposeCallback	XmCCallback	XtCallbackList	NULL	C
+XmNinputCallback	XmCCallback	XtCallbackList	NULL	C
+XmNmarginHeight	XmCMarginHeight	Dimension	10	CSG
+XmNmarginWidth	XmCMarginWidth	Dimension	10 	CSG
+XmNresizeCallback	XmCCallback	XtCallbackList	NULL	C
+XmNresizePolicy	XmCResizePolicy	unsigned char	XmRESIZE_ANY	CSG
+.TE
+.nL
+.ne 8
+.VL  
+.LI "\*LXmNexposeCallback\*O"
+Specifies the list of callbacks that is
+called when DrawingArea receives an exposure event.
+The callback reason is \*LXmCR_EXPOSE\*O.
+The callback structure also includes the exposure event.
+.PP
+The default bit gravity for Manager windows is \*LNorthWestGravity\*O.
+This may cause the \*LXmNexposeCallback\*O procedures not to be invoked
+when the DrawingArea window is made smaller.
+.LI "\*LXmNinputCallback\*O"
+Specifies the list of callbacks that is
+called when the DrawingArea receives a keyboard
+or mouse event (key or button, up or down).
+The callback reason is \*LXmCR_INPUT\*O.
+The callback structure also includes the input event.
+.LI "\*LXmNmarginHeight\*O"
+Specifies the minimum spacing in pixels between the top or bottom edge
+of DrawingArea and any child widget.
+.LI "\*LXmNmarginWidth\*O"
+Specifies the minimum spacing in pixels between the left or right edge
+of DrawingArea and any child widget.
+.LI "\*LXmNresizeCallback\*O"
+Specifies the list of callbacks that is
+called when the DrawingArea is resized.
+The callback reason is \*LXmCR_RESIZE\*O.
+.LI "\*LXmNresizePolicy\*O"
+Controls the policy for resizing DrawingArea widgets.
+Possible values include \*LXmRESIZE_NONE\*O (fixed size),
+\*LXmRESIZE_ANY\*O (shrink or grow as needed), and
+\*LXmRESIZE_GROW\*O (grow only).
+.LE 
+.SS "Inherited Resources"
+DrawingArea inherits behavior and resources from the following
+superclasses.  For a complete description of each resource, refer to the
+man page for that superclass.
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmManager Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNinitialFocus	XmCInitialFocus	Widget	NULL	CSG
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmTAB_GROUP	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	0	CSG
+XmNstringDirection	XmCStringDirection	XmStringDirection	dynamic	CG
+XmNtopShadowColor	XmCTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	True	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	XtPointer	NULL	CSG
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Composite Resource Set
+Name	Class	Type	Default	Access
+_
+XmNchildren	XmCReadOnly	WidgetList	NULL	G
+XmNinsertPosition	XmCInsertPosition	XtOrderProc	NULL	CSG
+XmNnumChildren	XmCReadOnly	Cardinal	0	G
+.TE
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtAccelerators	dynamic	CSG
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderColor	XmCBorderColor	Pixel	XtDefaultForeground	CSG
+XmNborderPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNcolormap	XmCColormap	Colormap	dynamic	CG
+XmNdepth	XmCDepth	int	dynamic	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Screen *	dynamic	CG
+.wH .tH
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	dynamic	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.wH .in  
+.SS "Callback Information"
+A pointer to the following structure is passed to each callback:
+.sS
+.iS
+.ta .25i 1.1i
+typedef struct
+{
+	int	\*Vreason\*L;
+	XEvent	\*V* event\*L;
+	Window	\*Vwindow\*L;
+} XmDrawingAreaCallbackStruct;
+.iE
+.sE
+.wH .fi
+.VL .75i 
+.LI "\*Vreason\*O"
+Indicates why the callback was invoked
+.LI "\*Vevent\*O"
+Points to the \*LXEvent\*O that triggered the callback.
+This is NULL for the \*LXmNresizeCallback\*O.
+.LI "\*Vwindow\*O"
+Is set to the widget window
+.nL
+.ne 10
+.LE 
+.SS "Translations"
+XmDrawingArea inherits translations from XmManager.
+Before calling the XmManager actions, all events in the inherited
+translations except \*L<BtnMotion>\*O, \*L<EnterWindow>\*O,
+\*L<LeaveWindow>\*O, \*L<FocusIn>\*O, and \*L<FocusOut>\*O also call the
+\*LDrawingAreaInput()\*O action.
+.PP 
+XmDrawingArea has the additional translations listed below.
+These translations may not directly correspond to a
+translation table.
+.iS
+.ta 1.5i
+MAny BAny Press:	DrawingAreaInput()
+MAny BAny Release:	DrawingAreaInput()
+.sp \n(PDu
+MAny KAny Press:	DrawingAreaInput()
+	ManagerGadgetKeyInput()
+MAny KAny Release:	DrawingAreaInput()
+.wH .fi
+.iE
+.SS "Action Routines"
+The XmDrawingArea action routines are described below:
+.VL  
+.LI "\*LDrawingAreaInput()\*O:"
+Unless the event takes place in a gadget, calls the callbacks for
+\*LXmNinputCallback\*O.
+.LI "\*LManagerGadgetKeyInput()\*O:"
+Causes the current gadget to process a keyboard event.
+.LE
+.nL
+.ne 10
+.SS "Additional Behavior"
+The XmDrawingArea widget has the additional behavior described below:
+.VL  
+.LI "\*L<Expose>\*O:"
+Calls the callbacks for \*LXmNexposeCallback\*O.
+.LI "\*L<Widget\ Resize>\*O:"
+Calls the callbacks for \*LXmNresizeCallback\*O.
+.P 
+.P 
+.ne 2i
+.LE
+.SS "Virtual Bindings"
+The bindings for virtual keys are vendor specific.
+For information about bindings for virtual buttons and keys, see \*LVirtualBindings(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LComposite(3X)\*O, \*LConstraint(3X)\*O, \*LCore(3X)\*O,
+\*LXmCreateDrawingArea(3X)\*O,
+and \*LXmManager(3X)\*O.
+.ad

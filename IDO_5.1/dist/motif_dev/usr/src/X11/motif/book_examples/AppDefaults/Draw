@@ -1,0 +1,38 @@
+!ifdef __sgi /* fixed font is too big */
+Draw*defaultFontList: 9x15
+!endif __sgi
+
+! Resources for 'commands'
+!	(added by SGI)
+!
+Draw*commands.x:		0
+Draw*commands.y:		0
+
+!!
+!! Draw is used by both ch3/draw and ch10/draw.  The defaults for ch10/draw
+!! are not included, so we add them here.
+!!
+!! ifndef JUST_LIKE_BOOK
+Draw*command*commands*orientation:	vertical
+Draw*command*browser*numColumns:	3
+!! endif
+
+Draw*commands*orientation:	horizontal
+Draw*commands*background:	yellow
+Draw*commands*packing:		pack_tight
+
+! Resources for 'options'
+!
+Draw*options.x:			0
+Draw*options.y:			50
+Draw*options*orientation:	vertical
+Draw*options*background:      	green
+Draw*options*packing:		pack_tight
+
+! Resources for 'canvas'
+!
+Draw*canvas.x:			100
+Draw*canvas.y:			50
+Draw*canvas*background:		red
+Draw*canvas*height:		100
+Draw*canvas*width:		150

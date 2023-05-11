@@ -1,0 +1,97 @@
+#!smake
+#
+# Copyright 1993, Silicon Graphics Inc., Mountain View, CA. 
+#
+# Makefile.kernio
+#
+# This is a sample makefile to be used by device driver developers
+# doing development for Irix 5.0. A number of flags must be defined
+# correctly when compiling device drivers for 5.0. The cflags specified
+# in this file are flags used by Silicon Graphics to compile drivers
+# for different product types. This makefile is intended as an example.
+#
+# To use this makefile, do the following:
+#
+# 	1. Set the CPUBOARD environment variable to the appropriate machine 
+#	   type (ie. IP5, IP6, IP12, etc.), for example:
+#
+#		setenv CPUBOARD IP12 
+#
+#	   If you do not know what machine type you have, use the "hinv"
+#	   command to find out.
+#
+#	2. Build the driver using this makefile:
+#
+#		make -f Makefile.kernio driver.o
+#
+# The flags used in this makefile have the following meanings:
+#
+#	_K32U32		kernel in 32 bit mode running only 32 bit binaries
+#	_K32U64		kernel in 32 bit mode running 32/64 bit binaries
+#	-D_KERNEL	compiled for kernel as opposed to stand alone
+#	-DSTATIC=static	redefine occurances for STATIC as static
+#	-DJUMP_WAR	workaround for R4000 branch on end of page bug
+#	-DPROBE_WAR	workaround for R4000 bug which requires TLBprobe be
+#				performed uncached
+#	-DBADVA_WAR	workaround for R4000 badvaddr bug
+#	-DR4000         R4000 machine
+#	-DR3000		R3000 machine
+#	-Wx,-G8		global pointer set to 8
+#	-non_shared	do not used shared objects
+#	-coff		produce a coff executable
+#	-Wc,-pic0	do not allocate extra stack space (4 words) which is 
+#				not necessary for coff, non_shared code
+#
+#
+
+ROOT=/
+include $(ROOT)/usr/include/make/commondefs
+
+#if defined(CPUBOARD) && !empty(CPUBOARD)
+
+#if $(CPUBOARD) == "IP5"
+CFLAGS=-D_K32U32 -D_KERNEL -DSTATIC=static -DIP5 -DR3000 -Wx,-G8 -non_shared \
+-coff -Wc,-pic0
+#endif
+
+#if $(CPUBOARD) == "IP6"
+CFLAGS=-D_K32U32 -D_KERNEL -DSTATIC=static -DIP6 -DR3000 -Wx,-G8 -non_shared \
+-coff -Wc,-pic0
+#endif
+
+#if $(CPUBOARD) == "IP7"
+CFLAGS=-D_K32U32 -D_KERNEL -DSTATIC=static -DIP5 -DR3000 -Wx,-G8 -non_shared \
+-coff -Wc,-pic0
+#endif
+
+#if $(CPUBOARD) == "IP9"
+CFLAGS=-D_K32U32 -D_KERNEL -DSTATIC=static -DIP5 -DR3000 -Wx,-G8 -non_shared \
+-coff -Wc,-pic0
+#endif
+
+#if $(CPUBOARD) == "IP12"
+CFLAGS=-D_K32U32 -D_KERNEL -DSTATIC=static -DIP12 -DR3000 -Wx,-G8 -non_shared \
+-coff -Wc,-pic0
+#endif
+
+#if $(CPUBOARD) == "IP17"
+CFLAGS=-D_K32U32 -D_KERNEL -DSTATIC=static -DJUMP_WAR -DPROBE_WAR \
+-DBADVA_WAR -DIP17 -DR4000 -Wx,-G8 -non_shared -coff -Wc,-pic0
+#endif
+
+#if $(CPUBOARD) == "IP19"
+CFLAGS=-D_K32U64 -D_KERNEL -DSTATIC=static -DEVEREST \
+-DBADVA_WAR -DIP19 -DR4000 -Wx,-G8 -non_shared -coff -Wc,-pic0
+#endif
+
+#if $(CPUBOARD) == "IP20"
+CFLAGS=-D_K32U32 -D_KERNEL -DSTATIC=static -DJUMP_WAR -DPROBE_WAR \
+-DBADVA_WAR -DIP20 -DR4000 -Wx,-G8 -non_shared -coff -Wc,-pic0
+#endif
+
+#if $(CPUBOARD) == "IP22"
+CFLAGS=-D_K32U32 -D_KERNEL -DSTATIC=static -DJUMP_WAR -DPROBE_WAR \
+-DBADVA_WAR -DIP22 -DR4000 -Wx,-G8 -non_shared -coff -Wc,-pic0
+#endif
+
+#endif

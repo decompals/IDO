@@ -1,0 +1,59 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.3 $ $Date: 1992/10/23 16:53:44 $
+INCLUDES = -I. -I$(INCLUDESRC) -I$(MINCLUDESRC)
+        DEPLIBS = XmClientDepLibs
+LOCAL_LIBRARIES = XmClientLibs
+
+SRCS=	\
+	xmdialogs.c \
+	xmeditor.c \
+	xmfonts.c \
+	xmlist.c \
+	xmter.c \
+	xmform.c \
+	xmforc.c \
+	xmmap.c \
+	xmgetres.c \
+	xmapdef.c \
+	xmprotocol.c
+
+NormalLibraryObjectRule()
+
+MSimpleProgramTarget(xmdialogs)
+MSimpleProgramTarget(xmeditor)
+MSimpleProgramTarget(xmfonts)
+MSimpleProgramTarget(xmlist)
+MSimpleProgramTarget(xmprotocol)
+MSimpleProgramTarget(xmter)
+MSimpleProgramTarget(xmform)
+MSimpleProgramTarget(xmforc)
+MSimpleProgramTarget(xmmap)
+MSimpleProgramTarget(xmgetres)
+MSimpleProgramTarget(xmapdef)
+
+
+InstallProgram(xmdialogs,$(BINDIR))
+InstallProgram(xmeditor,$(BINDIR))
+InstallProgram(xmfonts,$(BINDIR))
+InstallProgram(xmlist,$(BINDIR))
+InstallProgram(xmprotocol,$(BINDIR))
+InstallProgram(xmter,$(BINDIR))
+InstallProgram(xmform,$(BINDIR))
+InstallProgram(xmforc,$(BINDIR))
+InstallProgram(xmmap,$(BINDIR))
+InstallProgram(xmgetres,$(BINDIR))
+InstallProgram(xmapdef,$(BINDIR))
+
+InstallAppDefaults(XMdemos)
+
+DependTarget()
+#ifdef SGIArchitecture
+FILES = Imakefile README *.c *.xbm
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* SGIArchitecture */

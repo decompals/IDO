@@ -1,0 +1,22 @@
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM Motif Release 1.2
+
+INCLUDES = -I. -I$(INCLUDESRC) -I$(MINCLUDESRC)
+        DEPLIBS = MrmClientDepLibs
+LOCAL_LIBRARIES = MrmClientLibs
+
+SRCS = cutpaste.c
+
+OBJS = cutpaste.o
+
+NormalLibraryObjectRule()
+
+MSimpleUilTarget(cutpaste)
+
+DependTarget()
+#ifdef SGIArchitecture
+FILES = Imakefile *.c *.uil README
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

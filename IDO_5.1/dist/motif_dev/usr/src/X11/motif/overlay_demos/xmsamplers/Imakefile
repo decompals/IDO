@@ -1,0 +1,45 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 2.9 $ $Date: 1993/05/27 22:11:10 $
+INCLUDES = -I. -I$(INCLUDESRC) -I$(MINCLUDESRC)
+        DEPLIBS = ../lib/sgi_intl.o ../lib/sgi_visual.o ../lib/shell/Shell.o MrmClientDepLibs
+LOCAL_LIBRARIES = ../lib/sgi_intl.o ../lib/sgi_visual.o $(MRESOURCELIB) $(XMLIB) ../lib/shell/Shell.o $(XTOOLLIB) $(XLIB) $(XMEXTRA_LIBS)
+  EXTRA_DEFINES = -DOVERLAY_DEMO
+
+SRCS=	\
+	xmdialogs.c \
+	xmeditor.c \
+	xmfonts.c \
+	xmlist.c \
+	xmter.c \
+	xmprotocol.c
+
+NormalLibraryObjectRule()
+
+MSimpleProgramTarget(xmdialogs)
+MSimpleProgramTarget(xmeditor)
+MSimpleProgramTarget(xmfonts)
+MSimpleProgramTarget(xmlist)
+MSimpleProgramTarget(xmprotocol)
+MSimpleProgramTarget(xmter)
+
+
+InstallProgram(xmdialogs,$(BINDIR))
+InstallProgram(xmeditor,$(BINDIR))
+InstallProgram(xmfonts,$(BINDIR))
+InstallProgram(xmlist,$(BINDIR))
+InstallProgram(xmprotocol,$(BINDIR))
+InstallProgram(xmter,$(BINDIR))
+
+InstallAppDefaults(XMdemos)
+
+DependTarget()
+#ifdef SGIArchitecture
+FILES = Imakefile README *.c *.xbm
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* SGIArchitecture */

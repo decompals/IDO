@@ -1,0 +1,693 @@
+
+		NON-STANDARD VISUAL DEMONSTRATION PROGRAM NOTES
+
+These demonstration programs are modified versions of the standard OSF/Motif
+demo programs.  They show two things:
+
+	* how to use the overlay and popup planes from Motif.
+	* how to use non-standard visuals from Motif.
+
+On an SGI workstation, access to the popup or overlay bitplanes from X
+or Motif is by means of non-standard visuals.  All of these demos use
+either the popup planes or overlay planes.  The methods are valid for all
+non-standard visuals.
+
+  ===========================================================================
+  !!                                                                       !!
+  !!  Because these demos are based on the standard demos, which are       !!
+  !!  themselves unsupported, these overlay demos are also unsupported     !!
+  !!  at this time -- both by OSF and by SGI.  It is known that bugs       !!
+  !!  remain; bug reports are welcome, but fixing the bugs is not          !!
+  !!  guaranteed.                                                          !!
+  !!                                                                       !!
+  !!  Known bugs are mentioned with individual demo descriptions, below.   !!
+  !!                                                                       !!
+  ===========================================================================
+
+This non-standard-visual demonstration tree is shipped with X11 Imakefiles,
+not Makefiles.  To create the Makefiles needed to build the programs in the
+demo tree:
+
+	% cd /usr/src/X11/motif/overlay_demos	# build tree location
+	% mmkmf				# Build the initial Makefile
+	% make Makefile			# Verify the Makefile is OK
+	% make Makefiles		# Update the rest of your Makefiles
+	% make clean			# Otherwise, if this isn't your first
+					#   installation, obsolete binaries may
+					#   be left around yielding unexpected
+					#   results.
+	% make depend			# Update Makefile dependencies.  As
+					#   well as assuring proper
+					#   dependencies, this is also a
+					#   good confidence test that
+					#   everything is installed properly.
+
+    make all of the demo programs:
+	% cd /usr/src/X11/motif/overlay_demos	# Top of the demos tree
+	% make all			# Build all of the demos
+
+    or else, to conserve space, just make those you care about:
+	% cd /usr/src/X11/motif/overlay_demos/lib  # demos need this
+	% make all			#
+	% cd /usr/src/X11/motif/overlay_demos/XXX  # XXX is demo you want
+	% make all			# Build all demos in that directory
+
+
+Demo resource files:
+
+	A number of the demo directories have local resource files.  To run
+	the demos correctly, you should append the string ":%N" to your
+	$XUSERFILESEARCHPATH.
+
+	If you do not have $XUSERFILESEARCHPATH set, then set $XAPPLRESDIR to
+	".".
+
+To run the demos:
+
+	* cd /usr/src/X11/motif/overlay_demos/<demo directory>
+
+	* read the README file in that directory, if any.  Some of the demos
+	  require special things, such as setting an environment variable.
+
+	* run the demo.
+
+
+
+
+	NOTES ABOUT USING NON-DEFAULT VISUALS WITH X11 AND MOTIF
+
+
+SGI hardware has the capability of drawing into several different frame
+buffers.  The types available, and their normal use, are:
+
+	* POPUP planes -- any SGI workstation that has graphics hardware has
+	  two popup planes.  These planes are used by system programs, such
+	  as window managers and toolchest, for transient things (e.g. menus).
+
+	  By system convention, drawing to these planes may or may not be
+	  by using a window.  If you put anything other than transient
+	  drawing here, it may get damaged.  It is reasonable to put your
+	  application's menus here.
+
+	* OVERLAY planes -- there are either 0, 2, or 4 overlay planes
+	  available, depending on the hardware model and configuration.
+
+	  The 2-bit overlay planes are used by applications for transient
+	  things, such as popup menus.
+
+	  Using the 4-bit overlay planes is discouraged, because both its
+	  pixels and its colormap conflict with those of both the 2-bit
+	  overlay planes and the popup planes.
+
+	* NORMAL planes -- most graphics are done into these planes.
+
+	* UNDERLAY planes -- on any SGI hardware that has overlay planes, the
+	  hardware supports underlay planes.  The X server, however, does not
+	  support X11 (and therefore Motif) programs drawing in the underlay
+	  planes.  Any underlay planes drawing must be done by means of the
+	  Graphics Library.
+
+	* other planes include z-buffer, stencil, and alpha planes
+
+Note that only normal planes and popup planes are supported on all SGI
+hardware.  (For further information about SGI graphics hardware, including
+interactions between the different framebuffers, see standard SGI Graphics
+Library documentation.)
+
+The SGI X11 server (Xsgi) provides various visuals that enable X11 drawing
+access to the normal, popup, and overlay framebuffers (to the extent they are
+physically available).  Each visual allows drawing to only a single combination
+of framebuffer, depth, and visual class.
+
+One shortcoming of the current X11 Consortium standard model is that it
+does not deal with the different framebuffers (hereafter referred to as
+"visual types").  Thus, any application code that deals with them is
+non-standard.  SGI is continuing to work with the X11 Consortium to get
+this area standardized.
+
+To help you know when you are making use of something non-standard,
+IRIX/Motif and some related products use symbols beginning with "SG_"
+for any extensions.
+
+This directory, and those beneath it, demonstrates putting Motif programs and
+widgets into the popup and/or overlay planes.  Standard Motif demonstration
+programs, altered slightly to do so, are used.  There is, however, nothing
+Motif-specific about the technique.  The same ideas can be used with any X11
+or Xt program.  There is also nothing specific to the visuals used -- these
+techniques can be used to draw into any non-default visual.
+
+In the sections that follow, we describe some issues related to drawing
+in a non-defualt visual using Xlib, Xt, and Motif.
+
+
+
+
+	NOTES ABOUT NON-DEFAULT VISUAL PROGRAMMING WITH Xlib
+
+*) For XCreateWindow(3X), the "depth" and "visual" resources must to be
+   consistent.
+
+   The XSetWindowAttributes structure members must also be consistent:
+	* background pixmap		must be of the stated depth
+	* background pixel		doesn't exceed the colormap size
+	* border pixmap			must be of the stated depth
+	* border pixel			doesn't exceed the colormap size
+	* colormap			must match the visual
+	* backing store information	must match
+
+   A correct depth and visual must be supplied when the window is created,
+   and cannot thereafter be changed.  Other things can be changed as needed.
+   If an application either sets these values inconsistently, or allows an
+   inconsistent value to be inherited, the result will be an X server
+   error.
+
+
+
+
+	NOTES ABOUT OVERLAY PROGRAMMING WITH THE Xt TOOLKIT INTRINSICS
+   
+*) The X toolkit does not fully support multiple visuals and different frame
+   buffers.  We are working with MIT to get this taken care of.  It would be
+   reasonable to expect this area to evolve.
+
+*) "visual" is a Shell widget resource; "visual" can be set only for a Shell
+   widget.  That setting will apply to all widget descendants of that Shell,
+   because such widgets' windows will be descendants of the Shell's window.
+
+*) "colormap" and "depth" are Core widget resources.  They must always be
+   consistent with the current "visual" setting.  Generally, if you set
+   "visual", you also need to set "colormap" and "depth".  Otherwise an
+   inconsistent value may get inherited.
+
+*) Other things that have an associated depth also need to be kept consistent.
+   The most common problem is trying to use a pixmap at a different depth than
+   that for which it was created.
+
+*) Pixel values need to be kept consistent.  In general, colors will not be
+   the same in the various colormaps.  Be sure you use the correct pixel value
+   for the current colormap.  In particular, in the popup and overlay planes
+   pixel 0 is transparent.  The BlackPixel and WhitePixel macros should be
+   avoided -- they do as X11 documents and return pixel values suitable for use
+   with the >>default<< colormap.  BlackPixel returns a pixel which is black in
+   the normal planes colormaps, but is transparent in the other colormaps.
+
+   The most common way to get inconsistent pixel values is for an application
+   to determine a pixel value using the default colormap, and then to use it in
+   a different colormap.  If the pixel exists, you are likely to get the wrong
+   color.  If the pixel does not exist (such as when you try to apply a pixel
+   greater than 3 to the 2-bit overlay colormap), you will get an X protocol
+   error.
+
+   If you do decide to put widgets in one of the overlay visuals, remember
+   that the colormap is probably smaller than the default one.
+
+	*) The popup planes colormap has only 4 entries.  Color zero is
+	   reserved for transparent, and the other three colors are available.
+
+	*) The 2-bit overlay planes colormap has only 4 entries.  Color zero
+	   is reserved for transparent, and the other three colors are
+	   available.
+
+	*) The 4-bit overlay planes colormap has 16 entries.  Color zero is
+	   reserved for transparent, and the other fifteen colors are
+	   available.
+
+	*) The popup planes and the 2-bit overlay planes (if available)
+	   have independent colormaps.  The 4-bit overlay planes colormap
+	   conflicts with both of them.
+
+	  As stated above, using the 4-bit overlay planes is discouraged,
+	  because both its pixels and its colormap conflict with those of
+	  both the 2-bit overlay planes and the popup planes.
+
+*) As a result of dealing with multiple colormaps of various sizes, you will
+   run into some new issues -- some of which may not have well-defined
+   solutions:
+
+	*) There is no official way for multiple independent applications to
+	   cooperate on using a common colormap.  (When this is resolved, we
+	   shall include it in the demo encapsulation routines.) The problem is
+	   that there are no defaults, including a default colormap, for any
+	   visual other than the default visual.
+
+	*) An application is only guaranteed to have all of its colormaps
+	   installed when it has colormap focus.  Consequently, there may be
+	   more colormap flashing than otherwise.
+
+	   When an application gets focus, all of the colormaps the application
+	   has declared get installed (whether or not it actually needs them).
+	   These colormaps remain until another application needs to have one
+	   of them replaced.  Any of your application's windows that need a
+	   conflicting colormap will not return to correct colors until your
+	   application next gets colormap focus.
+
+*) Your override widgets (e.g. pull-down and popup menus) are responsible for
+   installing their own colormaps.  They will not get their colormaps installed
+   -- ever -- unless your application does something about it.  The solution
+   for this is to use XSetWMColormapWindows() to tell the window manager about
+   the override window's non-default colormap.  Then the window manager will
+   install the colormaps you need whenever your main window is entered.  Some
+   of the overlay demos do this.
+
+*) Likewise, your overlay dialogs will not get their color map installed
+   until they get focus.  The solution for this is also to use
+   XSetWMColormapWindows() to tell the window manager to install the overlay
+   colormap whenever the main window gets focus.  Some of the demos do this.
+
+*) It is possible to put X toolkit components (e.g. pop-up menus) into the
+   overlay or popup planes.  Unfortunately, there are a number of reasons why
+   this must be done programmatically rather than from a resource file:
+
+	* To put a widget tree into the overlay planes, you need to put the
+	  widget tree's Shell widget there.  To put your entire application
+	  in the overlay planes, you need to put your toplevel Shell there.
+
+	  As wonderful as it is, "XtAppInitialize" is not usable in this case.
+	  To put a Shell into the overlay planes, you first need to know the
+	  display, which you do not know before calling XtAppInitialize.
+	  Instead, you must use the older piece-meal approach.  Then you can
+	  determine the display before you need to create the top level Shell.
+	  (There are demos done each way for you to look at.)
+
+	* There is no resource converter for the "shell.visual" resource.
+	  That means that this resource can only be set programmatically.
+
+	  That also means that the the varargs calls (i.e. XtVaCreate...
+	  and XmVaCreate...) cannot be used to put a Shell in a non-default
+	  visual.
+
+	* There is no Xt resource at all that supports distinguishing between
+	  the types of frame buffer (e.g. "visualType: OVERLAY").
+
+*) The Shell widget inherits all of the visual attributes it needs
+  (e.g. colormap, depth) from its widget tree EXCEPT for the visual itself.
+  The actual visual is inherited from its window (not widget) parent.
+  Inheriting from two places can cause trouble when using non-standard
+  visuals.
+
+  In practice, this often means that colormap and depth come from the widget
+  parent, but that the visual is inherited from the root window, and is
+  therefore the default visual.  Not nice when everything else pertains to a
+  non-default visual.  In fact, a guaranteed BADMATCH error.
+
+  It would seem that the fix is to inherit all of these from the widget
+  tree.  Probably a resource should be provided to say whether to do
+  that or to do as it does today -- just to avoid breaking existing
+  programs.
+
+  In the meantime, you need to do either of the following two things:
+
+	* Explicitly set the Shell's visual for each Shell you want to put in
+	  a non-default visual.  That is, be careful to not depend on how the
+	  Shell's visual is inherited.
+
+	* Link with a modified Shell.o that is able to inherit the visual
+	  from the widget tree.
+
+	  A modified version of Shell.c is provided so you can see what
+	  changes are needed.  We also supply a matching Shell.o for those
+	  who simply wish to link in this modified version.  Some of the
+	  converted demo programs do this.
+
+	  We do NOT supply the header files needed to for you to re-build
+	  it.  If you have your own X11 source, you have those header files
+	  and you can recompile it as you wish.
+
+
+	  IMPORTANT NOTE: THIS MODIFIED Shell.c, AND THE DERIVED Shell.o,
+		ARE SUPPLIED SOLELY ON A DEMONSTRATION SOFTWARE BASIS.
+		THAT IS, THE MODIFED Shell WIDGET IS NOT A SUPPORTED PRODUCT.
+
+		It may not appear in future releases.  If you do link with it,
+		you will, of course, not get any fixes to Shell.o that may
+		appear in future versions of the Xt library.
+
+
+
+
+	NOTES ABOUT NON_DEFAULT VISUAL PROGRAMMING WITH MOTIF
+
+
+*) In OSF/Motif 1.1.X, the Motif widget library (libXm.a) had many bugs
+   in handling non-standard visuals.  The usual symptom was getting an X
+   protocol BADMATCH error.  SGI fixed as many of these problems as we
+   could find.
+
+   As of OSF/Motif 1.2, OSF incorporated these fixes into libXm.  SGI has
+   since fixed a few things that were still overlooked.  We believe that
+   we have caught all instances.
+   
+   Unfortunately, this is a bit like testing quality in.  Your application
+   may uncover new problems in this area.  If you do, please let us know
+   right away.
+
+*) When running an application in either the popup planes or the 2-bit overlay
+   planes, only three colors are available (in these planes, pixel 0 is always
+   transparent).  Even a single Motif widget generally uses four colors
+   (foreground, background, top shadow color, bottom shadow color).
+
+   Only the first three colors requested can be allocated from the colormap.
+   Further color allocation attempts will fail.  For those colors allocated by
+   libXt (e.g. borderColor), pixel zero (i.e. transparent) will generally be
+   returned.
+
+   SGI has modified certain color selection algorithms in libXm to deal with
+   colormap overflow  by choosing the "best" available color from those already
+   in the colormap.  The color chosen will not be the background color (unless
+   you are setting background), nor will it be transparent.
+   
+   Since there are so few other colors to choose from, the result may not be
+   very close to what was actually requested.  In order to get the best visual
+   appearance, an application may need to use resources and specify few enough
+   carefully chosen colors that they all fit in the colormap.
+
+*) The Motif MenuBar includes an optimization which uses a common Shell for
+   all of the pull-down menus of a single MenuBar.  This means that all such
+   menus will be in the same visual.  This should cause no practical problems.
+
+*) Avoid the Motif call "XmGetPixmap" if the pixmap may be used with a
+   visual whose depth is different from the default depth. XmGetPixmap()
+   only creates pixmaps of the DefaultDepth.
+
+   As of OSF/Motif 1.2, the XmGetPixmap call is strongly discouraged.
+   There is a new call XmGetPixmapByDepth that gets a pixmap of the
+   requested depth.
+
+   The Xt pixmap resource converter uses the default depth.  This means that
+   you cannot specify pixmaps in a default file if they will be used in a
+   visual whose depth is different from that of the default visual.
+
+*) The Motif Resource Manager (libMrm.a) also has many visuals-related bugs.
+   SGI has NOT fixed them -- for now, "if it hurts, don't do it".  The net
+   result of the libMrm problems is that you can use use non-standard visuals
+   with uil -- but only with caution.  The problems you run into are all
+   related to the fact that libMrm relies on defaults, such as default depth
+   and the default colormap.  The things we have noticed while bringing up
+   the demos in the overlays, and which  you need to avoid in your uil file
+   are:
+
+	* pixmaps		Mrm uses the default depth
+	* bitmap files		Mrm uses the default depth
+	* colors		Mrm uses the pixel value obtained from the
+				default colormap.  That pixel may be wrong,
+				or may not even exist in your colormap.
+
+   You can specify your colors in a resource file instead of the UIL file.
+
+   You must set up your pixmaps and bitmaps programmatically.
+
+
+
+
+	NOTES ABOUT OVERLAY PROGRAMMING WITH MOTIF INTERFACE BUILDERS
+
+   Since this problem cannot be dealt with by means of default-file resources,
+   we expect that none of the interface builders work properly in this
+   environment.
+
+   In particular, TeleUSE and UIMX do not directly work with Motif overlay
+   usage.  A possible workaround would be to hand code anything that needed a
+   non-default visual, and then link this to the builder generated code.  This
+   hand code could even be initially coded by the builder tool, and then
+   modified.
+
+
+
+
+	HELP PROVIDED FOR CREATING X WINDOWS IN NON-DEFAULT VISUALS
+
+
+The files /usr/src/X11/motif/overlay_demos/lib/sgi_visual.[ch] provide
+convenient routines to get legal and consistent values for use with different
+visuals (such as overlay planes).  Some of these routines are used by some SGI
+code (e.g. 4Dwm, toolchest), and by the overlay demonstration programs.  This
+encapsulation is useful because:
+
+	* The functions are commonly needed by software wanting to open
+	  windows in the overlay or popup planes.
+
+	* Doing so is (understandably) a mystery are to many application
+	  writers.
+
+	* Unfortunately, some of these things have neither a standard X11
+	  nor a standard SGI way to do them.  This encapsulation includes
+	  a number of heuristics that may change in time.
+
+WARNING:
+	sgi_visual.c IS UNSUPPORTED DEMONSTRATION CODE.  IT IS
+	EXTREMELY LIKELY THAT DETAILS OF THE CODE, AND EVEN THE
+	PROGRAMMING INTERFACE IT PRESENTS, WILL BE DIFFERENT IN
+	FUTURE RELEASES.
+
+	If you make use of this code in your own software, you
+	should make a copy of it, so that it won't be overwritten
+	by later installation of a changed version.
+
+	Once the X community settles on a standard way to handle
+	visual types, we shall consider supplying a more supported
+	encapsulation, if that still seems useful.
+
+
+The routines in sgi_visual.c deal with consistent sets of the following
+values:  depth, visual class (e.g. PseudoColor), visual type (e.g. OVERLAY),
+X11 visual, and colormaps.  The other members of the XSetWindowAttributes
+structure must also be consistent, but they are easier for the application
+itself to keep track of and set correctly.  Therefore, sgi_visual.c does
+not do anything with them.
+
+The following functions are included, and are among the simplest to use.
+These are the functions used by the overlay demo programs.  Each of them
+inserts compatible values for the following visual related resources into the
+arglist for a toolkit widget:
+
+		* colormap
+		* depth
+		* visual
+
+   The difference between the routines is the visual type (popup, overlay, or
+   normal) of the visual:
+
+    		int SG_getPopupArgs(dpy, scr, args, n)
+    		int SG_getOverlayArgs(dpy, scr, args, n)
+    		int SG_getOverlay2Args(dpy, scr, args, n)
+    		int SG_getOverlay4Args(dpy, scr, args, n)
+    		int SG_getNormalArgs(dpy, scr, args, n)
+
+    Arguments these functions require:
+
+		Display *dpy	The display is used to find the root window.
+
+		int scr		Screen number
+
+		Arglist args	Must have room for the arguments to be added
+				by this routine.  Currently that means three
+				more arguments.  Possibly more in the future.
+
+		int *n		Index into the arguments list.  It will be
+				incremented for each argument added.
+
+    If the calling program asks for a visual type that does not exist on the
+    hardware, the function automatically returns the best one it can.
+
+
+
+
+================================================================================
+=                                                                              =
+=		OVERLAY DEMONSTRATION PROGRAMS, BY DIRECTORY                   =
+=                                                                              =
+================================================================================
+
+We have included a selection of directories with demos that show something
+about overlays.  Not all demos are supplied in an overlay version:
+
+	* Some don't show anything new:
+
+	* They rely on calls that don't lend themselves to non-standard
+	  visuals, such as XtAppInitialize or XtVaAppCreateShell.  To make
+	  such a demo work in a  non-standard visual, the demo would need
+	  to be modified to use the older calls.  (This is described
+	  above.)
+
+
+Each converted demonstration program has been modified so that part or all
+of it runs in the overlay and/or popup planes.  Any necessary changes are
+bounded by OVERLAY_DEMO conditionals (or pseudo-conditionals for uil files
+and resource files).
+
+When converting a demo, we have had to decide how much of it to put into the
+overlays.  The choice of which parts run in the overlay planes is solely to
+show how to do it.  There is no implication that the choice is anything other
+than instructional.  The usual choice that has been made is:
+
+	*) If the demo has no transient items, it is changed to run entirely
+	   in the overly planes.
+
+	*) If the demo has transient items, it is changed so that some or all
+	   of the transient items run in the overlay planes.
+
+Common errors and/or warnings:
+
+    * If the demo is running in a 2-bit visual (i.e. either 2-bit overlay
+      planes or popup planes), many demos will give warnings similar to:
+
+		Warning: Cannot allocate colormap entry for "LightSteelBlue"
+
+    * If the demo is asking for more overlay planes than you have (which
+      most will, if all you have is popup planes), then you will get one or
+      more error messages similar to:
+
+		matching visual NOT found
+
+      In this case, the demo falls back to whatever you do have.  Remember,
+      these are demos -- for your production code you can arrange not to get
+      such warnings.
+
+    * border defaults to BlackPixel (i.e. transparent, if in an overlay).
+      If there is room in your colormap, you can explicitly set it to black,
+      and it will work.  If there is not room, then either:
+      
+	* set it to some color you do have
+	* set the border width to zero
+	* Accept a transparent border (for these demos)
+
+      We have not done so for all demos, so you will see some transparencies.
+
+    * Some demos set their colormaps property, and some don't (although they
+      should).  If they don't, their overlay components (e.g. menus) come up in
+      whatever the colormap had in it.  This is typically, but not necessarily,
+      a black background.
+
+
+
+The following directories have been included.  Here is what to expect from each
+of them:
+
+dogs:
+
+		***** This demo uses the fixed libXt (Shell.c fix) *****
+
+		* This demo shows setting pixmaps for the right depth.  The
+		  pixmap creation is in the Dog.c file, so it could be, and
+		  was, fixed.
+
+		* This demo runs into a libMrm bug -- choosing colors from the
+		  default colormap, rather than the one the demo needs to use.
+		  To get around this, you need to set the colors from either a
+		  defaults file or from the C code.  We have:
+
+			* added a defaults file (Dogs) to this demo
+			* commented out the colors in the UIL file
+
+		  If you don't fix the color handling, then you get an X error
+		  (X_QueryColors out of range)
+
+		* A command-line argument has been added to specify the
+		  visual to run in:
+			0 = underlay  (will fail -- X11 doesn't support it)
+			1 = normal
+			2 = popup
+			3 = overlay
+			4 = overlay (2 bits)
+			5 = overlay (4 bits)
+
+hellomotif:
+		* This demo has no transient parts
+
+		* The entire demo runs in the overlay planes
+
+		* A command-line argument has been added to specify the
+		  visual to run in:
+			0 = underlay  (will fail -- X11 doesn't support it)
+			1 = normal
+			2 = popup
+			3 = overlay
+			4 = overlay (2 bits)
+			5 = overlay (4 bits)
+
+motifburger:
+		***** This demo uses the fixed libXt (Shell.c fix) *****
+
+		* Took the pixmap and bitmap references out of the uil file.
+		  As a result, the quantity buttons (in the order box)
+		  show text labels rather that the arrows of the original demo.
+
+		  To fix this, the demos would need to programmatically
+		  create pixmaps of the correct depth.
+
+		* Took the colors out of the uil file and moved them to a
+		  defaults file (Motifbur).  "Further refinement is left as an
+		  exercise for the reader."
+
+		* Made the demo run in "overlay".  If you run it in "popup" or
+		  "overlay 2", or if you only have popup planes, you will
+		  overflow your colormap.
+
+
+periodic:
+		***** This demo uses the fixed libXt (Shell.c fix) *****
+
+		* This demo has no transient parts in the C source
+
+		* The entire demo runs in the overlay planes
+
+xmsamplers:
+
+	XMdemos.ad
+		* Just like the one in the unmodified demos, except for
+		  adding:
+
+			xmprotocol*borderColor: black
+
+		  This prevents the border from defaulting to BlackPixel (which
+		  is transparent in the overlay planes.  This solution works if
+		  your program uses few enough colors so that everything fits
+		  in the colormap.  xmprotocol does.
+
+	xmdialogs
+		* If run in the popup planes, there is an error concerning
+		  too many colors (i.e. more than 3 are needed).  If run in
+		  the overlay planes, as shipped, this is not a problem.
+		  (If you only have popup planes, the demo will fall back to
+		  the popup planes and you will see the problems with too many
+		  colors.)
+		* The main demo runs in the normal planes
+		* The menu bar pull-down menus are in the overlay planes
+		* All dialog windows run in the overlay planes.
+		* the "resize policy" option menu is in the overlay planes
+		  & fails to set the colormaps property
+
+ 	xmeditor
+		***** This demo uses the fixed libXt (Shell.c fix) *****
+		* The main demo runs in the normal planes.
+		* The pulldown menus from the menubar are in the popup planes.
+		* The dialogs launched from the pulldown menus are in the
+		  popup planes.
+		* XSetWMColormapWindows() is used to handle the popup colormap
+		  for the pulldowns and dialogs.
+
+ 	xmfonts
+		* The main demo runs in the normal planes
+		* The pulldown menu from the menubar is in the popup planes
+		* The dialogs giving sample text are in the popup planes
+		* XSetWMColormapWindows() is used to handle the popup colormap
+		  for the pulldowns and dialogs.
+		* the "HELP" dialog is NOT in the popup or overlay planes
+		  -- no particular reason -- it would be an easy exercise
+		  to put it there.
+
+ 	xmlist
+		* This demo has no transient parts
+		* The entire demo runs in the popup planes
+
+ 	xmprotocol
+		* This demo has no transient parts
+		* The entire demo runs in the popup planes
+
+ 	xmter
+		* The main demo runs in the normal planes
+		* The speed scale dialog (MB3) runs in the popup planes
+		* Note that we did >>not<< set XSetWMColormapWindows(),
+		  and therefore the popup's colormap only gets set right by
+		  entering the popup.  Entering the main window will not
+		  correct it.

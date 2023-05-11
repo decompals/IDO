@@ -1,0 +1,26 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.2 $ $Date: 1992/07/16 19:40:40 $
+
+INCLUDES = -I. -I$(INCLUDESRC) -I$(MINCLUDESRC)
+        DEPLIBS = MrmClientDepLibs
+LOCAL_LIBRARIES = MrmClientLibs
+
+SRCS=	motifbur.c
+
+OBJS=	motifbur.o
+
+NormalLibraryObjectRule()
+
+MSimpleUilTarget(motifbur)
+
+DependTarget()
+#ifdef SGIArchitecture
+FILES = Imakefile *.c *.uil *.xbm README
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

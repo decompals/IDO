@@ -1,0 +1,16 @@
+letterTransliteration 1
+viewAsList  0
+removeDirectoryWarning 1
+clobberFiles 0
+dotFilesShown 1
+toDumpsterOnRemove 1
+snapToGrid 1
+nameOfDumpster /usr/people/4Dgifts/dumpster
+AlternateRowMargin 90
+DirectorySnap 60 40
+IconBoxSize 55 55
+ListBoxSize 25 25
+MarginAroundIcons 30 15
+OffsetBetweenIcons 65 25
+VerticalOffsetInList 0
+WorkSpaceSnap 60 40

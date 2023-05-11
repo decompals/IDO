@@ -1,0 +1,42 @@
+.TH SgFinderAddItem 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgFinderAddItem\*O\(emA Finder function that adds an item to the
+Finder history list
+.iX "SgFinderAddItem"
+.iX "Finder functions" "SgFinderAddItem"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sg/Finder.h>
+.sp \n(PDu
+void SgFinderAddItem (\*Vwidget, str\*L)
+.ta .5i 1.5i
+	SgFinderWidget	\*Vwidget\*L;
+	char 	\*V * str\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LSgFinderAddItem\*O adds an item to the Finder history list at the top position.
+When the item is inserted into the list, it is compared with the
+current items. If the new item matches an item on the selected Finder,
+the item is removed from the old position, so it is not duplicated in
+the history list. 
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the ID of the Finder to which an item is added.
+.LI "\*Vstr\*O"
+Specifies the item to be added to the Finder.
+.LE 
+.PP 
+For a complete definition of Finder and its associated resources, see
+\*LSgFinder(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LSgFinder(3X)\*O.
+.ad

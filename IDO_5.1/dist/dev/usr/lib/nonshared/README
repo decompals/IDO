@@ -1,0 +1,23 @@
+Non-Shared Libraries for SPEC Benchmarks
+
+Essentially all executables in this release are constructed using the
+Dynamic Shared Objects (DSO) facilities described elsewhere.  Using
+DSO is required for compliance with the SVR4 ABI.  There is a very
+small performance penalty associated with DSO.  For essentially all
+applications, the benefits of DSO for application portability far
+outweigh the costs of this performance penalty.  However in the
+case of the widely used SPEC Benchmark suite, SGI has chosen to
+report performance figures based on statically linked libraries. SPEC requires
+that any reported benchmarks be reproducible by customers, and that
+all components used to generate the reported numbers be available
+to customers.  To meet this requirement, we have included the non-shared
+libraries used in generating the SPEC benchmark report as the optional
+package dev.sw.speclibs.  The use of these libraries for production
+software is strongly discouraged, as doing so forfeits the benefits of
+application portability and ease of maintenance afforded by DSO. These
+libraries also may be deleted in future releases of IRIX and executables
+linked with these libraries may not execute successfully on future releases
+of IRIX. The libraries provided are only those required by the SPEC
+benchmarks and do not include a non-shared version of every system library.
+The SPEC performance report provides details on how to repeat our benchmark
+generation using these libraries.

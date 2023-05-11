@@ -1,0 +1,49 @@
+/******************************************************************************/
+/*                                                                            */
+/*                         Motif.rules.sgi                                    */
+/*                                                                            */
+/* Contains SGI-specific additions to Motif.rules.  This file is included     */
+/* at the end of Motif.rules, to give a chance to override any OSF/Motif      */
+/* rules we need to change at SGI.                                            */
+/*                                                                            */
+/* This file is separated out to make future integrations easier.             */
+/*                                                                            */
+/* This file is included if (and only if) the symbol "BuildMotif" is true.    */
+/*                                                                            */
+/******************************************************************************/
+
+/*
+ * Override some definitions from Motif.tmpl.
+ * Motif.tmpl.sgi is called too soon to do that.
+ */
+
+/*
+ * Until it is fixed in Imake.rules, override the following definition.
+ * If you don't then the command "make <debug lib>" will fail if the
+ * debugger subdirectory is not there.
+ */
+
+/*
+ * DebuggedLibraryTarget - generate rules to create a debuggable library.
+ */
+#ifdef DebuggedLibraryTarget
+#  undef DebuggedLibraryTarget
+#endif
+#define	DebuggedLibraryTarget(libname,objlist)				@@\
+AllTarget(Concat3(lib,libname,_d.a))					@@\
+									@@\
+Concat3(lib,libname,_d.a): debugger objlist				@@\
+	$(RM) $@							@@\
+	cd debugger; $(AR) ../$@ objlist				@@\
+	RanLibrary($@)							@@\
+									@@\
+clean::									@@\
+	$(RM) Concat3(lib,libname/**/_d,.a )				@@\
+									@@\
+debugger:								@@\
+	-@if [ ! -d debugger ]; then set -x; mkdir debugger; fi
+
+
+
+
+

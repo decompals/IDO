@@ -1,0 +1,39 @@
+# .grosview setup file included in ~4Dgifts as an example of how one
+#           *could* define the different characteristics one wishes 
+#           to keep tabs on
+# ============================
+# if not all have max, the strips are offset from each other,
+#	making correlation difficult.
+# if they don't all have interval(X), they advance at different rates!
+# it turns out that the first color displayed for a bar doesn't
+# use index 1 in the colors option (at least for strip charts).
+# the comments below indicate which index is used for each
+# chart when counting the legend words from left to right
+# interval 1440 while I'm gone shows a whole days worth
+# 300 shows about 5 hours
+opt interval(300) backcolor(196) arbsize noborder origin(0,580) winsize(460,300) font(Helvetica-BoldOblique)
+
+# *** cpu usage monitor ***
+# cpu strip uses colors: 1,2,6,5,3
+cpu colors(4,1,5,0,6,73) strip max attack(.5) decay(.5) interval(4)
+
+# *** block device throughput usage monitor ***
+bdev colors(4,1,5,0,6,73) strip max lockscale(250) attack(.5) decay(.5) interval(4)
+bdev colors(4,1,5,0,6,73) numeric interval(1)
+
+# *** system activity usage monitor ***
+# sysact uses the colors 1,5,2,6,3
+sysact colors(4,1,5,4,193,73) strip max lockscale(2000) attack(.5)decay(.5) interval(4)
+
+# *** page faults monitor ***
+# fault uses the colors 1,5,2,6,3,4
+# fault colors(4,1,5,0,193,73,103) strip max lockscale(200) attack(.5) decay(.5) interval(4)
+
+# *** network interface monitor ***
+netif colors(4,1,5,0,193,73,103) strip max lockscale(200) attack(.5) decay(.5) interval(4)
+
+# *** real memory usage monitor ***
+# lockscale is somewhat meaningless here, but it keeps the stupid color
+# change from happening if the window is moved
+rmemc colors(4,1,5,0,193,73,103) lockscale(4096) strip attack(.5) decay(.5) interval(4)
+

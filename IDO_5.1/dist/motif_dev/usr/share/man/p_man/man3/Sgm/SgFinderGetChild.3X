@@ -1,0 +1,63 @@
+.TH SgFinderGetChild 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgFinderGetChild\*O\(emA Finder function used to access a widget component
+.iX "SgFinderGetChild"
+.iX "Finder functions" "SgFinderGetChild"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sg/FileSB.h>
+.sp \n(PDu
+Widget SgFinderGetChild (\*Vwidget, child\*L)
+.ta .5i 1.5i
+	SgFinderWidget	\*Vwidget\*L;
+	int   	\*Vchild\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LSgFinderGetChild\*O is used to access a widget component within a
+Finder.  The parameters given to the function are the
+Finder widget and a value indicating which component to access.
+.PP
+The Finder widget generally provides the functionality and access to
+child behavior through other means.  Accessing the children of the
+Finder and modifying their callbacks or resources significantly may
+cause unpredictable results.  It is suggested that applications not
+modify the state of the Finder children.
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the Finder widget ID.
+.LI "\*Vchild\*O"
+Specifies a component within the Finder. The following are legal
+values for this parameter:
+.wH .rS 
+.ML
+.LI
+SgFINDER_DROP_POCKET
+.LI
+SgFINDER_TEXT
+.LI
+SgFINDER_ZOOM_BAR
+.LI
+SgFINDER_HISTORY_MENUBAR
+.LE 
+.wH .rE
+.LE 
+.PP 
+For a complete definition of Finder and its associated resources, see
+\*LSgFinder(3X)\*O.
+.SH RETURN VALUE
+Returns the widget ID of the specified Finder component.
+An application should not assume that the returned widget will be of any
+particular class.
+.SH RELATED INFORMATION
+.na
+\*LSgFinder(3X)\*O.
+.ad
+

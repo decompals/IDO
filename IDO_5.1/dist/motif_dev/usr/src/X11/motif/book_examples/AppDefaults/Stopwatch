@@ -1,0 +1,8 @@
+!
+! Stopwatch
+!
+*panel*numColumns:          1
+*panel*commands*numColumns: 3
+*adjustLast:                False
+*packing:                   pack_column
+

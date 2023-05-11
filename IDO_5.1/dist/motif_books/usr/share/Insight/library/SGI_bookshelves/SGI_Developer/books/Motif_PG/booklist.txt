@@ -1,0 +1,2 @@
+<book name="Motif_PG" alias="OSF/Motif Programmer's Guide (Open Software Foundation)" type="generic" version="862-0009-002, 8/93" srchtags="TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples">
+

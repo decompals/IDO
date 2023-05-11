@@ -1,0 +1,51 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH MrmInitialize 3X
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LMrmInitialize\*O\(emPrepares an application to use MRM widget-fetching facilities
+.iX "MrmInitialize"
+.iX "uil functions" "MrmInitialize"
+.SH SYNOPSIS
+.sS
+.iS
+.iX "MRM function" "MrmInitialize"
+.iX "MrmInitialize" "definition"
+void MrmInitialize()
+.iE
+.sE
+.SH DESCRIPTION
+The
+\*LMrmInitialize\*O
+function must be called to prepare an application to use MRM
+widget-fetching facilities.
+You must call this function prior to fetching a widget.
+However, it is good programming practice to call
+\*LMrmInitialize\*O
+prior to performing any
+MRM operations.
+.PP 
+\*LMrmInitialize\*O
+initializes
+.iX "MrmInitialize" "description"
+the internal data structures that MRM needs to
+successfully perform type
+conversion on arguments and to successfully access widget creation
+facilities.
+An application must call
+\*LMrmInitialize\*O
+before it uses other
+MRM functions.

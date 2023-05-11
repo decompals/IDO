@@ -1,0 +1,34 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.4 $ $Date: 1992/10/23 16:52:31 $
+#define IHaveSubdirs
+#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+
+SUBDIRS = uid french german american
+
+MakeSubdirs($(SUBDIRS))
+
+INCLUDES = -I. -I$(MINCLUDESRC) -I$(INCLUDESRC) 
+DEPLIBS1 = MrmClientDepLibs
+LOCAL_LIBRARIES = MrmClientLibs
+
+SRCS1= main.c text.c file.c
+
+OBJS1= main.o text.o file.o
+
+PROGRAMS = fileview
+
+NormalLibraryObjectRule()
+
+MComplexProgramTarget_1(fileview,$(LOCAL_LIBRARIES),$(SYSLIBS))
+
+InstallAppDefaults(Fileview)
+#ifdef SGIArchitecture
+FILES = Imakefile README xmfile *.c *.h
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* SGIArchitecture */

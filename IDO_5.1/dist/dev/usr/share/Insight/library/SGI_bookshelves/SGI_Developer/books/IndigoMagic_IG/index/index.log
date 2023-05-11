@@ -1,0 +1,8 @@
+<MKLOG name='./books/IndigoMagic_IG/index' version='-1' date='Mon Aug 23 20:02:46 1993' serial='-1' count='-1' user=''>
+
+MERGE vocab.dat :   1 files, Vocab size  2586 on                           .
+
+MERGE index.dat :   1 files, Vocab size  2586 on                           .
+
+DONE MAKING BOOK
+

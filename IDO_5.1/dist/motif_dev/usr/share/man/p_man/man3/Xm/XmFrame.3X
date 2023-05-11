@@ -1,0 +1,276 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **
+.TH XmFrame 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmFrame\*O\(emThe Frame widget class
+.iX "XmFrame"
+.iX "widget class" "Frame"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/Frame.h>
+.iE
+.sE
+.SH DESCRIPTION
+Frame is a very simple manager used to enclose a single work
+area child in a border drawn by Frame.
+It uses the Manager class resources for border drawing and performs
+geometry management so that its size always matches its child's outer size
+plus the Frame's margins and shadow thickness.
+.PP 
+Frame is most often used to enclose other managers when the
+application developer desires the manager to have the same border
+appearance as the primitive widgets.  Frame can also be
+used to enclose primitive widgets that do not support the same
+type of border drawing.  This gives visual consistency when
+you develop applications using diverse widget sets.
+Constraint resources are used to designate a child as the Frame title,
+align its text, and control its vertical alignment in relation to
+Frame's top shadow.  The title appears only at the top of the Frame.
+.PP 
+If the Frame's parent is a Shell widget,
+\*LXmNshadowType\*O defaults to \*LXmSHADOW_OUT\*O, and
+Manager's resource \*LXmNshadowThickness\*O defaults to 1.
+.P 
+If the Frame's parent is not a Shell widget,
+\*LXmNshadowType\*O defaults to \*LXmSHADOW_ETCHED_IN\*O, and
+Manager's resource \*LXmNshadowThickness\*O defaults to 2.
+.SS "Classes"
+Frame inherits behavior and
+resources from the \*LCore\*O, \*LComposite\*O,
+\*LConstraint\*O, and \*LXmManager\*O classes.
+.PP 
+The class pointer is \*LxmFrameWidgetClass\*O.
+.PP 
+The class name is \*LXmFrame\*O.
+.SS "New Resources"
+The following table defines a set of widget resources used by the programmer
+to specify data.  The programmer can also set the resource values for the
+inherited classes to set attributes for this widget.  To reference a
+resource by name or by class in a .Xdefaults file, remove the \*LXmN\*O or
+\*LXmC\*O prefix and use the remaining letters.  To specify one of the defined
+values for a resource in a .Xdefaults file, remove the \*LXm\*O prefix and use
+the remaining letters (in either lowercase or uppercase, but include any
+underscores between words).
+The codes in the access column indicate if the given resource can be
+set at creation time (C),
+set by using \*LXtSetValues\*O (S),
+retrieved by using \*LXtGetValues\*O (G), or is not applicable (N/A).
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmFrame Resource Set
+Name	Class	Type	Default	Access
+_
+XmNmarginWidth	XmCMarginWidth	Dimension	0	CSG
+XmNmarginHeight	XmCMarginHeight	Dimension	0	CSG
+XmNshadowType	XmCShadowType	unsigned char	dynamic	CSG
+.TE
+.nL
+.ne 6
+.VL
+.LI "\*LXmNmarginWidth\*O"
+Specifies the padding space on the left and right
+sides between Frame's child and Frame's shadow drawing.
+.LI "\*LXmNmarginHeight\*O"
+Specifies the padding space on the top and bottom
+sides between Frame's child and Frame's shadow drawing.
+When a title is present, the top margin equals the value
+specified by this resource plus the distance (if any) that the
+title extends below the top shadow.
+.LI "\*LXmNshadowType\*O"
+Describes the drawing style for Frame.  This resource can have the
+following values:
+.ML
+.LI
+\*LXmSHADOW_IN\*O\(emdraws Frame so that it appears inset.
+This means that the bottom shadow visuals and top shadow visuals
+are reversed.
+.LI
+\*LXmSHADOW_OUT\*O\(emdraws Frame so that it appears outset.
+This is the default if Frame's parent is a Shell widget.
+.LI
+\*LXmSHADOW_ETCHED_IN\*O\(emdraws Frame using a double line giving the
+effect of a line etched into the window.  The thickness of the double
+line is equal to the value of \*LXmNshadowThickness\*O.
+This is the default when Frame's parent is not a Shell widget.
+.LI
+\*LXmSHADOW_ETCHED_OUT\*O\(emdraws Frame using a double line giving the
+effect of a line coming out of the window.  The thickness of the double
+line is equal to the value of \*LXmNshadowThickness\*O.
+.LE
+.LE
+.PP
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmFrame Constraint Resource Set
+Name	Class	Type	Default	Access
+_
+XmNchildType	XmCChildType	unsigned char	XmFRAME_WORKAREA_CHILD	CSG
+XmNchildHorizontalAlignment	XmCChildHorizontalAlignment	unsigned char	XmALIGNMENT_BEGINNING	CSG
+XmNchildHorizontalSpacing	XmCChildHorizontalSpacing	Dimension	dynamic	CSG
+XmNchildVerticalAlignment	XmCChildVerticalAlignment	unsigned char	XmALIGNMENT_CENTER	CSG
+.TE
+.wH .in  
+.VL
+.LI "\*LXmNchildType\*O"
+Specifies whether a child is a title or work area.  Frame supports
+a single title and/or work area child.  The possible
+values are:
+.ML
+.LI
+\*LXmFRAME_TITLE_CHILD\*O
+.LI
+\*LXmFRAME_WORKAREA_CHILD\*O
+.LI
+\*LXmFRAME_GENERIC_CHILD\*O
+.PP
+The Frame geometry manager ignores any child of type
+\*LXmFRAME_GENERIC_CHILD\*O.
+.LE
+.LI "\*LXmNchildHorizontalAlignment\*O"
+Specifies the alignment of the title.  This resource has the
+following values:
+.ML
+.LI
+\*LXmALIGNMENT_BEGINNING\*O
+.LI
+\*LXmALIGNMENT_CENTER\*O
+.LI
+\*LXmALIGNMENT_END\*O
+.PP
+See the description of  \*LXmNalignment\*O in the \*LXmLabel\*O
+man page for an explanation of these values.
+.LE
+.LI "\*LXmNchildHorizontalSpacing\*O"
+Specifies the minimum distance between either edge of the title text
+and the inner edge of the Frame shadow.  Clipping of the title
+text occurs in order to maintain this spacing.  The default value
+is the margin width of the Frame.
+.LI "\*LXmNchildVerticalAlignment\*O"
+Specifies the vertical alignment of the title text, or the title
+area in relation to the top shadow of the Frame.
+.ML
+.LI
+\*LXmALIGNMENT_BASELINE_BOTTOM\*O\(emcauses the baseline of the
+title to align vertically with the
+top shadow of the Frame.  In the case of a multi-line title,
+the baseline of the last line of text aligns vertically with
+the top shadow of the Frame.
+.LI
+\*LXmALIGNMENT_BASELINE_TOP\*O\(emcauses the baseline of the first
+line of the title to align vertically with the top shadow
+of the Frame.
+.LI
+\*LXmALIGNMENT_WIDGET_TOP\*O\(emcauses the top edge of the title
+area to align vertically with the top shadow of the Frame.
+.LI
+\*LXmALIGNMENT_CENTER\*O\(emcauses the center of the title
+area to align vertically with the top shadow of the Frame.
+.LI
+\*LXmALIGNMENT_WIDGET_BOTTOM\*O\(emcauses the bottom edge of the title
+area to align vertically with the top shadow of the Frame.
+.LE
+.LE
+.SS "Inherited Resources"
+Frame inherits behavior and resources from the following
+superclasses.  For a complete description of each resource, refer to the
+man page for that superclass.
+.P
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmManager Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNinitialFocus	XmCInitialFocus	Widget	NULL	CSG
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmTAB_GROUP	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	dynamic	CSG
+XmNstringDirection	XmCStringDirection	XmStringDirection	dynamic	CG
+XmNtopShadowColor	XmCTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	True	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	XtPointer	NULL	CSG
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Composite Resource Set
+Name	Class	Type	Default	Access
+_
+XmNchildren	XmCReadOnly	WidgetList	NULL	G
+XmNinsertPosition	XmCInsertPosition	XtOrderProc	NULL	CSG
+XmNnumChildren	XmCReadOnly	Cardinal	0	G
+.TE
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtAccelerators	dynamic	CSG
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderColor	XmCBorderColor	Pixel	XtDefaultForeground	CSG
+XmNborderPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNcolormap	XmCColormap	Colormap	dynamic	CG
+XmNdepth	XmCDepth	int	dynamic	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Screen *	dynamic	CG
+.wH .tH
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	dynamic	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.wH .in  
+.SS "Translations"
+XmFrame inherits translations from XmManager.
+.SH RELATED INFORMATION
+.na
+\*LComposite(3X)\*O,
+\*LConstraint(3X)\*O,
+\*LCore(3X)\*O,
+\*LXmCreateFrame(3X)\*O, and
+\*LXmManager(3X)\*O.
+.ad

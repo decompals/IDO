@@ -1,0 +1,136 @@
+#
+# Commonrules to build idb's and images for an ism
+#
+#
+# For an ism that doesn't have a rawidb idb
+# set LIDBJOINFLAGS to -m
+# In this case a zero length RAWIDB is required
+#
+#
+# Targets:
+#	buildimages - make real images (an individual image an also be made)
+#	buildism - makes finalidb
+#	version - create a version file
+#	checkalpha - make sure ALPHA variable set reasonably
+#
+# Before including this file the following should be set:
+#	ALLIMAGES - names of images to be made - must correspond to
+#		product name(s) in spec file
+#	SPEC - spec file name
+#	RAWIDB - rawidb file name
+#	SRCIDB - src/checked in idb file name
+#	ALPHA - what ALPHA number to give images
+# Note that macros ALLIMAGES, SPEC, RAWIDB, and SRCIDB need only be set
+#	in the build/Makefile. Typically, one just uses the settings as 
+#	provided via the ism template for the build/Makefile.
+# Note that ALPHA has a default value provided by ismcommondefs.
+#	
+
+#
+#ident "$Revision: 1.14 $"
+
+.NOTPARALLEL:
+
+include $(RELEASEDEFS)
+include $(COMMONRULES)
+ISMAREA=../idbs
+IMAGESAREA=../images
+SPECDFLT=$(TOOLROOT)/usr/sbin/specdflt
+SPECPRODS=$(TOOLROOT)/usr/sbin/specprods
+SPECEXTERN=awk -f $(TOOLROOT)/usr/lib/specextern.awk
+
+buildimages: checkalpha finalidb $(SPEC) 
+	@if [ ! -d $(IMAGESAREA) ]; then mkdir $(IMAGESAREA); fi; \
+	(cd $(IMAGESAREA); for i in $(ALLIMAGES); do \
+		rm -f $${i}*; done)
+# next 14 lines replicated below
+	@if [ -r $(SPEC) ]; then \
+		USESPEC=$(SPEC); \
+		if [ "$(ALLIMAGES)" = "no_images_supplied" ]; then \
+			echo "\nderiving names of products to generate from file $(SPEC)\n"; \
+			USEALLIMAGES=`$(SPECPRODS) $$USESPEC`; \
+		else \
+			USEALLIMAGES='$(ALLIMAGES)'; \
+		fi; \
+	else \
+		echo "\nderiving file $(SPEC).dflt from file finalidb\n"; \
+		$(SPECDFLT) > $(SPEC).dflt;\
+		USESPEC=$(SPEC).dflt; \
+		USEALLIMAGES=`$(SPECPRODS) $$USESPEC`; \
+	fi; \
+	echo "$(GENDIST) $(GENDISTFLAGS) -all -root /"; \
+	echo "\t-source $(SRC) -idb finalidb"; \
+	echo "\t-spec $$USESPEC -dist $(IMAGESAREA) $$USEALLIMAGES"; \
+	VERSION=$(IMAGEVERSION) \
+	$(GENDIST) $(GENDISTFLAGS) -all -root / -source $(SRC) -idb finalidb \
+		-spec $$USESPEC -dist $(IMAGESAREA) $$USEALLIMAGES
+	
+
+#
+# Perform a dryrun using gendist to help uncover errors
+# Don't turn on -verbose (-> ignore GGENDISTFLAGS)
+# XXX for now ignore error return
+#
+buildism:finalidb $(SPEC)
+	@if [ ! -d $(ISMAREA) ]; then mkdir $(ISMAREA); fi; \
+	(cd $(ISMAREA); for i in $(ALLIMAGES); do \
+		rm -f $${i}*; done)
+# next 14 lines replicated above
+	@if [ -r $(SPEC) ]; then \
+		USESPEC=$(SPEC); \
+		if [ "$(ALLIMAGES)" = "no_images_supplied" ]; then \
+			echo "\nderiving names of products to generate from file $(SPEC)\n"; \
+			USEALLIMAGES=`$(SPECPRODS) $$USESPEC`; \
+		else \
+			USEALLIMAGES='$(ALLIMAGES)'; \
+		fi; \
+	else \
+		echo "\nderiving file $(SPEC).dflt from file $(RAWIDB)\n"; \
+		$(SPECDFLT) > $(SPEC).dflt;\
+		USESPEC=$(SPEC).dflt; \
+		USEALLIMAGES=`$(SPECPRODS) $$USESPEC`; \
+	fi;\
+	$(GENDIST) $(GENDISTFLAGS) -externidb -root / -source $(SRC) \
+		-idb finalidb -spec $$USESPEC -dist $(ISMAREA)  $$USEALLIMAGES \
+		>dryrun 2>&1;\
+	ISMROOT=`pwd`;\
+	ISMROOT=`echo "$$ISMROOT/.." | sed -e 's/\/[^/]*\/\.\.//'`; \
+	$(SPECEXTERN) < $$USESPEC > $(ISMAREA)/spec;\
+	cd $(ISMAREA); for i in $$USEALLIMAGES; do \
+		nawk '{$$6=head"/"$$6;print}' head=$$ISMROOT < $$i.idb > $$i.$$$$;\
+		mv $$i.$$$$ $$i.idb; done
+#	-$(GENDIST) $(VGENDISTFLAGS) $(LGENDISTFLAGS) -dryrun -all -root / \
+#		-source $(SRC) \
+#		-idb finalidb -spec $$USESPEC -dist $(ISMAREA) $$USEALLIMAGES >dryrun 2>&1
+
+$(ALLIMAGES): 
+	$(MAKE) ALLIMAGES=$@ buildimages
+
+finalidb: $(SRCIDB)
+	-rm -f joinedidb extra missing
+	@# gendist like things sorted on dstpath
+	@# use -o so makefile is restartable
+	@if [ -r $(SRCIDB) ]; then \
+		SIDBS=`echo $(SRCIDB) | tr '	' ' ' | tr -s '' ' ' | \
+			sed -e 's/^/-s/' -e 's/ / -s/g'` ;\
+		$(IDBJOIN) $(IDBJOINFLAGS) $$SIDBS $(RAWIDB) joinedidb extra missing; \
+		sort +4 -5 joinedidb -o finalidb; \
+	else \
+		echo "\nderiving file finalidb from file $(RAWIDB)\n"; \
+		sort +4 -5 $(RAWIDB) -o finalidb; \
+	fi
+
+checkalpha:$(_FORCE)
+	@ALPHA=$(ALPHA) ;\
+	if expr "$$ALPHA" : "[0-9][0-9][0-9][0-9][0-9][0-9]" >/dev/null  != 6 ; then \
+		echo "ALPHA variable MUST be set to a 6 digit number" ;\
+		exit 1 ;\
+	fi
+
+version:checkalpha $(_FORCE)
+	ALPHA=$(ALPHA) \
+	$(TOOLROOT)/usr/sbin/makeversion $(ISM_NAME).version
+
+# ok if these not present, but do need their modification dates if they are
+fake_target_so_not_empty $(SRCIDB) $(SPEC):
+	:

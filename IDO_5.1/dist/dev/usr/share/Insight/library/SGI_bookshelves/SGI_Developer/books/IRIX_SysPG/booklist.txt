@@ -1,0 +1,1 @@
+<BOOK name="IRIX_SysPG" alias="IRIX System Programming Guide" type="sgi_developer" version="Document Number 007-1794-020, 8/93" srchtags="TITLE:Titles;CAPTION,FIGURE:Figure Captions:1;CAPTION,TABLE:Table Captions:1;TABLE:Tables;CODE EXAMPLE:Code Examples">

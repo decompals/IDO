@@ -1,0 +1,77 @@
+
+
+		OSF/Motif DEMONSTRATION PROGRAM NOTES
+
+These demonstration programs are to show various features of Motif.
+
+>>  They are unsupported at this time, both by OSF and by SGI.  SGI has
+>>  fixed some bugs in them.  It is known that bugs remain; bug reports
+>>  are welcome, but fixing the bugs is not guaranteed.  See the Release
+>>  Notes for a current list of demonstration program bugs.
+
+
+If you have installed a new version of Motif over an old one, we suggest that
+you first:
+
+	% cd /usr/src/X11/motif/demos
+	% make clean
+
+This is because the installation process does not delete any object files
+which were built from the previously installed version.
+
+The demo tree is shipped with X11 Imakefiles, not Makefiles.  To create the
+Makefiles needed to build the programs in the demo tree:
+
+	% cd /usr/src/X11/motif/demos	# Motif demos build tree location
+	% ../mmkmf			# Build the initial Makefile
+	% make Makefile			# Verify the Makefile is OK
+	% make Makefiles		# Update the rest of your Makefiles
+	% make clean			# Otherwise, if this isn't your first
+					#   installation, obsolete binaries may
+					#   be left around yielding unexpected
+					#   results.
+	% make depend			# Update Makefile dependencies.
+					#   This is also a good confidence test
+					#   that everything is installed
+					#   properly.
+
+Size -- the demo tree requires about 2.5 megabytes as shipped.  With all demos
+fully built, it requires about 40 megabytes.  To build the demos, once the
+Makefiles have been made, you can either:
+
+    make all of the demo programs:
+	% cd /usr/src/X11/motif/demos	# Top of the Motif demos tree
+	% make all			# Build all of the demos
+
+    or else, to conserve space, just make those you care about:
+	% cd /usr/src/X11/motif/demos/XXX	# XXX is the demo you want
+	% make all			# Build all demos in that directory
+
+
+To run the demos:
+
+	* FONTS: Non-English fonts are used in such demo programs as
+	  hellohebrew, hellokanji, peridickanji, and motifburint.  If you
+	  don't want to run a demo which displays non-English fonts, you
+	  can skip this step.
+
+	  >>> ON THE MACHINE RUNNING THE X11 SERVER YOU WANT TO DISPLAY ON <<<,
+	  (not necessarily the one you are going to execute the demos on),
+	  you need to install Hebrew and Kanji fonts in the server.
+
+		* ensure that an X client (e.g. mwm) is running
+		* cd /usr/src/X11/motif/demos/fonts
+		* make xset		# Install fonts on the current server
+
+	  It is important to understand that when the X server has no more
+	  clients, it resets its world.  This means that things set with
+	  'xhost' and 'xset' get reinitialized.  To prevent this problem, bring
+	  up any X client you wish to -- an X window manager, Xclock, ....  As
+	  long as there is at least one client, the reset does not happen.
+
+	* cd /usr/src/X11/motif/demos/<the demo you want to run>
+
+	* read the README file in that directory, if any.  Some of the demos
+	  require special things, such as setting an environment variable.
+
+	* run the demo.

@@ -1,0 +1,20 @@
+l 0
+b 22 22 760 169
+o 30 495
+y 0
+x 0
+w 0
+s 0
+h 0
+v 0
+q 0
+f Makefile 1 30 108 0
+f Notice 1 150 108 0
+f README 1 270 108 0
+f images 1 390 108 0
+f imgtools 1 510 108 0
+f include 1 630 108 0
+f libgutil 1 90 28 0
+f libimage 1 210 28 0
+f tools 1 330 28 0
+f Beginner.mk 1 450 19 0

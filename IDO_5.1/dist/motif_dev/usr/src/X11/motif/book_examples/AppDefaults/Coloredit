@@ -1,0 +1,42 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Coloredit: Resources for the coloredit program
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! NOTE: this defaults file does not match the one in the book.
+!	The reason is that after the book went to press, the author found
+!       the one in the book insufficiently general in real use.  This file
+!	is the one supplied in the on-line version you can get from the book's
+!	publisher.  If you want one just like the book's, you will have to
+!	enter it yourself.
+!
+*base.geometry:             =400x400
+!
+*colorpanel*numColumns: 16
+*colorpanel*adjustLast: False
+*colorpanel*packing: pack_column
+!
+! Set the location of the digital display
+!
+*display*x:                 180
+*display*y:                  60
+*display*height:             30
+*display*width:             140
+!
+! Position the color controls
+!
+*sliderpanel.x:              10
+*sliderpanel.y:              60
+*sliderpanel*numColumns:      1
+*sliderpanel*packing:        pack_column
+*sliderpanel.orientation:    vertical
+!
+! Specify the valuator orientation and size
+!
+*XmScale*orientation: horizontal
+! JUST_LIKE_BOOK: *XmScale*processingDirection: max_on_bottom
+! max_on_bottom was a work-around for a Motif 1.0 problem, fixed in Motif 1.1.
+*XmScale*processingDirection: max_on_right
+!
+! Place the quit button.
+*quit*x:                    180
+*quit*y:                    100

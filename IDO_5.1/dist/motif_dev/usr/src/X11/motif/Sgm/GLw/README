@@ -1,0 +1,6 @@
+
+Demo programs for the OpenGL widgets.
+
+simple.c	a simple test program with one widget
+
+double.c

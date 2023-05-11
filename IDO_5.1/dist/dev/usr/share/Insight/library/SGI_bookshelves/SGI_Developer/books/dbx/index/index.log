@@ -1,0 +1,8 @@
+<MKLOG name='./books/dbx/index' version='-1' date='Fri Aug 20 18:52:54 1993' serial='-1' count='-1' user=''>
+
+MERGE vocab.dat :   1 files, Vocab size  5011 on                           .
+
+MERGE index.dat :   1 files, Vocab size  5011 on                           .
+
+DONE MAKING BOOK
+

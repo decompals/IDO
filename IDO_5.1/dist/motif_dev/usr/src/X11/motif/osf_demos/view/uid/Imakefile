@@ -1,0 +1,25 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.2 $ $Date: 1992/09/22 15:37:45 $
+INCLUDES = -I. -I$(MINCLUDESRC) -I$(UILSRC) -I$(MTOOLKITSRC) -I$(LIBSRC)
+
+.uil.uid:
+	$(RM) $@
+	$(UIL) -o $@ $*.uil  -I$(UILSRC)
+
+
+UILS1= fileview.uil
+
+NormalLibraryObjectRule()
+
+MComplexUidTarget_1(fileview)
+
+#ifdef SGIArchitecture
+FILES = Imakefile *.uil
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

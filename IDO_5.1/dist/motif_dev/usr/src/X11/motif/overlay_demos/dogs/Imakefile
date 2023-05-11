@@ -1,0 +1,52 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.5 $ $Date: 1993/08/01 22:10:49 $
+
+INCLUDES = -I. -I$(INCLUDESRC) -I$(MINCLUDESRC)
+       DEPLIBS1 =../lib/sgi_intl.o ../lib/sgi_visual.o ../lib/shell/Shell.o MrmClientDepLibs
+LOCAL_LIBRARIES =../lib/sgi_intl.o ../lib/sgi_visual.o $(MRESOURCELIB) $(XMLIB) ../lib/shell/Shell.o $(XTOOLLIB) $(XLIB) $(XMEXTRA_LIBS)
+  EXTRA_DEFINES = -DOVERLAY_DEMO
+DEFINES = -DOLD_DRAW_NEEDED
+
+SRCS1=	dogs.c Dog.c Square.c
+
+OBJS1=	dogs.o Dog.o Square.o
+
+UILS1= dogs.uil
+
+PROGRAMS = dogs 
+
+NormalLibraryObjectRule()
+
+MComplexProgramTarget_1(dogs,$(LOCAL_LIBRARIES),NullParameter)
+
+MComplexUidTarget_1(dogs)
+#ifdef SGIArchitecture
+  UNCHANGED = Dog.h Dog.uil DogP.h README Square.c Square.h Square.uil \
+	     SquareP.h bark.bm down.bm up.bm
+     FILES = Dogs Dog.c Imakefile dogs.c dogs.uil
+
+all::	$(UNCHANGED)
+$(OBJS1):	$(UNCHANGED)
+
+/*
+ * The following is run from .BEGIN.  We use this subterfuge because smake
+ * won't do two .BEGIN clauses.
+ */
+FIRST_ALL:: $(UNCHANGED)
+
+$(UNCHANGED):
+	-@if [ ! -f $@ ]; then \
+		set -x; $(RM) $@; cp $(MDEMOSRC)/dogs/$@ .; \
+	fi
+
+clean::
+	$(RM) $(UNCHANGED)
+
+InstallMultiple($(FILES) $(UNCHANGED), $(MDEMOSRCDIR))
+#endif /* sgi */

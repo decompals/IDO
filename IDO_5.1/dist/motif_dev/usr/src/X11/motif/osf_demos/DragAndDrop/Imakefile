@@ -1,0 +1,30 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.2 $ $Date: 1992/07/16 19:22:20 $
+INCLUDES = -I. -I$(MINCLUDESRC) -I$(INCLUDESRC) 
+SYSLIBS = -lm
+DEPLIBS1 = XmClientDepLibs
+LOCAL_LIBRARIES = XmClientLibs
+
+
+SRCS1= DNDDemo.c  DNDDraw.c
+
+OBJS1= DNDDemo.o DNDDraw.o
+
+PROGRAMS = DNDDemo
+
+NormalLibraryObjectRule()
+
+MComplexProgramTarget_1(DNDDemo,$(LOCAL_LIBRARIES),$(SYSLIBS))
+
+
+
+#ifdef SGIArchitecture
+FILES = Imakefile *.c *.h
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

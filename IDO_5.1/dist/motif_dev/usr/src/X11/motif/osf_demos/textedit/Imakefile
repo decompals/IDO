@@ -1,0 +1,31 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.2 $ $Date: 1992/07/17 12:15:10 $
+
+INCLUDES = -I. -I$(INCLUDESRC) -I$(MINCLUDESRC)
+       DEPLIBS1 = MrmClientDepLibs
+LOCAL_LIBRARIES = MrmClientLibs
+
+SRCS1=	textedit.c tk.c dlg.c app.c file.c
+
+OBJS1=	textedit.o tk.o dlg.o app.o file.o
+
+UILS1=  textedit.uil strings.uil
+
+PROGRAMS = textedit
+
+NormalLibraryObjectRule()
+
+MComplexProgramTarget_1(textedit,$(LOCAL_LIBRARIES),NullParameter)
+
+MComplexUidTarget_1(textedit)
+
+#ifdef SGIArchitecture
+FILES = Imakefile *.c *.h *.uil
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* SGIArchitecture */

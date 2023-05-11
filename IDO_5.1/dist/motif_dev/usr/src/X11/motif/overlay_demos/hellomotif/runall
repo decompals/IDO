@@ -1,0 +1,21 @@
+: # Script to start a version of hellomotif in each possible buffer
+  # See "hellomotif.c" for the meaning of the numeric argument
+
+/etc/killall hellomotif
+
+# skip using zero -- X11 does not support it, so you cannot get the visual
+for i in 1 2 3 4 5
+    do
+	CMD="hellomotif $i"
+	case $i in
+	    0)echo "Opening an  underlay         planes demo with command: \c";;
+	    1)echo "Opening a   normal           planes demo with command: \c";;
+	    2)echo "Opening a   popup            planes demo with command: \c";;
+	    3)echo "Opening an  overlay          planes demo with command: \c";;
+	    4)echo "Opening an  overlay (2-bit)  planes demo with command: \c";;
+	    5)echo "Opening an  overlay (4-bit)  planes demo with command: \c";;
+	    esac
+	echo "\"$CMD\""; eval $CMD &
+	sleep 2
+	echo "\t> \c"; read go_ahead
+    done

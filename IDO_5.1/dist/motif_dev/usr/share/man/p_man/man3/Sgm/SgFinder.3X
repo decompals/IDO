@@ -1,0 +1,241 @@
+.TH SgFinder 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgFinder\*O\(emThe Finder widget class
+.iX "SgFinder"
+.iX "widget class" "Finder"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sg/Finder.h>
+.iE
+.sE
+.SH DESCRIPTION
+The Finder widget is designed to integrate a textField, a zoomBar, and
+a history menu.  The zoomBar is a set of buttons above the text field
+which allows sections of the text to be selected.  The history menu
+allows users to select items previously visited, or to undo
+operations.  The Finder widget should be used for accelerating text
+selection of long objects such as file names.
+.PP 
+Pressing on the history button brings up a pulldown menu of choices.
+Selecting an item in the menu will set the text field to that item.
+Whenever the text field is set, the zoomBar changes to reflect the
+text sections in the text field.
+.PP
+Pressing a button on the zoomBar will set the text field to the
+portion of the text preceding that button.  The specific behavior is
+customizable, but generally will cut-off the portion of the text after
+the pressed zoomBar button.  The history menu can always be used to go
+back to the original text.
+.PP
+The Finder also includes a DropPocket for displaying icons
+representing entries in the Finder's text field.  These icons are sgi
+file icons.  Oz file icons can be dropped on the DropPocket.  If you
+are linking with the Finder's .o file, you need to have libfileicon.a
+to get the drop pocket's behavior.
+.PP
+The Finder widget includes resources that allow initializing the
+history list, setting the pixmap on the history button, and providing
+a custom function for handling setting of the text after a zoomBar
+button press.  Other resources are described below. It is customizable
+for various applications.
+.PP 
+.SS "Classes"
+Finder inherits behavior and resources from
+\*LCore\*O, \*LComposite\*O, \*LConstraint\*O, \*LXmManager\*O,
+and \*LXmBulletinBoard\*O.
+.PP 
+The class pointer is \*LsgFinderWidgetClass\*O.
+.PP 
+The class name is \*LSgFinder\*O.
+.SS "New Resources"
+The following table defines a set of widget resources used by the programmer
+to specify data.  The programmer can also set the resource values for the
+inherited classes to set attributes for this widget.  To reference a
+resource by name or by class in a .Xdefaults file, remove the \*LSgN\*O or
+\*LSgC\*O prefix and use the remaining letters.  To specify one of the defined
+values for a resource in a .Xdefaults file, remove the \*LSg\*O prefix and use
+the remaining letters (in either lowercase or uppercase, but include any
+underscores between words).
+The codes in the access column indicate if the given resource can be
+set at creation time (C),
+set by using \*LXtSetValues\*O (S),
+retrieved by using \*LXtGetValues\*O (G),
+or is not applicable (N/A).
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+SgFinder Resource Set
+Name	Class	Type	Default	Access
+_
+XmNactivateCallback	XmCCallback	XtCallbackList	NULL	C
+SgNhistoryPixmap	XmCHistoryPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+SgNseparator	SgCSeparator	unsigned char	'/'	CSG
+SgNsetTextSectionFunc	SgCSetTextSectionFunc	XtProc	setTextSection	CSG
+XmNvalueChangedCallback	XmCCallback	XtCallbackList	NULL	C
+.TE
+.wH .in  
+.VL  
+.LI "\*LXmNactivateCallback\*O"
+This callback is called when a zoomBar button is pushed or when the
+text field generates an activateCallback (i.e. a return in the text
+field) or if the text field is set by \*LSgFinderSetTextString\*O.
+The type of the structure whose address is passed to this callback is
+\*LXmAnyCallbackStruct\*O.  The reason sent by the  callback is \*LXmCR_ACTIVATE\*O.
+.LI "\*LSgNhistoryPixmap\*O"
+The pixmap that is displayed on the history button.
+.LI "\*LSgNseparator\*O"
+The character that is used to separate sections of text.  The default
+is '/'.  This character determines where the buttons on the zoomBar
+are.  The sections of text each generate one button, and are defined
+by the \*LSgNseparator\*O at the end of each section.
+.LI "\*LSgNsetTextSectionFunc\*O"
+This resource is used to replace the default behavior of zoomBar
+button pushes with a user-defined function.  The typedef for the
+function is in \*L<Sg/Finder.h>\*O.  The function should have return type \*Lvoid\*O
+and take an \*LSgFinderWidget\*O and and \*Lint\*O as arguments which
+are passed to it when it is called.  The \*LSgNsetTextSectionFunc\*O
+function is called whenever a zoomBar button is pushed.  It is
+suggested that \*LSgFinderSetTextString\*O be used in the
+\*LSgNsetTextSectionFunc\*O to set the value of
+the text field after a push occurs.
+.LI "\*LXmNvalueChangedCallback\*O"
+The value changed callback specifies the list of callbacks that is
+called after text is deleted from or inserted into the text field.  The
+type of the structure whose address is passed to this callback is
+\*LXmAnyCallbackStruct\*O.  The reason sent by the callback is
+\*LXmCR_VALUE_CHANGED\*O.
+
+.LE 
+.SS "Inherited Resources"
+Finder inherits behavior and resources from
+\*LCore\*O, \*LComposite\*O, \*LConstraint\*O, \*LXmManager\*O,
+and \*LXmBulletinBoard\*O.
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmBulletinBoard Resource Set
+Name	Class	Type	Default	Access
+_
+XmNallowOverlap XmCAllowOverlap	Boolean	True	CSG
+XmNautoUnmanage	XmCAutoUnmanage	Boolean	False	CG
+XmNbuttonFontList	XmCButtonFontList	XmFontList	dynamic	CSG
+XmNcancelButton	XmCWidget	Widget	Cancel button	SG
+XmNdefaultButton	XmCWidget	Widget	OK button	SG
+XmNdefaultPosition	XmCDefaultPosition	Boolean	True	CSG
+XmNdialogStyle	XmCDialogStyle	unsigned char	dynamic	CSG
+XmNdialogTitle	XmCDialogTitle	XmString	NULL	CSG
+XmNfocusCallback	XmCCallback	XtCallbackList	NULL	C
+XmNlabelFontList	XmCLabelFontList	XmFontList	dynamic	CSG
+XmNmapCallback	XmCCallback	XtCallbackList	NULL	C
+XmNmarginHeight	XmCMarginHeight	Dimension	10	CSG
+XmNmarginWidth	XmCMarginWidth	Dimension	10 	CSG
+XmNnoResize	XmCNoResize	Boolean	False	CSG
+.wH .tH
+XmNresizePolicy	XmCResizePolicy	unsigned char	XmRESIZE_ANY	CSG
+XmNshadowType	XmCShadowType	unsigned char	XmSHADOW_OUT	CSG
+XmNtextFontList	XmCTextFontList	XmFontList	dynamic	CSG
+XmNtextTranslations	XmCTranslations	XtTranslations	NULL	C
+XmNunmapCallback	XmCCallback	XtCallbackList	NULL	C
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmManager Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNinitialFocus	XmCInitialFocus	Widget	dynamic	CSG
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmTAB_GROUP	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	dynamic	CSG
+XmNstringDirection	XmCStringDirection	XmStringDirection	dynamic	CG
+XmNtopShadowColor	XmCTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	True	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	XtPointer	NULL	CSG
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Composite Resource Set
+Name	Class	Type	Default	Access
+_
+XmNchildren	XmCReadOnly	WidgetList	NULL	G
+XmNinsertPosition	XmCInsertPosition	XtOrderProc	NULL	CSG
+XmNnumChildren	XmCReadOnly	Cardinal	0	G
+.TE
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtAccelerators	dynamic	N/A
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderColor	XmCBorderColor	Pixel	XtDefaultForeground	CSG
+XmNborderPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNcolormap	XmCColormap	Colormap	dynamic	CG
+XmNdepth	XmCDepth	int	dynamic	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Screen *	dynamic	CG
+.wH .tH
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	dynamic	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.wH .in  
+.SH RELATED INFORMATION
+.na
+\*LCore(3X)\*O, \*LSgCreateFinder(3X)\*O,
+\*LSgFinderAddHistoryItem(3X)\*O,
+\*LSgFinderClearHistory(3X)\*O,
+\*LSgFinderGetTextString(3X)\*O,
+\*LSgFinderSetTextString(3X)\*O,
+\*LSgFinderGetChild(3X)\*O,
+\*LSgZoomBar(3X)\*O,
+\*LSgDropPocket(3X)\*O,
+\*LXmTextField(3X)\*O,
+and \*LXmPrimitive(3X)\*O.
+.ad
+
+
+
+
+

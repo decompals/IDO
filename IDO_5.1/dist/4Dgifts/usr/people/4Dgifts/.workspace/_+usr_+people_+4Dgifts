@@ -1,0 +1,30 @@
+l 0
+b 22 22 718 340
+o 47 72
+y 0
+x 0
+w 0
+s 0
+h 0
+v 0
+q 0
+f .4sight 1 30 270 0
+f .alias 1 150 270 0
+f .cshrc 1 270 270 0
+f .login 1 390 270 0
+f .remote 1 510 270 0
+f Makefile 1 630 270 0
+f README 1 90 190 0
+f bin 1 210 190 0
+f examples 1 330 190 0
+f iristools 1 450 190 0
+f kermit 1 570 190 0
+f startup.ps 1 30 110 0
+f user.ps 1 150 110 0
+f .history 1 270 110 0
+f .workspace 1 390 110 0
+f WorkSpace 1 510 110 0
+f src 1 630 110 0
+f .foo 1 90 30 0
+f dumpster 1 210 30 0
+f .workspacecurrentTransferDevice 1 390 30 0

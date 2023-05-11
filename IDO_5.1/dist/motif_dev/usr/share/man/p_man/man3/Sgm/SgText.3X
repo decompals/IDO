@@ -1,0 +1,83 @@
+.TH XmText SGI-Resources 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmText SGI-Resources\*O\(em XmText SGI Resources
+.iX "XmText" "SGI Resources
+.iX "widget class" "FileSelectionBox"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Text.h>
+.iE
+.sE
+.SH DESCRIPTION
+This man pages describes new resources added to the Motif Text widget
+by SGI. To get these resources you need to #define __sgi in your
+application.
+
+For a description of the XmText widget non-SGI resources see the 
+XmText man page.
+.PP
+
+.SS "New Resources"
+The following table defines a set of widget resources used by the programmer
+to specify data.  The programmer can also set the resource values for the
+inherited classes to set attributes for this widget.  To reference a
+resource by name or by class in a .Xdefaults file, remove the \*LSgN\*O or
+\*LSgC\*O prefix and use the remaining letters.  To specify one of the defined
+values for a resource in a .Xdefaults file, remove the \*LSg\*O prefix and use
+the remaining letters (in either lowercase or uppercase, but include any
+underscores between words).
+The codes in the access column indicate if the given resource can be
+set at creation time (C),
+set by using \*LXtSetValues\*O (S),
+retrieved by using \*LXtGetValues\*O (G), or is not applicable (N/A).
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+SXmText SGI Resource Set
+Name	Class	Type	Default	Access
+_
+SgNselectionBackground 	SgCSelectionBackground	XtString	white	CSG
+SgNselectionForeground 	SgCSelectionForeground	XtString	black	CSG
+SgNerrorBackground 	SgCErrorBackground	XtString	yellow	CSG
+SgNcursorVisibleOnFocus	SgCCursorVisibleOnFocus	XtBoolean	True	CSG
+
+.TE
+.VL  
+.LI "\*LSgNselectionBackground\*O"
+Specifies the text selection backgroung color.
+In non-SGI text widget the widget's foreground color is used for the
+text selection background. 
+.LI "\*LSgNselectionForeground\*O"
+Specifies the text selection foregroung color.
+In non-SGI text widget the widget's background color is used for the
+text selection foreground. 
+.LI "\*LSgNerrorBackground\*O"
+Specifies the text backgroung color for text selected with the 
+SgTextSetErrorSelection function. This marks the text as selected 
+with an error status that is indicated by the background color,
+specified by the SgNerrorBackground resource.
+.LI "\*LSgNcursorVisibleOnFocus\*O"
+Specifies whethere to show the text widget cursor only when the widget
+has focus. If cursorVisibleOnFocus is True then the cursor is not visible
+if the widget has no keyboard focus; if cursorVisibleOnFocus is False
+then the cursor is always visible even when the widget has no keyboard 
+focus.
+.LE
+
+.SH RELATED INFORMATION
+.na
+\*LXmTextField SGI-Resources(3X)\*O,
+\*LSgTextSetErrorSelection(3X)\*O,
+\*LXmText(3X)\*O,
+\*LXmTextField(3X)\*O,
+\*LCore(3X)\*O,
+.ad

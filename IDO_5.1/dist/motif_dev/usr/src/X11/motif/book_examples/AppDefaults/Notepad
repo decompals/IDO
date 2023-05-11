@@ -1,0 +1,6 @@
+*Notepad*commands*orientation:        horizontal
+*Notepad*base.numcolumns:             1
+*Notepad*base*packing:                 pack_tight
+*Notepad*base*commands*numcolumns:        4
+*Notepad*commands*adjustLast:             False
+*Notepad*packing:                         pack_tight

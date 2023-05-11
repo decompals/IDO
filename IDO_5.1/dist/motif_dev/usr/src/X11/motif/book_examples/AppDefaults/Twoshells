@@ -1,0 +1,10 @@
+!
+! Twoshells: Simply put up two window ( Core widgets)
+!
+
+!
+! The Core widget doesn't specify a geometry
+!
+
+*geometry:   =100x100
+

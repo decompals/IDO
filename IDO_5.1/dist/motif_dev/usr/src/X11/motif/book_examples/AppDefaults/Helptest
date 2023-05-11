@@ -1,0 +1,23 @@
+*Helptest*button.labelString:    Push Me
+*Helptest*help.labelString:      Help
+*Helptest*done.labelString:      Done
+Helptest*button1*labelString:   Name:
+Helptest*button2*labelString:   Phone:
+Helptest*button3*labelString:   Address:
+#
+# Specify positions for each widget.
+#
+*Helptest*XmText*x:      120
+*Helptest*field1*y:         10
+*Helptest*field2*y:         40
+*Helptest*field3*y:         70
+*Helptest*XmPushButton.x:     10
+*Helptest*button1*y:        10
+*Helptest*button2*y:        40
+*Helptest*button3*y:        70
+*Help*x: 10
+*Help*y: 100
+Helptest*help*x:           10
+Helptest*help*y:          200
+Helptest*done*x:           10D
+Helptest*done*y:          100

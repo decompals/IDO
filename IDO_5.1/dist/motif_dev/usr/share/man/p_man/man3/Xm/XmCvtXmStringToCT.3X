@@ -1,0 +1,83 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmCvtXmStringToCT 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmCvtXmStringToCT\*O\(emA compound string function that converts a compound string to compound text
+.iX "XmCvtXmStringToCT"
+.iX "compound string functions" "XmCvtXmStringToCT"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/Xm.h>
+.sp \n(PDu
+char * XmCvtXmStringToCT (\*Vstring\*L)
+.ta .5i 1.75i
+	XmString	\*Vstring\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmCvtXmStringToCT\*O converts a compound string to a (char *) string
+in compound text format.
+The application must call \*LXtAppInitialize\*O before calling this
+function.
+The converter uses the font list tag associated with a given compound
+string segment to select a compound text format for that segment.
+A registry defines a mapping between font list tags and compound text
+encoding formats.
+The converter uses the following algorithm for each compound string
+segment:
+.AL
+.LI
+If the compound string segment tag is mapped to
+\*LXmFONTLIST_DEFAULT_TAG\*O in the registry, the converter passes the
+text of the compound string segment to \*LXmbTextListToTextProperty\*O
+with an encoding style of \*LXCompoundTextStyle\*O and uses the
+resulting compound text for that segment.
+.LI
+If the compound string segment tag is mapped to an MIT registered
+charset in the registry, the converter creates the compound text for
+that segment using the charset (from the registry) and the text of the
+compound string segment as defined in the X Consortium Standard
+\*ECompound Text Encoding\*O.
+.LI
+If the compound string segment tag is mapped to a charset in the
+registry that is neither \*LXmFONTLIST_DEFAULT_TAG\*O nor an MIT
+registered charset, the converter creates the compound text for that
+segment using the charset (from the registry) and the text of the
+compound string segment as an "extended segment" with a variable number
+of octets per character.
+.LI
+If the compound string segment tag is not mapped in the registry, the
+result is implementation dependent.
+.LE
+.VL .75i 
+.LI "\*Vstring\*O"
+Specifies a compound string to be converted to compound text.
+.LE 
+.SH RETURN VALUE
+Returns a (char *) string in compound text format.
+This format is described in the X Consortium Standard \*ECompound Text
+Encoding\*O.
+.SH RELATED INFORMATION
+.na
+\*LXmCvtCTToXmString(3X)\*O,
+\*LXmFontList(3X)\*O,
+\*LXmMapSegmentEncoding(3X)\*O,
+\*LXmRegisterSegmentEncoding(3X)\*O, and
+\*LXmString\*O.
+.ad

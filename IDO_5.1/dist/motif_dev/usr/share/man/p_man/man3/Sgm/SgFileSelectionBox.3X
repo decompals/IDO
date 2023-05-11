@@ -1,0 +1,480 @@
+.TH SgFileSelectionBox 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgFileSelectionBox\*O\(emThe enhanced FileSelectionBox widget
+.iX "SgFileSelectionBox"
+.iX "widget class" "FileSelectionBox"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/XmFileSB.h>
+.iE
+.sE
+.SH DESCRIPTION
+The enhanced XmFileSelectionBox traverses directories, shows files and
+subdirectories, and selects files.
+.PP 
+An SgFileSelectionBox has three main areas:
+.ML
+.LI
+A Finder widget, consisting of a text field, zoom bar, drop pocket, and history button.
+.LI
+A scrollable list of filenames and subdirectories
+.LI
+A group of Buttons,
+labeled \*LOK\*O, \*LFilter\*O, \*LCancel\*O, and \*LHelp\*O
+.LE 
+.PP
+The user can select a new directory to examine by scrolling through the
+list of files and directories and selecting the desired directory.
+.PP 
+The user can select a file by scrolling through the list of filenames
+and selecting the desired file or by entering the filename directly into
+the text edit area.
+Selecting a file from the list causes that filename to appear in the
+file selection text edit area.
+.PP
+The Finder widget consists of a text field, drop pocket, and history
+button.  The text area allows a user to type a file name.  The text
+field will always display the current directory whose files are listed
+in the XmFileSelectionBox's list widget.  It may also display a file name
+concatenated on the tail of the current directory.
+.PP
+The zoom bar is a line of buttons that mimic the structure of the
+directory in the text field.  Pressing on a zoom bar button sets
+the current directory to the directory underneath the button
+in the text field.  The last button will not change anything since it
+will always be either the current directory or a file in the current directory.
+.PP
+The history button shows directories.  It pops up a menu of visited
+directories. The history button will have at least 1 entry: the
+directory in which the XmFileSelectionBox started in.  If a user
+presses \*LOK\*O or \*LFilter\*O, the current directory will be added
+to the history button menu.  Selecting an item on the history
+button menu sets the current directory to that item.
+.PP
+The drop pocket allows icons to be dropped into the
+XmFileSelectionBox.  When an icon is dropped, the current directory is
+set to the location of that icon.  If the icon is a file, the filename
+is also concatenated onto the tail of the current directory.
+Acceptable icons for drops will change the background color of the drop
+pocket.  If the type of a file is not known, or the file doesn't exist
+(as in a new file you are specifying), the drop pocket displays the
+unkown icon (which looks like a round balloon).
+.PP
+Unix .. and . directories may be specified in the text edit area.  The tilde: ~ can
+also be used for home directories in the text edit area.
+.PP
+The text edit area supports csh-style file completion. While typing, the user presses
+space, and the longest matching substring in the current directory in inserted
+in the text edit area.  Completion also works on ~ for home directories.
+.PP 
+The Filter (or Apply) button pops up a dialog asking for a \*Led(1)\*O
+type regular expression.  The files in the XmFileSelectionBox's list
+will be filtered by the regular expression when the Filter dialog's \*LOK\*O
+button is pressed.  The filtering expression in the Filter dialog
+remains active as long as the Filter dialog is popped up.  After the
+Filter dialog is cancelled, the next file list update is not subject to
+filtering.  
+.PP
+The XmNpattern resource is set to mirror the filter
+specified in the filter dialog.  If the XmFileSelectionBox came up
+with a preset XmNpattern, and the user presses \*LCancel\*O in the Filter
+dialog, the XmNpattern is set to "*".
+.PP
+The user may select a new file as many times as desired.
+The application is not notified until the user takes one of these actions:
+.ML
+.LI
+Selects the \*LOK\*O PushButton
+.LI
+Presses \*LKActivate\*O while the File Selection Box has the
+keyboard focus and a file is selected.
+.LI
+Double clicks or presses \*LKActivate\*O on a file in the file list.
+\*KActivate\*O is typically the Enter key.
+.LE 
+.PP 
+FileSelectionBox initiates a directory and file search when any of the
+following occurs:
+.ML
+.LI
+The FileSelectionBox is initialized
+.LI
+The user double clicks or presses \*LKActivate\*O on an item in the
+directory list
+.LE
+.SS "Classes"
+FileSelectionBox inherits behavior and
+resources from \*LCore\*O, \*LComposite\*O, \*LConstraint\*O, \*LXmManager\*O,
+\*LXmBulletinBoard\*O, and \*LXmSelectionBox\*O.
+.PP 
+The class pointer is \*LxmFileSelectionBoxWidgetClass\*O.
+.PP
+The class name is \*LXmFileSelectionBox\*O.
+.LE
+.SS "New Resources"
+The following table defines a set of widget resources used by the programmer
+to specify data.  The programmer can also set the resource values for the
+inherited classes to set attributes for this widget.  To reference a
+resource by name or by class in a .Xdefaults file, remove the \*LXmN\*O or
+\*LXmC\*O prefix and use the remaining letters.  To specify one of the defined
+values for a resource in a .Xdefaults file, remove the \*LXm\*O prefix and use
+the remaining letters (in either lowercase or uppercase, but include any
+underscores between words).
+The codes in the access column indicate if the given resource can be
+set at creation time (C),
+set by using \*LXtSetValues\*O (S),
+retrieved by using \*LXtGetValues\*O (G), or is not applicable (N/A).
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmFileSelectionBox Resource Set
+Name	Class	Type	Default	Access
+_
+XmNdirectory 	XmCDirectory	XmString	dynamic	CSG
+XmNdirSpec	XmCDirSpec	XmString	dynamic	SG
+XmNfileListItems	XmCItems	XmStringTable	dynamic	SG
+XmNfileListItemCount	XmCItemCount	int	dynamic 	SG
+XmNfileListLabelString	XmCFileListLabelString	XmString	dynamic	CSG
+XmNnoMatchString 	XmCNoMatchString	XmString	" [    ] "	CSG
+XmNpattern	XmCPattern	XmString	"*"	CSG
+.TE
+.VL  
+.LI "\*LXmNdirectory\*O"
+Specifies the base directory used in determining the files
+and directories to be displayed.
+If the default is NULL or empty, the current working directory is used.
+This resource should not be changed by the application after initialization.
+The application should not free the returned resource.
+.LI "\*LXmNdirSpec\*O"
+Specifies the full file path specification.
+The default value is determined by the FileSelectionBox after conducting
+the initial directory and file search.
+The application should not free this returned resource.
+.LI "\*LXmNfileListItems\*O"
+Specifies the items in the file list.
+This is the \*LXmNlistItems\*O resource in SelectionBox, renamed for
+FileSelectionBox.
+\*LXtGetValues\*O for this resource returns the list items themselves,
+not a copy of the list items.
+The application must not free the returned items.
+.LI "\*LXmNfileListItemCount\*O"
+Specifies the number of items in the file list.
+This is the \*LXmNlistItemCount\*O resource in SelectionBox, renamed for
+FileSelectionBox.
+The value must not be negative.
+.LI "\*LXmNfileListLabelString\*O"
+Specifies the label string of the file list.
+This is the \*LXmNlistLabelString\*O resource in SelectionBox, renamed
+for FileSelectionBox.
+The default for this resource depends on the locale.
+In the C locale the default is "Files".
+.LI "\*LXmNnoMatchString\*O"
+Specifies a string to be displayed in the file list if the list of files
+is empty.
+.LI "\*LXmNpattern\*O"
+Specifies a string used as a regular expression in determining the
+files to be displayed.  The default value is "*" which matches
+everything. The pattern does not affect display of directories.  The
+format of the pattern is a regular expression of the type described in
+the \*Led(1)\*O manual page.
+.LE
+
+.SS "Compatibility Resources" 
+The following table
+shows resources for the enhanced XmFileSelectionBox widget
+which are provided for compatibility with the XmFileSelectionBox.
+These resources are not used by the XmFileSelectionBox widget.
+Their default values may be different from the default
+in \*LXmFileSelectionBox(3X)\*O.  For more information on the purpose
+of these resources in the \*LXmFileSelectionBox(3X)\*O, see
+the man page for \*LXmFileSelectionBox(3X)\*O.
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmFileSelectionBox Compatibility Resources
+Name	Class	Type	Default	Access
+_
+XmNdirectoryValid	XmCDirectoryValid	Boolean	TRUE	SG
+XmNdirListItems	XmCDirListItems	XmStringTable	NULL	SG
+XmNdirListItemCount	XmCDirListItemCount	int	XmUNSPECIFIED	SG
+XmNdirListLabelString	XmCDirListLabelString	XmString	""	CSG
+XmNdirMask	XmCDirMask	XmString	"*"	CSG
+XmNdirSearchProc	XmCDirSearchProc	XmSearchProc	NULL	CSG
+XmNfileSearchProc	XmCFileSearchProc	XmSearchProc	NULL	CSG
+XmNfileTypeMask	XmCFileTypeMask	unsigned char	XmFILE_REGULAR	CSG
+XmNfilterLabelString	XmCFilterLabelString	XmString	"Filter"	CSG
+.wH .tH
+XmNlistUpdated	XmCListUpdated	Boolean	TRUE	SG
+XmNqualifySearchDataProc	XmCQualifySearchDataProc	XmQualifyProc	NULL CSG
+.TE
+.VL  
+.LE
+
+.SS "Inherited Resources"
+FileSelectionBox inherits behavior and resources from the following
+superclasses.  For a complete description of each resource, refer to the
+man page for that superclass.   Note that the XmFileSelectionBox widget resets
+\*LXmNautoUnmanage\*O to \*LFALSE\*O and \*LXmNdialogType\*O to \*LXmDIALOG_FILE_SELECTION\*O.
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmSelectionBox Resource Set
+Name	Class	Type	Default	Access
+_
+XmNapplyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNapplyLabelString	XmCApplyLabelString	XmString	dynamic	CSG
+XmNcancelCallback	XmCCallback	XtCallbackList	NULL	C
+XmNcancelLabelString	XmCCancelLabelString	XmString	dynamic 	CSG
+XmNchildPlacement	XmCChildPlacement	unsigned char	XmPLACE_ABOVE_SELECTION	CSG
+XmNdialogType	XmCDialogType	unsigned char	XmDIALOG_FILE_SELECTION 	G
+XmNhelpLabelString	XmCHelpLabelString	XmString	dynamic 	CSG
+XmNlistItemCount	XmCItemCount	int	dynamic 	CSG
+XmNlistItems	XmCItems	XmStringTable	dynamic	CSG
+XmNlistLabelString	XmCListLabelString	XmString	dynamic	CSG
+XmNlistVisibleItemCount	XmCVisibleItemCount	int	dynamic 	CSG
+XmNminimizeButtons	XmCMinimizeButtons	Boolean	False	CSG
+XmNmustMatch	XmCMustMatch	Boolean	False 	CSG
+XmNnoMatchCallback	XmCCallback	XtCallbackList	NULL	C
+.wH .tH
+XmNokCallback	XmCCallback	XtCallbackList	NULL	C
+XmNokLabelString	XmCOkLabelString	XmString	dynamic	CSG
+XmNselectionLabelString	XmCSelectionLabelString	XmString	dynamic	CSG
+XmNtextAccelerators	XmCTextAccelerators	XtAccelerators	default	C
+XmNtextColumns	XmCColumns	short	dynamic	CSG
+XmNtextString	XmCTextString	XmString	dynamic	CSG
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmBulletinBoard Resource Set
+Name	Class	Type	Default	Access
+_
+XmNallowOverlap	XmCAllowOverlap	Boolean	True	CSG
+XmNautoUnmanage	XmCAutoUnmanage	Boolean	False	CG
+XmNbuttonFontList	XmCButtonFontList	XmFontList	dynamic	CSG
+XmNcancelButton	XmCWidget	Widget	Cancel button	SG
+XmNdefaultButton	XmCWidget	Widget	OK button	SG
+XmNdefaultPosition	XmCDefaultPosition	Boolean	True	CSG
+XmNdialogStyle	XmCDialogStyle	unsigned char	dynamic	CSG
+XmNdialogTitle	XmCDialogTitle	XmString	NULL	CSG
+XmNfocusCallback	XmCCallback	XtCallbackList	NULL	C
+XmNlabelFontList	XmCLabelFontList	XmFontList	dynamic	CSG
+XmNmapCallback	XmCCallback	XtCallbackList	NULL	C
+XmNmarginHeight	XmCMarginHeight	Dimension	10	CSG
+XmNmarginWidth	XmCMarginWidth	Dimension	10 	CSG
+XmNnoResize	XmCNoResize	Boolean	False	CSG
+.wH .tH
+XmNresizePolicy	XmCResizePolicy	unsigned char	XmRESIZE_ANY	CSG
+XmNshadowType	XmCShadowType	unsigned char	XmSHADOW_OUT	CSG
+XmNtextFontList	XmCTextFontList	XmFontList	dynamic	CSG
+XmNtextTranslations	XmCTranslations	XtTranslations	NULL	C
+XmNunmapCallback	XmCCallback	XtCallbackList	NULL	C
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmManager Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNinitialFocus	XmCInitialFocus	Widget	dynamic	CSG
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmTAB_GROUP	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	dynamic	CSG
+XmNstringDirection	XmCStringDirection	XmStringDirection	dynamic	CG
+XmNtopShadowColor	XmCTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	True	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	XtPointer	NULL	CSG
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Composite Resource Set
+Name	Class	Type	Default	Access
+_
+XmNchildren	XmCReadOnly	WidgetList	NULL	G
+XmNinsertPosition	XmCInsertPosition	XtOrderProc	NULL	CSG
+XmNnumChildren	XmCReadOnly	Cardinal	0	G
+.TE
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtAccelerators	dynamic	N/A
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderColor	XmCBorderColor	Pixel	XtDefaultForeground	CSG
+XmNborderPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNcolormap	XmCColormap	Colormap	dynamic	CG
+XmNdepth	XmCDepth	int	dynamic	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Screen *	dynamic	CG
+.wH .tH
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	dynamic	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.wH .in  
+.SS "Callback Information"
+In order to maintain API compatibility,
+the Callback structure is XmFileSelectionCallbackStruct.  Some
+fields are not used by the enhanced XmFileSelectionBox.
+A pointer to the following structure is passed to each callback:
+.sS
+.iS
+.ta .25i 1.1i
+typedef struct
+{
+	int	\*Vreason\*L;
+	\*LXEvent	\*V* event\*L;
+	\*LXmString	\*Vvalue\*L;
+	\*Lint	\*Vlength\*L;
+	\*LXmString	\*Vmask\*L;
+	\*Lint	\*Vmask_length\*L;
+	\*LXmString	\*Vdir\*L;
+	\*Lint	\*Vdir_length\*L;
+	\*LXmString	\*Vpattern\*L;
+	\*Lint	\*Vpattern_length\*L;
+} XmFileSelectionBoxCallbackStruct;
+.iE
+.sE
+.VL 1i 
+.LI "\*Vreason\*O"
+Indicates why the callback was invoked
+.LI "\*Vevent\*O"
+Points to the \*LXEvent\*O that triggered the callback
+.LI "\*Vvalue\*O"
+Specifies the full pathname of the selected file
+.LI "\*Vlength\*O"
+Specifies the number of bytes in \*Vvalue\*O
+.LI "\*Vmask\*O"
+Not used, always NULL
+.LI "\*Vmask_length\*O"
+Not used, always 0.
+.LI "\*Vdir\*O"
+Specifies the current base directory, i.e. the parent of the file in value
+.LI "\*Vdir_length\*O"
+Specifies the number of bytes in \*Vdir\*O
+.LI "\*Vpattern\*O"
+Not used, always NULL
+.LI "\*Vpattern_length\*O"
+Not used, always 0
+.LE 
+.SS "Translations"
+XmFileSelectionBox inherits translations from XmSelectionBox.
+.SS "Accelerators"
+The \*LXmNtextAccelerators\*O from XmSelectionBox are added to the
+selection Text descendant of XmFileSelectionBox.
+.LE
+.SS "Additional Behavior"
+The FileSelectionBox widget has the additional behavior described below:
+.VL
+.LI "\*LMAny\ KCancel\*O:"
+Calls the activate callbacks for the cancel button if it is sensitive.
+If no cancel button exists and the parent of the FileSelectionBox is a manager,
+passes the event to the parent.
+.LI "\*L<KActivate>\*O\ in\ Selection\ Text:"
+Calls the selection text widget's \*LXmNactivateCallback\*O callbacks.
+If \*LXmNmustMatch\*O is True and the selection text does not match an
+item in the file list, calls the \*LXmNnoMatchCallback\*O
+callbacks with
+reason \*LXmCR_NO_MATCH\*O.
+Otherwise, calls the \*LXmNokCallback\*O callbacks with reason
+\*LXmCR_OK\*O.
+.nL
+.ne 5
+.LI "\*L<DoubleClick>\*O\ or\ \*L<KActivate>\*O\ in\ File\ List:"
+Calls the file list widget's \*LXmNdefaultActionCallback\*O
+callbacks.
+Calls the \*LXmNokCallback\*O callbacks with reason \*LXmCR_OK\*O.
+.LI "\*L<Single\ Select>\*O\ or\ \*L<Browse\ Select>\*O\ in\ File\ List:"
+Replaces the selection text with the selected list item.
+.LI "\*L<BDrag>\*O in File List:"
+Drags the content of one or more selected list items using the drag
+and drop facility.  If \*LBDrag\*O is pressed on an unselected item,
+drags only that item, excluding any other selected items.
+.PP
+The \*LXmNexportTargets\*O resource of the associated DragContext
+is set to target types of COMPOUND_TEXT and FILE_NAME.  The
+\*LXmNclientData\*O resource is set to the index of the item in the list.
+.LI "\*L<OK\ Button\ Activated>\*O:"
+If \*LXmNmustMatch\*O is True and the selection text does not match an
+item in the file list, calls the \*LXmNnoMatchCallback\*O callbacks with
+reason \*LXmCR_NO_MATCH\*O.
+Otherwise, calls the \*LXmNokCallback\*O callbacks with reason
+\*LXmCR_OK\*O.
+.P 
+.ne 3i
+.LI "\*L<Cancel\ Button\ Activated>\*O:"
+Calls the \*LXmNcancelCallback\*O callbacks with reason
+\*LXmCR_CANCEL\*O.
+.LI "\*L<Help\ Button\ Activated>\*O:"
+Calls the \*LXmNhelpCallback\*O callbacks with reason \*LXmCR_HELP\*O.
+.nL
+.ne 5
+.LI "\*L<KActivate>\*O:"
+If no button, list widget, or text widget has the keyboard focus:
+If \*LXmNmustMatch\*O is True and the selection text does not match an
+item in the file list, calls the \*LXmNnoMatchCallback\*O callbacks with
+reason \*LXmCR_NO_MATCH\*O.
+Otherwise, calls the \*LXmNokCallback\*O callbacks with reason
+\*LXmCR_OK\*O.
+.LE
+.SS "Virtual Bindings"
+The bindings for virtual keys are vendor specific.
+For information about bindings for virtual buttons and keys, see \*LVirtualBindings(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LComposite(3X)\*O,
+\*LConstraint(3X)\*O,
+\*LCore(3X)\*O,
+\*LXmBulletinBoard(3X)\*O,
+\*LSgCreateFileSelectionBox(3X)\*O,
+\*LSgCreateFileSelectionDialog(3X)\*O,
+\*LSgFileSelectionBoxGetChild(3X)\*O,
+\*LXmManager(3X)\*O, and
+\*LXmSelectionBox(3X)\*O.
+.ad

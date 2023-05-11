@@ -1,0 +1,12 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Controldata: Resource File for controldata program
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Controldata*orientation:                     horizontal
+Controldata*panel*RowColumn.orientation:     vertical
+Controldata*XmScrollbar*orientation:         horizontal
+Controldata*speed*label*labelString:         Speed
+Controldata*direction*label*labelString:     Direction
+Controldata*altitude*label*labelString:      Altitude
+Controldata*speed.orientation:	             vertical
+Controldata*direction.orientation:	     vertical
+Controldata*altitude.orientation:	     vertical

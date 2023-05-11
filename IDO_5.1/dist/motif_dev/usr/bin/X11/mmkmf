@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Determine which release we are running on.  The Imake config files need
+# this.
+if [ -f /usr/include/make/releasedefs ]; then
+	RELEASE="`sed 's/RELEASE.*=[^0-9]*//' /usr/include/make/releasedefs`"
+	VERSION=" -DOSMajorVersion=`echo $RELEASE | sed -e 's/[^0-9]*\([0-9][0-9]*\).*/\1/'` -DOSMinorVersion=`echo $RELEASE | sed -e 's/[^0-9]*[0-9][0-9]*[^0-9]*\([0-9][0-9]*\).*/\1/'`"
+elif [ -f /usr/lib/libc.so ]; then
+	VERSION=" -D OSMajorVersion=5 -D OSMinorVersion=0"
+elif [ -f /usr/lib/libc_s.a ]; then
+	VERSION=" -D OSMajorVersion=4 -D OSMinorVersion=0"
+else
+	echo \
+"mmkmf: I give up!  Cannot figure out what level software you are running!"
+	exit 1
+fi
+
+#
+# generate a Makefile from an Imakefile from outside the X sources.
+# 
+
+if [ -f Makefile ]; then 
+	(set -x; mv Makefile Makefile.bak)
+fi
+
+CMD="imake -DBuildMotif=1 -DUseInstalled -DUseInstalledMotif $VERSION -I/usr/lib/X11/config \$*"
+set -x; eval $CMD

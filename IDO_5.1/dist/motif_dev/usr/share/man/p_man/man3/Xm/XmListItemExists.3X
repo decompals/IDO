@@ -1,0 +1,48 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **
+.TH XmListItemExists 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmListItemExists\*O\(emA List function that checks if a specified item is in the list
+.iX "XmListItemExists"
+.iX "List functions" "XmListItemExists"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/List.h>
+.sp \n(PDu
+Boolean XmListItemExists (\*Vwidget, item\*L)
+.ta .5i 1.5i
+	Widget	\*Vwidget\*L;
+	XmString	\*Vitem\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmListItemExists\*O is a Boolean function that checks if a specified
+item is present in the list.
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the ID of the List widget
+.LI "\*Vitem\*O"
+Specifies the item whose presence is checked
+.LE 
+.PP 
+For a complete definition of List and its associated resources, see
+\*LXmList(3X)\*O.
+.SH RETURN VALUE
+Returns True if the specified item is present in the list.
+.SH RELATED INFORMATION
+.na
+\*LXmList(3X)\*O.
+.ad

@@ -1,0 +1,67 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmTextPosToXY 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmTextPosToXY\*O\(emA Text function that accesses the x and y position of a character position
+.iX "XmTextPosToXY"
+.iX "Text functions" "XmTextPosToXY"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/Text.h>
+.sp \n(PDu
+Boolean XmTextPosToXY (\*Vwidget, position, x, y\*L)
+.ta .5i 1.5i
+	Widget	\*Vwidget\*L;
+	XmTextPosition	\*Vposition\*L;
+	Position	\*V*x\*L;
+	Position	\*V*y\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmTextPosToXY\*O accesses the x and y position, relative to the upper
+left corner of the Text widget, of a given character position in the
+text buffer.
+.P 
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the Text widget ID
+.LI "\*Vposition\*O"
+Specifies the character position in the text for which the x and y
+position is accessed.  This is an integer number of characters
+from the beginning of the buffer.  The first character position is 0.
+.LI "\*Vx\*O"
+Specifies the pointer in which the x position, relative to the upper
+left corner of the widget, is returned.  This value is meaningful only
+if the function returns True.
+.LI "\*Vy\*O"
+Specifies the pointer in which the y position, relative to the upper
+left corner of the widget, is returned.  This value is meaningful only
+if the function returns True.
+.LE 
+.PP 
+For a complete definition of Text and its associated resources, see
+\*LXmText(3X)\*O.
+.SH RETURN VALUE
+This function returns True if the character position is displayed in the
+Text widget; otherwise, it returns False, and no \*Vx\*O or \*Vy\*O
+value is returned.
+.SH RELATED INFORMATION
+.na
+\*LXmText(3X)\*O.
+.ad

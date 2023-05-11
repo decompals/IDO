@@ -1,0 +1,42 @@
+void __KIOzi();
+void __KIOzu();
+void __KIOzo();
+void __KIOzsh();
+void __KIOzbh();
+void __KIOfi();
+void __KIOfu();
+void __KIOfo();
+void __KIOfsh();
+void __KIOfbh();
+void __KIOpbh();
+void __KIOpi();
+void __KIOpo();
+void __KIOpsh();
+void __KIOpu();
+void __KIOpd();
+void __KIOpde();
+void __KIOpdg();
+int __KIOri();
+int __KIOrsi();
+int __KIOrli();
+int __KIOru();
+int __KIOrsu();
+int __KIOrlu();
+int __KIOro();
+int __KIOrso();
+int __KIOrlo();
+int __KIOrh();
+int __KIOrsh();
+int __KIOrlh();
+int __KIOrc();
+int __KIOrsc();
+int __KIOrlc();
+int __KIOrf();
+int __KIOrd();
+int __KIOrst();
+int __KIOrfst();
+char* __KIOsputd();
+#define __KIOsputs(src,dest,index) (index) = 0; while ((src)[(index)]!='\0') *(dest)++ = (src)[(index)++]; 
+#define __KIOsputc(c,s)  *(s)++ = (c) 
+#define __KIOsfinish(s) *(s) = '\0' 
+

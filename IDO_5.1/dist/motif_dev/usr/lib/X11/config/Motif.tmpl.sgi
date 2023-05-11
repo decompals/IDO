@@ -1,0 +1,97 @@
+/**/# Start of Motif.tmpl.sgi
+/******************************************************************************/
+/*                                                                            */
+/*                          Motif.tmpl.sgi                                    */
+/*                                                                            */
+/* Contains SGI-specific additions to Motif.tmpl.  This file is included      */
+/* at the start of Motif.tmpl, to give a chance to modify any settings for    */
+/* OSF/Motif Motif.tmpl we need to at SGI.                                    */
+/*                                                                            */
+/******************************************************************************/
+
+/*
+ * If the command "make <target1> <target2> is given, smake needs to know the
+ * order.  Otherwise, it will try to do them together.
+ */
+.ORDER: Makefile Makefiles debugger includes all
+
+/*
+ * Motif.tmpl accepts the following definition.  It is here so we do not
+ * need to change sgi.cf to get Motif defines in.
+ *
+ * -DNO_REGCOMP is required by lib/Xmos.c
+ */
+#define MotifDefines -DSYS_DIR -DPORT_NOVFORK -DSTRINGS_ALIGNED -DNO_REGCOMP
+
+/*
+ * Get the CC options we need to build Motif.  Note that these cannot just
+ * piggy-back on MotifDefines, because that messes makedepend up.  The
+ * separate Motif copy is because the X folks may not want all of them.
+ *
+ * The #undef/#define is needed or Library.tmpl fails.
+ *
+ * Since they don't matter on our machine, use "-woff 182" to turn off the
+ * TONS of void* warnings.  Otherwise, because of the volume of unwanted
+ * warnings, we ignoring all other warnings as well.
+ *
+ * We turn on the warning for starting a comment before the previous one ended,
+ * because that is usually a bug -- an accidentally unterminated comment.
+ *
+ * The -Wf switches are needed to increase language tools' internal symbol
+ * table sizes for building Motif.
+ */
+#ifdef DefaultCCOptions
+#undef DefaultCCOptions
+#endif
+
+#  define DefaultCCOptions sgiCCOptions SymbolTables -D__STDC__=1 -woff 182 -Wp,-Wcomment -Wf,-XNd12000 -Wf,-XNp8000 -MDupdate $(DEPEND_FILE)
+        CCOPTIONS = DefaultCCOptions
+
+/*
+ * The following IMAKE_CMD definitions override Imake.tmpl.
+ * They must match, except that $(SGI_SPECIAL_DEFINES) is added.
+ * (You can't just redefine IMAKE instead, because make targets depend on it.)
+ *
+ *	BuildMotif	says it is a Motif build, so include Motif include files
+ *	UseSmake	"NO" turns off special X group (only) stuff)
+ *	<XXX>Version	Sets version info for ifdef's
+ */
+
+       SGI_SPECIAL_DEFINES = -DBuildMotif=YES -DOSMajorVersion=5
+
+        IMAKE_CMD = $(IMAKE) -DUseInstalled -DUseInstalledMotif -I$(IRULESRC) $(IMAKE_DEFINES) $(SGI_SPECIAL_DEFINES)
+
+/*
+ * This comes first, to ensure that that the default target is reasonable.
+ *
+ * While we are at it, ensure that Makefile is newer than Imakefile.
+ * If not, we don't really know what to do , so just error out.
+ *
+ * NOTE: do NOT make "install" depend on "all".  This breaks in directories
+ *	 that pass them to subdirectories.  Each gets passed.
+ */
+all:: Makefile-newer
+clean::
+	$(RM) $(DEPEND_FILE)
+depend::
+	@echo '"make depend" is no longer needed -- dependencies are now automatic'
+includes::
+Makefile-newer::
+	@if [ "`find Imakefile -follow -newer Makefile -print`" ]; then \
+		echo "ERROR: Imakefile is newer than Makefile.  Must fix manually (`pwd`)"; \
+		exit 1; \
+	fi
+
+
+
+
+/*
+ * Dependecies are now updated by the compiler flag "-MDupdate Makfile.depend"
+ * So we need to include it.  Note that with sinclude, unlike include,
+ * it is OK for the file to be missing.
+ */
+
+DEPEND_FILE = Makefile.depend
+sinclude $(DEPEND_FILE)
+
+/**/# End of Motif.tmpl.sgi

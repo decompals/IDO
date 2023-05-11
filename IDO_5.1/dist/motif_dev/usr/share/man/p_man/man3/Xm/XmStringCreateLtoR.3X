@@ -1,0 +1,60 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmStringCreateLtoR 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmStringCreateLtoR\*O\(emA compound string function that creates a compound string
+.iX "XmStringCreateLtoR"
+.iX "compound string functions" "XmStringCreateLtoR"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/Xm.h>
+.sp \n(PDu
+XmString XmStringCreateLtoR (\*Vtext, tag\*L)
+.ta .5i 1.25i
+	char	*\*Vtext\*L;
+	char	*\*Vtag\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmStringCreateLtoR\*O creates a compound
+string with two components: text and a font list element tag.
+This function imposes the semantic of scanning for \*L\en\*O
+characters in the text.  When one is found, the text up to that point
+is put into a segment followed by a separator component.  No final
+separator component is appended to the end of the compound string.
+The direction defaults to left-to-right.
+This function assumes that the encoding is single octet
+rather than double octet per character of text.
+.VL .75i 
+.LI "\*Vtext\*O"
+Specifies a null-terminated string to be used as the text component of
+the compound string.
+.nL
+.ne 6
+.LI "\*Vtag\*O"
+Specifies the font list element tag to be associated with the given
+text.  The value \*LXmFONTLIST_DEFAULT_TAG\*O identifies a locale
+text segment.
+.LE 
+.SH RETURN VALUE
+Returns a new compound string.
+.SH RELATED INFORMATION
+.na
+\*LXmStringCreate(3X)\*O.
+.ad

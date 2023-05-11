@@ -1,0 +1,32 @@
+if ($?tcsh) then
+    alias l      ls-F
+    alias ls     ls-F
+else
+    alias l      ls -CF
+    alias ls     ls -CF
+endif
+alias UP     cd ../../../
+alias Up     cd ../../
+alias am     "alias | more"
+alias c      'cc \!*.c -o \!* -lgl_s -lm'
+alias h      history
+alias lR     ls -RCF
+alias lRa    ls -RCFa
+alias lRs    ls -RsCF
+alias la     ls -aFC
+alias ll     ls -l
+alias llm    "ls -l \!* | more"
+alias lo     logout
+alias ltm    "ls -lt \!* | more"
+alias lth    "ls -lt \!* | head"
+alias me     'make \!* >& errs &'
+alias pe     printenv
+alias sa     source ~/.alias
+alias sc     source ~/.cshrc
+alias sl     source ~/.login
+alias te     tail -f errs
+alias up     cd ../
+alias va     vi ~/.alias
+alias vc     vi ~/.cshrc
+alias vl     vi ~/.login
+alias vim    vi Makefile

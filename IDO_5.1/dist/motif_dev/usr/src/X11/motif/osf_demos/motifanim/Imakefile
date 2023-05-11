@@ -1,0 +1,30 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.3 $ $Date: 1992/10/23 15:37:59 $
+
+INCLUDES = -I. -I$(INCLUDESRC) -I$(MINCLUDESRC)
+        DEPLIBS = MrmClientDepLibs
+LOCAL_LIBRARIES = MrmClientLibs
+
+SRCS=	motifanim.c
+
+OBJS=	motifanim.o
+
+NormalLibraryObjectRule()
+
+MSimpleUilTarget(motifanim)
+MSimpleUidTarget(dog)
+MSimpleUidTarget(plane)
+MSimpleUidTarget(superman)
+
+DependTarget()
+#ifdef SGIArchitecture
+InstallAppDefaults(Motifanim)
+FILES = Imakefile *.c *.uil README superman1.xbm superman2.xbm superman3.xbm superman4.xbm superman5.xbm superman6.xbm
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

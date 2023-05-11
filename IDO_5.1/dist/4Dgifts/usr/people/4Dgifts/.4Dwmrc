@@ -1,0 +1,401 @@
+###############################################################################
+#                                                                             #
+#                 4Dgifts .4Dwmrc RESOURCE DESCRIPTION FILE                   #
+#                                                                             #
+#    This file contains menu, key binding, and button binding definitions     #
+#                        for the 4Dwm window manager.                         #
+#                                                                             #
+###############################################################################
+
+
+############################################################################
+#
+#  NAME
+#       $HOME/.4Dwmrc - sample file for customizing menus, key and button
+#			bindings for 4Dwm(1X).
+#
+#  DESCRIPTION
+#
+#    The .4Dwmrc file can be used to customize:
+#      1)  What happens when specific KEY and MOUSE BUTTONS are pressed when
+#          the pointer is over any part of the screen (e.g., the root
+#          window, a window's frame, an icon, etc.).
+#      2)  What items appear in the WINDOW MENU.
+#      3)  What items appear in the ROOT MENU--the pop-up menu that appears
+#          when you press a mouse button over an any part of the root window.
+#
+#  REFERENCES 
+#
+#      1)  4Dwm(1X) 
+#      2)  mwm(1X)
+#      3)  "OSF/Motif Programmer's Guide" (especially Part II, Motif Window
+#          Manager, Chapter 5, Managing Menus, Mouse Buttons, and Keyboard 
+#          Bindings)
+#      4)  O'Reilly, Vol. 3, Part 4, Appendix C, the OSF/Motif Window
+#          Manager pp. 610-629, 3rd Edition, May 1990
+#
+############################################################################
+
+
+
+############################################################################
+#
+#                          Menu Pane Description
+#
+#     The following 5 menu definitions (starting 70 lines below) demonstrate 
+#     various customizations one can specify for their own menu set.
+#
+#     The syntax for this type of structure is as follows:
+#
+#     menu menu_name
+#     {
+#         label [mnemonic] [accelerator]  function
+#                .             
+#                .            
+#         label [mnemonic] [accelerator]  function
+#     }
+#
+#     The entries above are defined as:
+#
+#     label        this string appears as a selectable menu item. If the string 
+#                  "no-label" is specifed here, 4Dwm will place a "separator"
+#                  (horizontal bar) in the menu to separate other labels.
+#
+#     mnemonic     a character which, if pressed while the menu is active,
+#                  will select the associated menu item.
+#
+#     accelerator  a key sequence which activates a window manager function
+#
+#     function     an action which the window manager can perform. the
+#                  following functions are used in this file:
+#
+#      f.exec       causes the command following it to be executed (using the
+#                   value of the MWMSHELL environment variable if it is set, 
+#                   otherwise the value of the SHELL environment variable if 
+#                   it is set, otherwise /bin/sh).  
+#     
+#      f.kill       ends execution of a client.  
+#                               
+#      f.lower      pushes a client window to the bottom of the window stack.
+#     
+#      f.maximize   causes a client window to be displayed with its maximum 
+#                   size (in most cases this means make the the window fill 
+#                   the screen).
+#     
+#      f.menu       associates a pull-right or roll-over menu with a menu pane 
+#                   entry, or a menu with a button or key binding.  The menu_name 
+#                   function argument identifies the menu to be used.
+#     
+#      f.minimize   causes a client window to be iconified or stowed. 
+#     
+#      f.move       causes a client window to be interactively moved.
+#     
+#      f.normalize  causes a client window to be displayed with its normal 
+#                   (de-iconified or de-maximized) size.
+#     
+#      f.post_wmenu posts the window menu.  If a key is used to post the
+#                   window menu and a window menu button is present, the  
+#                   window menu is automatically placed with its top-left
+#                   corner  at the bottom-left corner of the window menu 
+#                   button for the client window.  If no window menu button 
+#                   is present, the window menu is placed at the top-left 
+#                   corner of the client window.
+#
+#      f.quit_apps  ends execution of the current application.
+#     
+#      f.quit_mwm   ends execution of the 4Dwm window manager (but NOT
+#                   the X window system.
+#     
+#      f.raise      pops a client window to the top of the window stack.
+#     
+#      f.restart    causes 4Dwm to be restarted (effectively sending terminate
+#                   and re-execute commands sequences to the X server).
+#     
+#      f.refresh    causes all windows to be redrawn.
+#     
+#      f.resize     causes a client window to be interactively resized.
+#     
+#      f.separator  causes a menu separator to be drawn in the menu at the
+#                   specified location (the label is ignored).
+#     
+#      f.title      inserts a title in the menu at the specified location.
+#
+############################################################################
+
+
+#####################################################################
+#
+#   
+#   The following are the menu definitions used for 4Dwm. These will
+#   supersede the definitions in /usr/lib/X11/system.mwmrc. Menus that
+#   are defined in this file are not used by the window manager until
+#   they are explicitly specified as a target of an "f.exec" call.
+#   This may be done in a another menu definition, or a key or button
+#   binding definition. For example, the "rootMenu" definition below
+#   is referenced in our button binding definition farther below. In
+#   this way, any menu can be associated with any given context.
+#
+menu "rootMenu"
+{
+    "root menu"		f.title
+    "root"		f.menu root
+    "clients"		f.menu clients
+    "hosts"		f.menu hosts
+    "refresh"		f.refresh
+     no-label		f.separator
+    "restart"		f.restart
+    "kill 4Dwm"		f.quit_mwm
+    "logout"		f.exec "/usr/bin/X11/endsession"
+}
+
+#
+# SGI 4Dwm Root Menu Descriptions.
+#
+Menu 4DwmRootMenu
+{
+        "4D Window Manager"             f.title
+        "Log Out"                 _L    f.exec "/usr/bin/X11/endsession"
+}
+
+
+menu "root"
+{
+    "black"		f.exec "xsetroot -solid black"
+    "gray50"		f.exec "xsetroot -solid gray50"
+    "cadetblue"		f.exec "xsetroot -solid cadetblue"
+    "root-weave"        f.exec "xsetroot -default"
+    "escher"		f.exec "xsetroot -bitmap /usr/include/X11/bitmaps/escherknot"
+    "default"		f.exec "xsetroot -solid sgilightblue"
+}
+
+menu "clients"
+{
+    "Console"           f.exec "xwsh -fg \#0 -bg \#adadad -bold \#0000ff -cursorfg \#00ff00 -name console -geometry 80x24+470-75 -fn 7x13"
+    "mailbox"           f.exec "mailbox -S your-name -s 86 &"
+    "snapshot"          f.exec "snapshot -b"
+    "showmap"           f.exec "showmap"
+    "makemap"           f.exec "makemap"
+    "cedit"             f.exec "cedit"
+    "snoop"             f.exec "/usr/demos/bin/snoop"
+    "calendar"          f.exec "/usr/sbin/ical &"
+    "camera alignment grid (grid)"     f.exec "/usr/sbin/grid"
+    "color bars (colorbars)"                f.exec "/usr/sbin/colorbars"
+    "gamma calibration field (gamcal)"   f.exec "/usr/sbin/gamcal"
+     no-label		f.separator
+    "xwsh"		f.exec "/usr/sbin/xwsh &"
+    "xterm"		f.exec "xterm -n `hostname` &"
+     no-label		f.separator
+    "xmag"		f.exec "xmag &"
+    "xclock"		f.exec "xclock -analog -bg black -fg red -hd red -hl red&"
+    "xcalc"		f.exec "xcalc &"
+    "xedit"		f.exec "xedit &"
+    "xload"		f.exec "xload -bg black -fg red &"
+    "xshowcmap"		f.exec "xshowcmap &"
+     no-label		f.separator
+    "display info (xdpyinfo)"   f.exec "xwsh -geometry 80x24+110+427 -name 'X Query: Display Info' -hold -e /usr/bin/X11/xdpyinfo"
+
+    "window info (xwininfo)"    f.exec "xwsh -geometry 80x24+110+427 -name 'X Query: Window Info' -hold -e /usr/bin/X11/xwininfo"
+    "properties (xprop)"        f.exec "xwsh -geometry 80x24+110+427 -name 'X Query: Properties' -hold -e /usr/bin/X11/xprop"
+    "font names (xfontsel)"     f.exec "/usr/bin/X11/xfontsel"
+
+}
+
+menu "hosts"
+{
+    "xwsh: machinename"   f.exec "xwsh -e rlogin machinename &"
+    "xwsh: guest@mach"    f.exec "xwsh -e rlogin mach -l guest &"
+    "xwsh: root@machname" f.exec "xwsh -e rlogin machname -l root &"
+    "xwsh: user@mach"     f.exec "xwsh -max 80x66 -e rlogin mach -l user &"
+    no-label            f.separator
+    "xterm: 4Dgifts@nsa" f.exec "xterm -e nsa -l 4Dgifts &"
+    "xterm: machname"    f.exec "xterm -e machname &"
+}
+
+#####################################################################
+#
+#   Default Window Menu Description which has been explicitly 
+#   overriden/redefined here to include different text for the
+#   menu items.  This is then specified as the value for the
+#   4Dwm*windowMenu resource in the ~4Dgifts/.Xdefaults file.
+# 
+menu 4DwmWindowMenu
+{
+    "pop"		f.raise
+    "push"		f.lower
+    "move"		f.move
+    "resize"		f.resize
+    "stow"		f.minimize
+    "open"		f.normalize
+    no-label		f.separator
+    "close"		f.kill
+    "quit"		f.quit_app
+}
+
+#
+#   Uncommenting the following menu specification (and commenting
+#   the one above) will enable mnemonics and accelerators for the
+#   window menu. Note: the mnemonics won't be useful unless the
+#   <Btn3Click> entry in the button bindings specification below is 
+#   activated.
+#
+
+#menu 4DwmWindowMenu
+#{
+#    "pop"	_p	Alt<Key>F2	f.raise
+#    "push"	_u	Alt<Key>F3	f.lower
+#    "move"	_m	Alt<Key>F7	f.move
+#    "resize"	_r	Alt<Key>F8	f.resize
+#    "stow"	_s	Alt<Key>F9	f.minimize
+#    "open"	_o	Alt<Key>F5	f.normalize
+#    no-label		f.separator
+#    "close"	_c	Alt<Key>F4	f.kill
+#    "quit"	_q	Alt<Key>F10	f.quit_app
+#}
+
+
+
+
+
+############################################################################
+#
+#                       Button Binding Description
+#
+#     The syntax for this type of structure is as follows:
+#
+#     buttons bindings_set_name
+#     {
+#         button     context     function
+#                .             
+#                .            
+#         button     context     function
+#     }
+#
+#     The syntax for the context specification is 
+#
+#     context = object[|context]
+#     object  = root | icon | window | title | frame | border | app
+#
+#     The context specification indicates where the mouse cursor must 
+#     be for the button binding to be effective.  For example, a
+#     context of `window' indicates that the pointer must be over a
+#     client window or window manager frame for the button binding
+#     to be effective.  The `frame' context is for the window
+#     manager frame around a client window (including the border
+#     and titlebar), the `border' context is for the border part of
+#     the window manager frame (not including the titlebar), the
+#     `title' context is for the title area of the window manager
+#     frame, and the `app' context is for the application window (not
+#     including the window manager frame).
+# 
+#     If a function is specified in a type of resource where it is not 
+#     supported or is invoked in a context that does not apply, the 
+#     function is treated as f.nop (no operation is performed). 
+#
+############################################################################
+
+
+#####################################################################
+#
+#   The following button bindings override the 4DwmButtonBindings
+#   located in the /usr/lib/X11/system.4Dwmrc file.  myButtonBindings 
+#   is defined to be the current resource for button bindings in the 
+#   $HOME/.Xdefaults file of the ~4Dgifts directory.
+#
+buttons myButtonBindings
+{
+         <Btn1Click>	frame		f.raise
+         <Btn1Click>	icon		f.normalize
+      Ctrl<Btn1Down>    frame|icon      f.lower
+     Shift<Btn1Down>    frame|icon      f.raise
+Shift Ctrl<Btn1Down>    window          f.raise_resize
+
+          <Btn2Down>	frame|icon	f.move
+      Ctrl<Btn2Down>    frame|icon      f.lower
+     Shift<Btn2Down>    frame|icon      f.raise
+Shift Ctrl<Btn2Down>    window          f.raise_move
+
+          <Btn3Down>	frame|icon	f.post_wmenu 
+      Ctrl<Btn3Down>    frame|icon      f.post_wmenu
+     Shift<Btn3Down>    frame|icon      f.post_wmenu
+      Meta<Btn3Down>    window|icon     f.post_wmenu
+Shift Ctrl<Btn3Down>    window          f.post_wmenu
+
+#
+#   Uncomment the <Btn3Click> specification below to change the window
+#   menu to pop up and stay up with a button 3 click. This'll make the
+#   mnemonics defined above in the 4DwmWindowMenu useful. (They're
+#   commented out by default.)
+#   Make sure you comment the <Btn3Down> specification above.
+#
+#    <Btn3Click>		border|title|icon	f.post_wmenu 
+
+    <Btn1Down>		root		f.menu clients
+    <Btn2Down>		root		f.menu hosts
+    <Btn3Down>		root		f.menu rootMenu
+
+# Exercise extensive care when binding things to the meta key.
+# this can be costly to emacs and other applications see below.
+    Meta<Btn1Down>	frame		f.raise_lower
+    Meta<Btn2Down>	frame		f.move
+
+# Here is how to make an emacs user grumpy.
+#    Meta<Btn1Down>	window		f.raise_lower
+#    Meta<Btn2Down>	window		f.move
+
+}
+
+
+############################################################################
+#
+#                         Key Binding Description
+#
+#   The following key bindings override the 4DwmKeyBindings
+#   located in the /usr/lib/X11/system.4Dwmrc file.  myKeyBindings
+#   is defined to be the current resource for key bindings in the
+#   $HOME/.Xdefaults file of the ~4Dgifts directory.
+#
+#   The key binding syntax is:
+#
+#   keys bindings_set_name
+#   {
+#       key        context     function
+#              .             
+#              .            
+#       key        context     function
+#   }
+#
+keys myKeyBindings
+{
+    Meta<Key>w		root		f.refresh
+    Meta<Key>w		icon|window	f.refresh_win
+    Meta<Key>r		window		f.resize
+    Meta<Key>m		window		f.move
+    Meta<Key>a		window		f.raise_lower
+    Meta<Key>i		window		f.minimize
+    Meta<Key>b		window		f.maximize
+    Meta<Key>k		window		f.kill
+
+    # the following key definitions are ripped whole-hog out of 
+    # /usr/lib/X11/system.4Dwmrc to maintain this functionality
+
+    # Same as the standard OSF Key Bindings
+        Shift<Key>Escape	window|icon		f.post_wmenu
+        Meta<Key>space		window|icon             f.post_wmenu
+        Meta<Key>Tab		root|icon|window	f.next_key
+        Meta Shift<Key>Tab	root|icon|window	f.prev_key
+        Meta<Key>Escape		root|icon|window	f.next_key
+        Meta Shift<Key>Escape	root|icon|window	f.prev_key
+        Meta Shift Ctrl<Key>exclam root|icon|window	f.set_behavior
+        Meta<Key>F6		window			f.next_key transient
+        Meta Shift<Key>F6	window			f.prev_key transient
+        <Key>F4			icon			f.post_wmenu
+
+    # SGI added key bindings
+        Shift<Key>Escape	root			f.menu 4DwmRootMenu
+        Meta<Key>space		root			f.menu 4DwmRootMenu
+}
+
+
+#
+#  END OF 4Dgifts/.4Dwmrc 4Dwm RESOURCE DESCRIPTION FILE
+#

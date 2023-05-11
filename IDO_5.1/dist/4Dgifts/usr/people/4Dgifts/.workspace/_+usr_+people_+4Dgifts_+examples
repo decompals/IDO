@@ -1,0 +1,23 @@
+l 0
+b 22 22 832 186
+o 122 738
+y 0
+x 0
+w 0
+s 0
+h 0
+v 0
+q 0
+f Fortran 1 30 116 0
+f Makefile 1 150 116 0
+f README 1 270 116 0
+f devices 1 390 116 0
+f fontmanager 1 510 116 0
+f grafix 1 630 116 0
+f hllapi 1 750 116 0
+f light 1 90 36 0
+f nurbs 1 210 36 0
+f tcp 1 330 36 0
+f trackball 1 450 36 0
+f unix 1 570 36 0
+f video 1 690 36 0

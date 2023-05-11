@@ -1,0 +1,368 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **
+.TH XmDrawnButton 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmDrawnButton\*O\(emThe DrawnButton widget class
+.iX "XmDrawnButton"
+.iX "widget class" "DrawnButton"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/DrawnB.h>
+.iE
+.sE
+.SH DESCRIPTION
+The DrawnButton widget consists of an empty widget window surrounded by a
+shadow border.  It provides the application developer with a graphics area
+that can have PushButton input semantics.
+.PP 
+Callback types are defined for widget exposure and widget resize to allow the
+application to redraw or reposition its graphics.  If the DrawnButton
+widget has a highlight and shadow thickness, the application should not draw
+in that area.
+To avoid drawing in the highlight and
+shadow area, create the graphics context with
+a clipping rectangle for drawing in the widget.
+The clipping rectangle should
+take into account the size of the widget's highlight thickness and
+shadow.
+.SS "Classes"
+DrawnButton inherits behavior
+and resources from \*LCore\*O, \*LXmPrimitive\*O, and
+\*LXmLabel\*O Classes.
+.PP 
+The class pointer is \*LxmDrawnButtonWidgetClass\*O.
+.PP 
+The class name is \*LXmDrawnButton\*O.
+.SS "New Resources"
+The following table defines a set of widget resources used by the programmer
+to specify data.  The programmer can also set the resource values for the
+inherited classes to set attributes for this widget.  To reference a
+resource by name or by class in a .Xdefaults file, remove the \*LXmN\*O or
+\*LXmC\*O prefix and use the remaining letters.  To specify one of the defined
+values for a resource in a .Xdefaults file, remove the \*LXm\*O prefix and use
+the remaining letters (in either lowercase or uppercase, but include any
+underscores between words).
+The codes in the access column indicate if the given resource can be
+set at creation time (C),
+set by using \*LXtSetValues\*O (S),
+retrieved by using \*LXtGetValues\*O (G), or is not applicable (N/A).
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmDrawnButton Resource Set
+Name	Class	Type	Default	Access
+_
+XmNactivateCallback	XmCCallback	XtCallbackList	NULL	C
+XmNarmCallback	XmCCallback	XtCallbackList	NULL	C
+XmNdisarmCallback	XmCCallback	XtCallbackList	NULL	C
+XmNexposeCallback	XmCCallback	XtCallbackList	NULL	C
+XmNmultiClick	XmCMultiClick	unsigned char	dynamic	CSG
+XmNpushButtonEnabled	XmCPushButtonEnabled	Boolean	False	CSG
+XmNresizeCallback	XmCCallback	XtCallbackList	NULL	C
+XmNshadowType	XmCShadowType	unsigned char	XmSHADOW_ETCHED_IN	CSG
+.TE
+.VL  
+.LI "\*LXmNactivateCallback\*O"
+Specifies the list of callbacks that is called
+when the widget becomes selected.
+The reason sent by the callback is \*LXmCR_ACTIVATE\*O.
+.LI "\*LXmNarmCallback\*O"
+Specifies the list of callbacks that is called
+when the widget becomes armed.
+The reason sent by the callback is \*LXmCR_ARM\*O.
+.LI "\*LXmNdisarmCallback\*O"
+Specifies the list of callbacks that is called
+when the widget becomes disarmed.
+The reason sent by the callback is \*LXmCR_DISARM\*O.
+.nL
+.ne 6
+.LI "\*LXmNexposeCallback\*O"
+Specifies the list of callbacks that is called
+when the widget receives an exposure event.
+The reason sent by the callback is \*LXmCR_EXPOSE\*O.
+.LI "\*LXmNmultiClick\*O"
+If a button click is followed by another button click within the time
+span specified by the display's multi-click time, and this resource is
+set to \*LXmMULTICLICK_DISCARD\*O, do not process the second click.
+If this resource is set to \*LXmMULTICLICK_KEEP\*O, process the event
+and increment \*Vclick_count\*O in the callback structure.
+When the button is not in a menu, the default value is
+\*LXmMULTICLICK_KEEP\*O.
+.LI "\*LXmNpushButtonEnabled\*O"
+Enables or disables the three-dimensional shadow drawing as in
+PushButton.
+.LI "\*LXmNresizeCallback\*O"
+Specifies the list of callbacks that is called
+when the widget receives a resize event.
+The reason sent by the callback is \*LXmCR_RESIZE\*O.  The event
+returned for this callback is NULL.
+.LI "\*LXmNshadowType\*O"
+Describes the drawing style for the DrawnButton.  This resource can have
+the following values:
+.wH .rS 
+.ML
+.LI
+\*LXmSHADOW_IN\*O\(emdraws the DrawnButton so that the shadow appears
+inset.  This means that the bottom shadow visuals and top shadow visuals
+are reversed.
+.LI
+\*LXmSHADOW_OUT\*O\(emdraws the DrawnButton
+so that the shadow appears outset.
+.nL
+.ne 30
+.LI
+\*LXmSHADOW_ETCHED_IN\*O\(emdraws the DrawnButton using a double line.  This
+gives the effect of a line etched into the window.  The thickness of the
+double line is equal to the value of \*LXmNshadowThickness\*O.
+.LI
+\*LXmSHADOW_ETCHED_OUT\*O\(emdraws the DrawnButton using a double line.  This
+gives the effect of a line coming out of the window.  The thickness of the
+double line is equal to the value of \*LXmNshadowThickness\*O.
+.LE 
+.wH .rE
+.LE 
+.SS "Inherited Resources"
+DrawnButton inherits behavior and resources from the following
+superclasses.  For a complete description of each resource, refer to the
+man page for that superclass.
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmLabel Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerator	XmCAccelerator	String	NULL	N/A
+XmNacceleratorText	XmCAcceleratorText	XmString	NULL	N/A
+XmNalignment	XmCAlignment	unsigned char	dynamic	CSG
+XmNfontList	XmCFontList	XmFontList	dynamic	CSG
+XmNlabelInsensitivePixmap	XmCLabelInsensitivePixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNlabelPixmap	XmCLabelPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNlabelString	XmCXmString	XmString	"\e0"	CSG
+XmNlabelType	XmCLabelType	unsigned char	XmSTRING	CSG
+XmNmarginBottom	XmCMarginBottom	Dimension	0	CSG
+XmNmarginHeight	XmCMarginHeight	Dimension	2	CSG
+XmNmarginLeft	XmCMarginLeft	Dimension	0	CSG
+XmNmarginRight	XmCMarginRight	Dimension	0	CSG
+XmNmarginTop	XmCMarginTop	Dimension	0	CSG
+XmNmarginWidth	XmCMarginWidth	Dimension	2	CSG
+.wH .tH
+XmNmnemonic	XmCMnemonic	KeySym	NULL	N/A
+XmNmnemonicCharSet	XmCMnemonicCharSet	String	XmFONTLIST_DEFAULT_TAG	N/A
+XmNrecomputeSize	XmCRecomputeSize	Boolean	True	CSG
+XmNstringDirection	XmCStringDirection	XmStringDirection	dynamic	CSG
+.TE
+.wH .in  
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmPrimitive Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightOnEnter	XmCHighlightOnEnter	Boolean	False	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNhighlightThickness	XmCHighlightThickness	Dimension	2	CSG
+.wH .tH
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmNONE	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	2	CSG
+XmNtopShadowColor	XmCTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	True	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	XtPointer	NULL	CSG
+.TE
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtAccelerators	dynamic	CSG
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderColor	XmCBorderColor	Pixel	XtDefaultForeground	CSG
+XmNborderPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNcolormap	XmCColormap	Colormap	dynamic	CG
+XmNdepth	XmCDepth	int	dynamic	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Screen *	dynamic	CG
+.wH .tH
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	dynamic	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.wH .in  
+.SS "Callback Information"
+A pointer to the following structure is passed to each callback:
+.sS
+.iS
+.ta .25i 1.1i
+typedef struct
+{
+	int	\*Vreason\*L;
+	XEvent	\*V* event\*L;
+	Window	\*Vwindow\*L;
+	int	\*Vclick_count\*L;
+} XmDrawnButtonCallbackStruct;
+.iE
+.sE
+.wH .fi
+.VL .75i 
+.LI "\*Vreason\*O"
+Indicates why the callback was invoked.
+.LI "\*Vevent\*O"
+Points to the \*LXEvent\*O that triggered the callback.
+This is  NULL for \*LXmNresizeCallback\*O.
+.nL
+.ne 15
+.LI "\*Vwindow\*O"
+Is set to the window ID in which the event occurred.
+.LI "\*Vclick_count\*O"
+Contains the number of clicks in the last multiclick sequence
+if the \*LXmNmultiClick\*O resource is set to \*LXmMULTICLICK_KEEP\*O,
+otherwise it contains \*L1\*O.
+The activate callback is invoked for each click if \*LXmNmultiClick\*O
+is set to \*LXmMULTICLICK_KEEP\*O.
+.LE 
+.SS "Translations"
+XmDrawnButton includes translations from Primitive.
+Additional XmDrawnButton translations are listed below.
+These translations may not directly correspond to a
+translation table.
+.iS
+.ta 1.5i
+BSelect Press:	Arm()
+BSelect Click:	Activate()
+	Disarm()
+BSelect Release:	Activate()
+	Disarm()
+BSelect Press 2+:	MultiArm()
+BSelect Release 2+:	MultiActivate()
+KSelect:	ArmAndActivate()
+KHelp:	Help()
+.wH .fi
+.iE
+.nL
+.ne 30
+.SS "Action Routines"
+The XmDrawnButton action routines are described below:
+.VL  
+.LI "\*LActivate()\*O:"
+If \*LXmNpushButtonEnabled\*O is True, redraws the shadow in the
+unselected state; otherwise, redraws the shadow according to
+\*LXmNshadowType\*O.
+...\"Calls the \*LXmNexposeCallback\*O callbacks, then redraws the label.
+If the pointer is within the DrawnButton, calls the
+\*LXmNactivateCallback\*O callbacks.
+.LI "\*LArm()\*O:"
+If \*LXmNpushButtonEnabled\*O is True, redraws the shadow in the
+selected state; otherwise, redraws the shadow according to
+\*LXmNshadowType\*O.
+...\"Calls the \*LXmNexposeCallback\*O callbacks, then redraws the label.
+Calls the callbacks for \*LXmNarmCallback\*O.
+.LI "\*LArmAndActivate()\*O:"
+If \*LXmNpushButtonEnabled\*O is True, redraws the shadow in the
+selected state; otherwise, redraws the shadow according to
+\*LXmNshadowType\*O.
+...\"Calls the \*LXmNexposeCallback\*O callbacks, then redraws the label.
+Calls the callbacks for \*LXmNarmCallback\*O.
+.P
+Arranges for the following to happen, either immediately or at a later
+time:
+If \*LXmNpushButtonEnabled\*O is True, the shadow is redrawn in the
+unselected state; otherwise, the shadow is redrawn according to
+\*LXmNshadowType\*O.
+...\"Calls the \*LXmNexposeCallback\*O callbacks, then redraws the label.
+The callbacks for \*LXmNactivateCallback\*O and \*LXmNdisarmCallback\*O
+are called.
+.LI "\*LDisarm()\*O:"
+Marks the DrawnButton as unselected and calls the callbacks for
+\*LXmNdisarmCallback\*O.
+.LI "\*LHelp()\*O:"
+Calls the callbacks for \*LXmNhelpCallback\*O if any exist.
+If there are no help callbacks for this widget, this action calls the
+help callbacks for the nearest ancestor that has them.
+.LI "\*LMultiActivate()\*O:"
+If \*LXmNmultiClick\*O is \*LXmMULTICLICK_DISCARD\*O, this action does
+nothing.
+.P
+If \*LXmNmultiClick\*O is \*LXmMULTICLICK_KEEP\*O, this action does the
+following:
+Increments \*Vclick_count\*O in the callback structure.
+If \*LXmNpushButtonEnabled\*O is True, redraws the shadow in the
+unselected state; otherwise, redraws the shadow according to
+\*LXmNshadowType\*O.
+...\"Calls the \*LXmNexposeCallback\*O callbacks, then redraws the label.
+If the pointer is within the DrawnButton,  calls the
+\*LXmNactivateCallback\*O callbacks.
+Calls the callbacks for \*LXmNdisarmCallback\*O.
+.nL
+.ne 30
+.LI "\*LMultiArm()\*O:"
+If \*LXmNmultiClick\*O is \*LXmMULTICLICK_DISCARD\*O, this action does
+nothing.
+.P
+If \*LXmNmultiClick\*O is \*LXmMULTICLICK_KEEP\*O, this action does the
+following:
+If \*LXmNpushButtonEnabled\*O is True, redraws the shadow in the
+selected state; otherwise, redraws the shadow according to
+\*LXmNshadowType\*O.
+...\"Calls the \*LXmNexposeCallback\*O callbacks, then redraws the label.
+Calls the callbacks for \*LXmNarmCallback\*O.
+.LE
+.SS "Additional Behavior"
+This widget has the additional behavior described below:
+.VL  
+.LI "\*L<EnterWindow>\*O:"
+Draws the shadow in its selected state if \*LXmNpushButtonEnabled\*O is
+True and if the cursor leaves and re-enters the window while \*LBSelect\*O is
+pressed.
+.LI "\*L<LeaveWindow>\*O:"
+Draws the shadow in its unselected state if \*LXmNpushButtonEnabled\*O
+is True and if the cursor leaves the window while \*LBSelect\*O is pressed.
+.LE
+.SS "Virtual Bindings"
+The bindings for virtual keys are vendor specific.
+For information about bindings for virtual buttons and keys, see \*LVirtualBindings(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LCore(3X)\*O, \*LXmCreateDrawnButton\*O, \*LXmLabel(3X)\*O,
+\*LXmPrimitive(3X)\*O, \*LXmPushButton\*O, and \*LXmSeparator(3X)\*O.
+.ad

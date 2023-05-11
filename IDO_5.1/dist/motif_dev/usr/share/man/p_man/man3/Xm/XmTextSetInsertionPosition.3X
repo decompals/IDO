@@ -1,0 +1,54 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmTextSetInsertionPosition 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmTextSetInsertionPosition\*O\(emA Text function that sets the position of the insert cursor
+.iX "XmTextSetInsertionPosition"
+.iX "Text functions" "XmTextSetInsertionPosition"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/Text.h>
+.sp \n(PDu
+void XmTextSetInsertionPosition (\*Vwidget, position\*L)
+.ta .5i 1.5i
+	Widget	\*Vwidget\*L;
+	XmTextPosition	\*Vposition\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmTextSetInsertionPosition\*O sets the insertion cursor position of the
+Text widget.
+This routine also calls the widget's \*LXmNmotionVerifyCallback\*O
+callbacks if the insertion cursor position changes.
+.P 
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the Text widget ID
+.LI "\*Vposition\*O"
+Specifies the position of the insertion cursor.  This is an integer number
+of characters from the beginning of the text buffer.  The first
+character position is 0.
+.LE 
+.PP 
+For a complete definition of Text and its associated resources, see
+\*LXmText(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LXmText(3X)\*O.
+.ad

@@ -1,0 +1,46 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmStringLineCount 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmStringLineCount\*O\(emA compound string function that returns the number of separators plus one in the provided compound string
+.iX "XmStringLineCount"
+.iX "compound string functions" "XmStringLineCount"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/Xm.h>
+.sp \n(PDu
+int XmStringLineCount (\*Vstring\*L)
+.ta .5i 1.5i
+	XmString	\*Vstring\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmStringLineCount\*O
+returns the number of separators plus one in the provided
+compound string.  In effect, it counts the lines of text.
+.VL .75i 
+.LI "\*Vstring\*O"
+Specifies the string.
+.LE 
+.SH RETURN VALUE
+Returns the number of lines in the compound string
+.SH RELATED INFORMATION
+.na
+\*LXmStringCreate(3X)\*O.
+.ad

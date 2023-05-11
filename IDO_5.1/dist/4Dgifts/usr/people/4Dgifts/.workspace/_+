@@ -1,0 +1,31 @@
+l 0
+b 22 22 773 415
+o 183 175
+y 0
+x 0
+w 0
+s 0
+h 0
+v 0
+q 0
+f lost+found 1 30 345 0
+f usr 1 150 345 0
+f tmp 1 270 345 0
+f .cshrc 1 390 345 0
+f etc 1 510 345 0
+f .profile 1 630 345 0
+f lib 1 90 265 0
+f .login 1 210 265 0
+f bin 1 330 265 0
+f dev 1 450 265 0
+f stand 1 570 265 0
+f debug 1 690 265 0
+f n 1 30 185 0
+f images 1 150 185 0
+f unix.48 1 270 185 0
+f scr 1 390 185 0
+f d 1 510 185 0
+f techpubs 1 630 185 0
+f unix 1 90 105 0
+f .workspace 1 210 105 0
+c 0 0 

@@ -1,0 +1,54 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmGetVisibility 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmGetVisibility\*O\(emA function that determines if a widget is
+visible
+.iX "XmGetVisibility"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/Xm.h>
+.sp \n(PDu
+XmVisibility XmGetVisibility (\*Vwidget\*L)
+.ta .5i 1.5i
+	Widget	\*Vwidget\*L;
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmGetVisibility\*O returns the visibility state of the specified
+widget. 
+.VL .75i
+.LI "\*Vwidget\*O"
+Specifies the ID of the widget
+.LE
+.SH RETURN VALUE
+Returns one of the following values:
+.ML
+.LI
+\*LXmVISIBILITY_UNOBSCURED\*O
+.LI
+\*LXmVISIBILITY_PARTIALLY_OBSCURED\*O
+.LI
+\*LXmVISIBILITY_FULLY_OBSCURED\*O
+.LE
+.SH RELATED INFORMATION
+.na
+\*LXmIsTraversable(3X)\*O,
+\*LXmManager(3X)\*O,
+and \*LXmProcessTraversal(3X)\*O.
+.ad

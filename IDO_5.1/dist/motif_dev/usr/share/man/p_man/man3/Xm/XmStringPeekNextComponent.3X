@@ -1,0 +1,49 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmStringPeekNextComponent 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmStringPeekNextComponent\*O\(emA compound string function that returns the component type of the next component fetched
+.iX "XmStringPeekNextComponent"
+.iX "compound string functions" "XmStringPeekNextComponent"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/Xm.h>
+.sp \n(PDu
+XmStringComponentType XmStringPeekNextComponent (\*Vcontext\*L)
+.ta .5i 1.75i
+	XmStringContext	\*Vcontext\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmStringPeekNextComponent\*O
+examines the next component that would be fetched
+by \*LXmStringGetNextComponent\*O and returns the component type.
+.VL .75i 
+.LI "\*Vcontext\*O"
+Specifies the string context structure that was allocated by the
+\*LXmStringInitContext\*O function
+.LE 
+.SH RETURN VALUE
+Returns the type of component found.
+.SH RELATED INFORMATION
+.na
+\*LXmStringCreate(3X)\*O,
+\*LXmStringGetNextComponent(3X)\*O, and
+\*LXmStringInitContext(3X)\*O.
+.ad

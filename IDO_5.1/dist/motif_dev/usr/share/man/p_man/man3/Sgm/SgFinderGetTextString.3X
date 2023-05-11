@@ -1,0 +1,43 @@
+.TH SgFinderGetTextString 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgFinderGetTextString\*O\(emA Finder function that accesses the
+string value of the text field. 
+.iX "SgFinderGetTextString"
+.iX "Finder functions" "SgFinderGetTextString"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sg/Finder.h>
+.sp \n(PDu
+char * SgFinderGetTextString (\*Vwidget\*L)
+.ta .5i 1.5i
+	SgFinderWidget	\*Vwidget\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LSgFinderGetTextString\*O
+accesses the string value of the Finder widget.  The application
+is responsible for freeing the storage associated with the string by
+calling \*LXtFree\*O.
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the Finder widget ID
+.LE 
+.PP 
+For a complete definition of Finder and its associated resources, see
+\*LSgFinder(3X)\*O.
+.nL
+.ne 10
+.SH RETURN VALUE
+Returns a character pointer to the string value of the Finder widget.
+Returns an empty string if the length of the Finder widget's string is 0.
+.SH RELATED INFORMATION
+.na
+\*LSgFinder(3X)\*O.
+.ad

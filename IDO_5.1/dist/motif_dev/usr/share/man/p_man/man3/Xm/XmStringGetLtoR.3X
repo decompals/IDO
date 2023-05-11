@@ -1,0 +1,56 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmStringGetLtoR 3X "" "" "" ""
+...\"
+.so /usr/lib/tmac/motif/header.all
+.so /usr/lib/tmac/motif/sml
+.so /usr/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmStringGetLtoR\*O\(emA compound string function that searches for a text segment in the input compound string
+.iX "XmStringGetLtoR"
+.iX "compound string functions" "XmStringGetLtoR"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/Xm.h>
+.sp \n(PDu
+Boolean XmStringGetLtoR (\*Vstring, tag, text\*L)
+.ta .5i 1.5i
+	XmString	\*Vstring\*L;
+	XmStringCharSet	\*Vtag\*L;
+	char	**\*Vtext\*L;
+.wH .fi
+.ne 30
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmStringGetLtoR\*O searches for a text segment in the input
+compound string that matches the given font list element tag.
+.VL .75i 
+.LI "\*Vstring\*O"
+Specifies the compound string.
+.LI "\*Vtag\*O"
+Specifies the font list element tag associated with the text.
+A value of \*LXmFONTLIST_DEFAULT_TAG\*O identifies a locale text
+segment.
+.LI "\*Vtext\*O"
+Specifies a pointer to a null terminated string.
+.LE 
+.SH RETURN VALUE
+Returns True if the matching text segment can be found.
+On return, \*Vtext\*O will have a null terminated octet sequence
+containing the matched segment.
+.SH RELATED INFORMATION
+.na
+\*LXmStringCreate(3X)\*O.
+.ad

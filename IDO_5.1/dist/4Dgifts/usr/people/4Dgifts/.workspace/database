@@ -1,0 +1,36 @@
+b 22 22 709 697
+o 540 7
+y 0
+x 0
+w 0
+s 0
+q 0
+h 0
+v 0
+/ 1 90 627 0
+~/startup.ps 0 450 627 0
+~/dumpster 0 570 627 0
+/usr/sbin/jot 0 630 627 0
+~/examples/unix 1 30 547 0
+/usr 1 150 587 0
+/usr/people 1 210 547 0
+~ 1 270 507 0
+~/README 0 330 547 0
+~/user.ps 0 390 587 0
+~/examples/devices 1 30 467 0
+~/examples/README 0 210 467 0
+~/iristools/README 0 330 467 0
+~/iristools/libimage 1 390 507 0
+/usr/sbin/quickpaint 0 630 547 0
+~/examples 1 150 427 0
+~/iristools/images 1 450 467 0
+/usr/sbin/quickmodel 0 630 467 0
+~/examples/video 1 30 387 0
+~/iristools/libgutil 1 330 387 0
+~/iristools 1 390 427 0
+~/iristools/imgtools 1 450 387 0
+~/examples/fontmanager 1 30 307 0
+~/iristools/tools 1 390 347 0
+~/examples/grafix 1 30 227 0
+~/examples/light 1 30 147 0
+~/examples/nurbs 1 30 67 0
