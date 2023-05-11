@@ -1,0 +1,6 @@
+
+
+The subdirectories of this directory contain demonstration programs for
+the added widgets and functions SGI provides in libSgm.
+
+Build Makefiles with "mmkmf".  For more details, see ../README.

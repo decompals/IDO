@@ -1,0 +1,20 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Formedit: Class resource file for the formedit example
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Specify labels for each button.
+!
+Formedit*button1*labelString:   Name:
+Formedit*button2*labelString:   Phone:
+Formedit*button3*labelString:   Address:
+!
+! Specify positions for each widget.
+!
+Formedit*XmText*x:        100
+Formedit*field1*y:         10
+Formedit*field2*y:         40
+Formedit*field3*y:         70
+Formedit*XmPushButton*x:   10
+Formedit*button1*y:        10
+Formedit*button2*y:        40
+Formedit*button3*y:        70

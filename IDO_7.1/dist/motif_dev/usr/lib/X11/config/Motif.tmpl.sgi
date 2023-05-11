@@ -1,0 +1,422 @@
+/**/# Start of Motif.tmpl.sgi
+
+/******************************************************************************/
+/*                                                                            */
+/*                          Motif.tmpl.sgi                                    */
+/*                                                                            */
+/* Contains SGI-specific additions to Motif.tmpl.  This file is included      */
+/* at the start of Motif.tmpl, to give a chance to modify any settings for    */
+/* OSF/Motif Motif.tmpl we need to at SGI.                                    */
+/*                                                                            */
+/******************************************************************************/
+
+#ifndef UseInstalled
+/*
+ * These rules make sense in the SGI internal build tree, but not for
+ * customers.  They are in a separate file so they will not be shipped.
+ */
+#include <Motif.tmpl.sgiInternal>
+#endif /* UseInstalled */
+
+/*
+ * The following definitions override things in Imake.tmpl that are wrong
+ * for Motif.
+ */
+
+ /*
+  * Imake.tmpl defines this to a non-existant directory.
+  * That gets a compiler warning for any C++ compile.
+  */
+ CXXIDL_INCLUDES =
+
+
+/*
+ * The following definitions are provided instead of the OSF ones.
+ */
+
+/* OSF defines XmExtraLibraries as an empty string,
+ *     and does not define XmExtraDepLibraries */
+#ifndef XmExtraLibraries
+#    define XmExtraLibraries -lgen
+#    define XmExtraDepLibraries $(ROOT)$(SHLIBDIR)/libgen.so
+#endif
+DEPXMEXTRA_LIBS = XmExtraDepLibraries
+
+/* Dependencies for SGI's own libraries */
+#ifndef SgmClientLibs
+#  define SgmClientLibs $(SGMLIB) $(XMLIB) $(XTOOLLIB) $(XLIBONLY) $(XMEXTRA_LIBS)
+#endif
+#ifndef SgmClientDepLibs
+#  define SgmClientDepLibs $(DEPSGMLIB) $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXLIBONLY)
+#endif
+
+#ifndef SgtClientLibs
+#  define SgtClientLibs $(SGTLIB) $(XMLIB) $(XTOOLLIB) $(XLIBONLY) $(XMEXTRA_LIBS)
+#endif
+#ifndef SgtClientDepLibs
+#  define SgtClientDepLibs $(DEPSGTLIB) $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXLIBONLY)
+#endif
+
+
+/*
+ * SaberProgramTarget was in X11R5, but is not in X11R6.
+ * SGI has never used it, so just null it out.
+ */
+#ifndef SaberProgramTarget
+#define SaberProgramTarget(program,srclist,objlist,locallibs,syslibs)
+#endif /* SaberProgramTarget */
+
+
+/*
+ * Set the install command.  Because of both SGI and Motif vagaries,
+ * Motif uses its own command.
+ *
+ * It is convenient to pass TOP to the install script, so that:
+ *	* it knowns where it is
+ *	* it does not have to come under one called "src".
+ */
+#ifdef InstallCmd
+#undef InstallCmd
+#endif
+#define InstallCmd $(CONFIGSRC)/util/motif-inst.sh
+   INSTALL = TOP=$(TOP) InstallCmd
+
+
+
+/*
+ * If the command "smake <target1> <target2> is given, smake needs to know the
+ * order.  Otherwise, it will try to do them together.
+ */
+.ORDER: Makefile Makefiles debugger includes all
+
+
+/*
+ * This comes first, to ensure that that the default target is reasonable.
+ *
+ * While we are at it, ensure that Makefile is newer than Imakefile.
+ * If not, we don't really know what to do , so just error out.
+ *
+ * NOTE: do NOT make "install" depend on "all".  This breaks in directories
+ *	 that pass them to subdirectories.  Each gets passed.
+ */
+all:: Makefile-newer
+
+
+/*
+ * Dependecies are now updated by the compiler flag "-MDupdate Makfile.depend"
+ * So we need to include it.  Note that with sinclude, unlike include,
+ * it is OK for the file to be missing.  This must be after the default
+ * target, or else the first .o file in Makedepend will become the default.
+ */
+
+DEPEND_FILE = Makedepend
+sinclude $(DEPEND_FILE)
+
+
+/*
+ * 'install' must also depend on Makefile-newer, but be careful it isn't
+ * the default target.
+ */
+install:: Makefile-newer
+clean::
+	$(RM) $(DEPEND_FILE)
+depend::
+	@echo '"make depend" is no longer needed -- dependencies are now automatic'
+includes::
+Makefile-newer::
+	@if [ "`find Imakefile -follow -newer Makefile -print`" ]; then \
+		echo "ERROR: Imakefile is newer than Makefile.  Must fix manually (`pwd`)"; \
+		exit 1; \
+	fi
+
+
+/*
+ * Perpetuate the "clobber" target.  It isn't much used, but it helps
+ * in some places (e.g. lib/*.native).
+ *
+ * We cannnot base on "#ifdef IHaveSubdirs", because, even if it is
+ * defined in the Imakefile, that has not yet happened.
+ *
+ * The following code is derived from
+ * "NamedTargetSubdirs(clobber,$(SUBDIRS),"clobbering",NullParameter,clobber)"
+ */
+clobber:: clean
+	@if [ -z "$(SUBDIRS)" ]; then \
+		$(MAKE) clean; \
+	else \
+		case '${MFLAGS}' in *[ik]*) set +e;; esac; \
+		for i in X $(SUBDIRS) ; do \
+			case $$i in \
+			    X) continue;; \
+			    *) (cd $$i; \
+				echo clobbering "in $(CURRENT_DIR)/$$i..."; \
+				$(MAKE) $(MFLAGS) clobber); \
+			    esac; \
+		done; \
+	fi
+
+
+/*
+ * Motif.tmpl accepts the following definition.  It is here so we do not
+ * need to change sgi.cf to get Motif defines in.
+ */
+#define MotifDefines -DSYS_DIR -DPORT_NOVFORK -DSTRINGS_ALIGNED
+
+/*
+ * The following definitions should be in sgiLib.tmpl.  They are used by
+ * the macro "SharedDebugLibraryTarget", which is in Motif.rules.sgi and
+ * should be in sgiLib.rules
+ *
+ * sgiLib.tmpl original:
+ *  LDDSOOPTS = sgiABIopts -shared -no_unresolved $(VLDDSOOPTS) $(LLDDSOOPTS) $(GLDDSOOPTS)
+ *  GLDDSOOPTS = -all $(DSOSTARTOPT) $(DSONAMEOPT) $(DSOVERSIONOPT)
+ *
+ * We are more flexible, because an individual Imakefile can redefine:
+ *	LDDSOUNRESOLVEDOPT	to null if it doesn't want -no_unresolved
+ *
+ * LDDSOOPTS & LDDEBUGDSOOPTS are defined below here.  They include
+ * "quickstart_info", which instructs ld to warn if the library cannot be
+ * quickstarted.
+ *
+ * We also add debug versions of some of the macros, to permit building a
+ * debug DSO.
+ */
+LDDSOUNRESOLVEDOPT = -no_unresolved
+  DEBUGDSOVERSION = $(DSOVERSION) /* Default */
+DEBUGDSOVERSIONOPT = -set_version $(DEBUGDSOVERSION)
+  DEBUGDSONAMEOPT = -soname $@_d
+  GLDDEBUGDSOOPTS = -all $(DSOSTARTOPT) $(DEBUGDSONAMEOPT) $(DEBUGDSOVERSIONOPT)
+
+
+/*
+ * We have changed XMONLYLIB to XMONLYLIB to be consistent with X11R6.
+ * This definition prevents that from causing users problems.
+ */
+        XMLIBONLY = $(XMONLYLIB)
+
+
+/*******************************************************************************
+ *
+ * Set up the things that differ between 32 bit and 64 bit builds.
+ *
+ ******************************************************************************/
+#if defined(Build64bit) && Build64bit
+          CC_BITS = -64  -DBuild64bit=Build64bit -DBuild32bit=Build32bit -DBuildN32=BuildN32 -DBuildO32=BuildO32 -DIRIS_GL=0 -DOPEN_GL=1
+          LD_BITS = -64 -mips3
+#         define UilFlags /* -64 */
+#else
+#  if defined(BuildN32) && BuildN32 /* must be an n32 build */
+          CC_BITS = -n32 -mips3 -DBuild64bit=Build64bit -DBuild32bit=Build32bit -DBuildN32=BuildN32 -DBuildO32=BuildO32 -DIRIS_GL=1 -DOPEN_GL=1
+          LD_BITS = -n32 -mips3
+#         define UilFlags /* -n32 */
+#else
+#  if defined(BuildO32) && BuildO32 /* must be an (explict) o32 build */
+          CC_BITS = -o32  -DBuild64bit=Build64bit -DBuild32bit=Build32bit -DBuildN32=BuildN32 -DBuildO32=BuildO32 -DIRIS_GL=1 -DOPEN_GL=1
+/*
+ * "-old_ld" is only used because the new ld has problems with some inline
+ * stuff, resulting in getting spurious "multiply defined" warnings when
+ * building libSgt.  This may not be fixed even by IRIX 6.2.  Once it is
+ * fixed, remove the "-old_ld" switch.
+ *
+ * IMPORTANT: -old_ld MUST come before -o32 !
+          LD_BITS = -old_ld -o32
+ */
+          LD_BITS = -o32
+#         define UilFlags /* -o32 */
+#  else /* must be a default -32 build */
+          CC_BITS = -32 -DBuild64bit=Build64bit -DBuild32bit=Build32bit -DBuildN32=BuildN32 -DBuildO32=BuildO32 -DIRIS_GL=1 -DOPEN_GL=1
+/*
+ * We need to use old_ld here, too, so long as the default 32-bit build is o32
+          LD_BITS = -old_ld -32
+ */
+          LD_BITS = -32
+#         define UilFlags /* -32 */
+#endif /* BuildO32 */
+#endif /* BuildN32 */
+#endif /* Build64bit */
+        CCOPTIONS = DefaultCCOptions $(CC_BITS) $(WOFF)
+       CXXOPTIONS = DefaultCCOptions $(CC_BITS) $(CXXWOFF)
+        LDOPTIONS = $(LD_BITS)
+        LDDSOOPTS = $(LD_BITS) /*sgiABIopts*/ -shared -quickstart_info $(LDDSOUNRESOLVEDOPT) $(VLDDSOOPTS) $(LLDDSOOPTS) $(GLDDSOOPTS)
+   LDDEBUGDSOOPTS = $(LD_BITS) /*sgiABIopts*/ -shared -quickstart_info $(LDDSOUNRESOLVEDOPT) $(VLDDSOOPTS) $(LLDDSOOPTS) $(GLDDEBUGDSOOPTS)
+/*
+ * Library.tmpl is included directly by Imakefiles, and defines CCOPTIONS!
+ * We can defeat that by setting LibraryCCOptions to what it needs to be.
+ */
+#ifdef LibraryCCOptions
+#undef LibraryCCOptions
+#endif
+#define LibraryCCOptions DefaultCCOptions $(CC_BITS) $(WOFF)
+
+
+/*
+ * The Ragnarok and ucode compilers use different warning numbers.  The
+ * Ragnarok compilers are also *considerably* pickier than the ucode
+ * compilers.
+ *
+ * It is dangerous to suppress compiler warnings -- better to fix the code
+ * so the compiler does not generate warnings.  However, there are some
+ * cases where that is either impractical or impossible.  We suppress
+ * those, so that the output is small enough that important warnings will be
+ * noticed.
+ *
+ * $(WOFF) contains the flags to suppress some warnings.
+ *
+ * There is a way to have each compiler ignore -woff's intended for the
+ * other compiler.  (ucode compiler warnings are from 1-999, and Ragnarok
+ * compiler warnings are from 1000-1999.)  We choose not to use this, but
+ * rather to just get the -woff's right to begin with.  In case they are
+ * needed later:
+ *		*  803 is for the ucode compiler to ignore Ragnarok -woff's
+ *		* 1499 is for the Ragnarok compiler to ignore ucode -woff's
+ */
+
+    /*     UCODE WARNINGS
+     *
+     * Since they don't matter on our machine, use "-woff 182" to turn off
+     * the TONS of void* warnings.  Otherwise, because of the volume of
+     * unwanted warnings, we would ignore all other warnings as well.
+     *
+     * We turn *on* the warning for starting a comment before the previous
+     * one ended, because that is usually a bug.  It is generally an
+     * accidentally unterminated comment, not a deliberately nested one.
+     */
+  UCODE_WOFF = -woff 182 -Wp,-Wcomment 
+
+    /*     RAGNAROK WARNINGS
+     *
+     * We need to be sure we understand each of the Ragnarok warnings.  Then
+     * we need to silence the ones we cannot do anything about.
+     *
+     * All of the Ragnarok compiler warnings that Motif has encountered are
+     * on one of the following three lists:
+     *
+     *    RAG_WOFF_PORTABILITY	Warnings related to porting code to 64 bits
+     *		1068	conversion resulted in a change of sign
+     *		1069	integer conversion resulted in truncation
+     *		1177	argument is incompatible with formal parameter
+     *		1411	destination type of cast is too small to hold all
+     *				pointers: truncation possible
+     *		1412	destination type is too small to hold all pointers:
+     *			truncation possible.
+     *		1413	source type is too small to hold all pointers
+     *
+     *			This only occurs when casting an integer type to a
+     *			pointer.  It is intended to catch bugs of the
+     *			form:
+     *				<pointer> = (void *)0xffffffff
+     *			where the intent was to set all bits of the word.
+     *			Evidently the kernel people saw some of this as
+     *			they went to 64 bits.
+     *
+     *			It has the unfortunate side effect of warning
+     *			about the very common X11 idiom:
+     *				(XtPointer) 100;
+     *			so we generally turn it off.
+     *		1505	implicit conversion from "unsigned long" to "long":
+     *			rounding, sign extension, or loss of accuracy may result
+     *		1506	implicit conversion from "unsigned short" to "short":
+     *			rounding, sign extension, or loss of accuracy may result
+     *
+     *	  RAG_WOFF_INEFFICIENT	Warnings related to obvious inefficiencies
+     *		1183	pointless comparison of unsigned integer with zero
+     *		1209	controlling expression is constant
+     *		1552	variable "XXX" was set but never used
+     *		1553	variable "widx" was either set but never used or was
+     *			set but never used meaningfully (as in sizeof or
+     *			target in a multiple assignment)
+     *
+     *	  RAG_WOFF_MISC		Other warnings we want to see
+     *		1042	operand types are incompatible (e.g. "char *" and
+     *			"XtPointer")
+     *		1047	macro redefined differently
+     *		1101	"XtTypedArg" has already been declared in the
+     *			current scope
+     *		1110	statement is unreachable
+     *		1174	parameter "args" was declared but never referenced
+     *		1174	variable "absX" was declared but never referenced
+     *		1184	possible use of "=" where "==" was intended
+     *		1185	enumerated type mixed with another type
+     *		1196	function declared implicitly
+     *		1497	no prototype for the call to ....
+     *		1498	no prototype for the call to bogusXtPopdown
+     *		1548	transfer of control bypasses initialization of:
+     *				This happened with a switch statement
+     *		1549	transfer of control bypasses initialization of:
+     *
+     *	  RAG_WOFF_SKIP		Warnings that we never want to see -- this
+     *		list may change over time.  Having this list documents that
+     *		the warnings exist, and allows us an easy way to turn them
+     *		on any time we want to see them again.
+     *
+     *		Be very sure you know what you are doing if you add
+     *		anything to this skip list.
+     *
+     *		1048	cast between pointer-to-object and pointer-to-function
+     *
+     *			There is no difference between the two on our
+     *			machine, and given the libXt header files this
+     *			warning would be difficult-to-impossible to avoid.
+     *
+     *		1209	controlling expression is constant
+     *
+     *			There are a ton of these in libXm, they do no harm,
+     *			and I don't feel like cleaning them up right now.
+     *
+     ?		1412	(see RAG_WOFF_PORTABILITY)
+     ?
+     ?			There is a compiler bug that causes this warning
+     ?			to appear unnecessarily -- the compiler even warns
+     ?			about sign extending small compile-time constants
+     ?			(e.g. 6) and variables cast to be (unsigned)!  Until
+     ?			that is fixed, it is probably impractical to turn 1412
+     ?			back on.
+     *
+     *		1413	(see RAG_WOFF_PORTABILITY)
+     *
+     *			This catches a very common, harmless, and
+     *			impractical to fix X11 idiom.  So we ignore it.
+     *
+     *          1692	remark(1692): prototyped function redeclared without
+     *			prototype
+     *
+     *			This is given *any* time there is a prototype,
+     *			and then an old-style function definition.
+     *
+     *			NOTE: the case of a char parameter really is
+     *			semantically different because K&R has some
+     *			mandatory promotion to int across the function
+     *			call that ANSI C does not.  I have asked whether
+     *			or not this is a different warning.  Unknown as yet
+     *			(3/3/95)
+     */
+
+#ifdef WAS_USED_FOR_5.2
+/* Used for 5.2 release -- delete when no longer useful documentation */
+    RAG_WOFF = -fullwarn -woff "1042,1048,1068,1101,1110,1174,1177,1183,1184,1185,1196,1209,1412,1413,1498,1506,1549,1553"
+#endif /* WAS_USED_FOR_5.2 */
+
+    RAG_WOFF = -fullwarn -woff "1042,1048,1101,1196,1412,1413"
+
+    RAG_WOFF_PORTABILITY = -woff "1068,1069,1177,1412,1413,1505,1506"
+    RAG_WOFF_INEFFICIENT = -woff "1183,1209,1552,1553"
+    RAG_WOFF_MISC = =woff "1042,1047,1101,1110,1174,1184,1185,1196,1497,1498,1548,1549"
+    RAG_WOFF_SKIP = -woff "1048,1209,1413,1692"
+
+    RAG_WOFF = -fullwarn $(RAG_WOFF_SKIP)
+
+#if ( defined(Build64bit) && Build64bit ) || ( defined(BuildN32) && BuildN32 )
+        WOFF = $(RAG_WOFF)
+     CXXWOFF = $(RAG_WOFF)
+#else /* must be an o32 build */
+        WOFF = $(UCODE_WOFF)
+    /*
+     * In IRIX 5.3, C++ is from Shankar et al.  Warning numbers are
+     * not the same as as those of the ragnarok version in IRIX 6.
+     *
+     *		262	variable not referenced
+     */
+     CXXWOFF = /**/
+#endif /* Build64bit */
+
+/**/# End of Motif.tmpl.sgi

@@ -1,0 +1,53 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH SgThumbWheelSetValue 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgThumbWheelSetValue \*O\(em A ThumbWheel function that sets the wheel value
+.iX "SgThumbWheelSetValue"
+.iX "Scale functions" "SgThumbWheelSetValue"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sgm/ThumbWheel.h>
+.sp \n(PDu
+void SgThumbWheelSetValue (\*Vwidget, value\*L)
+.ta .5i 1.5i
+	Widget	\*Vwidget\*L;
+	int	\*Vvalue\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LSgThumbWheelSetValue\*O sets the thumb wheel \*Vvalue\*O within the
+ThumbWheel widget.
+It is equivalent to setting \*LXmNvalue\*O resource through
+\*LXtSetValues\*O, except that it does not clear the window before
+redrawing, and therefore causes less visual "flicker".
+.VL 1i 
+.LI "\*Vwidget\*O"
+Specifies the ThumbWheel widget ID.
+.LI "\*Vvalue\*O"
+Specifies the wheel position.
+This sets the \*LXmNvalue\*O resource.
+.LE 
+.PP 
+For a complete definition of Scale and its associated resources, see
+\*LSgThumbWheel(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\fBSgThumbWheel(3X)\fP, \fBSgThumbWheelGetValue(3X)\fP.
+.ad

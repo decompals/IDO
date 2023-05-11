@@ -1,0 +1,220 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH SgDropPocket 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgDropPocket \*O\(em The DropPocket widget class
+.iX "SgDropPocket"
+.iX "widget class" "DropPocket"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sgm/DropPocket.h>
+.iE
+.sE
+.SH DESCRIPTION
+DropPocket is designed for receiving icons.  The user will see the
+icon in the DropPocket as a visual reminder of the type of the file
+associated with the DropPocket.  The user may drop SGI file icons onto
+the dropPocket.  The DropPocket will determine the name of the icon
+and return information describing the icon to the application in the
+callback.
+.PP
+The DropPocket background changes color when an droppable icon is
+above the DropPocket. Once an icon has been dropped on the DropPocket,
+the icon is displayed in the DropPocket.
+.SS "Classes"
+DropPocket inherits behavior and resources from
+\*LCore\*O and \*LXmPrimitive\*O Classes.
+.PP 
+The class pointer is \*LsgDropPocketWidgetClass\*O.
+.PP 
+The class name is \*LSgDropPocket\*O.
+.SS "New Resources"
+The following table defines a set of widget resources used by the programmer
+to specify data.  The programmer can also set the resource values for the
+inherited classes to set attributes for this widget.  To reference a
+resource by name or by class in a .Xdefaults file, remove the
+\*LSgN\*O, \*LSgC\*O, \*LXmN\*O or
+\*LXmC\*O prefix and use the remaining letters.  To specify one of the defined
+values for a resource in a .Xdefaults file, remove the prefix and use
+the remaining letters (in either lowercase or uppercase, but include any
+underscores between words).
+The codes in the access column indicate if the given resource can be
+set at creation time (C),
+set by using \*LXtSetValues\*O (S),
+retrieved by using \*LXtGetValues\*O (G),
+or is not applicable (N/A).
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+SgDropPocket Resource Set
+Name	Class	Type	Default	Access
+_
+SgNactivePixel	XmCDropPocketActivePixel	Pixel	blue	CSG
+SgNiconDataBasePath	SgCIconDataBasePath	XmString	/usr/lib/filetype/workspace.ctr	CSG
+SgNname	SgCNname	XmString	NULL	CSG
+.TE
+.wH .in  
+.VL  
+.LI "\*LSgNDropPocketActivePixel\*O"
+Specifies the color for the background of the DropPocket when a
+droppable icon is above the DropPocket.
+.LI "\*LSgNiconDataBasePath\*O"
+Specifies the location of the icon database.  The default value is
+/usr/lib/filetype/workspace.ctr.  Setting this resource to a filename
+that is not a legal icon database will cause serious problems for the
+DropPocket.
+.LI "\*LSgNname\*O"
+Specifies the compound string that is the name of the current icon.
+By setting this resource, the application can control the initial icon
+that appears in the DropPocket.  If this resource is NULL, the
+DropPocket will appear empty. Refer to \*LXmString(3X)\*O for more
+information on the creation and structure of compound strings.
+.LE 
+.SS "Inherited Resources"
+DropPocket inherits behavior and resources from the following
+superclasses.  For a complete description of each resource, refer to the
+man page for that superclass.
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmPrimitive Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightOnEnter	XmCHighlightOnEnter	Boolean	False	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNhighlightThickness	XmCHighlightThickness	Dimension	0	CSG
+.wH .tH
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmNONE	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	0	CSG
+XmNtopShadowColor	XmCTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	False	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	XtPointer	NULL	CSG
+.TE
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtAccelerators	dynamic	CSG
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderColor	XmCBorderColor	Pixel	XtDefaultForeground	CSG
+XmNborderPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNcolormap	XmCColormap	Colormap	dynamic	CG
+XmNdepth	XmCDepth	int	dynamic	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Screen *	dynamic	CG
+.wH .tH
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	dynamic	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.wH .in  
+.SS "Callback Information"
+The Callback structure is SgDropPocketCallbackStruct.
+A pointer to the following structure is passed to each callback:
+.sS
+.iS
+.ta .25i 1.1i
+typedef struct
+{
+	\*Lint		\*Vreason\*L;
+	\*LXEvent	\*V* event\*L;
+	\*LWindow	\*Vwindow\*L;
+	\*LXmString	\*ViconName\*L;
+	\*Lchar *	\*ViconData\*L;
+} SgDropPocketCallbackStruct;
+.iE
+.sE
+.VL 1i 
+.LI "\*Vreason\*O"
+Indicates why the callback was invoked.  The constant
+\*LSgCR_ICON_CHANGE\*O is the reason associated with callbacks
+generated by a successful icon drop on the DropPocket.
+.LI "\*Vevent\*O"
+Points to the \*LXEvent\*O that triggered the callback
+.LI "\*Vwindow\*O"
+Specifies the window of the DropPocket.
+.LI "\*ViconName\*O"
+Specifies the name of the icon.  For icons representing files, this is
+the file name.  For other types of icons, the name may not completely
+specify the icon.  For example a person icon may have the name jake,
+but the icon represents a person in /usr/lib/faces/jake.
+.LI "\*ViconData\*O"
+The full string description of the icon.
+.LE 
+.SS "Translations"
+.ne 15
+SgDropPocket includes translations from Primitive.
+The SgDropPocket translations are listed below.
+These translations may not directly correspond to a
+translation table.
+.iS
+.ta 1.5i
+Enter:	Enter()
+Leave:	Leave()
+.wH .fi
+.iE
+.SS "Action Routines"
+The SgDropPocket action routines are described below:
+.VL
+.LI "\*LEnter()\*O:"
+When the pointer enters the DropPocket, this action highlights the
+icon and changes the background color if the pointer contains a
+droppable icon.
+.nL
+.ne 5
+.LI "\*LLeave()\*O:"
+This unhighlights the icon and resets the background color when the
+pointer leaves the DropPocket.
+.LE
+.SS "Virtual Bindings"
+The bindings for virtual keys are vendor specific.
+For information about bindings for virtual buttons and keys, see
+\*LVirtualBindings(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LCore(3X)\*O, \*LSgCreateDropPocket(3X)\*O,
+and \*LXmPrimitive(3X)\*O.
+.ad

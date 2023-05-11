@@ -21,9 +21,6 @@ def pprint(*args, **kwargs):
 compressedTempFile = Path("tmp.z")
 decompressedTempFile = Path("tmp")
 
-compressedTempFile.unlink(missing_ok=True)
-decompressedTempFile.unlink(missing_ok=True)
-
 @dataclasses.dataclass
 class IdbEntry:
     fname: Path
@@ -32,6 +29,9 @@ class IdbEntry:
     filesize: int|None
     cmp_filesize: int|None
     symval: Path|None # for symlinks
+
+    compressedTempFile.unlink(missing_ok=True)
+    decompressedTempFile.unlink(missing_ok=True)
 
     def getFileSize(self) -> int|None:
         if self.cmp_filesize is not None:
@@ -54,7 +54,10 @@ class IdbEntry:
             compressedTempFile.write_bytes(data)
 
             # gzip.decompress doesn't work
-            os.system(f"gunzip {compressedTempFile}")
+            retVal = os.system(f"gunzip {compressedTempFile}")
+            if retVal != 0:
+                pprint("failed.")
+                return
 
             data = decompressedTempFile.read_bytes()
             compressedTempFile.unlink(missing_ok=True)
@@ -63,7 +66,8 @@ class IdbEntry:
 
         self.fname.parent.mkdir(mode=0o755, parents=True, exist_ok=True)
         self.fname.write_bytes(data)
-        self.fname.chmod(int(self.perm, 8))
+        if self.perm == "0755":
+            self.fname.chmod(int(self.perm, 8))
 
     def makeSymlink(self):
         assert self.tp == "l", self.tp

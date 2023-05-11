@@ -1,0 +1,21 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.10 $ $Date: 1995/03/28 18:33:58 $
+
+       INCLUDES = -I.
+LOCAL_LIBRARIES = SgmClientLibs
+          SRCS1 = finder.c
+          OBJS1 = finder.o
+       PROGRAMS = finder
+          FILES = Finder Imakefile finder.c
+
+NormalLibraryObjectRule()
+
+MComplexProgramTarget_1(finder,$(LOCAL_LIBRARIES),NullParameter)
+
+InstallMultiple($(FILES), $(MDEMOSRCDIR))

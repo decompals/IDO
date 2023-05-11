@@ -1,0 +1,35 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Rowtest: Class Resources for rowtest.c
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Request buttons in 3 columns.
+!
+*Rowtest*orientation:         horizontal
+*Rowtest*rowcol*numColumns:   3
+*Rowtest*rowcol*packing:     pack_column
+
+!
+! Specify geometry, or else there is no room to grow.
+Rowtest.geometry:	500x200
+
+!
+! Specify labels for all buttons.
+!
+*Rowtest*button1.labelString:    Button One
+*Rowtest*button2.labelString:    Button Two
+*Rowtest*button3.labelString:    Button Three
+*Rowtest*button4.labelString:    Button Four
+*Rowtest*button5.labelString:    Button Five
+*Rowtest*button6.labelString:    Button Six With a Long Label
+
+! step 2
+*Rowtest*rowcol*packing:     pack_tight
+
+!Step 3
+!*Rowtest*rowcol*adjustLast:     True
+
+
+
+
+
+

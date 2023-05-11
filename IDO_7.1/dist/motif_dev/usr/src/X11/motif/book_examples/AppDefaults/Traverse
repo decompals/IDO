@@ -1,0 +1,19 @@
+!
+! Traverse:  app-defaults for keyboard traversal example
+!
+
+*traversalOn: True
+
+*highlightColor: Red
+*highlightThickness:  2
+*highlightOnEnter:  True
+
+!
+! Set this to have the focus follw the pointer
+!
+!*keyboardFocusPolicy: pointer
+
+!
+! Set this to have explicit focus 
+!
+*keyboardFocusPolicy: explicit

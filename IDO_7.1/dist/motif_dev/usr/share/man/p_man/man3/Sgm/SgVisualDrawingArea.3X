@@ -1,0 +1,193 @@
+.\" **
+.\" **
+.\" **  (c) Copyright 1993 by Silicon Graphics
+.\" **      All Rights Reserved.
+.\" **
+.\" **
+.\" **
+.TH VisualDrawingArea 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgVisualDrawingArea \*O\(em A drawing area in an alternate visual 
+.iX "SgVisualDrawingArea"
+.iX "widget class" "Visual" "Drawing Area"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sgm/VisualDrawingA.h>
+.iE
+.sE
+.SH DESCRIPTION
+\*LSgVisualDrawingArea\*O is a subclass of the Motif Drawing Area that allows
+has a visual resource, allowing the widget to be placed into a visual
+different than the rest of the application.  It is useful for
+applications that need to use multiple visuals, for example, running
+one window in 24 bit RGB while the rest of the application is in 8 bit
+pseudo color.
+.P
+\*LSgVisualDrawingArea\*O also has the ability to create a TrueColor dithered
+background to more closely match a requested background, and to set
+the WM_COLORMAP_WINDOWS property to have the window manager install
+its background.
+.P
+Since the \*LSgVisualDrawingArea\*O is a subclass of \*LXmManager\*O,
+it can have children.  These children will automatically inherit the 
+visual, colormap, and depth of the \*LSgVisualDrawingArea\*O.  Thus,
+the \*LSgVisualDrawingArea\*O can be used to chage the visual of a
+hierarchy of widgets.
+.SS "Classes"
+SgVisualDrawingArea inherits behavior and resources from
+\*LCore\*O, \*LXmManager\*O, and \*LXmDrawingArea\*O classes.
+.PP 
+The class pointer is \*LsgVisualDrawingAreaWidgetClass\*O.
+.PP 
+The class name is \*LSgVisualDrawingArea\*O.
+.SS "New Resources"
+The following table defines a set of widget resources used by the
+programmer to specify data.  The programmer can also set the resource
+values for the inherited classes to set attributes for this widget.
+To reference a resource by name or by class in a .Xdefaults file,
+remove the \*LXmN\*O, \*LSgN\*O, \*LXmC\*O, or \*LSgC\*O prefix and
+use the remaining letters.  To specify one of the defined values for a
+resource in a .Xdefaults file, remove the \*LXm\*O prefix and use the
+remaining letters (in either lowercase or uppercase, but include any
+underscores between words).  The codes in the access column indicate
+if the given resource can be set at creation time (C), set by using
+\*LXtSetValues\*O (S), retrieved by using \*LXtGetValues\*O (G), or is
+not applicable (N/A).
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+SgVisualDrawingArea Resource Set
+Name	Class	Type	Default	Access
+_
+SgNditherBackground	SgCDitherBackground	Boolean	False	CG
+SgNinstallColormap	SgCInstallColormap	Boolean	False	CG
+XmNvisual	XmCVisual	Visual *	CopyFromParent	CG
+.TE
+.VL  
+.LI "\*LSgNditherBackground\*O"
+If the visual is a TrueColor or StaticColor visual, and 
+the widget is unable to get an exact match for the requested
+background color, the widget will attempt to produce a dithered pixmap
+that produceds a closer background to that requested.  If it finds
+one, it will automatically set the \*LXmNbackgroundPixmap\*O resource
+to this pixmap.  The resource is ignored in any other visual, or if
+\*LXmNbackgroundPixmap\*O is already set.
+.LI "\*LSgNinstallColormap\*O"
+If true, specifies that the widget should set the
+\*LWM_COLORMAP_WINDOWS\*O property on the shell containing the widget,
+so that the window manager installs the colormap when that application
+gets focus.  At least one window using each colormap should be listed
+in this property (even if the widgets are TrueColor), although if
+several widgets share the same colormap it is only necessary to set
+this resource for one of them.  If the application needs more direct
+control over when the colormaps are installed, this resource could be
+false.  In such a case, \L*SgVisualDrawingAreaInstallColormap(3X)\*O and
+\L*SgVisualDrawingAreaUninstallColormap(3X)\*O may be used instead.
+.LI "\*LXmNvisual\*O"
+Specifies the visual in which to create the window.  It must match the
+depth and colormap of the widget or a BadMatch error can result.
+.LE 
+.SS "Inherited Resources"
+SgVisualDrawingArea inherits behavior and resources from the following
+superclasses.  For a complete description of each resource, refer to the
+man page for that superclass.
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmDrawingArea Resource Set
+Name	Class	Type	Default	Access
+_
+XmNexposeCallback	XmCCallback	XtCallbackList	NULL	C
+XmNinputCallback	XmCCallback	XtCallbackList	NULL	C
+XmNmarginHeight	XmCMarginHeight	Dimension	10	CSG
+XmNmarginWidth	XmCMarginWidth	Dimension	10 	CSG
+XmNresizeCallback	XmCCallback	XtCallbackList	NULL	C
+XmNresizePolicy	XmCResizePolicy	unsigned char	XmRESIZE_ANY	CSG
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmManager Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNinitialFocus	XmCInitialFocus	Widget	NULL	CSG
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmTAB_GROUP	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	0	CSG
+XmNstringDirection	XmCStringDirection	XmStringDirection	dynamic	CG
+XmNtopShadowColor	XmCTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	True	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	XtPointer	NULL	CSG
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Composite Resource Set
+Name	Class	Type	Default	Access
+_
+XmNchildren	XmCReadOnly	WidgetList	NULL	G
+XmNinsertPosition	XmCInsertPosition	XtOrderProc	NULL	CSG
+XmNnumChildren	XmCReadOnly	Cardinal	0	G
+.TE
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtAccelerators	dynamic	CSG
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderColor	XmCBorderColor	Pixel	XtDefaultForeground	CSG
+XmNborderPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNcolormap	XmCColormap	Colormap	dynamic	CG
+XmNdepth	XmCDepth	int	dynamic	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Screen *	dynamic	CG
+.wH .tH
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	dynamic	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.SH RELATED INFORMATION
+.na
+\*LSgVisualDrawingAreaInstallColormap(3X)\*O,
+\*LSgVisualDrawingAreaUninstallColormap(3X)\*O,
+\*LXmDrawingArea(3X)\*O,\*LPrimitive(3X)\*O, \*LCore(3X)\*O
+.ad

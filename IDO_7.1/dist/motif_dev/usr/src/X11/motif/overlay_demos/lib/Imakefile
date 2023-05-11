@@ -1,0 +1,12 @@
+           OBJS = sgi_intl.o sgi_visual.o shell/Shell.o
+
+all:: $(OBJS)
+
+shell:
+	mkdir shell
+
+clean::
+	$(RM) -r shell
+
+shell/Shell.o:	shell Shell.o.modified
+	cp Shell.o.modified $@

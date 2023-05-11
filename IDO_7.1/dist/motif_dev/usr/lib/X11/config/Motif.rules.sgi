@@ -1,0 +1,329 @@
+/**/# Start of Motif.rules.sgi
+
+/******************************************************************************/
+/*                                                                            */
+/*                         Motif.rules.sgi                                    */
+/*                                                                            */
+/* Contains SGI-specific additions to Motif.rules.  This file is included     */
+/* at the end of Motif.rules, to give a chance to override any OSF/Motif      */
+/* rules we need to change at SGI.                                            */
+/*                                                                            */
+/* This file is separated out to make future integrations easier.             */
+/*                                                                            */
+/* This file is included if (and only if) the symbol "BuildMotif" is true.    */
+/*                                                                            */
+/******************************************************************************/
+
+
+/******************************************************************************/
+/*vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv*/
+
+/*
+ * Here is where one would override definitions from Motif.tmpl, if needed.
+ * Motif.tmpl.sgi is called too soon to do that.
+ */
+
+/*
+ * The following RM_CMD definition overrides Motif.tmpl, which in turn
+ * overrrides Imake.tmpl.  They must match, except that the leading "-"
+ * is added.  This is because we have ,,Obsolete directories, which breaks
+ * the original rule.
+ *
+ * Sounds to me like a bug in the status returned by the "rm" command.
+ * We also redirect the error output to avoid the diagnostic.
+ */
+RM_CMD = -$(RM) 2>/dev/null FilesToClean ExtraFilesToClean TestExtraFilesToClean
+
+/*
+ * We need to set some C++ stuff that was overlooked in the X11R6 config files
+ */
+   CXXEXTRA_DEFINES = $(EXTRA_DEFINES)
+
+/*
+ * The following IMAKE_CMD definitions override Imake.tmpl and Motif.tmpl.
+ * They must match, except that $(SGI_IMAKE_DEFINES) is added.
+ *
+ *  * We can't just redefine IMAKE instead, because make targets depend on it.
+ *
+ *  * We can't just redefine IMAKE_DEFINES because of the following line from
+ *    Imake.tmpl:
+ *
+ *	IMAKE_DEFINES = \/* leave blank, for command line use only *\/
+ *
+ *	BuildMotif	says it is a Motif build, so include Motif include files
+ *	UseSmake	"NO" turns off special X group (only) stuff)
+ *	<XXX>Version	Sets version info for ifdef's
+ *
+ *	Build64bit	Sets for a 64-bit build
+ *	Build32bit	Sets for some kind of a 32-bit build
+ *		NOTE: Build32bit = ~Build64bit
+ *
+ *	BuildN32	Specifies that the 32-bit build is an N32 build
+ *	BuildO32	Specifies that the 32-bit build is an O32 build
+ *		NOTE: BuildN32 = ~BuildO32
+ */
+
+#if defined(UseInstalledMotif) && UseInstalledMotif
+       SGI_IMAKE_DEFINES=-DUseInstalled -DUseInstalledMotif
+#else /* not using installed Motif */
+       SGI_IMAKE_DEFINES=-DUseInstalled
+#endif
+
+#ifndef Build64bit
+#define __Build64bit NO
+#else
+#define __Build64bit Build64bit
+#endif
+
+#ifndef Build32bit
+#define __Build32bit NO
+#else
+#define __Build32bit Build32bit
+#endif
+
+#ifndef BuildN32
+#define __BuildN32 NO
+#else
+#define __BuildN32 BuildN32
+#endif
+
+#ifndef BuildO32
+#define __BuildO32 NO
+#else
+#define __BuildO32 BuildO32
+#endif
+
+__VERSION=-DOSMajorVersion=OSMajorVersion -DOSMinorVersion=OSMinorVersion -DOSPatchVersion=OSPatchVersion
+        IMAKE_CMD = set -x; $(IMAKE) -I$(IRULESRC) $(IMAKE_DEFINES) -DBuildMotif=YES -DBuild64bit=__Build64bit -DBuild32bit=__Build32bit -DBuildN32=__BuildN32 -DBuildO32=__BuildO32 $(SGI_IMAKE_DEFINES) $(__VERSION)
+
+/*
+ * Override some definitions from Motif.tmpl
+ */
+#if defined(Build64bit) && Build64bit
+       UIL = _MUse(uil -64,$(UILSRC)/uil)
+    DEPUIL = _MUse($(BINDIR)/uil64,$(UILSRC)/uil)
+#endif /* Build64bit */
+#if defined(Build32bit) && Build32bit
+       UIL = _MUse(uil -32,$(UILSRC)/uil)
+    DEPUIL = _MUse($(BINDIR)/uil32,$(UILSRC)/uil)
+#endif /* Build64bit */
+
+/*
+ * Following are the shared library definitions for the SGI libraries.
+ */
+#ifndef SharedSgmRev
+#define SharedSgmRev .1
+#endif
+
+#ifndef SharedSgtRev
+#define SharedSgtRev .1
+#endif
+
+#if SharedLibSgm
+  SharedLibReferences(SGM,Sgm,$(SGMWIDGETSRC),SOSGMREV,SharedSgmRev)
+#else
+  UnsharedLibReferences(SGM,Sgm,$(SGMWIDGETSRC))
+#endif
+
+#if SharedLibSgt
+  SharedLibReferences(SGT,Sgt,$(SGTWIDGETSRC),SOSGTREV,SharedSgtRev)
+#else
+  UnsharedLibReferences(SGT,Sgt,$(SGTWIDGETSRC))
+#endif
+
+
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+/******************************************************************************/
+
+
+/******************************************************************************/
+/*vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv*/
+
+/*
+ * Here is where we override definitions from sgiLib.rules, or add things
+ * that should be in that file.
+ *
+ * It is too bad we need to do this -- it means we risk not tracking
+ * changes in the original definitions.
+ */
+
+
+/*
+ * SharedLibraryTarget - generate rules to create a shared library.
+ *
+ * IMPORTANT: this needs to track sgiLib.rules
+ *
+ * We need added flexibility so that various libraries can set things up
+ * to meet their own needs.
+ *
+ * The following should probably be defined in *.tmpl -- for now they are
+ * here just for clarity.
+ *	DEPREQLIBS		It is wrong to use the same thing for both
+ *				the dependency  & to pass to ld.  Problem
+ *				is things like -delay_load
+ *	LDREQLIBS		The Imakefile can redefine to include "-none"
+ *				if it does not want -all to continue.  This
+ *				is useful mainly if you are linking an archive
+ *				library, and you don't want to pick up all
+ *				of it.
+ */
+
+        DEPREQLIBS = $(REQUIREDLIBS)
+         LDREQLIBS = $(REQUIREDLIBS)
+
+/*
+ * SharedLibraryTarget - generate rules to create a shared library.
+ */
+#ifdef SharedLibraryTarget
+#undef SharedLibraryTarget
+#endif
+#define SharedLibraryTarget(libname,rev,solist,down,up)			@@\
+AllTarget(Concat4(lib,libname,.so,rev))					@@\
+									@@\
+Concat4(lib,libname,.so,rev): Concat3(lib,libname,.a) $(DEPREQLIBS)	@@\
+	$(RM) $@ \							@@\
+	&& $(LD) $(LDDSOOPTS) Concat3(lib,libname,.a) -o $@ $(LDREQLIBS) @@\
+									@@\
+clean::									@@\
+	$(RM) Concat4(lib,libname,.so,rev) Concat3(lib,libname,.so)
+
+/*
+ * SharedLibraryTargetWithOptions - generate rules to create a shared library.
+ */
+#ifdef SharedLibraryTargetWithOptions
+#undef SharedLibraryTargetWithOptions
+#endif
+#define SharedLibraryTargetWithOptions(libname,rev,solist,down,up,options) @@\
+AllTarget(Concat4(lib,libname,.so,rev))					@@\
+									@@\
+Concat4(lib,libname,.so,rev): Concat3(lib,libname,.a) $(DEPREQLIBS)	@@\
+	$(RM) $@ \							@@\
+	&& $(LD) $(LDDSOOPTS) options Concat3(lib,libname,.a) -o $@ $(LDREQLIBS) @@\
+									@@\
+clean::									@@\
+	$(RM) Concat4(lib,libname,.so,rev) Concat3(lib,libname,.so)
+
+/*
+ * SharedLibraryTargetFromObj - generate rules to create a shared library
+ *                              directly from object files.
+ */
+#ifdef SharedLibraryTargetFromObj
+#undef SharedLibraryTargetFromObj
+#endif
+#define SharedLibraryTargetFromObj(libname,rev,objlist,options)			@@\
+AllTarget(Concat4(lib,libname,.so,rev))					@@\
+									@@\
+Concat4(lib,libname,.so,rev): objlist $(DEPREQLIBS)			@@\
+	$(RM) $@ \							@@\
+	&& $(LD) options $(LDDSOOPTS) objlist -o $@ $(LDREQLIBS) 	@@\
+									@@\
+clean::									@@\
+	$(RM) Concat4(lib,libname,.so,rev) Concat3(lib,libname,.so)
+
+
+/***** This target should be in sgiLib.rules, but there is no such thing *****/
+
+/*
+ * SharedDebugLibraryTarget - generate rules to create a shared library.
+ */
+#define SharedDebugLibraryTarget(libname,rev,solist,down,up)		@@\
+AllTarget(Concat4(lib,libname/**/_d,.so,rev))				@@\
+									@@\
+Concat4(lib,libname/**/_d,.so,rev): Concat3(lib,libname/**/_d,.a) $(DEPREQLIBS)	@@\
+	$(RM) $@ \							@@\
+	&& $(LD) $(LDDEBUGDSOOPTS) Concat3(lib,libname/**/_d,.a) -o $@ $(LDREQLIBS)		@@\
+									@@\
+clean::									@@\
+	$(RM) Concat4(lib,libname/**/_d,.so,rev)
+
+/*
+ * SharedDebugLibraryTargetWithOptions - generate rules to create a shared library.
+ */
+#define SharedDebugLibraryTargetWithOptions(libname,rev,solist,down,up,options) @@\
+AllTarget(Concat4(lib,libname/**/_d,.so,rev))				@@\
+									@@\
+Concat4(lib,libname/**/_d,.so,rev): Concat3(lib,libname/**/_d,.a) $(DEPREQLIBS)	@@\
+	$(RM) $@ \							@@\
+	&& $(LD) $(LDDEBUGDSOOPTS) options Concat3(lib,libname/**/_d,.a) -o $@ $(LDREQLIBS)		@@\
+									@@\
+clean::									@@\
+	$(RM) Concat4(lib,libname/**/_d,.so,rev)
+
+/*
+ * SharedDebugLibraryTargetFromObj - generate rules to create a shared library.
+ */
+#define SharedDebugLibraryTargetFromObj(libname,rev,objlist,options)    @@\
+AllTarget(Concat4(lib,libname/**/_d,.so,rev))				@@\
+									@@\
+Concat4(lib,libname/**/_d,.so,rev): objlist $(DEPREQLIBS)       	@@\
+	$(RM) $@ \							@@\
+	&& cd debugger \						@@\
+	&& $(LD) options $(LDDEBUGDSOOPTS) objlist -o ../$@ $(LDREQLIBS)@@\
+									@@\
+clean::									@@\
+	$(RM) Concat4(lib,libname/**/_d,.so,rev)
+
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+/******************************************************************************/
+
+
+/******************************************************************************/
+/*vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv*/
+
+/*
+ * Here is where we override definitions from Imake.rules, or add things
+ * that should be in that file.
+ *
+ * It is too bad we need to do this -- it means we risk not tracking
+ * changes in the original definitions.
+ */
+
+
+/*
+ * Until it is fixed in Imake.rules, override the following definition.
+ *
+ * If you don't make this fix, then:
+ *	* the command "make <debug lib>" will fail if the
+ *	  debugger subdirectory is not there.
+ *	* the debug library does not get cleaned
+ */
+
+/*
+ * DebuggedLibraryTarget - generate rules to create a debuggable library.
+ */
+#ifdef DebuggedLibraryTarget
+#  undef DebuggedLibraryTarget
+#endif
+#define	DebuggedLibraryTarget(libname,objlist)				@@\
+AllTarget(Concat3(lib,libname,_d.a))					@@\
+									@@\
+Concat3(lib,libname,_d.a): objlist					@@\
+	$(RM) $@							@@\
+	cd debugger; $(AR) ../$@ objlist				@@\
+	RanLibrary($@)							@@\
+									@@\
+clean::									@@\
+	$(RM) Concat3(lib,libname/**/_d,.a )				@@\
+									@@\
+FIRST_ALL FIRST_INCLUDES FIRST_INSTALL:: debugger			@@\
+FIRST_MAKEFILE FIRST_MAKEFILES:: debugger				@@\
+debugger:								@@\
+	-@if [ ! -d debugger ]; then \					@@\
+		set -x; $(RM) debugger; mkdir debugger; fi
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+/******************************************************************************/
+
+
+#ifndef UseInstalled
+/*
+ * These rules make sense in the SGI internal build tree, but not for
+ * customers.  They are in a separate file so they will not be shipped.
+ */
+#include <Motif.rules.sgiInternal>
+#endif /* UseInstalled */
+
+
+/**/# End of Motif.rules.sgi

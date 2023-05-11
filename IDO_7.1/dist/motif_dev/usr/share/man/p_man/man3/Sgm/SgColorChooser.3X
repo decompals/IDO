@@ -1,0 +1,393 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1993 by Slicon Graphics Corporation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **
+.TH SgColorChooser 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgColorChooser \*O\(em The ColorChooser widget class
+.iX "SgColorChooser"
+.iX "widget class" "ColorChooser"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sgm/ColorC.h>
+.iE
+.sE
+.SH DESCRIPTION
+ColorChooser is a dialog widget that provides a friendly and powerful
+user interface for selecting colors. The ColorChooser provides a color 
+hexagon and color sliders that presents the color range in 
+Hue, Saturation, Value, (HSV) and Red, Green, Blue, (RGB) color spaces.
+Because of drawing speed considiration, the color hexagon and color sliders
+are available only if running under GL. For X only configuration there
+are Scale widget to replace the color sliders and there is no color hexagon.
+The ColorChooser includes the following:
+.ML
+.LI
+A menu for setting options for the color chooser.
+.LI
+A color hexagon that provides visual selection of the Hue and Saturation
+components of a color in an Hue, Saturation, Value, (HSV) color space.
+.LI
+Color slider for each of Hue, Saturation, Value, Red, Green, Blue color 
+components. 
+The color sliders are visible depening on the user color chooser menu 
+selection.
+Each of the color sliders and the color hexagon is accompanied with
+a text edit widget to view the exact value of the current color component
+and to set it's numerical value.
+.LI
+Two color swatches: one for showing the current selected color and
+one for enabling the user to atore a second color for reference.
+.LI
+Three or four buttons
+.LE 
+.PP 
+The default button labels are \*LOK\*O, \*LCancel\*O, and \*LHelp\*O.
+By default an \*LApply\*O button is also created; if the parent of the
+ColorChooser is a DialogShell it is managed, and otherwise it is unmanaged.
+Additional children may be added to the ColorChooser after
+creation.
+The first child is used as a work area. The work area is placed just below
+the menu bar.
+Additional children are laid out in the following manner:
+.ML
+.LI
+Buttons\(emAll \*LXmPushButton\*O
+widgets or gadgets, and their subclasses are
+placed after the \*LOK\*O button in the order of their creation.
+.LI
+The layout of additional children that are not in the above categories
+is undefined.
+.LE
+.PP 
+The user can select a color by manipulating the color hexagon and any of the
+six sliders or changing the value of a color components text widgets.
+
+The default configuration provides control for an HSV color space. 
+The Hue and Saturation
+are controlled by the color hexagon and the Value is controlled by the
+value slider.
+
+Selecting to view the RGB sliders provides controls over RGB color space.
+Selecting both RGB and HSV slider provide Hue and Saturation slider to
+manipulate the Hue and Saturation in addition the the color hexagon.
+.PP 
+The default value for the \*LXmBulletinBoard\*O resource
+\*LXmNcancelButton\*O is the Cancel button.
+The default value for the \*LXmBulletinBoard\*O resource
+\*LXmNdefaultButton\*O is the OK button unless.
+.PP
+For ColorChooser and its subclasses, the default value for
+\*LXmNinitialFocus\*O is the Hue text edit area.
+.PP
+.LE
+.SS "Classes"
+ColorChooser inherits behavior and resources from \*LCore\*O,
+\*LComposite\*O, \*LConstraint\*O, \*LXmManager\*O,
+and \*LXmBulletinBoard\*O Classes.
+.PP 
+The class pointer is \*LsgColorChooserWidgetClass\*O.
+.PP 
+The class name is \*LSgColorChooser\*O.
+.SS "New Resources"
+The following table defines a set of widget resources used by the programmer
+to specify data.  The programmer can also set the resource values for the
+inherited classes to set attributes for this widget.  To reference a
+resource by name or by class in a .Xdefaults file, remove the \*LSgN\*O or
+\*LSgC\*O prefix and use the remaining letters.  To specify one of the defined
+values for a resource in a .Xdefaults file, remove the \*LSg\*O prefix and use
+the remaining letters (in either lowercase or uppercase, but include any
+underscores between words).
+The codes in the access column indicate if the given resource can be
+set at creation time (C),
+set by using \*LXtSetValues\*O (S),
+retrieved by using \*LXtGetValues\*O (G), or is not applicable (N/A).
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+SgColorChooser Resource Set
+Name	Class	Type	Default	Access
+_
+XmNapplyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNapplyLabelString	XmCApplyLabelString	XmString	dynamic	CSG
+XmNcancelCallback	XmCCallback	XtCallbackList	NULL	C
+XmNcancelLabelString	XmCCancelLabelString	XmString	dynamic C
+XmNokCallback	XmCCallback	XtCallbackList	NULL	C
+XmNokLabelString	XmCOkLabelString	XmString	dynamic	CSG
+XmNvalueChangedCallback	XmCCallback	XtCallbackList	NULL	C
+XmNdragCallback	XmCCallback	XtCallbackList	NULL	C
+SgNshowSliders	SgCShowSliders	SgRShowSliders 	SgRGB_and_HSV	CSG
+SgNwysiwyg	SgCWysiwyg	 XmRBoolean	True	CSG
+SgNuseGl	SgCUseGl	 XmRBoolean	True	CSG
+
+.TE
+.VL  
+.LI "\*LSgNapplyCallback\*O"
+Specifies the list of callbacks called
+when the user activates the \*LApply\*O
+button.  The callback reason is \*LSgCR_APPLY\*O.
+.LI "\*LSgNapplyLabelString\*O"
+Specifies the string label for the \*LApply\*O button.
+The default for this resource depends on the locale.
+In the C locale the default is "Apply".
+.LI "\*LSgNcancelCallback\*O"
+Specifies the list of callbacks called
+when the user activates
+the \*LCancel\*O button.  The callback reason is \*LSgCR_CANCEL\*O.
+.LI "\*LSgNcancelLabelString\*O"
+Specifies the string label for the \*LCancel\*O button.
+The default for this resource depends on the locale.
+In the C locale the default is "Cancel".
+.LI "\*LSgNhelpLabelString\*O"
+Specifies the string label for the \*LHelp\*O button.
+The default for this resource depends on the locale.
+In the C locale the default is "Help".
+.LI "\*LSgNokCallback\*O"
+Specifies the list of callbacks called
+when the user activates the \*LOK\*O button.
+The callback reason is \*LSgCR_OK\*O.
+If the selection text does not match a list item, and
+\*LSgNmustMatch\*O is True, the \*LSgNnoMatchCallback\*O callbacks are
+called instead.
+.LI "\*LSgNokLabelString\*O"
+Specifies the string label for the \*LOK\*O button.
+The default for this resource depends on the locale.
+In the C locale the default is "OK".
+.LI "\*LSgNvalueChangedCallback\*O"
+Specifies the list of callbacks called
+when the user selects a color.
+The callback reason is \*LXmCR_VALUE_CHANGED\*O.
+A color is selected when the user changes the value of a color component via
+the color hexagon, one of the color sliders, or one of the color components
+text widgets.
+.LI "\*LSgNdragCallback\*O"
+Specifies the list of callbacks called
+when the user drags the mouse over the color hexagon or one of the
+color sliders to select a color.
+The callback reason is \*LXmCR_DRAG\*O.
+.LI "\*LSgNshowSliders\*O"
+Specifies which color slider is visible. If the useGl resource is False, then
+SgNshowSliders specifies which color scales are visible.
+Possible values are:
+.ML
+.LI
+\*LSgValue\*O\( Show only the slider for the color Value
+.LI
+\*LSgRGB_and_Value\*O\( Show the Value and RGB sliders
+.LI
+\*LSgRGB_and_HSV\*O\( Show all six sliders, the HSV and RGB sliders
+.LE
+.LI "\*LSgNwysiwyg\*O"
+Specifies whether the wysiwyg mode is True or False. If the 
+wysiwyg mode is True, then the sliders and hexagon change color to show
+the color that will be selected in each point of the hexagon or slider.
+If the wysiwyg mode is False, then the hexagon color always shows with
+Value (intensity) equals 1 (maximum intensity) and the RGB sliders 
+shows color range of black to max RGB color component value.
+For example, if the current selected color RGB value is (100, 200, 50), then
+with wysiwyg mode True the Red color slider will have the colors
+(0, 200, 50)-(255, 200, 50), and with wysiwyg mode False the range
+ (0, 0, 0) - (233, 0, 0).
+Note that this mode is meaninful only if useGl resource is True.
+.LI "\*LSgNuseGl\*O"
+Specifies whether to set the useGl mode to True or False. If the 
+useGl mode is True then the color hexagon and color sliders are visble.
+The color hexagon and color sliders use GL's Gouraud shading to 
+display the colors in the hexagon and sliders.
+If useGl mode is False then the widget uses only X calls. In this case
+there will be no color hexagon, and the color sliders are replaced with
+XmScale widgets.
+.LE 
+.SS "Inherited Resources"
+ColorChooser inherits behavior and resources from the following
+superclasses.  For a complete description of each resource, refer to the
+man page for that superclass.
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+SgBulletinBoard Resource Set
+Name	Class	Type	Default	Access
+_
+XmNallowOverlap	XmCAllowOverlap	Boolean	True	CSG
+XmNautoUnmanage	XmCAutoUnmanage	Boolean	True	CG
+XmNbuttonFontList	XmCButtonFontList	XmFontList	dynamic	CSG
+XmNcancelButton	XmCWidget	Widget	dynamic	SG
+XmNdefaultButton	XmCWidget	Widget	dynamic	SG
+XmNdefaultPosition	XmCDefaultPosition	Boolean	True	CSG
+XmNdialogStyle	XmCDialogStyle	unsigned char	dynamic	CSG
+XmNdialogTitle	XmCDialogTitle	XmString	NULL	CSG
+XmNfocusCallback	XmCCallback	XtCallbackList	NULL	C
+XmNlabelFontList	XmCLabelFontList	XmFontList	dynamic	CSG
+XmNmapCallback	XmCCallback	XtCallbackList	NULL	C
+XmNmarginHeight	XmCMarginHeight	Dimension	10	CSG
+XmNmarginWidth	XmCMarginWidth	Dimension	10 	CSG
+XmNnoResize	XmCNoResize	Boolean	False	CSG
+.wH .tH
+XmNresizePolicy	XmCResizePolicy	unsigned char	XmRESIZE_ANY	CSG
+XmNshadowType	XmCShadowType	unsigned char	XmSHADOW_OUT	CSG
+XmNtextFontList	XmCTextFontList	XmFontList	dynamic	CSG
+XmNtextTranslations	XmCTranslations	XtTranslations	NULL	C
+XmNunmapCallback	XmCCallback	XtCallbackList	NULL	C
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmManager Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNinitialFocus	XmCInitialFocus	Widget	dynamic	CSG
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmTAB_GROUP	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	dynamic	CSG
+XmNstringDirection	XmCStringDirection	XmStringDirection	dynamic	CG
+XmNtopShadowColor	XmCTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	True	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	XtPointer	NULL	CSG
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Composite Resource Set
+Name	Class	Type	Default	Access
+_
+XmNchildren	XmCReadOnly	WidgetList	NULL	G
+XmNinsertPosition	XmCInsertPosition	XtOrderProc	NULL	CSG
+XmNnumChildren	XmCReadOnly	Cardinal	0	G
+.TE
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtAccelerators	dynamic	N/A
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderColor	XmCBorderColor	Pixel	XtDefaultForeground	CSG
+XmNborderPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNcolormap	XmCColormap	Colormap	dynamic	CG
+XmNdepth	XmCDepth	int	dynamic	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Screen *	dynamic	CG
+.wH .tH
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	dynamic	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.wH .in  
+.SS "Callback Information"
+A pointer to the following structure is passed to each callback:
+.sS
+.iS
+.ta .25i 1.50i
+typedef struct
+{
+	int	\*Vreason\*L;
+	XEvent	\*V* event\*L;
+	short	\*Vr, g, b\*L;
+} XmColorChooserCallbackStruct;
+.iE
+.sE
+.wH .fi
+.VL .75i 
+.LI "\*Vreason\*O"
+Indicates why the callback was invoked.
+.LI "\*Vevent\*O"
+Points to the \*LXEvent\*O that triggered the callback.
+.LI "\*Vr\*O"
+Indicates the red color component of the currently selected color.
+.LI "\*Vg\*O"
+Indicates the green color component of the currently selected color.
+.LI "\*Vb\*O"
+Indicates the blue color component of the currently selected color.
+
+.LE 
+.SS "Translations"
+.ne 3i
+XmColorChooser inherits translations from XmBulletinBoard.
+.P 
+.ne 3i
+.LE
+.SS "Additional Behavior"
+The ColorChooser widget has the additional behavior described below:
+.VL  
+.LI "\*LMAny\ KCancel\*O:"
+Calls the activate callbacks for the cancel button if it is sensitive.
+If no cancel button exists and the parent of the ColorChooser is a manager,
+passes the event to the parent.
+.LI "\*LKActivate\*O:"
+Calls the activate callbacks for the button with the keyboard focus.
+If no button has the keyboard focus, calls the activate callbacks
+for the default button if it is sensitive.
+.LI "\*L<OK\ Button\ Activated>\*O:"
+Calls the \*LXmNokCallback\*O callbacks with reason
+\*LXmCR_OK\*O.
+.LI "\*L<Apply\ Button\ Activated>\*O:"
+Calls the \*LXmNapplyCallback\*O callbacks with reason \*LXmCR_APPLY\*O.
+.LI "\*L<Cancel\ Button\ Activated>\*O:"
+Calls the \*LXmNcancelCallback\*O callbacks with reason
+\*LXmCR_CANCEL\*O.
+.LI "\*L<Help\ Button\ Activated>\*O:"
+Calls the \*LXmNhelpCallback\*O callbacks with reason \*LXmCR_HELP\*O.
+.LI "\*L<MapWindow>\*O:"
+Calls the callbacks for \*LXmNmapCallback\*O if the ColorChooser
+is a child of a Dialog shell.
+.LI "\*L<UnmapWindow>\*O:"
+Calls the callbacks for \*LXmNunmapCallback\*O if the ColorChooser is
+the child of a DialogShell.
+.LE
+.SS "Virtual Bindings"
+The bindings for virtual keys are vendor specific.
+For information about bindings for virtual buttons and keys, see \*LVirtualBindings(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LComposite(3X)\*O,
+\*LConstraint(3X)\*O,
+\*LCore(3X)\*O,
+\*LXmBulletinBoard(3X)\*O,
+\*LSgCreateColorChooser(3X)\*O,
+\*LSgCreateColorChooserDialog(3X)\*O,
+\*LXmManager(3X)\*O, and
+\*LSgColorChooserSetColor(3X)\*O.
+\*LSgColorChooserGetColor(3X)\*O.
+\*LSgColorChooserSetCurrentColor(3X)\*O.
+\*LSgColorChooserSetStoredColor(3X)\*O.
+.ad

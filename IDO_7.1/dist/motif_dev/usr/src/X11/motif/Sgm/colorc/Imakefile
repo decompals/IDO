@@ -1,0 +1,39 @@
+XCOMM 
+XCOMM (c) Copyright 1994 Silicon Graphics, Inc.
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.8 $ $Date: 1995/04/27 00:09:34 $
+
+XCOMM Makefile to make IrisGL and OpenGL Color Chooser demos.
+
+          FILES = Imakefile  test.c
+
+#if defined(Build64bit) && Build64bit
+       IGL_LIBS = /* No IRIS GL in 64 bits */
+    IGL_DEPLIBS = /* No IRIS GL in 64 bits */
+       OGL_LIBS = SgmClientLibs -lGL -lm
+    OGL_DEPLIBS = SgmClientDepLibs $(SHLIBDIR)/libGL.so $(SHLIBDIR)/libm.so
+        TARGETS = ogl_test
+#else /* must be 32 bits */
+    /* SHLIBDIR will be /usr/lib or /usr/lib32, as apropriate */
+       IGL_LIBS = SgmClientLibs -lgl -lm
+    IGL_DEPLIBS = SgmClientDepLibs $(SHLIBDIR)/libgl.so $(SHLIBDIR)/libm.so
+       OGL_LIBS = SgmClientLibs -lGL -lm
+    OGL_DEPLIBS = SgmClientDepLibs $(SHLIBDIR)/libGL.so $(SHLIBDIR)/libm.so
+        TARGETS = igl_test ogl_test
+#endif /* Build64Bit */
+
+
+all:: $(TARGETS)
+
+/**/# This will fail for 64 bits -- but it would only get run explicitly
+igl_test: $(IGL_DEPLIBS) test.c
+	cc -o $@ $(CFLAGS) test.c -L $(ROOT)/$(SHLIBDIR) $(IGL_LIBS)
+
+ogl_test: $(OGL_DEPLIBS) test.c
+	cc -o $@ $(CFLAGS) -DOGL test.c -L $(ROOT)/$(SHLIBDIR) $(OGL_LIBS)
+
+clobber::
+	$(RM) igl_test ogl_test
+
+InstallMultiple($(FILES), $(MDEMOSRCDIR))

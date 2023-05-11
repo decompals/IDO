@@ -1,0 +1,20 @@
+XCOMM (c) Copyright 1989, 1990, 1991, 1992, 1993 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM Motif Release 1.2.3
+
+        DEPLIBS = XmClientDepLibs
+LOCAL_LIBRARIES = XmClientLibs
+  SYS_LIBRARIES = -lm 
+
+SRCS = xmpiano.c
+OBJS = xmpiano.o
+
+MSimpleProgramTarget(xmpiano)
+InstallProgram(xmpiano,$(BINDIR))
+
+DependTarget()
+#ifdef SGIArchitecture
+FILES = Imakefile *.c README *.xbm
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

@@ -1,0 +1,17 @@
+DEMOSRCDIR = $(USRSRCDIR)/Sgm
+
+#define IHaveSubdirs
+#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+
+SUBDIRS = colorc dial dropPocket dynaMenu fileSB finder thumbwheel 
+
+MakeSubdirs($(SUBDIRS))
+DependSubdirs($(SUBDIRS))
+MakeLintLibSubdirs($(SUBDIRS))
+
+MKDIRHIERTAG = MkDirCmdIdbTag="$(INSTDEMODIRFLAGS)"
+install::
+	$(MKDIRHIER) $(DEMOSRCDIR)
+
+FILES = Imakefile README
+InstallMultipleFlags( $(FILES), $(SGMDEMOSRCDIR), $(INSTDEMOFLAGS) )

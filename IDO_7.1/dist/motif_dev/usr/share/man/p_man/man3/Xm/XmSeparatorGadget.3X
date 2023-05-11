@@ -1,0 +1,195 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmSeparatorGadget 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmSeparatorGadget \*O\(em The SeparatorGadget widget class
+.iX "XmSeparatorGadget"
+.iX "widget class" "SeparatorGadget"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/SeparatoG.h>
+.iE
+.sE
+.SH DESCRIPTION
+SeparatorGadget separates items in a display.
+Several
+line drawing styles are provided, as well as horizontal or vertical
+orientation.
+.PP 
+Lines drawn within the SeparatorGadget are automatically
+centered within the height of the gadget for a horizontal orientation
+and centered within the width of the gadget for a vertical orientation.
+An \*LXtSetValues\*O with a new \*LXmNseparatorType\*O resizes the
+widget to its minimal height (for horizontal orientation) or its
+minimal width (for
+vertical orientation) unless height or width is explicitly set in the
+\*LXtSetValues\*O call.
+.PP 
+SeparatorGadget does not draw shadows around the separator.
+The Gadget resource \*LXmNshadowThickness\*O is used for the
+SeparatorGadget's thickness when \*LXmNseparatorType\*O is
+\*LXmSHADOW_ETCHED_IN\*O, \*LXmSHADOW_ETCHED_IN_DASH\*O,
+\*LXmSHADOW_ETCHED_OUT\*O, or \*LXmSHADOW_ETCHED_OUT_DASH\*O.
+.PP 
+SeparatorGadget does not highlight and allows no traversing.  The Gadget
+resource \*LXmNtraversalOn\*O is forced to False.
+.SS "Classes"
+SeparatorGadget inherits behavior and
+resources from \*LObject\*O, \*LRectObj\*O, and \*LXmGadget\*O Classes.
+.PP 
+The class pointer is \*LxmSeparatorGadgetClass\*O.
+.PP 
+The class name is \*LXmSeparatorGadget\*O.
+.SS "New Resources"
+The following table defines a set of widget resources used by the programmer
+to specify data.  The programmer can also set the resource values for the
+inherited classes to set attributes for this widget.  To reference a
+resource by name or by class in a .Xdefaults file, remove the \*LXmN\*O or
+\*LXmC\*O prefix and use the remaining letters.  To specify one of the defined
+values for a resource in a .Xdefaults file, remove the \*LXm\*O prefix and use
+the remaining letters (in either lowercase or uppercase, but include any
+underscores between words).
+The codes in the access column indicate if the given resource can be
+set at creation time (C),
+set by using \*LXtSetValues\*O (S),
+retrieved by using \*LXtGetValues\*O (G), or is not applicable (N/A).
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmSeparatorGadget Resource Set
+Name	Class	Type	Default	Access
+_
+XmNmargin	XmCMargin	Dimension	0	CSG
+XmNorientation	XmCOrientation	unsigned char	XmHORIZONTAL	CSG
+XmNseparatorType	XmCSeparatorType	unsigned char	XmSHADOW_ETCHED_IN	CSG
+.TE
+.VL  
+.LI "\*LXmNmargin\*O"
+For horizontal orientation, specifies the space on the left and right sides between the border of
+SeparatorGadget and the line drawn.
+For vertical
+.ne 8
+orientation, specifies the space
+on the top and bottom between the border
+of SeparatorGadget and the line drawn.
+.LI "\*LXmNorientation\*O"
+Specifies whether SeparatorGadget is displayed vertically or horizontally.
+This resource can have values of \*LXmVERTICAL\*O and \*LXmHORIZONTAL\*O.
+.LI "\*LXmNseparatorType\*O"
+Specifies the type of line drawing to be done in the Separator widget.
+.wH .rS 
+.ML
+.LI
+\*LXmSINGLE_LINE\*O\(emsingle line.
+.LI
+\*LXmDOUBLE_LINE\*O\(emdouble line.
+.LI
+\*LXmSINGLE_DASHED_LINE\*O\(emsingle-dashed line.
+.LI
+\*LXmDOUBLE_DASHED_LINE\*O\(emdouble-dashed line.
+.LI
+\*LXmNO_LINE\*O\(emno line.
+.LI
+\*LXmSHADOW_ETCHED_IN\*O\(ema line whose shadows give the
+effect of a line etched into the window.  The thickness of the
+line is equal to the value of \*LXmNshadowThickness\*O.  For
+horizontal orientation, the top shadow is drawn in \*LXmNtopShadowColor\*O
+and the bottom shadow is drawn in \*LXmNbottomShadowColor\*O.  For
+vertical orientation, the left edge is drawn in \*LXmNtopShadowColor\*O
+and the right edge is drawn in \*LXmNbottomShadowColor\*O.
+.LI
+\*LXmSHADOW_ETCHED_OUT\*O\(ema line whose shadows give the effect
+of an etched line coming out of the window.  The thickness of the
+line is equal to the value of \*LXmNshadowThickness\*O.  For horizontal
+orientation, the top shadow is drawn in \*LXmNbottomShadowColor\*O and
+the bottom shadow is drawn in \*LXmNtopShadowColor\*O.  For vertical
+orientation, the left edge is drawn in \*LXmNbottomShadowColor\*O and
+the right edge is drawn in \*LXmNtopShadowColor\*O.
+.LI
+\*LXmSHADOW_ETCHED_IN_DASH\*O\(emidentical to
+\*LXmSHADOW_ETCHED_IN\*O except a series of lines creates a dashed line.
+.LI
+\*LXmSHADOW_ETCHED_OUT_DASH\*O\(emidentical to
+\*LXmSHADOW_ETCHED_OUT\*O except a series of lines creates a dashed line.
+.LE
+.wH .rE
+.LE 
+.SS "Inherited Resources"
+SeparatorGadget inherits behavior and resources from the following
+superclasses.  For a complete description of each resource, refer to the
+man page for that superclass.
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmGadget Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	G
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	G
+XmNhighlightOnEnter	XmCHighlightOnEnter	Boolean	False	CSG
+XmNhighlightThickness	XmCHighlightThickness	Dimension	0	CSG
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmNONE	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	2	CSG
+XmNtopShadowColor	XmCTopShadowColor	Pixel	dynamic	G
+XmNtraversalOn	XmCTraversalOn	Boolean	False	G
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	XtPointer	NULL	CSG
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+RectObj Resource Set
+Name	Class	Type	Default	Access
+_
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Object Resource Set
+Name	Class	Type	Default	Access
+_
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+.TE
+.SS "Behavior"
+XmSeparatorGadget has no behavior.
+.SH RELATED INFORMATION
+.na
+\*LObject(3X)\*O, \*LRectObject(3X)\*O,
+\*LXmCreateSeparatorGadget(3X)\*O, and
+\*LXmGadget(3X)\*O.
+.ad

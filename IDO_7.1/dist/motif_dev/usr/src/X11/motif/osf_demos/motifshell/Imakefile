@@ -1,0 +1,39 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992, 1993 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2.3
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 1.4 $ $Date: 1993/10/23 21:11:03 $
+
+        DEPLIBS = XmClientDepLibs
+LOCAL_LIBRARIES = XmClientLibs
+
+SRCS = motifshell.c
+OBJS = motifshell.o
+
+MSimpleProgramTarget(motifshell)
+InstallProgram(motifshell,$(BINDIR))
+
+#ifdef SGIArchitecture
+InstallNonExec(motif, $(MDEMOSRCDIR))
+InstallNonExec(welcome, $(MDEMOSRCDIR))
+InstallNonExec(research, $(MDEMOSRCDIR))
+InstallNonExec(principles, $(MDEMOSRCDIR))
+InstallNonExec(membership, $(MDEMOSRCDIR))
+InstallNonExec(help, $(MDEMOSRCDIR))
+#else /* OSF original */
+InstallNonExec(motif,$(BINDIR))
+InstallNonExec(welcome,$(BINDIR))
+InstallNonExec(research,$(BINDIR))
+InstallNonExec(principles,$(BINDIR))
+InstallNonExec(membership,$(BINDIR))
+InstallNonExec(help,$(BINDIR))
+#endif /* SGIArchitecture */
+
+DependTarget()
+#ifdef SGIArchitecture
+FILES = Imakefile README *.c *.h
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* SGIArchitecture */

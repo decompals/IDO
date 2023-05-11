@@ -1,0 +1,29 @@
+XCOMM (c) Copyright 1989, 1990, 1991, 1992, 1993 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM Motif Release 1.2.3
+
+#ifdef SGIArchitecture /* Quickstart Fix for SGI */
+       DEPXMLIB = $(ROOT)$(SHLIBDIR)/libXm.so
+          XMLIB = -L$(ROOT)$(SHLIBDIR) -lXm
+       DEPMRMLIB = $(ROOT)$(SHLIBDIR)/libMrm.so
+          MRMLIB = -L$(ROOT)$(SHLIBDIR) -lMrm
+#endif /* SGIArchitecture */
+
+        DEPLIBS = MrmClientDepLibs
+LOCAL_LIBRARIES = MrmClientLibs
+
+SRCS = client_cb.c dialog.c menu_cb.c trip_cb.c xmtravel.c
+OBJS = client_cb.o dialog.o menu_cb.o trip_cb.o xmtravel.o
+
+MComplexProgramTarget(xmtravel,$(LOCAL_LIBRARIES),NullParameter)
+
+MSimpleUidTarget(client)
+MSimpleUidTarget(menu)
+MSimpleUidTarget(trip)
+
+InstallAppDefaults(XMtravel)
+#ifdef SGIArchitecture
+FILES = Imakefile *.c *.h *.uil README
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* sgi */

@@ -1,0 +1,4 @@
+finder*useSchemes: all
+finder*sgiMode: true
+!finder*useDropPocket: false
+!finder*useHistoryMenu: false

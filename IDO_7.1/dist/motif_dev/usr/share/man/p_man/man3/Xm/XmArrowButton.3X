@@ -1,0 +1,286 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmArrowButton 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmArrowButton \*O\(em The ArrowButton widget class
+.iX "XmArrowButton"
+.iX "widget class" "ArrowButton"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/ArrowB.h>
+.iE
+.sE
+.SH DESCRIPTION
+ArrowButton consists of a directional arrow surrounded by a
+border shadow.  When it is selected, the shadow changes
+to give the appearance that the
+ArrowButton has been pressed in.  When the
+ArrowButton is unselected, the shadow reverts to give the appearance that the
+ArrowButton is released, or out.
+.SS "Classes"
+ArrowButton inherits behavior and resources
+from \*LCore\*O and \*LXmPrimitive\*O classes.
+.PP 
+The class pointer is \*LxmArrowButtonWidgetClass\*O.
+.PP 
+The class name is \*LXmArrowButton\*O.
+.SS "New Resources"
+The following table defines a set of widget resources used by the programmer
+to specify data.  The programmer can also set the resource values for the
+inherited classes to set attributes for this widget.  To reference a
+resource by name or by class in a .Xdefaults file, remove the \*LXmN\*O or
+\*LXmC\*O prefix and use the remaining letters.  To specify one of the defined
+values for a resource in a .Xdefaults file, remove the \*LXm\*O prefix and use
+the remaining letters (in either lowercase or uppercase, but include any
+underscores between words).
+The codes in the access column indicate if the given resource can be
+set at creation time (C),
+set by using \*LXtSetValues\*O (S),
+retrieved by using \*LXtGetValues\*O (G), or is not applicable (N/A).
+.P
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmArrowButton Resource Set
+Name	Class	Type	Default	Access
+_
+XmNactivateCallback	XmCCallback	XtCallbackList	NULL	C
+XmNarmCallback	XmCCallback	XtCallbackList	NULL	C
+XmNarrowDirection	XmCArrowDirection	unsigned char	XmARROW_UP	CSG
+XmNdisarmCallback	XmCCallback	XtCallbackList	NULL	C
+XmNmultiClick	XmCMultiClick	unsigned char	dynamic	CSG
+.TE
+.VL  
+.LI "\*LXmNactivateCallback\*O"
+Specifies a list of callbacks that is called
+when the ArrowButton is activated.
+To activate the button, press and release \*LBSelect\*O
+while the pointer is inside
+the ArrowButton widget.  Activating the ArrowButton
+also disarms it.
+The reason sent by this callback is \*LXmCR_ACTIVATE\*O.
+.LI "\*LXmNarmCallback\*O"
+Specifies a list of callbacks that is called
+when the ArrowButton is armed.
+To arm this widget, press \*LBSelect\*O
+while the pointer is inside the ArrowButton.
+The reason sent by this callback is \*LXmCR_ARM\*O.
+.LI "\*LXmNarrowDirection\*O"
+Sets the arrow direction.
+The following are values for this resource:
+.wH .rS 
+.ML
+.LI
+\*LXmARROW_UP\*O.
+.LI
+\*LXmARROW_DOWN\*O.
+.LI
+\*LXmARROW_LEFT\*O.
+.LI
+\*LXmARROW_RIGHT\*O.
+.LE 
+.wH .rE
+.LI "\*LXmNdisarmCallback\*O"
+Specifies a list of callbacks that is called
+when the ArrowButton is disarmed.
+To disarm this widget, press and release
+\*LBSelect\*O while the pointer is inside the ArrowButton.
+The reason for this callback is \*LXmCR_DISARM\*O.
+.LI "\*LXmNmultiClick\*O"
+If a button click is followed by another button click within the time
+span specified by the display's multi-click time, and this resource is
+set to \*LXmMULTICLICK_DISCARD\*O, do not process the second click.
+If this resource is set to \*LXmMULTICLICK_KEEP\*O, process the event
+and increment \*Vclick_count\*O in the callback structure.
+When the button is not in a menu, the default value is
+\*LXmMULTICLICK_KEEP\*O.
+.LE 
+.SS "Inherited Resources"
+ArrowButton inherits behavior and resources from the following
+superclasses.  For a complete description of each resource, refer to the
+man page for that superclass.
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmPrimitive Resource Set
+Name	Class	Type	Default	Access
+_
+XmNbottomShadowColor	XmCBottomShadowColor	Pixel	dynamic	CSG
+XmNbottomShadowPixmap	XmCBottomShadowPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNforeground	XmCForeground	Pixel	dynamic	CSG
+XmNhelpCallback	XmCCallback	XtCallbackList	NULL	C
+XmNhighlightColor	XmCHighlightColor	Pixel	dynamic	CSG
+XmNhighlightOnEnter	XmCHighlightOnEnter	Boolean	False	CSG
+XmNhighlightPixmap	XmCHighlightPixmap	Pixmap	dynamic	CSG
+XmNhighlightThickness	XmCHighlightThickness	Dimension	2	CSG
+.wH .tH
+XmNnavigationType	XmCNavigationType	XmNavigationType	XmNONE	CSG
+XmNshadowThickness	XmCShadowThickness	Dimension	2	CSG
+XmNtopShadowColor	XmCTopShadowColor	Pixel	dynamic	CSG
+XmNtopShadowPixmap	XmCTopShadowPixmap	Pixmap	dynamic	CSG
+XmNtraversalOn	XmCTraversalOn	Boolean	True	CSG
+XmNunitType	XmCUnitType	unsigned char	dynamic	CSG
+XmNuserData	XmCUserData	XtPointer	NULL	CSG
+.TE
+.P 
+.wH .in 0 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtAccelerators	dynamic	CSG
+XmNancestorSensitive	XmCSensitive	Boolean	dynamic	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderColor	XmCBorderColor	Pixel	XtDefaultForeground	CSG
+XmNborderPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNborderWidth	XmCBorderWidth	Dimension	0	CSG
+XmNcolormap	XmCColormap	Colormap	dynamic	CG
+XmNdepth	XmCDepth	int	dynamic	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNheight	XmCHeight	Dimension	dynamic	CSG
+XmNinitialResourcesPersistent	XmCInitialResourcesPersistent	Boolean	True	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Screen *	dynamic	CG
+.wH .tH
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	dynamic	CSG
+XmNwidth	XmCWidth	Dimension	dynamic	CSG
+XmNx	XmCPosition	Position	0	CSG
+XmNy	XmCPosition	Position	0	CSG
+.TE
+.wH .in  
+.SS "Callback Information"
+A pointer to the following structure is passed to each callback:
+.sS
+.iS
+.ta .25i 1.1i
+typedef struct
+{
+	int	\*Vreason\*L;
+	XEvent	\*V* event\*L;
+	int	\*Vclick_count\*L;
+} XmArrowButtonCallbackStruct;
+.iE
+.sE
+.wH .fi
+.VL .75i 
+.LI "\*Vreason\*O"
+Indicates why the callback was invoked.
+.LI "\*Vevent\*O"
+Points to the \*LXEvent\*O that triggered the callback.
+.LI "\*Vclick_count\*O"
+This value is valid only when the reason is \*LXmCR_ACTIVATE\*O.
+It contains the number of clicks in the last multiclick sequence
+if the \*LXmNmultiClick\*O resource is set to \*LXmMULTICLICK_KEEP\*O;
+otherwise it contains \*L1\*O.
+The activate callback is invoked for each click if \*LXmNmultiClick\*O
+is set to \*LXmMULTICLICK_KEEP\*O.
+.LE 
+.SS "Translations"
+XmArrowButton includes translations for XmPrimitive.
+Additional XmArrowButton translations are listed below.
+These translations may not directly correspond to a
+translation table.
+.iS
+.ta 1.5i
+BSelect Press:	Arm()
+BSelect Click:	Activate()
+	Disarm()
+BSelect Release:	Activate()
+	Disarm()
+BSelect Press 2+:	MultiArm()
+BSelect Release 2+:	MultiActivate()
+.sp \n(PDu
+KSelect:	ArmAndActivate()
+KHelp:	Help()
+.wH .fi
+.iE
+.P 
+.ne 4i
+.SS "Action Routines"
+The XmArrowButton action routines are described below:
+.VL  
+.LI "\*LActivate()\*O:"
+Draws the shadow in the unselected state.
+If the pointer is within the ArrowButton,
+calls the callbacks for \*LXmNactivateCallback\*O.
+.LI "\*LArm()\*O:"
+Draws the shadow in the selected state and
+calls the callbacks for \*LXmNarmCallback\*O.
+.nL
+.ne 8
+.LI "\*LArmAndActivate()\*O:"
+Draws the shadow in the selected state and
+calls the callbacks for \*LXmNarmCallback\*O.
+Arranges for the shadow to be drawn in the unselected state and
+the callbacks for \*LXmNactivateCallback\*O and \*LXmNdisarmCallback\*O
+to be called, either immediately or at a later time.
+.LI "\*LDisarm()\*O:"
+Draws the shadow in the unselected state and
+calls the callbacks for \*LXmNdisarmCallback\*O.
+.LI "\*LHelp()\*O:"
+Calls the callbacks for \*LXmNhelpCallback\*O if any exist.
+If there are no help callbacks for this widget, this action calls the
+help callbacks for the nearest ancestor that has them.
+.LI "\*LMultiActivate()\*O:"
+If \*LXmNmultiClick\*O is \*LXmMULTICLICK_DISCARD\*O, this action does
+nothing.
+.P
+If \*LXmNmultiClick\*O is \*LXmMULTICLICK_KEEP\*O, this action does the
+following:
+Increments \*Vclick_count\*O in the callback structure.
+Draws the shadow in the unselected state.
+If the pointer is within the ArrowButton, calls the
+callbacks for \*LXmNactivateCallback\*O.
+Calls the callbacks for \*LXmNdisarmCallback\*O.
+.LI "\*LMultiArm()\*O:"
+If \*LXmNmultiClick\*O is \*LXmMULTICLICK_DISCARD\*O, this action does
+nothing.
+If \*LXmNmultiClick\*O is \*LXmMULTICLICK_KEEP\*O, this action
+draws the shadow in the selected state and calls the callbacks for
+\*LXmNarmCallback\*O.
+.LE
+.nL
+.ne 30
+.SS "Additional Behavior"
+This widget has the additional behavior described below:
+.VL  
+.LI "\*L<EnterWindow>\*O:"
+Draws the ArrowButton shadow in its selected state if the
+pointer leaves and re-enters the window while BSelect is pressed.
+.LI "\*L<LeaveWindow>\*O:"
+Draws the ArrowButton shadow in its unselected state
+if the pointer leaves the window while BSelect is pressed.
+.LE
+.SS "Virtual Bindings"
+The bindings for virtual keys are vendor specific.
+For information about bindings for virtual buttons and keys, see \*LVirtualBindings(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\*LCore(3X)\*O, \*LXmCreateArrowButton(3X)\*O, and \*LXmPrimitive(3X)\*O.
+.ad

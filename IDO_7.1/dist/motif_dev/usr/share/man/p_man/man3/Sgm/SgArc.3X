@@ -1,0 +1,238 @@
+.\" **
+.\" **
+.\" **  (c) Copyright 1992 by Silicon Graphics
+.\" **      All Rights Reserved.
+.\" **
+.\" **
+.\" **
+.\" Add simple keeps to MAN macros so .TS/.TE will work
+.\"
+.de KS	\"	Keep start
+.br
+.in 0
+.di KP
+..
+.de KE	\" 	Keep end
+.br
+.di
+.ne \\n(dnu
+.nr fI \\n(.u
+.nf
+.KP
+.if \\n(fI .fi
+.in
+..
+.TH SgArc 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+.B SgArcWidgetClass \*O\(em Arc widget designed for use with SgGraph.
+.SH SYNOPSIS
+.Ex
+#include <Xm/Xm.h>
+#include <Sgm/Graph.h>
+#include <Sgm/Arc.h>
+.Ee
+.SH DESCRIPTION
+The SgArc widget is a special widget that resembles a gadget in that
+it has no window of its own. It draws in the window of the SgGraph
+widget, with cooperation of the Graph widget. The Arc widget can only
+be used with the Graph widget.  An arc may be undirected, directed, or
+bidirected.
+.SS CLASSES
+.P
+The Arc widget inherits behavior from the Core widget class.
+.sp
+Its class
+pointer is \fBsgArcWidgetClass\fP 
+.sp
+Its class name is \fBSgArc\fP.
+.SH "ARC RESOURCES"
+The Arc widget defines a set of resource types used by the programmer
+to specify the data for the arc.  These resources are used to set
+attributes for arcs when specifying node parent-child relationships.
+The following table contains the set of resources defined by the Arc
+widget. To specify any of these resources within the .Xdefaults file,
+simply drop the XmN prefix from the resource name.
+.sp 1
+.DS
+.TS
+center allbox;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8lp8lp8lp8lp8.
+SgArc Resource Set
+Name	Class	Type	Default	Access
+_
+XmNto	XmCTo	XmRPointer	NULL	CSG
+XmNfrom	XmCFrom	XmRPointer	NULL	CSG
+XmNtoPosition	XmCPosition	XmRShort	50	CSG
+XmNfromPosition	XmCPosition	XmRShort	50	CSG
+XmNfromSide	XmCSide	XmRShort	XmRIGHT	CSG
+XmNtoSide	XmCSide	XmRShort	XmLEFT	CSG
+XmNarcDirection	XmCDirection	XmRArcDirection	XmDIRECTED	CSG
+XmNforeground	XmCForeground	Pixel	"Black"	CSG
+XmNhighlight	XmCHighlight	Boolean	"False"	CSG
+XmNfontList	XmCFontList	FontList	"Fixed	"	CSG
+XmNlabelString	XmCXmString	XmString	dynamic	CSG
+XmNmapLabel	XmCBoolean	Boolean	"FALSE"	CSG
+XmNarcWidth	XmCArcWidth	int	0	CSG
+XmNstyle	XmCStyle	int	LineSolid	CSG
+XmNcapStyle	XmCapStyle	int	CapButt	CSG
+XmNdashes	XmCDashes	int	4	CSG
+XmNdashOffset	XmCDashOffset	int	0	CSG
+XmNarmCallback	XmCCallback	Pointer	NULL	C
+XmNdisarmCallback	XmCCallback	Pointer	NULL	C
+XmNactivateCallback	XmCCallback	Pointer	NULL	C
+XmNatribute	XmCAttribute	Atom	NULL	C
+XmNuserData	XmCUserData	Pointer	NULL	CSG
+.TE
+.in 0
+.KE
+.sp
+.IP "\fBXmNto\fP"
+The widget this arc points to.
+.sp
+.IP "\fBXmNfrom\fP"
+The widget this arc points from.
+.sp
+.IP "\fBXmNarcWidth\fP"
+The width, in pixels, of the line drawn for the arc.  Zero means to draw
+using the server's fastest algorithm with a line width of one pixel.
+.IP "\fBXmNstyle\fP"
+Specifies whether the line is solid in foreground, dashed in foreground, or
+alternating foreground and background. Possible values are LineSolid (the
+default), LineOnOffDash, or LineDoubleDash.
+.IP "\fBXmNcapStyle\fP"
+Controls the appearance of the ends of a line. This characteristic affects
+the ends of lines drawn in dashes, and both ends of each dash in some
+cases. Possible values are CapNotLast, CapButt (the default), CapRound, and
+CapProjecting.
+.IP "\fBXmNdashes\fP"
+Specifies the length of the dashes for custom-designed dashed lines. The
+default (4) is equivalent to the list {4,4} (a dash of 4 pixels, followed
+by a space of 4 pixels).
+.IP "\fBXmNdashOffset\fP"
+Specifies the starting point of the dash pattern, from the parent node, for
+dashed lines.
+.IP "\fBXmNlabelString\fP"
+This resource specifies a compound string which will be displayed with the
+arc, if the XmNmapLabel resource is true. If no labelString is given, the
+widget defaults to using the widget name as the label.
+.IP "\fBXmNmapLabel\fP"
+If true (the default), the label, if any, will be displayed.
+.IP "\fBXmNarcDirection\fP"
+If XmDIRECTED, will display an arrow head on the child end, if XmBIDIRECTED
+will display an arrow head on both ends, otherwise no arrow head is
+displayed.
+.IP "\fBXmNforeground\fP"
+Color in which the arc and its label will be drawn.
+.IP "\fBXmNfontList\fP"
+Font used to write the label with when XmNmapLabel is true.
+.IP "\fBXmNarmCallback\fP"
+.IP "\fBXmNdisarmCallback\fP"
+.IP "\fBXmNactivateCallback\fP"
+These callbacks are equivalent to the pushbutton callbacks of the same name.
+.IP "\fBXmNfromSide\fP"
+If the parent graph widget's XmNdrawMode resource is set to
+XmPOSITION_PROPORTIONAL, this resource determines the side of the
+"from" node to which this arc is attached. Possible values are XmLEFT,
+XmRIGHT, XmTOP, and XmBOTTOM.
+.IP "\fBXmNfromPosition\fP"
+If the parent graph widget's XmNdrawMode resource is set to
+XmPOSITION_PROPORTIONAL, this resource determines the position of the
+arc at the point it leaves the "from" node. Values are given in
+percentages of the relevant node size, and can range from 0-100.
+.IP "\fBXmNtoSide\fP"
+If the parent graph widget's XmNdrawMode resource is set to
+XmPOSITION_PROPORTIONAL, this resource determines the side of the
+"to" node to which this arc is attached. Possible values are XmLEFT,
+XmRIGHT, XmTOP, and XmBOTTOM.
+.IP "\fBXmNtoPosition\fP"
+If the parent graph widget's XmNdrawMode resource is set to
+XmPOSITION_PROPORTIONAL, this resource determines the position of the
+arc at the point it leaves the "to" node. Values are given in
+percentages of the relevant node size, and can range from 0-100.
+.sp 
+.SH "INHERITED RESOURCES"
+The following resources are inherited from the named superclasses:
+.DS
+.TS
+center allbox;
+cBp9 ssss
+cBp8 cBp8 cBp8 cBp8 cBp8
+lp8lp8lp8lp8lp8.
+Core Resource Set
+Name	Class	Type	Default	Access
+_
+XmNaccelerators	XmCAccelerators	XtTranslations	NULL	CSG
+XmNancestorSensitive	XmCSensitive	Boolean	True	G
+XmNbackground	XmCBackground	Pixel	dynamic	CSG
+XmNbackgroundPixmap	XmCPixmap	Pixmap	XmUNSPECIFIED_PIXMAP	CSG
+XmNcolormap	XmCColormap	Colormap	XtCopyFromParent	CG
+XmNdepth	XmCDepth	int	XtCopyFromParent	CG
+XmNdestroyCallback	XmCCallback	XtCallbackList	NULL	C
+XmNmappedWhenManaged	XmCMappedWhenManaged	Boolean	True	CSG
+XmNscreen	XmCScreen	Pointer	XtCopyScreen	CG
+XmNsensitive	XmCSensitive	Boolean	True	CSG
+XmNtranslations	XmCTranslations	XtTranslations	NULL	CSG
+.TE
+.DE
+.sp 1
+.sp 2
+.SS "Callback Information"
+.PP
+See SgGraph(3x)
+.sp
+.SH "UTILITY FUNCTIONS"
+.sp
+Widget \fBSgCreateArc\fP \fI(graph, name, args, n_args)\fP
+.br
+  XwGraphWidget  \fIgraph;\fP
+.br
+  char           \fIname;\fP
+.br
+  ArgList          \fIargs;\fP
+.br
+  int              \fIn_args;\fP
+.sp
+A convenience function that creates an SgArc widget named \fIname\fP whose
+parent is \fIgraph\fP.
+.sp
+Widget \fBSgCreateAttachedArc\fP \fI(graph, name, from, to, args, n_args)\fP
+.br
+  XwGraphWidget  \fIgraph;\fP
+.br
+  char           \fIname;\fP
+.br
+  Widget          \fIfrom;\fP
+.br
+  Widget          \fIto;\fP
+.br
+  ArgList          \fIargs;\fP
+.br
+  int              \fIn_args;\fP
+.sp
+\fBSgCreateAttachedArc\fP creates an arc from \fIfrom\fP to \fIto\fP with
+arguments \fIargs\fP, name \fIname\fP, and returns its widget ID.
+\fIfrom\fP and \fIto\fP must be node widgets in \fIgraph\fP.  Returns NULL
+if not successful.
+.sp
+Widget \fBSgArcGetPos\fP \fI(arc, x1, y1, x2, y2)\fP
+.br
+  SgArcWidget  \fIarc;\fP
+.br
+  Position      \fI*x1, *y1, *x2, *y2;\fP
+.sp
+\fBSgArcGetPos\fP returns the coordinates of the endpoints of the given arc.
+.SH RELATED INFORMATION
+.na
+\*LComposite(3X)\*O,
+\*LConstraint(3X)\*O,
+\*LCore(3X)\*O,
+\*LXmManager(3X)\*O,
+\*LSgGrid(3X)\*O,
+.ad

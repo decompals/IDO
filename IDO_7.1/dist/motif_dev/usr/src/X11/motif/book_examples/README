@@ -1,0 +1,93 @@
+
+This directory contains the source code for the examples in the book:
+
+ "The X Window System: Programming and Applications with Xt, Motif Edition" 
+   by Douglas Young
+
+publisher: Prentice Hall, 1990
+ISBN  0-13-497-074-8
+Availability Date:  Jan 14, 1990
+Prentice Hall order line: 201-767-5937
+
+These examples are similar to those in the original version of the book, "X
+Window Systems Programming and Applications with Xt", which used the HP
+widget set. However, these examples now use the Motif widget set entirely.
+In many cases, you can probably follow along from the old book. However,
+I've not made any attempt to keep the examples exactly as in the original
+book. In some cases the examples are identical, except for the use of
+Motif. In other cases, the examples had to be altered drastically to
+accommodate Motif. In still other cases, I simple decided to try a
+different, hopefully better way to do things. And then a few examples are
+all new for this edition.
+
+Note that these programs are examples used to illustrate various aspects of
+X, Xt, and Motif for the book. They don't necessarily represent the best
+way to write certain tools, nor are the programs necessarily useful in
+their own right (though I hope some are). Each program was intended to
+illustrate some point, and therefore the programs are often somewhat
+contrived in order to do just that and also to fit into the space allotment
+within a chapter.  It's not that any example is necessary the wrong way to
+do something, but the goal was to demonstrate a particular feature of Xt or
+Motif, not necessary to show the best way to design a graphics editor, or a
+file viewer, or whatever.  I hope the examples are useful for the purpose
+they were intended to serve.
+
+I've caught a few bugs and made minor changes to a few of the programs
+since the book went to press many months ago. These are noted in the
+programs where they occur, with the old code ifdef'd as
+
+#ifdef JUST_LIKE_BOOK
+ /* Code described in book */
+#else
+ /* Fixed or improved version */
+#endif
+
+There are also a few extra programs, variations of examples that didn't
+make it into the book for one reason or another.
+
+
+=====  SGI NOTES  =====
+
+>>  These example programs are unsupported at this time.  SGI has
+>>  fixed some bugs in them.  It is known that bugs remain; bug reports
+>>  are welcome, but fixing the bugs is not guaranteed.  See the Release
+>>  Notes for a current list of example program bugs.
+
+To build the book programs:
+
+1. If you have installed a new version of Motif over an old one, we suggest
+   that you first:
+
+	cd /usr/src/X11/motif/book
+	make clean
+
+   This is because the installation process will not delete any object files
+   which were built from the previously installed version.
+
+2. Application default files -- you can either:
+
+   Copy all of the default files to the standard public place:
+	% su
+	% cp /usr/src/X11/motif/book/AppDefaults/* /usr/lib/X11/app-defaults
+
+    Or else, each time you want to run the examples, let X11 know where they
+    are.  To do that, you should append ":%N" to your $XUSERFILESEARCHPATH.
+    If you do not have $XUSERFILESEARCHPATH set, then set $XAPPLRESDIR to ".".
+
+
+3. Building example programs & Size -- the book examples tree requires about
+   1.5 megabytes as shipped.  With all examples fully built, it requires about
+   32 megabytes.  To build the demos, you can either:
+
+    make all of the example programs:
+	% cd /usr/src/X11/motif/book	# Top of the example programs tree
+	% make all			# Build all of the demos
+
+    or else, to conserve space, just make those you care about:
+	% cd /usr/src/X11/motif/book/lib
+	% make all			# Examples need the library
+	% cd /usr/src/X11/motif/book/XXX	# XXX is the example you want
+	% make all			# Build all examples in that directory
+
+4. README's -- read the README file, if any, in the directory of any example
+   you want to run.  It will give any non-standard information.

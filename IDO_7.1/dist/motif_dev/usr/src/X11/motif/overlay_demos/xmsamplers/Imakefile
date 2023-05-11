@@ -1,0 +1,65 @@
+XCOMM 
+XCOMM (c) Copyright 1989, 1990, 1991, 1992, 1993 OPEN SOFTWARE FOUNDATION, INC. 
+XCOMM ALL RIGHTS RESERVED 
+XCOMM 
+XCOMM 
+XCOMM Motif Release 1.2.3
+XCOMM 
+XCOMM   $RCSfile: Imakefile,v $ $Revision: 2.10 $ $Date: 1995/03/10 19:32:11 $
+
+#ifndef SGIArchitecture /* OSF original */
+        DEPLIBS = XmClientDepLibs
+LOCAL_LIBRARIES = XmClientLibs
+#else
+  EXTRA_DEFINES = -DOVERLAY_DEMO
+        DEPLIBS = ../lib/sgi_intl.o ../lib/sgi_visual.o ../lib/shell/Shell.o
+LOCAL_LIBRARIES = ../lib/sgi_intl.o ../lib/sgi_visual.o $(XMLIB) \
+		  ../lib/shell/Shell.o $(XTOOLLIB) $(XONLYLIB) $(XMEXTRA_LIBS)
+#endif /* SGIArchitecture */
+
+SRCS=	\
+	xmdialogs.c \
+	xmeditor.c \
+	xmfonts.c \
+	xmlist.c \
+	xmter.c \
+	xmprotocol.c
+
+MSimpleProgramTarget(xmdialogs)
+MSimpleProgramTarget(xmeditor)
+MSimpleProgramTarget(xmfonts)
+MSimpleProgramTarget(xmlist)
+MSimpleProgramTarget(xmprotocol)
+#ifndef SGIArchitecture /* OSF original */
+MSimpleProgramTarget(xmter)
+#else /* SGI change */
+/*
+ * The problem is that only xmter needs libXext.so.  The standard macros
+ * don't offer a way to do this, so we basically re-create the macro by
+ * hand here.
+ */
+AllTarget(xmter)
+
+xmter: xmter.o $(DEPS) $(DEPLIBS) $(DEPEXTENSIONLIB)
+	RemoveTargetProgram($@)
+	$(CC) -o $@ xmter.o $(LDOPTIONS) $(DEPS) $(LOCAL_LIBRARIES) \
+		$(LDLIBS) $(EXTRA_LOAD_FLAGS) $(EXTENSIONLIB)
+
+clean::
+	$(RM) xmter
+#endif /* SGIArchitecture */
+
+InstallProgram(xmdialogs,$(BINDIR))
+InstallProgram(xmeditor,$(BINDIR))
+InstallProgram(xmfonts,$(BINDIR))
+InstallProgram(xmlist,$(BINDIR))
+InstallProgram(xmprotocol,$(BINDIR))
+InstallProgram(xmter,$(BINDIR))
+
+InstallAppDefaults(XMdemos)
+
+DependTarget()
+#ifdef SGIArchitecture
+FILES = Imakefile README *.c *.xbm
+InstallMultiple($(FILES),$(MDEMOSRCDIR))
+#endif /* SGIArchitecture */

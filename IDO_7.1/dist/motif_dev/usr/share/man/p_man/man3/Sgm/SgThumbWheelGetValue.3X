@@ -1,0 +1,48 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH SgThumbWheelGetValue 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgThumbWheelGetValue \*O\(em A ThumbWheel function that returns the current wheel position
+.iX "SgThumbWheelGetValue"
+.iX "ThumbWheel functions" "XmThumbWheelGetValue"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sgm/ThumbWheel.h>
+.sp \n(PDu
+void SgThumbWheelGetValue (\*Vwidget, value_return\*L)
+.ta .5i 1.5i
+	Widget	\*Vwidget\*L;
+	int	\*V* value_return\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LSgThumbWheelGetValue\*O returns the current thumb wheel position value.
+.VL 1i 
+.LI "\*Vwidget\*O"
+Specifies the ThumbWheel widget ID
+.LI "\*Vvalue_return\*O"
+Returns the current thumb wheel position value
+.LE 
+.PP 
+For a complete definition of ThumbWheel and its associated resources, see
+\*LSgThumbWheel(3X)\*O.
+.SH RELATED INFORMATION
+.na
+\fBSgThumbWheel(3X)\fP, \fBSgThumbWheelSetValue(3X)\fP.
+.ad

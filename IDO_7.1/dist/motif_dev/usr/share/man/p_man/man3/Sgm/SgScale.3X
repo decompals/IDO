@@ -1,0 +1,77 @@
+.TH XmScale SGI Resources 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmScale SGI Resources \*O\(em XmScale SGI Resources
+.iX "XmScale" "SGI Resources
+.iX "widget class"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Scale.h>
+.iE
+.sE
+.SH DESCRIPTION
+This man pages describes new resources added to the Motif Scale widget
+by SGI. To get these resources you need to #define __sgi in your
+application.
+
+For a description of the XmScale widget non-SGI resources see the 
+XmScale man page.
+.PP
+
+.SS "New Resources"
+The following table defines a set of widget resources used by the
+programmer to specify data.  The programmer can also set the resource
+values for the inherited classes to set attributes for this widget.
+To reference a resource by name or by class in a .Xdefaults file,
+remove the \*LXmN\*O or \*LXmC\*O prefix and use
+the remaining letters.  To specify one of the defined values for a
+resource in a .Xdefaults file, remove the \*LXm\*O prefix and use the
+remaining letters (in either lowercase or uppercase, but include any
+underscores between words).
+The codes in the access column indicate if the given resource can be
+set at creation time (C),
+set by using \*LXtSetValues\*O (S),
+retrieved by using \*LXtGetValues\*O (G), or is not applicable (N/A).
+.P 
+.TS 
+center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8 lp8.
+XmScale SGI Resource Set
+Name	Class	Type	Default	Access
+_
+XmNsliderVisual	XmCSliderVisual	XmRSliderVisual	XmETCHED_LINE	CSG
+XmNslidingMode 	XmCSlidingMode	XmRSlidingMode	XmSLIDER	CSG
+XmNeditable	XmCEditable	XtBoolean	True	CSG
+
+.TE
+.VL  
+.LI "\*LXmNsliderVisual\*O"
+Specifies the visual representation of the slider.
+This can take on the values XmETCHED_LINE, the default; XmSHADOWED,
+meaning there is no single etched line across the center of the slider;
+and XmFLAT_FOREGROUND, meaning there is no etched line and there are
+no shadows on the edges of the slider.
+.LI "\*LXmNslidingMode\*O"
+Specifies the way the slider shows the current value.
+This can take on the values XmSLIDER, the default, meaning that the
+slider moves back and forth within the trough to show the value; and
+XmTHERMOMETER, meaning that the slider is anchored to one end of the
+trough and it grows and shrinks to show the value.
+.LI "\*LXmNeditable\*O"
+Specifies whether the scale widget acts upon user input.
+Setting this to False makes the scale widget insensitive to user input
+but not greyed out as if XmNsensitive was used.
+.LE
+
+.SH RELATED INFORMATION
+.na
+\*LXmScale SGI Resources(3X)\*O,
+\*LXmScale(3X)\*O
+.ad

@@ -1,0 +1,48 @@
+.TH SgFileSelectionBoxReplaceSuffix 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgFileSelectionBoxReplaceSuffix \*O\(em A FileSelectionBox function used to 
+replace the suffix of the current file name.
+.iX "SgFileSelectionBoxReplaceSuffix"
+.iX "FileSelectionBox functions" "SgFileSelectionBoxReplaceSuffix"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/FileSB.h>
+.sp \n(PDu
+void SgFileSelectionBoxReplaceSuffix (\*Vwidget, file_type, default_suffix\*L)
+.ta .5i 1.5i
+	Widget	\*Vwidget\*L;
+	const char *	\*Vfile_type\*L;
+	const char *	\*Vdefault_suffix\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LSgFileSelectionReplaceSuffix\*O is used to replace the suffix of
+the current filename within a FileSelectionBox.  The parameters given
+to the function are the FileSelectionBox widget, the FTR file type
+from which to derive the new suffix, and a default suffix to be used
+if the FTR database does not contain a suffix for the given file type.
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the FileSelectionBox widget ID.
+.LI "\*Vfile_type\*O"
+Specifies the FTR file type to be used in determining the new suffix.
+.LI "\*Vdefault_suffix\*O"
+Specifies the suffix to be used if FTR database does not contain a
+suffix for the given file type.
+.LE
+.PP 
+For a complete definition of FileSelectionBox and its associated resources, see
+\*LSgFileSelectionBox(3X)\*O.
+.LE 
+.SH RELATED INFORMATION
+.na
+\*LSgFileSelectionBox(3X)\*O.
+.ad
+

@@ -1,0 +1,373 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH SgtSelectSimple 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+
+.SH NAME
+\*LSgtSelectSimple \*O\(em The SGI simplifed selection routines
+.iX "SgtSelectSimple"
+.iX "selection routines"
+.iX "simple selection routines"
+
+.SH SYNOPSIS
+.sS
+.iS
+.ta 5 20
+\&#include <Sgt/SelectSimple.h>
+
+\&Boolean SgtGetSimple(
+	Widget	widget, 
+	Atom	selection, 
+	unsigned long	*lengthP, 
+	XtPointer	*dataP,
+	Atom	target,
+	Atom	type);
+
+\&Boolean SgtGetSimpleXxxxx(
+	Widget	widget,
+	Atom	selection,
+	unsigned long	*lengthP,
+	Xtpointer	*dataP)
+
+\&Boolean SgtPostSimple(
+	Widget	widget, 
+	Atom	selection, 
+	unsigned long	length,
+	XtPointer	data,
+	Atom	target,
+	Atom	type,
+	int	format);
+
+\&Boolean SgtPostSimpleXxxxx(
+	Widget	widget,
+	Atom	selection,
+	unsigned long	length,
+	Xtpointer	data)
+
+\&void SgtSetLoseSelectionCallback (
+	Widget	widget,
+	Atom	selection,
+	XtLoseSelectionProc	proc)
+
+\&Boolean SgtUnpostSimple (
+	Widget	widget,
+	Atom	selection)
+.DT
+.iE
+.sE
+
+.bp
+.SH "ARGUMENTS"
+.TP 12
+\*Ldata\*o
+is a pointer to the data to be transferred.
+Since the actual data transfer will happen some time later,
+"data" must point to storage that will still be valid then.
+Normally, this requires static (not stack) storage.
+.TP 12
+\*LdataP\*O
+is a pointer to a location which will, upon return,
+point to the data that was received.
+It is the caller's responsibility to XtFree(3X) the data storage
+once it is no longer needed.
+.TP 12
+\*Lformat\*O
+specifies the size, in bits, of the data elements of the value.
+This is used by X for any necessary byte-swapping.
+This is normally 8, 16, or 32.
+.TP 12
+\*Llength\*O
+is the number of bytes of data being transferred.
+.TP 12
+\*LlengthP\*O
+is a pointer to a location which will, upon return,
+contain the amount of data that was received.
+.TP 12
+\*Lproc\*O
+the callback procedure to be invoked when the selection is lost.
+.TP 12
+\*Lselection\*O
+The selection being used to transfer the data
+(usually XA_PRIMARY XA_SECONDARY or "CLIPBOARD").
+.TP 12
+\*Ltarget\*O
+The kind of data being transferred, such as "LIST_LENGTH".
+.TP 12
+\*Ltype\*O
+the representation type of data being transferred,
+such as XA_STRING.
+.TP 12
+\*Lwidget\*O
+The widget associated with the selection.
+
+...\" ** We need to expand the following section -- tell them what the
+...\" ** limitations of the convenience functions are.
+.SH DESCRIPTION
+These routines provide a simplified interface to the Xt selection mechanism.
+The calls are simpler, but less flexible,
+than the standard libXt calls themselves.
+For example:
+.ML
+.LI
+The \*LSgtGetSimpleXxxxx()\*O and \*LSgtPostSimpleXxxxx()\*O calls require
+that the application,
+at the time it takes ownership of the selection,
+must decide what type of data it wants to supply.
+.P
+The library will then supply that type, plus any of the standard
+derived targets
+(those that are are marked with a \*LYes\*O under the
+.I "Automatically Supplied"
+column in the table below).
+.LI
+Using normal
+.I libXt
+calls,
+an application can respond to a request for \*LTARGETS\*O
+with a list of targets it is willing to supply.
+Other than the targets that are automatically supplied by the library,
+there is no such capability with the convenience routines.
+.LI
+The convenience routines do not provide any way to deal with the
+\*LMULTIPLE\*O target.
+.LI
+The convenience routines do not provide any way to deal with explicit
+incremental transfer.
+.LI
+The LoseSelectionCallback routine must be set separately from any actual
+data transfer calls, rather than being passed as a parameter.
+.LE
+.PP
+If these simple calls meet your needs, use them.
+
+.SS "SgtSetLoseSelectionCallback()"
+An application loses the selection whenever another application claims it.
+Loss of the selection is normally handled by a callback routine.
+The simple data transfer calls do not allow an application to specify the
+callback routine telling that this has happened.
+\*LSgtSetLoseSelectionCallback()\*O is used to do so.
+.PP
+If \*Lproc\*O is NULL, no callback will be made.
+This can be used to cancel a previous \*LSgtSetLoseSelectionCallback()\*O.
+
+.SS "SgtUnpostSimple()"
+This call permits the application to voluntarily relinquish ownership of
+the selection.
+
+.SS "SgtGetSimple(), SgtPostSimple()"
+These calls are used
+if you wish to use a type of data that is not supported by the pre-defined
+calls (below),
+or if you need to decide on the selection target at runtime.
+Otherwise it is easier to use
+\*LSgtGetSimpleXxxxx()\*O and \*LSgtPostSimpleXxxxx()\*O.
+.VL
+.LI "\*LSgtGetSimple()\*O"
+requests data.
+.LI "\*LSgtPostSimple()\*O"
+both asserts ownership of the selection, and makes data available.
+.LE
+
+.SS "SgtGetSimpleXxxxx(), SgtPostSimpleXxxxx()"
+\*LXxxxxx\*O is replaced by one of the standard selection targets (see below).
+For each selection target supported by simple calls, there are two entry points.
+These may be used when you know at compile time
+precisely which type(s) of data you wish to supply or obtain.
+.VL
+.LI "\*LSgtGetSimpleXxxxx()\*O"
+requests data of type \*LXxxxx\*O.
+.LI "\*LSgtPostSimpleXxxxx()\*O"
+both asserts ownership of the selection,
+and makes data of type \*LXxxxx\*O available.
+.LE
+
+.SS "Standard Selection Targets"
+.PP
+Convenience routine pairs exist for all of the ICCCM selection targets,
+and those that are defacto standard
+because \*LXmuConvertStandardSelection()\*O supports them.
+As time goes on, any new industry- or SGI-standardized selection targets
+will be added to this list.
+.PP
+In the following table,
+each atom whose name begins with "XA_" is predefined in <X11/Xatom.h>.
+These atoms may be used verbatim.
+All other atoms must be intern'd before use.
+.PP
+Those convenience functions listed as "UNTESTED" have not been tested.
+They are believed to work,
+but we do not know of any real-world examples to test them against.
+If you do know of one, please file a bug report telling us about it.
+If you have an example program that is known to be correct,
+please file a bug report with the example program included.
+
+.TS
+box center ;
+cBp9 ssss
+lBp8 lBp8 lBp8 lBp8
+lBp8 lBp8 lBp8 lBp8
+lp8 lp8 lp8 lp8.
+Convenience Function Selection Targets
+.SP
+	Predefined ATOM		Automatically
+Xxxxx	or Atom Name	Standard	Supplied	Remarks
+=
+ARC	XA_ARC	ICCCM	No	UNTESTED
+ATOM	XA_ATOM	ICCCM	No	UNTESTED
+BACKGROUND	"BACKGROUND"	ICCCM	No	UNTESTED
+BITMAP	XA_BITMAP	ICCCM	No
+CARDINAL	XA_CARDINAL	ICCCM	No	UNTESTED
+CHARACTER_POSITION	"CHARACTER_POSITION"	ICCCM	No
+CLASS	"CLASS"	ICCCM	No
+CLIENT_WINDOW	"CLIENT_WINDOW"	ICCCM	\*LYes\*O
+COLORMAP	XA_COLORMAP	ICCCM	No	UNTESTED
+COLUMN_NUMBER	"COLUMN_NUMBER"	ICCCM	No	UNTESTED
+COMPOUND_TEXT	"COMPOUND_TEXT"	ICCCM	No
+CURSOR	XA_CURSOR	ICCCM	No	UNTESTED
+DECNET_ADDRESS	"DECNET_ADDRESS"	Xmu	N/A	UNTESTED
+DELETE	"DELETE"	ICCCM	No
+DRAWABLE	XA_DRAWABLE	ICCCM	No	UNTESTED
+FILE_NAME	"FILE_NAME"	ICCCM	No	UNTESTED
+FONT	XA_FONT	ICCCM	No	UNTESTED
+FOREGROUND	"FOREGROUND"	ICCCM	No	UNTESTED
+HOSTNAME	"HOSTNAME"	ICCCM	\*LYes\*O
+INTEGER	XA_INTEGER	ICCCM	No	UNTESTED
+IP_ADDRESS	"IP_ADDRESS"	Xmu	\*LYes\*O
+LENGTH	"LENGTH"	ICCCM	No
+LINE_NUMBER	"LINE_NUMBER"	ICCCM	No	UNTESTED
+LIST_LENGTH	"LIST_LENGTH"	ICCCM	No
+MODULE	"MODULE"	ICCCM	No	UNTESTED
+NAME	"NAME"	ICCCM	\*LYes\*O
+ODIF	"ODIF"	ICCCM	No	UNTESTED
+OWNER_OS	"OWNER_OS"	ICCCM	\*LYes\*O
+PIXMAP	XA_PIXMAP	ICCCM	No
+POINT	XA_POINT	ICCCM	No	UNTESTED
+PROCEDURE	"PROCEDURE"	ICCCM	No	UNTESTED
+PROCESS_INTEGER	"PROCESS"	ICCCM	No	UNTESTED; INTEGER data type
+PROCESS_STRING	"PROCESS"	ICCCM	No	UNTESTED; STRING data type
+RECTANGLE	XA_RECTANGLE	ICCCM	No	UNTESTED
+RGB_COLOR_MAP	XA_RGB_COLOR_MAP	ICCCM	No	UNTESTED
+STRING	XA_STRING	ICCCM	No
+TARGETS	"TARGETS"	ICCCM	\*LYes\*O
+TASK_INTEGER	"TASK"	ICCCM	No	UNTESTED; INTEGER data type
+TASK_STRING	"TASK"	ICCCM	No	UNTESTED; STRING data type
+TEXT	"TEXT"	ICCCM	No
+TIMESTAMP	"TIMESTAMP"	ICCCM	\*LYes\*O
+USER	"USER"	ICCCM	\*LYes\*O
+VISUALID	XA_VISUALID	ICCCM	No	UNTESTED
+WINDOW	XA_WINDOW	ICCCM	No	UNTESTED
+WM_HINTS	XA_WM_HINTS	ICCCM	No	UNTESTED
+WM_SIZE_HINTS	XA_WM_SIZE_HINTS	ICCCM	No	UNTESTED
+.TE
+.bp
+
+.SS "Unsupported Targets"
+The following ICCCM standard targets
+are not supported with convenience functions:
+.TP 12
+MULTIPLE
+requests more than one target at a time.
+This is not appropriate for the convenience functions.
+.TP 12
+INSERT_SELECTION
+is a side-effect target, not a data transfer target.
+This is not appropriate for the convenience functions.
+.TP 12
+INSERT_PROPERTY
+is a side-effect target, not a data transfer target.
+This is not appropriate for the convenience functions.
+
+.SH EXAMPLES
+The best way to understand these calls is to look at the
+example programs are located under the directory
+/usr/src/X11/motif/Sgt/selectSimple.
+.PP
+To illustrate the correspondence between the generalized convenience calls
+and the specific convenience calls:
+.PP
+The specific convenience call
+.HP 5
+SgtGetSimpleBITMAP (widget, selection, lengthP, dataP);
+.SP
+is the same as the generalized convenience call
+.HP 5
+SgtGetSimple (widget, selection, lengthP, dataP, XA_BITMAP, XA_PIXMAP);
+.PP
+The specific convenience call
+.HP 5
+SgtPostSimpleCOMPOUND_TEXT (widget, selection, length, data);
+.SP
+is the same as the generalized convenience call
+.HP 5
+SgtPostSimple (widget, selection, length, data,
+XmInternAtom("COMPOUND_TEXT"), XmInternAtom("COMPOUND_TEXT"), 8);
+
+...\" ** The following section is often called "SEE ALSO"
+.SH RELATED INFORMATION
+.na
+\*LXInternAtom(3X)\*O,
+\*LXmuConvertStandardSelection(6)\*O,
+\*LXtCancelConvertSelectionProc(3X)\*O,
+\*LXtConvertSelectionIncrProc(3X)\*O,
+\*LXtConvertSelectionProc(3X)\*O,
+\*LXtDisownSelection(3X)\*O,
+\*LXtGetSelectionValue(3X)\*O,
+\*LXtGetSelectionValueIncremental(3X)\*O,
+\*LXtGetSelectionValues(3X)\*O,
+\*LXtGetSelectionValuesIncremental(3X)\*O,
+\*LXtLoseSelectionIncrProc(3X)\*O,
+\*LXtLoseSelectionProc(3X)\*O,
+\*LXtOwnSelection(3X)\*O,
+\*LXtOwnSelectionIncremental(3X)\*O,
+\*LXtSelectionCallbackProc(3X)\*O,
+\*LXtSelectionDoneIncrProc(3X)\*O,
+\*LXtSelectionDoneProc(3X)\*O.
+.ad
+.br
+\*LInter-Client Communication Conventions Manual\*O.
+
+.SH NOTES
+The following calls are still experimental.
+They seem convenient and/or helpful.
+They may change, or even be totally deleted, in a future release.
+.na
+.nf
+/*
+ * Entries to set the debug levels.
+ * This is mainly to help debug user programs.
+ */
+void SgtSetSimpleSelectDebug(int level)
+void SgtSetSimpleSelectLibDebug(int level)
+
+.ne 5
+/*
+ * Switch the widget's background and foreground.
+ * This can be useful for indicating simple selections.
+ */
+void SgtSwitchBackground(Widget w)
+.fi
+.ad
+
+...\" ** .SH DIAGNOSTICS
+...\" ** Details error statuses returned -- we probably need this
+
+...\" ** .SH WARNING
+...\" ** warn of anything unexpected, including unexpected interactions.
+...\" ** we do not have anything like that right now.
+
+...\" ** .SH BUGS
+...\" ** tell about known bugs.
+...\" ** we do not have anything like that right now.

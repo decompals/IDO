@@ -1,0 +1,42 @@
+.TH SgFinderSetTextString 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LSgFinderSetTextString \*O\(em A Finder function that sets the string value
+.iX "SgFinderSetTextString"
+.iX "Finder functions" "SgFinderSetTextString"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Sgm/Finder.h>
+.sp \n(PDu
+void SgFinderSetTextString (\*Vwidget, value\*L)
+.ta .5i 1.5i
+	Widget		\*Vwidget\*L;
+	char	\*V* value\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LSgFinderSetTextString\*O sets the string value of the Finder widget.
+This routine calls the widget's \*LXmNvalueChangedCallback\*O and
+\*LXmNactivateCallback\*O. 
+.VL .75i 
+.LI "\*Vwidget\*O"
+Specifies the Finder widget ID
+.LI "\*Vvalue\*O"
+Specifies the character pointer to the string value and places
+the string into the text edit window
+.LE 
+.PP 
+For a complete definition of Finder and its associated resources, see
+\*LSgFinder(3X)\*O.
+.nL
+.ne 8
+.SH RELATED INFORMATION
+.na
+\*LSgFinder(3X)\*O
+.ad

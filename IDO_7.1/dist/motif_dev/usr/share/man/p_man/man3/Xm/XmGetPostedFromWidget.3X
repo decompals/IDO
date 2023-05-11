@@ -1,0 +1,56 @@
+...\" **
+...\" **
+...\" **  (c) Copyright 1989, 1990, 1992 by Open Software Foundation, Inc.
+...\" **      All Rights Reserved.
+...\" **
+...\" **  (c) Copyright 1987, 1988, 1989, by Hewlett-Packard Company
+...\" **
+...\" **  (c) Copyright 1987, 1988 by Digital Equipment Corporation,
+...\" **      Maynard, MA.  All Rights Reserved.
+...\" **
+...\" **
+.TH XmGetPostedFromWidget 3X "" "" "" ""
+...\"
+.so /usr/share/lib/tmac/motif/header.all
+.so /usr/share/lib/tmac/motif/sml
+.so /usr/share/lib/tmac/motif/rsml
+...\" ____
+.SH NAME
+\*LXmGetPostedFromWidget \*O\(em A RowColumn function that returns the widget from which a menu was posted
+.iX "XmGetPostedFromWidget"
+.iX "RowColumn functions" "XmGetPostedFromWidget"
+.SH SYNOPSIS
+.sS
+.iS
+\&#include <Xm/RowColumn.h>
+.sp \n(PDu
+Widget XmGetPostedFromWidget (\*Vmenu\*L)
+.ta .5i 1.5i
+	Widget	\*Vmenu\*L;
+.wH .fi
+.iE
+.sE
+.SH DESCRIPTION
+\*LXmGetPostedFromWidget\*O returns the widget from which a menu was
+posted.
+For torn-off menus, this function returns the widget 
+from which the menu was originally torn.
+An application can use this routine during the activate callback to
+determine the context in which the menu callback should be interpreted.
+.VL .75i 
+.LI "\*Vmenu\*O"
+Specifies the widget ID of the menu
+.LE 
+.PP 
+For a complete definition of RowColumn and its associated resources, see
+\*LXmRowColumn(3X)\*O.
+.SH RETURN VALUE
+Returns the widget ID of the widget from which the menu was posted.
+If the menu is a Popup Menu, the returned widget is the widget from
+which the menu was popped up.
+If the menu is a Pulldown Menu, the returned widget is the MenuBar or
+OptionMenu from which the widget was pulled down.
+.SH RELATED INFORMATION
+.na
+\*LXmRowColumn(3X)\*O.
+.ad

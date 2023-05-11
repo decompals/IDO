@@ -1,0 +1,123 @@
+#!smake
+#
+# Copyright 1993, 1994, Silicon Graphics Inc., Mountain View, CA. 
+#
+# Makefile.kernio
+#
+# This is a sample makefile to be used by device driver developers
+# doing development for Irix 6.x. A number of flags must be defined
+# correctly when compiling device drivers for Irix. The cflags specified
+# in this file are flags used by Silicon Graphics to compile drivers
+# for different product types. This makefile is intended as an example.
+#
+# To use this makefile, do the following:
+#
+# 	1. Set the CPUBOARD environment variable to the appropriate machine 
+#	   type (ie. IP20, IP19, IP22, etc.), for example:
+#
+#		setenv CPUBOARD IP22 
+#
+#	   If you do not know what machine type you have, use the "hinv"
+#	   or "uname -m" commands to find out.
+#
+#	2. Build the driver using this makefile:
+#
+#		make -f Makefile.kernio driver.o
+#
+# The flags used in this makefile have the following meanings:
+#
+#	_K32U64		kernel in 32 bit mode saving all 64 bits of registers
+#	_K64U64		kernel in 64 bit mode
+#	-D_KERNEL	compiled for kernel as opposed to stand alone
+#	-DSTATIC=static	redefine occurances for STATIC as static
+#	-DJUMP_WAR	workaround for R4000 branch on end of page bug
+#	-DPROBE_WAR	workaround for R4000 bug which requires TLBprobe be
+#				performed uncached
+#	-DBADVA_WAR	workaround for R4000 badvaddr bug
+#	-DTFP           R8000 (TFP) machine
+#	-DR4000         R4000 machine
+#	-DTFP		R8000 machine
+#	-DR10000	R10000 machine
+#	-G 8		global pointer set to 8
+#	-non_shared	do not used shared objects
+#	-Wc,-pic0	do not allocate extra stack space (4 words) which is 
+#				not necessary for coff, non_shared code
+#	-fullwarn	perform additional type checking
+#
+# NOTE: These options are for statically linked drivers.  See mload(4) for
+#       options for loadable drivers.
+#
+# In general, these flags should match those in /var/sysgen/system/irix.sm's
+# CCOPTS variable for any given machine type.  In case of conflict or doubt,
+# use the CCOPTS values from that file.
+#
+
+ROOT=/
+include $(ROOT)/usr/include/make/commondefs
+
+#if defined(CPUBOARD) && !empty(CPUBOARD)
+
+#if $(CPUBOARD) == "IP17"
+CFLAGS=-D_K32U64 -D_KERNEL -DSTATIC=static -D_PAGESZ=4096 -DJUMP_WAR -DPROBE_WAR \
+-DBADVA_WAR -DIP17 -DR4000 -G 8 -non_shared -Wc,-pic0
+#endif
+
+#if $(CPUBOARD) == "IP19"
+#if $(COMPILATION_MODEL) == "64"
+CFLAGS=-D_K64U64 -D_KERNEL -DSTATIC=static -D_PAGESZ=16384 -D_MIPS3_ADDRSPACE \
+-DEVEREST -DIP19 -DMP -DR4000 -G 8 -non_shared -xansi -64 -mips3 \
+-TENV:kernel -TENV:misalignment=1 -OPT:space
+#else
+CFLAGS=-D_K32U64 -D_KERNEL -DSTATIC=static -DEVEREST \
+-DBADVA_WAR -DIP19 -DR4000 -G 8 -non_shared -Wc,-pic0
+#endif
+#endif
+
+#if $(CPUBOARD) == "IP20"
+CFLAGS=-D_K32U64 -D_KERNEL -DSTATIC=static -D_PAGESZ=4096 -DJUMP_WAR -DPROBE_WAR \
+-DBADVA_WAR -DIP20 -DR4000 -G 8 -non_shared -Wc,-pic0
+#endif
+
+#if $(CPUBOARD) == "IP21"
+CFLAGS=-D_K64U64 -D_KERNEL -DSTATIC=static -D_PAGESZ=16384 -D_MIPS3_ADDRSPACE \
+-DEVEREST -DIP21 -DMP -DTFP -G 8 -non_shared -xansi -64 -mips4 \
+-TENV:kernel -TENV:misalignment=1 -OPT:space
+#endif
+
+#if $(CPUBOARD) == "IP22"
+CFLAGS=-D_K32U64 -D_KERNEL -DSTATIC=static -D_PAGESZ=4096 -DJUMP_WAR \
+DPROBE_WAR -DBADVA_WAR -DIP22 -DR4000 -G 8 -non_shared -Wc,-pic0
+#endif
+
+#if $(CPUBOARD) == "IP25"
+CFLAGS=-D_K64U64 -D_KERNEL -DSTATIC=static -D_PAGESZ=16384 -D_MIPS3_ADDRSPACE \
+-DEVEREST -DIP25 -DMP -DR10000 -G 8 -non_shared -xansi -64 -mips4 \
+-TENV:kernel -TENV:misalignment=1 -OPT:space
+#endif
+
+#if $(CPUBOARD) == "IP26"
+CFLAGS=-D_K64U64 -D_KERNEL -DSTATIC=static -D_PAGESZ=16384 -D_MIPS3_ADDRSPACE \
+-D_NO_UNCACHED_MEM_WAR -DIP26 -DTFP -G 8 -non_shared -xansi -fullwarn -64 \
+-mips4 -TENV:kernel -TENV:misalignment=1 -OPT:space -OPT:unroll_times=0 \
+-OPT:quad_align_branch_targets=FALSE -OPT:quad_align_with_memops=FALSE
+#endif
+
+#if $(CPUBOARD) == "IP28"
+# All Indigo2 10000 kernel modules must be built with the t5_no_spec_stores
+# option to the C compiler and assembler.  This is availiable in the MIPSpro
+# 7.0 (or later release with the default compilers).  With a base 6.2
+# development suite, some compiler portions from the compiler_eoe subsystem
+# must be used.  These compilers will only exist on Indigo2 10000 sytems
+# by default.
+T5_SPEC_STORES_62=-Yb,/var/sysgen//root/usr/lib64/cmplrs \
+		  -Wb,-TARG:t5_no_spec_stores
+T5_SPEC_STORES_70=-v6 -TARG:t5_no_spec_stores
+CFLAGS=-D_PAGESZ=16384 -D_KERNEL -DSTATIC=static -D_MIPS3_ADDRSPACE \
+-DSCACHE_SET_ASSOC=2 -D_NO_UNCACHED_MEM_WAR -DMIPS4_ISA -DSP -DIP28 \
+-DR10000_SPECULATION_WAR -DR10000 -G 8 -elf -TENV:kernel -TENV:misalignment=1 \
+-OPT:space -OPT:quad_align_branch_targets=FALSE \
+-OPT:quad_align_with_memops=FALSE -OPT:unroll_times=0 -xansi -fullwarn -64 \
+-non_shared $(T5_SPEC_STORES_62)
+#endif
+
+#endif
