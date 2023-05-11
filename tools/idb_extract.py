@@ -24,6 +24,8 @@ class IdbEntry:
     perm: str
     filesize: int|None
     cmp_filesize: int|None
+    symval: str|None # for symlinks
+
 
 def readIdbMetadata(idb_pname: Path) -> dict[str, IdbEntry]:
     metadata: dict[str, IdbEntry] = {}
@@ -31,26 +33,38 @@ def readIdbMetadata(idb_pname: Path) -> dict[str, IdbEntry]:
     with idb_pname.open("r", encoding="UTF-8") as f:
         for line in f:
             parts = line.split()
+            tp = parts[0]
+            perm = parts[1]
             fname = parts[4]
-            filesize = cmp_filesize = None
+            filesize = None
+            cmp_filesize = None
+            symval = None
+
             for part in parts:
-                key = value = None
+                key = None
+                value = None
+
                 if "(" in part and ")" in part:
                     key, value = part.split("(")
                     assert value.endswith(")"), line
                     value = value[:-1]
 
-                if key == "size":
+                if key is not None:
                     assert value is not None
-                    filesize = int(value)
-                if key == "cmpsize" and value != "0":
-                    assert value is not None
-                    cmp_filesize = int(value)
+                    if key == "size":
+                        filesize = int(value)
+                    elif key == "cmpsize":
+                        if value != "0":
+                            cmp_filesize = int(value)
+                    elif key == "symval":
+                        symval = value
+
             metadata[fname] = IdbEntry(
-                parts[0],
-                parts[1],
+                tp,
+                perm,
                 filesize,
                 cmp_filesize,
+                symval,
             )
 
     return metadata
@@ -60,20 +74,25 @@ def run(archive_fname: Path, idb_metadata: dict[str, IdbEntry]):
     with archive_fname.open("rb") as f:
         header = f.read(13)
         assert header in (b'im001V500P00\0', b'im001V530P00\0', b"im001V620P02\0", b"im001V630P00\0", b"im001V405P10\0"), header
+
         while True:
             size_bytes = f.read(2)
             if not size_bytes:
                 break
+
             fname_size, = struct.unpack(">H", size_bytes)
             if fname_size > 500:
                 eprint("bad filename size", fname_size, size_bytes)
                 exit(1)
+
             fname = f.read(fname_size)
             assert len(fname) == fname_size, fname
+
             fname = fname.decode("ascii")
             pprint(f"{fname}")
             assert not fname.startswith(".")
             assert not fname.startswith("/")
+
             meta = idb_metadata[fname]
             cmp = False
 
@@ -95,8 +114,34 @@ def run(archive_fname: Path, idb_metadata: dict[str, IdbEntry]):
             Path(fname).open("wb").write(data)
             if meta.tp == "f" and meta.perm == "0755":
                 os.system(f"chmod +x {fname}")
-        pprint("ok")
         os.system("rm -f tmp")
+
+        pprint("ok")
+
+
+def handleSymlinks(idb_metadata: dict[str, IdbEntry]):
+    pprint(f"Processing symlinks")
+
+    # Handle symlinks
+    for fname, meta in idb_metadata.items():
+        if meta.tp != "l":
+            continue
+
+        assert meta.symval is not None
+
+        pprint(f"    symlink: '{fname}' -> ", end="")
+
+        sym = Path(fname)
+        sym.parent.mkdir(parents=True, exist_ok=True)
+
+        relativeTarget = Path(meta.symval)
+        sym.symlink_to(relativeTarget)
+
+        realTarget = sym.parent / relativeTarget
+        pprint(f"'{realTarget}'")
+
+    pprint(f"Symlinks done")
+
 
 def main():
     if len(sys.argv) < 2:
@@ -122,6 +167,8 @@ def main():
     for fname in files:
         pprint(f"Extracting {fname}")
         run(fname, idbmetadata)
+
+    handleSymlinks(idbmetadata)
 
 if __name__ == "__main__":
     main()
