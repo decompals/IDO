@@ -18,6 +18,12 @@ def pprint(*args, **kwargs):
     print(*args, **kwargs, file=sys.stderr)
 
 
+compressedTempFile = Path("tmp.z")
+decompressedTempFile = Path("tmp")
+
+compressedTempFile.unlink(missing_ok=True)
+decompressedTempFile.unlink(missing_ok=True)
+
 @dataclasses.dataclass
 class IdbEntry:
     fname: Path
@@ -26,6 +32,52 @@ class IdbEntry:
     filesize: int|None
     cmp_filesize: int|None
     symval: Path|None # for symlinks
+
+    def getFileSize(self) -> int|None:
+        if self.cmp_filesize is not None:
+           return self.cmp_filesize
+        return self.filesize
+
+    def isCompressed(self) -> bool:
+        return self.cmp_filesize is not None
+
+    def writeFile(self, data: bytes):
+        assert self.tp == "f", self.tp
+
+        filesize = self.getFileSize()
+        assert filesize is not None
+
+        assert len(data) == filesize, f"{len(data)} vs {filesize}"
+
+        if self.isCompressed():
+            pprint("        Decompressing... ", end="")
+            compressedTempFile.write_bytes(data)
+
+            # gzip.decompress doesn't work
+            os.system(f"gunzip {compressedTempFile}")
+
+            data = decompressedTempFile.read_bytes()
+            compressedTempFile.unlink(missing_ok=True)
+            decompressedTempFile.unlink(missing_ok=True)
+            pprint("done.")
+
+        self.fname.parent.mkdir(mode=0o755, parents=True, exist_ok=True)
+        self.fname.write_bytes(data)
+        self.fname.chmod(int(self.perm, 8))
+
+    def makeSymlink(self):
+        assert self.tp == "l", self.tp
+        assert self.symval is not None
+
+        pprint(f"    symlink: '{self.fname}' -> ", end="")
+
+        self.fname.parent.mkdir(parents=True, exist_ok=True)
+
+        relativeTarget = Path(self.symval)
+        self.fname.symlink_to(relativeTarget)
+
+        realTarget = self.fname.parent / relativeTarget
+        pprint(f"'{realTarget}'")
 
 
 def readIdbMetadata(idb_pname: Path) -> dict[Path, IdbEntry]:
@@ -79,12 +131,6 @@ def run(archive_fname: Path, idb_metadata: dict[Path, IdbEntry]):
         header = f.read(13)
         assert header in (b'im001V500P00\0', b'im001V530P00\0', b"im001V620P02\0", b"im001V630P00\0", b"im001V405P10\0"), header
 
-        compressedTempFile = Path("tmp.z")
-        decompressedTempFile = Path("tmp")
-
-        compressedTempFile.unlink(missing_ok=True)
-        decompressedTempFile.unlink(missing_ok=True)
-
         while True:
             size_bytes = f.read(2)
             if not size_bytes:
@@ -102,34 +148,9 @@ def run(archive_fname: Path, idb_metadata: dict[Path, IdbEntry]):
             pprint(f"    {fname}")
             assert not fname.startswith(".")
             assert not fname.startswith("/")
-            fname = Path(fname)
 
-            meta = idb_metadata[fname]
-            cmp = False
-
-            if meta.cmp_filesize:
-                filesize = meta.cmp_filesize
-                cmp = True
-            else:
-                filesize = meta.filesize
-
-            data = f.read(filesize)
-            assert len(data) == filesize, f"{len(data)} vs {filesize}"
-            if cmp:
-                pprint("        Decompressing... ", end="")
-                compressedTempFile.write_bytes(data)
-
-                # gzip.decompress doesn't work
-                os.system(f"gunzip {compressedTempFile}")
-
-                data = decompressedTempFile.read_bytes()
-                compressedTempFile.unlink(missing_ok=True)
-                decompressedTempFile.unlink(missing_ok=True)
-                pprint("done.")
-
-            fname.parent.mkdir(mode=0o755, parents=True, exist_ok=True)
-            fname.write_bytes(data)
-            fname.chmod(int(meta.perm, 8))
+            meta = idb_metadata[Path(fname)]
+            meta.writeFile(f.read(meta.getFileSize()))
 
         pprint("ok\n")
 
@@ -141,18 +162,7 @@ def handleSymlinks(idb_metadata: dict[Path, IdbEntry]):
     for sym, meta in idb_metadata.items():
         if meta.tp != "l":
             continue
-
-        assert meta.symval is not None
-
-        pprint(f"    symlink: '{sym}' -> ", end="")
-
-        sym.parent.mkdir(parents=True, exist_ok=True)
-
-        relativeTarget = Path(meta.symval)
-        sym.symlink_to(relativeTarget)
-
-        realTarget = sym.parent / relativeTarget
-        pprint(f"'{realTarget}'")
+        meta.makeSymlink()
 
     pprint(f"Symlinks done")
 
